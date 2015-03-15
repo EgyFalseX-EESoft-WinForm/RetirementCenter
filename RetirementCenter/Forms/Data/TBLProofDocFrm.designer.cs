@@ -69,6 +69,7 @@
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.tblProofDocTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLProofDocTableAdapter();
             this.tblProofDocbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -387,6 +388,8 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRealName});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -544,6 +547,13 @@
             this.tblProofDocbindingSource.DataMember = "TBLProofDoc";
             this.tblProofDocbindingSource.DataSource = this.dsRetirementCenter;
             // 
+            // colRealName
+            // 
+            this.colRealName.FieldName = "RealName";
+            this.colRealName.Name = "colRealName";
+            this.colRealName.Visible = true;
+            this.colRealName.VisibleIndex = 0;
+            // 
             // TBLProofDocFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,5 +633,6 @@
         private System.Windows.Forms.BindingSource usersBindingSource;
         private DataSources.dsRetirementCenterTableAdapters.TBLProofDocTableAdapter tblProofDocTableAdapter;
         private System.Windows.Forms.BindingSource tblProofDocbindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colRealName;
     }
 }

@@ -26,6 +26,7 @@ namespace RetirementCenter
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
+            return;
             if (e.KeyData != Keys.F5 && e.KeyData != Keys.F6 && e.KeyData != Keys.F10 && e.KeyData != Keys.F8)
                 return;
             switch (e.KeyData)

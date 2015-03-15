@@ -205,8 +205,9 @@
     <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="FXFW">
-      <HintPath>..\..\..\FalseX\FXFW\Releases\FXFW.dll</HintPath>
+    <Reference Include="FXFW, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Releases\FXFW.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -846,6 +847,7 @@
     </Content>
     <EmbeddedResource Include="Forms\Data\TBLProofDocWFrm.resx">
       <DependentUpon>TBLProofDocWFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLProofDocFrm.resx">
       <DependentUpon>TBLProofDocFrm.cs</DependentUpon>
@@ -963,6 +965,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLMashatNIDFastEditFrm.resx">
       <DependentUpon>TBLMashatNIDFastEditFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLMemberSarfFrm.resx">
       <DependentUpon>TBLMemberSarfFrm.cs</DependentUpon>
@@ -978,6 +981,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLWarasaSarfFrm.resx">
       <DependentUpon>TBLWarasaSarfFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry15Frm.resx">
       <DependentUpon>Qry15Frm.cs</DependentUpon>
@@ -1145,6 +1149,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ImportFromAccessFrm.resx">
       <DependentUpon>ImportFromAccessFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLMashatFrm.resx">
       <DependentUpon>TBLMashatFrm.cs</DependentUpon>

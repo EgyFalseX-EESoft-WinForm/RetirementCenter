@@ -100,6 +100,7 @@ namespace RetirementCenter
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
+            return;
             if (e.KeyData != Keys.F5 && e.KeyData != Keys.F6 && e.KeyData != Keys.F10 && e.KeyData != Keys.F8)
                 return;
             switch (e.KeyData)
@@ -572,8 +573,11 @@ namespace RetirementCenter
 
                 tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
                 DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
-                
-                tblMashatTableAdapter.Delete(MMashatId);
+
+                SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                SqlCommand cmd = new SqlCommand("DELETE FROM TBLMashat WHERE MMashatId = " + MMashatId , con);
+                con.Open(); cmd.ExecuteNonQuery();con.Close();
+                ///////////////////////////tblMashatTableAdapter.Delete(MMashatId);
                 
                 SaveEditAsLog(row, true);
 

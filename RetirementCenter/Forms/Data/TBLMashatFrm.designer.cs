@@ -266,6 +266,7 @@
             this.tBLEdafatWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLReSarfTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
+            this.colRealName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -2575,6 +2576,8 @@
             // 
             // gridView3
             // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRealName1});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -3134,6 +3137,13 @@
             // 
             this.tBLReSarfTableAdapter.ClearBeforeFill = true;
             // 
+            // colRealName1
+            // 
+            this.colRealName1.FieldName = "RealName";
+            this.colRealName1.Name = "colRealName1";
+            this.colRealName1.Visible = true;
+            this.colRealName1.VisibleIndex = 0;
+            // 
             // TBLMashatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3522,5 +3532,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit tbmmony;
         private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraGrid.Columns.GridColumn colRealName1;
     }
 }

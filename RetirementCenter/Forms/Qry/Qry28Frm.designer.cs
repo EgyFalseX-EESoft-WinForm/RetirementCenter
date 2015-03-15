@@ -447,6 +447,7 @@
             this.coluserin.AppearanceHeader.Options.UseTextOptions = true;
             this.coluserin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coluserin.Caption = "مسئول الادخال";
+            this.coluserin.ColumnEdit = this.repositoryItemLookUpEdituserin;
             this.coluserin.FieldName = "userin";
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
@@ -464,6 +465,9 @@
             this.repositoryItemLookUpEdituserin.AutoHeight = false;
             this.repositoryItemLookUpEdituserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserID", "User ID", 59, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.repositoryItemLookUpEdituserin.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
             this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
