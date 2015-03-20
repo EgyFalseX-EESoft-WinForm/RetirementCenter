@@ -480,6 +480,11 @@ namespace RetirementCenter
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
 
+                    //if (record.IsNull("monymonth"))
+                    //{
+                    //    string x;
+                    //}
+
                     dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
 
                     //Add Resarf
@@ -509,6 +514,11 @@ namespace RetirementCenter
                         Resarfrecord.datein = serverdatetime;
                         Resarfrecord.userin = Program.UserInfo.UserId;
                         Resarfrecord.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_2;
+
+                        //if (Resarfrecord.IsNull("monymonth"))
+                        //{
+                        //    string x;
+                        //}
 
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
                     }
@@ -559,6 +569,11 @@ namespace RetirementCenter
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
 
+                    //if (record.IsNull("monymonth"))
+                    //{
+                    //    string x;
+                    //}
+
                     dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
 
                     //Add Resarf
@@ -587,7 +602,10 @@ namespace RetirementCenter
                         Resarfrecord.datein = serverdatetime;
                         Resarfrecord.userin = Program.UserInfo.UserId;
                         Resarfrecord.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_2;
-
+                        //if (Resarfrecord.IsNull("monymonth"))
+                        //{
+                        //    string x;
+                        //}
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
                     }
 

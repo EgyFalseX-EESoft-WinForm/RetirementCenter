@@ -948,7 +948,9 @@ CDSubCommitte.SubCommitte
 FROM            TBLMashat INNER JOIN
 CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
 CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
-WHERE        (TBLMashat.MMashatNId IS NOT NULL) AND (TBLMashat.MMashatNId NOT LIKE '')</CommandText>
+WHERE        (TBLMashat.MMashatNId IS NOT NULL) AND (TBLMashat.MMashatNId NOT LIKE '')
+AND (MashHalaId = 1) AND (yasref = 'True')
+</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1051,6 +1053,51 @@ FROM            TBLWarasa INNER JOIN
               <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
               <Mapping SourceColumn="yasref" DataSetColumn="yasref" />
               <Mapping SourceColumn="responsiblesarf" DataSetColumn="responsiblesarf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry38aTableAdapter" GeneratorDataComponentClassName="vQry38aTableAdapter" Name="vQry38a" UserDataComponentName="vQry38aTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLMashat.MMashatId, TBLMashat.BirthDate, TBLMashat.MMashatNId, 
+CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END 
++ SUBSTRING(TBLMashat.MMashatNId, 2, 2) 
++ '-' 
++ SUBSTRING(TBLMashat.MMashatNId, 4, 2) 
++ '-' 
++ SUBSTRING(TBLMashat.MMashatNId, 6, 2) AS BDate,
+ TBLMashat.sarfnumber, TBLMashat.MMashatName, CDSyndicate.Syndicate, 
+CDSubCommitte.SubCommitte
+, Year(GetDate()) - CAST( CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT) AS Age
+, CASE WHEN LEN(TBLMashat.MMashatName) &lt;= 24 THEN TBLMashat.MMashatName ELSE SUBSTRING(TBLMashat.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(TBLMashat.MMashatName, 0, 24)))) END AS NameOnCard
+
+FROM            TBLMashat INNER JOIN
+CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
+WHERE        (TBLMashat.MMashatNId IS NOT NULL) AND (TBLMashat.MMashatNId NOT LIKE '')
+AND (MashHalaId = 1) AND (yasref = 'True')
+AND
+(
+(Year(GetDate()) - CAST( CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT)) BETWEEN 60 AND 100
+)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="BirthDate" DataSetColumn="BirthDate" />
+              <Mapping SourceColumn="MMashatNId" DataSetColumn="MMashatNId" />
+              <Mapping SourceColumn="BDate" DataSetColumn="BDate" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="NameOnCard" DataSetColumn="NameOnCard" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2083,6 +2130,58 @@ SET                GenderEnglish = 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vQry38a" msprop:Generator_TableClassName="vQry38aDataTable" msprop:Generator_TableVarName="tablevQry38a" msprop:Generator_TablePropName="vQry38a" msprop:Generator_RowDeletingName="vQry38aRowDeleting" msprop:Generator_RowChangingName="vQry38aRowChanging" msprop:Generator_RowEvHandlerName="vQry38aRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38aRowDeleted" msprop:Generator_UserTableName="vQry38a" msprop:Generator_RowChangedName="vQry38aRowChanged" msprop:Generator_RowEvArgName="vQry38aRowChangeEvent" msprop:Generator_RowClassName="vQry38aRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="BirthDate" msprop:Generator_ColumnVarNameInTable="columnBirthDate" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_UserColumnName="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MMashatNId" msprop:Generator_ColumnVarNameInTable="columnMMashatNId" msprop:Generator_ColumnPropNameInRow="MMashatNId" msprop:Generator_ColumnPropNameInTable="MMashatNIdColumn" msprop:Generator_UserColumnName="MMashatNId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBDate" msprop:Generator_ColumnPropNameInRow="BDate" msprop:Generator_ColumnPropNameInTable="BDateColumn" msprop:Generator_UserColumnName="BDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="NameOnCard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNameOnCard" msprop:Generator_ColumnPropNameInRow="NameOnCard" msprop:Generator_ColumnPropNameInTable="NameOnCardColumn" msprop:Generator_UserColumnName="NameOnCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2168,6 +2267,10 @@ SET                GenderEnglish = 1</CommandText>
     <xs:unique name="vQry41_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry41" />
       <xs:field xpath="mstns:PersonId" />
+    </xs:unique>
+    <xs:unique name="vQry38a_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry38a" />
+      <xs:field xpath="mstns:MMashatId" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
