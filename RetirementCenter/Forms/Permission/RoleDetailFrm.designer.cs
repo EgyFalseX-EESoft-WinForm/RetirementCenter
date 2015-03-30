@@ -157,6 +157,7 @@
             this.mbRetCenterQry37 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry39 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry38a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry40 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry41 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblChekNid = new DevExpress.XtraBars.BarButtonItem();
@@ -164,6 +165,9 @@
             this.mbRetCenterQry43 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep09 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLProofDoc = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry44 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterBankQry = new DevExpress.XtraBars.BarSubItem();
+            this.mbRetCenterQry45 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -510,10 +514,14 @@
             this.mbRetCenterQry42,
             this.mbRetCenterQry43,
             this.mbRetCenterXRep09,
-            this.mbRetCenterTBLProofDoc});
+            this.mbRetCenterTBLProofDoc,
+            this.mbRetCenterQry38a,
+            this.mbRetCenterQry44,
+            this.mbRetCenterBankQry,
+            this.mbRetCenterQry45});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 276;
+            this.ribbonControl.MaxItemId = 280;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1543,6 +1551,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry37),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry39),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38a),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry40),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry41)});
             this.mbRetCenterQryPart2.Name = "mbRetCenterQryPart2";
@@ -1592,6 +1601,15 @@
             this.mbRetCenterQry39.LargeImageIndex = 19;
             this.mbRetCenterQry39.Name = "mbRetCenterQry39";
             this.mbRetCenterQry39.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry38a
+            // 
+            this.mbRetCenterQry38a.Caption = "بيانات اعضاء البنك- شرط سن";
+            this.mbRetCenterQry38a.Id = 276;
+            this.mbRetCenterQry38a.ImageIndex = 19;
+            this.mbRetCenterQry38a.LargeImageIndex = 19;
+            this.mbRetCenterQry38a.Name = "mbRetCenterQry38a";
+            this.mbRetCenterQry38a.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // mbRetCenterQry40
             // 
@@ -1653,6 +1671,36 @@
             this.mbRetCenterTBLProofDoc.ImageIndex = 46;
             this.mbRetCenterTBLProofDoc.LargeImageIndex = 46;
             this.mbRetCenterTBLProofDoc.Name = "mbRetCenterTBLProofDoc";
+            // 
+            // mbRetCenterQry44
+            // 
+            this.mbRetCenterQry44.Caption = "البيانات المصدرة للبنك";
+            this.mbRetCenterQry44.Id = 277;
+            this.mbRetCenterQry44.ImageIndex = 19;
+            this.mbRetCenterQry44.LargeImageIndex = 19;
+            this.mbRetCenterQry44.Name = "mbRetCenterQry44";
+            this.mbRetCenterQry44.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterBankQry
+            // 
+            this.mbRetCenterBankQry.Caption = "بيانات البنك";
+            this.mbRetCenterBankQry.Id = 278;
+            this.mbRetCenterBankQry.ImageIndex = 19;
+            this.mbRetCenterBankQry.LargeImageIndex = 19;
+            this.mbRetCenterBankQry.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry44),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry45)});
+            this.mbRetCenterBankQry.Name = "mbRetCenterBankQry";
+            this.mbRetCenterBankQry.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry45
+            // 
+            this.mbRetCenterQry45.Caption = "البيانات المصدرة للبنك - احصاء";
+            this.mbRetCenterQry45.Id = 279;
+            this.mbRetCenterQry45.ImageIndex = 19;
+            this.mbRetCenterQry45.LargeImageIndex = 19;
+            this.mbRetCenterQry45.Name = "mbRetCenterQry45";
+            this.mbRetCenterQry45.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonImageCollectionLarge
             // 
@@ -1791,6 +1839,7 @@
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry28);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry42);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry43);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterBankQry);
             this.QryribbonPageGroup.Name = "QryribbonPageGroup";
             this.QryribbonPageGroup.Text = "الاستعلامات";
             // 
@@ -2047,6 +2096,7 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry37;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry39;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry40;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry41;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblChekNid;
@@ -2054,6 +2104,9 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry43;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep09;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLProofDoc;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry44;
+        private DevExpress.XtraBars.BarSubItem mbRetCenterBankQry;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry45;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

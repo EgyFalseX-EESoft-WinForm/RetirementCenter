@@ -79,7 +79,7 @@
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
             this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.tbMSG);
             this.panelControl1.Controls.Add(this.pb);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -126,7 +126,7 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "اغلاق";
             // 
-            // msgQDlg
+            // msgDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +140,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "msgQDlg";
+            this.Name = "msgDlg";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "رسالة";

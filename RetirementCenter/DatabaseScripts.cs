@@ -274,9 +274,12 @@ namespace RetirementCenter
                 cmd.CommandText = vQry43;
                 cmd.ExecuteNonQuery();
 
-
                 cmd.CommandText = TBLProofDoc;
                 cmd.ExecuteNonQuery();
+
+                cmd.CommandText = BankExportedData;
+                cmd.ExecuteNonQuery();
+
 
             }
             catch (SqlException ex)
@@ -938,6 +941,26 @@ FROM            TBLMemberSarf INNER JOIN
                          CONSTRAINT [PK_ProofDoc] PRIMARY KEY CLUSTERED 
                         (
 	                        [ProofDocId] ASC
+                        )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+                        ) ON [PRIMARY]
+                        END";
+            }
+        }
+        public static string BankExportedData
+        {
+            get
+            {
+                return @"
+                        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BankExportedData]') AND type in (N'U'))
+                        BEGIN
+                        CREATE TABLE [dbo].[BankExportedData](
+	                        [Id] [int] IDENTITY(1,1) NOT NULL,
+	                        [MMashatId] [int] NULL,
+	                        [ExportDate] [date] NULL,
+	                        [userin] [int] NULL,
+                         CONSTRAINT [PK_BankExportedData] PRIMARY KEY CLUSTERED 
+                        (
+	                        [Id] ASC
                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
                         ) ON [PRIMARY]
                         END";

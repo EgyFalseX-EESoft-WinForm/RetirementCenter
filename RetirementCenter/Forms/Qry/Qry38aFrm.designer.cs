@@ -71,7 +71,8 @@
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
+            this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry38aTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry38aTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
@@ -84,8 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
+            this.panelControlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -566,14 +567,25 @@
             this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
-            // panelControl1
+            // panelControlMain
             // 
-            this.panelControl1.Controls.Add(this.btnPrintExport);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 47);
-            this.panelControl1.TabIndex = 3;
+            this.panelControlMain.Controls.Add(this.btnSaveBackData);
+            this.panelControlMain.Controls.Add(this.btnPrintExport);
+            this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlMain.Location = new System.Drawing.Point(0, 0);
+            this.panelControlMain.Name = "panelControlMain";
+            this.panelControlMain.Size = new System.Drawing.Size(734, 47);
+            this.panelControlMain.TabIndex = 3;
+            // 
+            // btnSaveBackData
+            // 
+            this.btnSaveBackData.Image = global::RetirementCenter.Properties.Resources.save_16x16;
+            this.btnSaveBackData.Location = new System.Drawing.Point(12, 12);
+            this.btnSaveBackData.Name = "btnSaveBackData";
+            this.btnSaveBackData.Size = new System.Drawing.Size(134, 23);
+            this.btnSaveBackData.TabIndex = 0;
+            this.btnSaveBackData.Text = "حفظ بيانات البنك";
+            this.btnSaveBackData.Click += new System.EventHandler(this.btnSaveBackData_Click);
             // 
             // btnPrintExport
             // 
@@ -594,7 +606,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry38aFrm";
             this.Text = "تاريخ ميلاد الاعضاء من الرقم القومي";
@@ -610,8 +622,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
+            this.panelControlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -622,7 +634,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEditImg;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControlMain;
         private DevExpress.XtraEditors.SimpleButton btnPrintExport;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
@@ -663,6 +675,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DataSources.dsQueriesTableAdapters.vQry38aTableAdapter vQry38aTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton btnSaveBackData;
 
     }
 }
