@@ -51,6 +51,13 @@ namespace RetirementCenter
             {
                 if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                     return;
+                //check if this id already exported to bank
+                if (!(bool)SQLProvider.adpQry.NIDBankExported_M(row.MMashatId))
+                {
+                    msgDlg.Show("تم تصدير هذا العضو اللي بيانات البنك");
+                    return;
+                }
+
                 removeTBLMashatNIDTableAdapter.RemoveNID(row.MMashatId);
                 row.SetMMashatNIdNull();
                 Program.ShowMsg("تم حذف بيانات الرقم القومي", false, this, true);

@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class Qry38aFrm
+    partial class Qry38bFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry38aBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vQry38bBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,15 +68,17 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.vQry38aTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry38aTableAdapter();
+            this.vQry38bTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry38bTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry38aBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry38bBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY)).BeginInit();
@@ -94,7 +96,7 @@
             this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlData.DataSource = this.vQry38aBindingSource;
+            this.gridControlData.DataSource = this.vQry38bBindingSource;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
@@ -114,10 +116,10 @@
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
             // 
-            // vQry38aBindingSource
+            // vQry38bBindingSource
             // 
-            this.vQry38aBindingSource.DataMember = "vQry38a";
-            this.vQry38aBindingSource.DataSource = this.dsQueries;
+            this.vQry38bBindingSource.DataMember = "vQry38b";
+            this.vQry38bBindingSource.DataSource = this.dsQueries;
             // 
             // dsQueries
             // 
@@ -233,7 +235,9 @@
             this.gridColumn23,
             this.gridColumn24,
             this.gridColumn25,
-            this.gridColumn26});
+            this.gridColumn26,
+            this.colPersonId,
+            this.colpersonName});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -269,7 +273,7 @@
             this.colBirthDate.AppearanceHeader.Options.UseTextOptions = true;
             this.colBirthDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colBirthDate.Caption = "تاريخ الميلاد";
-            this.colBirthDate.FieldName = "BirthDate";
+            this.colBirthDate.FieldName = "personbirth";
             this.colBirthDate.Name = "colBirthDate";
             // 
             // colMMashatNId
@@ -279,7 +283,7 @@
             this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatNId.Caption = "National ID";
-            this.colMMashatNId.FieldName = "MMashatNId";
+            this.colMMashatNId.FieldName = "personNID";
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.Visible = true;
             this.colMMashatNId.VisibleIndex = 9;
@@ -564,6 +568,18 @@
             this.gridColumn26.VisibleIndex = 30;
             this.gridColumn26.Width = 89;
             // 
+            // colPersonId
+            // 
+            this.colPersonId.Caption = "كود المسئول";
+            this.colPersonId.FieldName = "PersonId";
+            this.colPersonId.Name = "colPersonId";
+            // 
+            // colpersonName
+            // 
+            this.colpersonName.Caption = "اسم المسئول";
+            this.colpersonName.FieldName = "personName";
+            this.colpersonName.Name = "colpersonName";
+            // 
             // repositoryItemDateEditDate
             // 
             this.repositoryItemDateEditDate.AutoHeight = false;
@@ -615,23 +631,23 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // vQry38aTableAdapter
+            // vQry38bTableAdapter
             // 
-            this.vQry38aTableAdapter.ClearBeforeFill = true;
+            this.vQry38bTableAdapter.ClearBeforeFill = true;
             // 
-            // Qry38aFrm
+            // Qry38bFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
             this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.gridControlData);
-            this.Name = "Qry38aFrm";
-            this.Text = "بيانات اعضاء البنك- شرط سن";
+            this.Name = "Qry38bFrm";
+            this.Text = "بيانات اعضاء البنك- شرط سن 2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry38aBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry38bBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.VistaTimeProperties)).EndInit();
@@ -666,7 +682,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private System.Windows.Forms.BindingSource vQry38aBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -692,8 +707,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
-        private DataSources.dsQueriesTableAdapters.vQry38aTableAdapter vQry38aTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnSaveBackData;
+        private System.Windows.Forms.BindingSource vQry38bBindingSource;
+        private DataSources.dsQueriesTableAdapters.vQry38bTableAdapter vQry38bTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
+        private DevExpress.XtraGrid.Columns.GridColumn colpersonName;
 
     }
 }

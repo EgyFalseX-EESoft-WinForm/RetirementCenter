@@ -80,6 +80,13 @@ namespace RetirementCenter.Forms.Data
                 if ((bool)row["yasref", DataRowVersion.Current] != (bool)row["yasref", DataRowVersion.Original])
                     tblNoSarfDetelsTableAdapter.Insert(row.MMashatId, row.yasref, row.datehala, row.halarem, SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
                 tBLMashatFastEditBindingSource.EndEdit();
+                //check if this id already exported to bank
+                if ((bool)SQLProvider.adpQry.NIDBankExported_M(row.MMashatId))
+                {
+                    msgDlg.Show("تم تصدير هذا العضو الي بيانات البنك");
+                    return;
+                }
+
                 if (!row.IsMMashatNIdNull() && row.MMashatNId != string.Empty)
                     tblMashatTableAdapter.UpdateQueryFastEdit(row.MMashatNId, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, row.yasref, row.SubCommitteId, row.MMashatId);
                 else

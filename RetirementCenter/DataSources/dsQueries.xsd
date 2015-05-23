@@ -1061,8 +1061,12 @@ FROM            TBLWarasa INNER JOIN
               <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        TBLMashat.MMashatId, TBLMashat.BirthDate, TBLMashat.MMashatNId, 
-CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END 
+                    <CommandText>WITH CTE1 AS
+(
+SELECT MMashatNId, COUNT(MMashatId) AS NUM FROM TBLMashat WHERE MMashatId IS NOT NULL GROUP BY MMashatNId HAVING COUNT(MMashatId) = 1
+)
+SELECT        TBLMashat.MMashatId, TBLMashat.BirthDate, TBLMashat.MMashatNId, 
+CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END 
 + SUBSTRING(TBLMashat.MMashatNId, 2, 2) 
 + '-' 
 + SUBSTRING(TBLMashat.MMashatNId, 4, 2) 
@@ -1070,18 +1074,17 @@ CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END
 + SUBSTRING(TBLMashat.MMashatNId, 6, 2) AS BDate,
  TBLMashat.sarfnumber, TBLMashat.MMashatName, CDSyndicate.Syndicate, 
 CDSubCommitte.SubCommitte
-, Year(GetDate()) - CAST( CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT) AS Age
+, Year(GetDate()) - CAST( CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT) AS Age
 , CASE WHEN LEN(TBLMashat.MMashatName) &lt;= 24 THEN TBLMashat.MMashatName ELSE SUBSTRING(TBLMashat.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(TBLMashat.MMashatName, 0, 24)))) END AS NameOnCard
 
-FROM            TBLMashat INNER JOIN
-CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+FROM            TBLMashat INNER JOIN CTE1 ON TBLMashat.MMashatNId = CTE1.MMashatNId
+INNER JOIN CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
 CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
 WHERE        (TBLMashat.MMashatNId IS NOT NULL) AND (TBLMashat.MMashatNId NOT LIKE '')
 AND (MashHalaId = 1) AND (yasref = 'True')
-AND
-(
-(Year(GetDate()) - CAST( CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT)) BETWEEN 60 AND 100
-)</CommandText>
+AND ((Year(GetDate()) - CAST( CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT)) BETWEEN 60 AND 105)
+AND NOT EXISTS(SELECT * FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId)
+ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.MMashatId</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1103,11 +1106,11 @@ AND
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry44TableAdapter" GeneratorDataComponentClassName="vQry44TableAdapter" Name="vQry44" UserDataComponentName="vQry44TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        BankExportedData.Id, BankExportedData.MMashatId, BankExportedData.ExportDate, TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, 
-                         Users.RealName
+                         Users.RealName, BankExportedData.visa, BankExportedData.visawarddate, BankExportedData.hafza, BankExportedData.hafzadate
 FROM            Users INNER JOIN
                          BankExportedData ON Users.UserID = BankExportedData.userin LEFT OUTER JOIN
                          TBLMashat INNER JOIN
@@ -1127,6 +1130,10 @@ FROM            Users INNER JOIN
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
               <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
               <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="visa" DataSetColumn="visa" />
+              <Mapping SourceColumn="visawarddate" DataSetColumn="visawarddate" />
+              <Mapping SourceColumn="hafza" DataSetColumn="hafza" />
+              <Mapping SourceColumn="hafzadate" DataSetColumn="hafzadate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1151,6 +1158,320 @@ GROUP BY BankExportedData.ExportDate, CDSyndicate.Syndicate, CDSubCommitte.SubCo
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
               <Mapping SourceColumn="Num" DataSetColumn="Num" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry46TableAdapter" GeneratorDataComponentClassName="vQry46TableAdapter" Name="vQry46" UserDataComponentName="vQry46TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.CDSyndicate" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CDSyndicate.Syndicate, COUNT(BankExportedData.Id) AS Num
+FROM            BankExportedData LEFT OUTER JOIN
+                         TBLMashat INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId ON BankExportedData.MMashatId = TBLMashat.MMashatId
+GROUP BY CDSyndicate.Syndicate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="Num" DataSetColumn="Num" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry38bTableAdapter" GeneratorDataComponentClassName="vQry38bTableAdapter" Name="vQry38b" UserDataComponentName="vQry38bTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT TBLWarasa.MMashatId, COUNT(TBLWarasa.PersonId) AS AllCount
+FROM TBLWarasa INNER JOIN
+TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+WHERE        (TBLWarasa.yasref = 1) AND (TBLMashat.yasref = 1)
+GROUP BY TBLWarasa.MMashatId
+), CTE2 AS
+(
+SELECT CTE1.MMashatId
+FROM CTE1 INNER JOIN 
+(SELECT        MMashatId, COUNT(PersonId) AS NIDCount
+FROM            TBLWarasa
+WHERE        (Len(personNID) = 14) AND [yasref] = 1
+GROUP BY MMashatId) T ON CTE1.MMashatId = T.MMashatId
+WHERE AllCount = NIDCount
+), CTE3 AS
+(
+SELECT CTE2.MMashatId 
+, (SELECT [PersonId] FROM [dbo].[TBLWarasa] WHERE [MMashatId] = CTE2.MMashatId AND [responsiblesarf] = 1) AS [PersonId]
+, 'ورثة-' + (SELECT MMashatName FROM [dbo].TBLMashat WHERE MMashatId = CTE2.MMashatId) AS MMashatName
+, (SELECT sarfnumber FROM [dbo].TBLMashat WHERE MMashatId = CTE2.MMashatId) AS sarfnumber
+FROM CTE2 INNER JOIN 
+(
+SELECT [MMashatId], COUNT([PersonId]) AS NUM
+FROM [dbo].[TBLWarasa]
+WHERE [responsiblesarf] = 1
+GROUP BY [MMashatId]
+HAVING COUNT([PersonId]) = 1
+) T ON CTE2.MMashatId = T.MMashatId
+)
+SELECT CTE3.MMashatId, CTE3.[PersonId], CTE3.MMashatName, CTE3.sarfnumber, [personbirth], [personNID], personName
+,CDSyndicate.Syndicate, CDSubCommitte.SubCommitte,
+CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END 
++ SUBSTRING([personNID], 2, 2) 
++ '-' 
++ SUBSTRING([personNID], 4, 2) 
++ '-' 
++ SUBSTRING([personNID], 6, 2) AS BDate
+, Year(GetDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING([personNID], 2, 2) AS INT) AS Age
+, CASE WHEN LEN(CTE3.MMashatName) &lt;= 24 THEN CTE3.MMashatName ELSE SUBSTRING(CTE3.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(CTE3.MMashatName, 0, 24)))) END AS NameOnCard
+
+FROM CTE3 INNER JOIN [dbo].[TBLWarasa] ON CTE3.[PersonId] = [TBLWarasa].PersonId
+INNER JOIN CDSyndicate ON [TBLWarasa].SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDSubCommitte ON [TBLWarasa].SubCommitteId = CDSubCommitte.SubCommitteId
+WHERE ((Year(GetDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING([personNID], 2, 2) AS INT)) BETWEEN 1 AND 105)
+AND NOT EXISTS(SELECT * FROM [dbo].BankExportedDataWarsa WHERE PersonId = CTE3.[PersonId])
+ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="personbirth" DataSetColumn="personbirth" />
+              <Mapping SourceColumn="personNID" DataSetColumn="personNID" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="BDate" DataSetColumn="BDate" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="NameOnCard" DataSetColumn="NameOnCard" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry47TableAdapter" GeneratorDataComponentClassName="vQry47TableAdapter" Name="vQry47" UserDataComponentName="vQry47TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, BankExportedDataWarsa.Id, 
+                         BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, 
+                         BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate
+FROM            CDSubCommitte INNER JOIN
+                         CDSyndicate INNER JOIN
+                         BankExportedDataWarsa INNER JOIN
+                         Users ON BankExportedDataWarsa.userin = Users.UserID INNER JOIN
+                         TBLWarasa ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId ON 
+                         CDSubCommitte.SubCommitteId = TBLWarasa.SubCommitteId LEFT OUTER JOIN
+                         TBLMashat ON BankExportedDataWarsa.MMashatId = TBLMashat.MMashatId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="ExportDate" DataSetColumn="ExportDate" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="visa" DataSetColumn="visa" />
+              <Mapping SourceColumn="visawarddate" DataSetColumn="visawarddate" />
+              <Mapping SourceColumn="hafza" DataSetColumn="hafza" />
+              <Mapping SourceColumn="hafzadate" DataSetColumn="hafzadate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry48TableAdapter" GeneratorDataComponentClassName="vQry48TableAdapter" Name="vQry48" UserDataComponentName="vQry48TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        BankExportedDataWarsa.ExportDate, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, COUNT(BankExportedDataWarsa.Id) AS Num
+FROM            BankExportedDataWarsa LEFT OUTER JOIN
+                         CDSyndicate INNER JOIN
+                         TBLWarasa ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId
+GROUP BY BankExportedDataWarsa.ExportDate, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ExportDate" DataSetColumn="ExportDate" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="Num" DataSetColumn="Num" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry49TableAdapter" GeneratorDataComponentClassName="vQry49TableAdapter" Name="vQry49" UserDataComponentName="vQry49TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT        TBLMashat.MMashatId, TBLMashat.BirthDate, TBLMashat.MMashatNId, 
+CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END 
++ SUBSTRING(TBLMashat.MMashatNId, 2, 2) 
++ '-' 
++ SUBSTRING(TBLMashat.MMashatNId, 4, 2) 
++ '-' 
++ SUBSTRING(TBLMashat.MMashatNId, 6, 2) AS BDate,
+TBLMashat.sarfnumber, TBLMashat.MMashatName, CDSyndicate.Syndicate, 
+CDSubCommitte.SubCommitte
+, Year(GetDate()) - CAST( CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT) AS Age
+, CASE WHEN LEN(TBLMashat.MMashatName) &lt;= 24 THEN TBLMashat.MMashatName ELSE SUBSTRING(TBLMashat.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(TBLMashat.MMashatName, 0, 24)))) END AS NameOnCard
+FROM TBLMashat INNER JOIN CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
+WHERE (MashHalaId = 1) AND (yasref = 'True')
+)
+SELECT MMashatId, BirthDate, MMashatNId, BDate, sarfnumber, MMashatName, Syndicate, SubCommitte, Age, NameOnCard
+, CASE 
+WHEN MMashatNId IS NULL OR MMashatNId = '' THEN 'Empty NID'
+WHEN LEN(MMashatNId) &lt;&gt; 14 THEN 'NID Not 14'
+WHEN BDate IS NULL THEN 'NID Is Wrong'
+WHEN Age NOT BETWEEN 60 AND 105 THEN 'NID Outside 60 to 105'
+WHEN (SELECT COUNT(MMashatId) FROM TBLMashat WHERE MMashatNId = CTE1.MMashatNId) &gt; 1 THEN 'NID Duplicate'
+WHEN EXISTS(SELECT MMashatId FROM BankExportedData WHERE MMashatId = CTE1.MMashatId) THEN 'Member Exported'
+ELSE 'Member Ready To Export' END AS [NID State]
+FROM CTE1
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="BirthDate" DataSetColumn="BirthDate" />
+              <Mapping SourceColumn="MMashatNId" DataSetColumn="MMashatNId" />
+              <Mapping SourceColumn="BDate" DataSetColumn="BDate" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="NameOnCard" DataSetColumn="NameOnCard" />
+              <Mapping SourceColumn="NID State" DataSetColumn="NID State" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry50TableAdapter" GeneratorDataComponentClassName="vQry50TableAdapter" Name="vQry50" UserDataComponentName="vQry50TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT [MMashatNId] AS NID, 'M' AS TBL FROM [dbo].[TBLMashat] WHERE [MMashatNId] IS NOT NULL AND [MMashatNId] &lt;&gt; '' 
+AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE [Nid] = [TBLMashat].[MMashatNId])
+UNION
+SELECT personNID AS NID, 'W' AS TBL FROM [dbo].[TBLWarasa] WHERE personNID IS NOT NULL AND personNID &lt;&gt; '' 
+AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE [Nid] = [TBLWarasa].personNID)
+)
+SELECT NID
+FROM CTE1
+GROUP BY NID
+HAVING COUNT(TBL) &gt; 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry51TableAdapter" GeneratorDataComponentClassName="vQry51TableAdapter" Name="vQry51" UserDataComponentName="vQry51TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLWarasa.PersonId, TBLWarasa.personName, TBLMashat.sarfnumber, TBLMashat.MMashatName, TBLWarasa.personNID
+, YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(TBLWarasa.personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLWarasa.personNID, 2, 2) AS INT) AS Age
+, CASE WHEN LEFT(RIGHT(TBLWarasa.personNID, 2), 1) % 2 = 1 THEN 'ذكر' ELSE 'انثي' END AS Gender
+, CDWarasaType.WarasaType
+FROM            TBLWarasa INNER JOIN
+TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
+WHERE        (TBLWarasa.personNID IS NOT NULL) AND (TBLWarasa.personNID &lt;&gt; '')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="personNID" DataSetColumn="personNID" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Gender" DataSetColumn="Gender" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="WarasaType" DataSetColumn="WarasaType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry52TableAdapter" GeneratorDataComponentClassName="vQry52TableAdapter" Name="vQry52" UserDataComponentName="vQry52TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT MMashatId, YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(personNID, 2, 2) AS INT) MotherAge
+FROM [dbo].[TBLWarasa] WHERE TBLWarasa.WarasaTypeId = 1 AND (personNID IS NOT NULL) AND (personNID &lt;&gt; '')
+), CTE2 AS
+(
+SELECT PersonId, CTE1.MMashatId, MotherAge
+, YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(personNID, 2, 2) AS INT) SonAge
+FROM CTE1 INNER JOIN [dbo].[TBLWarasa] ON CTE1.MMashatId = [TBLWarasa].MMashatId
+WHERE ([TBLWarasa].WarasaTypeId = 2 OR [TBLWarasa].WarasaTypeId = 3) AND (TBLWarasa.personNID IS NOT NULL) AND (TBLWarasa.personNID &lt;&gt; '') 
+)
+SELECT MotherAge, SonAge, MotherAge - SonAge DeffYears, CTE2.PersonId, CTE2.MMashatId
+,CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLWarasa.personName, TBLMashat.sarfnumber, TBLMashat.MMashatName, TBLWarasa.personNID
+FROM CTE2 INNER JOIN [dbo].[TBLWarasa] ON CTE2.PersonId = [TBLWarasa].PersonId
+INNER JOIN CDSyndicate ON [TBLWarasa].SyndicateId = CDSyndicate.SyndicateId
+INNER JOIN CDSubCommitte ON [TBLWarasa].SubCommitteId = CDSubCommitte.SubCommitteId
+INNER JOIN dbo.TBLMashat ON CTE2.MMashatId = TBLMashat.MMashatId
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MotherAge" DataSetColumn="MotherAge" />
+              <Mapping SourceColumn="SonAge" DataSetColumn="SonAge" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="personNID" DataSetColumn="personNID" />
+              <Mapping SourceColumn="DeffYears" DataSetColumn="DeffYears" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1402,6 +1723,29 @@ SET                GenderEnglish = 1</CommandText>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT ISNULL(MAX(ProofDocId) +1, 1) AS NewId FROM TBLProofDoc</CommandText>
                 <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NIDBankExported_M" MethodsParameterType="CLR" Modifier="Public" Name="NIDBankExported_M" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy23" UserSourceName="NIDBankExported_M">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        ISNULL
+                             ((SELECT        CAST('True' AS Bit) AS Expr1
+                                 FROM            BankExportedData
+                                 WHERE        (MMashatId = @MMashatId)), CAST('False' AS Bit)) AS Expr1</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="MMashatId" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MMashatId" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NIDBankExported_W" MethodsParameterType="CLR" Modifier="Public" Name="NIDBankExported_W" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy24" UserSourceName="NIDBankExported_W">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT ISNULL((SELECT CAST('True' AS Bit) FROM BankExportedDataWarsa WHERE PersonId = @PersonId), CAST('False' AS Bit))</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="PersonId" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PersonId" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
               </DbCommand>
             </SelectCommand>
           </DbSource>
@@ -2239,7 +2583,7 @@ SET                GenderEnglish = 1</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" minOccurs="0" />
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
               <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
                 <xs:simpleType>
@@ -2270,6 +2614,16 @@ SET                GenderEnglish = 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="visa" msprop:Generator_ColumnVarNameInTable="columnvisa" msprop:Generator_ColumnPropNameInRow="visa" msprop:Generator_ColumnPropNameInTable="visaColumn" msprop:Generator_UserColumnName="visa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="visawarddate" msprop:Generator_ColumnVarNameInTable="columnvisawarddate" msprop:Generator_ColumnPropNameInRow="visawarddate" msprop:Generator_ColumnPropNameInTable="visawarddateColumn" msprop:Generator_UserColumnName="visawarddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hafza" msprop:Generator_ColumnVarNameInTable="columnhafza" msprop:Generator_ColumnPropNameInRow="hafza" msprop:Generator_ColumnPropNameInTable="hafzaColumn" msprop:Generator_UserColumnName="hafza" type="xs:int" minOccurs="0" />
+              <xs:element name="hafzadate" msprop:Generator_ColumnVarNameInTable="columnhafzadate" msprop:Generator_ColumnPropNameInRow="hafzadate" msprop:Generator_ColumnPropNameInTable="hafzadateColumn" msprop:Generator_UserColumnName="hafzadate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2292,6 +2646,335 @@ SET                GenderEnglish = 1</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Num" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry46" msprop:Generator_TableClassName="vQry46DataTable" msprop:Generator_TableVarName="tablevQry46" msprop:Generator_RowChangedName="vQry46RowChanged" msprop:Generator_TablePropName="vQry46" msprop:Generator_RowDeletingName="vQry46RowDeleting" msprop:Generator_RowChangingName="vQry46RowChanging" msprop:Generator_RowEvHandlerName="vQry46RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry46RowDeleted" msprop:Generator_RowClassName="vQry46Row" msprop:Generator_UserTableName="vQry46" msprop:Generator_RowEvArgName="vQry46RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Num" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry38b" msprop:Generator_TableClassName="vQry38bDataTable" msprop:Generator_TableVarName="tablevQry38b" msprop:Generator_TablePropName="vQry38b" msprop:Generator_RowDeletingName="vQry38bRowDeleting" msprop:Generator_RowChangingName="vQry38bRowChanging" msprop:Generator_RowEvHandlerName="vQry38bRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38bRowDeleted" msprop:Generator_UserTableName="vQry38b" msprop:Generator_RowChangedName="vQry38bRowChanged" msprop:Generator_RowEvArgName="vQry38bRowChangeEvent" msprop:Generator_RowClassName="vQry38bRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="PersonId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" minOccurs="0" />
+              <xs:element name="MMashatName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="personbirth" msprop:Generator_ColumnVarNameInTable="columnpersonbirth" msprop:Generator_ColumnPropNameInRow="personbirth" msprop:Generator_ColumnPropNameInTable="personbirthColumn" msprop:Generator_UserColumnName="personbirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="personNID" msprop:Generator_ColumnVarNameInTable="columnpersonNID" msprop:Generator_ColumnPropNameInRow="personNID" msprop:Generator_ColumnPropNameInTable="personNIDColumn" msprop:Generator_UserColumnName="personNID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBDate" msprop:Generator_ColumnPropNameInRow="BDate" msprop:Generator_ColumnPropNameInTable="BDateColumn" msprop:Generator_UserColumnName="BDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="NameOnCard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNameOnCard" msprop:Generator_ColumnPropNameInRow="NameOnCard" msprop:Generator_ColumnPropNameInTable="NameOnCardColumn" msprop:Generator_UserColumnName="NameOnCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry47" msprop:Generator_TableClassName="vQry47DataTable" msprop:Generator_TableVarName="tablevQry47" msprop:Generator_RowChangedName="vQry47RowChanged" msprop:Generator_TablePropName="vQry47" msprop:Generator_RowDeletingName="vQry47RowDeleting" msprop:Generator_RowChangingName="vQry47RowChanging" msprop:Generator_RowEvHandlerName="vQry47RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry47RowDeleted" msprop:Generator_RowClassName="vQry47Row" msprop:Generator_UserTableName="vQry47" msprop:Generator_RowEvArgName="vQry47RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" />
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="visa" msprop:Generator_ColumnVarNameInTable="columnvisa" msprop:Generator_ColumnPropNameInRow="visa" msprop:Generator_ColumnPropNameInTable="visaColumn" msprop:Generator_UserColumnName="visa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="visawarddate" msprop:Generator_ColumnVarNameInTable="columnvisawarddate" msprop:Generator_ColumnPropNameInRow="visawarddate" msprop:Generator_ColumnPropNameInTable="visawarddateColumn" msprop:Generator_UserColumnName="visawarddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hafza" msprop:Generator_ColumnVarNameInTable="columnhafza" msprop:Generator_ColumnPropNameInRow="hafza" msprop:Generator_ColumnPropNameInTable="hafzaColumn" msprop:Generator_UserColumnName="hafza" type="xs:int" minOccurs="0" />
+              <xs:element name="hafzadate" msprop:Generator_ColumnVarNameInTable="columnhafzadate" msprop:Generator_ColumnPropNameInRow="hafzadate" msprop:Generator_ColumnPropNameInTable="hafzadateColumn" msprop:Generator_UserColumnName="hafzadate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry48" msprop:Generator_TableClassName="vQry48DataTable" msprop:Generator_TableVarName="tablevQry48" msprop:Generator_RowChangedName="vQry48RowChanged" msprop:Generator_TablePropName="vQry48" msprop:Generator_RowDeletingName="vQry48RowDeleting" msprop:Generator_RowChangingName="vQry48RowChanging" msprop:Generator_RowEvHandlerName="vQry48RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry48RowDeleted" msprop:Generator_RowClassName="vQry48Row" msprop:Generator_UserTableName="vQry48" msprop:Generator_RowEvArgName="vQry48RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" />
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Num" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry49" msprop:Generator_TableClassName="vQry49DataTable" msprop:Generator_TableVarName="tablevQry49" msprop:Generator_TablePropName="vQry49" msprop:Generator_RowDeletingName="vQry49RowDeleting" msprop:Generator_RowChangingName="vQry49RowChanging" msprop:Generator_RowEvHandlerName="vQry49RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry49RowDeleted" msprop:Generator_UserTableName="vQry49" msprop:Generator_RowChangedName="vQry49RowChanged" msprop:Generator_RowEvArgName="vQry49RowChangeEvent" msprop:Generator_RowClassName="vQry49Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="BirthDate" msprop:Generator_ColumnVarNameInTable="columnBirthDate" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_UserColumnName="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MMashatNId" msprop:Generator_ColumnVarNameInTable="columnMMashatNId" msprop:Generator_ColumnPropNameInRow="MMashatNId" msprop:Generator_ColumnPropNameInTable="MMashatNIdColumn" msprop:Generator_UserColumnName="MMashatNId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBDate" msprop:Generator_ColumnPropNameInRow="BDate" msprop:Generator_ColumnPropNameInTable="BDateColumn" msprop:Generator_UserColumnName="BDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="NameOnCard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNameOnCard" msprop:Generator_ColumnPropNameInRow="NameOnCard" msprop:Generator_ColumnPropNameInTable="NameOnCardColumn" msprop:Generator_UserColumnName="NameOnCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_x0020_State" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID_State" msprop:Generator_ColumnPropNameInRow="NID_State" msprop:Generator_ColumnPropNameInTable="NID_StateColumn" msprop:Generator_UserColumnName="NID State" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="22" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry50" msprop:Generator_TableClassName="vQry50DataTable" msprop:Generator_TableVarName="tablevQry50" msprop:Generator_RowChangedName="vQry50RowChanged" msprop:Generator_TablePropName="vQry50" msprop:Generator_RowDeletingName="vQry50RowDeleting" msprop:Generator_RowChangingName="vQry50RowChanging" msprop:Generator_RowEvHandlerName="vQry50RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry50RowDeleted" msprop:Generator_RowClassName="vQry50Row" msprop:Generator_UserTableName="vQry50" msprop:Generator_RowEvArgName="vQry50RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry51" msprop:Generator_TableClassName="vQry51DataTable" msprop:Generator_TableVarName="tablevQry51" msprop:Generator_RowChangedName="vQry51RowChanged" msprop:Generator_TablePropName="vQry51" msprop:Generator_RowDeletingName="vQry51RowDeleting" msprop:Generator_RowChangingName="vQry51RowChanging" msprop:Generator_RowEvHandlerName="vQry51RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry51RowDeleted" msprop:Generator_RowClassName="vQry51Row" msprop:Generator_UserTableName="vQry51" msprop:Generator_RowEvArgName="vQry51RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
+              <xs:element name="personNID" msprop:Generator_ColumnVarNameInTable="columnpersonNID" msprop:Generator_ColumnPropNameInRow="personNID" msprop:Generator_ColumnPropNameInTable="personNIDColumn" msprop:Generator_UserColumnName="personNID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="Gender" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnPropNameInTable="GenderColumn" msprop:Generator_UserColumnName="Gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WarasaType" msprop:Generator_ColumnVarNameInTable="columnWarasaType" msprop:Generator_ColumnPropNameInRow="WarasaType" msprop:Generator_ColumnPropNameInTable="WarasaTypeColumn" msprop:Generator_UserColumnName="WarasaType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry52" msprop:Generator_TableClassName="vQry52DataTable" msprop:Generator_TableVarName="tablevQry52" msprop:Generator_TablePropName="vQry52" msprop:Generator_RowDeletingName="vQry52RowDeleting" msprop:Generator_RowChangingName="vQry52RowChanging" msprop:Generator_RowEvHandlerName="vQry52RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry52RowDeleted" msprop:Generator_UserTableName="vQry52" msprop:Generator_RowChangedName="vQry52RowChanged" msprop:Generator_RowEvArgName="vQry52RowChangeEvent" msprop:Generator_RowClassName="vQry52Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MotherAge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMotherAge" msprop:Generator_ColumnPropNameInRow="MotherAge" msprop:Generator_ColumnPropNameInTable="MotherAgeColumn" msprop:Generator_UserColumnName="MotherAge" type="xs:int" minOccurs="0" />
+              <xs:element name="SonAge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSonAge" msprop:Generator_ColumnPropNameInRow="SonAge" msprop:Generator_ColumnPropNameInTable="SonAgeColumn" msprop:Generator_UserColumnName="SonAge" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="personNID" msprop:Generator_ColumnVarNameInTable="columnpersonNID" msprop:Generator_ColumnPropNameInRow="personNID" msprop:Generator_ColumnPropNameInTable="personNIDColumn" msprop:Generator_UserColumnName="personNID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeffYears" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDeffYears" msprop:Generator_ColumnPropNameInRow="DeffYears" msprop:Generator_ColumnPropNameInTable="DeffYearsColumn" msprop:Generator_UserColumnName="DeffYears" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2388,6 +3071,14 @@ SET                GenderEnglish = 1</CommandText>
     <xs:unique name="vQry44_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry44" />
       <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="vQry49_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry49" />
+      <xs:field xpath="mstns:MMashatId" />
+    </xs:unique>
+    <xs:unique name="vQry51_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry51" />
+      <xs:field xpath="mstns:PersonId" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

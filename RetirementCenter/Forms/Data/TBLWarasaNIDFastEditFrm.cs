@@ -59,6 +59,12 @@ namespace RetirementCenter.Forms.Data
                     }
                 }
                 tBLWarasaFastEditBindingSource.EndEdit();
+                //check if this id already exported to bank
+                if ((bool)SQLProvider.adpQry.NIDBankExported_W(row.PersonId))
+                {
+                    msgDlg.Show("تم تصدير هذا الوريث الي بيانات البنك");
+                    return;
+                }
                 if (row.IspersonNIDNull() || row.personNID == string.Empty)
                     tblWarasaTableAdapter.UpdateQueryFastEdit(null, Program.UserInfo.UserId, SQLProvider.ServerDateTime(), row.WarasaTypeId, row.SubCommitteIdW, row.PersonId);
                 else

@@ -13,10 +13,10 @@ using System.Data.SqlClient;
 
 namespace RetirementCenter
 {
-    public partial class Qry38aFrm : DevExpress.XtraEditors.XtraForm
+    public partial class Qry38bFrm : DevExpress.XtraEditors.XtraForm
     {
         #region -   Functions   -
-        public Qry38aFrm()
+        public Qry38bFrm()
         {
             InitializeComponent();
         }
@@ -24,8 +24,22 @@ namespace RetirementCenter
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsQueries.vQry38' table. You can move, or remove it, as needed.
-            this.vQry38aTableAdapter.Fill(this.dsQueries.vQry38a);
+            // TODO: This line of code loads data into the 'dsQueries.vQry38b' table. You can move, or remove it, as needed.
+            this.vQry38bTableAdapter.Fill(this.dsQueries.vQry38b);
+
+            gridViewData.BeginDataUpdate();
+            try
+            {
+                gridViewData.ClearSorting();
+                gridViewData.Columns["Syndicate"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                gridViewData.Columns["SubCommitte"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                gridViewData.Columns["MMashatId"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+            }
+            finally
+            {
+                gridViewData.EndDataUpdate();
+            }
+
             
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
@@ -50,10 +64,11 @@ namespace RetirementCenter
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-                SqlCommand cmd = new SqlCommand(@"INSERT INTO BankExportedData (MMashatId, ExportDate, userin) VALUES (@MMashatId, GetDate(), @userin)", con);
+                SqlCommand cmd = new SqlCommand(@"INSERT INTO BankExportedDataWarsa (MMashatId, ExportDate, userin, PersonId) VALUES (@MMashatId, GetDate(), @userin, @PersonId)", con);
                 SqlParameter PramId = new SqlParameter("@MMashatId", SqlDbType.Int);
                 SqlParameter PramUser = new SqlParameter("@userin", SqlDbType.Int);
-                cmd.Parameters.AddRange(new SqlParameter[] { PramId, PramUser });
+                SqlParameter PramPersonId = new SqlParameter("@PersonId", SqlDbType.Int);
+                cmd.Parameters.AddRange(new SqlParameter[] { PramId, PramUser, PramPersonId });
                 SqlTransaction trn = null;
                 try
                 {
@@ -62,8 +77,8 @@ namespace RetirementCenter
                     
                     for (int i = 0; i < gridViewData.DataRowCount; i++)
                     {
-                        RetirementCenter.DataSources.dsQueries.vQry38aRow row = (RetirementCenter.DataSources.dsQueries.vQry38aRow)((DataRowView)gridViewData.GetRow(i)).Row;
-                        PramId.Value = row.MMashatId; PramUser.Value = Program.UserInfo.UserId;
+                        RetirementCenter.DataSources.dsQueries.vQry38bRow row = (RetirementCenter.DataSources.dsQueries.vQry38bRow)((DataRowView)gridViewData.GetRow(i)).Row;
+                        PramId.Value = row.MMashatId; PramUser.Value = Program.UserInfo.UserId; PramPersonId.Value = row.PersonId;
                         cmd.ExecuteNonQuery();
                     }
                     trn.Commit();

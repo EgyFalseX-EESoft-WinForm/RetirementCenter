@@ -209,6 +209,9 @@ namespace RetirementCenter
             LUESubCommitteId.Enabled = false;
 
             int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
+            //check if this id already exported to bank
+            tbMMashatNId.Enabled = !(bool)SQLProvider.adpQry.NIDBankExported_M(MMashatId);
+
             tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
             
