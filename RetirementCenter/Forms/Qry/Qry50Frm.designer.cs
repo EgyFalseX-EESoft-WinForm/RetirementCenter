@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
+            this.vQry50BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.vQry50BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vQry50TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry50TableAdapter();
-            this.colNID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry50BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
@@ -49,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry50BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -76,6 +77,11 @@
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
+            // 
+            // vQry50BindingSource
+            // 
+            this.vQry50BindingSource.DataMember = "vQry50";
+            this.vQry50BindingSource.DataSource = this.dsQueries;
             // 
             // dsQueries
             // 
@@ -158,7 +164,8 @@
             this.gridViewData.Appearance.VertLine.BackColor = System.Drawing.Color.LightGray;
             this.gridViewData.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colNID});
+            this.colNID,
+            this.colType});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -171,6 +178,16 @@
             this.gridViewData.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowFooter = true;
+            // 
+            // colNID
+            // 
+            this.colNID.Caption = "الرقم القومي";
+            this.colNID.FieldName = "NID";
+            this.colNID.Name = "colNID";
+            this.colNID.OptionsColumn.ReadOnly = true;
+            this.colNID.Visible = true;
+            this.colNID.VisibleIndex = 0;
+            this.colNID.Width = 184;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -223,23 +240,22 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // vQry50BindingSource
-            // 
-            this.vQry50BindingSource.DataMember = "vQry50";
-            this.vQry50BindingSource.DataSource = this.dsQueries;
-            // 
             // vQry50TableAdapter
             // 
             this.vQry50TableAdapter.ClearBeforeFill = true;
             // 
-            // colNID
+            // colType
             // 
-            this.colNID.Caption = "الرقم القومي";
-            this.colNID.FieldName = "NID";
-            this.colNID.Name = "colNID";
-            this.colNID.OptionsColumn.ReadOnly = true;
-            this.colNID.Visible = true;
-            this.colNID.VisibleIndex = 0;
+            this.colType.AppearanceCell.Options.UseTextOptions = true;
+            this.colType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colType.AppearanceHeader.Options.UseTextOptions = true;
+            this.colType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colType.Caption = "نوع التكرار";
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 1;
+            this.colType.Width = 160;
             // 
             // Qry50Frm
             // 
@@ -253,6 +269,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry50BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
@@ -261,7 +278,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vQry50BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +295,7 @@
         private System.Windows.Forms.BindingSource vQry50BindingSource;
         private DataSources.dsQueriesTableAdapters.vQry50TableAdapter vQry50TableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colNID;
+        private DevExpress.XtraGrid.Columns.GridColumn colType;
 
     }
 }

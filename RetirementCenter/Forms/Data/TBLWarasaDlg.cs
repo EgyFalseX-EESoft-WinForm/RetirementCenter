@@ -172,7 +172,6 @@ namespace RetirementCenter.Forms.Data
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if (!dxValidationProviderMain.Validate())
                 return;
             if (ceEnableEdafat.Checked)
@@ -185,6 +184,12 @@ namespace RetirementCenter.Forms.Data
             if (_TBLWarasa.Rows[0].RowState == DataRowState.Added)
             {
                 ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).PersonId = (int)SQLProvider.adpQry.TBLWarasaNewId();
+                //Must Type NID
+                if (tbpersonNID.EditValue == null || tbpersonNID.EditValue.ToString() == string.Empty)
+                {
+                    Program.ShowMsg("يجب ادخال الرقم القومي", true, this, true);
+                    return;
+                }
             }
             else
             {

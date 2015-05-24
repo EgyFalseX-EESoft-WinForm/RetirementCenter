@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class Qry52Frm
+    partial class Qry53Frm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,28 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry52BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vQry53BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpersonNID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSonAge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDeffYears = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.vQry52TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry52TableAdapter();
+            this.vQry53TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry53TableAdapter();
+            this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGender = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry52BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry53BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
@@ -67,7 +66,7 @@
             this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlData.DataSource = this.vQry52BindingSource;
+            this.gridControlData.DataSource = this.vQry53BindingSource;
             this.gridControlData.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -81,16 +80,16 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(907, 403);
+            this.gridControlData.Size = new System.Drawing.Size(969, 404);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
             // 
-            // vQry52BindingSource
+            // vQry53BindingSource
             // 
-            this.vQry52BindingSource.DataMember = "vQry52";
-            this.vQry52BindingSource.DataSource = this.dsQueries;
+            this.vQry53BindingSource.DataMember = "vQry53";
+            this.vQry53BindingSource.DataSource = this.dsQueries;
             // 
             // dsQueries
             // 
@@ -176,14 +175,13 @@
             this.colSyndicate,
             this.colSubCommitte,
             this.colPersonId,
-            this.colMMashatId,
             this.colpersonName,
             this.colsarfnumber,
             this.colpersonNID,
             this.colAge,
-            this.colSonAge,
-            this.colDeffYears,
-            this.colMMashatName});
+            this.colMMashatName,
+            this.colWarasaType,
+            this.colGender});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -233,18 +231,6 @@
             this.colPersonId.Visible = true;
             this.colPersonId.VisibleIndex = 2;
             // 
-            // colMMashatId
-            // 
-            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "كود الاب";
-            this.colMMashatId.FieldName = "MMashatId";
-            this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 3;
-            // 
             // colpersonName
             // 
             this.colpersonName.AppearanceCell.Options.UseTextOptions = true;
@@ -255,7 +241,7 @@
             this.colpersonName.FieldName = "personName";
             this.colpersonName.Name = "colpersonName";
             this.colpersonName.Visible = true;
-            this.colpersonName.VisibleIndex = 4;
+            this.colpersonName.VisibleIndex = 3;
             // 
             // colsarfnumber
             // 
@@ -267,7 +253,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 6;
+            this.colsarfnumber.VisibleIndex = 5;
             // 
             // colpersonNID
             // 
@@ -279,7 +265,7 @@
             this.colpersonNID.FieldName = "personNID";
             this.colpersonNID.Name = "colpersonNID";
             this.colpersonNID.Visible = true;
-            this.colpersonNID.VisibleIndex = 7;
+            this.colpersonNID.VisibleIndex = 6;
             // 
             // colAge
             // 
@@ -287,37 +273,12 @@
             this.colAge.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colAge.AppearanceHeader.Options.UseTextOptions = true;
             this.colAge.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colAge.Caption = "عمر الام";
-            this.colAge.FieldName = "MotherAge";
+            this.colAge.Caption = "العمر";
+            this.colAge.FieldName = "Age";
             this.colAge.Name = "colAge";
             this.colAge.OptionsColumn.ReadOnly = true;
             this.colAge.Visible = true;
-            this.colAge.VisibleIndex = 8;
-            // 
-            // colSonAge
-            // 
-            this.colSonAge.AppearanceCell.Options.UseTextOptions = true;
-            this.colSonAge.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSonAge.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSonAge.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSonAge.Caption = "عمر الابن\\الابنة";
-            this.colSonAge.FieldName = "SonAge";
-            this.colSonAge.Name = "colSonAge";
-            this.colSonAge.Visible = true;
-            this.colSonAge.VisibleIndex = 9;
-            this.colSonAge.Width = 87;
-            // 
-            // colDeffYears
-            // 
-            this.colDeffYears.AppearanceCell.Options.UseTextOptions = true;
-            this.colDeffYears.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDeffYears.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDeffYears.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDeffYears.Caption = "فرق السنين";
-            this.colDeffYears.FieldName = "DeffYears";
-            this.colDeffYears.Name = "colDeffYears";
-            this.colDeffYears.Visible = true;
-            this.colDeffYears.VisibleIndex = 10;
+            this.colAge.VisibleIndex = 7;
             // 
             // colMMashatName
             // 
@@ -329,7 +290,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 5;
+            this.colMMashatName.VisibleIndex = 4;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -369,36 +330,60 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(907, 47);
+            this.panelControl1.Size = new System.Drawing.Size(969, 47);
             this.panelControl1.TabIndex = 3;
             // 
             // btnPrintExport
             // 
             this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(761, 12);
+            this.btnPrintExport.Location = new System.Drawing.Point(823, 12);
             this.btnPrintExport.Name = "btnPrintExport";
             this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
             this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // vQry52TableAdapter
+            // vQry53TableAdapter
             // 
-            this.vQry52TableAdapter.ClearBeforeFill = true;
+            this.vQry53TableAdapter.ClearBeforeFill = true;
             // 
-            // Qry52Frm
+            // colWarasaType
+            // 
+            this.colWarasaType.AppearanceCell.Options.UseTextOptions = true;
+            this.colWarasaType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colWarasaType.AppearanceHeader.Options.UseTextOptions = true;
+            this.colWarasaType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colWarasaType.Caption = "الفئة";
+            this.colWarasaType.FieldName = "WarasaType";
+            this.colWarasaType.Name = "colWarasaType";
+            this.colWarasaType.Visible = true;
+            this.colWarasaType.VisibleIndex = 8;
+            // 
+            // colGender
+            // 
+            this.colGender.AppearanceCell.Options.UseTextOptions = true;
+            this.colGender.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGender.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGender.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGender.Caption = "النوع";
+            this.colGender.FieldName = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.Visible = true;
+            this.colGender.VisibleIndex = 9;
+            // 
+            // Qry53Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 461);
+            this.ClientSize = new System.Drawing.Size(969, 462);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
-            this.Name = "Qry52Frm";
-            this.Text = "الفرق العمر بين ابناء الورثة و الام";
+            this.Name = "Qry53Frm";
+            this.Text = "اختبار تصدير البنك للورثة";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry52BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry53BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
@@ -429,11 +414,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpersonNID;
         private DevExpress.XtraGrid.Columns.GridColumn colAge;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
-        private System.Windows.Forms.BindingSource vQry52BindingSource;
-        private DataSources.dsQueriesTableAdapters.vQry52TableAdapter vQry52TableAdapter;
-        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
-        private DevExpress.XtraGrid.Columns.GridColumn colSonAge;
-        private DevExpress.XtraGrid.Columns.GridColumn colDeffYears;
+        private System.Windows.Forms.BindingSource vQry53BindingSource;
+        private DataSources.dsQueriesTableAdapters.vQry53TableAdapter vQry53TableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colWarasaType;
+        private DevExpress.XtraGrid.Columns.GridColumn colGender;
 
     }
 }

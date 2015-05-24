@@ -643,7 +643,7 @@
             this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry38bFrm";
-            this.Text = "بيانات اعضاء البنك- شرط سن 2";
+            this.Text = "بيانات ورثة البنك- شرط ارملة 25 (المسئول1)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();

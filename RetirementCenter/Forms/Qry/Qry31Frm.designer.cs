@@ -44,6 +44,8 @@
             this.fieldSyndicate1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSubCommitte1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldMashHala = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBankExport = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldNID = new DevExpress.XtraPivotGrid.PivotGridField();
             this.vQry31TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry31TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -54,8 +56,7 @@
             // 
             // calcMashHalaPer
             // 
-            this.calcMashHalaPer.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.calcMashHalaPer.AreaIndex = 1;
+            this.calcMashHalaPer.AreaIndex = 4;
             this.calcMashHalaPer.Caption = "نسبة";
             this.calcMashHalaPer.CellFormat.FormatString = "p2";
             this.calcMashHalaPer.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -105,7 +106,9 @@
             this.fieldSyndicate1,
             this.fieldSubCommitte1,
             this.fieldMashHala,
-            this.calcMashHalaPer});
+            this.calcMashHalaPer,
+            this.fieldBankExport,
+            this.fieldNID});
             pivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Green;
             pivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = true;
             pivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
@@ -192,6 +195,7 @@
             this.fieldSyndicate1.Caption = "فرعية";
             this.fieldSyndicate1.FieldName = "Syndicate";
             this.fieldSyndicate1.Name = "fieldSyndicate1";
+            this.fieldSyndicate1.Width = 154;
             // 
             // fieldSubCommitte1
             // 
@@ -215,6 +219,22 @@
             this.fieldMashHala.Caption = "الحالة";
             this.fieldMashHala.FieldName = "MashHala";
             this.fieldMashHala.Name = "fieldMashHala";
+            // 
+            // fieldBankExport
+            // 
+            this.fieldBankExport.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldBankExport.AreaIndex = 1;
+            this.fieldBankExport.Caption = "عدد المصدر للبنك";
+            this.fieldBankExport.FieldName = "BankExport";
+            this.fieldBankExport.Name = "fieldBankExport";
+            // 
+            // fieldNID
+            // 
+            this.fieldNID.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldNID.AreaIndex = 2;
+            this.fieldNID.Caption = "عدد الارقام القومية";
+            this.fieldNID.FieldName = "NID";
+            this.fieldNID.Name = "fieldNID";
             // 
             // vQry31TableAdapter
             // 
@@ -257,6 +277,8 @@
         private DataSources.dsQueriesTableAdapters.vQry31TableAdapter vQry31TableAdapter;
         private DevExpress.XtraPivotGrid.PivotGridField fieldMashHala;
         private DevExpress.XtraPivotGrid.PivotGridField calcMashHalaPer;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBankExport;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldNID;
 
     }
 }

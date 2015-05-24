@@ -42,13 +42,13 @@
             this.colAge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGender = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry51TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry51TableAdapter();
-            this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry51BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -80,7 +80,7 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 404);
+            this.gridControlData.Size = new System.Drawing.Size(969, 404);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -305,6 +305,18 @@
             this.colMMashatName.Visible = true;
             this.colMMashatName.VisibleIndex = 4;
             // 
+            // colWarasaType
+            // 
+            this.colWarasaType.AppearanceCell.Options.UseTextOptions = true;
+            this.colWarasaType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colWarasaType.AppearanceHeader.Options.UseTextOptions = true;
+            this.colWarasaType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colWarasaType.Caption = "الفئة";
+            this.colWarasaType.FieldName = "WarasaType";
+            this.colWarasaType.Name = "colWarasaType";
+            this.colWarasaType.Visible = true;
+            this.colWarasaType.VisibleIndex = 9;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -343,13 +355,13 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 47);
+            this.panelControl1.Size = new System.Drawing.Size(969, 47);
             this.panelControl1.TabIndex = 3;
             // 
             // btnPrintExport
             // 
             this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
+            this.btnPrintExport.Location = new System.Drawing.Point(823, 12);
             this.btnPrintExport.Name = "btnPrintExport";
             this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
             this.btnPrintExport.TabIndex = 0;
@@ -360,23 +372,11 @@
             // 
             this.vQry51TableAdapter.ClearBeforeFill = true;
             // 
-            // colWarasaType
-            // 
-            this.colWarasaType.AppearanceCell.Options.UseTextOptions = true;
-            this.colWarasaType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colWarasaType.AppearanceHeader.Options.UseTextOptions = true;
-            this.colWarasaType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colWarasaType.Caption = "الفئة";
-            this.colWarasaType.FieldName = "WarasaType";
-            this.colWarasaType.Name = "colWarasaType";
-            this.colWarasaType.Visible = true;
-            this.colWarasaType.VisibleIndex = 9;
-            // 
             // Qry51Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 462);
+            this.ClientSize = new System.Drawing.Size(969, 462);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry51Frm";

@@ -770,10 +770,26 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry32TableAdapter" GeneratorDataComponentClassName="vQry32TableAdapter" Name="vQry32" UserDataComponentName="vQry32TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.vQry32" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT CountPersonId, WarasaType, yasref, responsiblesarf, Syndicate, SubCommitte FROM dbo.vQry32</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT        TBLWarasa.PersonId
+, CASE WHEN personNID IS NOT NULL AND personNID &lt;&gt; '' THEN 1 ELSE 0 END AS NID
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId) THEN 1 ELSE 0 END AS BankExport
+, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+FROM            CDSyndicate RIGHT OUTER JOIN
+                         TBLWarasa ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId LEFT OUTER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
+                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
+WHERE        (TBLWarasa.yasref = 1)
+GROUP BY TBLWarasa.PersonId, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, personNID
+)
+SELECT COUNT(PersonId) AS CountPersonId, SUM(NID) AS NID, SUM(BankExport) AS BankExport
+, WarasaType, responsiblesarf, Syndicate, SubCommitte
+FROM CTE1
+GROUP BY WarasaType, responsiblesarf, Syndicate, SubCommitte</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -782,19 +798,36 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
             <Mappings>
               <Mapping SourceColumn="CountPersonId" DataSetColumn="CountPersonId" />
               <Mapping SourceColumn="WarasaType" DataSetColumn="WarasaType" />
-              <Mapping SourceColumn="yasref" DataSetColumn="yasref" />
               <Mapping SourceColumn="responsiblesarf" DataSetColumn="responsiblesarf" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="BankExport" DataSetColumn="BankExport" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry31TableAdapter" GeneratorDataComponentClassName="vQry31TableAdapter" Name="vQry31" UserDataComponentName="vQry31TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.vQry31" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT CountMMashatId, yasref, SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala FROM dbo.vQry31</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT TBLMashat.MMashatId 
+, CASE WHEN TBLMashat.MMashatNId IS NOT NULL AND TBLMashat.MMashatNId &lt;&gt; '' THEN 1 ELSE 0 END AS NID
+, CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId) THEN 1 ELSE 0 END AS BankExport
+, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala
+FROM            TBLMashat LEFT OUTER JOIN
+CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN
+CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
+CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
+WHERE        (TBLMashat.MashHalaId = 1) AND (TBLMashat.yasref = 1)
+GROUP BY TBLMashat.MMashatId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId
+)
+SELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(BankExport) AS BankExport
+, SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala
+FROM CTE1 
+GROUP BY SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -802,12 +835,13 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="CountMMashatId" DataSetColumn="CountMMashatId" />
-              <Mapping SourceColumn="yasref" DataSetColumn="yasref" />
               <Mapping SourceColumn="SarfExpetion" DataSetColumn="SarfExpetion" />
               <Mapping SourceColumn="mcompletesarf" DataSetColumn="mcompletesarf" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
               <Mapping SourceColumn="MashHala" DataSetColumn="MashHala" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="BankExport" DataSetColumn="BankExport" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1217,6 +1251,7 @@ WHERE [responsiblesarf] = 1
 GROUP BY [MMashatId]
 HAVING COUNT([PersonId]) = 1
 ) T ON CTE2.MMashatId = T.MMashatId
+WHERE NOT EXISTS (SELECT MMashatId FROM [dbo].[TBLWarasa] WHERE MMashatId = CTE2.MMashatId AND WarasaTypeId = 1 AND (Year(GetDate()) - CAST(CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING([personNID], 2, 2) AS INT)) &lt; 25)-- Armala Must Be Above 25
 )
 SELECT CTE3.MMashatId, CTE3.[PersonId], CTE3.MMashatName, CTE3.sarfnumber, [personbirth], [personNID], personName
 ,CDSyndicate.Syndicate, CDSubCommitte.SubCommitte,
@@ -1378,16 +1413,22 @@ FROM CTE1
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>WITH CTE1 AS
 (
-SELECT [MMashatNId] AS NID, 'M' AS TBL FROM [dbo].[TBLMashat] WHERE [MMashatNId] IS NOT NULL AND [MMashatNId] &lt;&gt; '' 
-AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE [Nid] = [TBLMashat].[MMashatNId])
+SELECT MMashatNId AS NID, 'متكرر اعضاء' AS [Type] FROM TBLMashat WHERE MMashatNId IS NOT NULL AND MMashatNId &lt;&gt; '' GROUP BY MMashatNId HAVING COUNT(MMashatId) &gt; 1
 UNION
-SELECT personNID AS NID, 'W' AS TBL FROM [dbo].[TBLWarasa] WHERE personNID IS NOT NULL AND personNID &lt;&gt; '' 
-AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE [Nid] = [TBLWarasa].personNID)
+SELECT personNID AS NID, 'متكرر ورثة' AS [Type] FROM TBLWarasa WHERE personNID IS NOT NULL AND personNID &lt;&gt; '' GROUP BY personNID HAVING COUNT(PersonId) &gt; 1
 )
-SELECT NID
-FROM CTE1
-GROUP BY NID
-HAVING COUNT(TBL) &gt; 1</CommandText>
+SELECT * FROM CTE1
+UNION
+SELECT NID, 'متكرر اعضاء ورثة' FROM
+(
+SELECT MMashatNId AS NID, 'M' AS [Type] FROM TBLMashat WHERE MMashatNId IS NOT NULL AND MMashatNId &lt;&gt; ''
+AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE Nid = TBLMashat.MMashatNId)
+GROUP BY MMashatNId
+UNION
+SELECT personNID  AS NID, 'W' AS [Type] FROM TBLWarasa WHERE personNID IS NOT NULL AND personNID &lt;&gt; '' 
+AND NOT EXISTS(SELECT Nid FROM TblChekNid WHERE Nid = TBLWarasa.personNID)
+GROUP BY personNID
+) T GROUP BY NID HAVING COUNT([Type]) &gt; 1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1395,6 +1436,7 @@ HAVING COUNT(TBL) &gt; 1</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1472,6 +1514,79 @@ INNER JOIN dbo.TBLMashat ON CTE2.MMashatId = TBLMashat.MMashatId
               <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
               <Mapping SourceColumn="personNID" DataSetColumn="personNID" />
               <Mapping SourceColumn="DeffYears" DataSetColumn="DeffYears" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry53TableAdapter" GeneratorDataComponentClassName="vQry53TableAdapter" Name="vQry53" UserDataComponentName="vQry53TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT TBLWarasa.MMashatId, COUNT(TBLWarasa.PersonId) AS AllCount
+FROM TBLWarasa INNER JOIN
+TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+WHERE        (TBLWarasa.yasref = 1) AND (TBLMashat.yasref = 1)
+GROUP BY TBLWarasa.MMashatId
+), CTE2 AS
+(
+SELECT CTE1.MMashatId
+FROM CTE1 INNER JOIN 
+(SELECT        MMashatId, COUNT(PersonId) AS NIDCount
+FROM            TBLWarasa
+WHERE        (Len(personNID) = 14) AND [yasref] = 1
+GROUP BY MMashatId) T ON CTE1.MMashatId = T.MMashatId
+WHERE AllCount = NIDCount
+), CTE3 AS
+(
+SELECT CTE2.MMashatId , TBLWarasa.PersonId
+, 'ورثة-' + (SELECT MMashatName FROM [dbo].TBLMashat WHERE MMashatId = CTE2.MMashatId) AS MMashatName
+, (SELECT sarfnumber FROM [dbo].TBLMashat WHERE MMashatId = CTE2.MMashatId) AS sarfnumber
+
+FROM CTE2 INNER JOIN (SELECT [MMashatId], COUNT([PersonId]) AS NUM FROM [dbo].[TBLWarasa] WHERE [responsiblesarf] = 1 GROUP BY [MMashatId] HAVING COUNT([PersonId]) = 1 ) T ON CTE2.MMashatId = T.MMashatId
+INNER JOIN [TBLWarasa] ON CTE2.MMashatId = TBLWarasa.MMashatId
+WHERE TBLWarasa.yasref = 1 AND Len(TBLWarasa.personNID) = 14
+)
+SELECT CTE3.MMashatId, CTE3.[PersonId], CTE3.MMashatName, CTE3.sarfnumber, [personbirth], [personNID], personName
+,CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDWarasaType.WarasaType, 
+CASE WHEN LEFT(RIGHT(TBLWarasa.personNID, 2), 1) % 2 = 1 THEN 'ذكر' ELSE 'انثي' END AS Gender,
+CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END 
++ SUBSTRING([personNID], 2, 2) 
++ '-' 
++ SUBSTRING([personNID], 4, 2) 
++ '-' 
++ SUBSTRING([personNID], 6, 2) AS BDate
+, Year(GetDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING([personNID], 2, 2) AS INT) AS Age
+, CASE WHEN LEN(CTE3.MMashatName) &lt;= 24 THEN CTE3.MMashatName ELSE SUBSTRING(CTE3.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(CTE3.MMashatName, 0, 24)))) END AS NameOnCard
+FROM CTE3 INNER JOIN [dbo].[TBLWarasa] ON CTE3.[PersonId] = [TBLWarasa].PersonId
+INNER JOIN CDSyndicate ON [TBLWarasa].SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDSubCommitte ON [TBLWarasa].SubCommitteId = CDSubCommitte.SubCommitteId
+INNER JOIN CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
+WHERE ((Year(GetDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING([personNID], 2, 2) AS INT)) BETWEEN 1 AND 105)
+AND NOT EXISTS(SELECT * FROM [dbo].BankExportedDataWarsa WHERE PersonId = CTE3.[PersonId])
+AND NOT EXISTS(SELECT PersonId FROM TBLWarasa WHERE MMashatId = CTE3.MMashatId AND (((WarasaTypeId = 1 OR WarasaTypeId = 3) AND (LEFT(RIGHT(personNID, 2), 1) % 2 = 1)) OR ((WarasaTypeId = 2) AND (LEFT(RIGHT(personNID, 2), 1) % 2 &lt;&gt; 1))))
+ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="personbirth" DataSetColumn="personbirth" />
+              <Mapping SourceColumn="personNID" DataSetColumn="personNID" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="BDate" DataSetColumn="BDate" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="NameOnCard" DataSetColumn="NameOnCard" />
+              <Mapping SourceColumn="WarasaType" DataSetColumn="WarasaType" />
+              <Mapping SourceColumn="Gender" DataSetColumn="Gender" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2234,7 +2349,6 @@ SET                GenderEnglish = 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="yasref" msprop:Generator_ColumnVarNameInTable="columnyasref" msprop:Generator_ColumnPropNameInRow="yasref" msprop:Generator_ColumnPropNameInTable="yasrefColumn" msprop:Generator_UserColumnName="yasref" type="xs:boolean" />
               <xs:element name="responsiblesarf" msprop:Generator_ColumnVarNameInTable="columnresponsiblesarf" msprop:Generator_ColumnPropNameInRow="responsiblesarf" msprop:Generator_ColumnPropNameInTable="responsiblesarfColumn" msprop:Generator_UserColumnName="responsiblesarf" type="xs:boolean" />
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
                 <xs:simpleType>
@@ -2250,6 +2364,8 @@ SET                GenderEnglish = 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:int" minOccurs="0" />
+              <xs:element name="BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport" msprop:Generator_ColumnPropNameInRow="BankExport" msprop:Generator_ColumnPropNameInTable="BankExportColumn" msprop:Generator_UserColumnName="BankExport" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2257,7 +2373,6 @@ SET                GenderEnglish = 1</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CountMMashatId" msprop:Generator_ColumnVarNameInTable="columnCountMMashatId" msprop:Generator_ColumnPropNameInRow="CountMMashatId" msprop:Generator_ColumnPropNameInTable="CountMMashatIdColumn" msprop:Generator_UserColumnName="CountMMashatId" type="xs:int" minOccurs="0" />
-              <xs:element name="yasref" msprop:Generator_ColumnVarNameInTable="columnyasref" msprop:Generator_ColumnPropNameInRow="yasref" msprop:Generator_ColumnPropNameInTable="yasrefColumn" msprop:Generator_UserColumnName="yasref" type="xs:boolean" />
               <xs:element name="SarfExpetion" msprop:Generator_ColumnVarNameInTable="columnSarfExpetion" msprop:Generator_ColumnPropNameInRow="SarfExpetion" msprop:Generator_ColumnPropNameInTable="SarfExpetionColumn" msprop:Generator_UserColumnName="SarfExpetion" type="xs:boolean" minOccurs="0" />
               <xs:element name="mcompletesarf" msprop:Generator_ColumnVarNameInTable="columnmcompletesarf" msprop:Generator_ColumnPropNameInRow="mcompletesarf" msprop:Generator_ColumnPropNameInTable="mcompletesarfColumn" msprop:Generator_UserColumnName="mcompletesarf" type="xs:boolean" />
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
@@ -2281,6 +2396,8 @@ SET                GenderEnglish = 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:int" minOccurs="0" />
+              <xs:element name="BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport" msprop:Generator_ColumnPropNameInRow="BankExport" msprop:Generator_ColumnPropNameInTable="BankExportColumn" msprop:Generator_UserColumnName="BankExport" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2863,13 +2980,8 @@ SET                GenderEnglish = 1</CommandText>
         <xs:element name="vQry50" msprop:Generator_TableClassName="vQry50DataTable" msprop:Generator_TableVarName="tablevQry50" msprop:Generator_RowChangedName="vQry50RowChanged" msprop:Generator_TablePropName="vQry50" msprop:Generator_RowDeletingName="vQry50RowDeleting" msprop:Generator_RowChangingName="vQry50RowChanging" msprop:Generator_RowEvHandlerName="vQry50RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry50RowDeleted" msprop:Generator_RowClassName="vQry50Row" msprop:Generator_UserTableName="vQry50" msprop:Generator_RowEvArgName="vQry50RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2975,6 +3087,80 @@ SET                GenderEnglish = 1</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DeffYears" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDeffYears" msprop:Generator_ColumnPropNameInRow="DeffYears" msprop:Generator_ColumnPropNameInTable="DeffYearsColumn" msprop:Generator_UserColumnName="DeffYears" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry53" msprop:Generator_TableClassName="vQry53DataTable" msprop:Generator_TableVarName="tablevQry53" msprop:Generator_RowChangedName="vQry53RowChanged" msprop:Generator_TablePropName="vQry53" msprop:Generator_RowDeletingName="vQry53RowDeleting" msprop:Generator_RowChangingName="vQry53RowChanging" msprop:Generator_RowEvHandlerName="vQry53RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry53RowDeleted" msprop:Generator_RowClassName="vQry53Row" msprop:Generator_UserTableName="vQry53" msprop:Generator_RowEvArgName="vQry53RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="MMashatName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="personbirth" msprop:Generator_ColumnVarNameInTable="columnpersonbirth" msprop:Generator_ColumnPropNameInRow="personbirth" msprop:Generator_ColumnPropNameInTable="personbirthColumn" msprop:Generator_UserColumnName="personbirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="personNID" msprop:Generator_ColumnVarNameInTable="columnpersonNID" msprop:Generator_ColumnPropNameInRow="personNID" msprop:Generator_ColumnPropNameInTable="personNIDColumn" msprop:Generator_UserColumnName="personNID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBDate" msprop:Generator_ColumnPropNameInRow="BDate" msprop:Generator_ColumnPropNameInTable="BDateColumn" msprop:Generator_UserColumnName="BDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="NameOnCard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNameOnCard" msprop:Generator_ColumnPropNameInRow="NameOnCard" msprop:Generator_ColumnPropNameInTable="NameOnCardColumn" msprop:Generator_UserColumnName="NameOnCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WarasaType" msprop:Generator_ColumnVarNameInTable="columnWarasaType" msprop:Generator_ColumnPropNameInRow="WarasaType" msprop:Generator_ColumnPropNameInTable="WarasaTypeColumn" msprop:Generator_UserColumnName="WarasaType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gender" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnPropNameInTable="GenderColumn" msprop:Generator_UserColumnName="Gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
