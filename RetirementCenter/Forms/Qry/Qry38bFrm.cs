@@ -20,10 +20,36 @@ namespace RetirementCenter
         {
             InitializeComponent();
         }
+        private bool PrepareNewId()
+        {
+            bool output = false;
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO AwarasaNewId
+            SELECT (SELECT ISNULL(MAX(newid) + 1, 60000000) FROM AwarasaNewId) + ROW_NUMBER() OVER(ORDER BY PersonId), PersonId
+            FROM TBLWarasa WHERE yasref = 1 AND responsiblesarf = 1
+            AND NOT EXISTS(SELECT personid FROM [dbo].[AwarasaNewId] WHERE personid = TBLWarasa.PersonId)", con);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                output = true;
+            }
+            catch (Exception ex)
+            {
+                msgDlg.Show(ex.Message);
+            }
+            con.Dispose(); con = null; cmd.Dispose(); cmd = null;
+
+            return output;
+        }
         #endregion
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
+            if (!PrepareNewId())
+                return;
+
             // TODO: This line of code loads data into the 'dsQueries.vQry38b' table. You can move, or remove it, as needed.
             this.vQry38bTableAdapter.Fill(this.dsQueries.vQry38b);
 
@@ -33,7 +59,7 @@ namespace RetirementCenter
                 gridViewData.ClearSorting();
                 gridViewData.Columns["Syndicate"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
                 gridViewData.Columns["SubCommitte"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
-                gridViewData.Columns["MMashatId"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+                gridViewData.Columns["newid"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             }
             finally
             {

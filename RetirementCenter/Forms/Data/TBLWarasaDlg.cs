@@ -101,6 +101,11 @@ namespace RetirementCenter.Forms.Data
                     tabSarfExpetion.PageVisible = false;
             }
 
+            if (TBLWarasa[0].yasref == false && (TBLWarasa[0].IspersonNIDNull() || TBLWarasa[0].personNID.ToString() == string.Empty))
+            {
+                ceyasref.Enabled = false;
+            }
+
         }
         private void ReloadRemark()
         {
@@ -180,6 +185,11 @@ namespace RetirementCenter.Forms.Data
                     return;
             }
             _TBLWarasa[0].EndEdit();
+            if (!_TBLWarasa[0].IspersonNIDNull() && _TBLWarasa[0].personNID.ToString() != string.Empty && _TBLWarasa[0].personNID.Length != 14)
+            {
+                msgDlg.Show("الرقم القومي يجب ان يكون 14 رقم");
+                return;
+            }
             
             if (_TBLWarasa.Rows[0].RowState == DataRowState.Added)
             {

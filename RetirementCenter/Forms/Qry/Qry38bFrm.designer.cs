@@ -260,7 +260,7 @@
             this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatId.Caption = "Customer ID";
-            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.FieldName = "newid";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 0;
@@ -521,7 +521,7 @@
             // gridColumn21
             // 
             this.gridColumn21.Caption = "Employee ID";
-            this.gridColumn21.FieldName = "MMashatId";
+            this.gridColumn21.FieldName = "newid";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 25;

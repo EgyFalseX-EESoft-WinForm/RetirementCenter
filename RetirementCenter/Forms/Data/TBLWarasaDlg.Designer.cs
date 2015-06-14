@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -79,6 +79,15 @@
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabMain = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPrivatrSarf = new DevExpress.XtraTab.XtraTabPage();
+            this.cewcompletesarf = new DevExpress.XtraEditors.CheckEdit();
+            this.pnlPrivateSarf = new DevExpress.XtraEditors.PanelControl();
+            this.tbwelrasm = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.tbwmony = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.tbwestktaat = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tabExtra = new DevExpress.XtraTab.XtraTabPage();
             this.ceEnableEdafat = new DevExpress.XtraEditors.CheckEdit();
             this.pnlEdafat = new DevExpress.XtraEditors.PanelControl();
@@ -92,23 +101,10 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.tabRemark = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControlRemarks = new DevExpress.XtraGrid.GridControl();
-            this.tBLWarasaremarksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
-            this.gridViewRemarks = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colmewmark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditeRemarkuserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tabResarf = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlResarf = new DevExpress.XtraGrid.GridControl();
             this.tBLReSarfWarasaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewResarf = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditDofatSarfId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -153,19 +149,23 @@
             this.repositoryItemButtonEditSarfExpetionDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.tabRemark = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlRemarks = new DevExpress.XtraGrid.GridControl();
+            this.tBLWarasaremarksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridViewRemarks = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmewmark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditeRemarkuserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
             this.dxValidationProviderEdafat = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tBLWarasaremarksTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLWarasaremarksTableAdapter();
             this.tBLReSarfWarasaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfWarasaTableAdapter();
             this.tBLSarfExpetionTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLSarfExpetionTableAdapter();
-            this.tabPrivatrSarf = new DevExpress.XtraTab.XtraTabPage();
-            this.cewcompletesarf = new DevExpress.XtraEditors.CheckEdit();
-            this.pnlPrivateSarf = new DevExpress.XtraEditors.PanelControl();
-            this.tbwelrasm = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.tbwmony = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.tbwestktaat = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceyasref.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbpersonAddres.Properties)).BeginInit();
@@ -194,6 +194,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
+            this.tabPrivatrSarf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cewcompletesarf.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlPrivateSarf)).BeginInit();
+            this.pnlPrivateSarf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwelrasm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwmony.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwestktaat.Properties)).BeginInit();
             this.tabExtra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceEnableEdafat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlEdafat)).BeginInit();
@@ -205,20 +212,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.luesarfTypeId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDMashHala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
-            this.tabRemark.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlRemarks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLWarasaremarksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewRemarks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
             this.tabResarf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlResarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLReSarfWarasaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewResarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDofatSarfId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
@@ -248,14 +245,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
+            this.tabRemark.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlRemarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLWarasaremarksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRemarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
-            this.tabPrivatrSarf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cewcompletesarf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlPrivateSarf)).BeginInit();
-            this.pnlPrivateSarf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwelrasm.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwmony.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwestktaat.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -388,6 +388,9 @@
             this.tbpersonNID.Name = "tbpersonNID";
             this.tbpersonNID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbpersonNID.Properties.Appearance.Options.UseFont = true;
+            this.tbpersonNID.Properties.Mask.EditMask = "[0-9]+";
+            this.tbpersonNID.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tbpersonNID.Properties.MaxLength = 14;
             this.tbpersonNID.Size = new System.Drawing.Size(250, 22);
             this.tbpersonNID.TabIndex = 2;
             // 
@@ -408,10 +411,10 @@
             this.lueWarasaTypeId.Properties.View = this.gridLookUpEdit1View;
             this.lueWarasaTypeId.Size = new System.Drawing.Size(250, 22);
             this.lueWarasaTypeId.TabIndex = 1;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "يجب ادخال الفئة";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.lueWarasaTypeId, conditionValidationRule7);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "يجب ادخال الفئة";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.lueWarasaTypeId, conditionValidationRule1);
             // 
             // LSMSCDWarasaType
             // 
@@ -483,10 +486,10 @@
             this.tbpersonName.Properties.Appearance.Options.UseFont = true;
             this.tbpersonName.Size = new System.Drawing.Size(250, 22);
             this.tbpersonName.TabIndex = 0;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "يجب ادخال الاسم";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbpersonName, conditionValidationRule8);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "يجب ادخال الاسم";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbpersonName, conditionValidationRule2);
             // 
             // labelControl6
             // 
@@ -531,10 +534,10 @@
             this.LUESyndicateId.Properties.View = this.gridView1;
             this.LUESyndicateId.Size = new System.Drawing.Size(250, 22);
             this.LUESyndicateId.TabIndex = 7;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "يجب ادخال فرعية";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule9);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "يجب ادخال فرعية";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule3);
             this.LUESyndicateId.EditValueChanged += new System.EventHandler(this.LUESyndicateId_EditValueChanged);
             // 
             // LSMSCDSyndicate
@@ -579,10 +582,10 @@
             this.LUESubCommitteId.Properties.View = this.gridView2;
             this.LUESubCommitteId.Size = new System.Drawing.Size(250, 22);
             this.LUESubCommitteId.TabIndex = 8;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "يجب ادخال لجنة";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESubCommitteId, conditionValidationRule1);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "يجب ادخال لجنة";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESubCommitteId, conditionValidationRule4);
             // 
             // LSMSCDSubCommitte
             // 
@@ -732,6 +735,94 @@
             this.tabMain.Size = new System.Drawing.Size(582, 341);
             this.tabMain.Text = "بيانات أساسية";
             // 
+            // tabPrivatrSarf
+            // 
+            this.tabPrivatrSarf.Controls.Add(this.cewcompletesarf);
+            this.tabPrivatrSarf.Controls.Add(this.pnlPrivateSarf);
+            this.tabPrivatrSarf.Image = global::RetirementCenter.Properties.Resources.Edit;
+            this.tabPrivatrSarf.Name = "tabPrivatrSarf";
+            this.tabPrivatrSarf.Size = new System.Drawing.Size(582, 341);
+            this.tabPrivatrSarf.Text = "صرف خاص";
+            // 
+            // cewcompletesarf
+            // 
+            this.cewcompletesarf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cewcompletesarf.Location = new System.Drawing.Point(379, 95);
+            this.cewcompletesarf.Name = "cewcompletesarf";
+            this.cewcompletesarf.Properties.Caption = "تفعيل صرف كامل";
+            this.cewcompletesarf.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.cewcompletesarf.Size = new System.Drawing.Size(108, 19);
+            this.cewcompletesarf.TabIndex = 2;
+            this.cewcompletesarf.CheckedChanged += new System.EventHandler(this.cewcompletesarf_CheckedChanged);
+            // 
+            // pnlPrivateSarf
+            // 
+            this.pnlPrivateSarf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlPrivateSarf.Controls.Add(this.tbwelrasm);
+            this.pnlPrivateSarf.Controls.Add(this.labelControl19);
+            this.pnlPrivateSarf.Controls.Add(this.tbwmony);
+            this.pnlPrivateSarf.Controls.Add(this.labelControl20);
+            this.pnlPrivateSarf.Controls.Add(this.tbwestktaat);
+            this.pnlPrivateSarf.Controls.Add(this.labelControl18);
+            this.pnlPrivateSarf.Location = new System.Drawing.Point(96, 120);
+            this.pnlPrivateSarf.Name = "pnlPrivateSarf";
+            this.pnlPrivateSarf.Size = new System.Drawing.Size(391, 93);
+            this.pnlPrivateSarf.TabIndex = 3;
+            // 
+            // tbwelrasm
+            // 
+            this.tbwelrasm.EditValue = "0";
+            this.tbwelrasm.Location = new System.Drawing.Point(40, 46);
+            this.tbwelrasm.Name = "tbwelrasm";
+            this.tbwelrasm.Properties.Mask.EditMask = "f2";
+            this.tbwelrasm.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbwelrasm.Size = new System.Drawing.Size(100, 20);
+            this.tbwelrasm.TabIndex = 2;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Location = new System.Drawing.Point(79, 27);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(23, 13);
+            this.labelControl19.TabIndex = 0;
+            this.labelControl19.Text = "رسم";
+            // 
+            // tbwmony
+            // 
+            this.tbwmony.EditValue = "0";
+            this.tbwmony.Location = new System.Drawing.Point(250, 46);
+            this.tbwmony.Name = "tbwmony";
+            this.tbwmony.Properties.Mask.EditMask = "f2";
+            this.tbwmony.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbwmony.Size = new System.Drawing.Size(100, 20);
+            this.tbwmony.TabIndex = 0;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(292, 27);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(27, 13);
+            this.labelControl20.TabIndex = 0;
+            this.labelControl20.Text = "المبلغ";
+            // 
+            // tbwestktaat
+            // 
+            this.tbwestktaat.EditValue = "0";
+            this.tbwestktaat.Location = new System.Drawing.Point(146, 46);
+            this.tbwestktaat.Name = "tbwestktaat";
+            this.tbwestktaat.Properties.Mask.EditMask = "f2";
+            this.tbwestktaat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbwestktaat.Size = new System.Drawing.Size(100, 20);
+            this.tbwestktaat.TabIndex = 1;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(177, 27);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(42, 13);
+            this.labelControl18.TabIndex = 0;
+            this.labelControl18.Text = "استقطاع";
+            // 
             // tabExtra
             // 
             this.tabExtra.Controls.Add(this.ceEnableEdafat);
@@ -783,12 +874,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dedatesarf.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dedatesarf.Size = new System.Drawing.Size(162, 22);
+            this.dedatesarf.Size = new System.Drawing.Size(162, 20);
             this.dedatesarf.TabIndex = 3;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "بجب ادخال تاريخ بداية الصرف";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.dedatesarf, conditionValidationRule2);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "بجب ادخال تاريخ بداية الصرف";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.dedatesarf, conditionValidationRule5);
             // 
             // lueDofatSarfId
             // 
@@ -810,10 +901,10 @@
             this.lueDofatSarfId.Properties.ValueMember = "DofatSarfId";
             this.lueDofatSarfId.Size = new System.Drawing.Size(162, 22);
             this.lueDofatSarfId.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "يجب ادخال دفعة الصرف";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule3);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "يجب ادخال دفعة الصرف";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule6);
             // 
             // LSMSTBLDofatSarf
             // 
@@ -841,10 +932,10 @@
             this.luesarfTypeId.Properties.ValueMember = "MashHalaId";
             this.luesarfTypeId.Size = new System.Drawing.Size(162, 22);
             this.luesarfTypeId.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "يجب ادخال فئة الصرف";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.luesarfTypeId, conditionValidationRule4);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "يجب ادخال فئة الصرف";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.luesarfTypeId, conditionValidationRule7);
             // 
             // LSMSCDMashHala
             // 
@@ -864,10 +955,10 @@
             this.tbestktaa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbestktaa.Size = new System.Drawing.Size(162, 22);
             this.tbestktaa.TabIndex = 2;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "يجب ادخال الاستقطاع";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.tbestktaa, conditionValidationRule5);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "يجب ادخال الاستقطاع";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.tbestktaa, conditionValidationRule8);
             // 
             // labelControl10
             // 
@@ -917,166 +1008,6 @@
             this.labelControl8.TabIndex = 39;
             this.labelControl8.Text = "الاستقطاع";
             // 
-            // tabRemark
-            // 
-            this.tabRemark.Controls.Add(this.gridControlRemarks);
-            this.tabRemark.Image = global::RetirementCenter.Properties.Resources.Edit;
-            this.tabRemark.Name = "tabRemark";
-            this.tabRemark.Size = new System.Drawing.Size(582, 341);
-            this.tabRemark.Text = "الملاحظات";
-            // 
-            // gridControlRemarks
-            // 
-            this.gridControlRemarks.DataSource = this.tBLWarasaremarksBindingSource;
-            this.gridControlRemarks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlRemarks.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gridControlRemarks.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
-            this.gridControlRemarks.EmbeddedNavigator.Buttons.Edit.Visible = false;
-            this.gridControlRemarks.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControlRemarks.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlRemarks.Location = new System.Drawing.Point(0, 0);
-            this.gridControlRemarks.MainView = this.gridViewRemarks;
-            this.gridControlRemarks.Name = "gridControlRemarks";
-            this.gridControlRemarks.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit1,
-            this.repositoryItemButtonEditSave,
-            this.repositoryItemDateEdit2,
-            this.repositoryItemLookUpEditeRemarkuserin});
-            this.gridControlRemarks.Size = new System.Drawing.Size(582, 341);
-            this.gridControlRemarks.TabIndex = 1;
-            this.gridControlRemarks.UseEmbeddedNavigator = true;
-            this.gridControlRemarks.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewRemarks});
-            // 
-            // tBLWarasaremarksBindingSource
-            // 
-            this.tBLWarasaremarksBindingSource.DataMember = "TBLWarasaremarks";
-            this.tBLWarasaremarksBindingSource.DataSource = this.dsRetirementCenter;
-            // 
-            // dsRetirementCenter
-            // 
-            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gridViewRemarks
-            // 
-            this.gridViewRemarks.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colmewmark,
-            this.gridColumn1,
-            this.coldatein,
-            this.coluserin});
-            this.gridViewRemarks.GridControl = this.gridControlRemarks;
-            this.gridViewRemarks.Name = "gridViewRemarks";
-            this.gridViewRemarks.NewItemRowText = "اضغط لاضافة جديد";
-            this.gridViewRemarks.OptionsView.ColumnAutoWidth = false;
-            this.gridViewRemarks.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridViewRemarks.RowHeight = 32;
-            // 
-            // colmewmark
-            // 
-            this.colmewmark.AppearanceCell.Options.UseTextOptions = true;
-            this.colmewmark.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmewmark.AppearanceHeader.Options.UseTextOptions = true;
-            this.colmewmark.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmewmark.Caption = "ملاحظات";
-            this.colmewmark.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.colmewmark.FieldName = "premark";
-            this.colmewmark.Name = "colmewmark";
-            this.colmewmark.Visible = true;
-            this.colmewmark.VisibleIndex = 0;
-            this.colmewmark.Width = 227;
-            // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "حفظ";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditSave;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 56;
-            // 
-            // repositoryItemButtonEditSave
-            // 
-            this.repositoryItemButtonEditSave.AutoHeight = false;
-            this.repositoryItemButtonEditSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
-            this.repositoryItemButtonEditSave.Name = "repositoryItemButtonEditSave";
-            this.repositoryItemButtonEditSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSave_ButtonClick);
-            // 
-            // coldatein
-            // 
-            this.coldatein.AppearanceCell.Options.UseTextOptions = true;
-            this.coldatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatein.AppearanceHeader.Options.UseTextOptions = true;
-            this.coldatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatein.Caption = "تاريخ الادخال";
-            this.coldatein.ColumnEdit = this.repositoryItemDateEdit2;
-            this.coldatein.FieldName = "datein";
-            this.coldatein.Name = "coldatein";
-            this.coldatein.OptionsColumn.AllowEdit = false;
-            this.coldatein.OptionsColumn.ReadOnly = true;
-            this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 3;
-            this.coldatein.Width = 124;
-            // 
-            // repositoryItemDateEdit2
-            // 
-            this.repositoryItemDateEdit2.AutoHeight = false;
-            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
-            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEdit2.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
-            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEdit2.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
-            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
-            this.repositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // coluserin
-            // 
-            this.coluserin.AppearanceCell.Options.UseTextOptions = true;
-            this.coluserin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coluserin.AppearanceHeader.Options.UseTextOptions = true;
-            this.coluserin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coluserin.Caption = "مسئول الادخال";
-            this.coluserin.ColumnEdit = this.repositoryItemLookUpEditeRemarkuserin;
-            this.coluserin.FieldName = "userin";
-            this.coluserin.Name = "coluserin";
-            this.coluserin.OptionsColumn.AllowEdit = false;
-            this.coluserin.OptionsColumn.ReadOnly = true;
-            this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 2;
-            this.coluserin.Width = 103;
-            // 
-            // repositoryItemLookUpEditeRemarkuserin
-            // 
-            this.repositoryItemLookUpEditeRemarkuserin.AutoHeight = false;
-            this.repositoryItemLookUpEditeRemarkuserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditeRemarkuserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
-            this.repositoryItemLookUpEditeRemarkuserin.DataSource = this.LSMSUsers;
-            this.repositoryItemLookUpEditeRemarkuserin.DisplayMember = "RealName";
-            this.repositoryItemLookUpEditeRemarkuserin.Name = "repositoryItemLookUpEditeRemarkuserin";
-            this.repositoryItemLookUpEditeRemarkuserin.NullText = "";
-            this.repositoryItemLookUpEditeRemarkuserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditeRemarkuserin.ValueMember = "UserID";
-            // 
-            // LSMSUsers
-            // 
-            this.LSMSUsers.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
-            this.LSMSUsers.KeyExpression = "[UserID]";
-            // 
             // tabResarf
             // 
             this.tabResarf.Controls.Add(this.gridControlResarf);
@@ -1117,6 +1048,11 @@
             // 
             this.tBLReSarfWarasaBindingSource.DataMember = "TBLReSarfWarasa";
             this.tBLReSarfWarasaBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // dsRetirementCenter
+            // 
+            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
+            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewResarf
             // 
@@ -1663,6 +1599,161 @@
             this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
+            // tabRemark
+            // 
+            this.tabRemark.Controls.Add(this.gridControlRemarks);
+            this.tabRemark.Image = global::RetirementCenter.Properties.Resources.Edit;
+            this.tabRemark.Name = "tabRemark";
+            this.tabRemark.Size = new System.Drawing.Size(582, 341);
+            this.tabRemark.Text = "الملاحظات";
+            // 
+            // gridControlRemarks
+            // 
+            this.gridControlRemarks.DataSource = this.tBLWarasaremarksBindingSource;
+            this.gridControlRemarks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlRemarks.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlRemarks.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlRemarks.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlRemarks.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlRemarks.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gridControlRemarks.Location = new System.Drawing.Point(0, 0);
+            this.gridControlRemarks.MainView = this.gridViewRemarks;
+            this.gridControlRemarks.Name = "gridControlRemarks";
+            this.gridControlRemarks.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1,
+            this.repositoryItemButtonEditSave,
+            this.repositoryItemDateEdit2,
+            this.repositoryItemLookUpEditeRemarkuserin});
+            this.gridControlRemarks.Size = new System.Drawing.Size(582, 341);
+            this.gridControlRemarks.TabIndex = 1;
+            this.gridControlRemarks.UseEmbeddedNavigator = true;
+            this.gridControlRemarks.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewRemarks});
+            // 
+            // tBLWarasaremarksBindingSource
+            // 
+            this.tBLWarasaremarksBindingSource.DataMember = "TBLWarasaremarks";
+            this.tBLWarasaremarksBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // gridViewRemarks
+            // 
+            this.gridViewRemarks.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmewmark,
+            this.gridColumn1,
+            this.coldatein,
+            this.coluserin});
+            this.gridViewRemarks.GridControl = this.gridControlRemarks;
+            this.gridViewRemarks.Name = "gridViewRemarks";
+            this.gridViewRemarks.NewItemRowText = "اضغط لاضافة جديد";
+            this.gridViewRemarks.OptionsView.ColumnAutoWidth = false;
+            this.gridViewRemarks.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewRemarks.RowHeight = 32;
+            // 
+            // colmewmark
+            // 
+            this.colmewmark.AppearanceCell.Options.UseTextOptions = true;
+            this.colmewmark.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmewmark.AppearanceHeader.Options.UseTextOptions = true;
+            this.colmewmark.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmewmark.Caption = "ملاحظات";
+            this.colmewmark.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colmewmark.FieldName = "premark";
+            this.colmewmark.Name = "colmewmark";
+            this.colmewmark.Visible = true;
+            this.colmewmark.VisibleIndex = 0;
+            this.colmewmark.Width = 227;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "حفظ";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditSave;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 56;
+            // 
+            // repositoryItemButtonEditSave
+            // 
+            this.repositoryItemButtonEditSave.AutoHeight = false;
+            this.repositoryItemButtonEditSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.repositoryItemButtonEditSave.Name = "repositoryItemButtonEditSave";
+            this.repositoryItemButtonEditSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSave_ButtonClick);
+            // 
+            // coldatein
+            // 
+            this.coldatein.AppearanceCell.Options.UseTextOptions = true;
+            this.coldatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein.Caption = "تاريخ الادخال";
+            this.coldatein.ColumnEdit = this.repositoryItemDateEdit2;
+            this.coldatein.FieldName = "datein";
+            this.coldatein.Name = "coldatein";
+            this.coldatein.OptionsColumn.AllowEdit = false;
+            this.coldatein.OptionsColumn.ReadOnly = true;
+            this.coldatein.Visible = true;
+            this.coldatein.VisibleIndex = 3;
+            this.coldatein.Width = 124;
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
+            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
+            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            this.repositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
+            // coluserin
+            // 
+            this.coluserin.AppearanceCell.Options.UseTextOptions = true;
+            this.coluserin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin.AppearanceHeader.Options.UseTextOptions = true;
+            this.coluserin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin.Caption = "مسئول الادخال";
+            this.coluserin.ColumnEdit = this.repositoryItemLookUpEditeRemarkuserin;
+            this.coluserin.FieldName = "userin";
+            this.coluserin.Name = "coluserin";
+            this.coluserin.OptionsColumn.AllowEdit = false;
+            this.coluserin.OptionsColumn.ReadOnly = true;
+            this.coluserin.Visible = true;
+            this.coluserin.VisibleIndex = 2;
+            this.coluserin.Width = 103;
+            // 
+            // repositoryItemLookUpEditeRemarkuserin
+            // 
+            this.repositoryItemLookUpEditeRemarkuserin.AutoHeight = false;
+            this.repositoryItemLookUpEditeRemarkuserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditeRemarkuserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.repositoryItemLookUpEditeRemarkuserin.DataSource = this.LSMSUsers;
+            this.repositoryItemLookUpEditeRemarkuserin.DisplayMember = "RealName";
+            this.repositoryItemLookUpEditeRemarkuserin.Name = "repositoryItemLookUpEditeRemarkuserin";
+            this.repositoryItemLookUpEditeRemarkuserin.NullText = "";
+            this.repositoryItemLookUpEditeRemarkuserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditeRemarkuserin.ValueMember = "UserID";
+            // 
+            // LSMSUsers
+            // 
+            this.LSMSUsers.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
+            this.LSMSUsers.KeyExpression = "[UserID]";
+            // 
             // tBLWarasaremarksTableAdapter
             // 
             this.tBLWarasaremarksTableAdapter.ClearBeforeFill = true;
@@ -1674,94 +1765,6 @@
             // tBLSarfExpetionTableAdapter
             // 
             this.tBLSarfExpetionTableAdapter.ClearBeforeFill = true;
-            // 
-            // tabPrivatrSarf
-            // 
-            this.tabPrivatrSarf.Controls.Add(this.cewcompletesarf);
-            this.tabPrivatrSarf.Controls.Add(this.pnlPrivateSarf);
-            this.tabPrivatrSarf.Image = global::RetirementCenter.Properties.Resources.Edit;
-            this.tabPrivatrSarf.Name = "tabPrivatrSarf";
-            this.tabPrivatrSarf.Size = new System.Drawing.Size(582, 341);
-            this.tabPrivatrSarf.Text = "صرف خاص";
-            // 
-            // cewcompletesarf
-            // 
-            this.cewcompletesarf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cewcompletesarf.Location = new System.Drawing.Point(379, 95);
-            this.cewcompletesarf.Name = "cewcompletesarf";
-            this.cewcompletesarf.Properties.Caption = "تفعيل صرف كامل";
-            this.cewcompletesarf.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cewcompletesarf.Size = new System.Drawing.Size(108, 19);
-            this.cewcompletesarf.TabIndex = 2;
-            this.cewcompletesarf.CheckedChanged += new System.EventHandler(this.cewcompletesarf_CheckedChanged);
-            // 
-            // pnlPrivateSarf
-            // 
-            this.pnlPrivateSarf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlPrivateSarf.Controls.Add(this.tbwelrasm);
-            this.pnlPrivateSarf.Controls.Add(this.labelControl19);
-            this.pnlPrivateSarf.Controls.Add(this.tbwmony);
-            this.pnlPrivateSarf.Controls.Add(this.labelControl20);
-            this.pnlPrivateSarf.Controls.Add(this.tbwestktaat);
-            this.pnlPrivateSarf.Controls.Add(this.labelControl18);
-            this.pnlPrivateSarf.Location = new System.Drawing.Point(96, 120);
-            this.pnlPrivateSarf.Name = "pnlPrivateSarf";
-            this.pnlPrivateSarf.Size = new System.Drawing.Size(391, 93);
-            this.pnlPrivateSarf.TabIndex = 3;
-            // 
-            // tbwelrasm
-            // 
-            this.tbwelrasm.EditValue = "0";
-            this.tbwelrasm.Location = new System.Drawing.Point(40, 46);
-            this.tbwelrasm.Name = "tbwelrasm";
-            this.tbwelrasm.Properties.Mask.EditMask = "f2";
-            this.tbwelrasm.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbwelrasm.Size = new System.Drawing.Size(100, 20);
-            this.tbwelrasm.TabIndex = 2;
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Location = new System.Drawing.Point(79, 27);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(23, 13);
-            this.labelControl19.TabIndex = 0;
-            this.labelControl19.Text = "رسم";
-            // 
-            // tbwmony
-            // 
-            this.tbwmony.EditValue = "0";
-            this.tbwmony.Location = new System.Drawing.Point(250, 46);
-            this.tbwmony.Name = "tbwmony";
-            this.tbwmony.Properties.Mask.EditMask = "f2";
-            this.tbwmony.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbwmony.Size = new System.Drawing.Size(100, 20);
-            this.tbwmony.TabIndex = 0;
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Location = new System.Drawing.Point(292, 27);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(27, 13);
-            this.labelControl20.TabIndex = 0;
-            this.labelControl20.Text = "المبلغ";
-            // 
-            // tbwestktaat
-            // 
-            this.tbwestktaat.EditValue = "0";
-            this.tbwestktaat.Location = new System.Drawing.Point(146, 46);
-            this.tbwestktaat.Name = "tbwestktaat";
-            this.tbwestktaat.Properties.Mask.EditMask = "f2";
-            this.tbwestktaat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbwestktaat.Size = new System.Drawing.Size(100, 20);
-            this.tbwestktaat.TabIndex = 1;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Location = new System.Drawing.Point(177, 27);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(42, 13);
-            this.labelControl18.TabIndex = 0;
-            this.labelControl18.Text = "استقطاع";
             // 
             // TBLWarasaDlg
             // 
@@ -1805,6 +1808,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
+            this.tabPrivatrSarf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cewcompletesarf.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlPrivateSarf)).EndInit();
+            this.pnlPrivateSarf.ResumeLayout(false);
+            this.pnlPrivateSarf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwelrasm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwmony.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbwestktaat.Properties)).EndInit();
             this.tabExtra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ceEnableEdafat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlEdafat)).EndInit();
@@ -1817,20 +1828,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.luesarfTypeId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDMashHala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
-            this.tabRemark.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlRemarks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLWarasaremarksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewRemarks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
             this.tabResarf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlResarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLReSarfWarasaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewResarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDofatSarfId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
@@ -1860,15 +1861,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            this.tabRemark.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlRemarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLWarasaremarksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRemarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
-            this.tabPrivatrSarf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cewcompletesarf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlPrivateSarf)).EndInit();
-            this.pnlPrivateSarf.ResumeLayout(false);
-            this.pnlPrivateSarf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwelrasm.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwmony.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbwestktaat.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

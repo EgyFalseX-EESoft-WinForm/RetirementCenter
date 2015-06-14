@@ -214,7 +214,12 @@ namespace RetirementCenter
 
             tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
-            
+            //check if he can edit Sarf or No
+            if (row.yasref == false && (row.IsMMashatNIdNull() || row.MMashatNId == string.Empty) && row.MashHalaId == (byte)Program.CDMashHala.Asda2)
+                ceyasref.Enabled = false;
+            else
+                ceyasref.Enabled = true;
+
             gridControlTBLNoSarfDetels.DataSource = from q in dsLinq.TBLNoSarfDetels where q.MMashatId == MMashatId select q;
             LUEMashHalaId.Enabled = false;
 
@@ -328,7 +333,12 @@ namespace RetirementCenter
                 if (Mainrow.RowState == DataRowState.Added)
                     return;
             }
-
+            object obj = SQLProvider.adpQry.GetMMashatNId(Mainrow.MMashatId);
+            if (Mainrow.yasref == false && (obj == null || obj.ToString() == string.Empty))
+            {
+                msgDlg.Show("يجب ادخال الرقم القومي");
+                return;
+            }
             
 
             DataSources.dsRetirementCenter.TBLNoSarfDetelsRow row = dsRetirementCenter.TBLNoSarfDetels.NewTBLNoSarfDetelsRow();
@@ -384,6 +394,7 @@ namespace RetirementCenter
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (!dxValidationProviderMain.Validate(tbMMashatName) || !dxValidationProviderMain.Validate(LUESyndicateId) ||
                 !dxValidationProviderMain.Validate(LUESubCommitteId) || !dxValidationProviderMain.Validate(tbsarfnumber) ||
                 !dxValidationProviderMain.Validate(LUEMashHalaId))
@@ -396,6 +407,11 @@ namespace RetirementCenter
             if (!dxValidationProviderMain.GetValidationRule(tbMMashatNId).Validate(tbMMashatNId, tbMMashatNId.EditValue))
             {
                 Program.ShowMsg("يجب ادخال 14 رقم في الرقم القومي", true, this, true);
+                return;
+            }
+            if (LUEMashHalaId.EditValue.ToString() == Program.CDMashHala.Asda2.ToString())
+            {
+                Program.ShowMsg("يجب ان تكون الحالة أعضاء", true, this, true);
                 return;
             }
             try

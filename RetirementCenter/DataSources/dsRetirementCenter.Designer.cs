@@ -23971,8 +23971,9 @@ WHERE        (MMashatId = @MMashatId)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       TBLMashat\r\nSET                MMashatNId = @MMashatNId\r\nWHERE       " +
-                " (MMashatId = @MMashatId) AND (MMashatNId IS NULL OR MMashatNId = \'\')";
+            this._commandCollection[4].CommandText = "UPDATE       TBLMashat\r\nSET                MMashatNId = @MMashatNId, ImportDateIn" +
+                " = GETDATE()\r\nWHERE        (MMashatId = @MMashatId) AND (MMashatNId IS NULL OR\r\n" +
+                "                         MMashatNId = \'\')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatNId", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatNId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -27256,8 +27257,9 @@ WHERE        (PersonId = @PersonId)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       TBLWarasa \r\nSET                personNID = @personNID\r\nWHERE        " +
-                "(PersonId = @PersonId) AND (personNID IS NULL OR personNID = \'\')";
+            this._commandCollection[4].CommandText = "UPDATE       TBLWarasa\r\nSET                personNID = @personNID, ImportDateIn =" +
+                " GETDATE()\r\nWHERE        (PersonId = @PersonId) AND (personNID IS NULL OR\r\n     " +
+                "                    personNID = \'\')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@personNID", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "personNID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));

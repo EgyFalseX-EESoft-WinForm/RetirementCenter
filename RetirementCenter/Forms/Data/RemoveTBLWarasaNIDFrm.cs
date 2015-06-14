@@ -52,7 +52,7 @@ namespace RetirementCenter
             {
                 if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                     return;
-                if (!(bool)SQLProvider.adpQry.NIDBankExported_W(row.PersonId))
+                if ((bool)SQLProvider.adpQry.NIDBankExported_W(row.PersonId))
                 {
                     msgDlg.Show("تم تصدير هذا الوريث الي بيانات البنك");
                     return;
