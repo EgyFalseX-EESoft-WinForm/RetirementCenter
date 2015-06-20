@@ -35,17 +35,21 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.vQry32BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.fieldCountPersonId = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldresponsiblesarf = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldyasref1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSyndicate1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSubCommitte1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldWarasaType = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.vQry32BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
-            this.vQry32TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry32TableAdapter();
             this.fieldBankExport = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNID = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.vQry32TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry32TableAdapter();
+            this.fieldBankExportBack = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldNIDP = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBankExportP = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBankExportBackP = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
@@ -59,8 +63,7 @@
             this.calcWarasaType.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.calcWarasaType.Appearance.Header.Options.UseTextOptions = true;
             this.calcWarasaType.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.calcWarasaType.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.calcWarasaType.AreaIndex = 1;
+            this.calcWarasaType.AreaIndex = 3;
             this.calcWarasaType.Caption = "نسبة";
             this.calcWarasaType.CellFormat.FormatString = "p2";
             this.calcWarasaType.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -110,8 +113,12 @@
             this.fieldSubCommitte1,
             this.fieldWarasaType,
             this.calcWarasaType,
+            this.fieldNID,
             this.fieldBankExport,
-            this.fieldNID});
+            this.fieldBankExportBack,
+            this.fieldNIDP,
+            this.fieldBankExportP,
+            this.fieldBankExportBackP});
             pivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Green;
             pivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = true;
             pivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
@@ -131,6 +138,16 @@
             this.pivotGridControlMain.Name = "pivotGridControlMain";
             this.pivotGridControlMain.Size = new System.Drawing.Size(734, 408);
             this.pivotGridControlMain.TabIndex = 4;
+            // 
+            // vQry32BindingSource
+            // 
+            this.vQry32BindingSource.DataMember = "vQry32";
+            this.vQry32BindingSource.DataSource = this.dsQueries;
+            // 
+            // dsQueries
+            // 
+            this.dsQueries.DataSetName = "dsQueries";
+            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fieldCountPersonId
             // 
@@ -177,7 +194,7 @@
             this.fieldSyndicate1.Caption = "فرعية";
             this.fieldSyndicate1.FieldName = "Syndicate";
             this.fieldSyndicate1.Name = "fieldSyndicate1";
-            this.fieldSyndicate1.Width = 196;
+            this.fieldSyndicate1.Width = 235;
             // 
             // fieldSubCommitte1
             // 
@@ -196,41 +213,111 @@
             this.fieldWarasaType.Appearance.Cell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.fieldWarasaType.Appearance.Header.Options.UseTextOptions = true;
             this.fieldWarasaType.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldWarasaType.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldWarasaType.AreaIndex = 0;
+            this.fieldWarasaType.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldWarasaType.AreaIndex = 1;
             this.fieldWarasaType.Caption = "نوع الوريث";
             this.fieldWarasaType.FieldName = "WarasaType";
             this.fieldWarasaType.Name = "fieldWarasaType";
             // 
-            // vQry32BindingSource
+            // fieldBankExport
             // 
-            this.vQry32BindingSource.DataMember = "vQry32";
-            this.vQry32BindingSource.DataSource = this.dsQueries;
+            this.fieldBankExport.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldBankExport.AreaIndex = 3;
+            this.fieldBankExport.Caption = "عدد المصدر للبنك";
+            this.fieldBankExport.FieldName = "BankExport";
+            this.fieldBankExport.Name = "fieldBankExport";
+            this.fieldBankExport.Width = 106;
             // 
-            // dsQueries
+            // fieldNID
             // 
-            this.dsQueries.DataSetName = "dsQueries";
-            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fieldNID.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldNID.AreaIndex = 1;
+            this.fieldNID.Caption = "عدد الارقام القومية";
+            this.fieldNID.FieldName = "NID";
+            this.fieldNID.Name = "fieldNID";
             // 
             // vQry32TableAdapter
             // 
             this.vQry32TableAdapter.ClearBeforeFill = true;
             // 
-            // fieldBankExport
+            // fieldBankExportBack
             // 
-            this.fieldBankExport.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldBankExport.AreaIndex = 2;
-            this.fieldBankExport.Caption = "عدد المصدر للبنك";
-            this.fieldBankExport.FieldName = "BankExport";
-            this.fieldBankExport.Name = "fieldBankExport";
+            this.fieldBankExportBack.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldBankExportBack.AreaIndex = 5;
+            this.fieldBankExportBack.Caption = "من اتي من البنك";
+            this.fieldBankExportBack.FieldName = "BankExportBack";
+            this.fieldBankExportBack.Name = "fieldBankExportBack";
             // 
-            // fieldNID
+            // fieldNIDP
             // 
-            this.fieldNID.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldNID.AreaIndex = 3;
-            this.fieldNID.Caption = "عدد الارقام القومية";
-            this.fieldNID.FieldName = "NID";
-            this.fieldNID.Name = "fieldNID";
+            this.fieldNIDP.Appearance.CellGrandTotal.ForeColor = System.Drawing.Color.Red;
+            this.fieldNIDP.Appearance.CellGrandTotal.Options.UseForeColor = true;
+            this.fieldNIDP.Appearance.Value.ForeColor = System.Drawing.Color.Red;
+            this.fieldNIDP.Appearance.Value.Options.UseForeColor = true;
+            this.fieldNIDP.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldNIDP.AreaIndex = 2;
+            this.fieldNIDP.Caption = "نسبة الارقام القومية";
+            this.fieldNIDP.CellFormat.FormatString = "p1";
+            this.fieldNIDP.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldNIDP.FieldName = "NID_P";
+            this.fieldNIDP.GrandTotalCellFormat.FormatString = "p1";
+            this.fieldNIDP.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldNIDP.Name = "fieldNIDP";
+            this.fieldNIDP.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average;
+            this.fieldNIDP.TotalCellFormat.FormatString = "p1";
+            this.fieldNIDP.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldNIDP.TotalValueFormat.FormatString = "p1";
+            this.fieldNIDP.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldNIDP.ValueFormat.FormatString = "p1";
+            this.fieldNIDP.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldNIDP.Width = 124;
+            // 
+            // fieldBankExportP
+            // 
+            this.fieldBankExportP.Appearance.CellGrandTotal.ForeColor = System.Drawing.Color.Red;
+            this.fieldBankExportP.Appearance.CellGrandTotal.Options.UseForeColor = true;
+            this.fieldBankExportP.Appearance.Value.ForeColor = System.Drawing.Color.Red;
+            this.fieldBankExportP.Appearance.Value.Options.UseForeColor = true;
+            this.fieldBankExportP.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldBankExportP.AreaIndex = 4;
+            this.fieldBankExportP.Caption = "نسبة المصدر للبنك";
+            this.fieldBankExportP.CellFormat.FormatString = "p1";
+            this.fieldBankExportP.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportP.FieldName = "BankExport_P";
+            this.fieldBankExportP.GrandTotalCellFormat.FormatString = "p1";
+            this.fieldBankExportP.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportP.Name = "fieldBankExportP";
+            this.fieldBankExportP.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average;
+            this.fieldBankExportP.TotalCellFormat.FormatString = "p1";
+            this.fieldBankExportP.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportP.TotalValueFormat.FormatString = "p1";
+            this.fieldBankExportP.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportP.ValueFormat.FormatString = "p1";
+            this.fieldBankExportP.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            // 
+            // fieldBankExportBackP
+            // 
+            this.fieldBankExportBackP.Appearance.CellGrandTotal.ForeColor = System.Drawing.Color.Red;
+            this.fieldBankExportBackP.Appearance.CellGrandTotal.Options.UseForeColor = true;
+            this.fieldBankExportBackP.Appearance.Value.ForeColor = System.Drawing.Color.Red;
+            this.fieldBankExportBackP.Appearance.Value.Options.UseForeColor = true;
+            this.fieldBankExportBackP.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldBankExportBackP.AreaIndex = 6;
+            this.fieldBankExportBackP.Caption = "نسبة من اتي من البنك";
+            this.fieldBankExportBackP.CellFormat.FormatString = "p1";
+            this.fieldBankExportBackP.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportBackP.FieldName = "BankExportBack_P";
+            this.fieldBankExportBackP.GrandTotalCellFormat.FormatString = "p1";
+            this.fieldBankExportBackP.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportBackP.Name = "fieldBankExportBackP";
+            this.fieldBankExportBackP.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average;
+            this.fieldBankExportBackP.TotalCellFormat.FormatString = "p1";
+            this.fieldBankExportBackP.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportBackP.TotalValueFormat.FormatString = "p1";
+            this.fieldBankExportBackP.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportBackP.ValueFormat.FormatString = "p1";
+            this.fieldBankExportBackP.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldBankExportBackP.Width = 115;
             // 
             // Qry32Frm
             // 
@@ -270,6 +357,10 @@
         private DevExpress.XtraPivotGrid.PivotGridField calcWarasaType;
         private DevExpress.XtraPivotGrid.PivotGridField fieldBankExport;
         private DevExpress.XtraPivotGrid.PivotGridField fieldNID;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBankExportBack;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldNIDP;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBankExportP;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBankExportBackP;
 
     }
 }

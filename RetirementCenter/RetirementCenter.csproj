@@ -278,6 +278,18 @@
     <Compile Include="Forms\Code\CodeFrm.designer.cs">
       <DependentUpon>CodeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLBeanWarsaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLBeanWarsaFrm.designer.cs">
+      <DependentUpon>TBLBeanWarsaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLBeanWarsaWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLBeanWarsaWFrm.designer.cs">
+      <DependentUpon>TBLBeanWarsaWFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLProofDocWFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +355,18 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry56Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry56Frm.designer.cs">
+      <DependentUpon>Qry56Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry55Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry55Frm.designer.cs">
+      <DependentUpon>Qry55Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry54Frm.cs">
       <SubType>Form</SubType>
@@ -928,6 +952,12 @@
     <Content Include="web.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Forms\Data\TBLBeanWarsaFrm.resx">
+      <DependentUpon>TBLBeanWarsaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLBeanWarsaWFrm.resx">
+      <DependentUpon>TBLBeanWarsaWFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLProofDocWFrm.resx">
       <DependentUpon>TBLProofDocWFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -961,6 +991,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry56Frm.resx">
+      <DependentUpon>Qry56Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry55Frm.resx">
+      <DependentUpon>Qry55Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry54Frm.resx">
       <DependentUpon>Qry54Frm.cs</DependentUpon>

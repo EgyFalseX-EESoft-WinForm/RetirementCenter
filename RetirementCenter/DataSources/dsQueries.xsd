@@ -778,6 +778,7 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
 SELECT        TBLWarasa.PersonId
 , CASE WHEN personNID IS NOT NULL AND personNID &lt;&gt; '' THEN 1 ELSE 0 END AS NID
 , CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId) THEN 1 ELSE 0 END AS BankExport
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId And visa IS NOT NULL AND visa &lt;&gt; '') THEN 1 ELSE 0 END AS BankExportBack
 , CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
 FROM            CDSyndicate RIGHT OUTER JOIN
                          TBLWarasa ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId LEFT OUTER JOIN
@@ -786,10 +787,14 @@ FROM            CDSyndicate RIGHT OUTER JOIN
 WHERE        (TBLWarasa.yasref = 1)
 GROUP BY TBLWarasa.PersonId, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, personNID
 )
-SELECT COUNT(PersonId) AS CountPersonId, SUM(NID) AS NID, SUM(BankExport) AS BankExport
+SELECT COUNT(PersonId) AS CountPersonId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
+, SUM(NID) * 1.0 / COUNT(PersonId) AS NID_P
+, SUM(BankExport) * 1.0 / COUNT(PersonId) AS BankExport_P
+, SUM(BankExportBack) * 1.0 / COUNT(PersonId) AS BankExportBack_P
 , WarasaType, responsiblesarf, Syndicate, SubCommitte
 FROM CTE1
-GROUP BY WarasaType, responsiblesarf, Syndicate, SubCommitte</CommandText>
+GROUP BY WarasaType, responsiblesarf, Syndicate, SubCommitte
+</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -803,6 +808,10 @@ GROUP BY WarasaType, responsiblesarf, Syndicate, SubCommitte</CommandText>
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
               <Mapping SourceColumn="NID" DataSetColumn="NID" />
               <Mapping SourceColumn="BankExport" DataSetColumn="BankExport" />
+              <Mapping SourceColumn="BankExportBack" DataSetColumn="BankExportBack" />
+              <Mapping SourceColumn="NID_P" DataSetColumn="NID_P" />
+              <Mapping SourceColumn="BankExport_P" DataSetColumn="BankExport_P" />
+              <Mapping SourceColumn="BankExportBack_P" DataSetColumn="BankExportBack_P" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -816,6 +825,7 @@ GROUP BY WarasaType, responsiblesarf, Syndicate, SubCommitte</CommandText>
 SELECT TBLMashat.MMashatId 
 , CASE WHEN TBLMashat.MMashatNId IS NOT NULL AND TBLMashat.MMashatNId &lt;&gt; '' THEN 1 ELSE 0 END AS NID
 , CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId) THEN 1 ELSE 0 END AS BankExport
+, CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId And visa IS NOT NULL AND visa &lt;&gt; '') THEN 1 ELSE 0 END AS BankExportBack
 , TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala
 FROM            TBLMashat LEFT OUTER JOIN
 CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN
@@ -824,7 +834,10 @@ CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
 WHERE        (TBLMashat.MashHalaId = 1) AND (TBLMashat.yasref = 1)
 GROUP BY TBLMashat.MMashatId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId
 )
-SELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(BankExport) AS BankExport
+SELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
+, SUM(NID) * 1.0 / COUNT(MMashatId) AS NID_P
+, SUM(BankExport) * 1.0 / COUNT(MMashatId) AS BankExport_P
+, SUM(BankExportBack) * 1.0 / COUNT(MMashatId) AS BankExportBack_P
 , SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala
 FROM CTE1 
 GROUP BY SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala</CommandText>
@@ -842,6 +855,10 @@ GROUP BY SarfExpetion, mcompletesarf, Syndicate, SubCommitte, MashHala</CommandT
               <Mapping SourceColumn="MashHala" DataSetColumn="MashHala" />
               <Mapping SourceColumn="NID" DataSetColumn="NID" />
               <Mapping SourceColumn="BankExport" DataSetColumn="BankExport" />
+              <Mapping SourceColumn="BankExportBack" DataSetColumn="BankExportBack" />
+              <Mapping SourceColumn="NID_P" DataSetColumn="NID_P" />
+              <Mapping SourceColumn="BankExport_P" DataSetColumn="BankExport_P" />
+              <Mapping SourceColumn="BankExportBack_P" DataSetColumn="BankExportBack_P" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1648,6 +1665,100 @@ CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId</CommandT
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry55TableAdapter" GeneratorDataComponentClassName="vQry55TableAdapter" Name="vQry55" UserDataComponentName="vQry55TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE2" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT CDSyndicate.Syndicate, TBLMashat.MMashatId, Year(GetDate()) - CAST( CASE WHEN SUBSTRING(MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(MMashatNId, 2, 2) AS INT) AS Age
+FROM TBLMashat INNER JOIN
+CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
+WHERE        TBLMashat.yasref = 1 AND TBLMashat.MashHalaId = 1 AND MMashatNId IS NOT NULL
+), CTE2 AS
+(
+SELECT Syndicate, MMashatId
+, CASE 
+WHEN Age &lt; 60 THEN 'اقل من 60'
+WHEN Age BETWEEN 60 AND 100 THEN 'من 60 الي 100'
+WHEN Age &gt; 100 THEN 'اكبر من 100' END AS AgeState
+FROM CTE1
+)
+SELECT Syndicate, AgeState, COUNT(MMashatId) AS NUM
+FROM CTE2 GROUP BY Syndicate, AgeState</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="AgeState" DataSetColumn="AgeState" />
+              <Mapping SourceColumn="NUM" DataSetColumn="NUM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry56TableAdapter" GeneratorDataComponentClassName="vQry56TableAdapter" Name="vQry56" UserDataComponentName="vQry56TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE2" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>WITH CTE1 AS
+(
+SELECT CDSyndicate.Syndicate, TBLWarasa.PersonId
+, YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLWarasa.personNID, 2, 2) AS INT) AS Age, 
+CDWarasaType.WarasaType
+FROM            TBLWarasa INNER JOIN
+CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
+WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.personNID IS NOT NULL)
+), CTE2 AS
+(
+SELECT Syndicate, PersonId, WarasaType
+, CASE 
+WHEN Age &lt; 21 THEN 'اقل من 21'
+WHEN age = 21 THEN '21'
+WHEN Age BETWEEN 22 AND 26 THEN 'من 26 الي 22'
+WHEN Age &gt; 26 THEN 'اكبر من 26' END AS AgeState
+FROM CTE1
+)
+SELECT Syndicate, WarasaType, AgeState, COUNT(PersonId) AS NUM
+FROM CTE2 GROUP BY Syndicate, WarasaType, AgeState</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="WarasaType" DataSetColumn="WarasaType" />
+              <Mapping SourceColumn="AgeState" DataSetColumn="AgeState" />
+              <Mapping SourceColumn="NUM" DataSetColumn="NUM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetPersonIdByMMashatIdTableAdapter" GeneratorDataComponentClassName="GetPersonIdByMMashatIdTableAdapter" Name="GetPersonIdByMMashatId" UserDataComponentName="GetPersonIdByMMashatIdTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TBLWarasa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLWarasa.PersonId
+FROM            TBLWarasa INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+WHERE        (TBLMashat.MMashatId = @MMashatId) AND (TBLWarasa.yasref = 1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MMashatId" ColumnName="MMashatId" DataSourceName="RetirementCenter.dbo.TBLMashat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MMashatId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MMashatId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MemberNewId" MethodsParameterType="CLR" Modifier="Public" Name="MemberNewId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MemberNewId">
@@ -1953,7 +2064,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
   <xs:element name="dsQueries" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsQueries" msprop:Generator_UserDSName="dsQueries">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CDSyndicate" msprop:Generator_TableClassName="CDSyndicateDataTable" msprop:Generator_TableVarName="tableCDSyndicate" msprop:Generator_RowChangedName="CDSyndicateRowChanged" msprop:Generator_TablePropName="CDSyndicate" msprop:Generator_RowDeletingName="CDSyndicateRowDeleting" msprop:Generator_RowChangingName="CDSyndicateRowChanging" msprop:Generator_RowEvHandlerName="CDSyndicateRowChangeEventHandler" msprop:Generator_RowDeletedName="CDSyndicateRowDeleted" msprop:Generator_RowClassName="CDSyndicateRow" msprop:Generator_UserTableName="CDSyndicate" msprop:Generator_RowEvArgName="CDSyndicateRowChangeEvent">
+        <xs:element name="CDSyndicate" msprop:Generator_TableClassName="CDSyndicateDataTable" msprop:Generator_TableVarName="tableCDSyndicate" msprop:Generator_TablePropName="CDSyndicate" msprop:Generator_RowDeletingName="CDSyndicateRowDeleting" msprop:Generator_RowChangingName="CDSyndicateRowChanging" msprop:Generator_RowEvHandlerName="CDSyndicateRowChangeEventHandler" msprop:Generator_RowDeletedName="CDSyndicateRowDeleted" msprop:Generator_UserTableName="CDSyndicate" msprop:Generator_RowChangedName="CDSyndicateRowChanged" msprop:Generator_RowEvArgName="CDSyndicateRowChangeEvent" msprop:Generator_RowClassName="CDSyndicateRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
@@ -1967,7 +2078,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDSubCommitte" msprop:Generator_TableClassName="CDSubCommitteDataTable" msprop:Generator_TableVarName="tableCDSubCommitte" msprop:Generator_RowChangedName="CDSubCommitteRowChanged" msprop:Generator_TablePropName="CDSubCommitte" msprop:Generator_RowDeletingName="CDSubCommitteRowDeleting" msprop:Generator_RowChangingName="CDSubCommitteRowChanging" msprop:Generator_RowEvHandlerName="CDSubCommitteRowChangeEventHandler" msprop:Generator_RowDeletedName="CDSubCommitteRowDeleted" msprop:Generator_RowClassName="CDSubCommitteRow" msprop:Generator_UserTableName="CDSubCommitte" msprop:Generator_RowEvArgName="CDSubCommitteRowChangeEvent">
+        <xs:element name="CDSubCommitte" msprop:Generator_TableClassName="CDSubCommitteDataTable" msprop:Generator_TableVarName="tableCDSubCommitte" msprop:Generator_TablePropName="CDSubCommitte" msprop:Generator_RowDeletingName="CDSubCommitteRowDeleting" msprop:Generator_RowChangingName="CDSubCommitteRowChanging" msprop:Generator_RowEvHandlerName="CDSubCommitteRowChangeEventHandler" msprop:Generator_RowDeletedName="CDSubCommitteRowDeleted" msprop:Generator_UserTableName="CDSubCommitte" msprop:Generator_RowChangedName="CDSubCommitteRowChanged" msprop:Generator_RowEvArgName="CDSubCommitteRowChangeEvent" msprop:Generator_RowClassName="CDSubCommitteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" />
@@ -1982,7 +2093,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDMashHala" msprop:Generator_TableClassName="CDMashHalaDataTable" msprop:Generator_TableVarName="tableCDMashHala" msprop:Generator_RowChangedName="CDMashHalaRowChanged" msprop:Generator_TablePropName="CDMashHala" msprop:Generator_RowDeletingName="CDMashHalaRowDeleting" msprop:Generator_RowChangingName="CDMashHalaRowChanging" msprop:Generator_RowEvHandlerName="CDMashHalaRowChangeEventHandler" msprop:Generator_RowDeletedName="CDMashHalaRowDeleted" msprop:Generator_RowClassName="CDMashHalaRow" msprop:Generator_UserTableName="CDMashHala" msprop:Generator_RowEvArgName="CDMashHalaRowChangeEvent">
+        <xs:element name="CDMashHala" msprop:Generator_TableClassName="CDMashHalaDataTable" msprop:Generator_TableVarName="tableCDMashHala" msprop:Generator_TablePropName="CDMashHala" msprop:Generator_RowDeletingName="CDMashHalaRowDeleting" msprop:Generator_RowChangingName="CDMashHalaRowChanging" msprop:Generator_RowEvHandlerName="CDMashHalaRowChangeEventHandler" msprop:Generator_RowDeletedName="CDMashHalaRowDeleted" msprop:Generator_UserTableName="CDMashHala" msprop:Generator_RowChangedName="CDMashHalaRowChanged" msprop:Generator_RowEvArgName="CDMashHalaRowChangeEvent" msprop:Generator_RowClassName="CDMashHalaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MashHalaId" msprop:Generator_ColumnVarNameInTable="columnMashHalaId" msprop:Generator_ColumnPropNameInRow="MashHalaId" msprop:Generator_ColumnPropNameInTable="MashHalaIdColumn" msprop:Generator_UserColumnName="MashHalaId" type="xs:unsignedByte" />
@@ -1997,7 +2108,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDEndwork" msprop:Generator_TableClassName="CDEndworkDataTable" msprop:Generator_TableVarName="tableCDEndwork" msprop:Generator_TablePropName="CDEndwork" msprop:Generator_RowDeletingName="CDEndworkRowDeleting" msprop:Generator_RowChangingName="CDEndworkRowChanging" msprop:Generator_RowEvHandlerName="CDEndworkRowChangeEventHandler" msprop:Generator_RowDeletedName="CDEndworkRowDeleted" msprop:Generator_UserTableName="CDEndwork" msprop:Generator_RowChangedName="CDEndworkRowChanged" msprop:Generator_RowEvArgName="CDEndworkRowChangeEvent" msprop:Generator_RowClassName="CDEndworkRow">
+        <xs:element name="CDEndwork" msprop:Generator_TableClassName="CDEndworkDataTable" msprop:Generator_TableVarName="tableCDEndwork" msprop:Generator_RowChangedName="CDEndworkRowChanged" msprop:Generator_TablePropName="CDEndwork" msprop:Generator_RowDeletingName="CDEndworkRowDeleting" msprop:Generator_RowChangingName="CDEndworkRowChanging" msprop:Generator_RowEvHandlerName="CDEndworkRowChangeEventHandler" msprop:Generator_RowDeletedName="CDEndworkRowDeleted" msprop:Generator_RowClassName="CDEndworkRow" msprop:Generator_UserTableName="CDEndwork" msprop:Generator_RowEvArgName="CDEndworkRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EndworkId" msprop:Generator_ColumnVarNameInTable="columnEndworkId" msprop:Generator_ColumnPropNameInRow="EndworkId" msprop:Generator_ColumnPropNameInTable="EndworkIdColumn" msprop:Generator_UserColumnName="EndworkId" type="xs:unsignedByte" />
@@ -2011,7 +2122,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDsarfType" msprop:Generator_TableClassName="CDsarfTypeDataTable" msprop:Generator_TableVarName="tableCDsarfType" msprop:Generator_RowChangedName="CDsarfTypeRowChanged" msprop:Generator_TablePropName="CDsarfType" msprop:Generator_RowDeletingName="CDsarfTypeRowDeleting" msprop:Generator_RowChangingName="CDsarfTypeRowChanging" msprop:Generator_RowEvHandlerName="CDsarfTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="CDsarfTypeRowDeleted" msprop:Generator_RowClassName="CDsarfTypeRow" msprop:Generator_UserTableName="CDsarfType" msprop:Generator_RowEvArgName="CDsarfTypeRowChangeEvent">
+        <xs:element name="CDsarfType" msprop:Generator_TableClassName="CDsarfTypeDataTable" msprop:Generator_TableVarName="tableCDsarfType" msprop:Generator_TablePropName="CDsarfType" msprop:Generator_RowDeletingName="CDsarfTypeRowDeleting" msprop:Generator_RowChangingName="CDsarfTypeRowChanging" msprop:Generator_RowEvHandlerName="CDsarfTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="CDsarfTypeRowDeleted" msprop:Generator_UserTableName="CDsarfType" msprop:Generator_RowChangedName="CDsarfTypeRowChanged" msprop:Generator_RowEvArgName="CDsarfTypeRowChangeEvent" msprop:Generator_RowClassName="CDsarfTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="sarfTypeId" msprop:Generator_ColumnVarNameInTable="columnsarfTypeId" msprop:Generator_ColumnPropNameInRow="sarfTypeId" msprop:Generator_ColumnPropNameInTable="sarfTypeIdColumn" msprop:Generator_UserColumnName="sarfTypeId" type="xs:unsignedByte" />
@@ -2027,7 +2138,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBLDofatSarf" msprop:Generator_TableClassName="TBLDofatSarfDataTable" msprop:Generator_TableVarName="tableTBLDofatSarf" msprop:Generator_TablePropName="TBLDofatSarf" msprop:Generator_RowDeletingName="TBLDofatSarfRowDeleting" msprop:Generator_RowChangingName="TBLDofatSarfRowChanging" msprop:Generator_RowEvHandlerName="TBLDofatSarfRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLDofatSarfRowDeleted" msprop:Generator_UserTableName="TBLDofatSarf" msprop:Generator_RowChangedName="TBLDofatSarfRowChanged" msprop:Generator_RowEvArgName="TBLDofatSarfRowChangeEvent" msprop:Generator_RowClassName="TBLDofatSarfRow">
+        <xs:element name="TBLDofatSarf" msprop:Generator_TableClassName="TBLDofatSarfDataTable" msprop:Generator_TableVarName="tableTBLDofatSarf" msprop:Generator_RowChangedName="TBLDofatSarfRowChanged" msprop:Generator_TablePropName="TBLDofatSarf" msprop:Generator_RowDeletingName="TBLDofatSarfRowDeleting" msprop:Generator_RowChangingName="TBLDofatSarfRowChanging" msprop:Generator_RowEvHandlerName="TBLDofatSarfRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLDofatSarfRowDeleted" msprop:Generator_RowClassName="TBLDofatSarfRow" msprop:Generator_UserTableName="TBLDofatSarf" msprop:Generator_RowEvArgName="TBLDofatSarfRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DofatSarfId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfId" msprop:Generator_ColumnPropNameInRow="DofatSarfId" msprop:Generator_ColumnPropNameInTable="DofatSarfIdColumn" msprop:Generator_UserColumnName="DofatSarfId" type="xs:int" />
@@ -2050,7 +2161,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBLEdafatCreator" msprop:Generator_TableClassName="TBLEdafatCreatorDataTable" msprop:Generator_TableVarName="tableTBLEdafatCreator" msprop:Generator_RowChangedName="TBLEdafatCreatorRowChanged" msprop:Generator_TablePropName="TBLEdafatCreator" msprop:Generator_RowDeletingName="TBLEdafatCreatorRowDeleting" msprop:Generator_RowChangingName="TBLEdafatCreatorRowChanging" msprop:Generator_RowEvHandlerName="TBLEdafatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLEdafatCreatorRowDeleted" msprop:Generator_RowClassName="TBLEdafatCreatorRow" msprop:Generator_UserTableName="TBLEdafatCreator" msprop:Generator_RowEvArgName="TBLEdafatCreatorRowChangeEvent">
+        <xs:element name="TBLEdafatCreator" msprop:Generator_TableClassName="TBLEdafatCreatorDataTable" msprop:Generator_TableVarName="tableTBLEdafatCreator" msprop:Generator_TablePropName="TBLEdafatCreator" msprop:Generator_RowDeletingName="TBLEdafatCreatorRowDeleting" msprop:Generator_RowChangingName="TBLEdafatCreatorRowChanging" msprop:Generator_RowEvHandlerName="TBLEdafatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLEdafatCreatorRowDeleted" msprop:Generator_UserTableName="TBLEdafatCreator" msprop:Generator_RowChangedName="TBLEdafatCreatorRowChanged" msprop:Generator_RowEvArgName="TBLEdafatCreatorRowChangeEvent" msprop:Generator_RowClassName="TBLEdafatCreatorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2073,7 +2184,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBLEdafatCreator2" msprop:Generator_TableClassName="TBLEdafatCreator2DataTable" msprop:Generator_TableVarName="tableTBLEdafatCreator2" msprop:Generator_TablePropName="TBLEdafatCreator2" msprop:Generator_RowDeletingName="TBLEdafatCreator2RowDeleting" msprop:Generator_RowChangingName="TBLEdafatCreator2RowChanging" msprop:Generator_RowEvHandlerName="TBLEdafatCreator2RowChangeEventHandler" msprop:Generator_RowDeletedName="TBLEdafatCreator2RowDeleted" msprop:Generator_UserTableName="TBLEdafatCreator2" msprop:Generator_RowChangedName="TBLEdafatCreator2RowChanged" msprop:Generator_RowEvArgName="TBLEdafatCreator2RowChangeEvent" msprop:Generator_RowClassName="TBLEdafatCreator2Row">
+        <xs:element name="TBLEdafatCreator2" msprop:Generator_TableClassName="TBLEdafatCreator2DataTable" msprop:Generator_TableVarName="tableTBLEdafatCreator2" msprop:Generator_RowChangedName="TBLEdafatCreator2RowChanged" msprop:Generator_TablePropName="TBLEdafatCreator2" msprop:Generator_RowDeletingName="TBLEdafatCreator2RowDeleting" msprop:Generator_RowChangingName="TBLEdafatCreator2RowChanging" msprop:Generator_RowEvHandlerName="TBLEdafatCreator2RowChangeEventHandler" msprop:Generator_RowDeletedName="TBLEdafatCreator2RowDeleted" msprop:Generator_RowClassName="TBLEdafatCreator2Row" msprop:Generator_UserTableName="TBLEdafatCreator2" msprop:Generator_RowEvArgName="TBLEdafatCreator2RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2093,7 +2204,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WarasaDofaatCreator" msprop:Generator_TableClassName="WarasaDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaDofaatCreator" msprop:Generator_TablePropName="WarasaDofaatCreator" msprop:Generator_RowDeletingName="WarasaDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaDofaatCreatorRowDeleted" msprop:Generator_UserTableName="WarasaDofaatCreator" msprop:Generator_RowChangedName="WarasaDofaatCreatorRowChanged" msprop:Generator_RowEvArgName="WarasaDofaatCreatorRowChangeEvent" msprop:Generator_RowClassName="WarasaDofaatCreatorRow">
+        <xs:element name="WarasaDofaatCreator" msprop:Generator_TableClassName="WarasaDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaDofaatCreator" msprop:Generator_RowChangedName="WarasaDofaatCreatorRowChanged" msprop:Generator_TablePropName="WarasaDofaatCreator" msprop:Generator_RowDeletingName="WarasaDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaDofaatCreatorRowDeleted" msprop:Generator_RowClassName="WarasaDofaatCreatorRow" msprop:Generator_UserTableName="WarasaDofaatCreator" msprop:Generator_RowEvArgName="WarasaDofaatCreatorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
@@ -2130,7 +2241,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WarasaExtraDofaatCreator" msprop:Generator_TableClassName="WarasaExtraDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaExtraDofaatCreator" msprop:Generator_TablePropName="WarasaExtraDofaatCreator" msprop:Generator_RowDeletingName="WarasaExtraDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaExtraDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaExtraDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaExtraDofaatCreatorRowDeleted" msprop:Generator_UserTableName="WarasaExtraDofaatCreator" msprop:Generator_RowChangedName="WarasaExtraDofaatCreatorRowChanged" msprop:Generator_RowEvArgName="WarasaExtraDofaatCreatorRowChangeEvent" msprop:Generator_RowClassName="WarasaExtraDofaatCreatorRow">
+        <xs:element name="WarasaExtraDofaatCreator" msprop:Generator_TableClassName="WarasaExtraDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaExtraDofaatCreator" msprop:Generator_RowChangedName="WarasaExtraDofaatCreatorRowChanged" msprop:Generator_TablePropName="WarasaExtraDofaatCreator" msprop:Generator_RowDeletingName="WarasaExtraDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaExtraDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaExtraDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaExtraDofaatCreatorRowDeleted" msprop:Generator_RowClassName="WarasaExtraDofaatCreatorRow" msprop:Generator_UserTableName="WarasaExtraDofaatCreator" msprop:Generator_RowEvArgName="WarasaExtraDofaatCreatorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
@@ -2171,7 +2282,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Qry09" msprop:Generator_TableClassName="Qry09DataTable" msprop:Generator_TableVarName="tableQry09" msprop:Generator_RowChangedName="Qry09RowChanged" msprop:Generator_TablePropName="Qry09" msprop:Generator_RowDeletingName="Qry09RowDeleting" msprop:Generator_RowChangingName="Qry09RowChanging" msprop:Generator_RowEvHandlerName="Qry09RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry09RowDeleted" msprop:Generator_RowClassName="Qry09Row" msprop:Generator_UserTableName="Qry09" msprop:Generator_RowEvArgName="Qry09RowChangeEvent">
+        <xs:element name="Qry09" msprop:Generator_TableClassName="Qry09DataTable" msprop:Generator_TableVarName="tableQry09" msprop:Generator_TablePropName="Qry09" msprop:Generator_RowDeletingName="Qry09RowDeleting" msprop:Generator_RowChangingName="Qry09RowChanging" msprop:Generator_RowEvHandlerName="Qry09RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry09RowDeleted" msprop:Generator_UserTableName="Qry09" msprop:Generator_RowChangedName="Qry09RowChanged" msprop:Generator_RowEvArgName="Qry09RowChangeEvent" msprop:Generator_RowClassName="Qry09Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
@@ -2240,7 +2351,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WarasaExceptionDofaatCreator" msprop:Generator_TableClassName="WarasaExceptionDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaExceptionDofaatCreator" msprop:Generator_RowChangedName="WarasaExceptionDofaatCreatorRowChanged" msprop:Generator_TablePropName="WarasaExceptionDofaatCreator" msprop:Generator_RowDeletingName="WarasaExceptionDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaExceptionDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaExceptionDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaExceptionDofaatCreatorRowDeleted" msprop:Generator_RowClassName="WarasaExceptionDofaatCreatorRow" msprop:Generator_UserTableName="WarasaExceptionDofaatCreator" msprop:Generator_RowEvArgName="WarasaExceptionDofaatCreatorRowChangeEvent">
+        <xs:element name="WarasaExceptionDofaatCreator" msprop:Generator_TableClassName="WarasaExceptionDofaatCreatorDataTable" msprop:Generator_TableVarName="tableWarasaExceptionDofaatCreator" msprop:Generator_TablePropName="WarasaExceptionDofaatCreator" msprop:Generator_RowDeletingName="WarasaExceptionDofaatCreatorRowDeleting" msprop:Generator_RowChangingName="WarasaExceptionDofaatCreatorRowChanging" msprop:Generator_RowEvHandlerName="WarasaExceptionDofaatCreatorRowChangeEventHandler" msprop:Generator_RowDeletedName="WarasaExceptionDofaatCreatorRowDeleted" msprop:Generator_UserTableName="WarasaExceptionDofaatCreator" msprop:Generator_RowChangedName="WarasaExceptionDofaatCreatorRowChanged" msprop:Generator_RowEvArgName="WarasaExceptionDofaatCreatorRowChangeEvent" msprop:Generator_RowClassName="WarasaExceptionDofaatCreatorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" minOccurs="0" />
@@ -2275,7 +2386,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Qry14" msprop:Generator_TableClassName="Qry14DataTable" msprop:Generator_TableVarName="tableQry14" msprop:Generator_RowChangedName="Qry14RowChanged" msprop:Generator_TablePropName="Qry14" msprop:Generator_RowDeletingName="Qry14RowDeleting" msprop:Generator_RowChangingName="Qry14RowChanging" msprop:Generator_RowEvHandlerName="Qry14RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry14RowDeleted" msprop:Generator_RowClassName="Qry14Row" msprop:Generator_UserTableName="Qry14" msprop:Generator_RowEvArgName="Qry14RowChangeEvent">
+        <xs:element name="Qry14" msprop:Generator_TableClassName="Qry14DataTable" msprop:Generator_TableVarName="tableQry14" msprop:Generator_TablePropName="Qry14" msprop:Generator_RowDeletingName="Qry14RowDeleting" msprop:Generator_RowChangingName="Qry14RowChanging" msprop:Generator_RowEvHandlerName="Qry14RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry14RowDeleted" msprop:Generator_UserTableName="Qry14" msprop:Generator_RowChangedName="Qry14RowChanged" msprop:Generator_RowEvArgName="Qry14RowChangeEvent" msprop:Generator_RowClassName="Qry14Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2306,7 +2417,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Qry21" msprop:Generator_TableClassName="Qry21DataTable" msprop:Generator_TableVarName="tableQry21" msprop:Generator_RowChangedName="Qry21RowChanged" msprop:Generator_TablePropName="Qry21" msprop:Generator_RowDeletingName="Qry21RowDeleting" msprop:Generator_RowChangingName="Qry21RowChanging" msprop:Generator_RowEvHandlerName="Qry21RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry21RowDeleted" msprop:Generator_RowClassName="Qry21Row" msprop:Generator_UserTableName="Qry21" msprop:Generator_RowEvArgName="Qry21RowChangeEvent">
+        <xs:element name="Qry21" msprop:Generator_TableClassName="Qry21DataTable" msprop:Generator_TableVarName="tableQry21" msprop:Generator_TablePropName="Qry21" msprop:Generator_RowDeletingName="Qry21RowDeleting" msprop:Generator_RowChangingName="Qry21RowChanging" msprop:Generator_RowEvHandlerName="Qry21RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry21RowDeleted" msprop:Generator_UserTableName="Qry21" msprop:Generator_RowChangedName="Qry21RowChanged" msprop:Generator_RowEvArgName="Qry21RowChangeEvent" msprop:Generator_RowClassName="Qry21Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
@@ -2325,7 +2436,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBLMashat" msprop:Generator_TableClassName="TBLMashatDataTable" msprop:Generator_TableVarName="tableTBLMashat" msprop:Generator_TablePropName="TBLMashat" msprop:Generator_RowDeletingName="TBLMashatRowDeleting" msprop:Generator_RowChangingName="TBLMashatRowChanging" msprop:Generator_RowEvHandlerName="TBLMashatRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLMashatRowDeleted" msprop:Generator_UserTableName="TBLMashat" msprop:Generator_RowChangedName="TBLMashatRowChanged" msprop:Generator_RowEvArgName="TBLMashatRowChangeEvent" msprop:Generator_RowClassName="TBLMashatRow">
+        <xs:element name="TBLMashat" msprop:Generator_TableClassName="TBLMashatDataTable" msprop:Generator_TableVarName="tableTBLMashat" msprop:Generator_RowChangedName="TBLMashatRowChanged" msprop:Generator_TablePropName="TBLMashat" msprop:Generator_RowDeletingName="TBLMashatRowDeleting" msprop:Generator_RowChangingName="TBLMashatRowChanging" msprop:Generator_RowEvHandlerName="TBLMashatRowChangeEventHandler" msprop:Generator_RowDeletedName="TBLMashatRowDeleted" msprop:Generator_RowClassName="TBLMashatRow" msprop:Generator_UserTableName="TBLMashat" msprop:Generator_RowEvArgName="TBLMashatRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2362,7 +2473,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Qry24" msprop:Generator_TableClassName="Qry24DataTable" msprop:Generator_TableVarName="tableQry24" msprop:Generator_RowChangedName="Qry24RowChanged" msprop:Generator_TablePropName="Qry24" msprop:Generator_RowDeletingName="Qry24RowDeleting" msprop:Generator_RowChangingName="Qry24RowChanging" msprop:Generator_RowEvHandlerName="Qry24RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry24RowDeleted" msprop:Generator_RowClassName="Qry24Row" msprop:Generator_UserTableName="Qry24" msprop:Generator_RowEvArgName="Qry24RowChangeEvent">
+        <xs:element name="Qry24" msprop:Generator_TableClassName="Qry24DataTable" msprop:Generator_TableVarName="tableQry24" msprop:Generator_TablePropName="Qry24" msprop:Generator_RowDeletingName="Qry24RowDeleting" msprop:Generator_RowChangingName="Qry24RowChanging" msprop:Generator_RowEvHandlerName="Qry24RowChangeEventHandler" msprop:Generator_RowDeletedName="Qry24RowDeleted" msprop:Generator_UserTableName="Qry24" msprop:Generator_RowChangedName="Qry24RowChanged" msprop:Generator_RowEvArgName="Qry24RowChangeEvent" msprop:Generator_RowClassName="Qry24Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SyndicateOld" msprop:Generator_ColumnVarNameInTable="columnSyndicateOld" msprop:Generator_ColumnPropNameInRow="SyndicateOld" msprop:Generator_ColumnPropNameInTable="SyndicateOldColumn" msprop:Generator_UserColumnName="SyndicateOld" minOccurs="0">
@@ -2420,7 +2531,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry32" msprop:Generator_TableClassName="vQry32DataTable" msprop:Generator_TableVarName="tablevQry32" msprop:Generator_TablePropName="vQry32" msprop:Generator_RowDeletingName="vQry32RowDeleting" msprop:Generator_RowChangingName="vQry32RowChanging" msprop:Generator_RowEvHandlerName="vQry32RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry32RowDeleted" msprop:Generator_UserTableName="vQry32" msprop:Generator_RowChangedName="vQry32RowChanged" msprop:Generator_RowEvArgName="vQry32RowChangeEvent" msprop:Generator_RowClassName="vQry32Row">
+        <xs:element name="vQry32" msprop:Generator_TableClassName="vQry32DataTable" msprop:Generator_TableVarName="tablevQry32" msprop:Generator_RowChangedName="vQry32RowChanged" msprop:Generator_TablePropName="vQry32" msprop:Generator_RowDeletingName="vQry32RowDeleting" msprop:Generator_RowChangingName="vQry32RowChanging" msprop:Generator_RowEvHandlerName="vQry32RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry32RowDeleted" msprop:Generator_RowClassName="vQry32Row" msprop:Generator_UserTableName="vQry32" msprop:Generator_RowEvArgName="vQry32RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CountPersonId" msprop:Generator_ColumnVarNameInTable="columnCountPersonId" msprop:Generator_ColumnPropNameInRow="CountPersonId" msprop:Generator_ColumnPropNameInTable="CountPersonIdColumn" msprop:Generator_UserColumnName="CountPersonId" type="xs:int" minOccurs="0" />
@@ -2448,10 +2559,14 @@ WHERE        (PersonId = @PersonId)</CommandText>
               </xs:element>
               <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:int" minOccurs="0" />
               <xs:element name="BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport" msprop:Generator_ColumnPropNameInRow="BankExport" msprop:Generator_ColumnPropNameInTable="BankExportColumn" msprop:Generator_UserColumnName="BankExport" type="xs:int" minOccurs="0" />
+              <xs:element name="BankExportBack" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack" msprop:Generator_ColumnPropNameInRow="BankExportBack" msprop:Generator_ColumnPropNameInTable="BankExportBackColumn" msprop:Generator_UserColumnName="BankExportBack" type="xs:int" minOccurs="0" />
+              <xs:element name="NID_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID_P" msprop:Generator_ColumnPropNameInRow="NID_P" msprop:Generator_ColumnPropNameInTable="NID_PColumn" msprop:Generator_UserColumnName="NID_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BankExport_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport_P" msprop:Generator_ColumnPropNameInRow="BankExport_P" msprop:Generator_ColumnPropNameInTable="BankExport_PColumn" msprop:Generator_UserColumnName="BankExport_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BankExportBack_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack_P" msprop:Generator_ColumnPropNameInRow="BankExportBack_P" msprop:Generator_ColumnPropNameInTable="BankExportBack_PColumn" msprop:Generator_UserColumnName="BankExportBack_P" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry31" msprop:Generator_TableClassName="vQry31DataTable" msprop:Generator_TableVarName="tablevQry31" msprop:Generator_RowChangedName="vQry31RowChanged" msprop:Generator_TablePropName="vQry31" msprop:Generator_RowDeletingName="vQry31RowDeleting" msprop:Generator_RowChangingName="vQry31RowChanging" msprop:Generator_RowEvHandlerName="vQry31RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry31RowDeleted" msprop:Generator_RowClassName="vQry31Row" msprop:Generator_UserTableName="vQry31" msprop:Generator_RowEvArgName="vQry31RowChangeEvent">
+        <xs:element name="vQry31" msprop:Generator_TableClassName="vQry31DataTable" msprop:Generator_TableVarName="tablevQry31" msprop:Generator_TablePropName="vQry31" msprop:Generator_RowDeletingName="vQry31RowDeleting" msprop:Generator_RowChangingName="vQry31RowChanging" msprop:Generator_RowEvHandlerName="vQry31RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry31RowDeleted" msprop:Generator_UserTableName="vQry31" msprop:Generator_RowChangedName="vQry31RowChanged" msprop:Generator_RowEvArgName="vQry31RowChangeEvent" msprop:Generator_RowClassName="vQry31Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CountMMashatId" msprop:Generator_ColumnVarNameInTable="columnCountMMashatId" msprop:Generator_ColumnPropNameInRow="CountMMashatId" msprop:Generator_ColumnPropNameInTable="CountMMashatIdColumn" msprop:Generator_UserColumnName="CountMMashatId" type="xs:int" minOccurs="0" />
@@ -2480,10 +2595,14 @@ WHERE        (PersonId = @PersonId)</CommandText>
               </xs:element>
               <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:int" minOccurs="0" />
               <xs:element name="BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport" msprop:Generator_ColumnPropNameInRow="BankExport" msprop:Generator_ColumnPropNameInTable="BankExportColumn" msprop:Generator_UserColumnName="BankExport" type="xs:int" minOccurs="0" />
+              <xs:element name="BankExportBack" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack" msprop:Generator_ColumnPropNameInRow="BankExportBack" msprop:Generator_ColumnPropNameInTable="BankExportBackColumn" msprop:Generator_UserColumnName="BankExportBack" type="xs:int" minOccurs="0" />
+              <xs:element name="NID_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID_P" msprop:Generator_ColumnPropNameInRow="NID_P" msprop:Generator_ColumnPropNameInTable="NID_PColumn" msprop:Generator_UserColumnName="NID_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BankExport_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport_P" msprop:Generator_ColumnPropNameInRow="BankExport_P" msprop:Generator_ColumnPropNameInTable="BankExport_PColumn" msprop:Generator_UserColumnName="BankExport_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BankExportBack_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack_P" msprop:Generator_ColumnPropNameInRow="BankExportBack_P" msprop:Generator_ColumnPropNameInTable="BankExportBack_PColumn" msprop:Generator_UserColumnName="BankExportBack_P" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry34" msprop:Generator_TableClassName="vQry34DataTable" msprop:Generator_TableVarName="tablevQry34" msprop:Generator_TablePropName="vQry34" msprop:Generator_RowDeletingName="vQry34RowDeleting" msprop:Generator_RowChangingName="vQry34RowChanging" msprop:Generator_RowEvHandlerName="vQry34RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry34RowDeleted" msprop:Generator_UserTableName="vQry34" msprop:Generator_RowChangedName="vQry34RowChanged" msprop:Generator_RowEvArgName="vQry34RowChangeEvent" msprop:Generator_RowClassName="vQry34Row">
+        <xs:element name="vQry34" msprop:Generator_TableClassName="vQry34DataTable" msprop:Generator_TableVarName="tablevQry34" msprop:Generator_RowChangedName="vQry34RowChanged" msprop:Generator_TablePropName="vQry34" msprop:Generator_RowDeletingName="vQry34RowDeleting" msprop:Generator_RowChangingName="vQry34RowChanging" msprop:Generator_RowEvHandlerName="vQry34RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry34RowDeleted" msprop:Generator_RowClassName="vQry34Row" msprop:Generator_UserTableName="vQry34" msprop:Generator_RowEvArgName="vQry34RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
@@ -2528,7 +2647,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry36" msprop:Generator_TableClassName="vQry36DataTable" msprop:Generator_TableVarName="tablevQry36" msprop:Generator_RowChangedName="vQry36RowChanged" msprop:Generator_TablePropName="vQry36" msprop:Generator_RowDeletingName="vQry36RowDeleting" msprop:Generator_RowChangingName="vQry36RowChanging" msprop:Generator_RowEvHandlerName="vQry36RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry36RowDeleted" msprop:Generator_RowClassName="vQry36Row" msprop:Generator_UserTableName="vQry36" msprop:Generator_RowEvArgName="vQry36RowChangeEvent">
+        <xs:element name="vQry36" msprop:Generator_TableClassName="vQry36DataTable" msprop:Generator_TableVarName="tablevQry36" msprop:Generator_TablePropName="vQry36" msprop:Generator_RowDeletingName="vQry36RowDeleting" msprop:Generator_RowChangingName="vQry36RowChanging" msprop:Generator_RowEvHandlerName="vQry36RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry36RowDeleted" msprop:Generator_UserTableName="vQry36" msprop:Generator_RowChangedName="vQry36RowChanged" msprop:Generator_RowEvArgName="vQry36RowChangeEvent" msprop:Generator_RowClassName="vQry36Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
@@ -2544,7 +2663,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry37" msprop:Generator_TableClassName="vQry37DataTable" msprop:Generator_TableVarName="tablevQry37" msprop:Generator_RowChangedName="vQry37RowChanged" msprop:Generator_TablePropName="vQry37" msprop:Generator_RowDeletingName="vQry37RowDeleting" msprop:Generator_RowChangingName="vQry37RowChanging" msprop:Generator_RowEvHandlerName="vQry37RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry37RowDeleted" msprop:Generator_RowClassName="vQry37Row" msprop:Generator_UserTableName="vQry37" msprop:Generator_RowEvArgName="vQry37RowChangeEvent">
+        <xs:element name="vQry37" msprop:Generator_TableClassName="vQry37DataTable" msprop:Generator_TableVarName="tablevQry37" msprop:Generator_TablePropName="vQry37" msprop:Generator_RowDeletingName="vQry37RowDeleting" msprop:Generator_RowChangingName="vQry37RowChanging" msprop:Generator_RowEvHandlerName="vQry37RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry37RowDeleted" msprop:Generator_UserTableName="vQry37" msprop:Generator_RowChangedName="vQry37RowChanged" msprop:Generator_RowEvArgName="vQry37RowChangeEvent" msprop:Generator_RowClassName="vQry37Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
@@ -2560,7 +2679,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry38" msprop:Generator_TableClassName="vQry38DataTable" msprop:Generator_TableVarName="tablevQry38" msprop:Generator_TablePropName="vQry38" msprop:Generator_RowDeletingName="vQry38RowDeleting" msprop:Generator_RowChangingName="vQry38RowChanging" msprop:Generator_RowEvHandlerName="vQry38RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38RowDeleted" msprop:Generator_UserTableName="vQry38" msprop:Generator_RowChangedName="vQry38RowChanged" msprop:Generator_RowEvArgName="vQry38RowChangeEvent" msprop:Generator_RowClassName="vQry38Row">
+        <xs:element name="vQry38" msprop:Generator_TableClassName="vQry38DataTable" msprop:Generator_TableVarName="tablevQry38" msprop:Generator_RowChangedName="vQry38RowChanged" msprop:Generator_TablePropName="vQry38" msprop:Generator_RowDeletingName="vQry38RowDeleting" msprop:Generator_RowChangingName="vQry38RowChanging" msprop:Generator_RowEvHandlerName="vQry38RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38RowDeleted" msprop:Generator_RowClassName="vQry38Row" msprop:Generator_UserTableName="vQry38" msprop:Generator_RowEvArgName="vQry38RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2605,7 +2724,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry39" msprop:Generator_TableClassName="vQry39DataTable" msprop:Generator_TableVarName="tablevQry39" msprop:Generator_TablePropName="vQry39" msprop:Generator_RowDeletingName="vQry39RowDeleting" msprop:Generator_RowChangingName="vQry39RowChanging" msprop:Generator_RowEvHandlerName="vQry39RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry39RowDeleted" msprop:Generator_UserTableName="vQry39" msprop:Generator_RowChangedName="vQry39RowChanged" msprop:Generator_RowEvArgName="vQry39RowChangeEvent" msprop:Generator_RowClassName="vQry39Row">
+        <xs:element name="vQry39" msprop:Generator_TableClassName="vQry39DataTable" msprop:Generator_TableVarName="tablevQry39" msprop:Generator_RowChangedName="vQry39RowChanged" msprop:Generator_TablePropName="vQry39" msprop:Generator_RowDeletingName="vQry39RowDeleting" msprop:Generator_RowChangingName="vQry39RowChanging" msprop:Generator_RowEvHandlerName="vQry39RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry39RowDeleted" msprop:Generator_RowClassName="vQry39Row" msprop:Generator_UserTableName="vQry39" msprop:Generator_RowEvArgName="vQry39RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="personbirth" msprop:Generator_ColumnVarNameInTable="columnpersonbirth" msprop:Generator_ColumnPropNameInRow="personbirth" msprop:Generator_ColumnPropNameInTable="personbirthColumn" msprop:Generator_UserColumnName="personbirth" type="xs:dateTime" minOccurs="0" />
@@ -2656,7 +2775,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry40" msprop:Generator_TableClassName="vQry40DataTable" msprop:Generator_TableVarName="tablevQry40" msprop:Generator_RowChangedName="vQry40RowChanged" msprop:Generator_TablePropName="vQry40" msprop:Generator_RowDeletingName="vQry40RowDeleting" msprop:Generator_RowChangingName="vQry40RowChanging" msprop:Generator_RowEvHandlerName="vQry40RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry40RowDeleted" msprop:Generator_RowClassName="vQry40Row" msprop:Generator_UserTableName="vQry40" msprop:Generator_RowEvArgName="vQry40RowChangeEvent">
+        <xs:element name="vQry40" msprop:Generator_TableClassName="vQry40DataTable" msprop:Generator_TableVarName="tablevQry40" msprop:Generator_TablePropName="vQry40" msprop:Generator_RowDeletingName="vQry40RowDeleting" msprop:Generator_RowChangingName="vQry40RowChanging" msprop:Generator_RowEvHandlerName="vQry40RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry40RowDeleted" msprop:Generator_UserTableName="vQry40" msprop:Generator_RowChangedName="vQry40RowChanged" msprop:Generator_RowEvArgName="vQry40RowChangeEvent" msprop:Generator_RowClassName="vQry40Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2687,7 +2806,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry41" msprop:Generator_TableClassName="vQry41DataTable" msprop:Generator_TableVarName="tablevQry41" msprop:Generator_RowChangedName="vQry41RowChanged" msprop:Generator_TablePropName="vQry41" msprop:Generator_RowDeletingName="vQry41RowDeleting" msprop:Generator_RowChangingName="vQry41RowChanging" msprop:Generator_RowEvHandlerName="vQry41RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry41RowDeleted" msprop:Generator_RowClassName="vQry41Row" msprop:Generator_UserTableName="vQry41" msprop:Generator_RowEvArgName="vQry41RowChangeEvent">
+        <xs:element name="vQry41" msprop:Generator_TableClassName="vQry41DataTable" msprop:Generator_TableVarName="tablevQry41" msprop:Generator_TablePropName="vQry41" msprop:Generator_RowDeletingName="vQry41RowDeleting" msprop:Generator_RowChangingName="vQry41RowChanging" msprop:Generator_RowEvHandlerName="vQry41RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry41RowDeleted" msprop:Generator_UserTableName="vQry41" msprop:Generator_RowChangedName="vQry41RowChanged" msprop:Generator_RowEvArgName="vQry41RowChangeEvent" msprop:Generator_RowClassName="vQry41Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
@@ -2726,7 +2845,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry38a" msprop:Generator_TableClassName="vQry38aDataTable" msprop:Generator_TableVarName="tablevQry38a" msprop:Generator_TablePropName="vQry38a" msprop:Generator_RowDeletingName="vQry38aRowDeleting" msprop:Generator_RowChangingName="vQry38aRowChanging" msprop:Generator_RowEvHandlerName="vQry38aRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38aRowDeleted" msprop:Generator_UserTableName="vQry38a" msprop:Generator_RowChangedName="vQry38aRowChanged" msprop:Generator_RowEvArgName="vQry38aRowChangeEvent" msprop:Generator_RowClassName="vQry38aRow">
+        <xs:element name="vQry38a" msprop:Generator_TableClassName="vQry38aDataTable" msprop:Generator_TableVarName="tablevQry38a" msprop:Generator_RowChangedName="vQry38aRowChanged" msprop:Generator_TablePropName="vQry38a" msprop:Generator_RowDeletingName="vQry38aRowDeleting" msprop:Generator_RowChangingName="vQry38aRowChanging" msprop:Generator_RowEvHandlerName="vQry38aRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38aRowDeleted" msprop:Generator_RowClassName="vQry38aRow" msprop:Generator_UserTableName="vQry38a" msprop:Generator_RowEvArgName="vQry38aRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2778,7 +2897,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry44" msprop:Generator_TableClassName="vQry44DataTable" msprop:Generator_TableVarName="tablevQry44" msprop:Generator_RowChangedName="vQry44RowChanged" msprop:Generator_TablePropName="vQry44" msprop:Generator_RowDeletingName="vQry44RowDeleting" msprop:Generator_RowChangingName="vQry44RowChanging" msprop:Generator_RowEvHandlerName="vQry44RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry44RowDeleted" msprop:Generator_RowClassName="vQry44Row" msprop:Generator_UserTableName="vQry44" msprop:Generator_RowEvArgName="vQry44RowChangeEvent">
+        <xs:element name="vQry44" msprop:Generator_TableClassName="vQry44DataTable" msprop:Generator_TableVarName="tablevQry44" msprop:Generator_TablePropName="vQry44" msprop:Generator_RowDeletingName="vQry44RowDeleting" msprop:Generator_RowChangingName="vQry44RowChanging" msprop:Generator_RowEvHandlerName="vQry44RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry44RowDeleted" msprop:Generator_UserTableName="vQry44" msprop:Generator_RowChangedName="vQry44RowChanged" msprop:Generator_RowEvArgName="vQry44RowChangeEvent" msprop:Generator_RowClassName="vQry44Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2826,7 +2945,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry45" msprop:Generator_TableClassName="vQry45DataTable" msprop:Generator_TableVarName="tablevQry45" msprop:Generator_RowChangedName="vQry45RowChanged" msprop:Generator_TablePropName="vQry45" msprop:Generator_RowDeletingName="vQry45RowDeleting" msprop:Generator_RowChangingName="vQry45RowChanging" msprop:Generator_RowEvHandlerName="vQry45RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry45RowDeleted" msprop:Generator_RowClassName="vQry45Row" msprop:Generator_UserTableName="vQry45" msprop:Generator_RowEvArgName="vQry45RowChangeEvent">
+        <xs:element name="vQry45" msprop:Generator_TableClassName="vQry45DataTable" msprop:Generator_TableVarName="tablevQry45" msprop:Generator_TablePropName="vQry45" msprop:Generator_RowDeletingName="vQry45RowDeleting" msprop:Generator_RowChangingName="vQry45RowChanging" msprop:Generator_RowEvHandlerName="vQry45RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry45RowDeleted" msprop:Generator_UserTableName="vQry45" msprop:Generator_RowChangedName="vQry45RowChanged" msprop:Generator_RowEvArgName="vQry45RowChangeEvent" msprop:Generator_RowClassName="vQry45Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" minOccurs="0" />
@@ -2848,7 +2967,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry46" msprop:Generator_TableClassName="vQry46DataTable" msprop:Generator_TableVarName="tablevQry46" msprop:Generator_TablePropName="vQry46" msprop:Generator_RowDeletingName="vQry46RowDeleting" msprop:Generator_RowChangingName="vQry46RowChanging" msprop:Generator_RowEvHandlerName="vQry46RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry46RowDeleted" msprop:Generator_UserTableName="vQry46" msprop:Generator_RowChangedName="vQry46RowChanged" msprop:Generator_RowEvArgName="vQry46RowChangeEvent" msprop:Generator_RowClassName="vQry46Row">
+        <xs:element name="vQry46" msprop:Generator_TableClassName="vQry46DataTable" msprop:Generator_TableVarName="tablevQry46" msprop:Generator_RowChangedName="vQry46RowChanged" msprop:Generator_TablePropName="vQry46" msprop:Generator_RowDeletingName="vQry46RowDeleting" msprop:Generator_RowChangingName="vQry46RowChanging" msprop:Generator_RowEvHandlerName="vQry46RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry46RowDeleted" msprop:Generator_RowClassName="vQry46Row" msprop:Generator_UserTableName="vQry46" msprop:Generator_RowEvArgName="vQry46RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
@@ -2862,7 +2981,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry38b" msprop:Generator_TableClassName="vQry38bDataTable" msprop:Generator_TableVarName="tablevQry38b" msprop:Generator_RowChangedName="vQry38bRowChanged" msprop:Generator_TablePropName="vQry38b" msprop:Generator_RowDeletingName="vQry38bRowDeleting" msprop:Generator_RowChangingName="vQry38bRowChanging" msprop:Generator_RowEvHandlerName="vQry38bRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38bRowDeleted" msprop:Generator_RowClassName="vQry38bRow" msprop:Generator_UserTableName="vQry38b" msprop:Generator_RowEvArgName="vQry38bRowChangeEvent">
+        <xs:element name="vQry38b" msprop:Generator_TableClassName="vQry38bDataTable" msprop:Generator_TableVarName="tablevQry38b" msprop:Generator_TablePropName="vQry38b" msprop:Generator_RowDeletingName="vQry38bRowDeleting" msprop:Generator_RowChangingName="vQry38bRowChanging" msprop:Generator_RowEvHandlerName="vQry38bRowChangeEventHandler" msprop:Generator_RowDeletedName="vQry38bRowDeleted" msprop:Generator_UserTableName="vQry38b" msprop:Generator_RowChangedName="vQry38bRowChanged" msprop:Generator_RowEvArgName="vQry38bRowChangeEvent" msprop:Generator_RowClassName="vQry38bRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -2923,7 +3042,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry47" msprop:Generator_TableClassName="vQry47DataTable" msprop:Generator_TableVarName="tablevQry47" msprop:Generator_TablePropName="vQry47" msprop:Generator_RowDeletingName="vQry47RowDeleting" msprop:Generator_RowChangingName="vQry47RowChanging" msprop:Generator_RowEvHandlerName="vQry47RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry47RowDeleted" msprop:Generator_UserTableName="vQry47" msprop:Generator_RowChangedName="vQry47RowChanged" msprop:Generator_RowEvArgName="vQry47RowChangeEvent" msprop:Generator_RowClassName="vQry47Row">
+        <xs:element name="vQry47" msprop:Generator_TableClassName="vQry47DataTable" msprop:Generator_TableVarName="tablevQry47" msprop:Generator_RowChangedName="vQry47RowChanged" msprop:Generator_TablePropName="vQry47" msprop:Generator_RowDeletingName="vQry47RowDeleting" msprop:Generator_RowChangingName="vQry47RowChanging" msprop:Generator_RowEvHandlerName="vQry47RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry47RowDeleted" msprop:Generator_RowClassName="vQry47Row" msprop:Generator_UserTableName="vQry47" msprop:Generator_RowEvArgName="vQry47RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
@@ -2987,7 +3106,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry48" msprop:Generator_TableClassName="vQry48DataTable" msprop:Generator_TableVarName="tablevQry48" msprop:Generator_TablePropName="vQry48" msprop:Generator_RowDeletingName="vQry48RowDeleting" msprop:Generator_RowChangingName="vQry48RowChanging" msprop:Generator_RowEvHandlerName="vQry48RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry48RowDeleted" msprop:Generator_UserTableName="vQry48" msprop:Generator_RowChangedName="vQry48RowChanged" msprop:Generator_RowEvArgName="vQry48RowChangeEvent" msprop:Generator_RowClassName="vQry48Row">
+        <xs:element name="vQry48" msprop:Generator_TableClassName="vQry48DataTable" msprop:Generator_TableVarName="tablevQry48" msprop:Generator_RowChangedName="vQry48RowChanged" msprop:Generator_TablePropName="vQry48" msprop:Generator_RowDeletingName="vQry48RowDeleting" msprop:Generator_RowChangingName="vQry48RowChanging" msprop:Generator_RowEvHandlerName="vQry48RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry48RowDeleted" msprop:Generator_RowClassName="vQry48Row" msprop:Generator_UserTableName="vQry48" msprop:Generator_RowEvArgName="vQry48RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" />
@@ -3009,7 +3128,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry49" msprop:Generator_TableClassName="vQry49DataTable" msprop:Generator_TableVarName="tablevQry49" msprop:Generator_RowChangedName="vQry49RowChanged" msprop:Generator_TablePropName="vQry49" msprop:Generator_RowDeletingName="vQry49RowDeleting" msprop:Generator_RowChangingName="vQry49RowChanging" msprop:Generator_RowEvHandlerName="vQry49RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry49RowDeleted" msprop:Generator_RowClassName="vQry49Row" msprop:Generator_UserTableName="vQry49" msprop:Generator_RowEvArgName="vQry49RowChangeEvent">
+        <xs:element name="vQry49" msprop:Generator_TableClassName="vQry49DataTable" msprop:Generator_TableVarName="tablevQry49" msprop:Generator_TablePropName="vQry49" msprop:Generator_RowDeletingName="vQry49RowDeleting" msprop:Generator_RowChangingName="vQry49RowChanging" msprop:Generator_RowEvHandlerName="vQry49RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry49RowDeleted" msprop:Generator_UserTableName="vQry49" msprop:Generator_RowChangedName="vQry49RowChanged" msprop:Generator_RowEvArgName="vQry49RowChangeEvent" msprop:Generator_RowClassName="vQry49Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -3068,7 +3187,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry50" msprop:Generator_TableClassName="vQry50DataTable" msprop:Generator_TableVarName="tablevQry50" msprop:Generator_TablePropName="vQry50" msprop:Generator_RowDeletingName="vQry50RowDeleting" msprop:Generator_RowChangingName="vQry50RowChanging" msprop:Generator_RowEvHandlerName="vQry50RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry50RowDeleted" msprop:Generator_UserTableName="vQry50" msprop:Generator_RowChangedName="vQry50RowChanged" msprop:Generator_RowEvArgName="vQry50RowChangeEvent" msprop:Generator_RowClassName="vQry50Row">
+        <xs:element name="vQry50" msprop:Generator_TableClassName="vQry50DataTable" msprop:Generator_TableVarName="tablevQry50" msprop:Generator_RowChangedName="vQry50RowChanged" msprop:Generator_TablePropName="vQry50" msprop:Generator_RowDeletingName="vQry50RowDeleting" msprop:Generator_RowChangingName="vQry50RowChanging" msprop:Generator_RowEvHandlerName="vQry50RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry50RowDeleted" msprop:Generator_RowClassName="vQry50Row" msprop:Generator_UserTableName="vQry50" msprop:Generator_RowEvArgName="vQry50RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:string" minOccurs="0" />
@@ -3076,7 +3195,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry51" msprop:Generator_TableClassName="vQry51DataTable" msprop:Generator_TableVarName="tablevQry51" msprop:Generator_TablePropName="vQry51" msprop:Generator_RowDeletingName="vQry51RowDeleting" msprop:Generator_RowChangingName="vQry51RowChanging" msprop:Generator_RowEvHandlerName="vQry51RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry51RowDeleted" msprop:Generator_UserTableName="vQry51" msprop:Generator_RowChangedName="vQry51RowChanged" msprop:Generator_RowEvArgName="vQry51RowChangeEvent" msprop:Generator_RowClassName="vQry51Row">
+        <xs:element name="vQry51" msprop:Generator_TableClassName="vQry51DataTable" msprop:Generator_TableVarName="tablevQry51" msprop:Generator_RowChangedName="vQry51RowChanged" msprop:Generator_TablePropName="vQry51" msprop:Generator_RowDeletingName="vQry51RowDeleting" msprop:Generator_RowChangingName="vQry51RowChanging" msprop:Generator_RowEvHandlerName="vQry51RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry51RowDeleted" msprop:Generator_RowClassName="vQry51Row" msprop:Generator_UserTableName="vQry51" msprop:Generator_RowEvArgName="vQry51RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
@@ -3134,7 +3253,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry52" msprop:Generator_TableClassName="vQry52DataTable" msprop:Generator_TableVarName="tablevQry52" msprop:Generator_RowChangedName="vQry52RowChanged" msprop:Generator_TablePropName="vQry52" msprop:Generator_RowDeletingName="vQry52RowDeleting" msprop:Generator_RowChangingName="vQry52RowChanging" msprop:Generator_RowEvHandlerName="vQry52RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry52RowDeleted" msprop:Generator_RowClassName="vQry52Row" msprop:Generator_UserTableName="vQry52" msprop:Generator_RowEvArgName="vQry52RowChangeEvent">
+        <xs:element name="vQry52" msprop:Generator_TableClassName="vQry52DataTable" msprop:Generator_TableVarName="tablevQry52" msprop:Generator_TablePropName="vQry52" msprop:Generator_RowDeletingName="vQry52RowDeleting" msprop:Generator_RowChangingName="vQry52RowChanging" msprop:Generator_RowEvHandlerName="vQry52RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry52RowDeleted" msprop:Generator_UserTableName="vQry52" msprop:Generator_RowChangedName="vQry52RowChanged" msprop:Generator_RowEvArgName="vQry52RowChangeEvent" msprop:Generator_RowClassName="vQry52Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MotherAge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMotherAge" msprop:Generator_ColumnPropNameInRow="MotherAge" msprop:Generator_ColumnPropNameInTable="MotherAgeColumn" msprop:Generator_UserColumnName="MotherAge" type="xs:int" minOccurs="0" />
@@ -3181,7 +3300,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry53" msprop:Generator_TableClassName="vQry53DataTable" msprop:Generator_TableVarName="tablevQry53" msprop:Generator_TablePropName="vQry53" msprop:Generator_RowDeletingName="vQry53RowDeleting" msprop:Generator_RowChangingName="vQry53RowChanging" msprop:Generator_RowEvHandlerName="vQry53RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry53RowDeleted" msprop:Generator_UserTableName="vQry53" msprop:Generator_RowChangedName="vQry53RowChanged" msprop:Generator_RowEvArgName="vQry53RowChangeEvent" msprop:Generator_RowClassName="vQry53Row">
+        <xs:element name="vQry53" msprop:Generator_TableClassName="vQry53DataTable" msprop:Generator_TableVarName="tablevQry53" msprop:Generator_RowChangedName="vQry53RowChanged" msprop:Generator_TablePropName="vQry53" msprop:Generator_RowDeletingName="vQry53RowDeleting" msprop:Generator_RowChangingName="vQry53RowChanging" msprop:Generator_RowEvHandlerName="vQry53RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry53RowDeleted" msprop:Generator_RowClassName="vQry53Row" msprop:Generator_UserTableName="vQry53" msprop:Generator_RowEvArgName="vQry53RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -3255,7 +3374,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry48A" msprop:Generator_TableClassName="vQry48ADataTable" msprop:Generator_TableVarName="tablevQry48A" msprop:Generator_TablePropName="vQry48A" msprop:Generator_RowDeletingName="vQry48ARowDeleting" msprop:Generator_RowChangingName="vQry48ARowChanging" msprop:Generator_RowEvHandlerName="vQry48ARowChangeEventHandler" msprop:Generator_RowDeletedName="vQry48ARowDeleted" msprop:Generator_UserTableName="vQry48A" msprop:Generator_RowChangedName="vQry48ARowChanged" msprop:Generator_RowEvArgName="vQry48ARowChangeEvent" msprop:Generator_RowClassName="vQry48ARow">
+        <xs:element name="vQry48A" msprop:Generator_TableClassName="vQry48ADataTable" msprop:Generator_TableVarName="tablevQry48A" msprop:Generator_RowChangedName="vQry48ARowChanged" msprop:Generator_TablePropName="vQry48A" msprop:Generator_RowDeletingName="vQry48ARowDeleting" msprop:Generator_RowChangingName="vQry48ARowChanging" msprop:Generator_RowEvHandlerName="vQry48ARowChangeEventHandler" msprop:Generator_RowDeletedName="vQry48ARowDeleted" msprop:Generator_RowClassName="vQry48ARow" msprop:Generator_UserTableName="vQry48A" msprop:Generator_RowEvArgName="vQry48ARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" />
@@ -3270,7 +3389,7 @@ WHERE        (PersonId = @PersonId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vQry54" msprop:Generator_TableClassName="vQry54DataTable" msprop:Generator_TableVarName="tablevQry54" msprop:Generator_RowChangedName="vQry54RowChanged" msprop:Generator_TablePropName="vQry54" msprop:Generator_RowDeletingName="vQry54RowDeleting" msprop:Generator_RowChangingName="vQry54RowChanging" msprop:Generator_RowEvHandlerName="vQry54RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry54RowDeleted" msprop:Generator_RowClassName="vQry54Row" msprop:Generator_UserTableName="vQry54" msprop:Generator_RowEvArgName="vQry54RowChangeEvent">
+        <xs:element name="vQry54" msprop:Generator_TableClassName="vQry54DataTable" msprop:Generator_TableVarName="tablevQry54" msprop:Generator_TablePropName="vQry54" msprop:Generator_RowDeletingName="vQry54RowDeleting" msprop:Generator_RowChangingName="vQry54RowChanging" msprop:Generator_RowEvHandlerName="vQry54RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry54RowDeleted" msprop:Generator_UserTableName="vQry54" msprop:Generator_RowChangedName="vQry54RowChanged" msprop:Generator_RowEvArgName="vQry54RowChangeEvent" msprop:Generator_RowClassName="vQry54Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
@@ -3298,6 +3417,62 @@ WHERE        (PersonId = @PersonId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry55" msprop:Generator_TableClassName="vQry55DataTable" msprop:Generator_TableVarName="tablevQry55" msprop:Generator_RowChangedName="vQry55RowChanged" msprop:Generator_TablePropName="vQry55" msprop:Generator_RowDeletingName="vQry55RowDeleting" msprop:Generator_RowChangingName="vQry55RowChanging" msprop:Generator_RowEvHandlerName="vQry55RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry55RowDeleted" msprop:Generator_RowClassName="vQry55Row" msprop:Generator_UserTableName="vQry55" msprop:Generator_RowEvArgName="vQry55RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AgeState" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAgeState" msprop:Generator_ColumnPropNameInRow="AgeState" msprop:Generator_ColumnPropNameInTable="AgeStateColumn" msprop:Generator_UserColumnName="AgeState" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNUM" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_UserColumnName="NUM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry56" msprop:Generator_TableClassName="vQry56DataTable" msprop:Generator_TableVarName="tablevQry56" msprop:Generator_RowChangedName="vQry56RowChanged" msprop:Generator_TablePropName="vQry56" msprop:Generator_RowDeletingName="vQry56RowDeleting" msprop:Generator_RowChangingName="vQry56RowChanging" msprop:Generator_RowEvHandlerName="vQry56RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry56RowDeleted" msprop:Generator_RowClassName="vQry56Row" msprop:Generator_UserTableName="vQry56" msprop:Generator_RowEvArgName="vQry56RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WarasaType" msprop:Generator_ColumnVarNameInTable="columnWarasaType" msprop:Generator_ColumnPropNameInRow="WarasaType" msprop:Generator_ColumnPropNameInTable="WarasaTypeColumn" msprop:Generator_UserColumnName="WarasaType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AgeState" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAgeState" msprop:Generator_ColumnPropNameInRow="AgeState" msprop:Generator_ColumnPropNameInTable="AgeStateColumn" msprop:Generator_UserColumnName="AgeState" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNUM" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_UserColumnName="NUM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GetPersonIdByMMashatId" msprop:Generator_TableClassName="GetPersonIdByMMashatIdDataTable" msprop:Generator_TableVarName="tableGetPersonIdByMMashatId" msprop:Generator_TablePropName="GetPersonIdByMMashatId" msprop:Generator_RowDeletingName="GetPersonIdByMMashatIdRowDeleting" msprop:Generator_RowChangingName="GetPersonIdByMMashatIdRowChanging" msprop:Generator_RowEvHandlerName="GetPersonIdByMMashatIdRowChangeEventHandler" msprop:Generator_RowDeletedName="GetPersonIdByMMashatIdRowDeleted" msprop:Generator_UserTableName="GetPersonIdByMMashatId" msprop:Generator_RowChangedName="GetPersonIdByMMashatIdRowChanged" msprop:Generator_RowEvArgName="GetPersonIdByMMashatIdRowChangeEvent" msprop:Generator_RowClassName="GetPersonIdByMMashatIdRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3403,13 +3578,17 @@ WHERE        (PersonId = @PersonId)</CommandText>
       <xs:selector xpath=".//mstns:vQry51" />
       <xs:field xpath="mstns:PersonId" />
     </xs:unique>
+    <xs:unique name="GetPersonIdByMMashatId_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GetPersonIdByMMashatId" />
+      <xs:field xpath="mstns:PersonId" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_TBLMashat_CDSubCommitte" msdata:parent="CDSubCommitte" msdata:child="TBLEdafatCreator2" msdata:parentkey="SubCommitteId" msdata:childkey="SubCommitteId" msprop:Generator_UserChildTable="TBLEdafatCreator2" msprop:Generator_ChildPropName="GetTBLEdafatCreator2Rows" msprop:Generator_UserRelationName="FK_TBLMashat_CDSubCommitte" msprop:Generator_RelationVarName="relationFK_TBLMashat_CDSubCommitte" msprop:Generator_UserParentTable="CDSubCommitte" msprop:Generator_ParentPropName="CDSubCommitteRow" />
-      <msdata:Relationship name="FK_TBLWarasaSarf_TBLWarasa" msdata:parent="Qry09" msdata:child="vQry34" msdata:parentkey="PersonId" msdata:childkey="PersonId" msprop:Generator_UserChildTable="vQry34" msprop:Generator_ChildPropName="GetvQry34Rows" msprop:Generator_UserRelationName="FK_TBLWarasaSarf_TBLWarasa" msprop:Generator_ParentPropName="Qry09Row" msprop:Generator_RelationVarName="relationFK_TBLWarasaSarf_TBLWarasa" msprop:Generator_UserParentTable="Qry09" />
-      <msdata:Relationship name="FK_CDSubCommitte_CDSyndicate" msdata:parent="vQry36" msdata:child="CDSubCommitte" msdata:parentkey="SyndicateId" msdata:childkey="SyndicateId" msprop:Generator_UserChildTable="CDSubCommitte" msprop:Generator_ChildPropName="GetCDSubCommitteRows" msprop:Generator_UserRelationName="FK_CDSubCommitte_CDSyndicate" msprop:Generator_RelationVarName="relationFK_CDSubCommitte_CDSyndicate" msprop:Generator_UserParentTable="vQry36" msprop:Generator_ParentPropName="vQry36Row" />
-      <msdata:Relationship name="FK_CDSubCommitte_CDSyndicate1" msdata:parent="vQry37" msdata:child="CDSubCommitte" msdata:parentkey="SyndicateId" msdata:childkey="SyndicateId" msprop:Generator_UserChildTable="CDSubCommitte" msprop:Generator_ChildPropName="GetCDSubCommitteRows" msprop:Generator_UserRelationName="FK_CDSubCommitte_CDSyndicate1" msprop:Generator_RelationVarName="relationFK_CDSubCommitte_CDSyndicate1" msprop:Generator_UserParentTable="vQry37" msprop:Generator_ParentPropName="vQry37Row" />
+      <msdata:Relationship name="FK_TBLMashat_CDSubCommitte" msdata:parent="CDSubCommitte" msdata:child="TBLEdafatCreator2" msdata:parentkey="SubCommitteId" msdata:childkey="SubCommitteId" msprop:Generator_UserChildTable="TBLEdafatCreator2" msprop:Generator_ChildPropName="GetTBLEdafatCreator2Rows" msprop:Generator_UserRelationName="FK_TBLMashat_CDSubCommitte" msprop:Generator_ParentPropName="CDSubCommitteRow" msprop:Generator_RelationVarName="relationFK_TBLMashat_CDSubCommitte" msprop:Generator_UserParentTable="CDSubCommitte" />
+      <msdata:Relationship name="FK_TBLWarasaSarf_TBLWarasa" msdata:parent="Qry09" msdata:child="vQry34" msdata:parentkey="PersonId" msdata:childkey="PersonId" msprop:Generator_UserChildTable="vQry34" msprop:Generator_ChildPropName="GetvQry34Rows" msprop:Generator_UserRelationName="FK_TBLWarasaSarf_TBLWarasa" msprop:Generator_RelationVarName="relationFK_TBLWarasaSarf_TBLWarasa" msprop:Generator_UserParentTable="Qry09" msprop:Generator_ParentPropName="Qry09Row" />
+      <msdata:Relationship name="FK_CDSubCommitte_CDSyndicate" msdata:parent="vQry36" msdata:child="CDSubCommitte" msdata:parentkey="SyndicateId" msdata:childkey="SyndicateId" msprop:Generator_UserChildTable="CDSubCommitte" msprop:Generator_ChildPropName="GetCDSubCommitteRows" msprop:Generator_UserRelationName="FK_CDSubCommitte_CDSyndicate" msprop:Generator_ParentPropName="vQry36Row" msprop:Generator_RelationVarName="relationFK_CDSubCommitte_CDSyndicate" msprop:Generator_UserParentTable="vQry36" />
+      <msdata:Relationship name="FK_CDSubCommitte_CDSyndicate1" msdata:parent="vQry37" msdata:child="CDSubCommitte" msdata:parentkey="SyndicateId" msdata:childkey="SyndicateId" msprop:Generator_UserChildTable="CDSubCommitte" msprop:Generator_ChildPropName="GetCDSubCommitteRows" msprop:Generator_UserRelationName="FK_CDSubCommitte_CDSyndicate1" msprop:Generator_ParentPropName="vQry37Row" msprop:Generator_RelationVarName="relationFK_CDSubCommitte_CDSyndicate1" msprop:Generator_UserParentTable="vQry37" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
