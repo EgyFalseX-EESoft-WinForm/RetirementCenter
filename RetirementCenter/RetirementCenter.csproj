@@ -278,6 +278,18 @@
     <Compile Include="Forms\Code\CodeFrm.designer.cs">
       <DependentUpon>CodeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\ActivateVisaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaFrm.Designer.cs">
+      <DependentUpon>ActivateVisaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWarasaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWarasaFrm.Designer.cs">
+      <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLBeanWarsaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +367,12 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry38cFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry38cFrm.designer.cs">
+      <DependentUpon>Qry38cFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry56Frm.cs">
       <SubType>Form</SubType>
@@ -952,6 +970,12 @@
     <Content Include="web.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Forms\Data\ActivateVisaFrm.resx">
+      <DependentUpon>ActivateVisaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaFrm.resx">
+      <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLBeanWarsaFrm.resx">
       <DependentUpon>TBLBeanWarsaFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -991,6 +1015,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry38cFrm.resx">
+      <DependentUpon>Qry38cFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry56Frm.resx">
       <DependentUpon>Qry56Frm.cs</DependentUpon>

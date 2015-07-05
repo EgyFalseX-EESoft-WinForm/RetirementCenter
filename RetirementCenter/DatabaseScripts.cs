@@ -274,6 +274,30 @@ namespace RetirementCenter
                 cmd.CommandText = vQry43;
                 cmd.ExecuteNonQuery();
 
+                if (CheckViewExists("vQry57"))
+                {
+                    cmd.CommandText = DropObject("vQry57");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry57;
+                cmd.ExecuteNonQuery();
+
+                if (CheckViewExists("vQry58"))
+                {
+                    cmd.CommandText = DropObject("vQry58");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry58;
+                cmd.ExecuteNonQuery();
+
+                if (CheckViewExists("vQry59"))
+                {
+                    cmd.CommandText = DropObject("vQry59");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry59;
+                cmd.ExecuteNonQuery();
+
                 cmd.CommandText = TBLProofDoc;
                 cmd.ExecuteNonQuery();
 
@@ -966,7 +990,58 @@ FROM            TBLMemberSarf INNER JOIN
                         END";
             }
         }
-
+        public static string vQry57
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry57]
+                    AS
+                                    SELECT        BankExportedData.Id, BankExportedData.MMashatId, BankExportedData.ExportDate, BankExportedData.hafza, BankExportedData.hafzadate, TBLMashat.MMashatName, TBLMashat.MMashatNId, 
+                    TBLMashat.sarfnumber, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, BankExportedData.Activate, BankExportedData.ActivateDate
+                    FROM            BankExportedData INNER JOIN
+                    TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId INNER JOIN
+                    CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                    CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
+            }
+        }
+        public static string vQry58
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry58]
+                    AS
+                                    SELECT        BankExportedDataWarsa.Id, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, TBLWarasa.personName, 
+                         TBLWarasa.personNID, TBLMashat.sarfnumber, CDSubCommitte.SubCommitte, CDSyndicate.Syndicate, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate
+                FROM            CDSubCommitte INNER JOIN
+                         CDSyndicate INNER JOIN
+                         TBLWarasa INNER JOIN
+                         BankExportedDataWarsa ON TBLWarasa.PersonId = BankExportedDataWarsa.PersonId ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId ON 
+                         CDSubCommitte.SubCommitteId = TBLWarasa.SubCommitteId INNER JOIN
+                         TBLMashat ON BankExportedDataWarsa.MMashatId = TBLMashat.MMashatId
+";
+            }
+        }
+        public static string vQry59
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry59]
+                    AS
+                                    SELECT        CAST(TBLBeanWarsa.PersonId AS VARCHAR) + CAST(TBLBeanWarsa.DofatSarfId AS VARCHAR) AS autoId, TBLBeanWarsa.PersonId, TBLBeanWarsa.DofatSarfId, TBLBeanWarsa.Beandate, 
+                         TBLBeanWarsa.deleted, TBLBeanWarsa.remarks, TBLBeanWarsa.dateremember, TBLBeanWarsa.userin, TBLBeanWarsa.datein, TBLDofatSarf.DofatSarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, 
+                         TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLWarasa.personNID, TBLWarasa.personName
+                FROM            TBLBeanWarsa INNER JOIN
+                         TBLWarasa ON TBLBeanWarsa.PersonId = TBLWarasa.PersonId INNER JOIN
+                         TBLDofatSarf ON TBLBeanWarsa.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
+";
+            }
+        }
 
     }
 }

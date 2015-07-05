@@ -18,6 +18,7 @@ namespace RetirementCenter
         public TBLBeanWarsaFrm()
         {
             InitializeComponent();
+            XPSCSData.Session.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -60,22 +61,29 @@ namespace RetirementCenter
         #region - Event Handlers -
         private void FormFrm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLBeanWarsa' table. You can move, or remove it, as needed.
-            this.tBLBeanWarsaTableAdapter.Fill(this.dsRetirementCenter.TBLBeanWarsa);
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMSTBLWarasa.QueryableSource = dsLinq.vTBLWarasas;
-            lSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs;
             ActivePriv();
         }
         private void repositoryItemButtonEditSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
             {
+                
                 GridView GV = (GridView)gridControlData.MainView;
-            DataSources.dsRetirementCenter.TBLBeanWarsaRow row = (DataSources.dsRetirementCenter.TBLBeanWarsaRow)GV.GetFocusedDataRow();
-            row.EndEdit();
-            tBLBeanWarsaTableAdapter.Update(row);
+                DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)GV.GetRow(GV.FocusedRowHandle);
+            
+                DateTime Beandate = (DateTime)row.GetMemberValue("Beandate");
+                bool deleted = (bool)row.GetMemberValue("deleted");
+                string remarks = (string)row.GetMemberValue("remarks");
+                DateTime dateremember = (DateTime)row.GetMemberValue("dateremember");
+                int userin = Program.UserInfo.UserId;
+                DateTime datein = SQLProvider.ServerDateTime();
+                int PersonId = (int)row.GetMemberValue("PersonId");
+                int DofatSarfId = (int)row.GetMemberValue("DofatSarfId");
+
+                tBLBeanWarsaTableAdapter.Update(Beandate, deleted, remarks, dateremember, userin, datein, PersonId, DofatSarfId);
+
             Program.ShowMsg("تم الحفظ", false, this, true);
             Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
             }
@@ -88,14 +96,14 @@ namespace RetirementCenter
         private void repositoryItemButtonEditDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             GridView GV = (GridView)gridControlData.MainView;
-            DataSources.dsRetirementCenter.TBLBeanWarsaRow row = (DataSources.dsRetirementCenter.TBLBeanWarsaRow)GV.GetFocusedDataRow();
-            if (row.RowState == DataRowState.Detached)
-                return;
+            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)GV.GetRow(GV.FocusedRowHandle);
             if (MessageBox.Show("هل انت متأكد؟", "تحزير ...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)
                 return;
             try
             {
-                tBLBeanWarsaTableAdapter.Delete(row.PersonId, row.DofatSarfId);
+                int PersonId = (int)row.GetMemberValue("PersonId");
+                int DofatSarfId = (int)row.GetMemberValue("DofatSarfId");
+                tBLBeanWarsaTableAdapter.Delete(PersonId, DofatSarfId);
                 gridViewData.DeleteRow(GV.FocusedRowHandle);
                 Program.ShowMsg("تم الحذف", false, this);
                 Program.Logger.LogThis("تم الحذف", Text, FXFW.Logger.OpType.success, null, null, this);
@@ -111,7 +119,11 @@ namespace RetirementCenter
             TBLBeanWarsaWFrm frm = new TBLBeanWarsaWFrm();
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
-            tBLBeanWarsaTableAdapter.Fill(dsRetirementCenter.TBLBeanWarsa);
+
+            XPSCSData.Session.DropChanges();
+            XPSCSData.Session.DropIdentityMap();
+            XPSCSData.Reload();
+            gridViewData.RefreshData();
         }
        
         #endregion

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -35,7 +36,7 @@
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.tBLBeanWarsaBindingSource = new System.Windows.Forms.BindingSource();
+            this.tBLBeanWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,12 +48,15 @@
             this.lueDofatSarfAId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLDofatSarf = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LSMSTBLMashat = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,7 +190,8 @@
             this.colPersonId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colPersonId.AppearanceHeader.Options.UseTextOptions = true;
             this.colPersonId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPersonId.FieldName = "PersonId";
+            this.colPersonId.Caption = "الاسم";
+            this.colPersonId.FieldName = "personName";
             this.colPersonId.Name = "colPersonId";
             this.colPersonId.Visible = true;
             this.colPersonId.VisibleIndex = 0;
@@ -197,6 +202,7 @@
             this.colBeandate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colBeandate.AppearanceHeader.Options.UseTextOptions = true;
             this.colBeandate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBeandate.Caption = "تاريخ";
             this.colBeandate.FieldName = "Beandate";
             this.colBeandate.Name = "colBeandate";
             this.colBeandate.Visible = true;
@@ -208,6 +214,7 @@
             this.coldeleted.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldeleted.AppearanceHeader.Options.UseTextOptions = true;
             this.coldeleted.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldeleted.Caption = "ايقاف";
             this.coldeleted.FieldName = "deleted";
             this.coldeleted.Name = "coldeleted";
             this.coldeleted.Visible = true;
@@ -219,6 +226,7 @@
             this.colremarks.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colremarks.AppearanceHeader.Options.UseTextOptions = true;
             this.colremarks.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colremarks.Caption = "ملاحظات";
             this.colremarks.FieldName = "remarks";
             this.colremarks.Name = "colremarks";
             this.colremarks.Visible = true;
@@ -230,6 +238,7 @@
             this.coldateremember.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldateremember.AppearanceHeader.Options.UseTextOptions = true;
             this.coldateremember.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateremember.Caption = "تاريخ التذكير";
             this.coldateremember.FieldName = "dateremember";
             this.coldateremember.Name = "coldateremember";
             this.coldateremember.Visible = true;
@@ -277,11 +286,24 @@
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDofatSarfId,
             this.colDofatSarf});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gridLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDofatSarfId, DevExpress.Data.ColumnSortOrder.Descending)});
+            // 
+            // colDofatSarfId
+            // 
+            this.colDofatSarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.Caption = "كود";
+            this.colDofatSarfId.FieldName = "DofatSarfId";
+            this.colDofatSarfId.Name = "colDofatSarfId";
             // 
             // colDofatSarf
             // 
@@ -300,7 +322,7 @@
             this.lueMMashatId.Properties.Appearance.Options.UseFont = true;
             this.lueMMashatId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueMMashatId.Properties.DataSource = this.LSMSTBLWarasa;
+            this.lueMMashatId.Properties.DataSource = this.LSMSTBLMashat;
             this.lueMMashatId.Properties.DisplayMember = "MMashatName";
             this.lueMMashatId.Properties.NullText = "";
             this.lueMMashatId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -310,16 +332,18 @@
             this.lueMMashatId.TabIndex = 1;
             this.lueMMashatId.EditValueChanged += new System.EventHandler(this.lueMMashatId_EditValueChanged);
             // 
-            // LSMSTBLWarasa
+            // LSMSTBLMashat
             // 
-            this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLMashat);
-            this.LSMSTBLWarasa.KeyExpression = "MMashatId";
+            this.LSMSTBLMashat.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLMashat);
+            this.LSMSTBLMashat.KeyExpression = "MMashatId";
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMMashatName,
-            this.colsarfnumber});
+            this.colsarfnumber,
+            this.colSyndicate,
+            this.colSubCommitte});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -328,6 +352,10 @@
             // 
             // colMMashatName
             // 
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatName.Caption = "الاسم";
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
@@ -336,11 +364,39 @@
             // 
             // colsarfnumber
             // 
+            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colsarfnumber.Caption = "رقم صرف";
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
             this.colsarfnumber.VisibleIndex = 1;
+            // 
+            // colSyndicate
+            // 
+            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.Caption = "الفرعية";
+            this.colSyndicate.FieldName = "Syndicate";
+            this.colSyndicate.Name = "colSyndicate";
+            this.colSyndicate.Visible = true;
+            this.colSyndicate.VisibleIndex = 2;
+            // 
+            // colSubCommitte
+            // 
+            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.Caption = "اللجنة";
+            this.colSubCommitte.FieldName = "SubCommitte";
+            this.colSubCommitte.Name = "colSubCommitte";
+            this.colSubCommitte.Visible = true;
+            this.colSubCommitte.VisibleIndex = 3;
             // 
             // labelControl2
             // 
@@ -434,7 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -454,7 +510,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
         private DataSources.dsRetirementCenter dsRetirementCenter;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSTBLWarasa;
         private DevExpress.XtraEditors.GridLookUpEdit lueMMashatId;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GridLookUpEdit lueDofatSarfAId;
@@ -476,5 +531,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSTBLMashat;
     }
 }

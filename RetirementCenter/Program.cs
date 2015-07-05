@@ -59,7 +59,7 @@ namespace RetirementCenter
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            if (FXFW.SqlDB.LoadSqlDBPath("RetirementCenter") && Authentication())
+            if (FXFW.SqlDB.LoadSqlDBPath("RetirementCenter") /*&& Authentication()*/)
             {
                 LoadAppSetting();
                 FXFW.SqlDB.LoadSQLReports();

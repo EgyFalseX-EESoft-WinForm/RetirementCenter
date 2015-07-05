@@ -254,6 +254,51 @@ namespace RetirementCenter
             con.Close();
             return msg;
         }
+        public static void UpdateVisaActivation(object activation, object activationData, object MMashatId)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand(@"UPDATE dbo.BankExportedData
+            SET Activate = @Activate, [ActivateDate] = @ActivateDate
+            WHERE [MMashatId] = @MMashatId", con);
+            cmd.Parameters.Add(new SqlParameter("@Activate", SqlDbType.Bit) { Value = activation == null ? DBNull.Value : activation });
+            cmd.Parameters.Add(new SqlParameter("@ActivateDate", SqlDbType.DateTime) { Value = activationData == null ? DBNull.Value : activationData });
+            cmd.Parameters.Add(new SqlParameter("@MMashatId", SqlDbType.Int) { Value = MMashatId });
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                Program.Logger.LogThis(ex.Message, "", FXFW.Logger.OpType.fail, null, ex, new Form());
+                if (con != null)
+                    con.Close();
+            }
+        }
+        public static void UpdateVisaActivationWarasa(object activation, object activationData, object Id)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand(@"UPDATE dbo.BankExportedDataWarsa
+            SET Activate = @Activate, [ActivateDate] = @ActivateDate
+            WHERE Id = @Id", con);
+            cmd.Parameters.Add(new SqlParameter("@Activate", SqlDbType.Bit) { Value = activation == null ? DBNull.Value : activation });
+            cmd.Parameters.Add(new SqlParameter("@ActivateDate", SqlDbType.DateTime) { Value = activationData == null ? DBNull.Value : activationData });
+            cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int) { Value = Id });
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                Program.Logger.LogThis(ex.Message, "", FXFW.Logger.OpType.fail, null, ex, new Form());
+                if (con != null)
+                    con.Close();
+            }
+        }
+
 
         #region -   Selecting   -
         //Codes
