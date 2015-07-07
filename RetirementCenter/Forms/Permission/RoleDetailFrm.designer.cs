@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
+            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
+            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
+            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
-            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
-            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
-            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -186,6 +186,7 @@
             this.mbRetCenterBank = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterActivateVisa = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterActivateVisaWarasa = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry60 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -207,18 +208,18 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).BeginInit();
             this.groupControlUpdate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
-            this.popupControlContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
-            this.popupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
+            this.popupControlContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
+            this.popupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).BeginInit();
             this.groupControlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).BeginInit();
@@ -243,6 +244,53 @@
             this.groupControlUpdate.Size = new System.Drawing.Size(963, 251);
             this.groupControlUpdate.TabIndex = 1;
             this.groupControlUpdate.Text = "التفاصيل";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
+            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.groupControl2.Controls.Add(this.CEUpdate);
+            this.groupControl2.Controls.Add(this.CESelect);
+            this.groupControl2.Controls.Add(this.CEDelete);
+            this.groupControl2.Controls.Add(this.CEInsert);
+            this.groupControl2.Location = new System.Drawing.Point(361, 169);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(240, 73);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "عناصر السماح";
+            // 
+            // CEUpdate
+            // 
+            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
+            this.CEUpdate.Name = "CEUpdate";
+            this.CEUpdate.Properties.Caption = "تعديل";
+            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
+            this.CEUpdate.TabIndex = 0;
+            // 
+            // CESelect
+            // 
+            this.CESelect.Location = new System.Drawing.Point(21, 24);
+            this.CESelect.Name = "CESelect";
+            this.CESelect.Properties.Caption = "عرض";
+            this.CESelect.Size = new System.Drawing.Size(75, 19);
+            this.CESelect.TabIndex = 0;
+            // 
+            // CEDelete
+            // 
+            this.CEDelete.Location = new System.Drawing.Point(144, 49);
+            this.CEDelete.Name = "CEDelete";
+            this.CEDelete.Properties.Caption = "حذف";
+            this.CEDelete.Size = new System.Drawing.Size(75, 19);
+            this.CEDelete.TabIndex = 0;
+            // 
+            // CEInsert
+            // 
+            this.CEInsert.Location = new System.Drawing.Point(144, 24);
+            this.CEInsert.Name = "CEInsert";
+            this.CEInsert.Properties.Caption = "اضافه";
+            this.CEInsert.Size = new System.Drawing.Size(75, 19);
+            this.CEInsert.TabIndex = 0;
             // 
             // appMenu
             // 
@@ -301,53 +349,6 @@
             this.someLabelControl1.Size = new System.Drawing.Size(36, 13);
             this.someLabelControl1.TabIndex = 0;
             this.someLabelControl1.Text = "No Info";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.groupControl2.Controls.Add(this.CEUpdate);
-            this.groupControl2.Controls.Add(this.CESelect);
-            this.groupControl2.Controls.Add(this.CEDelete);
-            this.groupControl2.Controls.Add(this.CEInsert);
-            this.groupControl2.Location = new System.Drawing.Point(361, 169);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(240, 73);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "عناصر السماح";
-            // 
-            // CEUpdate
-            // 
-            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
-            this.CEUpdate.Name = "CEUpdate";
-            this.CEUpdate.Properties.Caption = "تعديل";
-            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
-            this.CEUpdate.TabIndex = 0;
-            // 
-            // CESelect
-            // 
-            this.CESelect.Location = new System.Drawing.Point(21, 24);
-            this.CESelect.Name = "CESelect";
-            this.CESelect.Properties.Caption = "عرض";
-            this.CESelect.Size = new System.Drawing.Size(75, 19);
-            this.CESelect.TabIndex = 0;
-            // 
-            // CEDelete
-            // 
-            this.CEDelete.Location = new System.Drawing.Point(144, 49);
-            this.CEDelete.Name = "CEDelete";
-            this.CEDelete.Properties.Caption = "حذف";
-            this.CEDelete.Size = new System.Drawing.Size(75, 19);
-            this.CEDelete.TabIndex = 0;
-            // 
-            // CEInsert
-            // 
-            this.CEInsert.Location = new System.Drawing.Point(144, 24);
-            this.CEInsert.Name = "CEInsert";
-            this.CEInsert.Properties.Caption = "اضافه";
-            this.CEInsert.Size = new System.Drawing.Size(75, 19);
-            this.CEInsert.TabIndex = 0;
             // 
             // groupControlSelect
             // 
@@ -554,10 +555,11 @@
             this.mbRetCenterBank,
             this.mbRetCenterActivateVisa,
             this.mbRetCenterActivateVisaWarasa,
-            this.mbRetCenterQry38c});
+            this.mbRetCenterQry38c,
+            this.mbRetCenterQry60});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 299;
+            this.ribbonControl.MaxItemId = 300;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1914,6 +1916,15 @@
             this.mbRetCenterActivateVisaWarasa.LargeImageIndex = 47;
             this.mbRetCenterActivateVisaWarasa.Name = "mbRetCenterActivateVisaWarasa";
             // 
+            // mbRetCenterQry60
+            // 
+            this.mbRetCenterQry60.Caption = "بيان معاش مفقود";
+            this.mbRetCenterQry60.Id = 299;
+            this.mbRetCenterQry60.ImageIndex = 19;
+            this.mbRetCenterQry60.LargeImageIndex = 19;
+            this.mbRetCenterQry60.Name = "mbRetCenterQry60";
+            this.mbRetCenterQry60.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -2056,6 +2067,7 @@
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry43);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterBankQry);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry50);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry60);
             this.QryribbonPageGroup.Name = "QryribbonPageGroup";
             this.QryribbonPageGroup.Text = "الاستعلامات";
             // 
@@ -2157,6 +2169,12 @@
             this.Load += new System.EventHandler(this.EditorJobFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).EndInit();
             this.groupControlUpdate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).EndInit();
             this.popupControlContainer2.ResumeLayout(false);
@@ -2164,12 +2182,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
             this.popupControlContainer1.ResumeLayout(false);
             this.popupControlContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).EndInit();
             this.groupControlSelect.ResumeLayout(false);
             this.groupControlSelect.PerformLayout();
@@ -2341,6 +2353,7 @@
         private DevExpress.XtraBars.BarSubItem mbRetCenterBank;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterActivateVisa;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterActivateVisaWarasa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry60;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

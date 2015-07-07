@@ -102,7 +102,7 @@ namespace RetirementCenter
                     
                     for (int i = 0; i < gridViewData.DataRowCount; i++)
                     {
-                        RetirementCenter.DataSources.dsQueries.vQry38bRow row = (RetirementCenter.DataSources.dsQueries.vQry38bRow)((DataRowView)gridViewData.GetRow(i)).Row;
+                        RetirementCenter.DataSources.dsQueries.vQry38cRow row = (RetirementCenter.DataSources.dsQueries.vQry38cRow)((DataRowView)gridViewData.GetRow(i)).Row;
                         PramId.Value = row.MMashatId; PramUser.Value = Program.UserInfo.UserId; PramPersonId.Value = row.PersonId;
                         cmd.ExecuteNonQuery();
                     }
