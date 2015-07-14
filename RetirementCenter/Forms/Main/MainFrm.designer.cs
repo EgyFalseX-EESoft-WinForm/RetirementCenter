@@ -1933,7 +1933,7 @@ namespace RetirementCenter
             // 
             // mbRetCenterQry60
             // 
-            this.mbRetCenterQry60.Caption = "ÈíÇä ãÚÇÔ ãİŞæÏ";
+            this.mbRetCenterQry60.Caption = "ÈíÇä ãÚÇÔ áã íÑÏ";
             this.mbRetCenterQry60.Id = 299;
             this.mbRetCenterQry60.ImageIndex = 19;
             this.mbRetCenterQry60.LargeImageIndex = 19;

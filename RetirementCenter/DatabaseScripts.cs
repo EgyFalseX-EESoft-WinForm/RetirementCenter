@@ -355,7 +355,7 @@ namespace RetirementCenter
                 dbo.TBLMashat.WorkeEndDate, dbo.TBLMashat.KideNumber, dbo.TBLMashat.ZmalaEshtrakDate, dbo.TBLMashat.SyndicateId, 
                 dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.MemberShipNumber, dbo.TBLMashat.MashHalaId, dbo.TBLMashat.sarfnumber, dbo.TBLMashat.datein, 
                 dbo.TBLMashat.userin, dbo.TBLMashat.yasref, dbo.CDSyndicate.Syndicate, dbo.Users.RealName, dbo.CDMashHala.MashHala, 
-                dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.filedate, dbo.TBLMashat.EndworkId, dbo.CDEndwork.EndworkReson
+                dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.filedate, dbo.TBLMashat.EndworkId, dbo.CDEndwork.EndworkReson, dbo.TBLMashat.visa
                 FROM dbo.TBLMashat LEFT OUTER JOIN
                 dbo.CDEndwork ON dbo.TBLMashat.EndworkId = dbo.CDEndwork.EndworkId LEFT OUTER JOIN
                 dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId LEFT OUTER JOIN
@@ -396,7 +396,7 @@ namespace RetirementCenter
                 AS
                 SELECT        dbo.TBLWarasa.PersonId, dbo.TBLWarasa.MMashatId, dbo.TBLWarasa.WarasaTypeId, dbo.TBLWarasa.personName, dbo.TBLWarasa.personNID, 
                          dbo.TBLWarasa.personbirth, dbo.TBLWarasa.personAddres, dbo.TBLWarasa.personmobile, dbo.TBLWarasa.yasref, dbo.TBLWarasa.userin, 
-                         dbo.TBLWarasa.datein, dbo.TBLMashat.MMashatName, dbo.CDWarasaType.WarasaType, dbo.Users.RealName
+                         dbo.TBLWarasa.datein, dbo.TBLMashat.MMashatName, dbo.CDWarasaType.WarasaType, dbo.Users.RealName, dbo.TBLWarasa.visa
 FROM            dbo.TBLWarasa LEFT OUTER JOIN
                          dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId LEFT OUTER JOIN
                          dbo.CDWarasaType ON dbo.TBLWarasa.WarasaTypeId = dbo.CDWarasaType.WarasaTypeId LEFT OUTER JOIN
@@ -414,7 +414,7 @@ FROM            dbo.TBLWarasa LEFT OUTER JOIN
                 dbo.TBLWarasa.personmobile, dbo.TBLWarasa.yasref, dbo.TBLWarasa.userin, dbo.TBLWarasa.datein, dbo.Users.RealName, dbo.CDWarasaType.WarasaType, dbo.TBLMashat.MMashatName, 
                 dbo.TBLMashat.sarfnumber, CDSyndicate_1.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDEndwork.EndworkReson, 
                 dbo.TBLMashat.EndworkId, dbo.TBLMashat.WorkeEndDate, dbo.TBLWarasa.SyndicateId AS SyndicateIdWarasa, dbo.TBLWarasa.SubCommitteId AS SubCommitteIdWarasa, 
-                dbo.CDSyndicate.Syndicate AS SyndicateWarasa, CDSubCommitte_1.SubCommitte AS SubCommitteWarasa, dbo.TBLWarasa.responsiblesarf
+                dbo.CDSyndicate.Syndicate AS SyndicateWarasa, CDSubCommitte_1.SubCommitte AS SubCommitteWarasa, dbo.TBLWarasa.responsiblesarf, dbo.TBLWarasa.visa
                 FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
                 dbo.Users RIGHT OUTER JOIN
                 dbo.CDSyndicate RIGHT OUTER JOIN

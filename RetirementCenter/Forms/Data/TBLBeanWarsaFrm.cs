@@ -117,8 +117,7 @@ namespace RetirementCenter
         private void btnNew_Click(object sender, EventArgs e)
         {
             TBLBeanWarsaWFrm frm = new TBLBeanWarsaWFrm();
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
-                return;
+            frm.ShowDialog();
 
             XPSCSData.Session.DropChanges();
             XPSCSData.Session.DropIdentityMap();

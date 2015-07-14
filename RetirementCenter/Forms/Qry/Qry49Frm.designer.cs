@@ -50,7 +50,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPageGrid = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPagePivot = new DevExpress.XtraTab.XtraTabPage();
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.fieldMMashatId1 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -64,7 +63,12 @@
             this.fieldAge1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNameOnCard1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNIDState1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSyndicateId = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSubCommitteId = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.xtraTabPageGrid = new DevExpress.XtraTab.XtraTabPage();
             this.vQry49TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry49TableAdapter();
+            this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry49BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -77,9 +81,9 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPageGrid.SuspendLayout();
             this.xtraTabPagePivot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
+            this.xtraTabPageGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -201,7 +205,9 @@
             this.colSubCommitte,
             this.colAge,
             this.colNameOnCard,
-            this.colNIDState});
+            this.colNIDState,
+            this.colSyndicateId,
+            this.colSubCommitteId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -262,7 +268,7 @@
             this.colMMashatNId.FieldName = "MMashatNId";
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 7;
+            this.colMMashatNId.VisibleIndex = 9;
             this.colMMashatNId.Width = 80;
             // 
             // colBirthDate
@@ -275,7 +281,7 @@
             this.colBirthDate.FieldName = "BirthDate";
             this.colBirthDate.Name = "colBirthDate";
             this.colBirthDate.Visible = true;
-            this.colBirthDate.VisibleIndex = 6;
+            this.colBirthDate.VisibleIndex = 8;
             // 
             // colBDate
             // 
@@ -288,7 +294,7 @@
             this.colBDate.Name = "colBDate";
             this.colBDate.OptionsColumn.ReadOnly = true;
             this.colBDate.Visible = true;
-            this.colBDate.VisibleIndex = 8;
+            this.colBDate.VisibleIndex = 10;
             this.colBDate.Width = 162;
             // 
             // colSyndicate
@@ -301,7 +307,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 4;
+            this.colSyndicate.VisibleIndex = 5;
             // 
             // colSubCommitte
             // 
@@ -313,7 +319,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 5;
+            this.colSubCommitte.VisibleIndex = 7;
             // 
             // colAge
             // 
@@ -326,7 +332,7 @@
             this.colAge.Name = "colAge";
             this.colAge.OptionsColumn.ReadOnly = true;
             this.colAge.Visible = true;
-            this.colAge.VisibleIndex = 9;
+            this.colAge.VisibleIndex = 11;
             this.colAge.Width = 124;
             // 
             // colNameOnCard
@@ -340,7 +346,7 @@
             this.colNameOnCard.Name = "colNameOnCard";
             this.colNameOnCard.OptionsColumn.ReadOnly = true;
             this.colNameOnCard.Visible = true;
-            this.colNameOnCard.VisibleIndex = 10;
+            this.colNameOnCard.VisibleIndex = 12;
             this.colNameOnCard.Width = 104;
             // 
             // colNIDState
@@ -420,13 +426,6 @@
             this.xtraTabPageGrid,
             this.xtraTabPagePivot});
             // 
-            // xtraTabPageGrid
-            // 
-            this.xtraTabPageGrid.Controls.Add(this.gridControlData);
-            this.xtraTabPageGrid.Name = "xtraTabPageGrid";
-            this.xtraTabPageGrid.Size = new System.Drawing.Size(878, 387);
-            this.xtraTabPageGrid.Text = "Grid";
-            // 
             // xtraTabPagePivot
             // 
             this.xtraTabPagePivot.Controls.Add(this.pivotGridControl1);
@@ -449,7 +448,9 @@
             this.fieldSubCommitte1,
             this.fieldAge1,
             this.fieldNameOnCard1,
-            this.fieldNIDState1});
+            this.fieldNIDState1,
+            this.fieldSyndicateId,
+            this.fieldSubCommitteId});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControl1.Name = "pivotGridControl1";
             this.pivotGridControl1.Size = new System.Drawing.Size(878, 387);
@@ -502,7 +503,7 @@
             // fieldSyndicate1
             // 
             this.fieldSyndicate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldSyndicate1.AreaIndex = 0;
+            this.fieldSyndicate1.AreaIndex = 1;
             this.fieldSyndicate1.Caption = "الفرعية";
             this.fieldSyndicate1.FieldName = "Syndicate";
             this.fieldSyndicate1.Name = "fieldSyndicate1";
@@ -510,7 +511,7 @@
             // fieldSubCommitte1
             // 
             this.fieldSubCommitte1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldSubCommitte1.AreaIndex = 1;
+            this.fieldSubCommitte1.AreaIndex = 3;
             this.fieldSubCommitte1.Caption = "اللجنة";
             this.fieldSubCommitte1.FieldName = "SubCommitte";
             this.fieldSubCommitte1.Name = "fieldSubCommitte1";
@@ -537,9 +538,56 @@
             this.fieldNIDState1.FieldName = "NID State";
             this.fieldNIDState1.Name = "fieldNIDState1";
             // 
+            // fieldSyndicateId
+            // 
+            this.fieldSyndicateId.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldSyndicateId.AreaIndex = 2;
+            this.fieldSyndicateId.Caption = "كود اللجنة";
+            this.fieldSyndicateId.FieldName = "SyndicateId";
+            this.fieldSyndicateId.Name = "fieldSyndicateId";
+            // 
+            // fieldSubCommitteId
+            // 
+            this.fieldSubCommitteId.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldSubCommitteId.AreaIndex = 0;
+            this.fieldSubCommitteId.Caption = "كود الفرعية";
+            this.fieldSubCommitteId.FieldName = "SubCommitteId";
+            this.fieldSubCommitteId.Name = "fieldSubCommitteId";
+            // 
+            // xtraTabPageGrid
+            // 
+            this.xtraTabPageGrid.Controls.Add(this.gridControlData);
+            this.xtraTabPageGrid.Name = "xtraTabPageGrid";
+            this.xtraTabPageGrid.Size = new System.Drawing.Size(878, 387);
+            this.xtraTabPageGrid.Text = "Grid";
+            // 
             // vQry49TableAdapter
             // 
             this.vQry49TableAdapter.ClearBeforeFill = true;
+            // 
+            // colSyndicateId
+            // 
+            this.colSyndicateId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.Caption = "كود الفرعية";
+            this.colSyndicateId.FieldName = "SyndicateId";
+            this.colSyndicateId.Name = "colSyndicateId";
+            this.colSyndicateId.Visible = true;
+            this.colSyndicateId.VisibleIndex = 4;
+            // 
+            // colSubCommitteId
+            // 
+            this.colSubCommitteId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.Caption = "كود اللجنة";
+            this.colSubCommitteId.FieldName = "SubCommitteId";
+            this.colSubCommitteId.Name = "colSubCommitteId";
+            this.colSubCommitteId.Visible = true;
+            this.colSubCommitteId.VisibleIndex = 6;
             // 
             // Qry49Frm
             // 
@@ -564,9 +612,9 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPageGrid.ResumeLayout(false);
             this.xtraTabPagePivot.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
+            this.xtraTabPageGrid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -609,6 +657,10 @@
         private DevExpress.XtraPivotGrid.PivotGridField fieldAge1;
         private DevExpress.XtraPivotGrid.PivotGridField fieldNameOnCard1;
         private DevExpress.XtraPivotGrid.PivotGridField fieldNIDState1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSyndicateId;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSubCommitteId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSyndicateId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCommitteId;
 
     }
 }

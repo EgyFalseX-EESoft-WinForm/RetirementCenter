@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RetirementCenter" Class="dsTeachersUnionViewsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.150;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=RetirementCenter;Integrated Security=True" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CDSyndicate" Member="CDSyndicates">
     <Type Name="CDSyndicate">
       <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -60,64 +60,11 @@
       <Column Name="feasarf" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vTBLMashat" Member="vTBLMashats">
-    <Type Name="vTBLMashat">
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatNKAPAId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MMashatLId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MMashatNId" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MMashatGender" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="MMashataddresGov" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="MMashataddresMarkez" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MMashataddres" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="MMashatPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="MMashatMobil" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="MMashatMail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="WorkeEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="KideNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ZmalaEshtrakDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MemberShipNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MashHalaId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="filedate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="EndworkId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="EndworkReson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CDWarasaType" Member="CDWarasaTypes">
     <Type Name="CDWarasaType">
       <Column Name="WarasaTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="WarasaType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="CDWarasaType_TBLWarasa" Member="TBLWarasas" ThisKey="WarasaTypeId" OtherKey="WarasaTypeId" Type="TBLWarasa" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vTBLWarasa" Member="vTBLWarasas">
-    <Type Name="vTBLWarasa">
-      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="WarasaTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="personNID" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
-      <Column Name="personbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="personAddres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="personmobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
-      <Column Name="WarasaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vTBLEdafat" Member="vTBLEdafats">
@@ -660,37 +607,6 @@
       <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vTBLWarasa_TBLMashat" Member="vTBLWarasa_TBLMashats">
-    <Type Name="vTBLWarasa_TBLMashat">
-      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="WarasaTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="personNID" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
-      <Column Name="personbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="personAddres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="personmobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="WarasaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EndworkReson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="EndworkId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="WorkeEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SyndicateIdWarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteIdWarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SyndicateWarasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SubCommitteWarasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="responsiblesarf" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vQry33" Member="vQry33s">
     <Type Name="vQry33">
       <Column Name="MMashatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -824,6 +740,93 @@
       <Column Name="userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datein" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="memo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLMashat" Member="vTBLMashats">
+    <Type Name="vTBLMashat">
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatNKAPAId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MMashatLId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MMashatNId" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MMashatGender" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MMashataddresGov" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MMashataddresMarkez" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MMashataddres" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MMashatPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MMashatMobil" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MMashatMail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorkeEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="KideNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ZmalaEshtrakDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberShipNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MashHalaId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="filedate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndworkId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EndworkReson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLWarasa" Member="vTBLWarasas">
+    <Type Name="vTBLWarasa">
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WarasaTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="personNID" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="personbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="personAddres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="personmobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="WarasaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLWarasa_TBLMashat" Member="vTBLWarasa_TBLMashats">
+    <Type Name="vTBLWarasa_TBLMashat">
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WarasaTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="personNID" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="personbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="personAddres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="personmobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WarasaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndworkReson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EndworkId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WorkeEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SyndicateIdWarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteIdWarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateWarasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubCommitteWarasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="responsiblesarf" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

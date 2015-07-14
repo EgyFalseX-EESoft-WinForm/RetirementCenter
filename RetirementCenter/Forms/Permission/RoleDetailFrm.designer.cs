@@ -31,25 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
-            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
-            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
-            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
+            this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
-            this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
-            this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
-            this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
@@ -206,28 +194,40 @@
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
+            this.CESelect = new DevExpress.XtraEditors.CheckEdit();
+            this.CEDelete = new DevExpress.XtraEditors.CheckEdit();
+            this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
+            this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
+            this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
+            this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).BeginInit();
             this.groupControlUpdate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
             this.popupControlContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
             this.popupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).BeginInit();
             this.groupControlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlUpdate
@@ -244,172 +244,6 @@
             this.groupControlUpdate.Size = new System.Drawing.Size(963, 251);
             this.groupControlUpdate.TabIndex = 1;
             this.groupControlUpdate.Text = "التفاصيل";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.groupControl2.Controls.Add(this.CEUpdate);
-            this.groupControl2.Controls.Add(this.CESelect);
-            this.groupControl2.Controls.Add(this.CEDelete);
-            this.groupControl2.Controls.Add(this.CEInsert);
-            this.groupControl2.Location = new System.Drawing.Point(361, 169);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(240, 73);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "عناصر السماح";
-            // 
-            // CEUpdate
-            // 
-            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
-            this.CEUpdate.Name = "CEUpdate";
-            this.CEUpdate.Properties.Caption = "تعديل";
-            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
-            this.CEUpdate.TabIndex = 0;
-            // 
-            // CESelect
-            // 
-            this.CESelect.Location = new System.Drawing.Point(21, 24);
-            this.CESelect.Name = "CESelect";
-            this.CESelect.Properties.Caption = "عرض";
-            this.CESelect.Size = new System.Drawing.Size(75, 19);
-            this.CESelect.TabIndex = 0;
-            // 
-            // CEDelete
-            // 
-            this.CEDelete.Location = new System.Drawing.Point(144, 49);
-            this.CEDelete.Name = "CEDelete";
-            this.CEDelete.Properties.Caption = "حذف";
-            this.CEDelete.Size = new System.Drawing.Size(75, 19);
-            this.CEDelete.TabIndex = 0;
-            // 
-            // CEInsert
-            // 
-            this.CEInsert.Location = new System.Drawing.Point(144, 24);
-            this.CEInsert.Name = "CEInsert";
-            this.CEInsert.Properties.Caption = "اضافه";
-            this.CEInsert.Size = new System.Drawing.Size(75, 19);
-            this.CEInsert.TabIndex = 0;
-            // 
-            // appMenu
-            // 
-            this.appMenu.BottomPaneControlContainer = this.popupControlContainer2;
-            this.appMenu.Name = "appMenu";
-            this.appMenu.RightPaneControlContainer = this.popupControlContainer1;
-            this.appMenu.ShowRightPane = true;
-            // 
-            // popupControlContainer2
-            // 
-            this.popupControlContainer2.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.popupControlContainer2.Appearance.Options.UseBackColor = true;
-            this.popupControlContainer2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.popupControlContainer2.Controls.Add(this.buttonEdit);
-            this.popupControlContainer2.Location = new System.Drawing.Point(127, 218);
-            this.popupControlContainer2.Name = "popupControlContainer2";
-            this.popupControlContainer2.Size = new System.Drawing.Size(118, 28);
-            this.popupControlContainer2.TabIndex = 5;
-            this.popupControlContainer2.Visible = false;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.EditValue = "No Text";
-            this.buttonEdit.Location = new System.Drawing.Point(3, 5);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit.Size = new System.Drawing.Size(100, 20);
-            this.buttonEdit.TabIndex = 0;
-            // 
-            // popupControlContainer1
-            // 
-            this.popupControlContainer1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.popupControlContainer1.Appearance.Options.UseBackColor = true;
-            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.popupControlContainer1.Controls.Add(this.someLabelControl2);
-            this.popupControlContainer1.Controls.Add(this.someLabelControl1);
-            this.popupControlContainer1.Location = new System.Drawing.Point(45, 176);
-            this.popupControlContainer1.Name = "popupControlContainer1";
-            this.popupControlContainer1.Size = new System.Drawing.Size(76, 70);
-            this.popupControlContainer1.TabIndex = 4;
-            this.popupControlContainer1.Visible = false;
-            // 
-            // someLabelControl2
-            // 
-            this.someLabelControl2.Location = new System.Drawing.Point(3, 57);
-            this.someLabelControl2.Name = "someLabelControl2";
-            this.someLabelControl2.Size = new System.Drawing.Size(36, 13);
-            this.someLabelControl2.TabIndex = 0;
-            this.someLabelControl2.Text = "No Info";
-            // 
-            // someLabelControl1
-            // 
-            this.someLabelControl1.Location = new System.Drawing.Point(3, 3);
-            this.someLabelControl1.Name = "someLabelControl1";
-            this.someLabelControl1.Size = new System.Drawing.Size(36, 13);
-            this.someLabelControl1.TabIndex = 0;
-            this.someLabelControl1.Text = "No Info";
-            // 
-            // groupControlSelect
-            // 
-            this.groupControlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControlSelect.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControlSelect.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.groupControlSelect.Controls.Add(this.LUEItems);
-            this.groupControlSelect.Controls.Add(this.labelControl1);
-            this.groupControlSelect.Location = new System.Drawing.Point(9, 10);
-            this.groupControlSelect.Name = "groupControlSelect";
-            this.groupControlSelect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupControlSelect.Size = new System.Drawing.Size(963, 59);
-            this.groupControlSelect.TabIndex = 0;
-            this.groupControlSelect.Text = "جميع السماحيات";
-            // 
-            // LUEItems
-            // 
-            this.LUEItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LUEItems.Location = new System.Drawing.Point(386, 28);
-            this.LUEItems.Name = "LUEItems";
-            this.LUEItems.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LUEItems.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RoleName", "اسم الصلاحيه", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RoleDesc", "تعليق", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
-            this.LUEItems.Properties.DataSource = this.rolesBindingSource;
-            this.LUEItems.Properties.DisplayMember = "RoleName";
-            this.LUEItems.Properties.NullText = "";
-            this.LUEItems.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.LUEItems.Properties.ValueMember = "RoleID";
-            this.LUEItems.Size = new System.Drawing.Size(173, 20);
-            this.LUEItems.TabIndex = 0;
-            this.LUEItems.EditValueChanged += new System.EventHandler(this.LUEItems_EditValueChanged);
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "Roles";
-            this.rolesBindingSource.DataSource = this.dsRetirementCenter;
-            // 
-            // dsRetirementCenter
-            // 
-            this.dsRetirementCenter.DataSetName = "dsTeachersUnion";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Location = new System.Drawing.Point(565, 31);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(62, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "اختار سماحيه";
-            // 
-            // roleDetialTableAdapter
-            // 
-            this.roleDetialTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
             // 
             // ribbonControl
             // 
@@ -574,6 +408,64 @@
             this.ribbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ribbonControl.Size = new System.Drawing.Size(959, 142);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.mbRetCenterHelp);
+            // 
+            // appMenu
+            // 
+            this.appMenu.BottomPaneControlContainer = this.popupControlContainer2;
+            this.appMenu.Name = "appMenu";
+            this.appMenu.RightPaneControlContainer = this.popupControlContainer1;
+            this.appMenu.ShowRightPane = true;
+            // 
+            // popupControlContainer2
+            // 
+            this.popupControlContainer2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.popupControlContainer2.Appearance.Options.UseBackColor = true;
+            this.popupControlContainer2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer2.Controls.Add(this.buttonEdit);
+            this.popupControlContainer2.Location = new System.Drawing.Point(127, 218);
+            this.popupControlContainer2.Name = "popupControlContainer2";
+            this.popupControlContainer2.Size = new System.Drawing.Size(118, 28);
+            this.popupControlContainer2.TabIndex = 5;
+            this.popupControlContainer2.Visible = false;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.EditValue = "No Text";
+            this.buttonEdit.Location = new System.Drawing.Point(3, 5);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit.Size = new System.Drawing.Size(100, 20);
+            this.buttonEdit.TabIndex = 0;
+            // 
+            // popupControlContainer1
+            // 
+            this.popupControlContainer1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.popupControlContainer1.Appearance.Options.UseBackColor = true;
+            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer1.Controls.Add(this.someLabelControl2);
+            this.popupControlContainer1.Controls.Add(this.someLabelControl1);
+            this.popupControlContainer1.Location = new System.Drawing.Point(45, 176);
+            this.popupControlContainer1.Name = "popupControlContainer1";
+            this.popupControlContainer1.Size = new System.Drawing.Size(76, 70);
+            this.popupControlContainer1.TabIndex = 4;
+            this.popupControlContainer1.Visible = false;
+            // 
+            // someLabelControl2
+            // 
+            this.someLabelControl2.Location = new System.Drawing.Point(3, 57);
+            this.someLabelControl2.Name = "someLabelControl2";
+            this.someLabelControl2.Size = new System.Drawing.Size(36, 13);
+            this.someLabelControl2.TabIndex = 0;
+            this.someLabelControl2.Text = "No Info";
+            // 
+            // someLabelControl1
+            // 
+            this.someLabelControl1.Location = new System.Drawing.Point(3, 3);
+            this.someLabelControl1.Name = "someLabelControl1";
+            this.someLabelControl1.Size = new System.Drawing.Size(36, 13);
+            this.someLabelControl1.TabIndex = 0;
+            this.someLabelControl1.Text = "No Info";
             // 
             // ribbonImageCollection
             // 
@@ -1918,7 +1810,7 @@
             // 
             // mbRetCenterQry60
             // 
-            this.mbRetCenterQry60.Caption = "بيان معاش مفقود";
+            this.mbRetCenterQry60.Caption = "بيان معاش لم يرد";
             this.mbRetCenterQry60.Id = 299;
             this.mbRetCenterQry60.ImageIndex = 19;
             this.mbRetCenterQry60.LargeImageIndex = 19;
@@ -2156,6 +2048,114 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "اختبار";
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
+            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.groupControl2.Controls.Add(this.CEUpdate);
+            this.groupControl2.Controls.Add(this.CESelect);
+            this.groupControl2.Controls.Add(this.CEDelete);
+            this.groupControl2.Controls.Add(this.CEInsert);
+            this.groupControl2.Location = new System.Drawing.Point(361, 169);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(240, 73);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "عناصر السماح";
+            // 
+            // CEUpdate
+            // 
+            this.CEUpdate.Location = new System.Drawing.Point(21, 49);
+            this.CEUpdate.Name = "CEUpdate";
+            this.CEUpdate.Properties.Caption = "تعديل";
+            this.CEUpdate.Size = new System.Drawing.Size(75, 19);
+            this.CEUpdate.TabIndex = 0;
+            // 
+            // CESelect
+            // 
+            this.CESelect.Location = new System.Drawing.Point(21, 24);
+            this.CESelect.Name = "CESelect";
+            this.CESelect.Properties.Caption = "عرض";
+            this.CESelect.Size = new System.Drawing.Size(75, 19);
+            this.CESelect.TabIndex = 0;
+            // 
+            // CEDelete
+            // 
+            this.CEDelete.Location = new System.Drawing.Point(144, 49);
+            this.CEDelete.Name = "CEDelete";
+            this.CEDelete.Properties.Caption = "حذف";
+            this.CEDelete.Size = new System.Drawing.Size(75, 19);
+            this.CEDelete.TabIndex = 0;
+            // 
+            // CEInsert
+            // 
+            this.CEInsert.Location = new System.Drawing.Point(144, 24);
+            this.CEInsert.Name = "CEInsert";
+            this.CEInsert.Properties.Caption = "اضافه";
+            this.CEInsert.Size = new System.Drawing.Size(75, 19);
+            this.CEInsert.TabIndex = 0;
+            // 
+            // groupControlSelect
+            // 
+            this.groupControlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControlSelect.AppearanceCaption.Options.UseTextOptions = true;
+            this.groupControlSelect.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.groupControlSelect.Controls.Add(this.LUEItems);
+            this.groupControlSelect.Controls.Add(this.labelControl1);
+            this.groupControlSelect.Location = new System.Drawing.Point(9, 10);
+            this.groupControlSelect.Name = "groupControlSelect";
+            this.groupControlSelect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupControlSelect.Size = new System.Drawing.Size(963, 59);
+            this.groupControlSelect.TabIndex = 0;
+            this.groupControlSelect.Text = "جميع السماحيات";
+            // 
+            // LUEItems
+            // 
+            this.LUEItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LUEItems.Location = new System.Drawing.Point(386, 28);
+            this.LUEItems.Name = "LUEItems";
+            this.LUEItems.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LUEItems.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RoleName", "اسم الصلاحيه", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RoleDesc", "تعليق", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.LUEItems.Properties.DataSource = this.rolesBindingSource;
+            this.LUEItems.Properties.DisplayMember = "RoleName";
+            this.LUEItems.Properties.NullText = "";
+            this.LUEItems.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.LUEItems.Properties.ValueMember = "RoleID";
+            this.LUEItems.Size = new System.Drawing.Size(173, 20);
+            this.LUEItems.TabIndex = 0;
+            this.LUEItems.EditValueChanged += new System.EventHandler(this.LUEItems_EditValueChanged);
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // dsRetirementCenter
+            // 
+            this.dsRetirementCenter.DataSetName = "dsTeachersUnion";
+            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Location = new System.Drawing.Point(565, 31);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(62, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "اختار سماحيه";
+            // 
+            // roleDetialTableAdapter
+            // 
+            this.roleDetialTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
             // RoleDetailFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2169,12 +2169,7 @@
             this.Load += new System.EventHandler(this.EditorJobFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUpdate)).EndInit();
             this.groupControlUpdate.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).EndInit();
             this.popupControlContainer2.ResumeLayout(false);
@@ -2182,15 +2177,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
             this.popupControlContainer1.ResumeLayout(false);
             this.popupControlContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CESelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEDelete.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CEInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlSelect)).EndInit();
             this.groupControlSelect.ResumeLayout(false);
             this.groupControlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             this.ResumeLayout(false);
 
         }

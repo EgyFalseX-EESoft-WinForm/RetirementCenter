@@ -40,13 +40,13 @@ namespace RetirementCenter
         }
         private void lueDofatSarfAId_EditValueChanged(object sender, EventArgs e)
         {
-            if (lueDofatSarfAId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
+            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
                 return;
             LoadDetailsGrid();
         }
         private void lueMMashatId_EditValueChanged(object sender, EventArgs e)
         {
-            if (lueDofatSarfAId.EditValue == null || lueMMashatId.EditValue == null)
+            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
                 return;
             LoadDetailsGrid();
         }
@@ -62,6 +62,8 @@ namespace RetirementCenter
                 {
                     DataSources.dsRetirementCenter.TBLBeanWarsaRow row = dsRetirementCenter.TBLBeanWarsa.AddTBLBeanWarsaRow(Person.PersonId, Convert.ToInt32(lueDofatSarfAId.EditValue), ServerDate, false, string.Empty, ServerDate, Program.UserInfo.UserId, ServerDate);
                     row["personName"] = Person.personName;
+                    row["responsiblesarf"] = Person.responsiblesarf;
+                    row["WarasaType"] = Person.WarasaType;
                 }
             }
         }
