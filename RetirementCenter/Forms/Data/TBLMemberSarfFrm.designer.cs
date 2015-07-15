@@ -86,6 +86,7 @@
             this.lblMax = new DevExpress.XtraEditors.LabelControl();
             this.lblValue = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.btnBank = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMemberSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -140,7 +141,7 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemGridLookUpEditSyndicateId,
             this.repositoryItemGridLookUpEditSubCommitteId});
-            this.gridControlData.Size = new System.Drawing.Size(756, 306);
+            this.gridControlData.Size = new System.Drawing.Size(883, 306);
             this.gridControlData.TabIndex = 0;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -535,20 +536,21 @@
             this.gcCommands.Controls.Add(this.labelControl1);
             this.gcCommands.Controls.Add(this.LUETBLDofatSarf);
             this.gcCommands.Controls.Add(this.labelControl7);
+            this.gcCommands.Controls.Add(this.btnBank);
             this.gcCommands.Controls.Add(this.btnArc);
             this.gcCommands.Controls.Add(this.btnDelete);
             this.gcCommands.Controls.Add(this.btnAddAll);
             this.gcCommands.Location = new System.Drawing.Point(12, 12);
             this.gcCommands.Name = "gcCommands";
             this.gcCommands.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gcCommands.Size = new System.Drawing.Size(760, 102);
+            this.gcCommands.Size = new System.Drawing.Size(887, 102);
             this.gcCommands.TabIndex = 0;
             this.gcCommands.Text = "خيارات";
             // 
             // LUESyndicateId
             // 
             this.LUESyndicateId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LUESyndicateId.Location = new System.Drawing.Point(480, 58);
+            this.LUESyndicateId.Location = new System.Drawing.Point(607, 58);
             this.LUESyndicateId.Name = "LUESyndicateId";
             this.LUESyndicateId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUESyndicateId.Properties.Appearance.Options.UseFont = true;
@@ -592,7 +594,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(722, 61);
+            this.labelControl1.Location = new System.Drawing.Point(849, 61);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(27, 13);
             this.labelControl1.TabIndex = 1;
@@ -601,7 +603,7 @@
             // LUETBLDofatSarf
             // 
             this.LUETBLDofatSarf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LUETBLDofatSarf.Location = new System.Drawing.Point(480, 30);
+            this.LUETBLDofatSarf.Location = new System.Drawing.Point(607, 30);
             this.LUETBLDofatSarf.Name = "LUETBLDofatSarf";
             this.LUETBLDofatSarf.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUETBLDofatSarf.Properties.Appearance.Options.UseFont = true;
@@ -650,7 +652,7 @@
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(722, 33);
+            this.labelControl7.Location = new System.Drawing.Point(849, 33);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(29, 13);
             this.labelControl7.TabIndex = 1;
@@ -659,7 +661,7 @@
             // btnArc
             // 
             this.btnArc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnArc.Location = new System.Drawing.Point(326, 75);
+            this.btnArc.Location = new System.Drawing.Point(297, 49);
             this.btnArc.Name = "btnArc";
             this.btnArc.Size = new System.Drawing.Size(150, 22);
             this.btnArc.TabIndex = 2;
@@ -669,7 +671,7 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(326, 49);
+            this.btnDelete.Location = new System.Drawing.Point(453, 49);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 22);
             this.btnDelete.TabIndex = 2;
@@ -679,7 +681,7 @@
             // btnAddAll
             // 
             this.btnAddAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddAll.Location = new System.Drawing.Point(326, 24);
+            this.btnAddAll.Location = new System.Drawing.Point(453, 24);
             this.btnAddAll.Name = "btnAddAll";
             this.btnAddAll.Size = new System.Drawing.Size(150, 22);
             this.btnAddAll.TabIndex = 2;
@@ -697,7 +699,7 @@
             this.groupControl2.Location = new System.Drawing.Point(12, 120);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupControl2.Size = new System.Drawing.Size(760, 329);
+            this.groupControl2.Size = new System.Drawing.Size(887, 329);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "التفاصيل";
             // 
@@ -724,7 +726,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbc.Location = new System.Drawing.Point(5, 16);
             this.pbc.Name = "pbc";
-            this.pbc.Size = new System.Drawing.Size(306, 26);
+            this.pbc.Size = new System.Drawing.Size(270, 26);
             this.pbc.TabIndex = 2;
             // 
             // pcProgress
@@ -736,14 +738,14 @@
             this.pcProgress.Controls.Add(this.lblValue);
             this.pcProgress.Location = new System.Drawing.Point(14, 45);
             this.pcProgress.Name = "pcProgress";
-            this.pcProgress.Size = new System.Drawing.Size(318, 45);
+            this.pcProgress.Size = new System.Drawing.Size(282, 45);
             this.pcProgress.TabIndex = 3;
             this.pcProgress.Visible = false;
             // 
             // lblMax
             // 
             this.lblMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMax.Location = new System.Drawing.Point(251, 1);
+            this.lblMax.Location = new System.Drawing.Point(215, 1);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(6, 13);
             this.lblMax.TabIndex = 0;
@@ -757,11 +759,21 @@
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "0";
             // 
+            // btnBank
+            // 
+            this.btnBank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBank.Location = new System.Drawing.Point(297, 24);
+            this.btnBank.Name = "btnBank";
+            this.btnBank.Size = new System.Drawing.Size(150, 22);
+            this.btnBank.TabIndex = 2;
+            this.btnBank.Text = "اعداد البنك";
+            this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
+            // 
             // TBLMemberSarfFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(911, 461);
             this.Controls.Add(this.pcProgress);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.gcCommands);
@@ -863,5 +875,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colEdafat;
         private DevExpress.XtraEditors.SimpleButton btnArc;
+        private DevExpress.XtraEditors.SimpleButton btnBank;
     }
 }

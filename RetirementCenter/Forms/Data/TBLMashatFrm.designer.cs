@@ -208,6 +208,7 @@
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditWarasauserin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRealName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditWarasaSarf = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -266,7 +267,8 @@
             this.tBLEdafatWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLReSarfTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
-            this.colRealName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tbvisa = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -408,6 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbvisa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -879,6 +882,7 @@
             this.xtraTabPageMain.Controls.Add(this.labelControl7);
             this.xtraTabPageMain.Controls.Add(this.labelControl13);
             this.xtraTabPageMain.Controls.Add(this.labelControl5);
+            this.xtraTabPageMain.Controls.Add(this.labelControl22);
             this.xtraTabPageMain.Controls.Add(this.labelControl4);
             this.xtraTabPageMain.Controls.Add(this.labelControl15);
             this.xtraTabPageMain.Controls.Add(this.labelControl14);
@@ -892,6 +896,7 @@
             this.xtraTabPageMain.Controls.Add(this.labelControl21);
             this.xtraTabPageMain.Controls.Add(this.labelControl2);
             this.xtraTabPageMain.Controls.Add(this.tbMMashatNId);
+            this.xtraTabPageMain.Controls.Add(this.tbvisa);
             this.xtraTabPageMain.Controls.Add(this.tbKideNumber);
             this.xtraTabPageMain.Controls.Add(this.textEdit2);
             this.xtraTabPageMain.Controls.Add(this.textEdit1);
@@ -2583,6 +2588,13 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // colRealName1
+            // 
+            this.colRealName1.FieldName = "RealName";
+            this.colRealName1.Name = "colRealName1";
+            this.colRealName1.Visible = true;
+            this.colRealName1.VisibleIndex = 0;
+            // 
             // gridColumn9
             // 
             this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
@@ -3137,12 +3149,30 @@
             // 
             this.tBLReSarfTableAdapter.ClearBeforeFill = true;
             // 
-            // colRealName1
+            // tbvisa
             // 
-            this.colRealName1.FieldName = "RealName";
-            this.colRealName1.Name = "colRealName1";
-            this.colRealName1.Visible = true;
-            this.colRealName1.VisibleIndex = 0;
+            this.tbvisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbvisa.EnterMoveNextControl = true;
+            this.tbvisa.Location = new System.Drawing.Point(10, 70);
+            this.tbvisa.Margin = new System.Windows.Forms.Padding(0);
+            this.tbvisa.Name = "tbvisa";
+            this.tbvisa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbvisa.Properties.Appearance.Options.UseFont = true;
+            this.tbvisa.Size = new System.Drawing.Size(162, 22);
+            this.tbvisa.TabIndex = 7;
+            this.tbvisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl22.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl22.Location = new System.Drawing.Point(222, 73);
+            this.labelControl22.Margin = new System.Windows.Forms.Padding(0);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(53, 17);
+            this.labelControl22.TabIndex = 35;
+            this.labelControl22.Text = "رقم الفيزا";
             // 
             // TBLMashatFrm
             // 
@@ -3303,6 +3333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbvisa.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3533,5 +3564,7 @@
         private DevExpress.XtraEditors.TextEdit tbmmony;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName1;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraEditors.TextEdit tbvisa;
     }
 }

@@ -18,6 +18,7 @@ namespace RetirementCenter
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter adpResarf = new DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
+        DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter adpBank = new DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
         #region -   Functions   -
         public TBLMemberSarfFrm()
@@ -446,6 +447,22 @@ namespace RetirementCenter
         }
 
         #endregion
+
+        private void btnBank_Click(object sender, EventArgs e)
+        {
+            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+            try
+            {
+                adpBank.InsertByDofatSarfId_Syn(Program.UserInfo.UserId.ToString(), Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
+            }
+            catch (SqlException ex)
+            {
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+            Program.ShowMsg("تم الاضافة للبنك", false, this, true);
+        }
 
     }
 }

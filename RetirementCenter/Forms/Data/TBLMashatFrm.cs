@@ -194,6 +194,7 @@ namespace RetirementCenter
             lengthValidationRule.ErrorText = "يجب ادخال 14 رقم";
             lengthValidationRule.ErrorType = ErrorType.Warning;
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
+            tbvisa.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
@@ -242,6 +243,7 @@ namespace RetirementCenter
             
 
             LUEChangeHala.EditValue = row.MashHalaId;
+            tbvisa.EditValue = row.visa;
             if (row.MashHalaId == (int)Misc.Types.CDMashHala.Warasa)
             {
                 xtraTabPageWarasa.PageVisible = true;
@@ -273,6 +275,7 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat.NewTBLMashatRow();
 
             row.MMashatId = -1; row.MMashatName = string.Empty; row.SarfExpetion = false;
+            row.SyndicateId = -1; row.SubCommitteId = -1;
             //row.SyndicateId = Convert.ToInt32(LUESyndicateId.Properties.GetDataSourceValue("SyndicateId", 0));
             row.datein = SQLProvider.ServerDateTime(); row.userin = Program.UserInfo.UserId; row.yasref = true;
             row.mcompletesarf = true; row.melrasm = 0; row.meshtrakat = 0; row.mestktaat = 0; row.mmony = 0;
@@ -445,7 +448,8 @@ namespace RetirementCenter
                     }
                     
                 }
-
+                if (tbvisa.EditValue != null)
+                    row.visa = tbvisa.EditValue.ToString();
                 row.datein = SQLProvider.ServerDateTime();
                 row.userin = Program.UserInfo.UserId;
                 tBLMashatTablebbindingSource.EndEdit();
@@ -489,6 +493,8 @@ namespace RetirementCenter
             {
                 
                 DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
+                if (tbvisa.EditValue != null)
+                    row.visa = tbvisa.EditValue.ToString();
                 row.userin = Program.UserInfo.UserId;
                 row.datein = SQLProvider.ServerDateTime();
                 tBLMashatTablebbindingSource.EndEdit();
