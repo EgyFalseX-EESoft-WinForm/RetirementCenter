@@ -243,7 +243,15 @@ namespace RetirementCenter
             
 
             LUEChangeHala.EditValue = row.MashHalaId;
-            tbvisa.EditValue = row.visa;
+            if (row.IsvisaNull())
+            {
+                tbvisa.EditValue = null;
+            }
+            else
+            {
+                tbvisa.EditValue = row.visa;
+            }
+            
             if (row.MashHalaId == (int)Misc.Types.CDMashHala.Warasa)
             {
                 xtraTabPageWarasa.PageVisible = true;

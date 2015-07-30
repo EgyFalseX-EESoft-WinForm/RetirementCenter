@@ -368,6 +368,12 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry62Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry62Frm.designer.cs">
+      <DependentUpon>Qry62Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry61Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -894,6 +900,18 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep11.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep11.designer.cs">
+      <DependentUpon>XRep11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep10.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep10.designer.cs">
+      <DependentUpon>XRep10.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep09.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1027,6 +1045,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry62Frm.resx">
+      <DependentUpon>Qry62Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry61Frm.resx">
       <DependentUpon>Qry61Frm.cs</DependentUpon>
@@ -1235,6 +1256,12 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep11.resx">
+      <DependentUpon>XRep11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep10.resx">
+      <DependentUpon>XRep10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep09.resx">
       <DependentUpon>XRep09.cs</DependentUpon>
     </EmbeddedResource>

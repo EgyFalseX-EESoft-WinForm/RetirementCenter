@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tBLMemberSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -86,7 +86,6 @@
             this.lblMax = new DevExpress.XtraEditors.LabelControl();
             this.lblValue = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.btnBank = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMemberSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -536,7 +535,6 @@
             this.gcCommands.Controls.Add(this.labelControl1);
             this.gcCommands.Controls.Add(this.LUETBLDofatSarf);
             this.gcCommands.Controls.Add(this.labelControl7);
-            this.gcCommands.Controls.Add(this.btnBank);
             this.gcCommands.Controls.Add(this.btnArc);
             this.gcCommands.Controls.Add(this.btnDelete);
             this.gcCommands.Controls.Add(this.btnAddAll);
@@ -564,10 +562,10 @@
             this.LUESyndicateId.Properties.View = this.gridView1;
             this.LUESyndicateId.Size = new System.Drawing.Size(236, 22);
             this.LUESyndicateId.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "يجب اختيار فرعية";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "يجب اختيار فرعية";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule2);
             this.LUESyndicateId.EditValueChanged += new System.EventHandler(this.LUESyndicateId_EditValueChanged);
             // 
             // gridView1
@@ -617,10 +615,10 @@
             this.LUETBLDofatSarf.Properties.View = this.gridLookUpEdit1View;
             this.LUETBLDofatSarf.Size = new System.Drawing.Size(236, 22);
             this.LUETBLDofatSarf.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "يجب اختيار دفعة";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "يجب اختيار دفعة";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule3);
             this.LUETBLDofatSarf.EditValueChanged += new System.EventHandler(this.LUETBLDofatSarf_EditValueChanged);
             // 
             // LSMSTBLDofatSarf
@@ -661,7 +659,7 @@
             // btnArc
             // 
             this.btnArc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnArc.Location = new System.Drawing.Point(297, 49);
+            this.btnArc.Location = new System.Drawing.Point(297, 34);
             this.btnArc.Name = "btnArc";
             this.btnArc.Size = new System.Drawing.Size(150, 22);
             this.btnArc.TabIndex = 2;
@@ -758,16 +756,6 @@
             this.lblValue.Size = new System.Drawing.Size(6, 13);
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "0";
-            // 
-            // btnBank
-            // 
-            this.btnBank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBank.Location = new System.Drawing.Point(297, 24);
-            this.btnBank.Name = "btnBank";
-            this.btnBank.Size = new System.Drawing.Size(150, 22);
-            this.btnBank.TabIndex = 2;
-            this.btnBank.Text = "اعداد البنك";
-            this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
             // 
             // TBLMemberSarfFrm
             // 
@@ -875,6 +863,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colEdafat;
         private DevExpress.XtraEditors.SimpleButton btnArc;
-        private DevExpress.XtraEditors.SimpleButton btnBank;
     }
 }

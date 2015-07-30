@@ -34980,7 +34980,7 @@ SELECT MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymon
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymont" +
@@ -34994,6 +34994,20 @@ SELECT MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymon
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO [dbo].[tblmemberbank](MMashatId, DofatSarfId, visanumber, SyndicateId, SubCommitteId, summony, sendbankdate, amanatmony, amanatwareddate, datein, userin)
+SELECT TBLMemberSarf_arshef.MMashatId, DofatSarfId, TBLMashat.visa, TBLMemberSarf_arshef.SyndicateId, TBLMemberSarf_arshef.SubCommitteId, SUM(monymonth) - (SUM(rsmmonth) + SUM(eshtrakmonth) + SUM(estktaa))
+, GETDATE(), 0, NULL, GETDATE(), @UserIn
+FROM            TBLMemberSarf_arshef INNER JOIN
+TBLMashat ON TBLMemberSarf_arshef.MMashatId = TBLMashat.MMashatId INNER JOIN
+BankExportedData ON TBLMemberSarf_arshef.MMashatId = BankExportedData.MMashatId
+WHERE        (TBLMashat.visa IS NOT NULL) AND (TBLMemberSarf_arshef.DofatSarfId = @DofatSarfId) AND (TBLMemberSarf_arshef.SyndicateId = @SyndicateId) AND (BankExportedData.Activate = 1)
+GROUP BY TBLMemberSarf_arshef.MMashatId, TBLMemberSarf_arshef.DofatSarfId, TBLMashat.visa, TBLMemberSarf_arshef.SyndicateId, TBLMemberSarf_arshef.SubCommitteId";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -35192,6 +35206,37 @@ SELECT MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymon
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(DofatSarfId));
             command.Parameters[1].Value = ((int)(SyndicateId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertByDof_Syn(string UserIn, int DofatSarfId, int SyndicateId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((UserIn == null)) {
+                throw new global::System.ArgumentNullException("UserIn");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserIn));
+            }
+            command.Parameters[1].Value = ((int)(DofatSarfId));
+            command.Parameters[2].Value = ((int)(SyndicateId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -37358,31 +37403,18 @@ SELECT MMashatId, DofatSarfId, visanumber, SyndicateId, SubCommitteId, summony, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString1;
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MMashatId, DofatSarfId, visanumber, SyndicateId, SubCommitteId, summony, s" +
                 "endbankdate, amanatmony, amanatwareddate, datein, userin FROM dbo.tblmemberbank";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[tblmemberbank](MMashatId, DofatSarfId, visanumber, SyndicateId, SubCommitteId, summony, sendbankdate, amanatmony, amanatwareddate, datein, userin)
-SELECT TBLMemberSarf.MMashatId, DofatSarfId, visa, TBLMemberSarf.SyndicateId, TBLMemberSarf.SubCommitteId, SUM(monymonth) - (SUM(rsmmonth) + SUM(eshtrakmonth) + SUM(estktaa))
-, NULL, 0, NULL, GETDATE(), @UserIn
-FROM [dbo].[TBLMemberSarf] INNER JOIN dbo.TBLMashat ON [TBLMemberSarf].MMashatId = TBLMashat.MMashatId
-WHERE TBLMashat.visa IS NOT NULL AND TBLMemberSarf.DofatSarfId = @DofatSarfId AND TBLMemberSarf.SyndicateId = @SyndicateId
-GROUP BY TBLMemberSarf.MMashatId, DofatSarfId, visa, TBLMemberSarf.SyndicateId, TBLMemberSarf.SubCommitteId
-";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37573,37 +37605,6 @@ GROUP BY TBLMemberSarf.MMashatId, DofatSarfId, visa, TBLMemberSarf.SyndicateId, 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string visanumber, int SyndicateId, int SubCommitteId, double summony, global::System.Nullable<global::System.DateTime> sendbankdate, global::System.Nullable<double> amanatmony, global::System.Nullable<global::System.DateTime> amanatwareddate, System.DateTime datein, int userin, int Original_MMashatId, int Original_DofatSarfId) {
             return this.Update(Original_MMashatId, Original_DofatSarfId, visanumber, SyndicateId, SubCommitteId, summony, sendbankdate, amanatmony, amanatwareddate, datein, userin, Original_MMashatId, Original_DofatSarfId);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertByDofatSarfId_Syn(string UserIn, int DofatSarfId, int SyndicateId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((UserIn == null)) {
-                throw new global::System.ArgumentNullException("UserIn");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(UserIn));
-            }
-            command.Parameters[1].Value = ((int)(DofatSarfId));
-            command.Parameters[2].Value = ((int)(SyndicateId));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
