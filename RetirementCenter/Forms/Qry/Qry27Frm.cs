@@ -20,6 +20,7 @@ namespace RetirementCenter
         public Qry27Frm()
         {
             InitializeComponent();
+            btnBank.Visible = Program.UserInfo.IsAdmin;
         }
         #endregion
         #region -   Event Handlers   -

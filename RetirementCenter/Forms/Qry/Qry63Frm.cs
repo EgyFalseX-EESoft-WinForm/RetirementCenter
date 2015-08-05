@@ -12,28 +12,23 @@ using DevExpress.XtraSplashScreen;
 
 namespace RetirementCenter
 {
-    public partial class Qry05Frm : DevExpress.XtraEditors.XtraForm
+    public partial class Qry63Frm : DevExpress.XtraEditors.XtraForm
     {
-        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         #region -   Functions   -
-        public Qry05Frm()
+        public Qry63Frm()
         {
             InitializeComponent();
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
         }
         #endregion
         #region -   Event Handlers   -
-        private void QryTblAhteatyFrm_Load(object sender, EventArgs e)
+        private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            //if (Program.UserInfo.IsAdmin)
-            //    LSMS.QueryableSource = dsLinq.vTBLMashats;
-            //else
-            //    LSMS.QueryableSource = from q in dsLinq.vTBLMashats where Program.UserInfo.Syndicates.Contains((int)q.SyndicateId) select q;
-
-            LSMS.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
-
-            gridViewData.BestFitColumns();
+            // TODO: This line of code loads data into the 'dsQueries.vQry63' table. You can move, or remove it, as needed.
+            this.vQry63TableAdapter.Fill(this.dsQueries.vQry63);
+            
+            //gridViewData.BestFitColumns();
         }
+        
         private void btnPrintExport_Click(object sender, EventArgs e)
         {
             // Check whether the GridControl can be previewed.
@@ -48,6 +43,8 @@ namespace RetirementCenter
         }
 
         #endregion
+
+        
 
     }
 }

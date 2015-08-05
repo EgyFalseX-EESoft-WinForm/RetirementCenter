@@ -59,11 +59,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
+            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
+            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -76,9 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -489,6 +489,7 @@
             this.btnBank.Size = new System.Drawing.Size(75, 49);
             this.btnBank.TabIndex = 2;
             this.btnBank.Text = "اعداد البنك";
+            this.btnBank.Visible = false;
             this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
             // 
             // labelControl2
@@ -523,6 +524,11 @@
             this.lueSynd.Size = new System.Drawing.Size(125, 20);
             this.lueSynd.TabIndex = 1;
             // 
+            // LSMSSyn
+            // 
+            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
+            this.LSMSSyn.KeyExpression = "[SyndicateId]";
+            // 
             // lueDof
             // 
             this.lueDof.Location = new System.Drawing.Point(100, 9);
@@ -539,6 +545,11 @@
             this.lueDof.Size = new System.Drawing.Size(125, 20);
             this.lueDof.TabIndex = 0;
             // 
+            // LSMSDof
+            // 
+            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            // 
             // btnPrintExport
             // 
             this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -552,16 +563,6 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // LSMSDof
-            // 
-            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDof.KeyExpression = "[DofatSarfId]";
-            // 
-            // LSMSSyn
-            // 
-            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
-            this.LSMSSyn.KeyExpression = "[SyndicateId]";
             // 
             // Qry27Frm
             // 
@@ -587,9 +588,9 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             this.ResumeLayout(false);
 
         }

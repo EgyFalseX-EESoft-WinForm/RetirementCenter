@@ -49,13 +49,13 @@
             this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -429,6 +429,18 @@
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 18;
             // 
+            // colvisa
+            // 
+            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.Caption = "فيزا";
+            this.colvisa.FieldName = "visa";
+            this.colvisa.Name = "colvisa";
+            this.colvisa.Visible = true;
+            this.colvisa.VisibleIndex = 0;
+            // 
             // repositoryItemDateEditDate
             // 
             this.repositoryItemDateEditDate.AutoHeight = false;
@@ -481,19 +493,8 @@
             this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
             this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
+            this.btnPrintExport.Visible = false;
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // colvisa
-            // 
-            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.Caption = "فيزا";
-            this.colvisa.FieldName = "visa";
-            this.colvisa.Name = "colvisa";
-            this.colvisa.Visible = true;
-            this.colvisa.VisibleIndex = 0;
             // 
             // Qry04Frm
             // 
