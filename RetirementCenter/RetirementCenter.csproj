@@ -234,7 +234,6 @@
     </Compile>
     <Compile Include="DataSources\dsQueries.cs">
       <DependentUpon>dsQueries.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSources\dsQueries.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -289,6 +288,12 @@
     </Compile>
     <Compile Include="Forms\Data\ActivateVisaWarasaFrm.Designer.cs">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\StopYasrefByTBLBeanWarsaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\StopYasrefByTBLBeanWarsaFrm.Designer.cs">
+      <DependentUpon>StopYasrefByTBLBeanWarsaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Data\TBLBeanWarsaFrm.cs">
       <SubType>Form</SubType>
@@ -373,6 +378,12 @@
     </Compile>
     <Compile Include="Forms\Qry\Qry63Frm.designer.cs">
       <DependentUpon>Qry63Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry64Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry64Frm.designer.cs">
+      <DependentUpon>Qry64Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry62Frm.cs">
       <SubType>Form</SubType>
@@ -1012,6 +1023,9 @@
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaFrm.resx">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\StopYasrefByTBLBeanWarsaFrm.resx">
+      <DependentUpon>StopYasrefByTBLBeanWarsaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLBeanWarsaFrm.resx">
       <DependentUpon>TBLBeanWarsaFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1054,6 +1068,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry63Frm.resx">
       <DependentUpon>Qry63Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry64Frm.resx">
+      <DependentUpon>Qry64Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry62Frm.resx">
       <DependentUpon>Qry62Frm.cs</DependentUpon>

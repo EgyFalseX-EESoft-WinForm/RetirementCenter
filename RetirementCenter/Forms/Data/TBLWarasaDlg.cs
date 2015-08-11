@@ -240,6 +240,27 @@ namespace RetirementCenter.Forms.Data
                     return;
                 }
             }
+            //check if responsiblesarfId and his dependances have same visa
+            if (_TBLWarasa[0].responsiblesarf && !_TBLWarasa[0].IsvisaNull())
+            {
+                if ((bool)FXFW.SqlDB.LoadDataTable(string.Format("SELECT CASE WHEN EXISTS(SELECT * FROM TBLWarasa WHERE responsiblesarfId = {0} AND visa IS NOT NULL AND visa <> '{1}') THEN CAST(0 AS bit) ELSE CAST(1 AS bit) END AS OK", _TBLWarasa[0].PersonId, _TBLWarasa[0].visa)).Rows[0][0] == false)
+                {
+                    Program.ShowMsg("رقم الفيزا للتابعين مختلف عن رقم الفيزا للمسئول", true, this, true);
+                    Program.Logger.LogThis("رقم الفيزا للتابعين مختلف عن رقم الفيزا للمسئول", Text, FXFW.Logger.OpType.fail, null, null, this);
+                    return;
+                }
+            }
+            if (!_TBLWarasa[0].responsiblesarf && _TBLWarasa[0].responsiblesarfId != _TBLWarasa[0].PersonId && !_TBLWarasa[0].IsvisaNull())
+            {
+                DataTable visaTbl = FXFW.SqlDB.LoadDataTable("SELECT visa FROM TBLWarasa WHERE PersonId = " + _TBLWarasa[0].responsiblesarfId);
+                if (visaTbl.Rows[0][0].ToString() != _TBLWarasa[0].visa)
+                {
+                    Program.ShowMsg("رقم الفيزا مختلف عن رقم الفيزا للمسئول", true, this, true);
+                    Program.Logger.LogThis("رقم الفيزا مختلف عن رقم الفيزا للمسئول", Text, FXFW.Logger.OpType.fail, null, null, this);
+                    return;
+                }
+            }
+            //DataTable visaTbl = FXFW.SqlDB.LoadDataTable("SELECT visa FROM TBLWarasa WHERE PersonId = " + )
 
             foreach (DataSources.dsRetirementCenter.TBLNoSarfWarsaRow row in _TBLNoSarfWarsa.Rows)
             {
