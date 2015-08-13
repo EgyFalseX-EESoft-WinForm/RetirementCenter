@@ -30,6 +30,8 @@ namespace RetirementCenter.Forms.Data
         }
         private void lue_EditValueChanged(object sender, EventArgs e)
         {
+            if (sender == lueSyn)
+                cDSubCommitteTableAdapter.FillBySyndicateId(dsQueries.CDSubCommitte, Convert.ToInt32(lueSyn.EditValue));
             if (lueSyn.EditValue == null || lueDof.EditValue == null)
             {
                 return;
