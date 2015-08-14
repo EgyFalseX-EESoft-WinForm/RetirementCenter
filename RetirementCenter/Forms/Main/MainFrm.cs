@@ -776,6 +776,26 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterXRep12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep12 FrmRep = new XRep12();
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterXRep13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep13 FrmRep = new XRep13();
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
 
         private void mbRetCenterQry01_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1418,7 +1438,16 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
-
+        private void mbRetCenterQry67_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry67Frm FrmData = new Qry67Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
 
         

@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class XRep10
+    partial class XRep12
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary5 = new DevExpress.XtraReports.UI.XRSummary();
-            this.rep10_ATableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep10_ATableAdapter();
             this.dsReports = new RetirementCenter.DataSources.dsReports();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
@@ -71,16 +70,13 @@
             this.calcTotalEstktaa = new DevExpress.XtraReports.UI.CalculatedField();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.calcSafi = new DevExpress.XtraReports.UI.CalculatedField();
-            this.rep10_BTableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep10_BTableAdapter();
+            this.rep12_BTableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep12_BTableAdapter();
+            this.rep12_ATableAdapter1 = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep12_ATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            // 
-            // rep10_ATableAdapter
-            // 
-            this.rep10_ATableAdapter.ClearBeforeFill = true;
             // 
             // dsReports
             // 
@@ -130,7 +126,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.summony", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.summony", "{0:n2}")});
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.Weight = 0.78856600750101935D;
@@ -138,7 +134,7 @@
             // xrTableCell2
             // 
             this.xrTableCell2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.Num", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.Num", "{0:#,#}")});
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "xrTableCell2";
             this.xrTableCell2.Weight = 0.78856600750101935D;
@@ -146,7 +142,7 @@
             // xrTableCell20
             // 
             this.xrTableCell20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.Syndicate")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.Syndicate")});
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.NullValueText = "0";
             this.xrTableCell20.StylePriority.UseTextAlignment = false;
@@ -157,7 +153,7 @@
             // xtcSyndicate
             // 
             this.xtcSyndicate.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.Syndicate")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.Syndicate")});
             this.xtcSyndicate.Name = "xtcSyndicate";
             this.xtcSyndicate.StylePriority.UseTextAlignment = false;
             xrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber;
@@ -192,7 +188,7 @@
             this.xrLabel9.SizeF = new System.Drawing.SizeF(259.0369F, 23F);
             this.xrLabel9.StylePriority.UseFont = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "بيان توريد الدفعات للبنك اعضاء بتاريخ";
+            this.xrLabel9.Text = "بيان توريد الدفعات للبنك ورثة بتاريخ";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xpbLogo
@@ -294,7 +290,6 @@
             // pramDate
             // 
             this.pramDate.Description = "التاريخ";
-            dynamicListLookUpSettings1.DataAdapter = this.rep10_ATableAdapter;
             dynamicListLookUpSettings1.DataMember = "Rep10_A";
             dynamicListLookUpSettings1.DataSource = this.dsReports;
             dynamicListLookUpSettings1.DisplayMember = "sendbankdate";
@@ -382,7 +377,7 @@
             // xrTableCell9
             // 
             this.xrTableCell9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.summony")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.summony")});
             this.xrTableCell9.Name = "xrTableCell9";
             xrSummary2.FormatString = "{0:n2}";
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
@@ -393,7 +388,7 @@
             // xrTableCell4
             // 
             this.xrTableCell4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.Num")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.Num")});
             this.xrTableCell4.Name = "xrTableCell4";
             xrSummary3.FormatString = "{0:#,#}";
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
@@ -404,7 +399,7 @@
             // xrTableCell40
             // 
             this.xrTableCell40.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep10_B.Syndicate")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep12_B.Syndicate")});
             this.xrTableCell40.Name = "xrTableCell40";
             this.xrTableCell40.NullValueText = "0";
             this.xrTableCell40.StylePriority.UseTextAlignment = false;
@@ -464,11 +459,15 @@
             this.calcSafi.Expression = "[monymonth] - [calcTotalEstktaa]";
             this.calcSafi.Name = "calcSafi";
             // 
-            // rep10_BTableAdapter
+            // rep12_BTableAdapter
             // 
-            this.rep10_BTableAdapter.ClearBeforeFill = true;
+            this.rep12_BTableAdapter.ClearBeforeFill = true;
             // 
-            // XRep10
+            // rep12_ATableAdapter1
+            // 
+            this.rep12_ATableAdapter1.ClearBeforeFill = true;
+            // 
+            // XRep12
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
@@ -479,8 +478,8 @@
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.calcTotalEstktaa,
             this.calcSafi});
-            this.DataAdapter = this.rep10_BTableAdapter;
-            this.DataMember = "Rep10_B";
+            this.DataAdapter = this.rep12_BTableAdapter;
+            this.DataMember = "Rep12_B";
             this.DataSource = this.dsReports;
             this.DrawGrid = false;
             this.Margins = new System.Drawing.Printing.Margins(12, 12, 6, 26);
@@ -536,10 +535,10 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
         private DevExpress.XtraReports.UI.CalculatedField calcSafi;
-        private DataSources.dsReportsTableAdapters.Rep10_BTableAdapter rep10_BTableAdapter;
-        private DataSources.dsReportsTableAdapters.Rep10_ATableAdapter rep10_ATableAdapter;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
+        private DataSources.dsReportsTableAdapters.Rep12_BTableAdapter rep12_BTableAdapter;
+        private DataSources.dsReportsTableAdapters.Rep12_ATableAdapter rep12_ATableAdapter1;
     }
 }

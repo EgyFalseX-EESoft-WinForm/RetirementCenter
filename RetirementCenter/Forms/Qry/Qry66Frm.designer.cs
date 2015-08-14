@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
+            this.vQry66BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQueries1 = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvisanumber = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,6 +58,7 @@
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemDateEditMDY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.LUETBLDofatSarf = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLDofatSarf = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -65,11 +67,10 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.dsQueries1 = new RetirementCenter.DataSources.dsQueries();
-            this.vQry66BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vQry66TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry66TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry66BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).BeginInit();
@@ -77,13 +78,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry66BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -111,10 +111,15 @@
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
             // 
-            // dsQueries
+            // vQry66BindingSource
             // 
-            this.dsQueries.DataSetName = "dsQueries";
-            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.vQry66BindingSource.DataMember = "vQry66";
+            this.vQry66BindingSource.DataSource = this.dsQueries1;
+            // 
+            // dsQueries1
+            // 
+            this.dsQueries1.DataSetName = "dsQueries";
+            this.dsQueries1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewData
             // 
@@ -501,6 +506,11 @@
             this.repositoryItemDateEditMDY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
+            // dsQueries
+            // 
+            this.dsQueries.DataSetName = "dsQueries";
+            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.LUETBLDofatSarf);
@@ -588,16 +598,6 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // dsQueries1
-            // 
-            this.dsQueries1.DataSetName = "dsQueries";
-            this.dsQueries1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vQry66BindingSource
-            // 
-            this.vQry66BindingSource.DataMember = "vQry66";
-            this.vQry66BindingSource.DataSource = this.dsQueries1;
-            // 
             // vQry66TableAdapter
             // 
             this.vQry66TableAdapter.ClearBeforeFill = true;
@@ -614,7 +614,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry66BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).EndInit();
@@ -622,14 +623,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
             this.panelControlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry66BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

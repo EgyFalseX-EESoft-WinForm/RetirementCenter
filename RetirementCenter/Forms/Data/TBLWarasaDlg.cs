@@ -72,17 +72,20 @@ namespace RetirementCenter.Forms.Data
             LUESubCommitteId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "SubCommitteId", true));
             ceresponsiblesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarf", true));
             LUEresponsiblesarfId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarfId", true));
-
+            tbvisa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "visa", true));
+            
             cewcompletesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wcompletesarf", true));
             tbwmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wmony", true));
             tbwestktaat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "westktaat", true));
             tbwelrasm.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "welrasm", true));
 
-
             luesarfTypeId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLEdafatWarsa, "sarfTypeId", true));
             tbestktaa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLEdafatWarsa, "estktaa", true));
             lueDofatSarfId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLEdafatWarsa, "DofatSarfId", true));
             dedatesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLEdafatWarsa, "datesarf", true));
+
+            //edit visa for admin only
+            tbvisa.Visible = lblvisa .Visible = Program.UserInfo.IsAdmin;
 
             if (_TBLEdafatWarsa.Count > 0)
                 ceEnableEdafat.Checked = true;

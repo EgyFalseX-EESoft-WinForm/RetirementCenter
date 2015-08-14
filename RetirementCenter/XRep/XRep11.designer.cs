@@ -205,7 +205,7 @@
             // xlDate
             // 
             this.xlDate.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.xlDate.LocationFloat = new DevExpress.Utils.PointFloat(264.4396F, 83.3958F);
+            this.xlDate.LocationFloat = new DevExpress.Utils.PointFloat(251.5711F, 83.3958F);
             this.xlDate.Name = "xlDate";
             this.xlDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xlDate.SizeF = new System.Drawing.SizeF(142.1789F, 23.00001F);
@@ -216,13 +216,13 @@
             // xrLabel9
             // 
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(406.6185F, 83.3958F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(393.75F, 83.3958F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(177.9847F, 23F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(214.4142F, 23F);
             this.xrLabel9.StylePriority.UseFont = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "بيان توريد الدفعات للبنك بتاريخ";
+            this.xrLabel9.Text = "بيان توريد الدفعات للبنك اعضاء بتاريخ";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xpbLogo

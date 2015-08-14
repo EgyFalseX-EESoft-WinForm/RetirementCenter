@@ -130,6 +130,8 @@ namespace RetirementCenter.DataSources {
         
         private vQry66DataTable tablevQry66;
         
+        private vQry67DataTable tablevQry67;
+        
         private global::System.Data.DataRelation relationFK_TBLMashat_CDSubCommitte;
         
         private global::System.Data.DataRelation relationFK_TBLWarasaSarf_TBLWarasa;
@@ -346,6 +348,9 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["vQry66"] != null)) {
                     base.Tables.Add(new vQry66DataTable(ds.Tables["vQry66"]));
+                }
+                if ((ds.Tables["vQry67"] != null)) {
+                    base.Tables.Add(new vQry67DataTable(ds.Tables["vQry67"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -897,6 +902,16 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vQry67DataTable vQry67 {
+            get {
+                return this.tablevQry67;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -1120,6 +1135,9 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["vQry66"] != null)) {
                     base.Tables.Add(new vQry66DataTable(ds.Tables["vQry66"]));
+                }
+                if ((ds.Tables["vQry67"] != null)) {
+                    base.Tables.Add(new vQry67DataTable(ds.Tables["vQry67"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1472,6 +1490,12 @@ namespace RetirementCenter.DataSources {
                     this.tablevQry66.InitVars();
                 }
             }
+            this.tablevQry67 = ((vQry67DataTable)(base.Tables["vQry67"]));
+            if ((initTable == true)) {
+                if ((this.tablevQry67 != null)) {
+                    this.tablevQry67.InitVars();
+                }
+            }
             this.relationFK_TBLMashat_CDSubCommitte = this.Relations["FK_TBLMashat_CDSubCommitte"];
             this.relationFK_TBLWarasaSarf_TBLWarasa = this.Relations["FK_TBLWarasaSarf_TBLWarasa"];
             this.relationFK_CDSubCommitte_CDSyndicate = this.Relations["FK_CDSubCommitte_CDSyndicate"];
@@ -1603,6 +1627,8 @@ namespace RetirementCenter.DataSources {
             base.Tables.Add(this.tablevQry65);
             this.tablevQry66 = new vQry66DataTable();
             base.Tables.Add(this.tablevQry66);
+            this.tablevQry67 = new vQry67DataTable();
+            base.Tables.Add(this.tablevQry67);
             this.relationFK_TBLMashat_CDSubCommitte = new global::System.Data.DataRelation("FK_TBLMashat_CDSubCommitte", new global::System.Data.DataColumn[] {
                         this.tableCDSubCommitte.SubCommitteIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTBLEdafatCreator2.SubCommitteIdColumn}, false);
@@ -1985,6 +2011,12 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializevQry67() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -2196,6 +2228,9 @@ namespace RetirementCenter.DataSources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void vQry66RowChangeEventHandler(object sender, vQry66RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void vQry67RowChangeEventHandler(object sender, vQry67RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -22558,7 +22593,6 @@ namespace RetirementCenter.DataSources {
                 this.columnvisanumber.MaxLength = 50;
                 this.columnSyndicateId.AllowDBNull = false;
                 this.columnSubCommitteId.AllowDBNull = false;
-                this.columnsummony.AllowDBNull = false;
                 this.columndatein.AllowDBNull = false;
                 this.columnuserin.AllowDBNull = false;
                 this.columnMMashatName.AllowDBNull = false;
@@ -22661,6 +22695,389 @@ namespace RetirementCenter.DataSources {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "vQry66DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vQry67DataTable : global::System.Data.TypedTableBase<vQry67Row> {
+            
+            private global::System.Data.DataColumn columnPersonId;
+            
+            private global::System.Data.DataColumn columnMMashatId;
+            
+            private global::System.Data.DataColumn columnpersonName;
+            
+            private global::System.Data.DataColumn columnWarasaType;
+            
+            private global::System.Data.DataColumn columnSyndicate;
+            
+            private global::System.Data.DataColumn columnMMashatName;
+            
+            private global::System.Data.DataColumn columnsarfnumber;
+            
+            private global::System.Data.DataColumn columnvisa;
+            
+            private global::System.Data.DataColumn columnSubCommitte;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67DataTable() {
+                this.TableName = "vQry67";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vQry67DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected vQry67DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonIdColumn {
+                get {
+                    return this.columnPersonId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MMashatIdColumn {
+                get {
+                    return this.columnMMashatId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn personNameColumn {
+                get {
+                    return this.columnpersonName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WarasaTypeColumn {
+                get {
+                    return this.columnWarasaType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SyndicateColumn {
+                get {
+                    return this.columnSyndicate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MMashatNameColumn {
+                get {
+                    return this.columnMMashatName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sarfnumberColumn {
+                get {
+                    return this.columnsarfnumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn visaColumn {
+                get {
+                    return this.columnvisa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SubCommitteColumn {
+                get {
+                    return this.columnSubCommitte;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67Row this[int index] {
+                get {
+                    return ((vQry67Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vQry67RowChangeEventHandler vQry67RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vQry67RowChangeEventHandler vQry67RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vQry67RowChangeEventHandler vQry67RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vQry67RowChangeEventHandler vQry67RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddvQry67Row(vQry67Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67Row AddvQry67Row(int PersonId, int MMashatId, string personName, string WarasaType, string Syndicate, string MMashatName, int sarfnumber, string visa, string SubCommitte) {
+                vQry67Row rowvQry67Row = ((vQry67Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PersonId,
+                        MMashatId,
+                        personName,
+                        WarasaType,
+                        Syndicate,
+                        MMashatName,
+                        sarfnumber,
+                        visa,
+                        SubCommitte};
+                rowvQry67Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvQry67Row);
+                return rowvQry67Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67Row FindByPersonId(int PersonId) {
+                return ((vQry67Row)(this.Rows.Find(new object[] {
+                            PersonId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vQry67DataTable cln = ((vQry67DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vQry67DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnPersonId = base.Columns["PersonId"];
+                this.columnMMashatId = base.Columns["MMashatId"];
+                this.columnpersonName = base.Columns["personName"];
+                this.columnWarasaType = base.Columns["WarasaType"];
+                this.columnSyndicate = base.Columns["Syndicate"];
+                this.columnMMashatName = base.Columns["MMashatName"];
+                this.columnsarfnumber = base.Columns["sarfnumber"];
+                this.columnvisa = base.Columns["visa"];
+                this.columnSubCommitte = base.Columns["SubCommitte"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnPersonId = new global::System.Data.DataColumn("PersonId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonId);
+                this.columnMMashatId = new global::System.Data.DataColumn("MMashatId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMMashatId);
+                this.columnpersonName = new global::System.Data.DataColumn("personName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpersonName);
+                this.columnWarasaType = new global::System.Data.DataColumn("WarasaType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWarasaType);
+                this.columnSyndicate = new global::System.Data.DataColumn("Syndicate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSyndicate);
+                this.columnMMashatName = new global::System.Data.DataColumn("MMashatName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMMashatName);
+                this.columnsarfnumber = new global::System.Data.DataColumn("sarfnumber", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsarfnumber);
+                this.columnvisa = new global::System.Data.DataColumn("visa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisa);
+                this.columnSubCommitte = new global::System.Data.DataColumn("SubCommitte", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubCommitte);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPersonId}, true));
+                this.columnPersonId.AllowDBNull = false;
+                this.columnPersonId.Unique = true;
+                this.columnMMashatId.AllowDBNull = false;
+                this.columnpersonName.AllowDBNull = false;
+                this.columnpersonName.MaxLength = 50;
+                this.columnWarasaType.AllowDBNull = false;
+                this.columnWarasaType.MaxLength = 50;
+                this.columnSyndicate.AllowDBNull = false;
+                this.columnSyndicate.MaxLength = 50;
+                this.columnMMashatName.AllowDBNull = false;
+                this.columnMMashatName.MaxLength = 75;
+                this.columnsarfnumber.AllowDBNull = false;
+                this.columnvisa.MaxLength = 50;
+                this.columnSubCommitte.AllowDBNull = false;
+                this.columnSubCommitte.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67Row NewvQry67Row() {
+                return ((vQry67Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vQry67Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vQry67Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vQry67RowChanged != null)) {
+                    this.vQry67RowChanged(this, new vQry67RowChangeEvent(((vQry67Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vQry67RowChanging != null)) {
+                    this.vQry67RowChanging(this, new vQry67RowChangeEvent(((vQry67Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vQry67RowDeleted != null)) {
+                    this.vQry67RowDeleted(this, new vQry67RowChangeEvent(((vQry67Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vQry67RowDeleting != null)) {
+                    this.vQry67RowDeleting(this, new vQry67RowChangeEvent(((vQry67Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovevQry67Row(vQry67Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsQueries ds = new dsQueries();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vQry67DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -33376,7 +33793,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double summony {
                 get {
-                    return ((double)(this[this.tablevQry66.summonyColumn]));
+                    try {
+                        return ((double)(this[this.tablevQry66.summonyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'summony\' in table \'vQry66\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevQry66.summonyColumn] = value;
@@ -33585,6 +34007,18 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssummonyNull() {
+                return this.IsNull(this.tablevQry66.summonyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsummonyNull() {
+                this[this.tablevQry66.summonyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssendbankdateNull() {
                 return this.IsNull(this.tablevQry66.sendbankdateColumn);
             }
@@ -33665,6 +34099,137 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpersonNIDNull() {
                 this[this.tablevQry66.personNIDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vQry67Row : global::System.Data.DataRow {
+            
+            private vQry67DataTable tablevQry67;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vQry67Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevQry67 = ((vQry67DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PersonId {
+                get {
+                    return ((int)(this[this.tablevQry67.PersonIdColumn]));
+                }
+                set {
+                    this[this.tablevQry67.PersonIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MMashatId {
+                get {
+                    return ((int)(this[this.tablevQry67.MMashatIdColumn]));
+                }
+                set {
+                    this[this.tablevQry67.MMashatIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string personName {
+                get {
+                    return ((string)(this[this.tablevQry67.personNameColumn]));
+                }
+                set {
+                    this[this.tablevQry67.personNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WarasaType {
+                get {
+                    return ((string)(this[this.tablevQry67.WarasaTypeColumn]));
+                }
+                set {
+                    this[this.tablevQry67.WarasaTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Syndicate {
+                get {
+                    return ((string)(this[this.tablevQry67.SyndicateColumn]));
+                }
+                set {
+                    this[this.tablevQry67.SyndicateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MMashatName {
+                get {
+                    return ((string)(this[this.tablevQry67.MMashatNameColumn]));
+                }
+                set {
+                    this[this.tablevQry67.MMashatNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int sarfnumber {
+                get {
+                    return ((int)(this[this.tablevQry67.sarfnumberColumn]));
+                }
+                set {
+                    this[this.tablevQry67.sarfnumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string visa {
+                get {
+                    try {
+                        return ((string)(this[this.tablevQry67.visaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'visa\' in table \'vQry67\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry67.visaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SubCommitte {
+                get {
+                    return ((string)(this[this.tablevQry67.SubCommitteColumn]));
+                }
+                set {
+                    this[this.tablevQry67.SubCommitteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvisaNull() {
+                return this.IsNull(this.tablevQry67.visaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvisaNull() {
+                this[this.tablevQry67.visaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -35456,6 +36021,40 @@ namespace RetirementCenter.DataSources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vQry66Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class vQry67RowChangeEvent : global::System.EventArgs {
+            
+            private vQry67Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67RowChangeEvent(vQry67Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry67Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -46161,16 +46760,16 @@ AND NOT EXISTS(SELECT PersonId FROM [dbo].[TBLEdafatWarsa] WHERE [PersonId] = TB
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT tblWarasabank.[newid], tblWarasabank.DofatSarfId, tblWarasabank.visanumber, tblWarasabank.SyndicateId, tblWarasabank.SubCommitteId, tblWarasabank.summony, tblWarasabank.sendbankdate, 
+            this._commandCollection[0].CommandText = @"SELECT tblWarasabank.[newid], tblWarasabank.DofatSarfId, tblWarasabank.visanumber, tblWarasabank.SyndicateId, tblWarasabank.SubCommitteId
+, round(tblWarasabank.summony, 2, 1) AS summony, tblWarasabank.sendbankdate, 
 tblWarasabank.amanatmony, tblWarasabank.amanatwareddate, tblWarasabank.datein, tblWarasabank.userin, TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLDofatSarf.DofatSarf, 
-CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, 818 AS Currency, 'Credit' AS [Action], TBLWarasa.personNID, BankExportedData.Activate
+CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, 818 AS Currency, 'Credit' AS [Action], TBLWarasa.personNID, TBLWarasa.Activate
 , tblWarasabank.PersonId
 FROM tblWarasabank INNER JOIN TBLWarasa ON tblWarasabank.PersonId = TBLWarasa.PersonId 
 INNER JOIN TBLMashat ON tblWarasabank.MMashatId = TBLMashat.MMashatId
 INNER JOIN TBLDofatSarf ON tblWarasabank.DofatSarfId = TBLDofatSarf.DofatSarfId 
 INNER JOIN CDSyndicate ON tblWarasabank.SyndicateId = CDSyndicate.SyndicateId 
 INNER JOIN CDSubCommitte ON tblWarasabank.SubCommitteId = CDSubCommitte.SubCommitteId 
-LEFT OUTER JOIN BankExportedData ON tblWarasabank.MMashatId = BankExportedData.MMashatId
 WHERE        (tblWarasabank.DofatSarfId = @DofatSarfId)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -46198,6 +46797,189 @@ WHERE        (tblWarasabank.DofatSarfId = @DofatSarfId)";
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
             dsQueries.vQry66DataTable dataTable = new dsQueries.vQry66DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vQry67TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public vQry67TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vQry67";
+            tableMapping.ColumnMappings.Add("PersonId", "PersonId");
+            tableMapping.ColumnMappings.Add("MMashatId", "MMashatId");
+            tableMapping.ColumnMappings.Add("personName", "personName");
+            tableMapping.ColumnMappings.Add("WarasaType", "WarasaType");
+            tableMapping.ColumnMappings.Add("Syndicate", "Syndicate");
+            tableMapping.ColumnMappings.Add("MMashatName", "MMashatName");
+            tableMapping.ColumnMappings.Add("sarfnumber", "sarfnumber");
+            tableMapping.ColumnMappings.Add("visa", "visa");
+            tableMapping.ColumnMappings.Add("SubCommitte", "SubCommitte");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.MMashatId, TBLWarasa.personName, CDWarasaType.WarasaType, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.MMashatName, 
+                         TBLMashat.sarfnumber, TBLWarasa.visa
+FROM            TBLWarasa INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
+WHERE        (TBLWarasa.responsiblesarf = 1)
+AND NOT EXISTS(SELECT PersonId FROM TBLWarasa W WHERE responsiblesarf = 0 AND responsiblesarfId = TBLWarasa.PersonId AND visa <> TBLWarasa.visa)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsQueries.vQry67DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsQueries.vQry67DataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsQueries.vQry67DataTable dataTable = new dsQueries.vQry67DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

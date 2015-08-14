@@ -166,6 +166,8 @@
             this.tBLWarasaremarksTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLWarasaremarksTableAdapter();
             this.tBLReSarfWarasaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfWarasaTableAdapter();
             this.tBLSarfExpetionTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLSarfExpetionTableAdapter();
+            this.lblvisa = new DevExpress.XtraEditors.LabelControl();
+            this.tbvisa = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceyasref.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbpersonAddres.Properties)).BeginInit();
@@ -256,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbvisa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -285,10 +288,12 @@
             this.tableLayoutPanel1.Controls.Add(this.LUESubCommitteId, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.ceresponsiblesarf, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.LUEresponsiblesarfId, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.lblvisa, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.tbvisa, 1, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
+            this.tableLayoutPanel1.RowCount = 12;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
@@ -300,13 +305,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 341);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // labelControl15
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl15.Location = new System.Drawing.Point(497, 303);
+            this.labelControl15.Location = new System.Drawing.Point(497, 293);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(82, 17);
             this.labelControl15.TabIndex = 10;
@@ -315,7 +321,7 @@
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl14.Location = new System.Drawing.Point(504, 273);
+            this.labelControl14.Location = new System.Drawing.Point(504, 264);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(75, 17);
             this.labelControl14.TabIndex = 9;
@@ -324,7 +330,7 @@
             // ceyasref
             // 
             this.ceyasref.EditValue = true;
-            this.ceyasref.Location = new System.Drawing.Point(451, 183);
+            this.ceyasref.Location = new System.Drawing.Point(451, 177);
             this.ceyasref.Name = "ceyasref";
             this.ceyasref.Properties.AutoWidth = true;
             this.ceyasref.Properties.Caption = "";
@@ -335,7 +341,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl7.Location = new System.Drawing.Point(546, 183);
+            this.labelControl7.Location = new System.Drawing.Point(546, 177);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(33, 17);
             this.labelControl7.TabIndex = 6;
@@ -343,7 +349,7 @@
             // 
             // tbpersonAddres
             // 
-            this.tbpersonAddres.Location = new System.Drawing.Point(220, 153);
+            this.tbpersonAddres.Location = new System.Drawing.Point(220, 148);
             this.tbpersonAddres.Name = "tbpersonAddres";
             this.tbpersonAddres.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbpersonAddres.Properties.Appearance.Options.UseFont = true;
@@ -353,7 +359,7 @@
             // depersonbirth
             // 
             this.depersonbirth.EditValue = null;
-            this.depersonbirth.Location = new System.Drawing.Point(220, 93);
+            this.depersonbirth.Location = new System.Drawing.Point(220, 90);
             this.depersonbirth.Name = "depersonbirth";
             this.depersonbirth.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.depersonbirth.Properties.Appearance.Options.UseFont = true;
@@ -366,7 +372,7 @@
             // 
             // tbpersonmobile
             // 
-            this.tbpersonmobile.Location = new System.Drawing.Point(220, 123);
+            this.tbpersonmobile.Location = new System.Drawing.Point(220, 119);
             this.tbpersonmobile.Name = "tbpersonmobile";
             this.tbpersonmobile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbpersonmobile.Properties.Appearance.Options.UseFont = true;
@@ -384,7 +390,7 @@
             // 
             // tbpersonNID
             // 
-            this.tbpersonNID.Location = new System.Drawing.Point(220, 63);
+            this.tbpersonNID.Location = new System.Drawing.Point(220, 61);
             this.tbpersonNID.Name = "tbpersonNID";
             this.tbpersonNID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbpersonNID.Properties.Appearance.Options.UseFont = true;
@@ -397,7 +403,7 @@
             // lueWarasaTypeId
             // 
             this.lueWarasaTypeId.EditValue = "";
-            this.lueWarasaTypeId.Location = new System.Drawing.Point(220, 33);
+            this.lueWarasaTypeId.Location = new System.Drawing.Point(220, 32);
             this.lueWarasaTypeId.Name = "lueWarasaTypeId";
             this.lueWarasaTypeId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lueWarasaTypeId.Properties.Appearance.Options.UseFont = true;
@@ -445,7 +451,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(552, 33);
+            this.labelControl2.Location = new System.Drawing.Point(552, 32);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(27, 17);
             this.labelControl2.TabIndex = 0;
@@ -454,7 +460,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(505, 63);
+            this.labelControl3.Location = new System.Drawing.Point(505, 61);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(74, 17);
             this.labelControl3.TabIndex = 0;
@@ -463,7 +469,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl4.Location = new System.Drawing.Point(510, 93);
+            this.labelControl4.Location = new System.Drawing.Point(510, 90);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(69, 17);
             this.labelControl4.TabIndex = 0;
@@ -472,7 +478,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl5.Location = new System.Drawing.Point(538, 123);
+            this.labelControl5.Location = new System.Drawing.Point(538, 119);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(41, 17);
             this.labelControl5.TabIndex = 0;
@@ -494,7 +500,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Location = new System.Drawing.Point(542, 153);
+            this.labelControl6.Location = new System.Drawing.Point(542, 148);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(37, 17);
             this.labelControl6.TabIndex = 0;
@@ -503,7 +509,7 @@
             // labelControl11
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl11.Location = new System.Drawing.Point(546, 213);
+            this.labelControl11.Location = new System.Drawing.Point(546, 206);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(33, 17);
             this.labelControl11.TabIndex = 6;
@@ -512,7 +518,7 @@
             // labelControl13
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl13.Location = new System.Drawing.Point(552, 243);
+            this.labelControl13.Location = new System.Drawing.Point(552, 235);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(27, 17);
             this.labelControl13.TabIndex = 6;
@@ -520,7 +526,7 @@
             // 
             // LUESyndicateId
             // 
-            this.LUESyndicateId.Location = new System.Drawing.Point(220, 213);
+            this.LUESyndicateId.Location = new System.Drawing.Point(220, 206);
             this.LUESyndicateId.Name = "LUESyndicateId";
             this.LUESyndicateId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUESyndicateId.Properties.Appearance.Options.UseFont = true;
@@ -568,7 +574,7 @@
             // 
             // LUESubCommitteId
             // 
-            this.LUESubCommitteId.Location = new System.Drawing.Point(220, 243);
+            this.LUESubCommitteId.Location = new System.Drawing.Point(220, 235);
             this.LUESubCommitteId.Name = "LUESubCommitteId";
             this.LUESubCommitteId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUESubCommitteId.Properties.Appearance.Options.UseFont = true;
@@ -615,7 +621,7 @@
             // 
             // ceresponsiblesarf
             // 
-            this.ceresponsiblesarf.Location = new System.Drawing.Point(451, 273);
+            this.ceresponsiblesarf.Location = new System.Drawing.Point(451, 264);
             this.ceresponsiblesarf.Name = "ceresponsiblesarf";
             this.ceresponsiblesarf.Properties.AutoWidth = true;
             this.ceresponsiblesarf.Properties.Caption = "";
@@ -625,7 +631,7 @@
             // 
             // LUEresponsiblesarfId
             // 
-            this.LUEresponsiblesarfId.Location = new System.Drawing.Point(220, 303);
+            this.LUEresponsiblesarfId.Location = new System.Drawing.Point(220, 293);
             this.LUEresponsiblesarfId.Name = "LUEresponsiblesarfId";
             this.LUEresponsiblesarfId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.LUEresponsiblesarfId.Properties.Appearance.Options.UseFont = true;
@@ -1766,6 +1772,24 @@
             // 
             this.tBLSarfExpetionTableAdapter.ClearBeforeFill = true;
             // 
+            // lblvisa
+            // 
+            this.lblvisa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblvisa.Location = new System.Drawing.Point(559, 322);
+            this.lblvisa.Name = "lblvisa";
+            this.lblvisa.Size = new System.Drawing.Size(20, 17);
+            this.lblvisa.TabIndex = 0;
+            this.lblvisa.Text = "فيزا";
+            // 
+            // tbvisa
+            // 
+            this.tbvisa.Location = new System.Drawing.Point(220, 322);
+            this.tbvisa.Name = "tbvisa";
+            this.tbvisa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbvisa.Properties.Appearance.Options.UseFont = true;
+            this.tbvisa.Size = new System.Drawing.Size(250, 22);
+            this.tbvisa.TabIndex = 5;
+            // 
             // TBLWarasaDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1872,6 +1896,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbvisa.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2007,5 +2032,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.TextEdit tbwestktaat;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.LabelControl lblvisa;
+        private DevExpress.XtraEditors.TextEdit tbvisa;
     }
 }

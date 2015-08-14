@@ -29611,9 +29611,9 @@ SELECT id, MMashatId, OldSyndicateId, NewSyndicateId, OldSubCommitteId, NewSubCo
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO TBLWarasa
-                         (PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, 
-                         SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm)
-VALUES        (@PersonId,@MMashatId,@WarasaTypeId,@personName,@personNID,@personbirth,@personAddres,@personmobile,@yasref,@userin,@datein,@SyndicateId,@SubCommitteId,@responsiblesarf,@responsiblesarfId,@wmony,@wcompletesarf,@westktaat,@welrasm); 
+                         (PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, 
+                         responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa)
+VALUES        (@PersonId,@MMashatId,@WarasaTypeId,@personName,@personNID,@personbirth,@personAddres,@personmobile,@yasref,@userin,@datein,@SyndicateId,@SubCommitteId,@responsiblesarf,@responsiblesarfId,@wmony,@wcompletesarf,@westktaat,@welrasm,@visa);  
 SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -29635,14 +29635,15 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, pe
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wcompletesarf", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "wcompletesarf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@westktaat", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "westktaat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@welrasm", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "welrasm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@visa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "visa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       TBLWarasa
 SET                PersonId = @PersonId, MMashatId = @MMashatId, WarasaTypeId = @WarasaTypeId, personName = @personName, personNID = @personNID, 
                          personbirth = @personbirth, personAddres = @personAddres, personmobile = @personmobile, yasref = @yasref, userin = @userin, datein = @datein, 
                          SyndicateId = @SyndicateId, SubCommitteId = @SubCommitteId, responsiblesarf = @responsiblesarf, responsiblesarfId = @responsiblesarfId, 
-                         wcompletesarf = @wcompletesarf, wmony = @wmony, westktaat = @westktaat, welrasm = @welrasm
-WHERE        (PersonId = @Original_PersonId); 
+                         wcompletesarf = @wcompletesarf, wmony = @wmony, westktaat = @westktaat, welrasm = @welrasm, visa = @visa
+WHERE        (PersonId = @Original_PersonId);  
 SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -29664,6 +29665,7 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, pe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wmony", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "wmony", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@westktaat", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "westktaat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@welrasm", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "welrasm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@visa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "visa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -29886,39 +29888,30 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
                     int PersonId, 
-                    global::System.Nullable<int> MMashatId, 
-                    global::System.Nullable<byte> WarasaTypeId, 
+                    int MMashatId, 
+                    byte WarasaTypeId, 
                     string personName, 
                     string personNID, 
                     string personbirth, 
                     string personAddres, 
                     string personmobile, 
-                    global::System.Nullable<bool> yasref, 
-                    global::System.Nullable<int> userin, 
-                    global::System.Nullable<global::System.DateTime> datein, 
-                    global::System.Nullable<int> SyndicateId, 
-                    global::System.Nullable<int> SubCommitteId, 
-                    global::System.Nullable<bool> responsiblesarf, 
-                    global::System.Nullable<int> responsiblesarfId, 
-                    global::System.Nullable<double> wmony, 
-                    global::System.Nullable<bool> wcompletesarf, 
-                    global::System.Nullable<double> westktaat, 
-                    global::System.Nullable<double> welrasm) {
+                    bool yasref, 
+                    int userin, 
+                    System.DateTime datein, 
+                    int SyndicateId, 
+                    int SubCommitteId, 
+                    bool responsiblesarf, 
+                    int responsiblesarfId, 
+                    double wmony, 
+                    bool wcompletesarf, 
+                    double westktaat, 
+                    double welrasm, 
+                    string visa) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PersonId));
-            if ((MMashatId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MMashatId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((WarasaTypeId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((byte)(WarasaTypeId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MMashatId));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((byte)(WarasaTypeId));
             if ((personName == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("personName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(personName));
@@ -29947,71 +29940,22 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(personmobile));
             }
-            if ((yasref.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(yasref.Value));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(yasref));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(userin));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(datein));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(SyndicateId));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(SubCommitteId));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(responsiblesarf));
+            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(responsiblesarfId));
+            this.Adapter.InsertCommand.Parameters[15].Value = ((double)(wmony));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((bool)(wcompletesarf));
+            this.Adapter.InsertCommand.Parameters[17].Value = ((double)(westktaat));
+            this.Adapter.InsertCommand.Parameters[18].Value = ((double)(welrasm));
+            if ((visa == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((userin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(userin.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((datein.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(datein.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((SyndicateId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(SyndicateId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((SubCommitteId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(SubCommitteId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((responsiblesarf.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(responsiblesarf.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((responsiblesarfId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(responsiblesarfId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((wmony.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(wmony.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((wcompletesarf.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((bool)(wcompletesarf.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((westktaat.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(westktaat.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((welrasm.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(welrasm.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(visa));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -30035,40 +29979,31 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     int PersonId, 
-                    global::System.Nullable<int> MMashatId, 
-                    global::System.Nullable<byte> WarasaTypeId, 
+                    int MMashatId, 
+                    byte WarasaTypeId, 
                     string personName, 
                     string personNID, 
                     string personbirth, 
                     string personAddres, 
                     string personmobile, 
-                    global::System.Nullable<bool> yasref, 
-                    global::System.Nullable<int> userin, 
-                    global::System.Nullable<global::System.DateTime> datein, 
-                    global::System.Nullable<int> SyndicateId, 
-                    global::System.Nullable<int> SubCommitteId, 
-                    global::System.Nullable<bool> responsiblesarf, 
-                    global::System.Nullable<int> responsiblesarfId, 
-                    global::System.Nullable<bool> wcompletesarf, 
-                    global::System.Nullable<double> wmony, 
-                    global::System.Nullable<double> westktaat, 
-                    global::System.Nullable<double> welrasm, 
+                    bool yasref, 
+                    int userin, 
+                    System.DateTime datein, 
+                    int SyndicateId, 
+                    int SubCommitteId, 
+                    bool responsiblesarf, 
+                    int responsiblesarfId, 
+                    bool wcompletesarf, 
+                    double wmony, 
+                    double westktaat, 
+                    double welrasm, 
+                    string visa, 
                     int Original_PersonId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PersonId));
-            if ((MMashatId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MMashatId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((WarasaTypeId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((byte)(WarasaTypeId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MMashatId));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((byte)(WarasaTypeId));
             if ((personName == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("personName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(personName));
@@ -30097,73 +30032,24 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(personmobile));
             }
-            if ((yasref.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(yasref.Value));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(yasref));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(userin));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(datein));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SyndicateId));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(SubCommitteId));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(responsiblesarf));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(responsiblesarfId));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(wcompletesarf));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(wmony));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(westktaat));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(welrasm));
+            if ((visa == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(visa));
             }
-            if ((userin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(userin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((datein.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(datein.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((SyndicateId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SyndicateId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((SubCommitteId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(SubCommitteId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((responsiblesarf.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(responsiblesarf.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((responsiblesarfId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(responsiblesarfId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((wcompletesarf.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(wcompletesarf.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((wmony.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(wmony.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((westktaat.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(westktaat.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((welrasm.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(welrasm.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_PersonId));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_PersonId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -30185,26 +30071,27 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    global::System.Nullable<int> MMashatId, 
-                    global::System.Nullable<byte> WarasaTypeId, 
+                    int MMashatId, 
+                    byte WarasaTypeId, 
                     string personName, 
                     string personNID, 
                     string personbirth, 
                     string personAddres, 
                     string personmobile, 
-                    global::System.Nullable<bool> yasref, 
-                    global::System.Nullable<int> userin, 
-                    global::System.Nullable<global::System.DateTime> datein, 
-                    global::System.Nullable<int> SyndicateId, 
-                    global::System.Nullable<int> SubCommitteId, 
-                    global::System.Nullable<bool> responsiblesarf, 
-                    global::System.Nullable<int> responsiblesarfId, 
-                    global::System.Nullable<bool> wcompletesarf, 
-                    global::System.Nullable<double> wmony, 
-                    global::System.Nullable<double> westktaat, 
-                    global::System.Nullable<double> welrasm, 
+                    bool yasref, 
+                    int userin, 
+                    System.DateTime datein, 
+                    int SyndicateId, 
+                    int SubCommitteId, 
+                    bool responsiblesarf, 
+                    int responsiblesarfId, 
+                    bool wcompletesarf, 
+                    double wmony, 
+                    double westktaat, 
+                    double welrasm, 
+                    string visa, 
                     int Original_PersonId) {
-            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wcompletesarf, wmony, westktaat, welrasm, Original_PersonId);
+            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wcompletesarf, wmony, westktaat, welrasm, visa, Original_PersonId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
