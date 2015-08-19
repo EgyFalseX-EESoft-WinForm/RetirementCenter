@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RetirementCenter" Class="dsTeachersUnionViewsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=RetirementCenter;Integrated Security=True" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=FalseX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CDSyndicate" Member="CDSyndicates">
     <Type Name="CDSyndicate">
       <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

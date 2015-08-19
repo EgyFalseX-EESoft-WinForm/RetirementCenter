@@ -7024,7 +7024,6 @@ namespace RetirementCenter.DataSources {
                 this.columnvisanumber.MaxLength = 50;
                 this.columnSubCommitte.AllowDBNull = false;
                 this.columnSubCommitte.MaxLength = 50;
-                this.columnsummony.AllowDBNull = false;
                 this.columnSyndicate.AllowDBNull = false;
                 this.columnSyndicate.MaxLength = 50;
             }
@@ -9807,7 +9806,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double summony {
                 get {
-                    return ((double)(this[this.tableRep13_C.summonyColumn]));
+                    try {
+                        return ((double)(this[this.tableRep13_C.summonyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'summony\' in table \'Rep13_C\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep13_C.summonyColumn] = value;
@@ -9839,6 +9843,18 @@ namespace RetirementCenter.DataSources {
                 set {
                     this[this.tableRep13_C.SyndicateColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssummonyNull() {
+                return this.IsNull(this.tableRep13_C.summonyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsummonyNull() {
+                this[this.tableRep13_C.summonyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14755,7 +14771,7 @@ GROUP BY CDSyndicate.Syndicate, tblWarasabank.sendbankdate";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLDofatSarf.DofatSarf, tblWarasabank.visanumber, CDSubCommitte.SubCommitte, tblWarasabank.summony, tblWarasabank.sendbankdate, 
+            this._commandCollection[0].CommandText = @"SELECT        TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLDofatSarf.DofatSarf, tblWarasabank.visanumber, CDSubCommitte.SubCommitte, round(tblWarasabank.summony, 2, 1) AS summony, tblWarasabank.sendbankdate, 
                          CDSyndicate.Syndicate
 FROM            tblWarasabank INNER JOIN
                          CDSyndicate ON tblWarasabank.SyndicateId = CDSyndicate.SyndicateId INNER JOIN

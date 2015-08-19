@@ -616,6 +616,16 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterTBLDeathMembers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                TBLDeathMembersFrm FrmData = new TBLDeathMembersFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["TBLDeathMembers32.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         private void mbRetCenterXRep01_ItemClick(object sender, ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
@@ -1449,6 +1459,8 @@ namespace RetirementCenter
             SplashScreenManager.CloseForm();
         }
         #endregion
+
+        
 
         
 

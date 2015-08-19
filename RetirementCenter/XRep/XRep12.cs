@@ -23,7 +23,7 @@ namespace RetirementCenter
         private void LoadDataSource()
         {
             new DataSources.dsReportsTableAdapters.AppOptionsTableAdapter().Fill(dsReports.AppOptions);
-
+            rep12_ATableAdapter1.Fill(dsReports.Rep12_A);
             //DataRow dtMain = SQLProvider.SelectTBLHafzaTasleem(_hafzaId).Rows[0];
             //xlHafzaId.Text = dtMain["HafzaId"].ToString();
             //xlSyndicate.Text = dtMain["Syndicate"].ToString();

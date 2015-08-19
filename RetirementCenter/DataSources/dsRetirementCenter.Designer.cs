@@ -98,6 +98,8 @@ namespace RetirementCenter.DataSources {
         
         private tblWarasabankDataTable tabletblWarasabank;
         
+        private TBLDeathMembersDataTable tableTBLDeathMembers;
+        
         private global::System.Data.DataRelation relationFK_TBLMashat_Users;
         
         private global::System.Data.DataRelation relationFK_TBLNoSarfDetels_TBLMashat;
@@ -296,6 +298,9 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["tblWarasabank"] != null)) {
                     base.Tables.Add(new tblWarasabankDataTable(ds.Tables["tblWarasabank"]));
+                }
+                if ((ds.Tables["TBLDeathMembers"] != null)) {
+                    base.Tables.Add(new TBLDeathMembersDataTable(ds.Tables["TBLDeathMembers"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -687,6 +692,16 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TBLDeathMembersDataTable TBLDeathMembers {
+            get {
+                return this.tableTBLDeathMembers;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -862,6 +877,9 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["tblWarasabank"] != null)) {
                     base.Tables.Add(new tblWarasabankDataTable(ds.Tables["tblWarasabank"]));
+                }
+                if ((ds.Tables["TBLDeathMembers"] != null)) {
+                    base.Tables.Add(new TBLDeathMembersDataTable(ds.Tables["TBLDeathMembers"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1118,6 +1136,12 @@ namespace RetirementCenter.DataSources {
                     this.tabletblWarasabank.InitVars();
                 }
             }
+            this.tableTBLDeathMembers = ((TBLDeathMembersDataTable)(base.Tables["TBLDeathMembers"]));
+            if ((initTable == true)) {
+                if ((this.tableTBLDeathMembers != null)) {
+                    this.tableTBLDeathMembers.InitVars();
+                }
+            }
             this.relationFK_TBLMashat_Users = this.Relations["FK_TBLMashat_Users"];
             this.relationFK_TBLNoSarfDetels_TBLMashat = this.Relations["FK_TBLNoSarfDetels_TBLMashat"];
             this.relationFK_TBLMRemarks_TBLMashat = this.Relations["FK_TBLMRemarks_TBLMashat"];
@@ -1232,6 +1256,8 @@ namespace RetirementCenter.DataSources {
             base.Tables.Add(this.tabletblmemberbank);
             this.tabletblWarasabank = new tblWarasabankDataTable();
             base.Tables.Add(this.tabletblWarasabank);
+            this.tableTBLDeathMembers = new TBLDeathMembersDataTable();
+            base.Tables.Add(this.tableTBLDeathMembers);
             this.relationFK_TBLMashat_Users = new global::System.Data.DataRelation("FK_TBLMashat_Users", new global::System.Data.DataColumn[] {
                         this.tableUsers.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTBLMashat.userinColumn}, false);
@@ -1578,6 +1604,12 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTBLDeathMembers() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1741,6 +1773,9 @@ namespace RetirementCenter.DataSources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblWarasabankRowChangeEventHandler(object sender, tblWarasabankRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TBLDeathMembersRowChangeEventHandler(object sender, TBLDeathMembersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -15740,6 +15775,325 @@ namespace RetirementCenter.DataSources {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TBLDeathMembersDataTable : global::System.Data.TypedTableBase<TBLDeathMembersRow> {
+            
+            private global::System.Data.DataColumn columnMMashatId;
+            
+            private global::System.Data.DataColumn columndeathdate;
+            
+            private global::System.Data.DataColumn columnmosthhek;
+            
+            private global::System.Data.DataColumn columndatein;
+            
+            private global::System.Data.DataColumn columnuserin;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersDataTable() {
+                this.TableName = "TBLDeathMembers";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TBLDeathMembersDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TBLDeathMembersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MMashatIdColumn {
+                get {
+                    return this.columnMMashatId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn deathdateColumn {
+                get {
+                    return this.columndeathdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mosthhekColumn {
+                get {
+                    return this.columnmosthhek;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dateinColumn {
+                get {
+                    return this.columndatein;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn userinColumn {
+                get {
+                    return this.columnuserin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRow this[int index] {
+                get {
+                    return ((TBLDeathMembersRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TBLDeathMembersRowChangeEventHandler TBLDeathMembersRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TBLDeathMembersRowChangeEventHandler TBLDeathMembersRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TBLDeathMembersRowChangeEventHandler TBLDeathMembersRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TBLDeathMembersRowChangeEventHandler TBLDeathMembersRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTBLDeathMembersRow(TBLDeathMembersRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRow AddTBLDeathMembersRow(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin) {
+                TBLDeathMembersRow rowTBLDeathMembersRow = ((TBLDeathMembersRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MMashatId,
+                        deathdate,
+                        mosthhek,
+                        datein,
+                        userin};
+                rowTBLDeathMembersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTBLDeathMembersRow);
+                return rowTBLDeathMembersRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRow FindByMMashatId(int MMashatId) {
+                return ((TBLDeathMembersRow)(this.Rows.Find(new object[] {
+                            MMashatId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TBLDeathMembersDataTable cln = ((TBLDeathMembersDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TBLDeathMembersDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnMMashatId = base.Columns["MMashatId"];
+                this.columndeathdate = base.Columns["deathdate"];
+                this.columnmosthhek = base.Columns["mosthhek"];
+                this.columndatein = base.Columns["datein"];
+                this.columnuserin = base.Columns["userin"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnMMashatId = new global::System.Data.DataColumn("MMashatId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMMashatId);
+                this.columndeathdate = new global::System.Data.DataColumn("deathdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndeathdate);
+                this.columnmosthhek = new global::System.Data.DataColumn("mosthhek", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmosthhek);
+                this.columndatein = new global::System.Data.DataColumn("datein", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndatein);
+                this.columnuserin = new global::System.Data.DataColumn("userin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuserin);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMMashatId}, true));
+                this.columnMMashatId.AllowDBNull = false;
+                this.columnMMashatId.Unique = true;
+                this.columndeathdate.AllowDBNull = false;
+                this.columnmosthhek.AllowDBNull = false;
+                this.columnmosthhek.MaxLength = 75;
+                this.columndatein.AllowDBNull = false;
+                this.columnuserin.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRow NewTBLDeathMembersRow() {
+                return ((TBLDeathMembersRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TBLDeathMembersRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TBLDeathMembersRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TBLDeathMembersRowChanged != null)) {
+                    this.TBLDeathMembersRowChanged(this, new TBLDeathMembersRowChangeEvent(((TBLDeathMembersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TBLDeathMembersRowChanging != null)) {
+                    this.TBLDeathMembersRowChanging(this, new TBLDeathMembersRowChangeEvent(((TBLDeathMembersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TBLDeathMembersRowDeleted != null)) {
+                    this.TBLDeathMembersRowDeleted(this, new TBLDeathMembersRowChangeEvent(((TBLDeathMembersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TBLDeathMembersRowDeleting != null)) {
+                    this.TBLDeathMembersRowDeleting(this, new TBLDeathMembersRowChangeEvent(((TBLDeathMembersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTBLDeathMembersRow(TBLDeathMembersRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsRetirementCenter ds = new dsRetirementCenter();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TBLDeathMembersDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class UserRolesRow : global::System.Data.DataRow {
@@ -22770,6 +23124,76 @@ namespace RetirementCenter.DataSources {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TBLDeathMembersRow : global::System.Data.DataRow {
+            
+            private TBLDeathMembersDataTable tableTBLDeathMembers;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TBLDeathMembersRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTBLDeathMembers = ((TBLDeathMembersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MMashatId {
+                get {
+                    return ((int)(this[this.tableTBLDeathMembers.MMashatIdColumn]));
+                }
+                set {
+                    this[this.tableTBLDeathMembers.MMashatIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime deathdate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableTBLDeathMembers.deathdateColumn]));
+                }
+                set {
+                    this[this.tableTBLDeathMembers.deathdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string mosthhek {
+                get {
+                    return ((string)(this[this.tableTBLDeathMembers.mosthhekColumn]));
+                }
+                set {
+                    this[this.tableTBLDeathMembers.mosthhekColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime datein {
+                get {
+                    return ((global::System.DateTime)(this[this.tableTBLDeathMembers.dateinColumn]));
+                }
+                set {
+                    this[this.tableTBLDeathMembers.dateinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int userin {
+                get {
+                    return ((int)(this[this.tableTBLDeathMembers.userinColumn]));
+                }
+                set {
+                    this[this.tableTBLDeathMembers.userinColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -24013,6 +24437,40 @@ namespace RetirementCenter.DataSources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblWarasabankRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TBLDeathMembersRowChangeEvent : global::System.EventArgs {
+            
+            private TBLDeathMembersRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRowChangeEvent(TBLDeathMembersRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLDeathMembersRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -29688,16 +30146,16 @@ FROM            TBLWarasa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, personAddres, personNID, personName, personbirth, personmobile, 
-                         responsiblesarf, responsiblesarfId, userin, yasref, wmony, wcompletesarf, westktaat, welrasm
+            this._commandCollection[1].CommandText = @"SELECT        MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, 
+                         responsiblesarfId, userin, yasref, wmony, wcompletesarf, westktaat, welrasm, visa
 FROM            TBLWarasa
 WHERE        (MMashatId = @MMashatId)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, personAddres, personNID, personName, personbirth, personmobile, 
-                         responsiblesarf, responsiblesarfId, userin, yasref, wmony, wcompletesarf, westktaat, welrasm
+            this._commandCollection[2].CommandText = @"SELECT        MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, 
+                         responsiblesarfId, userin, yasref, wmony, wcompletesarf, westktaat, welrasm, visa
 FROM            TBLWarasa
 WHERE        (PersonId = @PersonId)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
@@ -29773,14 +30231,9 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByMMashatId(dsRetirementCenter.TBLWarasaDataTable dataTable, global::System.Nullable<int> MMashatId) {
+        public virtual int FillByMMashatId(dsRetirementCenter.TBLWarasaDataTable dataTable, int MMashatId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((MMashatId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -29792,14 +30245,9 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsRetirementCenter.TBLWarasaDataTable GetDataByMMashatId(global::System.Nullable<int> MMashatId) {
+        public virtual dsRetirementCenter.TBLWarasaDataTable GetDataByMMashatId(int MMashatId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((MMashatId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId));
             dsRetirementCenter.TBLWarasaDataTable dataTable = new dsRetirementCenter.TBLWarasaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -38932,6 +39380,358 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TBLDeathMembersTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public TBLDeathMembersTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TBLDeathMembers";
+            tableMapping.ColumnMappings.Add("MMashatId", "MMashatId");
+            tableMapping.ColumnMappings.Add("deathdate", "deathdate");
+            tableMapping.ColumnMappings.Add("mosthhek", "mosthhek");
+            tableMapping.ColumnMappings.Add("datein", "datein");
+            tableMapping.ColumnMappings.Add("userin", "userin");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TBLDeathMembers] WHERE (([MMashatId] = @Original_MMashatId))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLDeathMembers] ([MMashatId], [deathdate], [mosthhek], [datein], [userin]) VALUES (@MMashatId, @deathdate, @mosthhek, @datein, @userin);
+SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deathdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deathdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datein", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLDeathMembers] SET [MMashatId] = @MMashatId, [deathdate] = @deathdate, [mosthhek] = @mosthhek, [datein] = @datein, [userin] = @userin WHERE (([MMashatId] = @Original_MMashatId));
+SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deathdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deathdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datein", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        MMashatId, deathdate, mosthhek, datein, userin\r\nFROM            TBL" +
+                "DeathMembers";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        MMashatId, deathdate, mosthhek, datein, userin\r\nFROM            TBL" +
+                "DeathMembers\r\nWHERE MMashatId = @MMashatId";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsRetirementCenter.TBLDeathMembersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsRetirementCenter.TBLDeathMembersDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsRetirementCenter.TBLDeathMembersDataTable dataTable = new dsRetirementCenter.TBLDeathMembersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByMMashatId(dsRetirementCenter.TBLDeathMembersDataTable dataTable, int MMashatId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsRetirementCenter.TBLDeathMembersDataTable GetDataByMMashatId(int MMashatId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MMashatId));
+            dsRetirementCenter.TBLDeathMembersDataTable dataTable = new dsRetirementCenter.TBLDeathMembersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsRetirementCenter.TBLDeathMembersDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsRetirementCenter dataSet) {
+            return this.Adapter.Update(dataSet, "TBLDeathMembers");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_MMashatId) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_MMashatId));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(MMashatId));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(deathdate));
+            if ((mosthhek == null)) {
+                throw new global::System.ArgumentNullException("mosthhek");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(mosthhek));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(datein));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(userin));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, int Original_MMashatId) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(MMashatId));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(deathdate));
+            if ((mosthhek == null)) {
+                throw new global::System.ArgumentNullException("mosthhek");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(mosthhek));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(datein));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(userin));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_MMashatId));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, int Original_MMashatId) {
+            return this.Update(Original_MMashatId, deathdate, mosthhek, datein, userin, Original_MMashatId);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39008,6 +39808,8 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         private tblmemberbankTableAdapter _tblmemberbankTableAdapter;
         
         private tblWarasabankTableAdapter _tblWarasabankTableAdapter;
+        
+        private TBLDeathMembersTableAdapter _tBLDeathMembersTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -39488,6 +40290,20 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TBLDeathMembersTableAdapter TBLDeathMembersTableAdapter {
+            get {
+                return this._tBLDeathMembersTableAdapter;
+            }
+            set {
+                this._tBLDeathMembersTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -39637,6 +40453,10 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                             && (this._tblWarasabankTableAdapter.Connection != null))) {
                     return this._tblWarasabankTableAdapter.Connection;
                 }
+                if (((this._tBLDeathMembersTableAdapter != null) 
+                            && (this._tBLDeathMembersTableAdapter.Connection != null))) {
+                    return this._tBLDeathMembersTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -39749,6 +40569,9 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                 if ((this._tblWarasabankTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tBLDeathMembersTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -39787,21 +40610,21 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tBLWarasaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBLWarasa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tBLWarasaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cdDofaatAmanatTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CdDofaatAmanat.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._cdDofaatAmanatTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tBLWarasaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBLWarasa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tBLWarasaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -39841,21 +40664,21 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tblWarasaAmanatTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblWarasaAmanatTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tBLMemberSarf_arshefTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TBLMemberSarf_arshef.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tBLMemberSarf_arshefTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tBLSarfExpetionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tBLSarfExpetionTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -39895,12 +40718,21 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblWarasaAmanatTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblmemberbankTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblWarasaAmanatTableAdapter.Update(updatedRows));
+                    result = (result + this._tblmemberbankTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tBLSarfExpetionTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tBLSarfExpetionTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -39922,12 +40754,12 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblmemberbankTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblWarasabankTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblmemberbankTableAdapter.Update(updatedRows));
+                    result = (result + this._tblWarasabankTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -40048,12 +40880,12 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblWarasabankTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tBLDeathMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBLDeathMembers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblWarasabankTableAdapter.Update(updatedRows));
+                    result = (result + this._tBLDeathMembersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -40091,19 +40923,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tBLWarasaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBLWarasa.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tBLWarasaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._cdDofaatAmanatTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CdDofaatAmanat.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._cdDofaatAmanatTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tBLWarasaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBLWarasa.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tBLWarasaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -40139,19 +40971,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tblWarasaAmanatTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblWarasaAmanatTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tBLMemberSarf_arshefTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TBLMemberSarf_arshef.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tBLMemberSarf_arshefTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tBLSarfExpetionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tBLSarfExpetionTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -40187,11 +41019,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblWarasaAmanatTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblmemberbankTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblWarasaAmanatTableAdapter.Update(addedRows));
+                    result = (result + this._tblmemberbankTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tBLSarfExpetionTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tBLSarfExpetionTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -40211,11 +41051,11 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblmemberbankTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblWarasabankTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblmemberbankTableAdapter.Update(addedRows));
+                    result = (result + this._tblWarasabankTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -40323,11 +41163,11 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblWarasabankTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tBLDeathMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBLDeathMembers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblWarasabankTableAdapter.Update(addedRows));
+                    result = (result + this._tBLDeathMembersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -40341,11 +41181,11 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsRetirementCenter dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tblWarasabankTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tBLDeathMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBLDeathMembers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblWarasabankTableAdapter.Update(deletedRows));
+                    result = (result + this._tBLDeathMembersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -40453,11 +41293,11 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblmemberbankTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblWarasabankTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblWarasabank.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblmemberbankTableAdapter.Update(deletedRows));
+                    result = (result + this._tblWarasabankTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -40477,11 +41317,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblWarasaAmanatTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tBLSarfExpetionTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblWarasaAmanatTableAdapter.Update(deletedRows));
+                    result = (result + this._tBLSarfExpetionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblmemberbankTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblmemberbank.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblmemberbankTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -40517,19 +41365,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tBLSarfExpetionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TBLSarfExpetion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tBLSarfExpetionTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tBLMemberSarf_arshefTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TBLMemberSarf_arshef.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tBLMemberSarf_arshefTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblWarasaAmanatTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TblWarasaAmanat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblWarasaAmanatTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -40565,19 +41413,19 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cdDofaatAmanatTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CdDofaatAmanat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cdDofaatAmanatTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tBLWarasaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TBLWarasa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tBLWarasaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cdDofaatAmanatTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CdDofaatAmanat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cdDofaatAmanatTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -40806,6 +41654,11 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             }
             if (((this._tblWarasabankTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tblWarasabankTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._tBLDeathMembersTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tBLDeathMembersTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -41138,6 +41991,15 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblWarasabankTableAdapter.Adapter);
                     }
                 }
+                if ((this._tBLDeathMembersTableAdapter != null)) {
+                    revertConnections.Add(this._tBLDeathMembersTableAdapter, this._tBLDeathMembersTableAdapter.Connection);
+                    this._tBLDeathMembersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tBLDeathMembersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tBLDeathMembersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tBLDeathMembersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tBLDeathMembersTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -41327,6 +42189,10 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
                 if ((this._tblWarasabankTableAdapter != null)) {
                     this._tblWarasabankTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblWarasabankTableAdapter]));
                     this._tblWarasabankTableAdapter.Transaction = null;
+                }
+                if ((this._tBLDeathMembersTableAdapter != null)) {
+                    this._tBLDeathMembersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tBLDeathMembersTableAdapter]));
+                    this._tBLDeathMembersTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

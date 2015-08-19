@@ -22,6 +22,8 @@ namespace RetirementCenter
         private void LoadDataSource()
         {
             new DataSources.dsReportsTableAdapters.AppOptionsTableAdapter().Fill(dsReports.AppOptions);
+            rep13_ATableAdapter.Fill(dsReports.Rep13_A);
+            rep13_BTableAdapter.Fill(dsReports.Rep13_B);
         }
         private void XRep01_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
@@ -35,10 +37,10 @@ namespace RetirementCenter
 
             rep13_CTableAdapter.Fill(dsReports.Rep13_C, Date, Synd);
             xlDate.Text = Date.ToShortDateString();
-            if (dsReports.Rep11_C.Count != 0)
+            if (dsReports.Rep13_C.Count != 0)
             {
-                xlDof.Text = dsReports.Rep11_C[0].DofatSarf;
-                xlSynd.Text = dsReports.Rep11_C[0].Syndicate;
+                xlDof.Text = dsReports.Rep13_C[0].DofatSarf;
+                xlSynd.Text = dsReports.Rep13_C[0].Syndicate;
             }
         }
 

@@ -18,6 +18,7 @@ namespace RetirementCenter
         public Qry44Frm()
         {
             InitializeComponent();
+            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
         }
         #endregion
         #region -   Event Handlers   -

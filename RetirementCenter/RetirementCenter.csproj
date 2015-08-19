@@ -289,6 +289,18 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaFrm.Designer.cs">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLDeathMembersWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLDeathMembersWFrm.designer.cs">
+      <DependentUpon>TBLDeathMembersWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLDeathMembersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLDeathMembersFrm.designer.cs">
+      <DependentUpon>TBLDeathMembersFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\StopYasrefByTBLBeanWarsaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1046,6 +1058,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaFrm.resx">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLDeathMembersWFrm.resx">
+      <DependentUpon>TBLDeathMembersWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLDeathMembersFrm.resx">
+      <DependentUpon>TBLDeathMembersFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\StopYasrefByTBLBeanWarsaFrm.resx">
       <DependentUpon>StopYasrefByTBLBeanWarsaFrm.cs</DependentUpon>

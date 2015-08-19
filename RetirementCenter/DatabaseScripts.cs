@@ -289,7 +289,7 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry58;
                 cmd.ExecuteNonQuery();
-
+                //vQry59
                 if (CheckViewExists("vQry59"))
                 {
                     cmd.CommandText = DropObject("vQry59");
@@ -297,11 +297,19 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry59;
                 cmd.ExecuteNonQuery();
-
+                //TBLProofDoc
                 cmd.CommandText = TBLProofDoc;
                 cmd.ExecuteNonQuery();
-
+                //BankExportedData
                 cmd.CommandText = BankExportedData;
+                cmd.ExecuteNonQuery();
+                //vTBLDeathMembers
+                if (CheckViewExists("vTBLDeathMembers"))
+                {
+                    cmd.CommandText = DropObject("vTBLDeathMembers");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLDeathMembers;
                 cmd.ExecuteNonQuery();
 
 
@@ -1040,6 +1048,23 @@ FROM            TBLMemberSarf INNER JOIN
                          CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
                          CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
 ";
+            }
+        }
+
+        public static string vTBLDeathMembers
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLDeathMembers]
+                    AS
+                                    SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLDeathMembers.datein, TBLDeathMembers.userin, TBLMashat.MMashatName, TBLMashat.SyndicateId, 
+                         TBLMashat.SubCommitteId, TBLMashat.sarfnumber, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.yasref, Users.RealName
+                FROM            TBLDeathMembers INNER JOIN
+                         TBLMashat ON TBLDeathMembers.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         Users ON TBLDeathMembers.userin = Users.UserID";
             }
         }
 

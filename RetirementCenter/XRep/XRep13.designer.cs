@@ -136,7 +136,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep13_C.summony", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep13_C.summony")});
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.Weight = 0.3942830151184003D;
@@ -332,7 +332,8 @@
             // pramDate
             // 
             this.pramDate.Description = "التاريخ";
-            dynamicListLookUpSettings1.DataMember = "Rep11_A";
+            dynamicListLookUpSettings1.DataAdapter = null;
+            dynamicListLookUpSettings1.DataMember = "Rep13_A";
             dynamicListLookUpSettings1.DataSource = this.dsReports;
             dynamicListLookUpSettings1.DisplayMember = "sendbankdate";
             dynamicListLookUpSettings1.ValueMember = "sendbankdate";
@@ -547,7 +548,8 @@
             // pramSynd
             // 
             this.pramSynd.Description = "الفرعية";
-            dynamicListLookUpSettings2.DataMember = "Rep11_B";
+            dynamicListLookUpSettings2.DataAdapter = null;
+            dynamicListLookUpSettings2.DataMember = "Rep13_B";
             dynamicListLookUpSettings2.DataSource = this.dsReports;
             dynamicListLookUpSettings2.DisplayMember = "Syndicate";
             dynamicListLookUpSettings2.ValueMember = "SyndicateId";

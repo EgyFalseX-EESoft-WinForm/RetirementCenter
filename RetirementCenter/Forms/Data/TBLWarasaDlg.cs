@@ -109,6 +109,17 @@ namespace RetirementCenter.Forms.Data
                 ceyasref.Enabled = false;
             }
 
+            if (ceyasref.Checked)
+            {
+                DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();
+                if (adpQ.ResponsibleCount(_TBLWarasa[0].PersonId) > 0)
+                {
+                    ceyasref.Enabled = false;
+                    ceyasref.Text = "تم منع التعديل نظرا لان هذا الوريث مسئول عن ورثة اخرين";
+                    ceyasref.ForeColor = Color.Red;
+                }
+            }
+
         }
         private void ReloadRemark()
         {
@@ -119,6 +130,7 @@ namespace RetirementCenter.Forms.Data
         #region - Event Handlers -
         private void TBLWarasaDlg_Load(object sender, EventArgs e)
         {
+            
         }
         private void ceyasref_CheckedChanged(object sender, EventArgs e)
         {

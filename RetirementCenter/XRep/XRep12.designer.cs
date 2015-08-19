@@ -290,7 +290,8 @@
             // pramDate
             // 
             this.pramDate.Description = "التاريخ";
-            dynamicListLookUpSettings1.DataMember = "Rep10_A";
+            dynamicListLookUpSettings1.DataAdapter = null;
+            dynamicListLookUpSettings1.DataMember = "Rep12_A";
             dynamicListLookUpSettings1.DataSource = this.dsReports;
             dynamicListLookUpSettings1.DisplayMember = "sendbankdate";
             dynamicListLookUpSettings1.ValueMember = "sendbankdate";
