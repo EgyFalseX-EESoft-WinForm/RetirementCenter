@@ -1154,7 +1154,7 @@ ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.MMashatId</
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        BankExportedData.Id, BankExportedData.MMashatId, BankExportedData.ExportDate, TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, 
                          Users.RealName, BankExportedData.visa, BankExportedData.visawarddate, BankExportedData.hafza, BankExportedData.hafzadate, TBLMashat.MMashatNId, TBLMashat.SyndicateId, 
-                         TBLMashat.SubCommitteId, BankExportedData.Activate, BankExportedData.ActivateDate
+                         TBLMashat.SubCommitteId, BankExportedData.Activate, BankExportedData.ActivateDate, BankExportedData.trteep
 FROM            Users INNER JOIN
                          BankExportedData ON Users.UserID = BankExportedData.userin LEFT OUTER JOIN
                          TBLMashat INNER JOIN
@@ -1183,6 +1183,7 @@ FROM            Users INNER JOIN
               <Mapping SourceColumn="SubCommitteId" DataSetColumn="SubCommitteId" />
               <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
               <Mapping SourceColumn="ActivateDate" DataSetColumn="ActivateDate" />
+              <Mapping SourceColumn="trteep" DataSetColumn="trteep" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1313,10 +1314,11 @@ ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId</CommandTex
               <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, BankExportedDataWarsa.Id, 
-                         BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, 
-                         BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.Activate, 
-                         BankExportedDataWarsa.ActivateDate
+                    <CommandText>SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, 
+                         BankExportedDataWarsa.Id, BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, 
+                         BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, 
+                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate, 
+                         BankExportedDataWarsa.trteep
 FROM            CDSubCommitte INNER JOIN
                          CDSyndicate INNER JOIN
                          BankExportedDataWarsa INNER JOIN
@@ -1349,6 +1351,7 @@ FROM            CDSubCommitte INNER JOIN
               <Mapping SourceColumn="newid" DataSetColumn="newid" />
               <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
               <Mapping SourceColumn="ActivateDate" DataSetColumn="ActivateDate" />
+              <Mapping SourceColumn="trteep" DataSetColumn="trteep" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1938,17 +1941,19 @@ ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId</CommandTex
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry60TableAdapter" GeneratorDataComponentClassName="vQry60TableAdapter" Name="vQry60" UserDataComponentName="vQry60TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        TBLMashat.MMashatId, TBLMashat.MMashatName, TBLMashat.MMashatNId, TBLMashat.sarfnumber, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
-FROM            TBLMashat INNER JOIN
-                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
-WHERE        (TBLMashat.MashHalaId = 2) AND (TBLMashat.yasref = 1)
-AND NOT EXISTS(SELECT TBLBeanWarsa.PersonId FROM TBLBeanWarsa INNER JOIN TBLWarasa ON TBLBeanWarsa.PersonId = TBLWarasa.PersonId
-WHERE TBLWarasa.MMashatId = TBLMashat.MMashatId AND DofatSarfId = @DofatSarfId)
-
+                    <CommandText>SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.yasref, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, CDWarasaType.WarasaType, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, 
+TBLWarasa.MMashatId, TBLMashat.MMashatName, TBLMashat.sarfnumber
+, (SELECT DofatSarf FROM TBLDofatSarf WHERE DofatSarfId = (SELECT MIN(DofatSarfId) FROM TBLWarasaSarf WHERE PersonId = TBLWarasa.PersonId)) AS DofatSarf
+, (SELECT TOP 1 halarem FROM TBLNoSarfWarsa WHERE PersonId = TBLWarasa.PersonId ORDER BY datein DESC) AS halarem
+FROM            TBLWarasa INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+WHERE NOT EXISTS(SELECT PersonId FROM TBLBeanWarsa WHERE PersonId = TBLWarasa.PersonId AND DofatSarfId = @DofatSarfId)
 </CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="DofatSarfId" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DofatSarfId" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1960,10 +1965,17 @@ WHERE TBLWarasa.MMashatId = TBLMashat.MMashatId AND DofatSarfId = @DofatSarfId)
             <Mappings>
               <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
               <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
-              <Mapping SourceColumn="MMashatNId" DataSetColumn="MMashatNId" />
               <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="yasref" DataSetColumn="yasref" />
+              <Mapping SourceColumn="SyndicateId" DataSetColumn="SyndicateId" />
+              <Mapping SourceColumn="SubCommitteId" DataSetColumn="SubCommitteId" />
+              <Mapping SourceColumn="WarasaType" DataSetColumn="WarasaType" />
+              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
+              <Mapping SourceColumn="halarem" DataSetColumn="halarem" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -3508,6 +3520,7 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
               <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" minOccurs="0" />
               <xs:element name="Activate" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:boolean" minOccurs="0" />
               <xs:element name="ActivateDate" msprop:Generator_ColumnVarNameInTable="columnActivateDate" msprop:Generator_ColumnPropNameInRow="ActivateDate" msprop:Generator_ColumnPropNameInTable="ActivateDateColumn" msprop:Generator_UserColumnName="ActivateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="trteep" msprop:Generator_ColumnVarNameInTable="columntrteep" msprop:Generator_ColumnPropNameInRow="trteep" msprop:Generator_ColumnPropNameInTable="trteepColumn" msprop:Generator_UserColumnName="trteep" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3671,6 +3684,7 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
               <xs:element name="newid" msprop:Generator_ColumnVarNameInTable="columnnewid" msprop:Generator_ColumnPropNameInRow="newid" msprop:Generator_ColumnPropNameInTable="newidColumn" msprop:Generator_UserColumnName="newid" type="xs:int" minOccurs="0" />
               <xs:element name="Activate" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:boolean" minOccurs="0" />
               <xs:element name="ActivateDate" msprop:Generator_ColumnVarNameInTable="columnActivateDate" msprop:Generator_ColumnPropNameInRow="ActivateDate" msprop:Generator_ColumnPropNameInTable="ActivateDateColumn" msprop:Generator_UserColumnName="ActivateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="trteep" msprop:Generator_ColumnVarNameInTable="columntrteep" msprop:Generator_ColumnPropNameInRow="trteep" msprop:Generator_ColumnPropNameInTable="trteepColumn" msprop:Generator_UserColumnName="trteep" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4289,13 +4303,6 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MMashatNId" msprop:Generator_ColumnVarNameInTable="columnMMashatNId" msprop:Generator_ColumnPropNameInRow="MMashatNId" msprop:Generator_ColumnPropNameInTable="MMashatNIdColumn" msprop:Generator_UserColumnName="MMashatNId" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
                 <xs:simpleType>
@@ -4308,6 +4315,38 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="yasref" msprop:Generator_ColumnVarNameInTable="columnyasref" msprop:Generator_ColumnPropNameInRow="yasref" msprop:Generator_ColumnPropNameInTable="yasrefColumn" msprop:Generator_UserColumnName="yasref" type="xs:boolean" />
+              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
+              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" />
+              <xs:element name="WarasaType" msprop:Generator_ColumnVarNameInTable="columnWarasaType" msprop:Generator_ColumnPropNameInRow="WarasaType" msprop:Generator_ColumnPropNameInTable="WarasaTypeColumn" msprop:Generator_UserColumnName="WarasaType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="halarem" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnhalarem" msprop:Generator_ColumnPropNameInRow="halarem" msprop:Generator_ColumnPropNameInTable="halaremColumn" msprop:Generator_UserColumnName="halarem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4850,9 +4889,9 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
       <xs:selector xpath=".//mstns:vQry59" />
       <xs:field xpath="mstns:autoId" />
     </xs:unique>
-    <xs:unique name="vQry60_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint2" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry60" />
-      <xs:field xpath="mstns:MMashatId" />
+      <xs:field xpath="mstns:PersonId" />
     </xs:unique>
     <xs:unique name="vQry61_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry61" />

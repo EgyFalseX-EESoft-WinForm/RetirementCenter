@@ -57,15 +57,18 @@
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
+            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResponsiblesarfName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -77,10 +80,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -206,7 +209,10 @@
             this.colSyndicate,
             this.colSubCommitte,
             this.coldatein,
-            this.coluserin});
+            this.coluserin,
+            this.colresponsiblesarf,
+            this.colresponsiblesarfId,
+            this.colResponsiblesarfName});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -510,20 +516,6 @@
             this.panelControl1.Size = new System.Drawing.Size(734, 73);
             this.panelControl1.TabIndex = 3;
             // 
-            // btnPrintExport
-            // 
-            this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
-            this.btnPrintExport.Name = "btnPrintExport";
-            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
-            this.btnPrintExport.TabIndex = 0;
-            this.btnPrintExport.Text = "طباعه و تصدير";
-            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
             // btnBank
             // 
             this.btnBank.Location = new System.Drawing.Point(12, 12);
@@ -541,6 +533,16 @@
             this.labelControl2.TabIndex = 7;
             this.labelControl2.Text = "الفرعية";
             // 
+            // btnPrintExport
+            // 
+            this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
+            this.btnPrintExport.Name = "btnPrintExport";
+            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
+            this.btnPrintExport.TabIndex = 0;
+            this.btnPrintExport.Text = "طباعه و تصدير";
+            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(237, 18);
@@ -548,22 +550,6 @@
             this.labelControl1.Size = new System.Drawing.Size(29, 13);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "الدفعة";
-            // 
-            // lueSynd
-            // 
-            this.lueSynd.Location = new System.Drawing.Point(100, 41);
-            this.lueSynd.Name = "lueSynd";
-            this.lueSynd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSynd.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueSynd.Properties.DataSource = this.LSMSSyn;
-            this.lueSynd.Properties.DisplayMember = "Syndicate";
-            this.lueSynd.Properties.NullText = "";
-            this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueSynd.Properties.ValueMember = "SyndicateId";
-            this.lueSynd.Size = new System.Drawing.Size(125, 20);
-            this.lueSynd.TabIndex = 5;
             // 
             // lueDof
             // 
@@ -581,15 +567,71 @@
             this.lueDof.Size = new System.Drawing.Size(125, 20);
             this.lueDof.TabIndex = 4;
             // 
+            // LSMSDof
+            // 
+            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            // 
+            // lueSynd
+            // 
+            this.lueSynd.Location = new System.Drawing.Point(100, 41);
+            this.lueSynd.Name = "lueSynd";
+            this.lueSynd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueSynd.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueSynd.Properties.DataSource = this.LSMSSyn;
+            this.lueSynd.Properties.DisplayMember = "Syndicate";
+            this.lueSynd.Properties.NullText = "";
+            this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueSynd.Properties.ValueMember = "SyndicateId";
+            this.lueSynd.Size = new System.Drawing.Size(125, 20);
+            this.lueSynd.TabIndex = 5;
+            // 
             // LSMSSyn
             // 
             this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
             this.LSMSSyn.KeyExpression = "[SyndicateId]";
             // 
-            // LSMSDof
+            // usersTableAdapter
             // 
-            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // colresponsiblesarf
+            // 
+            this.colresponsiblesarf.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.Caption = "مسئول";
+            this.colresponsiblesarf.FieldName = "responsiblesarf";
+            this.colresponsiblesarf.Name = "colresponsiblesarf";
+            this.colresponsiblesarf.Visible = true;
+            this.colresponsiblesarf.VisibleIndex = 19;
+            // 
+            // colresponsiblesarfId
+            // 
+            this.colresponsiblesarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.Caption = "كود المسئول";
+            this.colresponsiblesarfId.FieldName = "responsiblesarfId";
+            this.colresponsiblesarfId.Name = "colresponsiblesarfId";
+            this.colresponsiblesarfId.Visible = true;
+            this.colresponsiblesarfId.VisibleIndex = 20;
+            // 
+            // colResponsiblesarfName
+            // 
+            this.colResponsiblesarfName.AppearanceCell.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.Caption = "اسم المسئول";
+            this.colResponsiblesarfName.FieldName = "ResponsiblesarfName";
+            this.colResponsiblesarfName.Name = "colResponsiblesarfName";
+            this.colResponsiblesarfName.Visible = true;
+            this.colResponsiblesarfName.VisibleIndex = 21;
             // 
             // Qry28Frm
             // 
@@ -614,10 +656,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,6 +703,9 @@
         private DevExpress.XtraEditors.LookUpEdit lueSynd;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDof;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
+        private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarf;
+        private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn colResponsiblesarfName;
 
     }
 }

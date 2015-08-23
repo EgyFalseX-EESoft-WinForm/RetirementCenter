@@ -489,14 +489,6 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vQry28> vQry28s
-		{
-			get
-			{
-				return this.GetTable<vQry28>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vQry42> vQry42s
 		{
 			get
@@ -542,6 +534,14 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vTBLWarasa_TBLMashat>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vQry28> vQry28s
+		{
+			get
+			{
+				return this.GetTable<vQry28>();
 			}
 		}
 	}
@@ -11045,429 +11045,6 @@ namespace RetirementCenter.DataSources.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry28")]
-	public partial class vQry28
-	{
-		
-		private int _PersonId;
-		
-		private int _DofatSarfId;
-		
-		private byte _SarfTypeedadId;
-		
-		private System.DateTime _sarfdatefrom;
-		
-		private System.DateTime _sarfdateto;
-		
-		private double _monymonth;
-		
-		private double _rsmmonth;
-		
-		private double _eshtrakmonth;
-		
-		private double _estktaa;
-		
-		private bool _sarf;
-		
-		private System.DateTime _datein;
-		
-		private int _userin;
-		
-		private System.Nullable<bool> _Edafat;
-		
-		private int _SyndicateId;
-		
-		private int _SubCommitteId;
-		
-		private string _DofatSarf;
-		
-		private string _SarfTypeedad;
-		
-		private string _personName;
-		
-		private string _MMashatName;
-		
-		private System.Nullable<int> _sarfnumber;
-		
-		private System.Nullable<int> _MMashatId;
-		
-		private string _Syndicate;
-		
-		private string _SubCommitte;
-		
-		public vQry28()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
-		public int PersonId
-		{
-			get
-			{
-				return this._PersonId;
-			}
-			set
-			{
-				if ((this._PersonId != value))
-				{
-					this._PersonId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL")]
-		public int DofatSarfId
-		{
-			get
-			{
-				return this._DofatSarfId;
-			}
-			set
-			{
-				if ((this._DofatSarfId != value))
-				{
-					this._DofatSarfId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SarfTypeedadId", DbType="TinyInt NOT NULL")]
-		public byte SarfTypeedadId
-		{
-			get
-			{
-				return this._SarfTypeedadId;
-			}
-			set
-			{
-				if ((this._SarfTypeedadId != value))
-				{
-					this._SarfTypeedadId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfdatefrom", DbType="Date NOT NULL")]
-		public System.DateTime sarfdatefrom
-		{
-			get
-			{
-				return this._sarfdatefrom;
-			}
-			set
-			{
-				if ((this._sarfdatefrom != value))
-				{
-					this._sarfdatefrom = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfdateto", DbType="Date NOT NULL")]
-		public System.DateTime sarfdateto
-		{
-			get
-			{
-				return this._sarfdateto;
-			}
-			set
-			{
-				if ((this._sarfdateto != value))
-				{
-					this._sarfdateto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monymonth", DbType="Float NOT NULL")]
-		public double monymonth
-		{
-			get
-			{
-				return this._monymonth;
-			}
-			set
-			{
-				if ((this._monymonth != value))
-				{
-					this._monymonth = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rsmmonth", DbType="Float NOT NULL")]
-		public double rsmmonth
-		{
-			get
-			{
-				return this._rsmmonth;
-			}
-			set
-			{
-				if ((this._rsmmonth != value))
-				{
-					this._rsmmonth = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eshtrakmonth", DbType="Float NOT NULL")]
-		public double eshtrakmonth
-		{
-			get
-			{
-				return this._eshtrakmonth;
-			}
-			set
-			{
-				if ((this._eshtrakmonth != value))
-				{
-					this._eshtrakmonth = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estktaa", DbType="Float NOT NULL")]
-		public double estktaa
-		{
-			get
-			{
-				return this._estktaa;
-			}
-			set
-			{
-				if ((this._estktaa != value))
-				{
-					this._estktaa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarf", DbType="Bit NOT NULL")]
-		public bool sarf
-		{
-			get
-			{
-				return this._sarf;
-			}
-			set
-			{
-				if ((this._sarf != value))
-				{
-					this._sarf = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
-		public System.DateTime datein
-		{
-			get
-			{
-				return this._datein;
-			}
-			set
-			{
-				if ((this._datein != value))
-				{
-					this._datein = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
-		public int userin
-		{
-			get
-			{
-				return this._userin;
-			}
-			set
-			{
-				if ((this._userin != value))
-				{
-					this._userin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Edafat", DbType="Bit")]
-		public System.Nullable<bool> Edafat
-		{
-			get
-			{
-				return this._Edafat;
-			}
-			set
-			{
-				if ((this._Edafat != value))
-				{
-					this._Edafat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
-		public int SyndicateId
-		{
-			get
-			{
-				return this._SyndicateId;
-			}
-			set
-			{
-				if ((this._SyndicateId != value))
-				{
-					this._SyndicateId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
-		public int SubCommitteId
-		{
-			get
-			{
-				return this._SubCommitteId;
-			}
-			set
-			{
-				if ((this._SubCommitteId != value))
-				{
-					this._SubCommitteId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50)")]
-		public string DofatSarf
-		{
-			get
-			{
-				return this._DofatSarf;
-			}
-			set
-			{
-				if ((this._DofatSarf != value))
-				{
-					this._DofatSarf = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SarfTypeedad", DbType="NVarChar(10)")]
-		public string SarfTypeedad
-		{
-			get
-			{
-				return this._SarfTypeedad;
-			}
-			set
-			{
-				if ((this._SarfTypeedad != value))
-				{
-					this._SarfTypeedad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50)")]
-		public string personName
-		{
-			get
-			{
-				return this._personName;
-			}
-			set
-			{
-				if ((this._personName != value))
-				{
-					this._personName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75)")]
-		public string MMashatName
-		{
-			get
-			{
-				return this._MMashatName;
-			}
-			set
-			{
-				if ((this._MMashatName != value))
-				{
-					this._MMashatName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int")]
-		public System.Nullable<int> sarfnumber
-		{
-			get
-			{
-				return this._sarfnumber;
-			}
-			set
-			{
-				if ((this._sarfnumber != value))
-				{
-					this._sarfnumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int")]
-		public System.Nullable<int> MMashatId
-		{
-			get
-			{
-				return this._MMashatId;
-			}
-			set
-			{
-				if ((this._MMashatId != value))
-				{
-					this._MMashatId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50)")]
-		public string Syndicate
-		{
-			get
-			{
-				return this._Syndicate;
-			}
-			set
-			{
-				if ((this._Syndicate != value))
-				{
-					this._Syndicate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50)")]
-		public string SubCommitte
-		{
-			get
-			{
-				return this._SubCommitte;
-			}
-			set
-			{
-				if ((this._SubCommitte != value))
-				{
-					this._SubCommitte = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry42")]
 	public partial class vQry42
 	{
@@ -13832,6 +13409,483 @@ namespace RetirementCenter.DataSources.Linq
 				if ((this._visa != value))
 				{
 					this._visa = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry28")]
+	public partial class vQry28
+	{
+		
+		private int _PersonId;
+		
+		private int _DofatSarfId;
+		
+		private byte _SarfTypeedadId;
+		
+		private System.DateTime _sarfdatefrom;
+		
+		private System.DateTime _sarfdateto;
+		
+		private double _monymonth;
+		
+		private double _rsmmonth;
+		
+		private double _eshtrakmonth;
+		
+		private double _estktaa;
+		
+		private bool _sarf;
+		
+		private System.DateTime _datein;
+		
+		private int _userin;
+		
+		private System.Nullable<bool> _Edafat;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private string _DofatSarf;
+		
+		private string _SarfTypeedad;
+		
+		private string _personName;
+		
+		private string _MMashatName;
+		
+		private System.Nullable<int> _sarfnumber;
+		
+		private System.Nullable<int> _MMashatId;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private System.Nullable<bool> _responsiblesarf;
+		
+		private System.Nullable<int> _responsiblesarfId;
+		
+		private string _ResponsiblesarfName;
+		
+		public vQry28()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this._PersonId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL")]
+		public int DofatSarfId
+		{
+			get
+			{
+				return this._DofatSarfId;
+			}
+			set
+			{
+				if ((this._DofatSarfId != value))
+				{
+					this._DofatSarfId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SarfTypeedadId", DbType="TinyInt NOT NULL")]
+		public byte SarfTypeedadId
+		{
+			get
+			{
+				return this._SarfTypeedadId;
+			}
+			set
+			{
+				if ((this._SarfTypeedadId != value))
+				{
+					this._SarfTypeedadId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfdatefrom", DbType="Date NOT NULL")]
+		public System.DateTime sarfdatefrom
+		{
+			get
+			{
+				return this._sarfdatefrom;
+			}
+			set
+			{
+				if ((this._sarfdatefrom != value))
+				{
+					this._sarfdatefrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfdateto", DbType="Date NOT NULL")]
+		public System.DateTime sarfdateto
+		{
+			get
+			{
+				return this._sarfdateto;
+			}
+			set
+			{
+				if ((this._sarfdateto != value))
+				{
+					this._sarfdateto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monymonth", DbType="Float NOT NULL")]
+		public double monymonth
+		{
+			get
+			{
+				return this._monymonth;
+			}
+			set
+			{
+				if ((this._monymonth != value))
+				{
+					this._monymonth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rsmmonth", DbType="Float NOT NULL")]
+		public double rsmmonth
+		{
+			get
+			{
+				return this._rsmmonth;
+			}
+			set
+			{
+				if ((this._rsmmonth != value))
+				{
+					this._rsmmonth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eshtrakmonth", DbType="Float NOT NULL")]
+		public double eshtrakmonth
+		{
+			get
+			{
+				return this._eshtrakmonth;
+			}
+			set
+			{
+				if ((this._eshtrakmonth != value))
+				{
+					this._eshtrakmonth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estktaa", DbType="Float NOT NULL")]
+		public double estktaa
+		{
+			get
+			{
+				return this._estktaa;
+			}
+			set
+			{
+				if ((this._estktaa != value))
+				{
+					this._estktaa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarf", DbType="Bit NOT NULL")]
+		public bool sarf
+		{
+			get
+			{
+				return this._sarf;
+			}
+			set
+			{
+				if ((this._sarf != value))
+				{
+					this._sarf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this._datein = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this._userin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Edafat", DbType="Bit")]
+		public System.Nullable<bool> Edafat
+		{
+			get
+			{
+				return this._Edafat;
+			}
+			set
+			{
+				if ((this._Edafat != value))
+				{
+					this._Edafat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this._SyndicateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this._SubCommitteId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50)")]
+		public string DofatSarf
+		{
+			get
+			{
+				return this._DofatSarf;
+			}
+			set
+			{
+				if ((this._DofatSarf != value))
+				{
+					this._DofatSarf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SarfTypeedad", DbType="NVarChar(10)")]
+		public string SarfTypeedad
+		{
+			get
+			{
+				return this._SarfTypeedad;
+			}
+			set
+			{
+				if ((this._SarfTypeedad != value))
+				{
+					this._SarfTypeedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50)")]
+		public string personName
+		{
+			get
+			{
+				return this._personName;
+			}
+			set
+			{
+				if ((this._personName != value))
+				{
+					this._personName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75)")]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this._MMashatName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int")]
+		public System.Nullable<int> sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this._sarfnumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int")]
+		public System.Nullable<int> MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this._MMashatId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50)")]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this._Syndicate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50)")]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this._SubCommitte = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_responsiblesarf", DbType="Bit")]
+		public System.Nullable<bool> responsiblesarf
+		{
+			get
+			{
+				return this._responsiblesarf;
+			}
+			set
+			{
+				if ((this._responsiblesarf != value))
+				{
+					this._responsiblesarf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_responsiblesarfId", DbType="Int")]
+		public System.Nullable<int> responsiblesarfId
+		{
+			get
+			{
+				return this._responsiblesarfId;
+			}
+			set
+			{
+				if ((this._responsiblesarfId != value))
+				{
+					this._responsiblesarfId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsiblesarfName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ResponsiblesarfName
+		{
+			get
+			{
+				return this._ResponsiblesarfName;
+			}
+			set
+			{
+				if ((this._ResponsiblesarfName != value))
+				{
+					this._ResponsiblesarfName = value;
 				}
 			}
 		}

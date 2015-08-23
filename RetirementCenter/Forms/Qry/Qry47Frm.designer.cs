@@ -48,14 +48,15 @@
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNameOnCard = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry47TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry47TableAdapter();
-            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltrteep = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -195,7 +196,8 @@
             this.colNameOnCard,
             this.colnewid,
             this.colActivate,
-            this.colActivateDate});
+            this.colActivateDate,
+            this.coltrteep});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -389,6 +391,30 @@
             this.colnewid.Visible = true;
             this.colnewid.VisibleIndex = 14;
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "تم التفعيل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 15;
+            // 
+            // colActivateDate
+            // 
+            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.Caption = "تاريخ التفعيل";
+            this.colActivateDate.FieldName = "ActivateDate";
+            this.colActivateDate.Name = "colActivateDate";
+            this.colActivateDate.Visible = true;
+            this.colActivateDate.VisibleIndex = 16;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -444,29 +470,17 @@
             // 
             this.vQry47TableAdapter.ClearBeforeFill = true;
             // 
-            // colActivate
+            // coltrteep
             // 
-            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تم التفعيل";
-            this.colActivate.FieldName = "Activate";
-            this.colActivate.Name = "colActivate";
-            this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 15;
-            // 
-            // colActivateDate
-            // 
-            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.Caption = "تاريخ التفعيل";
-            this.colActivateDate.FieldName = "ActivateDate";
-            this.colActivateDate.Name = "colActivateDate";
-            this.colActivateDate.Visible = true;
-            this.colActivateDate.VisibleIndex = 16;
+            this.coltrteep.AppearanceCell.Options.UseTextOptions = true;
+            this.coltrteep.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltrteep.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltrteep.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltrteep.Caption = "ترتيب";
+            this.coltrteep.FieldName = "trteep";
+            this.coltrteep.Name = "coltrteep";
+            this.coltrteep.Visible = true;
+            this.coltrteep.VisibleIndex = 17;
             // 
             // Qry47Frm
             // 
@@ -522,6 +536,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnewid;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
+        private DevExpress.XtraGrid.Columns.GridColumn coltrteep;
 
     }
 }

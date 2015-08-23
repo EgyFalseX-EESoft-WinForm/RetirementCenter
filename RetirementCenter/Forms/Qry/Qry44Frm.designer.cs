@@ -47,14 +47,15 @@
             this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry44TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry44TableAdapter();
-            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltrteep = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry44BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -193,7 +194,8 @@
             this.colSubCommitteId,
             this.colSyndicateId,
             this.colActivate,
-            this.colActivateDate});
+            this.colActivateDate,
+            this.coltrteep});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -375,6 +377,30 @@
             this.colSyndicateId.Visible = true;
             this.colSyndicateId.VisibleIndex = 13;
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "تم التفعيل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 14;
+            // 
+            // colActivateDate
+            // 
+            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.Caption = "تاريخ التفعيل";
+            this.colActivateDate.FieldName = "ActivateDate";
+            this.colActivateDate.Name = "colActivateDate";
+            this.colActivateDate.Visible = true;
+            this.colActivateDate.VisibleIndex = 15;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -430,29 +456,17 @@
             // 
             this.vQry44TableAdapter.ClearBeforeFill = true;
             // 
-            // colActivate
+            // coltrteep
             // 
-            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تم التفعيل";
-            this.colActivate.FieldName = "Activate";
-            this.colActivate.Name = "colActivate";
-            this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 14;
-            // 
-            // colActivateDate
-            // 
-            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.Caption = "تاريخ التفعيل";
-            this.colActivateDate.FieldName = "ActivateDate";
-            this.colActivateDate.Name = "colActivateDate";
-            this.colActivateDate.Visible = true;
-            this.colActivateDate.VisibleIndex = 15;
+            this.coltrteep.AppearanceCell.Options.UseTextOptions = true;
+            this.coltrteep.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltrteep.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltrteep.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coltrteep.Caption = "ترتيب";
+            this.coltrteep.FieldName = "trteep";
+            this.coltrteep.Name = "coltrteep";
+            this.coltrteep.Visible = true;
+            this.coltrteep.VisibleIndex = 16;
             // 
             // Qry44Frm
             // 
@@ -507,6 +521,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicateId;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
+        private DevExpress.XtraGrid.Columns.GridColumn coltrteep;
 
     }
 }
