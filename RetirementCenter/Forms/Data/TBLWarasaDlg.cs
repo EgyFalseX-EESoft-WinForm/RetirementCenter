@@ -228,6 +228,20 @@ namespace RetirementCenter.Forms.Data
                         return;
                     }    
                 }
+                if (_TBLWarasa[0].yasref && !_TBLWarasa[0].responsiblesarf)
+                {
+                    if (_TBLWarasa[0].responsiblesarfId == _TBLWarasa[0].PersonId)
+                    {
+                        Program.ShowMsg("مسئول الصرف يجب ان يكون مسئول", true, this, true);
+                        return;
+                    }
+                    object ResIsRes = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().GetResponsiblesarfByPersonId(_TBLWarasa[0].responsiblesarfId);
+                    if (ResIsRes == null || !(bool)ResIsRes)
+                    {
+                        Program.ShowMsg("مسئول الصرف يجب ان يكون مسئول", true, this, true);
+                        return;
+                    }
+                }
                 
             }
             if (ceresponsiblesarf.Checked)

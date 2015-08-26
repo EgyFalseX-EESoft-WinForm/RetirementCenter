@@ -769,45 +769,66 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry32TableAdapter" GeneratorDataComponentClassName="vQry32TableAdapter" Name="vQry32" UserDataComponentName="vQry32TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="CTE1" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>WITH CTE1 AS
 (
-SELECT        TBLWarasa.PersonId
-, CASE WHEN personNID IS NOT NULL AND personNID &lt;&gt; '' THEN 1 ELSE 0 END AS NID
-, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId) THEN 1 ELSE 0 END AS BankExport
-, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId And visa IS NOT NULL AND visa &lt;&gt; '') THEN 1 ELSE 0 END AS BankExportBack
-, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
-FROM            CDSyndicate RIGHT OUTER JOIN
-                         TBLWarasa ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId LEFT OUTER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
-                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
-WHERE        (TBLWarasa.yasref = 1)
-GROUP BY TBLWarasa.PersonId, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, personNID
+SELECT PersonId, yasref, CASE WHEN PersonNID IS NOT NULL OR PersonNID &lt;&gt; '' THEN 1 ELSE 0 END AS NID
+FROM            TBLWarasa
+WHERE (yasref = 1)
+UNION
+SELECT TBLNoSarfWarsa.PersonId, TBLNoSarfWarsa.yasref, CASE WHEN PersonNID IS NOT NULL OR PersonNID &lt;&gt; '' THEN 1 ELSE 0 END AS NID
+FROM [dbo].[TBLNoSarfWarsa] INNER JOIN TBLWarasa TBL ON TBLNoSarfWarsa.[PersonId] = TBL.PersonId
+WHERE (TBLNoSarfWarsa.yasref = 0) AND  [datehala] BETWEEN '2015-07-20' AND '2015-08-24'
+), CTE2 AS
+(
+SELECT SyndicateId
+, CASE WHEN CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref
+, CASE WHEN CTE1.yasref = 1 AND NID = 1 THEN 1 ELSE 0 END AS Yasref_NID
+, CASE WHEN CTE1.yasref = 1 AND NID = 0 THEN 1 ELSE 0 END AS Yasref_NO_NID
+
+, CASE WHEN CTE1.yasref = 0 THEN 1 ELSE 0 END AS No_Yasref
+, CASE WHEN CTE1.yasref = 0 AND NID = 1 THEN 1 ELSE 0 END AS NO_Yasref_NID
+, CASE WHEN CTE1.yasref = 0 AND NID = 0 THEN 1 ELSE 0 END AS NO_Yasref_NO_NID
+
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId) AND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_BankExport
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId And visa IS NOT NULL AND visa &lt;&gt; '') AND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_BankExportBack
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId AND Activate = 1) AND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_Activate
+
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId) AND CTE1.yasref = 0 THEN 1 ELSE 0 END AS NO_Yasref_BankExport
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId And visa IS NOT NULL AND visa &lt;&gt; '') AND CTE1.yasref = 0 THEN 1 ELSE 0 END AS NO_Yasref_BankExportBack
+, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId AND Activate = 1) AND CTE1.yasref = 0 THEN 1 ELSE 0 END AS NO_Yasref_Activate
+
+FROM CTE1 INNER JOIN TBLWarasa W ON CTE1.PersonId = W.PersonId
 )
-SELECT COUNT(PersonId) AS CountPersonId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
-, SUM(NID) * 1.0 / COUNT(PersonId) AS NID_P
-, SUM(BankExport) * 1.0 / COUNT(PersonId) AS BankExport_P
-, SUM(BankExportBack) * 1.0 / COUNT(PersonId) AS BankExportBack_P
-, Syndicate
-FROM CTE1
-GROUP BY Syndicate
-</CommandText>
+SELECT CTE2.SyndicateId, CDSyndicate.Syndicate
+, SUM(Yasref) AS Yasref, SUM(Yasref_NID) AS Yasref_NID, SUM(Yasref_NO_NID) AS Yasref_NO_NID
+, SUM(No_Yasref) AS No_Yasref, SUM(NO_Yasref_NID) AS NO_Yasref_NID, SUM(NO_Yasref_NO_NID) AS NO_Yasref_NO_NID
+,SUM(Yasref_BankExport) AS Yasref_BankExport, SUM(Yasref_BankExportBack) AS Yasref_BankExportBack, SUM(Yasref_Activate) AS Yasref_Activate
+,SUM(NO_Yasref_BankExport) AS NO_Yasref_BankExport, SUM(NO_Yasref_BankExportBack) AS NO_Yasref_BankExportBack, SUM(NO_Yasref_Activate) AS NO_Yasref_Activate
+FROM CTE2 INNER JOIN CDSyndicate ON CTE2.SyndicateId = CDSyndicate.SyndicateId
+GROUP BY CTE2.SyndicateId, CDSyndicate.Syndicate</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="CountPersonId" DataSetColumn="CountPersonId" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
-              <Mapping SourceColumn="NID" DataSetColumn="NID" />
-              <Mapping SourceColumn="BankExport" DataSetColumn="BankExport" />
-              <Mapping SourceColumn="BankExportBack" DataSetColumn="BankExportBack" />
-              <Mapping SourceColumn="NID_P" DataSetColumn="NID_P" />
-              <Mapping SourceColumn="BankExport_P" DataSetColumn="BankExport_P" />
-              <Mapping SourceColumn="BankExportBack_P" DataSetColumn="BankExportBack_P" />
+              <Mapping SourceColumn="SyndicateId" DataSetColumn="SyndicateId" />
+              <Mapping SourceColumn="Yasref" DataSetColumn="Yasref" />
+              <Mapping SourceColumn="Yasref_NID" DataSetColumn="Yasref_NID" />
+              <Mapping SourceColumn="Yasref_NO_NID" DataSetColumn="Yasref_NO_NID" />
+              <Mapping SourceColumn="No_Yasref" DataSetColumn="No_Yasref" />
+              <Mapping SourceColumn="NO_Yasref_NID" DataSetColumn="NO_Yasref_NID" />
+              <Mapping SourceColumn="NO_Yasref_NO_NID" DataSetColumn="NO_Yasref_NO_NID" />
+              <Mapping SourceColumn="Yasref_BankExport" DataSetColumn="Yasref_BankExport" />
+              <Mapping SourceColumn="Yasref_BankExportBack" DataSetColumn="Yasref_BankExportBack" />
+              <Mapping SourceColumn="Yasref_Activate" DataSetColumn="Yasref_Activate" />
+              <Mapping SourceColumn="NO_Yasref_BankExport" DataSetColumn="NO_Yasref_BankExport" />
+              <Mapping SourceColumn="NO_Yasref_BankExportBack" DataSetColumn="NO_Yasref_BankExportBack" />
+              <Mapping SourceColumn="NO_Yasref_Activate" DataSetColumn="NO_Yasref_Activate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -818,7 +839,7 @@ GROUP BY Syndicate
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>WITH CTE1 AS
 (
-SELECT TBLMashat.MMashatId 
+SELECT TBLMashat.MMashatId, TBLMashat.SyndicateId
 , CASE WHEN TBLMashat.MMashatNId IS NOT NULL AND TBLMashat.MMashatNId &lt;&gt; '' THEN 1 ELSE 0 END AS NID
 , CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId) THEN 1 ELSE 0 END AS BankExport
 , CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId And visa IS NOT NULL AND visa &lt;&gt; '') THEN 1 ELSE 0 END AS BankExportBack
@@ -828,15 +849,18 @@ CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN
 CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
 CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
 WHERE        (TBLMashat.MashHalaId = 1) AND (TBLMashat.yasref = 1)
-GROUP BY TBLMashat.MMashatId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId
+GROUP BY TBLMashat.MMashatId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId, TBLMashat.SyndicateId
 )
 SELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
+, (SELECT COUNT(Id) FROM BankExportedData INNER JOIN TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId WHERE TBLMashat.SyndicateId = CTE1.SyndicateId  AND BankExportedData.Activate = 1) AS Activate
 , SUM(NID) * 1.0 / COUNT(MMashatId) AS NID_P
 , SUM(BankExport) * 1.0 / COUNT(MMashatId) AS BankExport_P
 , SUM(BankExportBack) * 1.0 / COUNT(MMashatId) AS BankExportBack_P
+, CASE WHEN SUM(BankExportBack) = 0 THEN 0 ELSE (SELECT COUNT(Id) FROM BankExportedData INNER JOIN TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId WHERE TBLMashat.SyndicateId = CTE1.SyndicateId  AND BankExportedData.Activate = 1)  * 1.0 / SUM(BankExportBack) END Activate_P
 , Syndicate
 FROM CTE1 
-GROUP BY Syndicate</CommandText>
+GROUP BY Syndicate, CTE1.SyndicateId
+</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -851,6 +875,8 @@ GROUP BY Syndicate</CommandText>
               <Mapping SourceColumn="NID_P" DataSetColumn="NID_P" />
               <Mapping SourceColumn="BankExport_P" DataSetColumn="BankExport_P" />
               <Mapping SourceColumn="BankExportBack_P" DataSetColumn="BankExportBack_P" />
+              <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
+              <Mapping SourceColumn="Activate_P" DataSetColumn="Activate_P" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1317,8 +1343,7 @@ ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId</CommandTex
                     <CommandText>SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, 
                          BankExportedDataWarsa.Id, BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, 
                          BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, 
-                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate, 
-                         BankExportedDataWarsa.trteep
+                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.trteep, TBLWarasa.Activate, TBLWarasa.ActivateDate
 FROM            CDSubCommitte INNER JOIN
                          CDSyndicate INNER JOIN
                          BankExportedDataWarsa INNER JOIN
@@ -2655,6 +2680,43 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TBLWarasa" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetResponsiblesarfByPersonId" MethodsParameterType="CLR" Modifier="Public" Name="GetResponsiblesarfByPersonId" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy31" UserSourceName="GetResponsiblesarfByPersonId">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        responsiblesarf
+FROM            TBLWarasa
+WHERE        (PersonId = @PersonId)</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="PersonId" ColumnName="PersonId" DataSourceName="RetirementCenter.dbo.TBLWarasa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PersonId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PersonId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.CDMashHala" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetMashHalaByMMashatId" MethodsParameterType="CLR" Modifier="Public" Name="GetMashHalaByMMashatId" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy32" UserSourceName="GetMashHalaByMMashatId">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        CDMashHala.MashHala
+FROM            TBLMashat INNER JOIN
+                         CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId
+WHERE        (TBLMashat.MMashatId = @MMashatId)</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="MMashatId" ColumnName="MMashatId" DataSourceName="RetirementCenter.dbo.TBLMashat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MMashatId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MMashatId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TBLMashat" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetYasrefByMMashatId" MethodsParameterType="CLR" Modifier="Public" Name="GetYasrefByMMashatId" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy33" UserSourceName="GetYasrefByMMashatId">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        yasref
+FROM            TBLMashat
+WHERE        (MMashatId = @MMashatId)</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="MMashatId" ColumnName="MMashatId" DataSourceName="RetirementCenter.dbo.TBLMashat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MMashatId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MMashatId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>
@@ -3132,20 +3194,26 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
         <xs:element name="vQry32" msprop:Generator_TableClassName="vQry32DataTable" msprop:Generator_TableVarName="tablevQry32" msprop:Generator_TablePropName="vQry32" msprop:Generator_RowDeletingName="vQry32RowDeleting" msprop:Generator_RowChangingName="vQry32RowChanging" msprop:Generator_RowEvHandlerName="vQry32RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry32RowDeleted" msprop:Generator_UserTableName="vQry32" msprop:Generator_RowChangedName="vQry32RowChanged" msprop:Generator_RowEvArgName="vQry32RowChangeEvent" msprop:Generator_RowClassName="vQry32Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CountPersonId" msprop:Generator_ColumnVarNameInTable="columnCountPersonId" msprop:Generator_ColumnPropNameInRow="CountPersonId" msprop:Generator_ColumnPropNameInTable="CountPersonIdColumn" msprop:Generator_UserColumnName="CountPersonId" type="xs:int" minOccurs="0" />
-              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" msprop:Generator_UserColumnName="NID" type="xs:int" minOccurs="0" />
-              <xs:element name="BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport" msprop:Generator_ColumnPropNameInRow="BankExport" msprop:Generator_ColumnPropNameInTable="BankExportColumn" msprop:Generator_UserColumnName="BankExport" type="xs:int" minOccurs="0" />
-              <xs:element name="BankExportBack" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack" msprop:Generator_ColumnPropNameInRow="BankExportBack" msprop:Generator_ColumnPropNameInTable="BankExportBackColumn" msprop:Generator_UserColumnName="BankExportBack" type="xs:int" minOccurs="0" />
-              <xs:element name="NID_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID_P" msprop:Generator_ColumnPropNameInRow="NID_P" msprop:Generator_ColumnPropNameInTable="NID_PColumn" msprop:Generator_UserColumnName="NID_P" type="xs:decimal" minOccurs="0" />
-              <xs:element name="BankExport_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport_P" msprop:Generator_ColumnPropNameInRow="BankExport_P" msprop:Generator_ColumnPropNameInTable="BankExport_PColumn" msprop:Generator_UserColumnName="BankExport_P" type="xs:decimal" minOccurs="0" />
-              <xs:element name="BankExportBack_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack_P" msprop:Generator_ColumnPropNameInRow="BankExportBack_P" msprop:Generator_ColumnPropNameInTable="BankExportBack_PColumn" msprop:Generator_UserColumnName="BankExportBack_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
+              <xs:element name="Yasref" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref" msprop:Generator_ColumnPropNameInRow="Yasref" msprop:Generator_ColumnPropNameInTable="YasrefColumn" msprop:Generator_UserColumnName="Yasref" type="xs:int" minOccurs="0" />
+              <xs:element name="Yasref_NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref_NID" msprop:Generator_ColumnPropNameInRow="Yasref_NID" msprop:Generator_ColumnPropNameInTable="Yasref_NIDColumn" msprop:Generator_UserColumnName="Yasref_NID" type="xs:int" minOccurs="0" />
+              <xs:element name="Yasref_NO_NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref_NO_NID" msprop:Generator_ColumnPropNameInRow="Yasref_NO_NID" msprop:Generator_ColumnPropNameInTable="Yasref_NO_NIDColumn" msprop:Generator_UserColumnName="Yasref_NO_NID" type="xs:int" minOccurs="0" />
+              <xs:element name="No_Yasref" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNo_Yasref" msprop:Generator_ColumnPropNameInRow="No_Yasref" msprop:Generator_ColumnPropNameInTable="No_YasrefColumn" msprop:Generator_UserColumnName="No_Yasref" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_Yasref_NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_Yasref_NID" msprop:Generator_ColumnPropNameInRow="NO_Yasref_NID" msprop:Generator_ColumnPropNameInTable="NO_Yasref_NIDColumn" msprop:Generator_UserColumnName="NO_Yasref_NID" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_Yasref_NO_NID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_Yasref_NO_NID" msprop:Generator_ColumnPropNameInRow="NO_Yasref_NO_NID" msprop:Generator_ColumnPropNameInTable="NO_Yasref_NO_NIDColumn" msprop:Generator_UserColumnName="NO_Yasref_NO_NID" type="xs:int" minOccurs="0" />
+              <xs:element name="Yasref_BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref_BankExport" msprop:Generator_ColumnPropNameInRow="Yasref_BankExport" msprop:Generator_ColumnPropNameInTable="Yasref_BankExportColumn" msprop:Generator_UserColumnName="Yasref_BankExport" type="xs:int" minOccurs="0" />
+              <xs:element name="Yasref_BankExportBack" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref_BankExportBack" msprop:Generator_ColumnPropNameInRow="Yasref_BankExportBack" msprop:Generator_ColumnPropNameInTable="Yasref_BankExportBackColumn" msprop:Generator_UserColumnName="Yasref_BankExportBack" type="xs:int" minOccurs="0" />
+              <xs:element name="Yasref_Activate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYasref_Activate" msprop:Generator_ColumnPropNameInRow="Yasref_Activate" msprop:Generator_ColumnPropNameInTable="Yasref_ActivateColumn" msprop:Generator_UserColumnName="Yasref_Activate" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_Yasref_BankExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_Yasref_BankExport" msprop:Generator_ColumnPropNameInRow="NO_Yasref_BankExport" msprop:Generator_ColumnPropNameInTable="NO_Yasref_BankExportColumn" msprop:Generator_UserColumnName="NO_Yasref_BankExport" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_Yasref_BankExportBack" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_Yasref_BankExportBack" msprop:Generator_ColumnPropNameInRow="NO_Yasref_BankExportBack" msprop:Generator_ColumnPropNameInTable="NO_Yasref_BankExportBackColumn" msprop:Generator_UserColumnName="NO_Yasref_BankExportBack" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_Yasref_Activate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_Yasref_Activate" msprop:Generator_ColumnPropNameInRow="NO_Yasref_Activate" msprop:Generator_ColumnPropNameInTable="NO_Yasref_ActivateColumn" msprop:Generator_UserColumnName="NO_Yasref_Activate" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3166,6 +3234,8 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
               <xs:element name="NID_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNID_P" msprop:Generator_ColumnPropNameInRow="NID_P" msprop:Generator_ColumnPropNameInTable="NID_PColumn" msprop:Generator_UserColumnName="NID_P" type="xs:decimal" minOccurs="0" />
               <xs:element name="BankExport_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExport_P" msprop:Generator_ColumnPropNameInRow="BankExport_P" msprop:Generator_ColumnPropNameInTable="BankExport_PColumn" msprop:Generator_UserColumnName="BankExport_P" type="xs:decimal" minOccurs="0" />
               <xs:element name="BankExportBack_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBankExportBack_P" msprop:Generator_ColumnPropNameInRow="BankExportBack_P" msprop:Generator_ColumnPropNameInTable="BankExportBack_PColumn" msprop:Generator_UserColumnName="BankExportBack_P" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Activate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:int" minOccurs="0" />
+              <xs:element name="Activate_P" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivate_P" msprop:Generator_ColumnPropNameInRow="Activate_P" msprop:Generator_ColumnPropNameInTable="Activate_PColumn" msprop:Generator_UserColumnName="Activate_P" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4832,6 +4902,10 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
     <xs:unique name="TBLMashat_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TBLMashat" />
       <xs:field xpath="mstns:MMashatId" />
+    </xs:unique>
+    <xs:unique name="vQry32_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry32" />
+      <xs:field xpath="mstns:SyndicateId" />
     </xs:unique>
     <xs:unique name="vQry36_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:vQry36" />

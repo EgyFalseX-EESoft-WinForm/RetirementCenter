@@ -15791,6 +15791,10 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnuserin;
             
+            private global::System.Data.DataColumn columnmosthhekNid;
+            
+            private global::System.Data.DataColumn columnmosthhekmony;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBLDeathMembersDataTable() {
@@ -15866,6 +15870,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mosthhekNidColumn {
+                get {
+                    return this.columnmosthhekNid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mosthhekmonyColumn {
+                get {
+                    return this.columnmosthhekmony;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15901,14 +15921,16 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBLDeathMembersRow AddTBLDeathMembersRow(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin) {
+            public TBLDeathMembersRow AddTBLDeathMembersRow(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, string mosthhekNid, double mosthhekmony) {
                 TBLDeathMembersRow rowTBLDeathMembersRow = ((TBLDeathMembersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MMashatId,
                         deathdate,
                         mosthhek,
                         datein,
-                        userin};
+                        userin,
+                        mosthhekNid,
+                        mosthhekmony};
                 rowTBLDeathMembersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBLDeathMembersRow);
                 return rowTBLDeathMembersRow;
@@ -15943,6 +15965,8 @@ namespace RetirementCenter.DataSources {
                 this.columnmosthhek = base.Columns["mosthhek"];
                 this.columndatein = base.Columns["datein"];
                 this.columnuserin = base.Columns["userin"];
+                this.columnmosthhekNid = base.Columns["mosthhekNid"];
+                this.columnmosthhekmony = base.Columns["mosthhekmony"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15958,6 +15982,10 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columndatein);
                 this.columnuserin = new global::System.Data.DataColumn("userin", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuserin);
+                this.columnmosthhekNid = new global::System.Data.DataColumn("mosthhekNid", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmosthhekNid);
+                this.columnmosthhekmony = new global::System.Data.DataColumn("mosthhekmony", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmosthhekmony);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMMashatId}, true));
                 this.columnMMashatId.AllowDBNull = false;
@@ -15967,6 +15995,7 @@ namespace RetirementCenter.DataSources {
                 this.columnmosthhek.MaxLength = 75;
                 this.columndatein.AllowDBNull = false;
                 this.columnuserin.AllowDBNull = false;
+                this.columnmosthhekNid.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23190,6 +23219,62 @@ namespace RetirementCenter.DataSources {
                 set {
                     this[this.tableTBLDeathMembers.userinColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string mosthhekNid {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBLDeathMembers.mosthhekNidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mosthhekNid\' in table \'TBLDeathMembers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLDeathMembers.mosthhekNidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double mosthhekmony {
+                get {
+                    try {
+                        return ((double)(this[this.tableTBLDeathMembers.mosthhekmonyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mosthhekmony\' in table \'TBLDeathMembers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLDeathMembers.mosthhekmonyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmosthhekNidNull() {
+                return this.IsNull(this.tableTBLDeathMembers.mosthhekNidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmosthhekNidNull() {
+                this[this.tableTBLDeathMembers.mosthhekNidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmosthhekmonyNull() {
+                return this.IsNull(this.tableTBLDeathMembers.mosthhekmonyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmosthhekmonyNull() {
+                this[this.tableTBLDeathMembers.mosthhekmonyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -39505,6 +39590,8 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             tableMapping.ColumnMappings.Add("mosthhek", "mosthhek");
             tableMapping.ColumnMappings.Add("datein", "datein");
             tableMapping.ColumnMappings.Add("userin", "userin");
+            tableMapping.ColumnMappings.Add("mosthhekNid", "mosthhekNid");
+            tableMapping.ColumnMappings.Add("mosthhekmony", "mosthhekmony");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -39513,24 +39600,28 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLDeathMembers] ([MMashatId], [deathdate], [mosthhek], [datein], [userin]) VALUES (@MMashatId, @deathdate, @mosthhek, @datein, @userin);
-SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLDeathMembers] ([MMashatId], [deathdate], [mosthhek], [datein], [userin], [mosthhekNid], [mosthhekmony]) VALUES (@MMashatId, @deathdate, @mosthhek, @datein, @userin, @mosthhekNid, @mosthhekmony);
+SELECT MMashatId, deathdate, mosthhek, datein, userin, mosthhekNid, mosthhekmony FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deathdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deathdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datein", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhekNid", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhekNid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhekmony", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhekmony", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLDeathMembers] SET [MMashatId] = @MMashatId, [deathdate] = @deathdate, [mosthhek] = @mosthhek, [datein] = @datein, [userin] = @userin WHERE (([MMashatId] = @Original_MMashatId));
-SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLDeathMembers] SET [MMashatId] = @MMashatId, [deathdate] = @deathdate, [mosthhek] = @mosthhek, [datein] = @datein, [userin] = @userin, [mosthhekNid] = @mosthhekNid, [mosthhekmony] = @mosthhekmony WHERE (([MMashatId] = @Original_MMashatId));
+SELECT MMashatId, deathdate, mosthhek, datein, userin, mosthhekNid, mosthhekmony FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deathdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deathdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datein", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhekNid", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhekNid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mosthhekmony", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mosthhekmony", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -39547,13 +39638,13 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        MMashatId, deathdate, mosthhek, datein, userin\r\nFROM            TBL" +
-                "DeathMembers";
+            this._commandCollection[0].CommandText = "SELECT        MMashatId, deathdate, mosthhek, datein, userin, mosthhekNid, mosthh" +
+                "ekmony\r\nFROM            TBLDeathMembers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        MMashatId, deathdate, mosthhek, datein, userin\r\nFROM            TBL" +
-                "DeathMembers\r\nWHERE MMashatId = @MMashatId";
+            this._commandCollection[1].CommandText = "SELECT MMashatId, datein, deathdate, mosthhek, mosthhekNid, mosthhekmony, userin " +
+                "FROM TBLDeathMembers WHERE (MMashatId = @MMashatId)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -39663,7 +39754,7 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin) {
+        public virtual int Insert(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, string mosthhekNid, global::System.Nullable<double> mosthhekmony) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(MMashatId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(deathdate));
             if ((mosthhek == null)) {
@@ -39674,6 +39765,18 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(datein));
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(userin));
+            if ((mosthhekNid == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(mosthhekNid));
+            }
+            if ((mosthhekmony.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(mosthhekmony.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -39694,7 +39797,7 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, int Original_MMashatId) {
+        public virtual int Update(int MMashatId, System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, string mosthhekNid, global::System.Nullable<double> mosthhekmony, int Original_MMashatId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(MMashatId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(deathdate));
             if ((mosthhek == null)) {
@@ -39705,7 +39808,19 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(datein));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(userin));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_MMashatId));
+            if ((mosthhekNid == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(mosthhekNid));
+            }
+            if ((mosthhekmony.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(mosthhekmony.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_MMashatId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -39726,8 +39841,8 @@ SELECT MMashatId, deathdate, mosthhek, datein, userin FROM TBLDeathMembers WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, int Original_MMashatId) {
-            return this.Update(Original_MMashatId, deathdate, mosthhek, datein, userin, Original_MMashatId);
+        public virtual int Update(System.DateTime deathdate, string mosthhek, System.DateTime datein, int userin, string mosthhekNid, global::System.Nullable<double> mosthhekmony, int Original_MMashatId) {
+            return this.Update(Original_MMashatId, deathdate, mosthhek, datein, userin, mosthhekNid, mosthhekmony, Original_MMashatId);
         }
     }
     

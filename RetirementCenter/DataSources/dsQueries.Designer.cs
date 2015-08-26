@@ -8531,21 +8531,33 @@ namespace RetirementCenter.DataSources {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class vQry32DataTable : global::System.Data.TypedTableBase<vQry32Row> {
             
-            private global::System.Data.DataColumn columnCountPersonId;
-            
             private global::System.Data.DataColumn columnSyndicate;
             
-            private global::System.Data.DataColumn columnNID;
+            private global::System.Data.DataColumn columnSyndicateId;
             
-            private global::System.Data.DataColumn columnBankExport;
+            private global::System.Data.DataColumn columnYasref;
             
-            private global::System.Data.DataColumn columnBankExportBack;
+            private global::System.Data.DataColumn columnYasref_NID;
             
-            private global::System.Data.DataColumn columnNID_P;
+            private global::System.Data.DataColumn columnYasref_NO_NID;
             
-            private global::System.Data.DataColumn columnBankExport_P;
+            private global::System.Data.DataColumn columnNo_Yasref;
             
-            private global::System.Data.DataColumn columnBankExportBack_P;
+            private global::System.Data.DataColumn columnNO_Yasref_NID;
+            
+            private global::System.Data.DataColumn columnNO_Yasref_NO_NID;
+            
+            private global::System.Data.DataColumn columnYasref_BankExport;
+            
+            private global::System.Data.DataColumn columnYasref_BankExportBack;
+            
+            private global::System.Data.DataColumn columnYasref_Activate;
+            
+            private global::System.Data.DataColumn columnNO_Yasref_BankExport;
+            
+            private global::System.Data.DataColumn columnNO_Yasref_BankExportBack;
+            
+            private global::System.Data.DataColumn columnNO_Yasref_Activate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8582,14 +8594,6 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CountPersonIdColumn {
-                get {
-                    return this.columnCountPersonId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SyndicateColumn {
                 get {
                     return this.columnSyndicate;
@@ -8598,49 +8602,105 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NIDColumn {
+            public global::System.Data.DataColumn SyndicateIdColumn {
                 get {
-                    return this.columnNID;
+                    return this.columnSyndicateId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BankExportColumn {
+            public global::System.Data.DataColumn YasrefColumn {
                 get {
-                    return this.columnBankExport;
+                    return this.columnYasref;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BankExportBackColumn {
+            public global::System.Data.DataColumn Yasref_NIDColumn {
                 get {
-                    return this.columnBankExportBack;
+                    return this.columnYasref_NID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NID_PColumn {
+            public global::System.Data.DataColumn Yasref_NO_NIDColumn {
                 get {
-                    return this.columnNID_P;
+                    return this.columnYasref_NO_NID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BankExport_PColumn {
+            public global::System.Data.DataColumn No_YasrefColumn {
                 get {
-                    return this.columnBankExport_P;
+                    return this.columnNo_Yasref;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BankExportBack_PColumn {
+            public global::System.Data.DataColumn NO_Yasref_NIDColumn {
                 get {
-                    return this.columnBankExportBack_P;
+                    return this.columnNO_Yasref_NID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NO_Yasref_NO_NIDColumn {
+                get {
+                    return this.columnNO_Yasref_NO_NID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Yasref_BankExportColumn {
+                get {
+                    return this.columnYasref_BankExport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Yasref_BankExportBackColumn {
+                get {
+                    return this.columnYasref_BankExportBack;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Yasref_ActivateColumn {
+                get {
+                    return this.columnYasref_Activate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NO_Yasref_BankExportColumn {
+                get {
+                    return this.columnNO_Yasref_BankExport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NO_Yasref_BankExportBackColumn {
+                get {
+                    return this.columnNO_Yasref_BankExportBack;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NO_Yasref_ActivateColumn {
+                get {
+                    return this.columnNO_Yasref_Activate;
                 }
             }
             
@@ -8681,20 +8741,33 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vQry32Row AddvQry32Row(int CountPersonId, string Syndicate, int NID, int BankExport, int BankExportBack, decimal NID_P, decimal BankExport_P, decimal BankExportBack_P) {
+            public vQry32Row AddvQry32Row(string Syndicate, int SyndicateId, int Yasref, int Yasref_NID, int Yasref_NO_NID, int No_Yasref, int NO_Yasref_NID, int NO_Yasref_NO_NID, int Yasref_BankExport, int Yasref_BankExportBack, int Yasref_Activate, int NO_Yasref_BankExport, int NO_Yasref_BankExportBack, int NO_Yasref_Activate) {
                 vQry32Row rowvQry32Row = ((vQry32Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CountPersonId,
                         Syndicate,
-                        NID,
-                        BankExport,
-                        BankExportBack,
-                        NID_P,
-                        BankExport_P,
-                        BankExportBack_P};
+                        SyndicateId,
+                        Yasref,
+                        Yasref_NID,
+                        Yasref_NO_NID,
+                        No_Yasref,
+                        NO_Yasref_NID,
+                        NO_Yasref_NO_NID,
+                        Yasref_BankExport,
+                        Yasref_BankExportBack,
+                        Yasref_Activate,
+                        NO_Yasref_BankExport,
+                        NO_Yasref_BankExportBack,
+                        NO_Yasref_Activate};
                 rowvQry32Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvQry32Row);
                 return rowvQry32Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vQry32Row FindBySyndicateId(int SyndicateId) {
+                return ((vQry32Row)(this.Rows.Find(new object[] {
+                            SyndicateId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8714,42 +8787,71 @@ namespace RetirementCenter.DataSources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnCountPersonId = base.Columns["CountPersonId"];
                 this.columnSyndicate = base.Columns["Syndicate"];
-                this.columnNID = base.Columns["NID"];
-                this.columnBankExport = base.Columns["BankExport"];
-                this.columnBankExportBack = base.Columns["BankExportBack"];
-                this.columnNID_P = base.Columns["NID_P"];
-                this.columnBankExport_P = base.Columns["BankExport_P"];
-                this.columnBankExportBack_P = base.Columns["BankExportBack_P"];
+                this.columnSyndicateId = base.Columns["SyndicateId"];
+                this.columnYasref = base.Columns["Yasref"];
+                this.columnYasref_NID = base.Columns["Yasref_NID"];
+                this.columnYasref_NO_NID = base.Columns["Yasref_NO_NID"];
+                this.columnNo_Yasref = base.Columns["No_Yasref"];
+                this.columnNO_Yasref_NID = base.Columns["NO_Yasref_NID"];
+                this.columnNO_Yasref_NO_NID = base.Columns["NO_Yasref_NO_NID"];
+                this.columnYasref_BankExport = base.Columns["Yasref_BankExport"];
+                this.columnYasref_BankExportBack = base.Columns["Yasref_BankExportBack"];
+                this.columnYasref_Activate = base.Columns["Yasref_Activate"];
+                this.columnNO_Yasref_BankExport = base.Columns["NO_Yasref_BankExport"];
+                this.columnNO_Yasref_BankExportBack = base.Columns["NO_Yasref_BankExportBack"];
+                this.columnNO_Yasref_Activate = base.Columns["NO_Yasref_Activate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnCountPersonId = new global::System.Data.DataColumn("CountPersonId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCountPersonId);
                 this.columnSyndicate = new global::System.Data.DataColumn("Syndicate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSyndicate);
-                this.columnNID = new global::System.Data.DataColumn("NID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNID);
-                this.columnBankExport = new global::System.Data.DataColumn("BankExport", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBankExport);
-                this.columnBankExportBack = new global::System.Data.DataColumn("BankExportBack", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBankExportBack);
-                this.columnNID_P = new global::System.Data.DataColumn("NID_P", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNID_P);
-                this.columnBankExport_P = new global::System.Data.DataColumn("BankExport_P", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBankExport_P);
-                this.columnBankExportBack_P = new global::System.Data.DataColumn("BankExportBack_P", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBankExportBack_P);
+                this.columnSyndicateId = new global::System.Data.DataColumn("SyndicateId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSyndicateId);
+                this.columnYasref = new global::System.Data.DataColumn("Yasref", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref);
+                this.columnYasref_NID = new global::System.Data.DataColumn("Yasref_NID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref_NID);
+                this.columnYasref_NO_NID = new global::System.Data.DataColumn("Yasref_NO_NID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref_NO_NID);
+                this.columnNo_Yasref = new global::System.Data.DataColumn("No_Yasref", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNo_Yasref);
+                this.columnNO_Yasref_NID = new global::System.Data.DataColumn("NO_Yasref_NID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNO_Yasref_NID);
+                this.columnNO_Yasref_NO_NID = new global::System.Data.DataColumn("NO_Yasref_NO_NID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNO_Yasref_NO_NID);
+                this.columnYasref_BankExport = new global::System.Data.DataColumn("Yasref_BankExport", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref_BankExport);
+                this.columnYasref_BankExportBack = new global::System.Data.DataColumn("Yasref_BankExportBack", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref_BankExportBack);
+                this.columnYasref_Activate = new global::System.Data.DataColumn("Yasref_Activate", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYasref_Activate);
+                this.columnNO_Yasref_BankExport = new global::System.Data.DataColumn("NO_Yasref_BankExport", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNO_Yasref_BankExport);
+                this.columnNO_Yasref_BankExportBack = new global::System.Data.DataColumn("NO_Yasref_BankExportBack", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNO_Yasref_BankExportBack);
+                this.columnNO_Yasref_Activate = new global::System.Data.DataColumn("NO_Yasref_Activate", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNO_Yasref_Activate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSyndicateId}, true));
+                this.columnSyndicate.AllowDBNull = false;
                 this.columnSyndicate.MaxLength = 50;
-                this.columnNID.ReadOnly = true;
-                this.columnBankExport.ReadOnly = true;
-                this.columnBankExportBack.ReadOnly = true;
-                this.columnNID_P.ReadOnly = true;
-                this.columnBankExport_P.ReadOnly = true;
-                this.columnBankExportBack_P.ReadOnly = true;
+                this.columnSyndicateId.AllowDBNull = false;
+                this.columnSyndicateId.Unique = true;
+                this.columnYasref.ReadOnly = true;
+                this.columnYasref_NID.ReadOnly = true;
+                this.columnYasref_NO_NID.ReadOnly = true;
+                this.columnNo_Yasref.ReadOnly = true;
+                this.columnNO_Yasref_NID.ReadOnly = true;
+                this.columnNO_Yasref_NO_NID.ReadOnly = true;
+                this.columnYasref_BankExport.ReadOnly = true;
+                this.columnYasref_BankExportBack.ReadOnly = true;
+                this.columnYasref_Activate.ReadOnly = true;
+                this.columnNO_Yasref_BankExport.ReadOnly = true;
+                this.columnNO_Yasref_BankExportBack.ReadOnly = true;
+                this.columnNO_Yasref_Activate.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8899,6 +9001,10 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnBankExportBack_P;
             
+            private global::System.Data.DataColumn columnActivate;
+            
+            private global::System.Data.DataColumn columnActivate_P;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vQry31DataTable() {
@@ -8998,6 +9104,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivateColumn {
+                get {
+                    return this.columnActivate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Activate_PColumn {
+                get {
+                    return this.columnActivate_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9033,7 +9155,7 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vQry31Row AddvQry31Row(int CountMMashatId, string Syndicate, int NID, int BankExport, int BankExportBack, decimal NID_P, decimal BankExport_P, decimal BankExportBack_P) {
+            public vQry31Row AddvQry31Row(int CountMMashatId, string Syndicate, int NID, int BankExport, int BankExportBack, decimal NID_P, decimal BankExport_P, decimal BankExportBack_P, int Activate, decimal Activate_P) {
                 vQry31Row rowvQry31Row = ((vQry31Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CountMMashatId,
@@ -9043,7 +9165,9 @@ namespace RetirementCenter.DataSources {
                         BankExportBack,
                         NID_P,
                         BankExport_P,
-                        BankExportBack_P};
+                        BankExportBack_P,
+                        Activate,
+                        Activate_P};
                 rowvQry31Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvQry31Row);
                 return rowvQry31Row;
@@ -9074,6 +9198,8 @@ namespace RetirementCenter.DataSources {
                 this.columnNID_P = base.Columns["NID_P"];
                 this.columnBankExport_P = base.Columns["BankExport_P"];
                 this.columnBankExportBack_P = base.Columns["BankExportBack_P"];
+                this.columnActivate = base.Columns["Activate"];
+                this.columnActivate_P = base.Columns["Activate_P"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9095,6 +9221,10 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnBankExport_P);
                 this.columnBankExportBack_P = new global::System.Data.DataColumn("BankExportBack_P", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBankExportBack_P);
+                this.columnActivate = new global::System.Data.DataColumn("Activate", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate);
+                this.columnActivate_P = new global::System.Data.DataColumn("Activate_P", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate_P);
                 this.columnSyndicate.MaxLength = 50;
                 this.columnNID.ReadOnly = true;
                 this.columnBankExport.ReadOnly = true;
@@ -9102,6 +9232,8 @@ namespace RetirementCenter.DataSources {
                 this.columnNID_P.ReadOnly = true;
                 this.columnBankExport_P.ReadOnly = true;
                 this.columnBankExportBack_P.ReadOnly = true;
+                this.columnActivate.ReadOnly = true;
+                this.columnActivate_P.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27270,30 +27402,9 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CountPersonId {
-                get {
-                    try {
-                        return ((int)(this[this.tablevQry32.CountPersonIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CountPersonId\' in table \'vQry32\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevQry32.CountPersonIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Syndicate {
                 get {
-                    try {
-                        return ((string)(this[this.tablevQry32.SyndicateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Syndicate\' in table \'vQry32\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablevQry32.SyndicateColumn]));
                 }
                 set {
                     this[this.tablevQry32.SyndicateColumn] = value;
@@ -27302,194 +27413,349 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int NID {
+            public int SyndicateId {
+                get {
+                    return ((int)(this[this.tablevQry32.SyndicateIdColumn]));
+                }
+                set {
+                    this[this.tablevQry32.SyndicateIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Yasref {
                 get {
                     try {
-                        return ((int)(this[this.tablevQry32.NIDColumn]));
+                        return ((int)(this[this.tablevQry32.YasrefColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NID\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.NIDColumn] = value;
+                    this[this.tablevQry32.YasrefColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int BankExport {
+            public int Yasref_NID {
                 get {
                     try {
-                        return ((int)(this[this.tablevQry32.BankExportColumn]));
+                        return ((int)(this[this.tablevQry32.Yasref_NIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BankExport\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref_NID\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.BankExportColumn] = value;
+                    this[this.tablevQry32.Yasref_NIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int BankExportBack {
+            public int Yasref_NO_NID {
                 get {
                     try {
-                        return ((int)(this[this.tablevQry32.BankExportBackColumn]));
+                        return ((int)(this[this.tablevQry32.Yasref_NO_NIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BankExportBack\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref_NO_NID\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.BankExportBackColumn] = value;
+                    this[this.tablevQry32.Yasref_NO_NIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal NID_P {
+            public int No_Yasref {
                 get {
                     try {
-                        return ((decimal)(this[this.tablevQry32.NID_PColumn]));
+                        return ((int)(this[this.tablevQry32.No_YasrefColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NID_P\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'No_Yasref\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.NID_PColumn] = value;
+                    this[this.tablevQry32.No_YasrefColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal BankExport_P {
+            public int NO_Yasref_NID {
                 get {
                     try {
-                        return ((decimal)(this[this.tablevQry32.BankExport_PColumn]));
+                        return ((int)(this[this.tablevQry32.NO_Yasref_NIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BankExport_P\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NO_Yasref_NID\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.BankExport_PColumn] = value;
+                    this[this.tablevQry32.NO_Yasref_NIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal BankExportBack_P {
+            public int NO_Yasref_NO_NID {
                 get {
                     try {
-                        return ((decimal)(this[this.tablevQry32.BankExportBack_PColumn]));
+                        return ((int)(this[this.tablevQry32.NO_Yasref_NO_NIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BankExportBack_P\' in table \'vQry32\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NO_Yasref_NO_NID\' in table \'vQry32\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry32.BankExportBack_PColumn] = value;
+                    this[this.tablevQry32.NO_Yasref_NO_NIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCountPersonIdNull() {
-                return this.IsNull(this.tablevQry32.CountPersonIdColumn);
+            public int Yasref_BankExport {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.Yasref_BankExportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref_BankExport\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.Yasref_BankExportColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCountPersonIdNull() {
-                this[this.tablevQry32.CountPersonIdColumn] = global::System.Convert.DBNull;
+            public int Yasref_BankExportBack {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.Yasref_BankExportBackColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref_BankExportBack\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.Yasref_BankExportBackColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSyndicateNull() {
-                return this.IsNull(this.tablevQry32.SyndicateColumn);
+            public int Yasref_Activate {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.Yasref_ActivateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Yasref_Activate\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.Yasref_ActivateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSyndicateNull() {
-                this[this.tablevQry32.SyndicateColumn] = global::System.Convert.DBNull;
+            public int NO_Yasref_BankExport {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.NO_Yasref_BankExportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NO_Yasref_BankExport\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.NO_Yasref_BankExportColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNIDNull() {
-                return this.IsNull(this.tablevQry32.NIDColumn);
+            public int NO_Yasref_BankExportBack {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.NO_Yasref_BankExportBackColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NO_Yasref_BankExportBack\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.NO_Yasref_BankExportBackColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNIDNull() {
-                this[this.tablevQry32.NIDColumn] = global::System.Convert.DBNull;
+            public int NO_Yasref_Activate {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry32.NO_Yasref_ActivateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NO_Yasref_Activate\' in table \'vQry32\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry32.NO_Yasref_ActivateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBankExportNull() {
-                return this.IsNull(this.tablevQry32.BankExportColumn);
+            public bool IsYasrefNull() {
+                return this.IsNull(this.tablevQry32.YasrefColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBankExportNull() {
-                this[this.tablevQry32.BankExportColumn] = global::System.Convert.DBNull;
+            public void SetYasrefNull() {
+                this[this.tablevQry32.YasrefColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBankExportBackNull() {
-                return this.IsNull(this.tablevQry32.BankExportBackColumn);
+            public bool IsYasref_NIDNull() {
+                return this.IsNull(this.tablevQry32.Yasref_NIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBankExportBackNull() {
-                this[this.tablevQry32.BankExportBackColumn] = global::System.Convert.DBNull;
+            public void SetYasref_NIDNull() {
+                this[this.tablevQry32.Yasref_NIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNID_PNull() {
-                return this.IsNull(this.tablevQry32.NID_PColumn);
+            public bool IsYasref_NO_NIDNull() {
+                return this.IsNull(this.tablevQry32.Yasref_NO_NIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNID_PNull() {
-                this[this.tablevQry32.NID_PColumn] = global::System.Convert.DBNull;
+            public void SetYasref_NO_NIDNull() {
+                this[this.tablevQry32.Yasref_NO_NIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBankExport_PNull() {
-                return this.IsNull(this.tablevQry32.BankExport_PColumn);
+            public bool IsNo_YasrefNull() {
+                return this.IsNull(this.tablevQry32.No_YasrefColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBankExport_PNull() {
-                this[this.tablevQry32.BankExport_PColumn] = global::System.Convert.DBNull;
+            public void SetNo_YasrefNull() {
+                this[this.tablevQry32.No_YasrefColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBankExportBack_PNull() {
-                return this.IsNull(this.tablevQry32.BankExportBack_PColumn);
+            public bool IsNO_Yasref_NIDNull() {
+                return this.IsNull(this.tablevQry32.NO_Yasref_NIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBankExportBack_PNull() {
-                this[this.tablevQry32.BankExportBack_PColumn] = global::System.Convert.DBNull;
+            public void SetNO_Yasref_NIDNull() {
+                this[this.tablevQry32.NO_Yasref_NIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNO_Yasref_NO_NIDNull() {
+                return this.IsNull(this.tablevQry32.NO_Yasref_NO_NIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNO_Yasref_NO_NIDNull() {
+                this[this.tablevQry32.NO_Yasref_NO_NIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsYasref_BankExportNull() {
+                return this.IsNull(this.tablevQry32.Yasref_BankExportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetYasref_BankExportNull() {
+                this[this.tablevQry32.Yasref_BankExportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsYasref_BankExportBackNull() {
+                return this.IsNull(this.tablevQry32.Yasref_BankExportBackColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetYasref_BankExportBackNull() {
+                this[this.tablevQry32.Yasref_BankExportBackColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsYasref_ActivateNull() {
+                return this.IsNull(this.tablevQry32.Yasref_ActivateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetYasref_ActivateNull() {
+                this[this.tablevQry32.Yasref_ActivateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNO_Yasref_BankExportNull() {
+                return this.IsNull(this.tablevQry32.NO_Yasref_BankExportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNO_Yasref_BankExportNull() {
+                this[this.tablevQry32.NO_Yasref_BankExportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNO_Yasref_BankExportBackNull() {
+                return this.IsNull(this.tablevQry32.NO_Yasref_BankExportBackColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNO_Yasref_BankExportBackNull() {
+                this[this.tablevQry32.NO_Yasref_BankExportBackColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNO_Yasref_ActivateNull() {
+                return this.IsNull(this.tablevQry32.NO_Yasref_ActivateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNO_Yasref_ActivateNull() {
+                this[this.tablevQry32.NO_Yasref_ActivateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -27637,6 +27903,38 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Activate {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry31.ActivateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate\' in table \'vQry31\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry31.ActivateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Activate_P {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevQry31.Activate_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate_P\' in table \'vQry31\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry31.Activate_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCountMMashatIdNull() {
                 return this.IsNull(this.tablevQry31.CountMMashatIdColumn);
             }
@@ -27729,6 +28027,30 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBankExportBack_PNull() {
                 this[this.tablevQry31.BankExportBack_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivateNull() {
+                return this.IsNull(this.tablevQry31.ActivateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivateNull() {
+                this[this.tablevQry31.ActivateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivate_PNull() {
+                return this.IsNull(this.tablevQry31.Activate_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivate_PNull() {
+                this[this.tablevQry31.Activate_PColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -40899,14 +41221,20 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "vQry32";
-            tableMapping.ColumnMappings.Add("CountPersonId", "CountPersonId");
             tableMapping.ColumnMappings.Add("Syndicate", "Syndicate");
-            tableMapping.ColumnMappings.Add("NID", "NID");
-            tableMapping.ColumnMappings.Add("BankExport", "BankExport");
-            tableMapping.ColumnMappings.Add("BankExportBack", "BankExportBack");
-            tableMapping.ColumnMappings.Add("NID_P", "NID_P");
-            tableMapping.ColumnMappings.Add("BankExport_P", "BankExport_P");
-            tableMapping.ColumnMappings.Add("BankExportBack_P", "BankExportBack_P");
+            tableMapping.ColumnMappings.Add("SyndicateId", "SyndicateId");
+            tableMapping.ColumnMappings.Add("Yasref", "Yasref");
+            tableMapping.ColumnMappings.Add("Yasref_NID", "Yasref_NID");
+            tableMapping.ColumnMappings.Add("Yasref_NO_NID", "Yasref_NO_NID");
+            tableMapping.ColumnMappings.Add("No_Yasref", "No_Yasref");
+            tableMapping.ColumnMappings.Add("NO_Yasref_NID", "NO_Yasref_NID");
+            tableMapping.ColumnMappings.Add("NO_Yasref_NO_NID", "NO_Yasref_NO_NID");
+            tableMapping.ColumnMappings.Add("Yasref_BankExport", "Yasref_BankExport");
+            tableMapping.ColumnMappings.Add("Yasref_BankExportBack", "Yasref_BankExportBack");
+            tableMapping.ColumnMappings.Add("Yasref_Activate", "Yasref_Activate");
+            tableMapping.ColumnMappings.Add("NO_Yasref_BankExport", "NO_Yasref_BankExport");
+            tableMapping.ColumnMappings.Add("NO_Yasref_BankExportBack", "NO_Yasref_BankExportBack");
+            tableMapping.ColumnMappings.Add("NO_Yasref_Activate", "NO_Yasref_Activate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -40923,28 +41251,40 @@ FROM            CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"WITH CTE1 AS
-(
-SELECT        TBLWarasa.PersonId
-, CASE WHEN personNID IS NOT NULL AND personNID <> '' THEN 1 ELSE 0 END AS NID
-, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId) THEN 1 ELSE 0 END AS BankExport
-, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = TBLWarasa.PersonId And visa IS NOT NULL AND visa <> '') THEN 1 ELSE 0 END AS BankExportBack
-, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
-FROM            CDSyndicate RIGHT OUTER JOIN
-                         TBLWarasa ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId LEFT OUTER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
-                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
-WHERE        (TBLWarasa.yasref = 1)
-GROUP BY TBLWarasa.PersonId, CDWarasaType.WarasaType, TBLWarasa.responsiblesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, personNID
-)
-SELECT COUNT(PersonId) AS CountPersonId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
-, SUM(NID) * 1.0 / COUNT(PersonId) AS NID_P
-, SUM(BankExport) * 1.0 / COUNT(PersonId) AS BankExport_P
-, SUM(BankExportBack) * 1.0 / COUNT(PersonId) AS BankExportBack_P
-, Syndicate
-FROM CTE1
-GROUP BY Syndicate
-";
+            this._commandCollection[0].CommandText = "WITH CTE1 AS\r\n(\r\nSELECT PersonId, yasref, CASE WHEN PersonNID IS NOT NULL OR Pers" +
+                "onNID <> \'\' THEN 1 ELSE 0 END AS NID\r\nFROM            TBLWarasa\r\nWHERE (yasref =" +
+                " 1)\r\nUNION\r\nSELECT TBLNoSarfWarsa.PersonId, TBLNoSarfWarsa.yasref, CASE WHEN Per" +
+                "sonNID IS NOT NULL OR PersonNID <> \'\' THEN 1 ELSE 0 END AS NID\r\nFROM [dbo].[TBLN" +
+                "oSarfWarsa] INNER JOIN TBLWarasa TBL ON TBLNoSarfWarsa.[PersonId] = TBL.PersonId" +
+                "\r\nWHERE (TBLNoSarfWarsa.yasref = 0) AND  [datehala] BETWEEN \'2015-07-20\' AND \'20" +
+                "15-08-24\'\r\n), CTE2 AS\r\n(\r\nSELECT SyndicateId\r\n, CASE WHEN CTE1.yasref = 1 THEN 1" +
+                " ELSE 0 END AS Yasref\r\n, CASE WHEN CTE1.yasref = 1 AND NID = 1 THEN 1 ELSE 0 END" +
+                " AS Yasref_NID\r\n, CASE WHEN CTE1.yasref = 1 AND NID = 0 THEN 1 ELSE 0 END AS Yas" +
+                "ref_NO_NID\r\n\r\n, CASE WHEN CTE1.yasref = 0 THEN 1 ELSE 0 END AS No_Yasref\r\n, CASE" +
+                " WHEN CTE1.yasref = 0 AND NID = 1 THEN 1 ELSE 0 END AS NO_Yasref_NID\r\n, CASE WHE" +
+                "N CTE1.yasref = 0 AND NID = 0 THEN 1 ELSE 0 END AS NO_Yasref_NO_NID\r\n\r\n, CASE WH" +
+                "EN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId) A" +
+                "ND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_BankExport\r\n, CASE WHEN EXISTS(SE" +
+                "LECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1.PersonId And visa IS NO" +
+                "T NULL AND visa <> \'\') AND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_BankExpor" +
+                "tBack\r\n, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = " +
+                "CTE1.PersonId AND Activate = 1) AND CTE1.yasref = 1 THEN 1 ELSE 0 END AS Yasref_" +
+                "Activate\r\n\r\n, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE Person" +
+                "Id = CTE1.PersonId) AND CTE1.yasref = 0 THEN 1 ELSE 0 END AS NO_Yasref_BankExpor" +
+                "t\r\n, CASE WHEN EXISTS(SELECT Id FROM BankExportedDataWarsa WHERE PersonId = CTE1" +
+                ".PersonId And visa IS NOT NULL AND visa <> \'\') AND CTE1.yasref = 0 THEN 1 ELSE 0" +
+                " END AS NO_Yasref_BankExportBack\r\n, CASE WHEN EXISTS(SELECT Id FROM BankExported" +
+                "DataWarsa WHERE PersonId = CTE1.PersonId AND Activate = 1) AND CTE1.yasref = 0 T" +
+                "HEN 1 ELSE 0 END AS NO_Yasref_Activate\r\n\r\nFROM CTE1 INNER JOIN TBLWarasa W ON CT" +
+                "E1.PersonId = W.PersonId\r\n)\r\nSELECT CTE2.SyndicateId, CDSyndicate.Syndicate\r\n, S" +
+                "UM(Yasref) AS Yasref, SUM(Yasref_NID) AS Yasref_NID, SUM(Yasref_NO_NID) AS Yasre" +
+                "f_NO_NID\r\n, SUM(No_Yasref) AS No_Yasref, SUM(NO_Yasref_NID) AS NO_Yasref_NID, SU" +
+                "M(NO_Yasref_NO_NID) AS NO_Yasref_NO_NID\r\n,SUM(Yasref_BankExport) AS Yasref_BankE" +
+                "xport, SUM(Yasref_BankExportBack) AS Yasref_BankExportBack, SUM(Yasref_Activate)" +
+                " AS Yasref_Activate\r\n,SUM(NO_Yasref_BankExport) AS NO_Yasref_BankExport, SUM(NO_" +
+                "Yasref_BankExportBack) AS NO_Yasref_BankExportBack, SUM(NO_Yasref_Activate) AS N" +
+                "O_Yasref_Activate\r\nFROM CTE2 INNER JOIN CDSyndicate ON CTE2.SyndicateId = CDSynd" +
+                "icate.SyndicateId\r\nGROUP BY CTE2.SyndicateId, CDSyndicate.Syndicate";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -41102,6 +41442,8 @@ GROUP BY Syndicate
             tableMapping.ColumnMappings.Add("NID_P", "NID_P");
             tableMapping.ColumnMappings.Add("BankExport_P", "BankExport_P");
             tableMapping.ColumnMappings.Add("BankExportBack_P", "BankExportBack_P");
+            tableMapping.ColumnMappings.Add("Activate", "Activate");
+            tableMapping.ColumnMappings.Add("Activate_P", "Activate_P");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -41118,27 +41460,32 @@ GROUP BY Syndicate
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"WITH CTE1 AS
-(
-SELECT TBLMashat.MMashatId 
-, CASE WHEN TBLMashat.MMashatNId IS NOT NULL AND TBLMashat.MMashatNId <> '' THEN 1 ELSE 0 END AS NID
-, CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId) THEN 1 ELSE 0 END AS BankExport
-, CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId And visa IS NOT NULL AND visa <> '') THEN 1 ELSE 0 END AS BankExportBack
-, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala
-FROM            TBLMashat LEFT OUTER JOIN
-CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN
-CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
-CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
-WHERE        (TBLMashat.MashHalaId = 1) AND (TBLMashat.yasref = 1)
-GROUP BY TBLMashat.MMashatId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId
-)
-SELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(BankExport) AS BankExport, SUM(BankExportBack) AS BankExportBack
-, SUM(NID) * 1.0 / COUNT(MMashatId) AS NID_P
-, SUM(BankExport) * 1.0 / COUNT(MMashatId) AS BankExport_P
-, SUM(BankExportBack) * 1.0 / COUNT(MMashatId) AS BankExportBack_P
-, Syndicate
-FROM CTE1 
-GROUP BY Syndicate";
+            this._commandCollection[0].CommandText = "WITH CTE1 AS\r\n(\r\nSELECT TBLMashat.MMashatId, TBLMashat.SyndicateId\r\n, CASE WHEN T" +
+                "BLMashat.MMashatNId IS NOT NULL AND TBLMashat.MMashatNId <> \'\' THEN 1 ELSE 0 END" +
+                " AS NID\r\n, CASE WHEN EXISTS(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMash" +
+                "atId] = TBLMashat.MMashatId) THEN 1 ELSE 0 END AS BankExport\r\n, CASE WHEN EXISTS" +
+                "(SELECT Id FROM [dbo].[BankExportedData] WHERE [MMashatId] = TBLMashat.MMashatId" +
+                " And visa IS NOT NULL AND visa <> \'\') THEN 1 ELSE 0 END AS BankExportBack\r\n, TBL" +
+                "Mashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CDSubCommit" +
+                "te.SubCommitte, CDMashHala.MashHala\r\nFROM            TBLMashat LEFT OUTER JOIN\r\n" +
+                "CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN\r\nCDSu" +
+                "bCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JO" +
+                "IN\r\nCDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId\r\nWHERE       " +
+                " (TBLMashat.MashHalaId = 1) AND (TBLMashat.yasref = 1)\r\nGROUP BY TBLMashat.MMash" +
+                "atId, TBLMashat.SarfExpetion, TBLMashat.mcompletesarf, CDSyndicate.Syndicate, CD" +
+                "SubCommitte.SubCommitte, CDMashHala.MashHala, TBLMashat.MMashatNId, TBLMashat.Sy" +
+                "ndicateId\r\n)\r\nSELECT COUNT(MMashatId) AS CountMMashatId, SUM(NID) AS NID, SUM(Ba" +
+                "nkExport) AS BankExport, SUM(BankExportBack) AS BankExportBack\r\n, (SELECT COUNT(" +
+                "Id) FROM BankExportedData INNER JOIN TBLMashat ON BankExportedData.MMashatId = T" +
+                "BLMashat.MMashatId WHERE TBLMashat.SyndicateId = CTE1.SyndicateId  AND BankExpor" +
+                "tedData.Activate = 1) AS Activate\r\n, SUM(NID) * 1.0 / COUNT(MMashatId) AS NID_P\r" +
+                "\n, SUM(BankExport) * 1.0 / COUNT(MMashatId) AS BankExport_P\r\n, SUM(BankExportBac" +
+                "k) * 1.0 / COUNT(MMashatId) AS BankExportBack_P\r\n, CASE WHEN SUM(BankExportBack)" +
+                " = 0 THEN 0 ELSE (SELECT COUNT(Id) FROM BankExportedData INNER JOIN TBLMashat ON" +
+                " BankExportedData.MMashatId = TBLMashat.MMashatId WHERE TBLMashat.SyndicateId = " +
+                "CTE1.SyndicateId  AND BankExportedData.Activate = 1)  * 1.0 / SUM(BankExportBack" +
+                ") END Activate_P\r\n, Syndicate\r\nFROM CTE1 \r\nGROUP BY Syndicate, CTE1.SyndicateId\r" +
+                "\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -43579,8 +43926,7 @@ GROUP BY CDSyndicate.Syndicate";
             this._commandCollection[0].CommandText = @"SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, 
                          BankExportedDataWarsa.Id, BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, 
                          BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, 
-                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate, 
-                         BankExportedDataWarsa.trteep
+                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.trteep, TBLWarasa.Activate, TBLWarasa.ActivateDate
 FROM            CDSubCommitte INNER JOIN
                          CDSyndicate INNER JOIN
                          BankExportedDataWarsa INNER JOIN
@@ -48180,7 +48526,7 @@ AND NOT EXISTS(SELECT PersonId FROM TBLWarasa W WHERE responsiblesarf = 0 AND re
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[31];
+            this._commandCollection = new global::System.Data.IDbCommand[34];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT ISNULL(MAX(MMashatId) +1, 1) AS NewId FROM TBLMashat";
@@ -48392,6 +48738,25 @@ AND NOT EXISTS(SELECT PersonId FROM [dbo].[TBLEdafatWarsa] WHERE [PersonId] = TB
                 "MMashatId)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[30])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[30])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[31] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[31])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[31])).CommandText = "SELECT        responsiblesarf\r\nFROM            TBLWarasa\r\nWHERE        (PersonId " +
+                "= @PersonId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[31])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[31])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[32] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[32])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[32])).CommandText = "SELECT        CDMashHala.MashHala\r\nFROM            TBLMashat INNER JOIN\r\n        " +
+                "                 CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId\r\nWHE" +
+                "RE        (TBLMashat.MMashatId = @MMashatId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[32])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[32])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[33] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[33])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[33])).CommandText = "SELECT        yasref\r\nFROM            TBLMashat\r\nWHERE        (MMashatId = @MMash" +
+                "atId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[33])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[33])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49300,6 +49665,93 @@ AND NOT EXISTS(SELECT PersonId FROM [dbo].[TBLEdafatWarsa] WHERE [PersonId] = TB
             }
             else {
                 return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<bool> GetResponsiblesarfByPersonId(int PersonId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[31]));
+            command.Parameters[0].Value = ((int)(PersonId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<bool>();
+            }
+            else {
+                return new global::System.Nullable<bool>(((bool)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string GetMashHalaByMMashatId(int MMashatId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[32]));
+            command.Parameters[0].Value = ((int)(MMashatId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<bool> GetYasrefByMMashatId(int MMashatId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[33]));
+            command.Parameters[0].Value = ((int)(MMashatId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<bool>();
+            }
+            else {
+                return new global::System.Nullable<bool>(((bool)(returnValue)));
             }
         }
     }

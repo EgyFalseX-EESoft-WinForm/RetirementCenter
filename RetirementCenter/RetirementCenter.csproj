@@ -234,6 +234,7 @@
     </Compile>
     <Compile Include="DataSources\dsQueries.cs">
       <DependentUpon>dsQueries.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSources\dsQueries.Designer.cs">
       <AutoGen>True</AutoGen>

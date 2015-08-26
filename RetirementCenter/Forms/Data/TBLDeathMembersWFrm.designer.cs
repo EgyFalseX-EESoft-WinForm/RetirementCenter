@@ -36,6 +36,9 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.ceYasref = new DevExpress.XtraEditors.CheckEdit();
+            this.tbmosthhekmony = new DevExpress.XtraEditors.TextEdit();
+            this.tbmosthhekNid = new DevExpress.XtraEditors.TextEdit();
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLMashat = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,6 +52,9 @@
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tbmosthhek = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lblMemType = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dedeathdate = new DevExpress.XtraEditors.DateEdit();
             this.BindingSourceData = new System.Windows.Forms.BindingSource(this.components);
@@ -62,6 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtpGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ceYasref.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekmony.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekNid.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -78,7 +87,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(388, 49);
+            this.labelControl2.Location = new System.Drawing.Point(390, 49);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 19);
             this.labelControl2.TabIndex = 0;
@@ -87,7 +96,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(406, 123);
+            this.labelControl4.Location = new System.Drawing.Point(406, 224);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(56, 19);
             this.labelControl4.TabIndex = 0;
@@ -97,7 +106,7 @@
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.panelControl1.Controls.Add(this.btnClose);
-            this.panelControl1.Location = new System.Drawing.Point(5, 370);
+            this.panelControl1.Location = new System.Drawing.Point(5, 383);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(520, 44);
             this.panelControl1.TabIndex = 1;
@@ -118,10 +127,10 @@
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.Save;
             this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(312, 265);
+            this.btnSave.Location = new System.Drawing.Point(316, 276);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 30);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "حفـــــــــــــــــــــــــظ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -131,26 +140,67 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.xtraTabControl1.SelectedTabPage = this.xtpGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(525, 352);
+            this.xtraTabControl1.Size = new System.Drawing.Size(525, 365);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGeneral});
             // 
             // xtpGeneral
             // 
+            this.xtpGeneral.Controls.Add(this.ceYasref);
+            this.xtpGeneral.Controls.Add(this.tbmosthhekmony);
+            this.xtpGeneral.Controls.Add(this.tbmosthhekNid);
             this.xtpGeneral.Controls.Add(this.btnSave);
             this.xtpGeneral.Controls.Add(this.lueMMashatId);
             this.xtpGeneral.Controls.Add(this.lueSyn);
             this.xtpGeneral.Controls.Add(this.tbmosthhek);
             this.xtpGeneral.Controls.Add(this.labelControl6);
+            this.xtpGeneral.Controls.Add(this.labelControl5);
             this.xtpGeneral.Controls.Add(this.labelControl2);
+            this.xtpGeneral.Controls.Add(this.labelControl3);
+            this.xtpGeneral.Controls.Add(this.lblMemType);
             this.xtpGeneral.Controls.Add(this.labelControl1);
             this.xtpGeneral.Controls.Add(this.labelControl4);
             this.xtpGeneral.Controls.Add(this.dedeathdate);
             this.xtpGeneral.Image = global::RetirementCenter.Properties.Resources.Edit;
             this.xtpGeneral.Name = "xtpGeneral";
-            this.xtpGeneral.Size = new System.Drawing.Size(519, 305);
+            this.xtpGeneral.Size = new System.Drawing.Size(519, 318);
             this.xtpGeneral.Text = "بيانات أساسيه";
+            // 
+            // ceYasref
+            // 
+            this.ceYasref.Enabled = false;
+            this.ceYasref.Location = new System.Drawing.Point(53, 77);
+            this.ceYasref.Name = "ceYasref";
+            this.ceYasref.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ceYasref.Properties.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.ceYasref.Properties.Appearance.Options.UseFont = true;
+            this.ceYasref.Properties.Appearance.Options.UseForeColor = true;
+            this.ceYasref.Properties.Caption = "يصرف";
+            this.ceYasref.Size = new System.Drawing.Size(75, 19);
+            this.ceYasref.TabIndex = 99;
+            this.ceYasref.TabStop = false;
+            // 
+            // tbmosthhekmony
+            // 
+            this.tbmosthhekmony.Location = new System.Drawing.Point(53, 187);
+            this.tbmosthhekmony.Name = "tbmosthhekmony";
+            this.tbmosthhekmony.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbmosthhekmony.Properties.Appearance.Options.UseFont = true;
+            this.tbmosthhekmony.Properties.Mask.EditMask = "f2";
+            this.tbmosthhekmony.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbmosthhekmony.Size = new System.Drawing.Size(233, 26);
+            this.tbmosthhekmony.TabIndex = 4;
+            // 
+            // tbmosthhekNid
+            // 
+            this.tbmosthhekNid.Location = new System.Drawing.Point(53, 149);
+            this.tbmosthhekNid.Name = "tbmosthhekNid";
+            this.tbmosthhekNid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbmosthhekNid.Properties.Appearance.Options.UseFont = true;
+            this.tbmosthhekNid.Properties.MaxLength = 14;
+            this.tbmosthhekNid.Size = new System.Drawing.Size(233, 26);
+            this.tbmosthhekNid.TabIndex = 3;
             // 
             // lueMMashatId
             // 
@@ -169,6 +219,7 @@
             this.lueMMashatId.Properties.View = this.gridView1;
             this.lueMMashatId.Size = new System.Drawing.Size(233, 26);
             this.lueMMashatId.TabIndex = 1;
+            this.lueMMashatId.EditValueChanged += new System.EventHandler(this.lueMMashatId_EditValueChanged);
             // 
             // LSMSTBLMashat
             // 
@@ -279,11 +330,11 @@
             // 
             // tbmosthhek
             // 
-            this.tbmosthhek.Location = new System.Drawing.Point(53, 125);
+            this.tbmosthhek.Location = new System.Drawing.Point(53, 226);
             this.tbmosthhek.Name = "tbmosthhek";
             this.tbmosthhek.Properties.MaxLength = 75;
             this.tbmosthhek.Size = new System.Drawing.Size(233, 80);
-            this.tbmosthhek.TabIndex = 3;
+            this.tbmosthhek.TabIndex = 5;
             // 
             // labelControl6
             // 
@@ -294,10 +345,38 @@
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "الفرعية";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Location = new System.Drawing.Point(384, 190);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(78, 19);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "قيمة الاعانة";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Location = new System.Drawing.Point(385, 152);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(77, 19);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "الرقم قومي";
+            // 
+            // lblMemType
+            // 
+            this.lblMemType.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemType.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.lblMemType.Location = new System.Drawing.Point(215, 78);
+            this.lblMemType.Name = "lblMemType";
+            this.lblMemType.Size = new System.Drawing.Size(12, 14);
+            this.lblMemType.TabIndex = 0;
+            this.lblMemType.Text = "...";
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(389, 87);
+            this.labelControl1.Location = new System.Drawing.Point(391, 114);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(71, 19);
             this.labelControl1.TabIndex = 0;
@@ -306,7 +385,7 @@
             // dedeathdate
             // 
             this.dedeathdate.EditValue = null;
-            this.dedeathdate.Location = new System.Drawing.Point(53, 84);
+            this.dedeathdate.Location = new System.Drawing.Point(53, 111);
             this.dedeathdate.Name = "dedeathdate";
             this.dedeathdate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dedeathdate.Properties.Appearance.Options.UseFont = true;
@@ -378,7 +457,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(542, 426);
+            this.ClientSize = new System.Drawing.Size(542, 436);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -394,6 +473,9 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtpGeneral.ResumeLayout(false);
             this.xtpGeneral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ceYasref.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekmony.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekNid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -442,5 +524,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraEditors.DateEdit dedeathdate;
         private DataSources.dsRetirementCenterTableAdapters.TBLDeathMembersTableAdapter adp;
+        private DevExpress.XtraEditors.TextEdit tbmosthhekmony;
+        private DevExpress.XtraEditors.TextEdit tbmosthhekNid;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.CheckEdit ceYasref;
+        private DevExpress.XtraEditors.LabelControl lblMemType;
     }
 }
