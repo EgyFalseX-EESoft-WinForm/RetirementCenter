@@ -58,6 +58,7 @@ namespace RetirementCenter
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             if (FXFW.SqlDB.LoadSqlDBPath("RetirementCenter") /*&& Authentication()*/)
             {

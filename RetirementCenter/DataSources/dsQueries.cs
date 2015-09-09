@@ -197,9 +197,11 @@ namespace RetirementCenter.DataSources
 namespace RetirementCenter.DataSources
 {
 }
-namespace RetirementCenter.DataSources {
-    
-    
-    public partial class dsQueries {
+namespace RetirementCenter.DataSources
+{
+
+
+    public partial class dsQueries
+    {
     }
 }

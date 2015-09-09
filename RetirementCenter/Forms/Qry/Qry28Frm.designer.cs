@@ -55,6 +55,9 @@
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResponsiblesarfName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
@@ -66,9 +69,7 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResponsiblesarfName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYasref_Current = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -212,7 +213,8 @@
             this.coluserin,
             this.colresponsiblesarf,
             this.colresponsiblesarfId,
-            this.colResponsiblesarfName});
+            this.colResponsiblesarfName,
+            this.colYasref_Current});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -495,6 +497,42 @@
             this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
             this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // colresponsiblesarf
+            // 
+            this.colresponsiblesarf.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.Caption = "مسئول";
+            this.colresponsiblesarf.FieldName = "responsiblesarf";
+            this.colresponsiblesarf.Name = "colresponsiblesarf";
+            this.colresponsiblesarf.Visible = true;
+            this.colresponsiblesarf.VisibleIndex = 19;
+            // 
+            // colresponsiblesarfId
+            // 
+            this.colresponsiblesarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.Caption = "كود المسئول";
+            this.colresponsiblesarfId.FieldName = "responsiblesarfId";
+            this.colresponsiblesarfId.Name = "colresponsiblesarfId";
+            this.colresponsiblesarfId.Visible = true;
+            this.colresponsiblesarfId.VisibleIndex = 20;
+            // 
+            // colResponsiblesarfName
+            // 
+            this.colResponsiblesarfName.AppearanceCell.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.Caption = "اسم المسئول";
+            this.colResponsiblesarfName.FieldName = "ResponsiblesarfName";
+            this.colResponsiblesarfName.Name = "colResponsiblesarfName";
+            this.colResponsiblesarfName.Visible = true;
+            this.colResponsiblesarfName.VisibleIndex = 21;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -597,41 +635,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colresponsiblesarf
+            // colYasref_Current
             // 
-            this.colresponsiblesarf.AppearanceCell.Options.UseTextOptions = true;
-            this.colresponsiblesarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colresponsiblesarf.AppearanceHeader.Options.UseTextOptions = true;
-            this.colresponsiblesarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colresponsiblesarf.Caption = "مسئول";
-            this.colresponsiblesarf.FieldName = "responsiblesarf";
-            this.colresponsiblesarf.Name = "colresponsiblesarf";
-            this.colresponsiblesarf.Visible = true;
-            this.colresponsiblesarf.VisibleIndex = 19;
-            // 
-            // colresponsiblesarfId
-            // 
-            this.colresponsiblesarfId.AppearanceCell.Options.UseTextOptions = true;
-            this.colresponsiblesarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colresponsiblesarfId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colresponsiblesarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colresponsiblesarfId.Caption = "كود المسئول";
-            this.colresponsiblesarfId.FieldName = "responsiblesarfId";
-            this.colresponsiblesarfId.Name = "colresponsiblesarfId";
-            this.colresponsiblesarfId.Visible = true;
-            this.colresponsiblesarfId.VisibleIndex = 20;
-            // 
-            // colResponsiblesarfName
-            // 
-            this.colResponsiblesarfName.AppearanceCell.Options.UseTextOptions = true;
-            this.colResponsiblesarfName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colResponsiblesarfName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colResponsiblesarfName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colResponsiblesarfName.Caption = "اسم المسئول";
-            this.colResponsiblesarfName.FieldName = "ResponsiblesarfName";
-            this.colResponsiblesarfName.Name = "colResponsiblesarfName";
-            this.colResponsiblesarfName.Visible = true;
-            this.colResponsiblesarfName.VisibleIndex = 21;
+            this.colYasref_Current.AppearanceCell.Options.UseTextOptions = true;
+            this.colYasref_Current.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYasref_Current.AppearanceHeader.Options.UseTextOptions = true;
+            this.colYasref_Current.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYasref_Current.Caption = "يصرف حاليا";
+            this.colYasref_Current.FieldName = "Yasref_Current";
+            this.colYasref_Current.Name = "colYasref_Current";
+            this.colYasref_Current.Visible = true;
+            this.colYasref_Current.VisibleIndex = 22;
             // 
             // Qry28Frm
             // 
@@ -706,6 +720,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarf;
         private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarfId;
         private DevExpress.XtraGrid.Columns.GridColumn colResponsiblesarfName;
+        private DevExpress.XtraGrid.Columns.GridColumn colYasref_Current;
 
     }
 }

@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition1 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition pivotGridStyleFormatCondition2 = new DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.vQry32BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vQry32BindingSource = new System.Windows.Forms.BindingSource();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
-            this.vQry32TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry32TableAdapter();
             this.fieldSyndicate1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldYasref1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldNoYasref1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldYasrefNID1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldYasrefNONID1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldNoYasref1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNOYasrefNID1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNOYasrefNONID1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldYasrefBankExport1 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -50,6 +48,10 @@
             this.fieldNOYasrefBankExport1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNOYasrefBankExportBack1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldNOYasrefActivate1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.vQry32TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry32TableAdapter();
+            this.fieldTotalActivate = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldTotalBack = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldTotalBackActive = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
@@ -95,7 +97,10 @@
             this.fieldYasrefActivate1,
             this.fieldNOYasrefBankExport1,
             this.fieldNOYasrefBankExportBack1,
-            this.fieldNOYasrefActivate1});
+            this.fieldNOYasrefActivate1,
+            this.fieldTotalActivate,
+            this.fieldTotalBack,
+            this.fieldTotalBackActive});
             pivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Green;
             pivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = true;
             pivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
@@ -124,10 +129,6 @@
             this.dsQueries.DataSetName = "dsQueries";
             this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // vQry32TableAdapter
-            // 
-            this.vQry32TableAdapter.ClearBeforeFill = true;
-            // 
             // fieldSyndicate1
             // 
             this.fieldSyndicate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
@@ -143,6 +144,14 @@
             this.fieldYasref1.Caption = "يصرف";
             this.fieldYasref1.FieldName = "Yasref";
             this.fieldYasref1.Name = "fieldYasref1";
+            // 
+            // fieldNoYasref1
+            // 
+            this.fieldNoYasref1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldNoYasref1.AreaIndex = 1;
+            this.fieldNoYasref1.Caption = "لا يصرف";
+            this.fieldNoYasref1.FieldName = "No_Yasref";
+            this.fieldNoYasref1.Name = "fieldNoYasref1";
             // 
             // fieldYasrefNID1
             // 
@@ -160,14 +169,6 @@
             this.fieldYasrefNONID1.FieldName = "Yasref_NO_NID";
             this.fieldYasrefNONID1.Name = "fieldYasrefNONID1";
             // 
-            // fieldNoYasref1
-            // 
-            this.fieldNoYasref1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldNoYasref1.AreaIndex = 1;
-            this.fieldNoYasref1.Caption = "لا يصرف";
-            this.fieldNoYasref1.FieldName = "No_Yasref";
-            this.fieldNoYasref1.Name = "fieldNoYasref1";
-            // 
             // fieldNOYasrefNID1
             // 
             this.fieldNOYasrefNID1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
@@ -175,6 +176,7 @@
             this.fieldNOYasrefNID1.Caption = "لا يصرف له رقم قومي";
             this.fieldNOYasrefNID1.FieldName = "NO_Yasref_NID";
             this.fieldNOYasrefNID1.Name = "fieldNOYasrefNID1";
+            this.fieldNOYasrefNID1.Width = 147;
             // 
             // fieldNOYasrefNONID1
             // 
@@ -232,6 +234,39 @@
             this.fieldNOYasrefActivate1.FieldName = "NO_Yasref_Activate";
             this.fieldNOYasrefActivate1.Name = "fieldNOYasrefActivate1";
             // 
+            // vQry32TableAdapter
+            // 
+            this.vQry32TableAdapter.ClearBeforeFill = true;
+            // 
+            // fieldTotalActivate
+            // 
+            this.fieldTotalActivate.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldTotalActivate.AreaIndex = 12;
+            this.fieldTotalActivate.Caption = "اجمالي التفعيل";
+            this.fieldTotalActivate.FieldName = "Total_Activate";
+            this.fieldTotalActivate.Name = "fieldTotalActivate";
+            // 
+            // fieldTotalBack
+            // 
+            this.fieldTotalBack.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldTotalBack.AreaIndex = 13;
+            this.fieldTotalBack.Caption = "اجمالي الوارد";
+            this.fieldTotalBack.FieldName = "Total_Back";
+            this.fieldTotalBack.Name = "fieldTotalBack";
+            // 
+            // fieldTotalBackActive
+            // 
+            this.fieldTotalBackActive.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldTotalBackActive.AreaIndex = 14;
+            this.fieldTotalBackActive.Caption = "نسبة المفعل للوارد";
+            this.fieldTotalBackActive.CellFormat.FormatString = "p1";
+            this.fieldTotalBackActive.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldTotalBackActive.FieldName = "Total_BackActive";
+            this.fieldTotalBackActive.GrandTotalCellFormat.FormatString = "p1";
+            this.fieldTotalBackActive.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldTotalBackActive.Name = "fieldTotalBackActive";
+            this.fieldTotalBackActive.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average;
+            // 
             // Qry32Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +309,9 @@
         private DevExpress.XtraPivotGrid.PivotGridField fieldNOYasrefBankExport1;
         private DevExpress.XtraPivotGrid.PivotGridField fieldNOYasrefBankExportBack1;
         private DevExpress.XtraPivotGrid.PivotGridField fieldNOYasrefActivate1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldTotalActivate;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldTotalBack;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldTotalBackActive;
 
     }
 }

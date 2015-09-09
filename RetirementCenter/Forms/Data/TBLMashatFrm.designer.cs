@@ -222,6 +222,7 @@
             this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colpersonName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPageChangeToWarasa = new DevExpress.XtraTab.XtraTabPage();
             this.LUEChangeHala = new DevExpress.XtraEditors.LookUpEdit();
             this.btnChangeHala = new DevExpress.XtraEditors.SimpleButton();
@@ -270,7 +271,6 @@
             this.tBLEdafatWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colWarasaType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLReSarfTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
-            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -452,6 +452,7 @@
             this.btnDelete.ToolTip = "اضعط هنا لحذف المختار";
             this.btnDelete.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.btnDelete.ToolTipTitle = "حذف F8";
+            this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNew
@@ -694,6 +695,7 @@
             this.btnUpdate.ToolTip = "اضعط هنا لحفظ التعديلات";
             this.btnUpdate.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.btnUpdate.ToolTipTitle = "تعديل F10";
+            this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
@@ -711,6 +713,7 @@
             this.btnSave.ToolTip = "اضعط هنا لحفظ جديد";
             this.btnSave.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.btnSave.ToolTipTitle = "حفظ جديد F6";
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl21
@@ -2735,6 +2738,18 @@
             this.colpersonName1.Visible = true;
             this.colpersonName1.VisibleIndex = 0;
             // 
+            // colvisa
+            // 
+            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.Caption = "فيزا";
+            this.colvisa.FieldName = "visa";
+            this.colvisa.Name = "colvisa";
+            this.colvisa.Visible = true;
+            this.colvisa.VisibleIndex = 11;
+            // 
             // xtraTabPageChangeToWarasa
             // 
             this.xtraTabPageChangeToWarasa.Controls.Add(this.LUEChangeHala);
@@ -3176,18 +3191,6 @@
             // tBLReSarfTableAdapter
             // 
             this.tBLReSarfTableAdapter.ClearBeforeFill = true;
-            // 
-            // colvisa
-            // 
-            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.Caption = "فيزا";
-            this.colvisa.FieldName = "visa";
-            this.colvisa.Name = "colvisa";
-            this.colvisa.Visible = true;
-            this.colvisa.VisibleIndex = 11;
             // 
             // TBLMashatFrm
             // 

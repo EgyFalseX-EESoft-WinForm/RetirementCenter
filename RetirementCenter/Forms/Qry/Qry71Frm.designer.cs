@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class Qry47Frm
+    partial class Qry71Frm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,36 +29,27 @@
         private void InitializeComponent()
         {
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry47BindingSource = new System.Windows.Forms.BindingSource();
+            this.vQry71BindingSource = new System.Windows.Forms.BindingSource();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colExportDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiffMoney = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankMoney = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colvisawarddate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhafza = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhafzadate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNameOnCard = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltrteep = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.vQry47TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry47TableAdapter();
-            this.colActivateBank = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.vQry71TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry71TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry71BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
@@ -74,7 +65,7 @@
             this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlData.DataSource = this.vQry47BindingSource;
+            this.gridControlData.DataSource = this.vQry71BindingSource;
             this.gridControlData.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -88,16 +79,16 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 404);
+            this.gridControlData.Size = new System.Drawing.Size(969, 404);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
             // 
-            // vQry47BindingSource
+            // vQry71BindingSource
             // 
-            this.vQry47BindingSource.DataMember = "vQry47";
-            this.vQry47BindingSource.DataSource = this.dsQueries;
+            this.vQry71BindingSource.DataMember = "vQry71";
+            this.vQry71BindingSource.DataSource = this.dsQueries;
             // 
             // dsQueries
             // 
@@ -180,25 +171,16 @@
             this.gridViewData.Appearance.VertLine.BackColor = System.Drawing.Color.LightGray;
             this.gridViewData.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colExportDate,
-            this.colMMashatName,
-            this.colpersonName,
-            this.colSyndicate,
             this.colSubCommitte,
+            this.colSyndicate,
             this.colsarfnumber,
-            this.colRealName,
-            this.colvisa,
-            this.colvisawarddate,
-            this.colhafza,
-            this.colhafzadate,
-            this.colPersonId,
+            this.colMMashatName,
+            this.colDofatSarfId,
+            this.colDofatSarf,
             this.colMMashatId,
-            this.colNameOnCard,
-            this.colnewid,
-            this.colActivate,
-            this.colActivateDate,
-            this.coltrteep,
-            this.colActivateBank});
+            this.colTotal,
+            this.colBankMoney,
+            this.colDiffMoney});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -212,53 +194,38 @@
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowFooter = true;
             // 
-            // colExportDate
+            // colDiffMoney
             // 
-            this.colExportDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colExportDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colExportDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colExportDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colExportDate.Caption = "التاريخ";
-            this.colExportDate.FieldName = "ExportDate";
-            this.colExportDate.Name = "colExportDate";
-            this.colExportDate.Visible = true;
-            this.colExportDate.VisibleIndex = 0;
+            this.colDiffMoney.AppearanceCell.Options.UseTextOptions = true;
+            this.colDiffMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDiffMoney.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDiffMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDiffMoney.Caption = "الفرق";
+            this.colDiffMoney.DisplayFormat.FormatString = "n2";
+            this.colDiffMoney.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colDiffMoney.FieldName = "DiffMoney";
+            this.colDiffMoney.Name = "colDiffMoney";
+            this.colDiffMoney.OptionsColumn.ReadOnly = true;
+            this.colDiffMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DiffMoney", "{0:0.##}")});
+            this.colDiffMoney.Visible = true;
+            this.colDiffMoney.VisibleIndex = 9;
             // 
-            // colMMashatName
+            // colBankMoney
             // 
-            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "الاسم العضو";
-            this.colMMashatName.FieldName = "MMashatName";
-            this.colMMashatName.Name = "colMMashatName";
-            this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 1;
-            // 
-            // colpersonName
-            // 
-            this.colpersonName.AppearanceCell.Options.UseTextOptions = true;
-            this.colpersonName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colpersonName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colpersonName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colpersonName.Caption = "اسم الوريث";
-            this.colpersonName.FieldName = "personName";
-            this.colpersonName.Name = "colpersonName";
-            this.colpersonName.Visible = true;
-            this.colpersonName.VisibleIndex = 2;
-            // 
-            // colSyndicate
-            // 
-            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.Caption = "الفرعية";
-            this.colSyndicate.FieldName = "Syndicate";
-            this.colSyndicate.Name = "colSyndicate";
-            this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 3;
+            this.colBankMoney.AppearanceCell.Options.UseTextOptions = true;
+            this.colBankMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBankMoney.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBankMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBankMoney.Caption = "مبلغ الفيزا";
+            this.colBankMoney.DisplayFormat.FormatString = "n2";
+            this.colBankMoney.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colBankMoney.FieldName = "BankMoney";
+            this.colBankMoney.Name = "colBankMoney";
+            this.colBankMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BankMoney", "{0:0.##}")});
+            this.colBankMoney.Visible = true;
+            this.colBankMoney.VisibleIndex = 8;
             // 
             // colSubCommitte
             // 
@@ -270,7 +237,19 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 4;
+            this.colSubCommitte.VisibleIndex = 1;
+            // 
+            // colSyndicate
+            // 
+            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.Caption = "الفرعية";
+            this.colSyndicate.FieldName = "Syndicate";
+            this.colSyndicate.Name = "colSyndicate";
+            this.colSyndicate.Visible = true;
+            this.colSyndicate.VisibleIndex = 0;
             // 
             // colsarfnumber
             // 
@@ -282,79 +261,59 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 5;
+            this.colsarfnumber.VisibleIndex = 4;
             // 
-            // colRealName
+            // colMMashatName
             // 
-            this.colRealName.AppearanceCell.Options.UseTextOptions = true;
-            this.colRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.Caption = "مدخل البيان";
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 6;
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.Caption = "اسم الاب";
+            this.colMMashatName.FieldName = "MMashatName";
+            this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.Visible = true;
+            this.colMMashatName.VisibleIndex = 3;
             // 
-            // colvisa
+            // colDofatSarfId
             // 
-            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.Caption = "رقم الفيزا";
-            this.colvisa.FieldName = "visa";
-            this.colvisa.Name = "colvisa";
-            this.colvisa.Visible = true;
-            this.colvisa.VisibleIndex = 7;
+            this.colDofatSarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.Caption = "كود الدفعة";
+            this.colDofatSarfId.FieldName = "DofatSarfId";
+            this.colDofatSarfId.Name = "colDofatSarfId";
+            this.colDofatSarfId.Visible = true;
+            this.colDofatSarfId.VisibleIndex = 5;
             // 
-            // colvisawarddate
+            // colDofatSarf
             // 
-            this.colvisawarddate.AppearanceCell.Options.UseTextOptions = true;
-            this.colvisawarddate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisawarddate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colvisawarddate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisawarddate.Caption = "تاريخ الوارد";
-            this.colvisawarddate.FieldName = "visawarddate";
-            this.colvisawarddate.Name = "colvisawarddate";
-            this.colvisawarddate.Visible = true;
-            this.colvisawarddate.VisibleIndex = 8;
+            this.colDofatSarf.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf.Caption = "الدفعة";
+            this.colDofatSarf.FieldName = "DofatSarf";
+            this.colDofatSarf.Name = "colDofatSarf";
+            this.colDofatSarf.Visible = true;
+            this.colDofatSarf.VisibleIndex = 6;
             // 
-            // colhafza
+            // colTotal
             // 
-            this.colhafza.AppearanceCell.Options.UseTextOptions = true;
-            this.colhafza.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhafza.AppearanceHeader.Options.UseTextOptions = true;
-            this.colhafza.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhafza.Caption = "رقم الحافظة";
-            this.colhafza.FieldName = "hafza";
-            this.colhafza.Name = "colhafza";
-            this.colhafza.Visible = true;
-            this.colhafza.VisibleIndex = 9;
-            // 
-            // colhafzadate
-            // 
-            this.colhafzadate.AppearanceCell.Options.UseTextOptions = true;
-            this.colhafzadate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhafzadate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colhafzadate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colhafzadate.Caption = "تاريخ الحافظة";
-            this.colhafzadate.FieldName = "hafzadate";
-            this.colhafzadate.Name = "colhafzadate";
-            this.colhafzadate.Visible = true;
-            this.colhafzadate.VisibleIndex = 10;
-            // 
-            // colPersonId
-            // 
-            this.colPersonId.AppearanceCell.Options.UseTextOptions = true;
-            this.colPersonId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPersonId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPersonId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPersonId.Caption = "كود الوريث";
-            this.colPersonId.FieldName = "PersonId";
-            this.colPersonId.Name = "colPersonId";
-            this.colPersonId.Visible = true;
-            this.colPersonId.VisibleIndex = 11;
+            this.colTotal.AppearanceCell.Options.UseTextOptions = true;
+            this.colTotal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTotal.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTotal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTotal.Caption = "المبلغ";
+            this.colTotal.DisplayFormat.FormatString = "n2";
+            this.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTotal.FieldName = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "{0:0.##}")});
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 7;
             // 
             // colMMashatId
             // 
@@ -366,67 +325,7 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 12;
-            // 
-            // colNameOnCard
-            // 
-            this.colNameOnCard.AppearanceCell.Options.UseTextOptions = true;
-            this.colNameOnCard.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNameOnCard.AppearanceHeader.Options.UseTextOptions = true;
-            this.colNameOnCard.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNameOnCard.Caption = "الاسم علي الكارت";
-            this.colNameOnCard.FieldName = "NameOnCard";
-            this.colNameOnCard.Name = "colNameOnCard";
-            this.colNameOnCard.Visible = true;
-            this.colNameOnCard.VisibleIndex = 13;
-            // 
-            // colnewid
-            // 
-            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
-            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
-            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.Caption = "كود60";
-            this.colnewid.FieldName = "newid";
-            this.colnewid.Name = "colnewid";
-            this.colnewid.Visible = true;
-            this.colnewid.VisibleIndex = 14;
-            // 
-            // colActivate
-            // 
-            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تم التفعيل";
-            this.colActivate.FieldName = "Activate";
-            this.colActivate.Name = "colActivate";
-            this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 15;
-            // 
-            // colActivateDate
-            // 
-            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.Caption = "تاريخ التفعيل";
-            this.colActivateDate.FieldName = "ActivateDate";
-            this.colActivateDate.Name = "colActivateDate";
-            this.colActivateDate.Visible = true;
-            this.colActivateDate.VisibleIndex = 16;
-            // 
-            // coltrteep
-            // 
-            this.coltrteep.AppearanceCell.Options.UseTextOptions = true;
-            this.coltrteep.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coltrteep.AppearanceHeader.Options.UseTextOptions = true;
-            this.coltrteep.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coltrteep.Caption = "ترتيب";
-            this.coltrteep.FieldName = "trteep";
-            this.coltrteep.Name = "coltrteep";
-            this.coltrteep.Visible = true;
-            this.coltrteep.VisibleIndex = 17;
+            this.colMMashatId.VisibleIndex = 2;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -466,48 +365,36 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 47);
+            this.panelControl1.Size = new System.Drawing.Size(969, 47);
             this.panelControl1.TabIndex = 3;
             // 
             // btnPrintExport
             // 
             this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
+            this.btnPrintExport.Location = new System.Drawing.Point(823, 12);
             this.btnPrintExport.Name = "btnPrintExport";
             this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
             this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // vQry47TableAdapter
+            // vQry71TableAdapter
             // 
-            this.vQry47TableAdapter.ClearBeforeFill = true;
+            this.vQry71TableAdapter.ClearBeforeFill = true;
             // 
-            // colActivateBank
-            // 
-            this.colActivateBank.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivateBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateBank.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivateBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateBank.Caption = "تم التفعيل جدول بنك";
-            this.colActivateBank.FieldName = "ActivateBank";
-            this.colActivateBank.Name = "colActivateBank";
-            this.colActivateBank.Visible = true;
-            this.colActivateBank.VisibleIndex = 18;
-            // 
-            // Qry47Frm
+            // Qry71Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 462);
+            this.ClientSize = new System.Drawing.Size(969, 462);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
-            this.Name = "Qry47Frm";
-            this.Text = "البيانات المصدرة للبنك - ورثة";
+            this.Name = "Qry71Frm";
+            this.Text = "فرق بين صرفية الورثة و البنك";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry71BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
@@ -530,27 +417,17 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdituserin;
         private DataSources.dsQueries dsQueries;
-        private DevExpress.XtraGrid.Columns.GridColumn colExportDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
-        private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
+        private System.Windows.Forms.BindingSource vQry71BindingSource;
+        private DataSources.dsQueriesTableAdapters.vQry71TableAdapter vQry71TableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiffMoney;
+        private DevExpress.XtraGrid.Columns.GridColumn colBankMoney;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
+        private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colRealName;
-        private DevExpress.XtraGrid.Columns.GridColumn colvisa;
-        private DevExpress.XtraGrid.Columns.GridColumn colvisawarddate;
-        private DevExpress.XtraGrid.Columns.GridColumn colhafza;
-        private DevExpress.XtraGrid.Columns.GridColumn colhafzadate;
-        private System.Windows.Forms.BindingSource vQry47BindingSource;
-        private DataSources.dsQueriesTableAdapters.vQry47TableAdapter vQry47TableAdapter;
-        private DevExpress.XtraGrid.Columns.GridColumn colpersonName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
-        private DevExpress.XtraGrid.Columns.GridColumn colNameOnCard;
-        private DevExpress.XtraGrid.Columns.GridColumn colnewid;
-        private DevExpress.XtraGrid.Columns.GridColumn colActivate;
-        private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
-        private DevExpress.XtraGrid.Columns.GridColumn coltrteep;
-        private DevExpress.XtraGrid.Columns.GridColumn colActivateBank;
-
     }
 }

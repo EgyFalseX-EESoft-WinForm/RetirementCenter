@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class Qry27Frm
+    partial class Qry70Frm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lueDof2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lueDof1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
+            this.vQry70BindingSource = new System.Windows.Forms.BindingSource();
+            this.vQry70TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry70TableAdapter();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfdatefrom = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,71 +54,161 @@
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSarfTypeedad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResponsiblesarfName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYasref_Current = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnBank = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry70BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dsQueries
+            // 
+            this.dsQueries.DataSetName = "dsQueries";
+            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.lueDof2);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.lueDof1);
+            this.panelControl1.Controls.Add(this.btnSearch);
+            this.panelControl1.Controls.Add(this.btnPrintExport);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(969, 47);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(721, 12);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(16, 13);
+            this.labelControl2.TabIndex = 10;
+            this.labelControl2.Text = "في";
+            // 
+            // lueDof2
+            // 
+            this.lueDof2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueDof2.Location = new System.Drawing.Point(584, 9);
+            this.lueDof2.Name = "lueDof2";
+            this.lueDof2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDof2.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueDof2.Properties.DataSource = this.LSMSDof;
+            this.lueDof2.Properties.DisplayMember = "DofatSarf";
+            this.lueDof2.Properties.NullText = "";
+            this.lueDof2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueDof2.Properties.ValueMember = "DofatSarfId";
+            this.lueDof2.Size = new System.Drawing.Size(125, 20);
+            this.lueDof2.TabIndex = 1;
+            // 
+            // LSMSDof
+            // 
+            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(880, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(77, 13);
+            this.labelControl1.TabIndex = 10;
+            this.labelControl1.Text = "البحث عن الدفعة";
+            // 
+            // lueDof1
+            // 
+            this.lueDof1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueDof1.Location = new System.Drawing.Point(743, 9);
+            this.lueDof1.Name = "lueDof1";
+            this.lueDof1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDof1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueDof1.Properties.DataSource = this.LSMSDof;
+            this.lueDof1.Properties.DisplayMember = "DofatSarf";
+            this.lueDof1.Properties.NullText = "";
+            this.lueDof1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueDof1.Properties.ValueMember = "DofatSarfId";
+            this.lueDof1.Size = new System.Drawing.Size(125, 20);
+            this.lueDof1.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(444, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(134, 24);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "بحث";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnPrintExport
+            // 
+            this.btnPrintExport.Location = new System.Drawing.Point(12, 12);
+            this.btnPrintExport.Name = "btnPrintExport";
+            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
+            this.btnPrintExport.TabIndex = 0;
+            this.btnPrintExport.Text = "طباعه و تصدير";
+            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
+            // 
+            // vQry70BindingSource
+            // 
+            this.vQry70BindingSource.DataMember = "vQry70";
+            this.vQry70BindingSource.DataSource = this.dsQueries;
+            // 
+            // vQry70TableAdapter
+            // 
+            this.vQry70TableAdapter.ClearBeforeFill = true;
             // 
             // gridControlData
             // 
             this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlData.DataSource = this.LSMS;
+            this.gridControlData.DataSource = this.vQry70BindingSource;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlData.EmbeddedNavigator.TextStringFormat = "صف {0} من {1}";
-            this.gridControlData.Location = new System.Drawing.Point(0, 69);
+            this.gridControlData.Location = new System.Drawing.Point(0, 53);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 388);
-            this.gridControlData.TabIndex = 4;
+            this.gridControlData.Size = new System.Drawing.Size(969, 406);
+            this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
-            // 
-            // LSMS
-            // 
-            this.LSMS.ElementType = typeof(RetirementCenter.DataSources.Linq.vQry27);
-            this.LSMS.KeyExpression = "MMashatId;DofatSarfId;SarfTypeedadId";
             // 
             // gridViewData
             // 
@@ -200,11 +299,16 @@
             this.colsarfnumber,
             this.colDofatSarf,
             this.colSarfTypeedad,
+            this.colPersonId,
+            this.colpersonName,
             this.colSyndicate,
             this.colSubCommitte,
             this.coldatein,
             this.coluserin,
-            this.colCurrent_Yasref});
+            this.colresponsiblesarf,
+            this.colresponsiblesarfId,
+            this.colResponsiblesarfName,
+            this.colYasref_Current});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -228,7 +332,7 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 0;
+            this.colMMashatId.VisibleIndex = 2;
             // 
             // colsarfdatefrom
             // 
@@ -240,7 +344,7 @@
             this.colsarfdatefrom.FieldName = "sarfdatefrom";
             this.colsarfdatefrom.Name = "colsarfdatefrom";
             this.colsarfdatefrom.Visible = true;
-            this.colsarfdatefrom.VisibleIndex = 4;
+            this.colsarfdatefrom.VisibleIndex = 6;
             // 
             // colsarfdateto
             // 
@@ -252,7 +356,7 @@
             this.colsarfdateto.FieldName = "sarfdateto";
             this.colsarfdateto.Name = "colsarfdateto";
             this.colsarfdateto.Visible = true;
-            this.colsarfdateto.VisibleIndex = 5;
+            this.colsarfdateto.VisibleIndex = 7;
             // 
             // colmonymonth
             // 
@@ -264,7 +368,7 @@
             this.colmonymonth.FieldName = "monymonth";
             this.colmonymonth.Name = "colmonymonth";
             this.colmonymonth.Visible = true;
-            this.colmonymonth.VisibleIndex = 6;
+            this.colmonymonth.VisibleIndex = 8;
             // 
             // colrsmmonth
             // 
@@ -276,7 +380,7 @@
             this.colrsmmonth.FieldName = "rsmmonth";
             this.colrsmmonth.Name = "colrsmmonth";
             this.colrsmmonth.Visible = true;
-            this.colrsmmonth.VisibleIndex = 7;
+            this.colrsmmonth.VisibleIndex = 9;
             // 
             // coleshtrakmonth
             // 
@@ -288,7 +392,7 @@
             this.coleshtrakmonth.FieldName = "eshtrakmonth";
             this.coleshtrakmonth.Name = "coleshtrakmonth";
             this.coleshtrakmonth.Visible = true;
-            this.coleshtrakmonth.VisibleIndex = 8;
+            this.coleshtrakmonth.VisibleIndex = 10;
             // 
             // colestktaa
             // 
@@ -300,7 +404,7 @@
             this.colestktaa.FieldName = "estktaa";
             this.colestktaa.Name = "colestktaa";
             this.colestktaa.Visible = true;
-            this.colestktaa.VisibleIndex = 9;
+            this.colestktaa.VisibleIndex = 11;
             // 
             // colsarf
             // 
@@ -312,7 +416,7 @@
             this.colsarf.FieldName = "sarf";
             this.colsarf.Name = "colsarf";
             this.colsarf.Visible = true;
-            this.colsarf.VisibleIndex = 10;
+            this.colsarf.VisibleIndex = 12;
             // 
             // colEdafat
             // 
@@ -324,7 +428,7 @@
             this.colEdafat.FieldName = "Edafat";
             this.colEdafat.Name = "colEdafat";
             this.colEdafat.Visible = true;
-            this.colEdafat.VisibleIndex = 11;
+            this.colEdafat.VisibleIndex = 13;
             // 
             // colMMashatName
             // 
@@ -332,11 +436,11 @@
             this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "الاسم";
+            this.colMMashatName.Caption = "اسم العضو";
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 1;
+            this.colMMashatName.VisibleIndex = 3;
             // 
             // colsarfnumber
             // 
@@ -348,7 +452,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 12;
+            this.colsarfnumber.VisibleIndex = 14;
             // 
             // colDofatSarf
             // 
@@ -360,7 +464,7 @@
             this.colDofatSarf.FieldName = "DofatSarf";
             this.colDofatSarf.Name = "colDofatSarf";
             this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 2;
+            this.colDofatSarf.VisibleIndex = 4;
             // 
             // colSarfTypeedad
             // 
@@ -372,7 +476,31 @@
             this.colSarfTypeedad.FieldName = "SarfTypeedad";
             this.colSarfTypeedad.Name = "colSarfTypeedad";
             this.colSarfTypeedad.Visible = true;
-            this.colSarfTypeedad.VisibleIndex = 3;
+            this.colSarfTypeedad.VisibleIndex = 5;
+            // 
+            // colPersonId
+            // 
+            this.colPersonId.AppearanceCell.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.Caption = "كود الوريث";
+            this.colPersonId.FieldName = "PersonId";
+            this.colPersonId.Name = "colPersonId";
+            this.colPersonId.Visible = true;
+            this.colPersonId.VisibleIndex = 0;
+            // 
+            // colpersonName
+            // 
+            this.colpersonName.AppearanceCell.Options.UseTextOptions = true;
+            this.colpersonName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colpersonName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colpersonName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colpersonName.Caption = "اسم الوريث";
+            this.colpersonName.FieldName = "personName";
+            this.colpersonName.Name = "colpersonName";
+            this.colpersonName.Visible = true;
+            this.colpersonName.VisibleIndex = 1;
             // 
             // colSyndicate
             // 
@@ -384,7 +512,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 13;
+            this.colSyndicate.VisibleIndex = 15;
             // 
             // colSubCommitte
             // 
@@ -396,7 +524,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 14;
+            this.colSubCommitte.VisibleIndex = 16;
             // 
             // coldatein
             // 
@@ -404,12 +532,12 @@
             this.coldatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldatein.AppearanceHeader.Options.UseTextOptions = true;
             this.coldatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatein.Caption = "تاريخ الادخال";
+            this.coldatein.Caption = "التاريخ";
             this.coldatein.ColumnEdit = this.repositoryItemDateEditDMY;
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 15;
+            this.coldatein.VisibleIndex = 18;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -436,7 +564,7 @@
             this.coluserin.FieldName = "userin";
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 16;
+            this.coluserin.VisibleIndex = 17;
             // 
             // repositoryItemLookUpEdituserin
             // 
@@ -446,22 +574,59 @@
             this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserID", "User ID", 59, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEdituserin.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
             this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
             this.repositoryItemLookUpEdituserin.NullText = "";
             this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
             // 
-            // usersBindingSource
+            // colresponsiblesarf
             // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.dsRetirementCenter;
+            this.colresponsiblesarf.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarf.Caption = "مسئول";
+            this.colresponsiblesarf.FieldName = "responsiblesarf";
+            this.colresponsiblesarf.Name = "colresponsiblesarf";
+            this.colresponsiblesarf.Visible = true;
+            this.colresponsiblesarf.VisibleIndex = 19;
             // 
-            // dsRetirementCenter
+            // colresponsiblesarfId
             // 
-            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.colresponsiblesarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colresponsiblesarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colresponsiblesarfId.Caption = "كود المسئول";
+            this.colresponsiblesarfId.FieldName = "responsiblesarfId";
+            this.colresponsiblesarfId.Name = "colresponsiblesarfId";
+            this.colresponsiblesarfId.Visible = true;
+            this.colresponsiblesarfId.VisibleIndex = 20;
+            // 
+            // colResponsiblesarfName
+            // 
+            this.colResponsiblesarfName.AppearanceCell.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colResponsiblesarfName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colResponsiblesarfName.Caption = "اسم المسئول";
+            this.colResponsiblesarfName.FieldName = "ResponsiblesarfName";
+            this.colResponsiblesarfName.Name = "colResponsiblesarfName";
+            this.colResponsiblesarfName.Visible = true;
+            this.colResponsiblesarfName.VisibleIndex = 21;
+            // 
+            // colYasref_Current
+            // 
+            this.colYasref_Current.AppearanceCell.Options.UseTextOptions = true;
+            this.colYasref_Current.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYasref_Current.AppearanceHeader.Options.UseTextOptions = true;
+            this.colYasref_Current.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYasref_Current.Caption = "يصرف حاليا";
+            this.colYasref_Current.FieldName = "Yasref_Current";
+            this.colYasref_Current.Name = "colYasref_Current";
+            this.colYasref_Current.Visible = true;
+            this.colYasref_Current.VisibleIndex = 22;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -470,153 +635,44 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.btnBank);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.lueSynd);
-            this.panelControl1.Controls.Add(this.lueDof);
-            this.panelControl1.Controls.Add(this.btnPrintExport);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 63);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // btnBank
-            // 
-            this.btnBank.Location = new System.Drawing.Point(12, 6);
-            this.btnBank.Name = "btnBank";
-            this.btnBank.Size = new System.Drawing.Size(75, 49);
-            this.btnBank.TabIndex = 2;
-            this.btnBank.Text = "اعداد البنك";
-            this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(232, 38);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(34, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "الفرعية";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(237, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(29, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "الدفعة";
-            // 
-            // lueSynd
-            // 
-            this.lueSynd.Location = new System.Drawing.Point(100, 35);
-            this.lueSynd.Name = "lueSynd";
-            this.lueSynd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSynd.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueSynd.Properties.DataSource = this.LSMSSyn;
-            this.lueSynd.Properties.DisplayMember = "Syndicate";
-            this.lueSynd.Properties.NullText = "";
-            this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueSynd.Properties.ValueMember = "SyndicateId";
-            this.lueSynd.Size = new System.Drawing.Size(125, 20);
-            this.lueSynd.TabIndex = 1;
-            // 
-            // LSMSSyn
-            // 
-            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
-            this.LSMSSyn.KeyExpression = "[SyndicateId]";
-            // 
-            // lueDof
-            // 
-            this.lueDof.Location = new System.Drawing.Point(100, 9);
-            this.lueDof.Name = "lueDof";
-            this.lueDof.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueDof.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueDof.Properties.DataSource = this.LSMSDof;
-            this.lueDof.Properties.DisplayMember = "DofatSarf";
-            this.lueDof.Properties.NullText = "";
-            this.lueDof.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDof.Properties.ValueMember = "DofatSarfId";
-            this.lueDof.Size = new System.Drawing.Size(125, 20);
-            this.lueDof.TabIndex = 0;
-            // 
-            // LSMSDof
-            // 
-            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDof.KeyExpression = "[DofatSarfId]";
-            // 
-            // btnPrintExport
-            // 
-            this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
-            this.btnPrintExport.Name = "btnPrintExport";
-            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
-            this.btnPrintExport.TabIndex = 3;
-            this.btnPrintExport.Text = "طباعه و تصدير";
-            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // colCurrent_Yasref
-            // 
-            this.colCurrent_Yasref.AppearanceCell.Options.UseTextOptions = true;
-            this.colCurrent_Yasref.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCurrent_Yasref.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCurrent_Yasref.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCurrent_Yasref.Caption = "يصرف حاليا";
-            this.colCurrent_Yasref.FieldName = "Current_Yasref";
-            this.colCurrent_Yasref.Name = "colCurrent_Yasref";
-            this.colCurrent_Yasref.Visible = true;
-            this.colCurrent_Yasref.VisibleIndex = 17;
-            // 
-            // Qry27Frm
+            // Qry70Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 462);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(969, 462);
             this.Controls.Add(this.gridControlData);
-            this.Name = "Qry27Frm";
-            this.Text = "ارشيف صرف الاعضاء";
+            this.Controls.Add(this.panelControl1);
+            this.Name = "Qry70Frm";
+            this.Text = "مقارنة صرفيتين ورثة";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vQry70BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControlData;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnPrintExport;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMS;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DataSources.dsQueries dsQueries;
+        private System.Windows.Forms.BindingSource vQry70BindingSource;
+        private DataSources.dsQueriesTableAdapters.vQry70TableAdapter vQry70TableAdapter;
+        private DevExpress.XtraGrid.GridControl gridControlData;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfdatefrom;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfdateto;
@@ -630,22 +686,24 @@
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf;
         private DevExpress.XtraGrid.Columns.GridColumn colSarfTypeedad;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
+        private DevExpress.XtraGrid.Columns.GridColumn colpersonName;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn coldatein;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.XtraGrid.Columns.GridColumn coluserin;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdituserin;
-        private DataSources.dsRetirementCenter dsRetirementCenter;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter usersTableAdapter;
-        private DevExpress.XtraEditors.SimpleButton btnBank;
+        private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarf;
+        private DevExpress.XtraGrid.Columns.GridColumn colresponsiblesarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn colResponsiblesarfName;
+        private DevExpress.XtraGrid.Columns.GridColumn colYasref_Current;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LookUpEdit lueDof2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LookUpEdit lueSynd;
-        private DevExpress.XtraEditors.LookUpEdit lueDof;
+        private DevExpress.XtraEditors.LookUpEdit lueDof1;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDof;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurrent_Yasref;
-
     }
 }

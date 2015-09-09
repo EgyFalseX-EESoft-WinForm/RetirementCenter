@@ -18,6 +18,7 @@ namespace RetirementCenter
         DataSources.dsQueriesTableAdapters.GetPersonIdByMMashatIdTableAdapter adpGetPersonId = new DataSources.dsQueriesTableAdapters.GetPersonIdByMMashatIdTableAdapter();
         DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter adpUpdateNoSarf = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter();
         DataSources.dsRetirementCenterTableAdapters.TBLWarasaTableAdapter adpWarasa = new DataSources.dsRetirementCenterTableAdapters.TBLWarasaTableAdapter();
+        
         bool _Insert, _Update, _Delete;
         public TBLBeanWarsaWFrm()
         {
@@ -37,6 +38,10 @@ namespace RetirementCenter
             LSMSTBLMashat.QueryableSource = from q in dsLinq.vTBLMashats where q.yasref == true & q.MashHalaId == (int)Program.CDMashHala.Warasa select q;
             LSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs;
             ActivePriv();
+            //Set DofatSarfAId from DefaultDofatSarfAId
+            object DofId = SQLProvider.adpQry.GetDefaultDofatSarfId();
+            if (DofId != null)
+                lueDofatSarfAId.EditValue = DofId;
         }
         private void lueDofatSarfAId_EditValueChanged(object sender, EventArgs e)
         {
