@@ -93,7 +93,7 @@ namespace RetirementCenter
                     }
 
                     SQLProvider.PerformUpdate();
-
+                    SQLProvider.SetAllCommandTimeouts(SQLProvider.adpQry, 0);
                     Application.Run(new MainFrm());
                 }
                 catch (Exception ex)

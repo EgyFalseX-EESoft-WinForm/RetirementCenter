@@ -431,7 +431,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry03Frm";
-            this.Text = "الاضافات";
+            this.Text = "اضافات الاعضاء";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.QryTblAhteatyFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();

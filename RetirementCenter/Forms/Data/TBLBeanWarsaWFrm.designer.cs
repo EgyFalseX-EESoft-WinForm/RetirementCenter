@@ -45,6 +45,8 @@
             this.colremarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldateremember = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lueDofatSarfAId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLDofatSarf = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -64,8 +66,7 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLBeanWarsaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLBeanWarsaTableAdapter();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tBLBeanWarsaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).BeginInit();
@@ -85,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -95,14 +96,14 @@
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Location = new System.Drawing.Point(5, 370);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(660, 44);
+            this.panelControl1.Size = new System.Drawing.Size(867, 44);
             this.panelControl1.TabIndex = 1;
             // 
             // btnSave
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.Save;
             this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(505, 5);
+            this.btnSave.Location = new System.Drawing.Point(712, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 30);
             this.btnSave.TabIndex = 4;
@@ -127,7 +128,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.xtraTabControl1.SelectedTabPage = this.xtpGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(667, 352);
+            this.xtraTabControl1.Size = new System.Drawing.Size(872, 352);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGeneral});
@@ -138,7 +139,7 @@
             this.xtpGeneral.Controls.Add(this.groupControl1);
             this.xtpGeneral.Image = global::RetirementCenter.Properties.Resources.Edit;
             this.xtpGeneral.Name = "xtpGeneral";
-            this.xtpGeneral.Size = new System.Drawing.Size(661, 305);
+            this.xtpGeneral.Size = new System.Drawing.Size(866, 305);
             this.xtpGeneral.Text = "بيانات أساسيه";
             // 
             // groupControl2
@@ -149,7 +150,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 94);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(661, 211);
+            this.groupControl2.Size = new System.Drawing.Size(866, 211);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "بيانات الورثة";
             // 
@@ -162,7 +163,7 @@
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlMain.Size = new System.Drawing.Size(657, 188);
+            this.gridControlMain.Size = new System.Drawing.Size(862, 188);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -186,7 +187,8 @@
             this.colremarks,
             this.coldateremember,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
@@ -264,6 +266,24 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "مسئول صرف";
+            this.gridColumn2.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.gridColumn2.FieldName = "responsiblesarf";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
@@ -275,14 +295,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(661, 94);
+            this.groupControl1.Size = new System.Drawing.Size(866, 94);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "بيانات العضو و الدفعة";
             // 
             // lueDofatSarfAId
             // 
             this.lueDofatSarfAId.EditValue = "";
-            this.lueDofatSarfAId.Location = new System.Drawing.Point(88, 26);
+            this.lueDofatSarfAId.Location = new System.Drawing.Point(278, 26);
             this.lueDofatSarfAId.Name = "lueDofatSarfAId";
             this.lueDofatSarfAId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueDofatSarfAId.Properties.Appearance.Options.UseFont = true;
@@ -336,7 +356,7 @@
             // lueMMashatId
             // 
             this.lueMMashatId.EditValue = "";
-            this.lueMMashatId.Location = new System.Drawing.Point(88, 62);
+            this.lueMMashatId.Location = new System.Drawing.Point(278, 62);
             this.lueMMashatId.Name = "lueMMashatId";
             this.lueMMashatId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueMMashatId.Properties.Appearance.Options.UseFont = true;
@@ -421,7 +441,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(423, 65);
+            this.labelControl2.Location = new System.Drawing.Point(517, 65);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 19);
             this.labelControl2.TabIndex = 0;
@@ -430,7 +450,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(453, 29);
+            this.labelControl6.Location = new System.Drawing.Point(547, 29);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(42, 19);
             this.labelControl6.TabIndex = 0;
@@ -476,23 +496,17 @@
             // 
             this.tBLBeanWarsaTableAdapter.ClearBeforeFill = true;
             // 
-            // gridColumn2
+            // gridColumn3
             // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "مسئول صرف";
-            this.gridColumn2.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.gridColumn2.FieldName = "responsiblesarf";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "الرقم القومي";
+            this.gridColumn3.FieldName = "personNID";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 7;
             // 
             // TBLBeanWarsaWFrm
             // 
@@ -500,7 +514,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(684, 428);
+            this.ClientSize = new System.Drawing.Size(889, 428);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -521,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tBLBeanWarsaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -530,7 +545,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,5 +591,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

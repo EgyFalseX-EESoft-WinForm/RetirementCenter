@@ -69,6 +69,8 @@ namespace RetirementCenter
                     row["personName"] = Person.personName;
                     row["responsiblesarf"] = Person.responsiblesarf;
                     row["WarasaType"] = Person.WarasaType;
+                    if (!Person.IspersonNIDNull())
+                        row["personNID"] = Person.personNID;
                 }
             }
         }
@@ -128,8 +130,6 @@ namespace RetirementCenter
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
-
-        
        
     }
 }

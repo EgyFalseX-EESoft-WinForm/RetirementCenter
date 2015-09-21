@@ -16,6 +16,9 @@ namespace RetirementCenter.Forms.Data
         public StopYasrefByTBLBeanWarsaFrm()
         {
             InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(vQry65TableAdapter, 0);
+            SQLProvider.SetAllCommandTimeouts(tBLDofatSarfTableAdapter, 0);
+            SQLProvider.SetAllCommandTimeouts(adpQry, 0);
         }
 
         private void StopYasrefByTBLBeanWarsaFrm_Load(object sender, EventArgs e)

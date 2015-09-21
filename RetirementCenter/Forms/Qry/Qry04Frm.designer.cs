@@ -196,8 +196,6 @@
             this.colvisa});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
-            this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
             this.gridViewData.OptionsPrint.EnableAppearanceEvenRow = true;
@@ -403,7 +401,7 @@
             this.colSyndicateId.FieldName = "SyndicateId";
             this.colSyndicateId.Name = "colSyndicateId";
             this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 16;
+            this.colSyndicateId.VisibleIndex = 17;
             // 
             // colSubCommitteId
             // 
@@ -415,7 +413,7 @@
             this.colSubCommitteId.FieldName = "SubCommitteId";
             this.colSubCommitteId.Name = "colSubCommitteId";
             this.colSubCommitteId.Visible = true;
-            this.colSubCommitteId.VisibleIndex = 17;
+            this.colSubCommitteId.VisibleIndex = 18;
             // 
             // colMMashatId
             // 
@@ -427,7 +425,7 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 18;
+            this.colMMashatId.VisibleIndex = 16;
             // 
             // colvisa
             // 

@@ -69,23 +69,25 @@ namespace RetirementCenter.Forms.Data
             {
                 row.datein = SQLProvider.ServerDateTime();
                 row.userin = Program.UserInfo.UserId;
-                if (!row.IsMMashatNIdNull() && row.MMashatNId != string.Empty)
-                {
-                    if ((int)SQLProvider.adpQry.ExistsNID(row.MMashatNId, row.MMashatId, -100) > 0)
-                    {
-                        Program.ShowMsg("الرقم القومي موجود مسبقا", true, this, true);
-                        return;
-                    }
-                }
+                //Stoped cz this form become admin priv only
+                //if (!row.IsMMashatNIdNull() && row.MMashatNId != string.Empty)
+                //{
+                //    if ((int)SQLProvider.adpQry.ExistsNID(row.MMashatNId, row.MMashatId, -100) > 0)
+                //    {
+                //        Program.ShowMsg("الرقم القومي موجود مسبقا", true, this, true);
+                //        return;
+                //    }
+                //}
                 if ((bool)row["yasref", DataRowVersion.Current] != (bool)row["yasref", DataRowVersion.Original])
                     tblNoSarfDetelsTableAdapter.Insert(row.MMashatId, row.yasref, row.datehala, row.halarem, SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
                 tBLMashatFastEditBindingSource.EndEdit();
+                //Stoped cz this form become admin priv only
                 //check if this id already exported to bank
-                if ((bool)SQLProvider.adpQry.NIDBankExported_M(row.MMashatId))
-                {
-                    msgDlg.Show("تم تصدير هذا العضو الي بيانات البنك");
-                    return;
-                }
+                //if ((bool)SQLProvider.adpQry.NIDBankExported_M(row.MMashatId))
+                //{
+                //    msgDlg.Show("تم تصدير هذا العضو الي بيانات البنك");
+                //    return;
+                //}
 
                 if (!row.IsMMashatNIdNull() && row.MMashatNId != string.Empty)
                     tblMashatTableAdapter.UpdateQueryFastEdit(row.MMashatNId, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, row.yasref, row.SubCommitteId, row.MMashatId);

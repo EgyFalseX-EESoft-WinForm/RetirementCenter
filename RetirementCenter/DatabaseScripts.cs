@@ -17,7 +17,7 @@ namespace RetirementCenter
             try
             {
                 con.Open();
-
+                //vTBLMashat
                 if (CheckViewExists("vTBLMashat"))
                 {
                     cmd.CommandText = DropObject("vTBLMashat");
@@ -25,13 +25,21 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vTBLMashat;
                 cmd.ExecuteNonQuery();
-
+                //vTBLEdafat
                 if (CheckViewExists("vTBLEdafat"))
                 {
                     cmd.CommandText = DropObject("vTBLEdafat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLEdafat;
+                cmd.ExecuteNonQuery();
+                //vTBLEdafatWarasa
+                if (CheckViewExists("vTBLEdafatWarasa"))
+                {
+                    cmd.CommandText = DropObject("vTBLEdafatWarasa");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLEdafatWarasa;
                 cmd.ExecuteNonQuery();
 
                 if (CheckViewExists("vQry01"))
@@ -319,7 +327,38 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry71;
                 cmd.ExecuteNonQuery();
-
+                //vQry73
+                if (CheckViewExists("vQry73"))
+                {
+                    cmd.CommandText = DropObject("vQry73");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry73;
+                cmd.ExecuteNonQuery();
+                //vtbladminremarks
+                if (CheckViewExists("vtbladminremarks"))
+                {
+                    cmd.CommandText = DropObject("vtbladminremarks");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vtbladminremarks;
+                cmd.ExecuteNonQuery();
+                //vQry74
+                if (CheckViewExists("vQry74"))
+                {
+                    cmd.CommandText = DropObject("vQry74");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry74;
+                cmd.ExecuteNonQuery();
+                //vQry75
+                if (CheckViewExists("vQry75"))
+                {
+                    cmd.CommandText = DropObject("vQry75");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry75;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -400,6 +439,27 @@ namespace RetirementCenter
                          dbo.TBLDofatSarf ON dbo.TBLEdafat.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId ON 
                          dbo.CDsarfType.sarfTypeId = dbo.TBLEdafat.sarfTypeId LEFT OUTER JOIN
                          dbo.Users ON dbo.TBLEdafat.userin = dbo.Users.UserID ON dbo.TBLMashat.MMashatId = dbo.TBLEdafat.MMashatId";
+            }
+        }
+        public static string vTBLEdafatWarasa
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLEdafatWarasa]
+                AS
+                SELECT        dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLDofatSarf.DofatSarf, dbo.TBLDofatSarf.DofatSarfDatefrom, dbo.TBLDofatSarf.DofatSarfDateto, dbo.CDsarfType.sarfType, dbo.CDsarfType.feasarf, 
+                         dbo.TBLMashat.sarfnumber, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.TBLEdafatWarsa.PersonId, dbo.TBLEdafatWarsa.DofatSarfId, dbo.TBLEdafatWarsa.datesarf, 
+                         dbo.TBLEdafatWarsa.sarfTypeId, dbo.TBLEdafatWarsa.estktaa, dbo.TBLEdafatWarsa.datein, dbo.TBLEdafatWarsa.userin, dbo.TBLWarasa.personName, dbo.TBLWarasa.yasref, dbo.TBLWarasa.SyndicateId, 
+                         dbo.TBLWarasa.SubCommitteId
+                FROM            dbo.CDsarfType INNER JOIN
+                         dbo.CDSyndicate INNER JOIN
+                         dbo.CDSubCommitte INNER JOIN
+                         dbo.TBLWarasa ON dbo.CDSubCommitte.SubCommitteId = dbo.TBLWarasa.SubCommitteId INNER JOIN
+                         dbo.TBLEdafatWarsa ON dbo.TBLWarasa.PersonId = dbo.TBLEdafatWarsa.PersonId INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TBLEdafatWarsa.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
+                         dbo.Users ON dbo.TBLEdafatWarsa.userin = dbo.Users.UserID ON dbo.CDSyndicate.SyndicateId = dbo.TBLWarasa.SyndicateId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId ON dbo.CDsarfType.sarfTypeId = dbo.TBLEdafatWarsa.sarfTypeId";
             }
         }
         public static string vTBLWarasa
@@ -1069,7 +1129,7 @@ FROM            TBLMemberSarf INNER JOIN
             get
             {
                 return @"
-                CREATE VIEW [dbo].[vQry59]
+                CREATE VIEW [dbo].[vQry71]
                     AS
                                     WITH CTE1 AS
 (
@@ -1107,6 +1167,85 @@ WHERE Total <> BankMoney
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
                          CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
                          Users ON TBLDeathMembers.userin = Users.UserID";
+            }
+        }
+        public static string vQry73
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry73]
+                    AS
+                    WITH CTE1 AS 
+                    (SELECT        dbo.TBLNoSarfWarsa.PersonId, MAX(dbo.TBLNoSarfWarsa.datehala) AS datehala, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, 
+                    dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber
+                    , TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId
+                    FROM dbo.TBLNoSarfWarsa INNER JOIN
+                    dbo.TBLWarasa ON dbo.TBLNoSarfWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                    dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                    dbo.CDWarasaType ON dbo.TBLWarasa.WarasaTypeId = dbo.CDWarasaType.WarasaTypeId INNER JOIN
+                    dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                    dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId
+                    WHERE        (dbo.TBLNoSarfWarsa.yasref = 0) AND (dbo.TBLWarasa.yasref = 0)
+                    GROUP BY dbo.TBLNoSarfWarsa.PersonId, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, 
+                    dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId
+                    )
+                    SELECT PersonId, datehala, personName, Syndicate, WarasaType, SubCommitte, MMashatId, MMashatName, sarfnumber
+                    , SyndicateId, SubCommitteId
+                    ,(SELECT TOP (1) halarem FROM dbo.TBLNoSarfWarsa AS TBL WHERE (PersonId = CTE1_1.PersonId) AND (yasref = 0) AND (datehala = CTE1_1.datehala)) AS halarem
+                    FROM CTE1 AS CTE1_1";
+            }
+        }
+        public static string vtbladminremarks
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vtbladminremarks]
+                    AS
+                    SELECT        tbladminremarks.remarkid, tbladminremarks.MMashatId, tbladminremarks.mremark, tbladminremarks.datein, tbladminremarks.userin, tbladminremarks.adminremark, tbladminremarks.admindatein, 
+                         tbladminremarks.finished, Users.RealName, TBLMashat.MMashatName, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, TBLMashat.sarfnumber, CDSubCommitte.SubCommitte, 
+                         CDSyndicate.Syndicate
+                FROM            tbladminremarks INNER JOIN
+                         TBLMashat ON tbladminremarks.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         Users ON tbladminremarks.userin = Users.UserID";
+            }
+        }
+        public static string vQry74
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry74]
+                    AS
+                    SELECT        TBLReSarfWarasa.PersonId, TBLReSarfWarasa.DofatSarfId, TBLReSarfWarasa.datefrom, TBLReSarfWarasa.dateto, TBLReSarfWarasa.reestktaa, TBLReSarfWarasa.remarks, TBLDofatSarf.DofatSarf, 
+                         TBLWarasa.personName, TBLWarasa.personNID, TBLWarasa.yasref, TBLWarasa.MMashatId, CDSubCommitte.SubCommitte, CDSyndicate.Syndicate, CDWarasaType.WarasaType, TBLMashat.MMashatName, 
+                         TBLMashat.sarfnumber
+                    FROM            TBLReSarfWarasa INNER JOIN
+                         TBLWarasa ON TBLReSarfWarasa.PersonId = TBLWarasa.PersonId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         TBLDofatSarf ON TBLReSarfWarasa.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId";
+            }
+        }
+        public static string vQry75
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry75]
+                    AS
+                    SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.yasref, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLBeanWarsa.DofatSarfId, 
+                         TBLBeanWarsa.Beandate, TBLBeanWarsa.deleted, TBLBeanWarsa.remarks, TBLBeanWarsa.dateremember, TBLDofatSarf.DofatSarf
+FROM            TBLBeanWarsa INNER JOIN
+                         TBLWarasa ON TBLBeanWarsa.PersonId = TBLWarasa.PersonId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         TBLDofatSarf ON TBLBeanWarsa.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId";
             }
         }
 

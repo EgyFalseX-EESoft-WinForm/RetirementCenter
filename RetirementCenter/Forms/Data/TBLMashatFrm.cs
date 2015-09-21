@@ -17,6 +17,7 @@ using RetirementCenter.Forms.Data;
 using RetirementCenter.Misc;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.Data.Linq;
+using System.Data.SqlClient;
 
 namespace RetirementCenter
 {
@@ -188,6 +189,7 @@ namespace RetirementCenter
         {
             // TODO: This line of code loads data into the 'dsRetirementCenter.TBLReSarf' table. You can move, or remove it, as needed.
             this.tBLReSarfTableAdapter.Fill(this.dsRetirementCenter.TBLReSarf);
+            
             ActivePriv();
             LoadData();
             CustomValidationRule lengthValidationRule = new CustomValidationRule();
@@ -195,6 +197,7 @@ namespace RetirementCenter
             lengthValidationRule.ErrorType = ErrorType.Warning;
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
             tbvisa.Enabled = Program.UserInfo.IsAdmin;
+            btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
@@ -215,6 +218,8 @@ namespace RetirementCenter
 
             tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
+            warasaVisaTableAdapter.Fill(dsQueries.WarasaVisa, row.MMashatId);
+
             //check if he can edit Sarf or No
             if (row.yasref == false && (row.IsMMashatNIdNull() || row.MMashatNId == string.Empty) && row.MashHalaId == (byte)Program.CDMashHala.Asda2)
                 ceyasref.Enabled = false;
@@ -255,6 +260,7 @@ namespace RetirementCenter
             if (row.MashHalaId == (int)Misc.Types.CDMashHala.Warasa)
             {
                 xtraTabPageWarasa.PageVisible = true;
+                xtraTabPageEditResponsable.PageVisible = true;
                 xtraTabPageChangeToWarasa.PageVisible = false;
                 xtraTabPageReSarf.PageVisible = false;
                 ceSarfExpetion.Enabled = true;
@@ -262,6 +268,7 @@ namespace RetirementCenter
             else
             {
                 xtraTabPageWarasa.PageVisible = false;
+                xtraTabPageEditResponsable.PageVisible = false;
                 xtraTabPageChangeToWarasa.PageVisible = true;
                 xtraTabPageReSarf.PageVisible = true;
                 ceSarfExpetion.Enabled = false;
@@ -275,7 +282,7 @@ namespace RetirementCenter
         {
             LUESyndicateId.Enabled = true;
             LUESubCommitteId.Enabled = true;
-            LUEMashHalaId.Enabled = true;
+            LUEMashHalaId.Enabled = false;
 
             xtraTabControlMain.Enabled = gcCommands.Enabled = true;
 
@@ -283,10 +290,11 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat.NewTBLMashatRow();
 
             row.MMashatId = -1; row.MMashatName = string.Empty; row.SarfExpetion = false;
-            row.SyndicateId = -1; row.SubCommitteId = -1;
+            row.SyndicateId = -1; row.SubCommitteId = -1; tbfilenumber.EditValue = 0; row.sarfnumber = 0;
             //row.SyndicateId = Convert.ToInt32(LUESyndicateId.Properties.GetDataSourceValue("SyndicateId", 0));
             row.datein = SQLProvider.ServerDateTime(); row.userin = Program.UserInfo.UserId; row.yasref = true;
             row.mcompletesarf = true; row.melrasm = 0; row.meshtrakat = 0; row.mestktaat = 0; row.mmony = 0;
+            row.MashHalaId = (int)Program.CDMashHala.Asda2;
             dsRetirementCenter.TBLMashat.AddTBLMashatRow(row);
 
             gridControlTBLNoSarfDetels.DataSource = null;
@@ -408,7 +416,7 @@ namespace RetirementCenter
 
             if (!dxValidationProviderMain.Validate(tbMMashatName) || !dxValidationProviderMain.Validate(LUESyndicateId) ||
                 !dxValidationProviderMain.Validate(LUESubCommitteId) || !dxValidationProviderMain.Validate(tbsarfnumber) ||
-                !dxValidationProviderMain.Validate(LUEMashHalaId))
+                !dxValidationProviderMain.Validate(LUEMashHalaId) || !dxValidationProviderMain.Validate(LUEMashHalaId))
                 return;
             if ((tbMMashatNId.EditValue == null || tbMMashatNId.EditValue.ToString() == string.Empty) && !DeathBefore2013(true))
             {
@@ -460,6 +468,8 @@ namespace RetirementCenter
                     row.visa = tbvisa.EditValue.ToString();
                 row.datein = SQLProvider.ServerDateTime();
                 row.userin = Program.UserInfo.UserId;
+                row.ImportDateIn = SQLProvider.ServerDateTime();
+                row.sarfnumber = row.MMashatId;
                 tBLMashatTablebbindingSource.EndEdit();
                 tblMashatTableAdapter.Update(dsRetirementCenter.TBLMashat);
               
@@ -468,6 +478,8 @@ namespace RetirementCenter
                     dsRetirementCenter.TBLNoSarfDetels[0].MMashatId = row.MMashatId;
                     dsRetirementCenter.TBLNoSarfDetels[0].userin = Program.UserInfo.UserId;
                     dsRetirementCenter.TBLNoSarfDetels[0].datein = SQLProvider.ServerDateTime();
+
+
                     tblNoSarfDetelsTableAdapter.Update(dsRetirementCenter.TBLNoSarfDetels);
                 }
 
@@ -499,7 +511,6 @@ namespace RetirementCenter
             }
             try
             {
-                
                 DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
                 if (tbvisa.EditValue != null)
                     row.visa = tbvisa.EditValue.ToString();
@@ -517,6 +528,7 @@ namespace RetirementCenter
                                 Program.ShowMsg("الرقم القومي موجود مسبقا", true, this, true);
                                 return;
                             }
+                            row.ImportDateIn = SQLProvider.ServerDateTime();
                         }
                     }
                 }
@@ -729,7 +741,7 @@ namespace RetirementCenter
 
             DataSources.dsRetirementCenter.TBLWarasaRow row = dsRetirementCenter.TBLWarasa.NewTBLWarasaRow();
             row.PersonId = -1; row.MMashatId = Convert.ToInt32(LUEEmp.EditValue); row.personName = string.Empty;
-            row.yasref = true; row.userin = Program.UserInfo.UserId; row.datein = SQLProvider.ServerDateTime();
+            row.yasref = true; row.userin = Program.UserInfo.UserId; row.datein = SQLProvider.ServerDateTime(); row.ImportDateIn = SQLProvider.ServerDateTime();
             row.responsiblesarf = false; row.wcompletesarf = true; row.wmony = 0; row.westktaat = 0; row.welrasm = 0;
             dsRetirementCenter.TBLWarasa.AddTBLWarasaRow(row);
             //tblEdafatWarsaTableAdapter.FillByPersonId(dsRetirementCenter.TBLEdafatWarsa, -100);
@@ -986,6 +998,61 @@ namespace RetirementCenter
         private void cemcompletesarf_CheckedChanged(object sender, EventArgs e)
         {
             pnlPrivateSarf.Enabled = !cemcompletesarf.Checked;
+        }
+        private void lueVisaEditResponsable_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lueVisaEditResponsable.EditValue == null || lueVisaEditResponsable.EditValue.ToString() == string.Empty)
+                return;
+            warasaVisaResponsableTableAdapter.Fill(dsQueries.WarasaVisaResponsable, Convert.ToInt32(LUEEmp.EditValue), lueVisaEditResponsable.EditValue.ToString());
+            lueNewResponsableEditResponsable.Properties.DataSource = dsQueries.WarasaVisaResponsable;
+        }
+        private void btnChangeResponsable_Click(object sender, EventArgs e)
+        {
+            if (lueVisaEditResponsable.EditValue == null || lueVisaEditResponsable.EditValue.ToString() == string.Empty)
+                return;
+            if (lueNewResponsableEditResponsable.EditValue == null || lueNewResponsableEditResponsable.EditValue.ToString() == string.Empty)
+                return;
+            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+            //SQLProvider.adpQry.ChangeVisaResponsable(
+            SqlConnection con = new System.Data.SqlClient.SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new System.Data.SqlClient.SqlCommand("", con);
+            cmd.CommandText = @"UPDATE TBLWarasa SET responsiblesarfId = @NewId WHERE (visa = @visa) AND (MMashatId = @MMashatId)";
+            SqlParameter ParamNewId = new System.Data.SqlClient.SqlParameter("@NewId", SqlDbType.Int) { Value = Convert.ToInt32(lueNewResponsableEditResponsable.EditValue) };
+            SqlParameter ParamVisa = new System.Data.SqlClient.SqlParameter("@visa", SqlDbType.NVarChar) { Value = lueVisaEditResponsable.EditValue.ToString() };
+            SqlParameter ParamMMashatId = new System.Data.SqlClient.SqlParameter("@MMashatId", SqlDbType.Int) { Value = Convert.ToInt32(LUEEmp.EditValue) };
+            cmd.Parameters.AddRange(new SqlParameter[] { ParamNewId, ParamVisa, ParamMMashatId });
+            SqlTransaction trn = null;
+            try
+            {
+                con.Open();
+                trn = con.BeginTransaction(); cmd.Transaction = trn;
+                //Set responsiblesarfId For All
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                //Set responsiblesarf = 0 to All
+                cmd.CommandText = @"UPDATE TBLWarasa SET responsiblesarf = 0 WHERE (visa = @visa) AND (MMashatId = @MMashatId)";
+                cmd.Parameters.AddRange(new SqlParameter[] { ParamVisa, ParamMMashatId });
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                //Set responsiblesarf = 1 For NewId
+                cmd.CommandText = @"UPDATE TBLWarasa SET responsiblesarf = 1 WHERE PersonId = @NewId";
+                cmd.Parameters.Add(ParamNewId);
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                trn.Commit();
+                lueVisaEditResponsable_EditValueChanged(lueVisaEditResponsable, EventArgs.Empty);
+                lueNewResponsableEditResponsable.EditValue = null;
+                Program.ShowMsg("تم التعديل", false, this, true);
+                Program.Logger.LogThis("تم التعديل", Text, FXFW.Logger.OpType.success, null, null, this);
+            }
+            catch (SqlException ex)
+            {
+                trn.Rollback();
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+            con.Close();
         }
         #endregion
 

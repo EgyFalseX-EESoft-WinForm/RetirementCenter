@@ -24,6 +24,7 @@ namespace RetirementCenter
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
+            SQLProvider.SetAllCommandTimeouts(vQry44TableAdapter, 0);
             // TODO: This line of code loads data into the 'dsQueries.vQry44' table. You can move, or remove it, as needed.
             this.vQry44TableAdapter.Fill(this.dsQueries.vQry44);
             //gridViewData.BestFitColumns();

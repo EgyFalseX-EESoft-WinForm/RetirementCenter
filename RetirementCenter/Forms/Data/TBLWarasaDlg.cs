@@ -108,17 +108,17 @@ namespace RetirementCenter.Forms.Data
             {
                 ceyasref.Enabled = false;
             }
-
-            if (ceyasref.Checked)
-            {
-                DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();
-                if (adpQ.ResponsibleCount(_TBLWarasa[0].PersonId) > 0)
-                {
-                    ceyasref.Enabled = false;
-                    ceyasref.Text = "تم منع التعديل نظرا لان هذا الوريث مسئول عن ورثة اخرين";
-                    ceyasref.ForeColor = Color.Red;
-                }
-            }
+            
+            //if (ceyasref.Checked)
+            //{
+            //    DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();
+            //    if (adpQ.ResponsibleCount(_TBLWarasa[0].PersonId) > 0)
+            //    {
+            //        ceyasref.Enabled = false;
+            //        ceyasref.Text = "تم منع التعديل نظرا لان هذا الوريث مسئول عن ورثة اخرين";
+            //        ceyasref.ForeColor = Color.Red;
+            //    }
+            //}
 
         }
         private void ReloadRemark()
@@ -157,6 +157,7 @@ namespace RetirementCenter.Forms.Data
                 _TBLNoSarfWarsa.AddTBLNoSarfWarsaRow(row);
             else
                 ceyasref.Checked = !ceyasref.Checked;
+           
         }
         private void ceEnableEdafat_CheckedChanged(object sender, EventArgs e)
         {
@@ -189,6 +190,9 @@ namespace RetirementCenter.Forms.Data
         private void ceresponsiblesarf_CheckedChanged(object sender, EventArgs e)
         {
             LUEresponsiblesarfId.Enabled = !ceresponsiblesarf.Checked;
+
+            if (ceresponsiblesarf.Checked == true && !_TBLWarasa[0].IsvisaNull())
+                ceresponsiblesarf.Checked = false;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -226,7 +230,12 @@ namespace RetirementCenter.Forms.Data
                         Program.ShowMsg("لا يمكن ازالة مسؤل الصرف عن هذا الوريث لانه مسئول صرف عن اخرين" + Environment.NewLine +
                         "قم بأزالة مسئوليته عن الاخرين ثم عاود التعديل", true, this, true);
                         return;
-                    }    
+                    }
+                    if (_TBLWarasa[0].responsiblesarfId == _TBLWarasa[0].PersonId)
+                    {
+                        Program.ShowMsg("مسئول الصرف يجب ان يكون مسئول", true, this, true);
+                        return;
+                    }
                 }
                 if (_TBLWarasa[0].yasref && !_TBLWarasa[0].responsiblesarf)
                 {
@@ -253,6 +262,11 @@ namespace RetirementCenter.Forms.Data
                 {
                     Program.ShowMsg("الرقم القومي موجود مسبقا", true, this, true);
                     return;
+                }
+                if (_TBLWarasa.Rows[0].RowState != DataRowState.Added)
+                {
+                    if ((_TBLWarasa[0]["personNID", DataRowVersion.Current].ToString() != _TBLWarasa[0]["personNID", DataRowVersion.Original].ToString()))
+                        _TBLWarasa[0].ImportDateIn = SQLProvider.ServerDateTime();
                 }
             }
             DataSources.dsRetirementCenter.TBLWarasaRow myrow = (DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0];
