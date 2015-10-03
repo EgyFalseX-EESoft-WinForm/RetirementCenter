@@ -24,11 +24,13 @@ namespace RetirementCenter.Forms.Data
 
         DataSources.dsRetirementCenter.TBLWarasaDataTable _TBLWarasa;
         DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable _TBLNoSarfWarsa;
+        DataSources.dsRetirementCenter.tblvisawarsaactiveDataTable _tblvisawarsaactive;
         DataSources.dsRetirementCenter.TBLEdafatWarsaDataTable _TBLEdafatWarsa;
 
         #endregion
         #region -   Functions   -
-        public TBLWarasaDlg(DataSources.dsRetirementCenter.TBLWarasaDataTable TBLWarasa, DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable TBLNoSarfWarsa,
+        public TBLWarasaDlg(DataSources.dsRetirementCenter.TBLWarasaDataTable TBLWarasa, DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable TBLNoSarfWarsa
+            , DataSources.dsRetirementCenter.tblvisawarsaactiveDataTable tblvisawarsaactive, 
             DataSources.dsRetirementCenter.TBLEdafatWarsaDataTable TBLEdafatWarsa, OpenReason openReason)
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace RetirementCenter.Forms.Data
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasas where q.MMashatId == TBLWarasa[0].MMashatId select q;
             _TBLWarasa = TBLWarasa;
             _TBLNoSarfWarsa = TBLNoSarfWarsa;
+            _tblvisawarsaactive = tblvisawarsaactive;
             _TBLEdafatWarsa = TBLEdafatWarsa;
 
             switch (openReason)
@@ -73,7 +76,8 @@ namespace RetirementCenter.Forms.Data
             ceresponsiblesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarf", true));
             LUEresponsiblesarfId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarfId", true));
             tbvisa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "visa", true));
-            
+            ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", true));
+
             cewcompletesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wcompletesarf", true));
             tbwmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wmony", true));
             tbwestktaat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "westktaat", true));
@@ -86,6 +90,7 @@ namespace RetirementCenter.Forms.Data
 
             //edit visa for admin only
             tbvisa.Visible = lblvisa .Visible = Program.UserInfo.IsAdmin;
+            ceActivate.Visible = lblActivate.Visible = Program.UserInfo.IsAdmin;
 
             if (_TBLEdafatWarsa.Count > 0)
                 ceEnableEdafat.Checked = true;
@@ -158,6 +163,32 @@ namespace RetirementCenter.Forms.Data
             else
                 ceyasref.Checked = !ceyasref.Checked;
            
+        }
+        private void ceActivate_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((bool)_TBLWarasa.Rows[0]["Activate", DataRowVersion.Current] == ceActivate.Checked)
+                {
+                    _tblvisawarsaactive.Clear();
+                    return;
+                }
+            }
+            catch { return; }
+
+            if (ceActivate.Checked)
+            {
+                if (_TBLWarasa.Rows[0].RowState == DataRowState.Added)
+                    return;
+            }
+            DataSources.dsRetirementCenter.tblvisawarsaactiveRow row = _tblvisawarsaactive.NewtblvisawarsaactiveRow();
+            row.PersonId = -1; row.datehala = DateTime.Now; row.halarem = string.Empty; row.activee = ceActivate.Checked;
+            tblvisawarsaactiveDlg dlg = new tblvisawarsaactiveDlg(row);
+
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                _tblvisawarsaactive.AddtblvisawarsaactiveRow(row);
+            else
+                ceActivate.Checked = !ceActivate.Checked;
         }
         private void ceEnableEdafat_CheckedChanged(object sender, EventArgs e)
         {
@@ -306,6 +337,10 @@ namespace RetirementCenter.Forms.Data
             //DataTable visaTbl = FXFW.SqlDB.LoadDataTable("SELECT visa FROM TBLWarasa WHERE PersonId = " + )
 
             foreach (DataSources.dsRetirementCenter.TBLNoSarfWarsaRow row in _TBLNoSarfWarsa.Rows)
+            {
+                row.PersonId = ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).PersonId;
+            }
+            foreach (DataSources.dsRetirementCenter.tblvisawarsaactiveRow row in _tblvisawarsaactive.Rows)
             {
                 row.PersonId = ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).PersonId;
             }
@@ -472,6 +507,8 @@ namespace RetirementCenter.Forms.Data
         }
 
         #endregion
+
+        
 
     }
 }

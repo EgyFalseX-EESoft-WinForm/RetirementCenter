@@ -59,6 +59,7 @@
             this.tblNoSarfDetelsTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
             this.tblMashatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatFastEditBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -115,6 +116,7 @@
             // gridViewData
             // 
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMMashatId,
             this.colMMashatName,
             this.colSyndicateId,
             this.colSubCommitteId,
@@ -141,7 +143,7 @@
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.OptionsColumn.ReadOnly = true;
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 0;
+            this.colMMashatName.VisibleIndex = 1;
             this.colMMashatName.Width = 158;
             // 
             // colSyndicateId
@@ -156,7 +158,7 @@
             this.colSyndicateId.Name = "colSyndicateId";
             this.colSyndicateId.OptionsColumn.ReadOnly = true;
             this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 2;
+            this.colSyndicateId.VisibleIndex = 3;
             this.colSyndicateId.Width = 103;
             // 
             // repositoryItemGridLookUpEditSyndicateId
@@ -209,7 +211,7 @@
             this.colSubCommitteId.FieldName = "SubCommitteId";
             this.colSubCommitteId.Name = "colSubCommitteId";
             this.colSubCommitteId.Visible = true;
-            this.colSubCommitteId.VisibleIndex = 3;
+            this.colSubCommitteId.VisibleIndex = 4;
             this.colSubCommitteId.Width = 100;
             // 
             // repositoryItemGridLookUpEditSubCommitteId
@@ -263,7 +265,7 @@
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.OptionsColumn.ReadOnly = true;
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 1;
+            this.colsarfnumber.VisibleIndex = 2;
             // 
             // colMashHalaId
             // 
@@ -278,7 +280,7 @@
             this.colMashHalaId.OptionsColumn.AllowEdit = false;
             this.colMashHalaId.OptionsColumn.ReadOnly = true;
             this.colMashHalaId.Visible = true;
-            this.colMashHalaId.VisibleIndex = 4;
+            this.colMashHalaId.VisibleIndex = 5;
             // 
             // repositoryItemGridLookUpEditMashHalaId
             // 
@@ -317,7 +319,7 @@
             this.colyasref.Name = "colyasref";
             this.colyasref.OptionsColumn.ReadOnly = true;
             this.colyasref.Visible = true;
-            this.colyasref.VisibleIndex = 5;
+            this.colyasref.VisibleIndex = 6;
             // 
             // repositoryItemCheckEdityasref
             // 
@@ -336,7 +338,7 @@
             this.colMMashatNId.FieldName = "MMashatNId";
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 6;
+            this.colMMashatNId.VisibleIndex = 7;
             this.colMMashatNId.Width = 82;
             // 
             // repositoryItemTextEditMMashatNId
@@ -356,7 +358,7 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 8;
             this.gridColumn4.Width = 59;
             // 
             // repositoryItemButtonEditTransferSave
@@ -391,6 +393,19 @@
             this.colMashHala.Name = "colMashHala";
             this.colMashHala.Visible = true;
             this.colMashHala.VisibleIndex = 0;
+            // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.OptionsColumn.ReadOnly = true;
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
             // 
             // TBLMashatNIDFastEditFrm
             // 
@@ -454,5 +469,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCDMashHala;
         private DevExpress.XtraGrid.Columns.GridColumn colMashHala;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
     }
 }

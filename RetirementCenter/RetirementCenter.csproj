@@ -290,6 +290,30 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaFrm.Designer.cs">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWFrm.designer.cs">
+      <DependentUpon>ActivateVisaWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.designer.cs">
+      <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\tblmembervisaactiveDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\tblmembervisaactiveDlg.Designer.cs">
+      <DependentUpon>tblmembervisaactiveDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\tblvisawarsaactiveDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\tblvisawarsaactiveDlg.Designer.cs">
+      <DependentUpon>tblvisawarsaactiveDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\tbladminremarksEditFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1162,6 +1186,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaFrm.resx">
       <DependentUpon>ActivateVisaWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\ActivateVisaWFrm.resx">
+      <DependentUpon>ActivateVisaWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaWFrm.resx">
+      <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\tblmembervisaactiveDlg.resx">
+      <DependentUpon>tblmembervisaactiveDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\tblvisawarsaactiveDlg.resx">
+      <DependentUpon>tblvisawarsaactiveDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\tbladminremarksEditFrm.resx">
       <DependentUpon>tbladminremarksEditFrm.cs</DependentUpon>

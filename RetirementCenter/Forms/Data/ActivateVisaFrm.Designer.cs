@@ -56,6 +56,8 @@
             this.repositoryItemGridLookUpEditMashHalaId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWData)).BeginInit();
@@ -70,18 +72,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditMashHalaId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControlData
             // 
+            this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlData.DataSource = this.XPSCSData;
-            this.gridControlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlData.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlData.Location = new System.Drawing.Point(0, 0);
+            this.gridControlData.Location = new System.Drawing.Point(0, 12);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -91,7 +97,7 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemGridLookUpEditMashHalaId,
             this.repositoryItemDateEditDMY});
-            this.gridControlData.Size = new System.Drawing.Size(892, 361);
+            this.gridControlData.Size = new System.Drawing.Size(892, 312);
             this.gridControlData.TabIndex = 2;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -400,11 +406,33 @@
             this.colMashHala.Visible = true;
             this.colMashHala.VisibleIndex = 0;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.AllowTouchScroll = true;
+            this.groupControl2.Controls.Add(this.btnNew);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl2.Location = new System.Drawing.Point(0, 330);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(892, 69);
+            this.groupControl2.TabIndex = 3;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnNew.Image = global::RetirementCenter.Properties.Resources.Add;
+            this.btnNew.Location = new System.Drawing.Point(687, 27);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(200, 35);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "جديد";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // ActivateVisaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 361);
+            this.ClientSize = new System.Drawing.Size(892, 399);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.gridControlData);
             this.Name = "ActivateVisaFrm";
             this.Text = "تعديل الرقم القومي و الصرف للاعضاء";
@@ -424,6 +452,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditMashHalaId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -457,5 +487,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.SimpleButton btnNew;
     }
 }

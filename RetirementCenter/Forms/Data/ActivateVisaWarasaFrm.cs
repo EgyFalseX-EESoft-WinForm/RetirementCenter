@@ -23,6 +23,13 @@ namespace RetirementCenter.Forms.Data
         {
             XPSCSData.Session.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
         }
+        private void ReloadData()
+        {
+            XPSCSData.Session.DropIdentityMap();
+            XPSCSData.Session.DropChanges();
+            XPSCSData.Reload();
+            gridViewData.RefreshData();
+        }
         private void DofatSarfActivityFrm_Load(object sender, EventArgs e)
         {
         }
@@ -40,6 +47,16 @@ namespace RetirementCenter.Forms.Data
                 Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            ActivateVisaWarasaWFrm frm = new ActivateVisaWarasaWFrm();
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                return;
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            ReloadData();
+            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
         }
 
     }

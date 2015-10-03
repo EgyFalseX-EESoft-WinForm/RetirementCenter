@@ -24,6 +24,7 @@ namespace RetirementCenter
     public partial class TBLMashatFrm : DevExpress.XtraEditors.XtraForm
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
+        DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter tblvisawarsaactiveAdapter = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter();
         object DefaultsarfTypeId = "1";
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
         public enum TabInfo
@@ -736,7 +737,7 @@ namespace RetirementCenter
         }
         private void btnAddTBLWarasa_Click(object sender, EventArgs e)
         {
-            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear();
+            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear(); dsRetirementCenter.tblvisawarsaactive.Clear();
             dsRetirementCenter.TBLEdafatWarsa.Clear();
 
             DataSources.dsRetirementCenter.TBLWarasaRow row = dsRetirementCenter.TBLWarasa.NewTBLWarasaRow();
@@ -754,7 +755,7 @@ namespace RetirementCenter
                     SyndicateId = (int)e.GetAttachedProperty("SyndicateId");
                 if (e.GetAttachedProperty("SubCommitteId") != null)
                     SubCommitteId = (int)e.GetAttachedProperty("SubCommitteId");
-                if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.TBLEdafatWarsa,
+                if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive, dsRetirementCenter.TBLEdafatWarsa,
                     ref autoOpen, SyndicateId, SubCommitteId))
                 {
                     Program.ShowMsg("تم اضافة الورثة", false, this, true);
@@ -781,7 +782,7 @@ namespace RetirementCenter
             int PersonId = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)
              gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row).PersonId;
 
-            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear();
+            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear(); dsRetirementCenter.tblvisawarsaactive.Clear();
 
             int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
 
@@ -792,7 +793,7 @@ namespace RetirementCenter
             try
             {
                 bool autoOpen = false;
-                if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.TBLEdafatWarsa, ref autoOpen))
+                if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive, dsRetirementCenter.TBLEdafatWarsa, ref autoOpen))
                 {
                     Program.ShowMsg("تم تعديل الورثة", false, this, true);
                     Program.Logger.LogThis("تم تعديل الورثة", Text, FXFW.Logger.OpType.success, null, null, this);
@@ -806,9 +807,10 @@ namespace RetirementCenter
             }
         }
         bool UpdateTBLWarsa(DataSources.dsRetirementCenter.TBLWarasaDataTable TBLWarasa, DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable TBLNoSarfDetels,
+            DataSources.dsRetirementCenter.tblvisawarsaactiveDataTable tblvisawarsaactive,
             DataSources.dsRetirementCenter.TBLEdafatWarsaDataTable TBLEdafatWarsa, ref bool AutoOpen, int? SyndicateId = null, int? SubCommitteId = null)
         {
-            TBLWarasaDlg dlg = new TBLWarasaDlg(TBLWarasa, TBLNoSarfDetels, TBLEdafatWarsa, TBLWarasaDlg.OpenReason.Edit);
+            TBLWarasaDlg dlg = new TBLWarasaDlg(TBLWarasa, TBLNoSarfDetels, tblvisawarsaactive, TBLEdafatWarsa, TBLWarasaDlg.OpenReason.Edit);
             if (dsRetirementCenter.TBLWarasa[0].RowState == DataRowState.Added)
             {
                 dlg.ceAutoOpen.Visible = true;
@@ -825,6 +827,7 @@ namespace RetirementCenter
                 tBLWarasaBindingSource.EndEdit();
                 tBLWarasaTableAdapter.Update(TBLWarasa);
                 tblNoSarfWarsaTableAdapter.Update(TBLNoSarfDetels);
+                tblvisawarsaactiveAdapter.Update(tblvisawarsaactive);
                 if (TBLEdafatWarsa.Count > 0)
                 {
                     tBLEdafatWarsaBindingSource.EndEdit();
@@ -914,7 +917,7 @@ namespace RetirementCenter
             int PersonId = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)
             gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row).PersonId;
 
-            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear();
+            dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear(); dsRetirementCenter.tblvisawarsaactive.Clear();
 
             int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
 
@@ -922,7 +925,7 @@ namespace RetirementCenter
 
             tblEdafatWarsaTableAdapter.FillByPersonId(dsRetirementCenter.TBLEdafatWarsa, PersonId);
 
-            TBLWarasaDlg dlg = new TBLWarasaDlg(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa,
+            TBLWarasaDlg dlg = new TBLWarasaDlg(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive,
                 dsRetirementCenter.TBLEdafatWarsa, TBLWarasaDlg.OpenReason.Remark);
             dlg.ShowDialog();
 

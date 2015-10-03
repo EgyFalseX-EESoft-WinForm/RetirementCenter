@@ -40,10 +40,10 @@
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditSubCommitteIdW = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEditSubCommitteId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.LSMSCDSubCommitte = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSubCommitte1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWarasaTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,11 +60,12 @@
             this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colSyndicateIdW = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitteIdW = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEditSubCommitteIdW = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSubCommitte1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLWarasaFastEditTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLWarasaFastEditTableAdapter();
             this.tblWarasaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLWarasaTableAdapter();
-            this.repositoryItemGridLookUpEditSubCommitteId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLWarasaFastEditBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -72,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSyndicateId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteIdW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasaTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDWarasaType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -82,8 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteIdW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -125,6 +126,7 @@
             // gridViewData
             // 
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPersonId,
             this.colMMashatName,
             this.colSyndicateId,
             this.colSubCommitteId,
@@ -154,7 +156,7 @@
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.OptionsColumn.ReadOnly = true;
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 0;
+            this.colMMashatName.VisibleIndex = 1;
             this.colMMashatName.Width = 92;
             // 
             // colSyndicateId
@@ -169,7 +171,7 @@
             this.colSyndicateId.Name = "colSyndicateId";
             this.colSyndicateId.OptionsColumn.ReadOnly = true;
             this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 1;
+            this.colSyndicateId.VisibleIndex = 2;
             this.colSyndicateId.Width = 103;
             // 
             // repositoryItemGridLookUpEditSyndicateId
@@ -223,48 +225,47 @@
             this.colSubCommitteId.Name = "colSubCommitteId";
             this.colSubCommitteId.OptionsColumn.ReadOnly = true;
             this.colSubCommitteId.Visible = true;
-            this.colSubCommitteId.VisibleIndex = 2;
+            this.colSubCommitteId.VisibleIndex = 3;
             this.colSubCommitteId.Width = 104;
             // 
-            // repositoryItemGridLookUpEditSubCommitteIdW
+            // repositoryItemGridLookUpEditSubCommitteId
             // 
-            this.repositoryItemGridLookUpEditSubCommitteIdW.AutoHeight = false;
-            this.repositoryItemGridLookUpEditSubCommitteIdW.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemGridLookUpEditSubCommitteId.AutoHeight = false;
+            this.repositoryItemGridLookUpEditSubCommitteId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditSubCommitteIdW.DataSource = this.LSMSCDSubCommitte;
-            this.repositoryItemGridLookUpEditSubCommitteIdW.DisplayMember = "SubCommitte";
-            this.repositoryItemGridLookUpEditSubCommitteIdW.Name = "repositoryItemGridLookUpEditSubCommitteIdW";
-            this.repositoryItemGridLookUpEditSubCommitteIdW.NullText = "";
-            this.repositoryItemGridLookUpEditSubCommitteIdW.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditSubCommitteIdW.ValueMember = "SubCommitteId";
-            this.repositoryItemGridLookUpEditSubCommitteIdW.View = this.gridView1;
-            this.repositoryItemGridLookUpEditSubCommitteIdW.Enter += new System.EventHandler(this.repositoryItemGridLookUpEditSubCommitteIdW_Enter);
+            this.repositoryItemGridLookUpEditSubCommitteId.DataSource = this.LSMSCDSubCommitte;
+            this.repositoryItemGridLookUpEditSubCommitteId.DisplayMember = "SubCommitte";
+            this.repositoryItemGridLookUpEditSubCommitteId.Name = "repositoryItemGridLookUpEditSubCommitteId";
+            this.repositoryItemGridLookUpEditSubCommitteId.NullText = "";
+            this.repositoryItemGridLookUpEditSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditSubCommitteId.ValueMember = "SubCommitteId";
+            this.repositoryItemGridLookUpEditSubCommitteId.View = this.gridView3;
             // 
             // LSMSCDSubCommitte
             // 
             this.LSMSCDSubCommitte.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSubCommitte);
             this.LSMSCDSubCommitte.KeyExpression = "[SubCommitteId]";
             // 
-            // gridView1
+            // gridView3
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSubCommitte1});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSubCommitte});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // colSubCommitte1
+            // colSubCommitte
             // 
-            this.colSubCommitte1.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitte1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitte1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte1.Caption = "الجنة";
-            this.colSubCommitte1.FieldName = "SubCommitte";
-            this.colSubCommitte1.Name = "colSubCommitte1";
-            this.colSubCommitte1.Visible = true;
-            this.colSubCommitte1.VisibleIndex = 0;
+            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.Caption = "اللجنة";
+            this.colSubCommitte.FieldName = "SubCommitte";
+            this.colSubCommitte.Name = "colSubCommitte";
+            this.colSubCommitte.Visible = true;
+            this.colSubCommitte.VisibleIndex = 0;
             // 
             // colsarfnumber
             // 
@@ -277,7 +278,7 @@
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.OptionsColumn.ReadOnly = true;
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 3;
+            this.colsarfnumber.VisibleIndex = 4;
             // 
             // colpersonName
             // 
@@ -290,7 +291,7 @@
             this.colpersonName.Name = "colpersonName";
             this.colpersonName.OptionsColumn.ReadOnly = true;
             this.colpersonName.Visible = true;
-            this.colpersonName.VisibleIndex = 4;
+            this.colpersonName.VisibleIndex = 5;
             // 
             // colWarasaTypeId
             // 
@@ -303,7 +304,7 @@
             this.colWarasaTypeId.FieldName = "WarasaTypeId";
             this.colWarasaTypeId.Name = "colWarasaTypeId";
             this.colWarasaTypeId.Visible = true;
-            this.colWarasaTypeId.VisibleIndex = 7;
+            this.colWarasaTypeId.VisibleIndex = 8;
             // 
             // repositoryItemGridLookUpEditWarasaTypeId
             // 
@@ -355,7 +356,7 @@
             this.colMMashatNId.FieldName = "personNID";
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 8;
+            this.colMMashatNId.VisibleIndex = 9;
             this.colMMashatNId.Width = 112;
             // 
             // repositoryItemTextEditpersonNID
@@ -375,7 +376,7 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 9;
+            this.gridColumn4.VisibleIndex = 10;
             this.gridColumn4.Width = 70;
             // 
             // repositoryItemButtonEditTransferSave
@@ -399,7 +400,7 @@
             this.coluserin.Name = "coluserin";
             this.coluserin.OptionsColumn.AllowEdit = false;
             this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 10;
+            this.coluserin.VisibleIndex = 11;
             this.coluserin.Width = 88;
             // 
             // repositoryItemLookUpEdituserin
@@ -432,7 +433,7 @@
             this.colSyndicateIdW.Name = "colSyndicateIdW";
             this.colSyndicateIdW.OptionsColumn.ReadOnly = true;
             this.colSyndicateIdW.Visible = true;
-            this.colSyndicateIdW.VisibleIndex = 5;
+            this.colSyndicateIdW.VisibleIndex = 6;
             // 
             // colSubCommitteIdW
             // 
@@ -445,7 +446,42 @@
             this.colSubCommitteIdW.FieldName = "SubCommitteIdW";
             this.colSubCommitteIdW.Name = "colSubCommitteIdW";
             this.colSubCommitteIdW.Visible = true;
-            this.colSubCommitteIdW.VisibleIndex = 6;
+            this.colSubCommitteIdW.VisibleIndex = 7;
+            // 
+            // repositoryItemGridLookUpEditSubCommitteIdW
+            // 
+            this.repositoryItemGridLookUpEditSubCommitteIdW.AutoHeight = false;
+            this.repositoryItemGridLookUpEditSubCommitteIdW.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditSubCommitteIdW.DataSource = this.LSMSCDSubCommitte;
+            this.repositoryItemGridLookUpEditSubCommitteIdW.DisplayMember = "SubCommitte";
+            this.repositoryItemGridLookUpEditSubCommitteIdW.Name = "repositoryItemGridLookUpEditSubCommitteIdW";
+            this.repositoryItemGridLookUpEditSubCommitteIdW.NullText = "";
+            this.repositoryItemGridLookUpEditSubCommitteIdW.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditSubCommitteIdW.ValueMember = "SubCommitteId";
+            this.repositoryItemGridLookUpEditSubCommitteIdW.View = this.gridView1;
+            this.repositoryItemGridLookUpEditSubCommitteIdW.Enter += new System.EventHandler(this.repositoryItemGridLookUpEditSubCommitteIdW_Enter);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSubCommitte1});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colSubCommitte1
+            // 
+            this.colSubCommitte1.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitte1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitte1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte1.Caption = "الجنة";
+            this.colSubCommitte1.FieldName = "SubCommitte";
+            this.colSubCommitte1.Name = "colSubCommitte1";
+            this.colSubCommitte1.Visible = true;
+            this.colSubCommitte1.VisibleIndex = 0;
             // 
             // tBLWarasaFastEditTableAdapter
             // 
@@ -455,39 +491,18 @@
             // 
             this.tblWarasaTableAdapter.ClearBeforeFill = true;
             // 
-            // repositoryItemGridLookUpEditSubCommitteId
+            // colPersonId
             // 
-            this.repositoryItemGridLookUpEditSubCommitteId.AutoHeight = false;
-            this.repositoryItemGridLookUpEditSubCommitteId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditSubCommitteId.DataSource = this.LSMSCDSubCommitte;
-            this.repositoryItemGridLookUpEditSubCommitteId.DisplayMember = "SubCommitte";
-            this.repositoryItemGridLookUpEditSubCommitteId.Name = "repositoryItemGridLookUpEditSubCommitteId";
-            this.repositoryItemGridLookUpEditSubCommitteId.NullText = "";
-            this.repositoryItemGridLookUpEditSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditSubCommitteId.ValueMember = "SubCommitteId";
-            this.repositoryItemGridLookUpEditSubCommitteId.View = this.gridView3;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSubCommitte});
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // colSubCommitte
-            // 
-            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.Caption = "اللجنة";
-            this.colSubCommitte.FieldName = "SubCommitte";
-            this.colSubCommitte.Name = "colSubCommitte";
-            this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 0;
+            this.colPersonId.AppearanceCell.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.Caption = "كود";
+            this.colPersonId.FieldName = "PersonId";
+            this.colPersonId.Name = "colPersonId";
+            this.colPersonId.OptionsColumn.ReadOnly = true;
+            this.colPersonId.Visible = true;
+            this.colPersonId.VisibleIndex = 0;
             // 
             // TBLWarasaNIDFastEditFrm
             // 
@@ -506,9 +521,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSyndicateId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteIdW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasaTypeId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDWarasaType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -516,8 +531,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubCommitteIdW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -560,5 +575,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditSubCommitteId;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
     }
 }
