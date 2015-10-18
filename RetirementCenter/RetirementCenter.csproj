@@ -302,6 +302,18 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.designer.cs">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLEstefaEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLEstefaEditFrm.Designer.cs">
+      <DependentUpon>TBLEstefaEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLEstefaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLEstefaFrm.Designer.cs">
+      <DependentUpon>TBLEstefaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\tblmembervisaactiveDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +439,18 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry77Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry77Frm.designer.cs">
+      <DependentUpon>Qry77Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry76Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry76Frm.designer.cs">
+      <DependentUpon>Qry76Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry75Frm.cs">
       <SubType>Form</SubType>
@@ -1050,6 +1074,18 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep18.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep18.designer.cs">
+      <DependentUpon>XRep18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep17.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep17.designer.cs">
+      <DependentUpon>XRep17.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep16.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1193,6 +1229,12 @@
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaWFrm.resx">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLEstefaEditFrm.resx">
+      <DependentUpon>TBLEstefaEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLEstefaFrm.resx">
+      <DependentUpon>TBLEstefaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\tblmembervisaactiveDlg.resx">
       <DependentUpon>tblmembervisaactiveDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -1256,6 +1298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry77Frm.resx">
+      <DependentUpon>Qry77Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry76Frm.resx">
+      <DependentUpon>Qry76Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry75Frm.resx">
       <DependentUpon>Qry75Frm.cs</DependentUpon>
@@ -1512,6 +1560,12 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep18.resx">
+      <DependentUpon>XRep18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep17.resx">
+      <DependentUpon>XRep17.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep16.resx">
       <DependentUpon>XRep16.cs</DependentUpon>
     </EmbeddedResource>

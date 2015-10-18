@@ -25,6 +25,7 @@ namespace RetirementCenter
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter tblvisawarsaactiveAdapter = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter();
+        DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter tblmembervisaactiveAdapter = new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
         object DefaultsarfTypeId = "1";
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
         public enum TabInfo
@@ -548,6 +549,13 @@ namespace RetirementCenter
                     dsRetirementCenter.TBLNoSarfDetels[0].datein = SQLProvider.ServerDateTime();
                     tblNoSarfDetelsTableAdapter.Update(dsRetirementCenter.TBLNoSarfDetels);
                 }
+                if (dsRetirementCenter.tblmembervisaactive.Count > 0)
+                {
+                    dsRetirementCenter.tblmembervisaactive[0].MMashatId = row.MMashatId;
+                    dsRetirementCenter.tblmembervisaactive[0].userin = Program.UserInfo.UserId;
+                    dsRetirementCenter.tblmembervisaactive[0].datein = SQLProvider.ServerDateTime();
+                    tblmembervisaactiveAdapter.Update(dsRetirementCenter.tblmembervisaactive);
+                }
 
                 if (!SaveEdafat(row))
                     Program.Logger.LogThis("لم نتمكن من حفظ الاضافات", Text, FXFW.Logger.OpType.fail, null, null, this);
@@ -609,35 +617,36 @@ namespace RetirementCenter
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (LUEEmp.EditValue == null)
-                return;
-            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-                return;
-            try
-            {
-                int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
+            return;
+            //if (LUEEmp.EditValue == null)
+            //    return;
+            //if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            //    return;
+            //try
+            //{
+            //    int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
 
-                tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
-                DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
+            //    tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
+            //    DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
 
-                SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-                SqlCommand cmd = new SqlCommand("DELETE FROM TBLMashat WHERE MMashatId = " + MMashatId , con);
-                con.Open(); cmd.ExecuteNonQuery();con.Close();
-                ///////////////////////////tblMashatTableAdapter.Delete(MMashatId);
+            //    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            //    SqlCommand cmd = new SqlCommand("DELETE FROM TBLMashat WHERE MMashatId = " + MMashatId , con);
+            //    con.Open(); cmd.ExecuteNonQuery();con.Close();
+            //    ///////////////////////////tblMashatTableAdapter.Delete(MMashatId);
                 
-                SaveEditAsLog(row, true);
+            //    SaveEditAsLog(row, true);
 
-                Program.ShowMsg("تم الحذف", false, this, true);
-                Program.Logger.LogThis("تم الحذف", Text, FXFW.Logger.OpType.success, null, null, this);
-                Reload();
-                btnNew_Click(btnNew, new EventArgs());
-                btnSave.Enabled = false;
-            }
-            catch (SqlException ex)
-            {
-                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
-                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
-            }
+            //    Program.ShowMsg("تم الحذف", false, this, true);
+            //    Program.Logger.LogThis("تم الحذف", Text, FXFW.Logger.OpType.success, null, null, this);
+            //    Reload();
+            //    btnNew_Click(btnNew, new EventArgs());
+            //    btnSave.Enabled = false;
+            //}
+            //catch (SqlException ex)
+            //{
+            //    Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+            //    Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            //}
         }
         private void gridViewRemarks_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
@@ -1058,6 +1067,34 @@ namespace RetirementCenter
             con.Close();
         }
         #endregion
+
+        private void ceActivate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dsRetirementCenter.TBLMashat.Count == 0)
+            {
+                return;
+            }
+            DataSources.dsRetirementCenter.TBLMashatRow Mainrow = dsRetirementCenter.TBLMashat[0];
+            
+            if ((bool)Mainrow["Activate", DataRowVersion.Current] == ceActivate.Checked)
+            {
+                dsRetirementCenter.tblmembervisaactive.Clear();
+                return;
+            }
+            if (ceActivate.Checked)
+            {
+                if (Mainrow.RowState == DataRowState.Added)
+                    return;
+            }
+            DataSources.dsRetirementCenter.tblmembervisaactiveRow row = dsRetirementCenter.tblmembervisaactive.NewtblmembervisaactiveRow();
+            row.MMashatId = -1; row.datehala = DateTime.Now; row.halarem = string.Empty; row.activee = ceActivate.Checked;
+            tblmembervisaactiveDlg dlg = new tblmembervisaactiveDlg(row);
+
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                dsRetirementCenter.tblmembervisaactive.AddtblmembervisaactiveRow(row);
+            else
+                ceActivate.Checked = !ceActivate.Checked;
+        }
 
     }
    

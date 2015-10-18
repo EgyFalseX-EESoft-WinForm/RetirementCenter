@@ -14,6 +14,8 @@ namespace RetirementCenter
 {
     public partial class Qry47Frm : DevExpress.XtraEditors.XtraForm
     {
+        DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter();
+        DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable dt = new DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable();
         #region -   Functions   -
         public Qry47Frm()
         {
@@ -43,6 +45,25 @@ namespace RetirementCenter
         }
 
         #endregion
+
+        private void repositoryItemButtonEditStatus_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
+            adp.FillByLastRecord(dt, row.PersonId);
+            if (dt.Rows.Count == 0)
+                return;
+
+            string msg = string.Format("التاريخ : {0} \n\r الحالة : {1} \n\r ملاحظات : {2}", dt[0].datehala, dt[0].yasref == true ? "يصرف" : "لا يصرف", dt[0].halarem);
+            MessageBox.Show(msg, "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+        }
+
+        private void repositoryItemButtonEditArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
+            Qry77Frm frm = new Qry77Frm(row.PersonId);
+            frm.ShowDialog();
+        }
 
     }
 }

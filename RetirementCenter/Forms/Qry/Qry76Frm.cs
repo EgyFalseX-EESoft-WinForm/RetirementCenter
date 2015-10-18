@@ -12,21 +12,29 @@ using DevExpress.XtraSplashScreen;
 
 namespace RetirementCenter
 {
-    public partial class Qry44Frm : DevExpress.XtraEditors.XtraForm
+    public partial class Qry76Frm : DevExpress.XtraEditors.XtraForm
     {
+        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
+        int _mmashatid = 0;
         #region -   Functions   -
-        public Qry44Frm()
+        public Qry76Frm()
         {
             InitializeComponent();
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+        }
+        public Qry76Frm(int mmashatid)
+        {
+            InitializeComponent();
+            _mmashatid = mmashatid;
         }
         #endregion
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            SQLProvider.SetAllCommandTimeouts(vQry44TableAdapter, 0);
-            // TODO: This line of code loads data into the 'dsQueries.vQry44' table. You can move, or remove it, as needed.
-            this.vQry44TableAdapter.Fill(this.dsQueries.vQry44);
+            if (_mmashatid == 0)
+                LSMS.QueryableSource = dsLinq.vQry76s;
+            else
+                LSMS.QueryableSource = from q in dsLinq.vQry76s where q.MMashatId == _mmashatid select q;
+            
             //gridViewData.BestFitColumns();
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
@@ -41,15 +49,8 @@ namespace RetirementCenter
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
-        private void repositoryItemButtonEditArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            DataSources.dsQueries.vQry44Row row = (DataSources.dsQueries.vQry44Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
-            Qry76Frm frm = new Qry76Frm(row.MMashatId);
-            frm.ShowDialog();
-        }
-        #endregion
 
-        
+        #endregion
 
     }
 }

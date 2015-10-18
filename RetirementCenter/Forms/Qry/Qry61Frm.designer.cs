@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry61BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vQry61BindingSource = new System.Windows.Forms.BindingSource();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,6 +52,7 @@
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -66,7 +66,6 @@
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry61TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry61TableAdapter();
-            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry61BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -249,7 +248,7 @@
             this.colvisanumber.AppearanceHeader.Options.UseTextOptions = true;
             this.colvisanumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colvisanumber.Caption = "PAN";
-            this.colvisanumber.FieldName = "visanumber";
+            this.colvisanumber.FieldName = "visa";
             this.colvisanumber.Name = "colvisanumber";
             this.colvisanumber.Visible = true;
             this.colvisanumber.VisibleIndex = 1;
@@ -458,6 +457,18 @@
             this.colMMashatName1.Visible = true;
             this.colMMashatName1.VisibleIndex = 19;
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "Activate";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 20;
+            // 
             // repositoryItemDateEditDate
             // 
             this.repositoryItemDateEditDate.AutoHeight = false;
@@ -583,18 +594,6 @@
             // vQry61TableAdapter
             // 
             this.vQry61TableAdapter.ClearBeforeFill = true;
-            // 
-            // colActivate
-            // 
-            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "Activate";
-            this.colActivate.FieldName = "Activate";
-            this.colActivate.Name = "colActivate";
-            this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 20;
             // 
             // Qry61Frm
             // 

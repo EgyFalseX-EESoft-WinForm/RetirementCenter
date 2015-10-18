@@ -49,6 +49,7 @@ namespace RetirementCenter
             tbmosthhekNid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhekNid", true));
             tbmosthhekmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhekmony", true));
             tbmosthhek.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhek", true));
+            tbsefa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "sefa", true));
         }
         private void FormWFrm_Load(object sender, EventArgs e)
         {
@@ -92,7 +93,9 @@ namespace RetirementCenter
                 return;
             }
             lblMemType.Text = adpQ.GetMashHalaByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
-            ceYasref.Checked = (bool)adpQ.GetYasrefByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
+            object obj = adpQ.GetYasrefByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
+            if (obj != null)
+                ceYasref.Checked = (bool)obj;
         }
        
     }

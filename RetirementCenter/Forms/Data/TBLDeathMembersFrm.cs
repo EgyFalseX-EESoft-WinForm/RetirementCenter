@@ -74,7 +74,7 @@ namespace RetirementCenter
         {
             DataSources.dsRetirementCenter ds = new DataSources.dsRetirementCenter();
             DataSources.dsRetirementCenter.TBLDeathMembersRow row = ds.TBLDeathMembers.NewTBLDeathMembersRow();
-            row.MMashatId = -1; row.deathdate = SQLProvider.ServerDateTime(); row.mosthhek = string.Empty;
+            row.MMashatId = -1; row.deathdate = SQLProvider.ServerDateTime(); row.mosthhek = string.Empty; row.sefa = string.Empty;
 
             TBLDeathMembersWFrm frm = new TBLDeathMembersWFrm(row, _Insert, _Update, _Delete);
             if (frm.ShowDialog() != System.Windows.Forms.DialogResult.OK)

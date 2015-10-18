@@ -37,6 +37,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
             this.ceYasref = new DevExpress.XtraEditors.CheckEdit();
+            this.tbsefa = new DevExpress.XtraEditors.TextEdit();
             this.tbmosthhekmony = new DevExpress.XtraEditors.TextEdit();
             this.tbmosthhekNid = new DevExpress.XtraEditors.TextEdit();
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -51,6 +52,7 @@
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tbmosthhek = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -69,6 +71,7 @@
             this.xtraTabControl1.SuspendLayout();
             this.xtpGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceYasref.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbsefa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekmony.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekNid.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
@@ -106,7 +109,8 @@
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.panelControl1.Controls.Add(this.btnClose);
-            this.panelControl1.Location = new System.Drawing.Point(5, 383);
+            this.panelControl1.Controls.Add(this.btnSave);
+            this.panelControl1.Location = new System.Drawing.Point(5, 386);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(520, 44);
             this.panelControl1.TabIndex = 1;
@@ -127,10 +131,10 @@
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.Save;
             this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(316, 276);
+            this.btnSave.Location = new System.Drawing.Point(365, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 30);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "حفـــــــــــــــــــــــــظ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -140,7 +144,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.xtraTabControl1.SelectedTabPage = this.xtpGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(525, 365);
+            this.xtraTabControl1.Size = new System.Drawing.Size(525, 368);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGeneral});
@@ -148,12 +152,13 @@
             // xtpGeneral
             // 
             this.xtpGeneral.Controls.Add(this.ceYasref);
+            this.xtpGeneral.Controls.Add(this.tbsefa);
             this.xtpGeneral.Controls.Add(this.tbmosthhekmony);
             this.xtpGeneral.Controls.Add(this.tbmosthhekNid);
-            this.xtpGeneral.Controls.Add(this.btnSave);
             this.xtpGeneral.Controls.Add(this.lueMMashatId);
             this.xtpGeneral.Controls.Add(this.lueSyn);
             this.xtpGeneral.Controls.Add(this.tbmosthhek);
+            this.xtpGeneral.Controls.Add(this.labelControl7);
             this.xtpGeneral.Controls.Add(this.labelControl6);
             this.xtpGeneral.Controls.Add(this.labelControl5);
             this.xtpGeneral.Controls.Add(this.labelControl2);
@@ -164,7 +169,7 @@
             this.xtpGeneral.Controls.Add(this.dedeathdate);
             this.xtpGeneral.Image = global::RetirementCenter.Properties.Resources.Edit;
             this.xtpGeneral.Name = "xtpGeneral";
-            this.xtpGeneral.Size = new System.Drawing.Size(519, 318);
+            this.xtpGeneral.Size = new System.Drawing.Size(519, 321);
             this.xtpGeneral.Text = "بيانات أساسيه";
             // 
             // ceYasref
@@ -180,6 +185,15 @@
             this.ceYasref.Size = new System.Drawing.Size(75, 19);
             this.ceYasref.TabIndex = 99;
             this.ceYasref.TabStop = false;
+            // 
+            // tbsefa
+            // 
+            this.tbsefa.Location = new System.Drawing.Point(55, 279);
+            this.tbsefa.Name = "tbsefa";
+            this.tbsefa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbsefa.Properties.Appearance.Options.UseFont = true;
+            this.tbsefa.Size = new System.Drawing.Size(233, 26);
+            this.tbsefa.TabIndex = 6;
             // 
             // tbmosthhekmony
             // 
@@ -333,8 +347,17 @@
             this.tbmosthhek.Location = new System.Drawing.Point(53, 226);
             this.tbmosthhek.Name = "tbmosthhek";
             this.tbmosthhek.Properties.MaxLength = 75;
-            this.tbmosthhek.Size = new System.Drawing.Size(233, 80);
+            this.tbmosthhek.Size = new System.Drawing.Size(233, 38);
             this.tbmosthhek.TabIndex = 5;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl7.Location = new System.Drawing.Point(427, 282);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(35, 19);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "صفته";
             // 
             // labelControl6
             // 
@@ -457,7 +480,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(542, 436);
+            this.ClientSize = new System.Drawing.Size(542, 434);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -474,6 +497,7 @@
             this.xtpGeneral.ResumeLayout(false);
             this.xtpGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceYasref.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbsefa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekmony.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmosthhekNid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
@@ -530,5 +554,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.CheckEdit ceYasref;
         private DevExpress.XtraEditors.LabelControl lblMemType;
+        private DevExpress.XtraEditors.TextEdit tbsefa;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

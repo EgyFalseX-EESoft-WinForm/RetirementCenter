@@ -50,17 +50,23 @@
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltrteep = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivateBank = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditStatus = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditArc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry47TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry47TableAdapter();
-            this.colActivateBank = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
@@ -87,7 +93,9 @@
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
-            this.repositoryItemLookUpEdituserin});
+            this.repositoryItemLookUpEdituserin,
+            this.repositoryItemButtonEditStatus,
+            this.repositoryItemButtonEditArc});
             this.gridControlData.Size = new System.Drawing.Size(734, 404);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
@@ -198,10 +206,11 @@
             this.colActivate,
             this.colActivateDate,
             this.coltrteep,
-            this.colActivateBank});
+            this.colActivateBank,
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
             this.gridViewData.OptionsPrint.EnableAppearanceEvenRow = true;
@@ -428,6 +437,60 @@
             this.coltrteep.Visible = true;
             this.coltrteep.VisibleIndex = 17;
             // 
+            // colActivateBank
+            // 
+            this.colActivateBank.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivateBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateBank.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivateBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateBank.Caption = "تم التفعيل جدول بنك";
+            this.colActivateBank.FieldName = "ActivateBank";
+            this.colActivateBank.Name = "colActivateBank";
+            this.colActivateBank.Visible = true;
+            this.colActivateBank.VisibleIndex = 18;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "تعديل حالة الصرف";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditStatus;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 19;
+            // 
+            // repositoryItemButtonEditStatus
+            // 
+            this.repositoryItemButtonEditStatus.AutoHeight = false;
+            this.repositoryItemButtonEditStatus.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditStatus.Name = "repositoryItemButtonEditStatus";
+            this.repositoryItemButtonEditStatus.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditStatus.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditStatus_ButtonClick);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "الارشيف";
+            this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditArc;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 20;
+            // 
+            // repositoryItemButtonEditArc
+            // 
+            this.repositoryItemButtonEditArc.AutoHeight = false;
+            this.repositoryItemButtonEditArc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditArc.Name = "repositoryItemButtonEditArc";
+            this.repositoryItemButtonEditArc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditArc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditArc_ButtonClick);
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -483,18 +546,6 @@
             // 
             this.vQry47TableAdapter.ClearBeforeFill = true;
             // 
-            // colActivateBank
-            // 
-            this.colActivateBank.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivateBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateBank.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivateBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateBank.Caption = "تم التفعيل جدول بنك";
-            this.colActivateBank.FieldName = "ActivateBank";
-            this.colActivateBank.Name = "colActivateBank";
-            this.colActivateBank.Visible = true;
-            this.colActivateBank.VisibleIndex = 18;
-            // 
             // Qry47Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +561,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
@@ -551,6 +604,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
         private DevExpress.XtraGrid.Columns.GridColumn coltrteep;
         private DevExpress.XtraGrid.Columns.GridColumn colActivateBank;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditArc;
 
     }
 }
