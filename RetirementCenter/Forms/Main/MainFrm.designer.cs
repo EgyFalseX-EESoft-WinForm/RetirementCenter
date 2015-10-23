@@ -28,19 +28,20 @@ namespace RetirementCenter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.mbRetCenterDBChange = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAppOptions = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterPasswordChanger = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterStatus = new DevExpress.XtraBars.BarStaticItem();
@@ -207,7 +208,9 @@ namespace RetirementCenter
             this.mbRetCenterQry75 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep17 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep18 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.mbRetCenterTBLEstefa = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterXRep19 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -234,9 +237,9 @@ namespace RetirementCenter
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PBBackground = new System.Windows.Forms.PictureBox();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
-            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu();
-            this.mbRetCenterTBLEstefa = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.mbRetCenterQry78 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
@@ -434,10 +437,12 @@ namespace RetirementCenter
             this.mbRetCenterQry77,
             this.mbRetCenterXRep17,
             this.mbRetCenterXRep18,
-            this.mbRetCenterTBLEstefa});
+            this.mbRetCenterTBLEstefa,
+            this.mbRetCenterXRep19,
+            this.mbRetCenterQry78});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 334;
+            this.ribbonControl.MaxItemId = 336;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2357,6 +2362,25 @@ namespace RetirementCenter
             this.mbRetCenterXRep18.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.mbRetCenterXRep18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterXRep18_ItemClick);
             // 
+            // mbRetCenterTBLEstefa
+            // 
+            this.mbRetCenterTBLEstefa.Caption = "«” Ì›«¡";
+            this.mbRetCenterTBLEstefa.Id = 333;
+            this.mbRetCenterTBLEstefa.ImageIndex = 50;
+            this.mbRetCenterTBLEstefa.LargeImageIndex = 50;
+            this.mbRetCenterTBLEstefa.Name = "mbRetCenterTBLEstefa";
+            this.mbRetCenterTBLEstefa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTBLEstefa_ItemClick);
+            // 
+            // mbRetCenterXRep19
+            // 
+            this.mbRetCenterXRep19.Caption = " ﬁ—Ì— «⁄«‰… «·Ê›«…";
+            this.mbRetCenterXRep19.Id = 334;
+            this.mbRetCenterXRep19.ImageIndex = 24;
+            this.mbRetCenterXRep19.LargeImageIndex = 24;
+            this.mbRetCenterXRep19.Name = "mbRetCenterXRep19";
+            this.mbRetCenterXRep19.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.mbRetCenterXRep19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterXRep19_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -2507,6 +2531,7 @@ namespace RetirementCenter
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry72);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry73);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry75);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry78);
             this.QryribbonPageGroup.Name = "QryribbonPageGroup";
             this.QryribbonPageGroup.Text = "«·«” ⁄·«„« ";
             // 
@@ -2550,6 +2575,7 @@ namespace RetirementCenter
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep16);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep17);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep18);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep19);
             this.ReportribbonPageGroup.Name = "ReportribbonPageGroup";
             this.ReportribbonPageGroup.Text = "«· ﬁ«—Ì—";
             // 
@@ -2671,14 +2697,15 @@ namespace RetirementCenter
             this.popupMenu2.Name = "popupMenu2";
             this.popupMenu2.Ribbon = this.ribbonControl;
             // 
-            // mbRetCenterTBLEstefa
+            // mbRetCenterQry78
             // 
-            this.mbRetCenterTBLEstefa.Caption = "«” Ì›«¡";
-            this.mbRetCenterTBLEstefa.Id = 333;
-            this.mbRetCenterTBLEstefa.ImageIndex = 50;
-            this.mbRetCenterTBLEstefa.LargeImageIndex = 50;
-            this.mbRetCenterTBLEstefa.Name = "mbRetCenterTBLEstefa";
-            this.mbRetCenterTBLEstefa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTBLEstefa_ItemClick);
+            this.mbRetCenterQry78.Caption = "«·«” Ì›«¡";
+            this.mbRetCenterQry78.Id = 335;
+            this.mbRetCenterQry78.ImageIndex = 19;
+            this.mbRetCenterQry78.LargeImageIndex = 19;
+            this.mbRetCenterQry78.Name = "mbRetCenterQry78";
+            this.mbRetCenterQry78.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.mbRetCenterQry78.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry78_ItemClick);
             // 
             // MainFrm
             // 
@@ -2928,5 +2955,7 @@ namespace RetirementCenter
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep17;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep18;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLEstefa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep19;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry78;
     }
 }

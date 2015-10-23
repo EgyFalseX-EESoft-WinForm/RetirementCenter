@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -43,13 +44,13 @@
             this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
             this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -220,7 +221,9 @@
             this.mbRetCenterXRep17 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep18 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLEstefa = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.mbRetCenterXRep19 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry78 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -623,10 +626,12 @@
             this.mbRetCenterQry77,
             this.mbRetCenterXRep17,
             this.mbRetCenterXRep18,
-            this.mbRetCenterTBLEstefa});
+            this.mbRetCenterTBLEstefa,
+            this.mbRetCenterXRep19,
+            this.mbRetCenterQry78});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 334;
+            this.ribbonControl.MaxItemId = 336;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2318,6 +2323,24 @@
             this.mbRetCenterTBLEstefa.LargeImageIndex = 50;
             this.mbRetCenterTBLEstefa.Name = "mbRetCenterTBLEstefa";
             // 
+            // mbRetCenterXRep19
+            // 
+            this.mbRetCenterXRep19.Caption = "تقرير اعانة الوفاة";
+            this.mbRetCenterXRep19.Id = 334;
+            this.mbRetCenterXRep19.ImageIndex = 24;
+            this.mbRetCenterXRep19.LargeImageIndex = 24;
+            this.mbRetCenterXRep19.Name = "mbRetCenterXRep19";
+            this.mbRetCenterXRep19.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry78
+            // 
+            this.mbRetCenterQry78.Caption = "الاستيفاء";
+            this.mbRetCenterQry78.Id = 335;
+            this.mbRetCenterQry78.ImageIndex = 19;
+            this.mbRetCenterQry78.LargeImageIndex = 19;
+            this.mbRetCenterQry78.Name = "mbRetCenterQry78";
+            this.mbRetCenterQry78.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -2468,6 +2491,7 @@
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry72);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry73);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry75);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry78);
             this.QryribbonPageGroup.Name = "QryribbonPageGroup";
             this.QryribbonPageGroup.Text = "الاستعلامات";
             // 
@@ -2511,6 +2535,7 @@
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep16);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep17);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep18);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep19);
             this.ReportribbonPageGroup.Name = "ReportribbonPageGroup";
             this.ReportribbonPageGroup.Text = "التقارير";
             // 
@@ -2797,6 +2822,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep17;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep18;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLEstefa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep19;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry78;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

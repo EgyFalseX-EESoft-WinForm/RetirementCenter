@@ -26,6 +26,7 @@ namespace RetirementCenter
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter tblvisawarsaactiveAdapter = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter();
         DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter tblmembervisaactiveAdapter = new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
+        DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter adpEstefa = new DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter();
         object DefaultsarfTypeId = "1";
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
         public enum TabInfo
@@ -360,8 +361,6 @@ namespace RetirementCenter
                 msgDlg.Show("يجب ادخال الرقم القومي");
                 return;
             }
-            
-
             DataSources.dsRetirementCenter.TBLNoSarfDetelsRow row = dsRetirementCenter.TBLNoSarfDetels.NewTBLNoSarfDetelsRow();
             row.MMashatId = -1; row.datehala = DateTime.Now; row.halarem = string.Empty;
             TBLNoSarfDetelsDlg dlg = new TBLNoSarfDetelsDlg(row);
@@ -538,6 +537,7 @@ namespace RetirementCenter
                 //Update Warasa yasref
                 if (((bool)row["yasref", DataRowVersion.Current] != (bool)row["yasref", DataRowVersion.Original]) && !row.yasref && row.MashHalaId == (int)Misc.Types.CDMashHala.Warasa)
                     tBLWarasaTableAdapter.UpdateQueryYasrefAllMemberWarasa(row.MMashatId);
+                
 
                 SaveEditAsLog(row);
                 
@@ -548,6 +548,13 @@ namespace RetirementCenter
                     dsRetirementCenter.TBLNoSarfDetels[0].userin = Program.UserInfo.UserId;
                     dsRetirementCenter.TBLNoSarfDetels[0].datein = SQLProvider.ServerDateTime();
                     tblNoSarfDetelsTableAdapter.Update(dsRetirementCenter.TBLNoSarfDetels);
+                    if (msgDlg.Show("هل ترغب في تسجيل البيان في الاستيفاء ؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        if (adpEstefa.Insert(row.MMashatId, row.datein, dsRetirementCenter.TBLNoSarfDetels[0].halarem, false, row.datein, row.userin) == 0)
+                        {
+                            Program.ShowMsg(" لم نتمكن من حفظ الاستيفاء", true, this, true);
+                        }
+                    }
                 }
                 if (dsRetirementCenter.tblmembervisaactive.Count > 0)
                 {
@@ -835,6 +842,15 @@ namespace RetirementCenter
                 TBLWarasa[0].datein = SQLProvider.ServerDateTime();
                 tBLWarasaBindingSource.EndEdit();
                 tBLWarasaTableAdapter.Update(TBLWarasa);
+                //estefa
+                if (TBLNoSarfDetels.Rows.Count > 0)
+                {
+                    if (msgDlg.Show("هل ترغب في تسجيل البيان في الاستيفاء ؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        if (adpEstefa.Insert(TBLWarasa[0].MMashatId, TBLWarasa[0].datein, TBLNoSarfDetels[0].halarem + " - " + TBLWarasa[0].personName, false, TBLWarasa[0].datein, TBLWarasa[0].userin) == 0)
+                            Program.ShowMsg(" لم نتمكن من حفظ الاستيفاء", true, this, true);
+                    }
+                }
                 tblNoSarfWarsaTableAdapter.Update(TBLNoSarfDetels);
                 tblvisawarsaactiveAdapter.Update(tblvisawarsaactive);
                 if (TBLEdafatWarsa.Count > 0)

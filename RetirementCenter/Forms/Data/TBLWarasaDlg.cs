@@ -15,6 +15,7 @@ namespace RetirementCenter.Forms.Data
     {
         #region -   Variables   -
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
+        DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter adpEstefa = new DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter();
         public enum OpenReason
         {
             Edit,
@@ -162,7 +163,6 @@ namespace RetirementCenter.Forms.Data
                 _TBLNoSarfWarsa.AddTBLNoSarfWarsaRow(row);
             else
                 ceyasref.Checked = !ceyasref.Checked;
-           
         }
         private void ceActivate_CheckedChanged(object sender, EventArgs e)
         {

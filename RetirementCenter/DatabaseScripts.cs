@@ -383,6 +383,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vTBLEstefa;
                 cmd.ExecuteNonQuery();
+                //vQry78
+                if (CheckViewExists("vQry78"))
+                {
+                    cmd.CommandText = DropObject("vQry78");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry78;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -1323,6 +1331,22 @@ FROM            TBLBeanWarsa INNER JOIN
                          Users ON TBLEstefa.userin = Users.UserID INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
                          CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
+            }
+        }
+        public static string vQry78
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry78]
+                    AS
+                    SELECT        dbo.TBLEstefa.MMashatId, dbo.TBLEstefa.estefadate, dbo.TBLEstefa.estefamem, dbo.TBLEstefa.finished, dbo.TBLEstefa.datein, dbo.TBLEstefa.userin, dbo.Users.RealName, dbo.TBLMashat.MMashatName, 
+                         dbo.TBLMashat.sarfnumber, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.TBLEstefa.estefaid
+FROM            dbo.TBLEstefa INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLEstefa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TBLEstefa.userin = dbo.Users.UserID";
             }
         }
     }
