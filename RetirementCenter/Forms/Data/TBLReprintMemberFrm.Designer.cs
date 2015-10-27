@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter.Forms.Data
 {
-    partial class TBLEstefaFrm
+    partial class TBLReprintMemberFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,15 +32,8 @@
             this.LSMSDATA = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmremark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.colestefareplay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coladmindatein = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colfinished = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,37 +41,52 @@
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colreprintreson = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colreprintdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colreprintremark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsendbankdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colwaredbankdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditDofatSarfId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemGridLookUpEditMashHalaId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter();
+            this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReprintMemberTableAdapter();
+            this.deFrom = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.deTo = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnUpdateBackDate = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSyndicateId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDofatSarfId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditMashHalaId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -86,6 +94,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -96,7 +111,7 @@
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlData.Location = new System.Drawing.Point(12, 12);
+            this.gridControlData.Location = new System.Drawing.Point(12, 38);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -108,7 +123,7 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemButtonEditDelete,
             this.repositoryItemMemoExEdit1});
-            this.gridControlData.Size = new System.Drawing.Size(868, 279);
+            this.gridControlData.Size = new System.Drawing.Size(868, 257);
             this.gridControlData.TabIndex = 0;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -116,24 +131,26 @@
             // 
             // LSMSDATA
             // 
-            this.LSMSDATA.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLEstefa);
-            this.LSMSDATA.KeyExpression = "estefaid";
+            this.LSMSDATA.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLReprintMember);
+            this.LSMSDATA.KeyExpression = "[reprintid]";
             // 
             // gridViewData
             // 
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.colmremark,
-            this.colestefareplay,
             this.coldatein,
             this.coluserin,
-            this.coladmindatein,
-            this.colfinished,
             this.gridColumn2,
             this.gridColumn3,
             this.colSyndicate,
             this.colSubCommitte,
-            this.colsarfnumber});
+            this.colsarfnumber,
+            this.colreprintreson,
+            this.colreprintdate,
+            this.colreprintremark,
+            this.colsendbankdate,
+            this.colwaredbankdate,
+            this.colvisa});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
@@ -153,51 +170,17 @@
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 136;
             // 
-            // colmremark
-            // 
-            this.colmremark.AppearanceCell.Options.UseTextOptions = true;
-            this.colmremark.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmremark.AppearanceHeader.Options.UseTextOptions = true;
-            this.colmremark.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmremark.Caption = "الطلب";
-            this.colmremark.ColumnEdit = this.repositoryItemMemoExEdit1;
-            this.colmremark.FieldName = "estefamem";
-            this.colmremark.Name = "colmremark";
-            this.colmremark.Visible = true;
-            this.colmremark.VisibleIndex = 5;
-            this.colmremark.Width = 77;
-            // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
-            // 
-            // colestefareplay
-            // 
-            this.colestefareplay.AppearanceCell.Options.UseTextOptions = true;
-            this.colestefareplay.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colestefareplay.AppearanceHeader.Options.UseTextOptions = true;
-            this.colestefareplay.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colestefareplay.Caption = "رد الفرعية";
-            this.colestefareplay.ColumnEdit = this.repositoryItemMemoExEdit1;
-            this.colestefareplay.FieldName = "estefareplay";
-            this.colestefareplay.Name = "colestefareplay";
-            this.colestefareplay.Visible = true;
-            this.colestefareplay.VisibleIndex = 6;
-            // 
             // coldatein
             // 
             this.coldatein.AppearanceCell.Options.UseTextOptions = true;
             this.coldatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldatein.AppearanceHeader.Options.UseTextOptions = true;
             this.coldatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatein.Caption = "تاريخ الادخال";
+            this.coldatein.Caption = "التاريخ";
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 7;
+            this.coldatein.VisibleIndex = 10;
             // 
             // coluserin
             // 
@@ -209,52 +192,7 @@
             this.coluserin.FieldName = "RealName";
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 8;
-            // 
-            // coladmindatein
-            // 
-            this.coladmindatein.AppearanceCell.Options.UseTextOptions = true;
-            this.coladmindatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coladmindatein.AppearanceHeader.Options.UseTextOptions = true;
-            this.coladmindatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coladmindatein.Caption = "التاريخ";
-            this.coladmindatein.ColumnEdit = this.repositoryItemDateEditDMY;
-            this.coladmindatein.FieldName = "estefadate";
-            this.coladmindatein.Name = "coladmindatein";
-            this.coladmindatein.Visible = true;
-            this.coladmindatein.VisibleIndex = 4;
-            // 
-            // repositoryItemDateEditDMY
-            // 
-            this.repositoryItemDateEditDMY.AutoHeight = false;
-            this.repositoryItemDateEditDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEditDMY.DisplayFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditDMY.EditFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditDMY.Mask.EditMask = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.Name = "repositoryItemDateEditDMY";
-            this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // colfinished
-            // 
-            this.colfinished.AppearanceCell.Options.UseTextOptions = true;
-            this.colfinished.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colfinished.AppearanceHeader.Options.UseTextOptions = true;
-            this.colfinished.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colfinished.Caption = "اغلاق";
-            this.colfinished.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colfinished.FieldName = "finished";
-            this.colfinished.Name = "colfinished";
-            this.colfinished.Visible = true;
-            this.colfinished.VisibleIndex = 9;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.coluserin.VisibleIndex = 11;
             // 
             // gridColumn2
             // 
@@ -266,7 +204,7 @@
             this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 10;
+            this.gridColumn2.VisibleIndex = 12;
             // 
             // repositoryItemButtonEditTransferSave
             // 
@@ -287,7 +225,7 @@
             this.gridColumn3.ColumnEdit = this.repositoryItemButtonEditDelete;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 11;
+            this.gridColumn3.VisibleIndex = 13;
             // 
             // repositoryItemButtonEditDelete
             // 
@@ -308,7 +246,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 1;
+            this.colSyndicate.VisibleIndex = 8;
             // 
             // colSubCommitte
             // 
@@ -320,7 +258,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 2;
+            this.colSubCommitte.VisibleIndex = 9;
             // 
             // colsarfnumber
             // 
@@ -332,7 +270,79 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 3;
+            this.colsarfnumber.VisibleIndex = 1;
+            // 
+            // colreprintreson
+            // 
+            this.colreprintreson.AppearanceCell.Options.UseTextOptions = true;
+            this.colreprintreson.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintreson.AppearanceHeader.Options.UseTextOptions = true;
+            this.colreprintreson.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintreson.Caption = "السبب";
+            this.colreprintreson.FieldName = "reprintreson";
+            this.colreprintreson.Name = "colreprintreson";
+            this.colreprintreson.Visible = true;
+            this.colreprintreson.VisibleIndex = 2;
+            // 
+            // colreprintdate
+            // 
+            this.colreprintdate.AppearanceCell.Options.UseTextOptions = true;
+            this.colreprintdate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintdate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colreprintdate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintdate.Caption = "التاريخ";
+            this.colreprintdate.FieldName = "reprintdate";
+            this.colreprintdate.Name = "colreprintdate";
+            this.colreprintdate.Visible = true;
+            this.colreprintdate.VisibleIndex = 3;
+            // 
+            // colreprintremark
+            // 
+            this.colreprintremark.AppearanceCell.Options.UseTextOptions = true;
+            this.colreprintremark.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintremark.AppearanceHeader.Options.UseTextOptions = true;
+            this.colreprintremark.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colreprintremark.Caption = "ملاحظات";
+            this.colreprintremark.FieldName = "reprintremark";
+            this.colreprintremark.Name = "colreprintremark";
+            this.colreprintremark.Visible = true;
+            this.colreprintremark.VisibleIndex = 4;
+            // 
+            // colsendbankdate
+            // 
+            this.colsendbankdate.AppearanceCell.Options.UseTextOptions = true;
+            this.colsendbankdate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsendbankdate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsendbankdate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsendbankdate.Caption = "تاريخ الارسال";
+            this.colsendbankdate.FieldName = "sendbankdate";
+            this.colsendbankdate.Name = "colsendbankdate";
+            this.colsendbankdate.Visible = true;
+            this.colsendbankdate.VisibleIndex = 5;
+            // 
+            // colwaredbankdate
+            // 
+            this.colwaredbankdate.AppearanceCell.Options.UseTextOptions = true;
+            this.colwaredbankdate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colwaredbankdate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colwaredbankdate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colwaredbankdate.Caption = "تاريخ الورود";
+            this.colwaredbankdate.FieldName = "waredbankdate";
+            this.colwaredbankdate.Name = "colwaredbankdate";
+            this.colwaredbankdate.Visible = true;
+            this.colwaredbankdate.VisibleIndex = 6;
+            // 
+            // colvisa
+            // 
+            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.Caption = "الفيزا";
+            this.colvisa.FieldName = "visa";
+            this.colvisa.Name = "colvisa";
+            this.colvisa.Visible = true;
+            this.colvisa.VisibleIndex = 7;
             // 
             // repositoryItemGridLookUpEditSyndicateId
             // 
@@ -400,6 +410,11 @@
             this.colDofatSarf.Visible = true;
             this.colDofatSarf.VisibleIndex = 0;
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // repositoryItemGridLookUpEditMashHalaId
             // 
             this.repositoryItemGridLookUpEditMashHalaId.AutoHeight = false;
@@ -433,8 +448,32 @@
             this.colMashHala.Visible = true;
             this.colMashHala.VisibleIndex = 0;
             // 
+            // repositoryItemDateEditDMY
+            // 
+            this.repositoryItemDateEditDMY.AutoHeight = false;
+            this.repositoryItemDateEditDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditDMY.DisplayFormat.FormatString = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditDMY.EditFormat.FormatString = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditDMY.Mask.EditMask = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.Name = "repositoryItemDateEditDMY";
+            this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnUpdateBackDate);
+            this.layoutControl1.Controls.Add(this.deTo);
+            this.layoutControl1.Controls.Add(this.deFrom);
             this.layoutControl1.Controls.Add(this.groupControl1);
             this.layoutControl1.Controls.Add(this.gridControlData);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -450,9 +489,9 @@
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.btnAdd);
-            this.groupControl1.Location = new System.Drawing.Point(12, 295);
+            this.groupControl1.Location = new System.Drawing.Point(12, 299);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(868, 54);
+            this.groupControl1.Size = new System.Drawing.Size(868, 50);
             this.groupControl1.TabIndex = 4;
             // 
             // btnAdd
@@ -473,7 +512,10 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(892, 361);
@@ -484,9 +526,9 @@
             // 
             this.layoutControlItem1.Control = this.gridControlData;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(872, 283);
+            this.layoutControlItem1.Size = new System.Drawing.Size(872, 261);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
@@ -496,9 +538,9 @@
             // 
             this.layoutControlItem2.Control = this.groupControl1;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 283);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 287);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(872, 58);
+            this.layoutControlItem2.Size = new System.Drawing.Size(872, 54);
             this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextToControlDistance = 0;
@@ -508,31 +550,99 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
-            // TBLEstefaFrm
+            // deFrom
+            // 
+            this.deFrom.EditValue = null;
+            this.deFrom.Location = new System.Drawing.Point(585, 12);
+            this.deFrom.Name = "deFrom";
+            this.deFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deFrom.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deFrom.Size = new System.Drawing.Size(295, 20);
+            this.deFrom.StyleController = this.layoutControl1;
+            this.deFrom.TabIndex = 5;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.deFrom;
+            this.layoutControlItem3.CustomizationFormText = "من";
+            this.layoutControlItem3.Location = new System.Drawing.Point(553, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(319, 26);
+            this.layoutControlItem3.Text = "من";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(17, 13);
+            // 
+            // deTo
+            // 
+            this.deTo.EditValue = null;
+            this.deTo.Location = new System.Drawing.Point(250, 12);
+            this.deTo.Name = "deTo";
+            this.deTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTo.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deTo.Size = new System.Drawing.Size(311, 20);
+            this.deTo.StyleController = this.layoutControl1;
+            this.deTo.TabIndex = 6;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.deTo;
+            this.layoutControlItem4.CustomizationFormText = "الي";
+            this.layoutControlItem4.Location = new System.Drawing.Point(218, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(335, 26);
+            this.layoutControlItem4.Text = "الي";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(17, 13);
+            // 
+            // btnUpdateBackDate
+            // 
+            this.btnUpdateBackDate.Location = new System.Drawing.Point(12, 12);
+            this.btnUpdateBackDate.Name = "btnUpdateBackDate";
+            this.btnUpdateBackDate.Size = new System.Drawing.Size(214, 22);
+            this.btnUpdateBackDate.StyleController = this.layoutControl1;
+            this.btnUpdateBackDate.TabIndex = 7;
+            this.btnUpdateBackDate.Text = "تحديث الارسال للبنك";
+            this.btnUpdateBackDate.Click += new System.EventHandler(this.btnUpdateBackDate_Click);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnUpdateBackDate;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(218, 26);
+            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextToControlDistance = 0;
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // TBLReprintMemberFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 361);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "TBLEstefaFrm";
-            this.Text = "استيفاء";
+            this.Name = "TBLReprintMemberFrm";
+            this.Text = "اعادة اصدار اعضاء";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DofatSarfActivityFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSyndicateId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDofatSarfId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditMashHalaId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -540,6 +650,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,11 +678,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMashHala;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn colmremark;
         private DevExpress.XtraGrid.Columns.GridColumn coldatein;
         private DevExpress.XtraGrid.Columns.GridColumn coluserin;
-        private DevExpress.XtraGrid.Columns.GridColumn coladmindatein;
-        private DevExpress.XtraGrid.Columns.GridColumn colfinished;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
@@ -576,11 +690,22 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDATA;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
+        private DataSources.dsRetirementCenterTableAdapters.TBLReprintMemberTableAdapter adp;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
-        private DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter adp;
-        private DevExpress.XtraGrid.Columns.GridColumn colestefareplay;
+        private DevExpress.XtraGrid.Columns.GridColumn colreprintreson;
+        private DevExpress.XtraGrid.Columns.GridColumn colreprintdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colreprintremark;
+        private DevExpress.XtraGrid.Columns.GridColumn colsendbankdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colwaredbankdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colvisa;
+        private DevExpress.XtraEditors.SimpleButton btnUpdateBackDate;
+        private DevExpress.XtraEditors.DateEdit deTo;
+        private DevExpress.XtraEditors.DateEdit deFrom;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

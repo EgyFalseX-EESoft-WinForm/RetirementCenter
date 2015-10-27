@@ -54,9 +54,9 @@ namespace RetirementCenter
 
         private void btnBank_Click(object sender, EventArgs e)
         {
-            if (lueDof.EditValue == null || lueSynd.EditValue == null)
+            if (lueDof.EditValue == null)
             {
-                msgDlg.Show("يجب اختيار الدفعة و الفرعية", msgDlg.msgButtons.Close);
+                msgDlg.Show("يجب اختيار الدفعة ", msgDlg.msgButtons.Close);
                 return;
             }
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
@@ -64,7 +64,11 @@ namespace RetirementCenter
             int effected = 0;
             try
             {
-                effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId.ToString(), Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue));
+                if (lueSynd.EditValue == null)
+                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId.ToString(), Convert.ToInt32(lueDof.EditValue));
+                else
+                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId.ToString(), Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue));
+                
             }
             catch (System.Data.SqlClient.SqlException ex)
             {

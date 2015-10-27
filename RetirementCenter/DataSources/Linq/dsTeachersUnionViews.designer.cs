@@ -99,12 +99,30 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvQry77(vQry77 instance);
     partial void UpdatevQry77(vQry77 instance);
     partial void DeletevQry77(vQry77 instance);
+    partial void InsertvTBLReprintMember(vTBLReprintMember instance);
+    partial void UpdatevTBLReprintMember(vTBLReprintMember instance);
+    partial void DeletevTBLReprintMember(vTBLReprintMember instance);
+    partial void InsertCDreprintreson(CDreprintreson instance);
+    partial void UpdateCDreprintreson(CDreprintreson instance);
+    partial void DeleteCDreprintreson(CDreprintreson instance);
+    partial void InsertvQry79(vQry79 instance);
+    partial void UpdatevQry79(vQry79 instance);
+    partial void DeletevQry79(vQry79 instance);
     partial void InsertvTBLEstefa(vTBLEstefa instance);
     partial void UpdatevTBLEstefa(vTBLEstefa instance);
     partial void DeletevTBLEstefa(vTBLEstefa instance);
     partial void InsertvQry78(vQry78 instance);
     partial void UpdatevQry78(vQry78 instance);
     partial void DeletevQry78(vQry78 instance);
+    partial void InsertvTBLReprintWarasa01(vTBLReprintWarasa01 instance);
+    partial void UpdatevTBLReprintWarasa01(vTBLReprintWarasa01 instance);
+    partial void DeletevTBLReprintWarasa01(vTBLReprintWarasa01 instance);
+    partial void InsertvTBLReprintWarasa(vTBLReprintWarasa instance);
+    partial void UpdatevTBLReprintWarasa(vTBLReprintWarasa instance);
+    partial void DeletevTBLReprintWarasa(vTBLReprintWarasa instance);
+    partial void InsertvQry80(vQry80 instance);
+    partial void UpdatevQry80(vQry80 instance);
+    partial void DeletevQry80(vQry80 instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -625,6 +643,30 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
+		public System.Data.Linq.Table<vTBLReprintMember> vTBLReprintMembers
+		{
+			get
+			{
+				return this.GetTable<vTBLReprintMember>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CDreprintreson> CDreprintresons
+		{
+			get
+			{
+				return this.GetTable<CDreprintreson>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vQry79> vQry79s
+		{
+			get
+			{
+				return this.GetTable<vQry79>();
+			}
+		}
+		
 		public System.Data.Linq.Table<vTBLEstefa> vTBLEstefas
 		{
 			get
@@ -638,6 +680,30 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vQry78>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLReprintWarasa01> vTBLReprintWarasa01s
+		{
+			get
+			{
+				return this.GetTable<vTBLReprintWarasa01>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLReprintWarasa> vTBLReprintWarasas
+		{
+			get
+			{
+				return this.GetTable<vTBLReprintWarasa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vQry80> vQry80s
+		{
+			get
+			{
+				return this.GetTable<vQry80>();
 			}
 		}
 	}
@@ -16960,6 +17026,1032 @@ namespace RetirementCenter.DataSources.Linq
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLReprintMember")]
+	public partial class vTBLReprintMember : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _reprintid;
+		
+		private byte _reprintresonid;
+		
+		private System.DateTime _reprintdate;
+		
+		private int _MMashatId;
+		
+		private string _reprintremark;
+		
+		private System.Nullable<System.DateTime> _sendbankdate;
+		
+		private System.Nullable<System.DateTime> _waredbankdate;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private string _RealName;
+		
+		private string _visa;
+		
+		private string _reprintreson;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreprintidChanging(int value);
+    partial void OnreprintidChanged();
+    partial void OnreprintresonidChanging(byte value);
+    partial void OnreprintresonidChanged();
+    partial void OnreprintdateChanging(System.DateTime value);
+    partial void OnreprintdateChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnreprintremarkChanging(string value);
+    partial void OnreprintremarkChanged();
+    partial void OnsendbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnsendbankdateChanged();
+    partial void OnwaredbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnwaredbankdateChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnvisaChanging(string value);
+    partial void OnvisaChanged();
+    partial void OnreprintresonChanging(string value);
+    partial void OnreprintresonChanged();
+    #endregion
+		
+		public vTBLReprintMember()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int reprintid
+		{
+			get
+			{
+				return this._reprintid;
+			}
+			set
+			{
+				if ((this._reprintid != value))
+				{
+					this.OnreprintidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintid = value;
+					this.SendPropertyChanged("reprintid");
+					this.OnreprintidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintresonid", DbType="TinyInt NOT NULL")]
+		public byte reprintresonid
+		{
+			get
+			{
+				return this._reprintresonid;
+			}
+			set
+			{
+				if ((this._reprintresonid != value))
+				{
+					this.OnreprintresonidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintresonid = value;
+					this.SendPropertyChanged("reprintresonid");
+					this.OnreprintresonidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintdate", DbType="Date NOT NULL")]
+		public System.DateTime reprintdate
+		{
+			get
+			{
+				return this._reprintdate;
+			}
+			set
+			{
+				if ((this._reprintdate != value))
+				{
+					this.OnreprintdateChanging(value);
+					this.SendPropertyChanging();
+					this._reprintdate = value;
+					this.SendPropertyChanged("reprintdate");
+					this.OnreprintdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintremark", DbType="NVarChar(24)")]
+		public string reprintremark
+		{
+			get
+			{
+				return this._reprintremark;
+			}
+			set
+			{
+				if ((this._reprintremark != value))
+				{
+					this.OnreprintremarkChanging(value);
+					this.SendPropertyChanging();
+					this._reprintremark = value;
+					this.SendPropertyChanged("reprintremark");
+					this.OnreprintremarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sendbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> sendbankdate
+		{
+			get
+			{
+				return this._sendbankdate;
+			}
+			set
+			{
+				if ((this._sendbankdate != value))
+				{
+					this.OnsendbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._sendbankdate = value;
+					this.SendPropertyChanged("sendbankdate");
+					this.OnsendbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waredbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> waredbankdate
+		{
+			get
+			{
+				return this._waredbankdate;
+			}
+			set
+			{
+				if ((this._waredbankdate != value))
+				{
+					this.OnwaredbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._waredbankdate = value;
+					this.SendPropertyChanged("waredbankdate");
+					this.OnwaredbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="Date NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_visa", DbType="NVarChar(50)")]
+		public string visa
+		{
+			get
+			{
+				return this._visa;
+			}
+			set
+			{
+				if ((this._visa != value))
+				{
+					this.OnvisaChanging(value);
+					this.SendPropertyChanging();
+					this._visa = value;
+					this.SendPropertyChanged("visa");
+					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintreson", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string reprintreson
+		{
+			get
+			{
+				return this._reprintreson;
+			}
+			set
+			{
+				if ((this._reprintreson != value))
+				{
+					this.OnreprintresonChanging(value);
+					this.SendPropertyChanging();
+					this._reprintreson = value;
+					this.SendPropertyChanged("reprintreson");
+					this.OnreprintresonChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CDreprintreson")]
+	public partial class CDreprintreson : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private byte _reprintresonid;
+		
+		private string _reprintreson;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreprintresonidChanging(byte value);
+    partial void OnreprintresonidChanged();
+    partial void OnreprintresonChanging(string value);
+    partial void OnreprintresonChanged();
+    #endregion
+		
+		public CDreprintreson()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintresonid", DbType="TinyInt NOT NULL", IsPrimaryKey=true)]
+		public byte reprintresonid
+		{
+			get
+			{
+				return this._reprintresonid;
+			}
+			set
+			{
+				if ((this._reprintresonid != value))
+				{
+					this.OnreprintresonidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintresonid = value;
+					this.SendPropertyChanged("reprintresonid");
+					this.OnreprintresonidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintreson", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string reprintreson
+		{
+			get
+			{
+				return this._reprintreson;
+			}
+			set
+			{
+				if ((this._reprintreson != value))
+				{
+					this.OnreprintresonChanging(value);
+					this.SendPropertyChanging();
+					this._reprintreson = value;
+					this.SendPropertyChanged("reprintreson");
+					this.OnreprintresonChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry79")]
+	public partial class vQry79 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _reprintid;
+		
+		private byte _reprintresonid;
+		
+		private System.DateTime _reprintdate;
+		
+		private int _MMashatId;
+		
+		private string _reprintremark;
+		
+		private System.Nullable<System.DateTime> _sendbankdate;
+		
+		private System.Nullable<System.DateTime> _waredbankdate;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private string _RealName;
+		
+		private string _visa;
+		
+		private string _reprintreson;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreprintidChanging(int value);
+    partial void OnreprintidChanged();
+    partial void OnreprintresonidChanging(byte value);
+    partial void OnreprintresonidChanged();
+    partial void OnreprintdateChanging(System.DateTime value);
+    partial void OnreprintdateChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnreprintremarkChanging(string value);
+    partial void OnreprintremarkChanged();
+    partial void OnsendbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnsendbankdateChanged();
+    partial void OnwaredbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnwaredbankdateChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnvisaChanging(string value);
+    partial void OnvisaChanged();
+    partial void OnreprintresonChanging(string value);
+    partial void OnreprintresonChanged();
+    #endregion
+		
+		public vQry79()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int reprintid
+		{
+			get
+			{
+				return this._reprintid;
+			}
+			set
+			{
+				if ((this._reprintid != value))
+				{
+					this.OnreprintidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintid = value;
+					this.SendPropertyChanged("reprintid");
+					this.OnreprintidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintresonid", DbType="TinyInt NOT NULL")]
+		public byte reprintresonid
+		{
+			get
+			{
+				return this._reprintresonid;
+			}
+			set
+			{
+				if ((this._reprintresonid != value))
+				{
+					this.OnreprintresonidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintresonid = value;
+					this.SendPropertyChanged("reprintresonid");
+					this.OnreprintresonidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintdate", DbType="Date NOT NULL")]
+		public System.DateTime reprintdate
+		{
+			get
+			{
+				return this._reprintdate;
+			}
+			set
+			{
+				if ((this._reprintdate != value))
+				{
+					this.OnreprintdateChanging(value);
+					this.SendPropertyChanging();
+					this._reprintdate = value;
+					this.SendPropertyChanged("reprintdate");
+					this.OnreprintdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintremark", DbType="NVarChar(24)")]
+		public string reprintremark
+		{
+			get
+			{
+				return this._reprintremark;
+			}
+			set
+			{
+				if ((this._reprintremark != value))
+				{
+					this.OnreprintremarkChanging(value);
+					this.SendPropertyChanging();
+					this._reprintremark = value;
+					this.SendPropertyChanged("reprintremark");
+					this.OnreprintremarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sendbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> sendbankdate
+		{
+			get
+			{
+				return this._sendbankdate;
+			}
+			set
+			{
+				if ((this._sendbankdate != value))
+				{
+					this.OnsendbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._sendbankdate = value;
+					this.SendPropertyChanged("sendbankdate");
+					this.OnsendbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waredbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> waredbankdate
+		{
+			get
+			{
+				return this._waredbankdate;
+			}
+			set
+			{
+				if ((this._waredbankdate != value))
+				{
+					this.OnwaredbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._waredbankdate = value;
+					this.SendPropertyChanged("waredbankdate");
+					this.OnwaredbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="Date NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_visa", DbType="NVarChar(50)")]
+		public string visa
+		{
+			get
+			{
+				return this._visa;
+			}
+			set
+			{
+				if ((this._visa != value))
+				{
+					this.OnvisaChanging(value);
+					this.SendPropertyChanging();
+					this._visa = value;
+					this.SendPropertyChanged("visa");
+					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintreson", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string reprintreson
+		{
+			get
+			{
+				return this._reprintreson;
+			}
+			set
+			{
+				if ((this._reprintreson != value))
+				{
+					this.OnreprintresonChanging(value);
+					this.SendPropertyChanging();
+					this._reprintreson = value;
+					this.SendPropertyChanged("reprintreson");
+					this.OnreprintresonChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLEstefa")]
 	public partial class vTBLEstefa : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -16992,6 +18084,10 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _RealName;
 		
+		private int _estefaid;
+		
+		private string _estefareplay;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -17022,6 +18118,10 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnSubCommitteChanged();
     partial void OnRealNameChanging(string value);
     partial void OnRealNameChanged();
+    partial void OnestefaidChanging(int value);
+    partial void OnestefaidChanged();
+    partial void OnestefareplayChanging(string value);
+    partial void OnestefareplayChanged();
     #endregion
 		
 		public vTBLEstefa()
@@ -17029,7 +18129,7 @@ namespace RetirementCenter.DataSources.Linq
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
 		public int MMashatId
 		{
 			get
@@ -17049,7 +18149,7 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefadate", DbType="Date NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefadate", DbType="Date NOT NULL")]
 		public System.DateTime estefadate
 		{
 			get
@@ -17285,6 +18385,46 @@ namespace RetirementCenter.DataSources.Linq
 					this._RealName = value;
 					this.SendPropertyChanged("RealName");
 					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefaid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int estefaid
+		{
+			get
+			{
+				return this._estefaid;
+			}
+			set
+			{
+				if ((this._estefaid != value))
+				{
+					this.OnestefaidChanging(value);
+					this.SendPropertyChanging();
+					this._estefaid = value;
+					this.SendPropertyChanged("estefaid");
+					this.OnestefaidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefareplay", DbType="NVarChar(250)")]
+		public string estefareplay
+		{
+			get
+			{
+				return this._estefareplay;
+			}
+			set
+			{
+				if ((this._estefareplay != value))
+				{
+					this.OnestefareplayChanging(value);
+					this.SendPropertyChanging();
+					this._estefareplay = value;
+					this.SendPropertyChanged("estefareplay");
+					this.OnestefareplayChanged();
 				}
 			}
 		}
@@ -17342,7 +18482,9 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _Syndicate;
 		
-		private System.Nullable<int> _estefaid;
+		private int _estefaid;
+		
+		private string _estefareplay;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -17374,8 +18516,10 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnSubCommitteChanged();
     partial void OnSyndicateChanging(string value);
     partial void OnSyndicateChanged();
-    partial void OnestefaidChanging(System.Nullable<int> value);
+    partial void OnestefaidChanging(int value);
     partial void OnestefaidChanged();
+    partial void OnestefareplayChanging(string value);
+    partial void OnestefareplayChanged();
     #endregion
 		
 		public vQry78()
@@ -17383,7 +18527,7 @@ namespace RetirementCenter.DataSources.Linq
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
 		public int MMashatId
 		{
 			get
@@ -17403,7 +18547,7 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefadate", DbType="Date NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefadate", DbType="Date NOT NULL")]
 		public System.DateTime estefadate
 		{
 			get
@@ -17643,8 +18787,8 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefaid", DbType="Int")]
-		public System.Nullable<int> estefaid
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefaid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int estefaid
 		{
 			get
 			{
@@ -17659,6 +18803,956 @@ namespace RetirementCenter.DataSources.Linq
 					this._estefaid = value;
 					this.SendPropertyChanged("estefaid");
 					this.OnestefaidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estefareplay", DbType="NVarChar(250)")]
+		public string estefareplay
+		{
+			get
+			{
+				return this._estefareplay;
+			}
+			set
+			{
+				if ((this._estefareplay != value))
+				{
+					this.OnestefareplayChanging(value);
+					this.SendPropertyChanging();
+					this._estefareplay = value;
+					this.SendPropertyChanged("estefareplay");
+					this.OnestefareplayChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLReprintWarasa01")]
+	public partial class vTBLReprintWarasa01 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _visa;
+		
+		private string _NameOnCard;
+		
+		private int _newid;
+		
+		private string _MMashatName;
+		
+		private string _Syndicate;
+		
+		private int _personid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnvisaChanging(string value);
+    partial void OnvisaChanged();
+    partial void OnNameOnCardChanging(string value);
+    partial void OnNameOnCardChanged();
+    partial void OnnewidChanging(int value);
+    partial void OnnewidChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnpersonidChanging(int value);
+    partial void OnpersonidChanged();
+    #endregion
+		
+		public vTBLReprintWarasa01()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_visa", DbType="NVarChar(50)")]
+		public string visa
+		{
+			get
+			{
+				return this._visa;
+			}
+			set
+			{
+				if ((this._visa != value))
+				{
+					this.OnvisaChanging(value);
+					this.SendPropertyChanging();
+					this._visa = value;
+					this.SendPropertyChanged("visa");
+					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameOnCard", DbType="NVarChar(50)")]
+		public string NameOnCard
+		{
+			get
+			{
+				return this._NameOnCard;
+			}
+			set
+			{
+				if ((this._NameOnCard != value))
+				{
+					this.OnNameOnCardChanging(value);
+					this.SendPropertyChanging();
+					this._NameOnCard = value;
+					this.SendPropertyChanged("NameOnCard");
+					this.OnNameOnCardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newid", DbType="Int NOT NULL")]
+		public int newid
+		{
+			get
+			{
+				return this._newid;
+			}
+			set
+			{
+				if ((this._newid != value))
+				{
+					this.OnnewidChanging(value);
+					this.SendPropertyChanging();
+					this._newid = value;
+					this.SendPropertyChanged("newid");
+					this.OnnewidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int personid
+		{
+			get
+			{
+				return this._personid;
+			}
+			set
+			{
+				if ((this._personid != value))
+				{
+					this.OnpersonidChanging(value);
+					this.SendPropertyChanging();
+					this._personid = value;
+					this.SendPropertyChanged("personid");
+					this.OnpersonidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLReprintWarasa")]
+	public partial class vTBLReprintWarasa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _reprintid;
+		
+		private byte _reprintresonid;
+		
+		private string _visa;
+		
+		private System.DateTime _reprintdate;
+		
+		private string _reprintremark;
+		
+		private System.Nullable<System.DateTime> _sendbankdate;
+		
+		private System.Nullable<System.DateTime> _waredbankdate;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private int _newid;
+		
+		private string _Syndicate;
+		
+		private string _MMashatName;
+		
+		private string _RealName;
+		
+		private string _reprintreson;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreprintidChanging(int value);
+    partial void OnreprintidChanged();
+    partial void OnreprintresonidChanging(byte value);
+    partial void OnreprintresonidChanged();
+    partial void OnvisaChanging(string value);
+    partial void OnvisaChanged();
+    partial void OnreprintdateChanging(System.DateTime value);
+    partial void OnreprintdateChanged();
+    partial void OnreprintremarkChanging(string value);
+    partial void OnreprintremarkChanged();
+    partial void OnsendbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnsendbankdateChanged();
+    partial void OnwaredbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnwaredbankdateChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnnewidChanging(int value);
+    partial void OnnewidChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnreprintresonChanging(string value);
+    partial void OnreprintresonChanged();
+    #endregion
+		
+		public vTBLReprintWarasa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int reprintid
+		{
+			get
+			{
+				return this._reprintid;
+			}
+			set
+			{
+				if ((this._reprintid != value))
+				{
+					this.OnreprintidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintid = value;
+					this.SendPropertyChanged("reprintid");
+					this.OnreprintidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintresonid", DbType="TinyInt NOT NULL")]
+		public byte reprintresonid
+		{
+			get
+			{
+				return this._reprintresonid;
+			}
+			set
+			{
+				if ((this._reprintresonid != value))
+				{
+					this.OnreprintresonidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintresonid = value;
+					this.SendPropertyChanged("reprintresonid");
+					this.OnreprintresonidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_visa", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string visa
+		{
+			get
+			{
+				return this._visa;
+			}
+			set
+			{
+				if ((this._visa != value))
+				{
+					this.OnvisaChanging(value);
+					this.SendPropertyChanging();
+					this._visa = value;
+					this.SendPropertyChanged("visa");
+					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintdate", DbType="Date NOT NULL")]
+		public System.DateTime reprintdate
+		{
+			get
+			{
+				return this._reprintdate;
+			}
+			set
+			{
+				if ((this._reprintdate != value))
+				{
+					this.OnreprintdateChanging(value);
+					this.SendPropertyChanging();
+					this._reprintdate = value;
+					this.SendPropertyChanged("reprintdate");
+					this.OnreprintdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintremark", DbType="NVarChar(24)")]
+		public string reprintremark
+		{
+			get
+			{
+				return this._reprintremark;
+			}
+			set
+			{
+				if ((this._reprintremark != value))
+				{
+					this.OnreprintremarkChanging(value);
+					this.SendPropertyChanging();
+					this._reprintremark = value;
+					this.SendPropertyChanged("reprintremark");
+					this.OnreprintremarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sendbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> sendbankdate
+		{
+			get
+			{
+				return this._sendbankdate;
+			}
+			set
+			{
+				if ((this._sendbankdate != value))
+				{
+					this.OnsendbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._sendbankdate = value;
+					this.SendPropertyChanged("sendbankdate");
+					this.OnsendbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waredbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> waredbankdate
+		{
+			get
+			{
+				return this._waredbankdate;
+			}
+			set
+			{
+				if ((this._waredbankdate != value))
+				{
+					this.OnwaredbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._waredbankdate = value;
+					this.SendPropertyChanged("waredbankdate");
+					this.OnwaredbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="Date NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newid", DbType="Int NOT NULL")]
+		public int newid
+		{
+			get
+			{
+				return this._newid;
+			}
+			set
+			{
+				if ((this._newid != value))
+				{
+					this.OnnewidChanging(value);
+					this.SendPropertyChanging();
+					this._newid = value;
+					this.SendPropertyChanged("newid");
+					this.OnnewidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintreson", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string reprintreson
+		{
+			get
+			{
+				return this._reprintreson;
+			}
+			set
+			{
+				if ((this._reprintreson != value))
+				{
+					this.OnreprintresonChanging(value);
+					this.SendPropertyChanging();
+					this._reprintreson = value;
+					this.SendPropertyChanged("reprintreson");
+					this.OnreprintresonChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry80")]
+	public partial class vQry80 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _reprintid;
+		
+		private byte _reprintresonid;
+		
+		private string _visa;
+		
+		private System.DateTime _reprintdate;
+		
+		private string _reprintremark;
+		
+		private System.Nullable<System.DateTime> _sendbankdate;
+		
+		private System.Nullable<System.DateTime> _waredbankdate;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private int _newid;
+		
+		private string _Syndicate;
+		
+		private string _MMashatName;
+		
+		private string _RealName;
+		
+		private string _reprintreson;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreprintidChanging(int value);
+    partial void OnreprintidChanged();
+    partial void OnreprintresonidChanging(byte value);
+    partial void OnreprintresonidChanged();
+    partial void OnvisaChanging(string value);
+    partial void OnvisaChanged();
+    partial void OnreprintdateChanging(System.DateTime value);
+    partial void OnreprintdateChanged();
+    partial void OnreprintremarkChanging(string value);
+    partial void OnreprintremarkChanged();
+    partial void OnsendbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnsendbankdateChanged();
+    partial void OnwaredbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnwaredbankdateChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnnewidChanging(int value);
+    partial void OnnewidChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnreprintresonChanging(string value);
+    partial void OnreprintresonChanged();
+    #endregion
+		
+		public vQry80()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int reprintid
+		{
+			get
+			{
+				return this._reprintid;
+			}
+			set
+			{
+				if ((this._reprintid != value))
+				{
+					this.OnreprintidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintid = value;
+					this.SendPropertyChanged("reprintid");
+					this.OnreprintidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintresonid", DbType="TinyInt NOT NULL")]
+		public byte reprintresonid
+		{
+			get
+			{
+				return this._reprintresonid;
+			}
+			set
+			{
+				if ((this._reprintresonid != value))
+				{
+					this.OnreprintresonidChanging(value);
+					this.SendPropertyChanging();
+					this._reprintresonid = value;
+					this.SendPropertyChanged("reprintresonid");
+					this.OnreprintresonidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_visa", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string visa
+		{
+			get
+			{
+				return this._visa;
+			}
+			set
+			{
+				if ((this._visa != value))
+				{
+					this.OnvisaChanging(value);
+					this.SendPropertyChanging();
+					this._visa = value;
+					this.SendPropertyChanged("visa");
+					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintdate", DbType="Date NOT NULL")]
+		public System.DateTime reprintdate
+		{
+			get
+			{
+				return this._reprintdate;
+			}
+			set
+			{
+				if ((this._reprintdate != value))
+				{
+					this.OnreprintdateChanging(value);
+					this.SendPropertyChanging();
+					this._reprintdate = value;
+					this.SendPropertyChanged("reprintdate");
+					this.OnreprintdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintremark", DbType="NVarChar(24)")]
+		public string reprintremark
+		{
+			get
+			{
+				return this._reprintremark;
+			}
+			set
+			{
+				if ((this._reprintremark != value))
+				{
+					this.OnreprintremarkChanging(value);
+					this.SendPropertyChanging();
+					this._reprintremark = value;
+					this.SendPropertyChanged("reprintremark");
+					this.OnreprintremarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sendbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> sendbankdate
+		{
+			get
+			{
+				return this._sendbankdate;
+			}
+			set
+			{
+				if ((this._sendbankdate != value))
+				{
+					this.OnsendbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._sendbankdate = value;
+					this.SendPropertyChanged("sendbankdate");
+					this.OnsendbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waredbankdate", DbType="Date")]
+		public System.Nullable<System.DateTime> waredbankdate
+		{
+			get
+			{
+				return this._waredbankdate;
+			}
+			set
+			{
+				if ((this._waredbankdate != value))
+				{
+					this.OnwaredbankdateChanging(value);
+					this.SendPropertyChanging();
+					this._waredbankdate = value;
+					this.SendPropertyChanged("waredbankdate");
+					this.OnwaredbankdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="Date NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newid", DbType="Int NOT NULL")]
+		public int newid
+		{
+			get
+			{
+				return this._newid;
+			}
+			set
+			{
+				if ((this._newid != value))
+				{
+					this.OnnewidChanging(value);
+					this.SendPropertyChanging();
+					this._newid = value;
+					this.SendPropertyChanged("newid");
+					this.OnnewidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reprintreson", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string reprintreson
+		{
+			get
+			{
+				return this._reprintreson;
+			}
+			set
+			{
+				if ((this._reprintreson != value))
+				{
+					this.OnreprintresonChanging(value);
+					this.SendPropertyChanging();
+					this._reprintreson = value;
+					this.SendPropertyChanged("reprintreson");
+					this.OnreprintresonChanged();
 				}
 			}
 		}

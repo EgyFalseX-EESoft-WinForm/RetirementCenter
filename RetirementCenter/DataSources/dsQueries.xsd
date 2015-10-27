@@ -2717,6 +2717,37 @@ WHERE        (MMashatId = @MMashatId) AND (responsiblesarf = 0) AND (visa = @vis
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry80TableAdapter" GeneratorDataComponentClassName="vQry80TableAdapter" Name="vQry80" UserDataComponentName="vQry80TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.vQry80" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        reprintid, reprintresonid, visa, reprintdate, reprintremark, sendbankdate, waredbankdate, userin, datein, newid, Syndicate, MMashatName, RealName, 
+                         reprintreson
+FROM            vQry80</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="reprintid" DataSetColumn="reprintid" />
+              <Mapping SourceColumn="reprintresonid" DataSetColumn="reprintresonid" />
+              <Mapping SourceColumn="visa" DataSetColumn="visa" />
+              <Mapping SourceColumn="reprintdate" DataSetColumn="reprintdate" />
+              <Mapping SourceColumn="reprintremark" DataSetColumn="reprintremark" />
+              <Mapping SourceColumn="sendbankdate" DataSetColumn="sendbankdate" />
+              <Mapping SourceColumn="waredbankdate" DataSetColumn="waredbankdate" />
+              <Mapping SourceColumn="userin" DataSetColumn="userin" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="newid" DataSetColumn="newid" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="reprintreson" DataSetColumn="reprintreson" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MemberNewId" MethodsParameterType="CLR" Modifier="Public" Name="MemberNewId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MemberNewId">
@@ -5610,6 +5641,62 @@ FROM            AppOptions</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vQry80" msprop:Generator_TableClassName="vQry80DataTable" msprop:Generator_TableVarName="tablevQry80" msprop:Generator_TablePropName="vQry80" msprop:Generator_RowDeletingName="vQry80RowDeleting" msprop:Generator_RowChangingName="vQry80RowChanging" msprop:Generator_RowEvHandlerName="vQry80RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry80RowDeleted" msprop:Generator_UserTableName="vQry80" msprop:Generator_RowChangedName="vQry80RowChanged" msprop:Generator_RowEvArgName="vQry80RowChangeEvent" msprop:Generator_RowClassName="vQry80Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="reprintid" msprop:Generator_ColumnVarNameInTable="columnreprintid" msprop:Generator_ColumnPropNameInRow="reprintid" msprop:Generator_ColumnPropNameInTable="reprintidColumn" msprop:Generator_UserColumnName="reprintid" type="xs:int" />
+              <xs:element name="reprintresonid" msprop:Generator_ColumnVarNameInTable="columnreprintresonid" msprop:Generator_ColumnPropNameInRow="reprintresonid" msprop:Generator_ColumnPropNameInTable="reprintresonidColumn" msprop:Generator_UserColumnName="reprintresonid" type="xs:unsignedByte" />
+              <xs:element name="visa" msprop:Generator_ColumnVarNameInTable="columnvisa" msprop:Generator_ColumnPropNameInRow="visa" msprop:Generator_ColumnPropNameInTable="visaColumn" msprop:Generator_UserColumnName="visa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="reprintdate" msprop:Generator_ColumnVarNameInTable="columnreprintdate" msprop:Generator_ColumnPropNameInRow="reprintdate" msprop:Generator_ColumnPropNameInTable="reprintdateColumn" msprop:Generator_UserColumnName="reprintdate" type="xs:dateTime" />
+              <xs:element name="reprintremark" msprop:Generator_ColumnVarNameInTable="columnreprintremark" msprop:Generator_ColumnPropNameInRow="reprintremark" msprop:Generator_ColumnPropNameInTable="reprintremarkColumn" msprop:Generator_UserColumnName="reprintremark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sendbankdate" msprop:Generator_ColumnVarNameInTable="columnsendbankdate" msprop:Generator_ColumnPropNameInRow="sendbankdate" msprop:Generator_ColumnPropNameInTable="sendbankdateColumn" msprop:Generator_UserColumnName="sendbankdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="waredbankdate" msprop:Generator_ColumnVarNameInTable="columnwaredbankdate" msprop:Generator_ColumnPropNameInRow="waredbankdate" msprop:Generator_ColumnPropNameInTable="waredbankdateColumn" msprop:Generator_UserColumnName="waredbankdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="userin" msprop:Generator_ColumnVarNameInTable="columnuserin" msprop:Generator_ColumnPropNameInRow="userin" msprop:Generator_ColumnPropNameInTable="userinColumn" msprop:Generator_UserColumnName="userin" type="xs:int" />
+              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" />
+              <xs:element name="newid" msprop:Generator_ColumnVarNameInTable="columnnewid" msprop:Generator_ColumnPropNameInRow="newid" msprop:Generator_ColumnPropNameInTable="newidColumn" msprop:Generator_UserColumnName="newid" type="xs:int" />
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="reprintreson" msprop:Generator_ColumnVarNameInTable="columnreprintreson" msprop:Generator_ColumnPropNameInRow="reprintreson" msprop:Generator_ColumnPropNameInTable="reprintresonColumn" msprop:Generator_UserColumnName="reprintreson">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -5755,8 +5842,8 @@ FROM            AppOptions</CommandText>
     </xs:unique>
     <xs:unique name="vQry66_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry66" />
+      <xs:field xpath="mstns:visanumber" />
       <xs:field xpath="mstns:DofatSarfId" />
-      <xs:field xpath="mstns:newid" />
     </xs:unique>
     <xs:unique name="vQry67_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry67" />
@@ -5783,6 +5870,11 @@ FROM            AppOptions</CommandText>
     <xs:unique name="WarasaVisaResponsable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:WarasaVisaResponsable" />
       <xs:field xpath="mstns:PersonId" />
+    </xs:unique>
+    <xs:unique name="vQry80_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry80" />
+      <xs:field xpath="mstns:visa" />
+      <xs:field xpath="mstns:reprintdate" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

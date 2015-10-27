@@ -302,6 +302,48 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.designer.cs">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLremindFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLremindFrm.Designer.cs">
+      <DependentUpon>TBLremindFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaEditFrm.Designer.cs">
+      <DependentUpon>TBLReprintWarasaEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaAddFrm.Designer.cs">
+      <DependentUpon>TBLReprintWarasaAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaFrm.Designer.cs">
+      <DependentUpon>TBLReprintWarasaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberEditFrm.Designer.cs">
+      <DependentUpon>TBLReprintMemberEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberAddFrm.Designer.cs">
+      <DependentUpon>TBLReprintMemberAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberFrm.Designer.cs">
+      <DependentUpon>TBLReprintMemberFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLEstefaEditFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +481,18 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry80Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry80Frm.designer.cs">
+      <DependentUpon>Qry80Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry79Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry79Frm.designer.cs">
+      <DependentUpon>Qry79Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry78Frm.cs">
       <SubType>Form</SubType>
@@ -1241,6 +1295,27 @@
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaWFrm.resx">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLremindFrm.resx">
+      <DependentUpon>TBLremindFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintWarasaEditFrm.resx">
+      <DependentUpon>TBLReprintWarasaEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintWarasaAddFrm.resx">
+      <DependentUpon>TBLReprintWarasaAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintWarasaFrm.resx">
+      <DependentUpon>TBLReprintWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintMemberEditFrm.resx">
+      <DependentUpon>TBLReprintMemberEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintMemberAddFrm.resx">
+      <DependentUpon>TBLReprintMemberAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintMemberFrm.resx">
+      <DependentUpon>TBLReprintMemberFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLEstefaEditFrm.resx">
       <DependentUpon>TBLEstefaEditFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1310,6 +1385,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry80Frm.resx">
+      <DependentUpon>Qry80Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry79Frm.resx">
+      <DependentUpon>Qry79Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry78Frm.resx">
       <DependentUpon>Qry78Frm.cs</DependentUpon>

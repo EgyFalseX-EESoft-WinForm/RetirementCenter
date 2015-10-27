@@ -391,6 +391,46 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry78;
                 cmd.ExecuteNonQuery();
+                //vTBLReprintMember
+                if (CheckViewExists("vTBLReprintMember"))
+                {
+                    cmd.CommandText = DropObject("vTBLReprintMember");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLReprintMember;
+                cmd.ExecuteNonQuery();
+                //vQry79
+                if (CheckViewExists("vQry79"))
+                {
+                    cmd.CommandText = DropObject("vQry79");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry79;
+                cmd.ExecuteNonQuery();
+                //vTBLReprintWarasa01
+                if (CheckViewExists("vTBLReprintWarasa01"))
+                {
+                    cmd.CommandText = DropObject("vTBLReprintWarasa01");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLReprintWarasa01;
+                cmd.ExecuteNonQuery();
+                //vTBLReprintWarasa
+                if (CheckViewExists("vTBLReprintWarasa"))
+                {
+                    cmd.CommandText = DropObject("vTBLReprintWarasa");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLReprintWarasa;
+                cmd.ExecuteNonQuery();
+                //vQry80
+                if (CheckViewExists("vQry80"))
+                {
+                    cmd.CommandText = DropObject("vQry80");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry80;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -1324,13 +1364,14 @@ FROM            TBLBeanWarsa INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLEstefa]
                     AS
-                    SELECT        TBLEstefa.MMashatId, TBLEstefa.estefadate, TBLEstefa.estefamem, TBLEstefa.finished, TBLEstefa.datein, TBLEstefa.userin, TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLMashat.SyndicateId, 
-                         TBLMashat.SubCommitteId, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, Users.RealName
-                    FROM            TBLEstefa INNER JOIN
-                         TBLMashat ON TBLEstefa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         Users ON TBLEstefa.userin = Users.UserID INNER JOIN
-                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
+                    SELECT        dbo.TBLEstefa.MMashatId, dbo.TBLEstefa.estefadate, dbo.TBLEstefa.estefamem, dbo.TBLEstefa.finished, dbo.TBLEstefa.datein, dbo.TBLEstefa.userin, dbo.TBLMashat.MMashatName, 
+                         dbo.TBLMashat.sarfnumber, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.Users.RealName, dbo.TBLEstefa.estefaid, 
+                         dbo.TBLEstefa.estefareplay
+FROM            dbo.TBLEstefa INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLEstefa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.Users ON dbo.TBLEstefa.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId";
             }
         }
         public static string vQry78
@@ -1341,12 +1382,112 @@ FROM            TBLBeanWarsa INNER JOIN
                 CREATE VIEW [dbo].[vQry78]
                     AS
                     SELECT        dbo.TBLEstefa.MMashatId, dbo.TBLEstefa.estefadate, dbo.TBLEstefa.estefamem, dbo.TBLEstefa.finished, dbo.TBLEstefa.datein, dbo.TBLEstefa.userin, dbo.Users.RealName, dbo.TBLMashat.MMashatName, 
-                         dbo.TBLMashat.sarfnumber, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.TBLEstefa.estefaid
+                         dbo.TBLMashat.sarfnumber, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.TBLEstefa.estefaid, 
+                         dbo.TBLEstefa.estefareplay
 FROM            dbo.TBLEstefa INNER JOIN
                          dbo.TBLMashat ON dbo.TBLEstefa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
                          dbo.Users ON dbo.TBLEstefa.userin = dbo.Users.UserID";
+            }
+        }
+        public static string vTBLReprintMember
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLReprintMember]
+                    AS
+                    SELECT        dbo.TBLReprintMember.reprintid, dbo.TBLReprintMember.reprintresonid, dbo.TBLReprintMember.reprintdate, dbo.TBLReprintMember.MMashatId, dbo.TBLReprintMember.reprintremark, 
+                         dbo.TBLReprintMember.sendbankdate, dbo.TBLReprintMember.waredbankdate, dbo.TBLReprintMember.userin, dbo.TBLReprintMember.datein, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, 
+                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.Users.RealName, dbo.TBLMashat.visa, dbo.CDreprintreson.reprintreson
+                    FROM            dbo.TBLReprintMember INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLReprintMember.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TBLReprintMember.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDreprintreson ON dbo.TBLReprintMember.reprintresonid = dbo.CDreprintreson.reprintresonid";
+            }
+        }
+        public static string vQry79
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry79]
+                    AS
+                    SELECT        dbo.TBLReprintMember.reprintid, dbo.TBLReprintMember.reprintresonid, dbo.TBLReprintMember.reprintdate, dbo.TBLReprintMember.MMashatId, dbo.TBLReprintMember.reprintremark, 
+                         dbo.TBLReprintMember.sendbankdate, dbo.TBLReprintMember.waredbankdate, dbo.TBLReprintMember.userin, dbo.TBLReprintMember.datein, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, 
+                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.Users.RealName, dbo.TBLMashat.visa, dbo.CDreprintreson.reprintreson
+                    FROM            dbo.TBLReprintMember INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLReprintMember.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TBLReprintMember.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDreprintreson ON dbo.TBLReprintMember.reprintresonid = dbo.CDreprintreson.reprintresonid";
+            }
+        }
+        public static string vTBLReprintWarasa01
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLReprintWarasa01]
+                    AS
+                    SELECT        dbo.BankExportedDataWarsa.visa, dbo.BankExportedDataWarsa.NameOnCard, dbo.AwarasaNewId.newid, dbo.TBLMashat.MMashatName, dbo.CDSyndicate.Syndicate, dbo.AwarasaNewId.personid
+FROM            dbo.BankExportedDataWarsa INNER JOIN
+                         dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid INNER JOIN
+                         dbo.TBLMashat ON dbo.BankExportedDataWarsa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.TBLWarasa ON dbo.BankExportedDataWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId";
+            }
+        }
+        public static string vTBLReprintWarasa
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLReprintWarasa]
+                    AS
+                    SELECT        dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
+                         dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.userin, dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, dbo.CDSyndicate.Syndicate, 
+                         dbo.TBLMashat.MMashatName, dbo.Users.RealName, dbo.CDreprintreson.reprintreson
+FROM            dbo.TBLReprintWarasa INNER JOIN
+                         dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa INNER JOIN
+                         dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLReprintWarasa.visa = dbo.TBLWarasa.visa INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid";
+            }
+        }
+        public static string vQry80
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry80]
+                    AS
+                    WITH CTE1 AS
+                    (
+                    SELECT dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
+                    dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.userin, dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, 
+                        dbo.Users.RealName, dbo.CDreprintreson.reprintreson
+                    , (SELECT TOP 1 PersonId FROM TBLWarasa WHERE visa = TBLReprintWarasa.visa) AS PersonId
+                    FROM dbo.TBLReprintWarasa INNER JOIN dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa 
+                    INNER JOIN dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid 
+                    INNER JOIN dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID 
+                    INNER JOIN dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid
+                    )
+                    SELECT reprintid, reprintresonid, CTE1.visa, reprintdate, reprintremark, 
+                    sendbankdate, waredbankdate, CTE1.userin, CTE1.datein, [newid], 
+                        RealName, reprintreson, CTE1.PersonId
+                        , dbo.CDSyndicate.Syndicate, dbo.TBLMashat.MMashatName
+                    FROM CTE1 
+                    INNER JOIN dbo.TBLWarasa ON CTE1.PersonId = dbo.TBLWarasa.PersonId 
+                    INNER JOIN dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId 
+                    INNER JOIN dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId ";
             }
         }
     }
