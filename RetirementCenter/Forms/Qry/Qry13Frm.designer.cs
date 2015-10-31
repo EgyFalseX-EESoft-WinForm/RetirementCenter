@@ -32,7 +32,11 @@
             this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSCDSyndicate = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditSubCommitteId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSCDSubCommitte = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -41,13 +45,13 @@
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMSCDSyndicate = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.LSMSCDSubCommitte = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemLookUpEditSubCommitteId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSubCommitteId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEditImg)).BeginInit();
@@ -57,10 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSubCommitteId)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -177,7 +177,6 @@
             this.colsarfnumber});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
             this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
@@ -203,6 +202,25 @@
             this.colSyndicate.VisibleIndex = 0;
             this.colSyndicate.Width = 225;
             // 
+            // repositoryItemLookUpEditSyndicateId
+            // 
+            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
+            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم")});
+            this.repositoryItemLookUpEditSyndicateId.DataSource = this.LSMSCDSyndicate;
+            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
+            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
+            this.repositoryItemLookUpEditSyndicateId.NullText = "";
+            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
+            // 
+            // LSMSCDSyndicate
+            // 
+            this.LSMSCDSyndicate.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
+            this.LSMSCDSyndicate.KeyExpression = "[SyndicateId]";
+            // 
             // colSubCommitte
             // 
             this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
@@ -216,6 +234,25 @@
             this.colSubCommitte.Visible = true;
             this.colSubCommitte.VisibleIndex = 1;
             this.colSubCommitte.Width = 166;
+            // 
+            // repositoryItemLookUpEditSubCommitteId
+            // 
+            this.repositoryItemLookUpEditSubCommitteId.AutoHeight = false;
+            this.repositoryItemLookUpEditSubCommitteId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditSubCommitteId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SubCommitte", "اسم")});
+            this.repositoryItemLookUpEditSubCommitteId.DataSource = this.LSMSCDSubCommitte;
+            this.repositoryItemLookUpEditSubCommitteId.DisplayMember = "SubCommitte";
+            this.repositoryItemLookUpEditSubCommitteId.Name = "repositoryItemLookUpEditSubCommitteId";
+            this.repositoryItemLookUpEditSubCommitteId.NullText = "";
+            this.repositoryItemLookUpEditSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditSubCommitteId.ValueMember = "SubCommitteId";
+            // 
+            // LSMSCDSubCommitte
+            // 
+            this.LSMSCDSubCommitte.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSubCommitte);
+            this.LSMSCDSubCommitte.KeyExpression = "[SubCommitteId]";
             // 
             // colsarfnumber
             // 
@@ -291,44 +328,6 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // LSMSCDSyndicate
-            // 
-            this.LSMSCDSyndicate.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
-            this.LSMSCDSyndicate.KeyExpression = "[SyndicateId]";
-            // 
-            // LSMSCDSubCommitte
-            // 
-            this.LSMSCDSubCommitte.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSubCommitte);
-            this.LSMSCDSubCommitte.KeyExpression = "[SubCommitteId]";
-            // 
-            // repositoryItemLookUpEditSyndicateId
-            // 
-            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
-            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم")});
-            this.repositoryItemLookUpEditSyndicateId.DataSource = this.LSMSCDSyndicate;
-            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
-            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
-            this.repositoryItemLookUpEditSyndicateId.NullText = "";
-            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
-            // 
-            // repositoryItemLookUpEditSubCommitteId
-            // 
-            this.repositoryItemLookUpEditSubCommitteId.AutoHeight = false;
-            this.repositoryItemLookUpEditSubCommitteId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditSubCommitteId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SubCommitte", "اسم")});
-            this.repositoryItemLookUpEditSubCommitteId.DataSource = this.LSMSCDSubCommitte;
-            this.repositoryItemLookUpEditSubCommitteId.DisplayMember = "SubCommitte";
-            this.repositoryItemLookUpEditSubCommitteId.Name = "repositoryItemLookUpEditSubCommitteId";
-            this.repositoryItemLookUpEditSubCommitteId.NullText = "";
-            this.repositoryItemLookUpEditSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditSubCommitteId.ValueMember = "SubCommitteId";
-            // 
             // Qry13Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,6 +342,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSubCommitteId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEditImg)).EndInit();
@@ -352,10 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSyndicate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCDSubCommitte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSubCommitteId)).EndInit();
             this.ResumeLayout(false);
 
         }

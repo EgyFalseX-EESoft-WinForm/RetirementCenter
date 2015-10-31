@@ -136,7 +136,7 @@ namespace RetirementCenter.Forms.Data
         #region - Event Handlers -
         private void TBLWarasaDlg_Load(object sender, EventArgs e)
         {
-            
+            ceActivate.Visible = Program.UserInfo.IsAdmin;
         }
         private void ceyasref_CheckedChanged(object sender, EventArgs e)
         {

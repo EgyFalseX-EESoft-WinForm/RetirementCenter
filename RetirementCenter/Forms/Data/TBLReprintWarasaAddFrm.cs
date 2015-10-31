@@ -46,6 +46,7 @@ namespace RetirementCenter.Forms.Data
                     ,SQLProvider.ServerDateTime());
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                DialogResult = System.Windows.Forms.DialogResult.OK;
                 Close();
             }
             catch (Exception ex)

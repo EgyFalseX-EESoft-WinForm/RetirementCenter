@@ -1112,4 +1112,30 @@
       <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.vTBLHafzaTasleem" Member="vTBLHafzaTasleems">
+    <Type Name="vTBLHafzaTasleem">
+      <Column Name="tasleemid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tasleemtype" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="hafza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countindata" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countrealy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MandoopId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tasleemdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MandoopName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MandoopMOBIL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry81" Member="vQry81s">
+    <Type Name="vQry81">
+      <Column Name="hafza" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

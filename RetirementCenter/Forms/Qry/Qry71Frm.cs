@@ -18,6 +18,7 @@ namespace RetirementCenter
         public Qry71Frm()
         {
             InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(vQry71TableAdapter, 0);
         }
         #endregion
         #region -   Event Handlers   -

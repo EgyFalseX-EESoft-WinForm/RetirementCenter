@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry71BindingSource = new System.Windows.Forms.BindingSource();
+            this.vQry71BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDiffMoney = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBankMoney = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankMoney = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiffMoney = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -194,39 +195,6 @@
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowFooter = true;
             // 
-            // colDiffMoney
-            // 
-            this.colDiffMoney.AppearanceCell.Options.UseTextOptions = true;
-            this.colDiffMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDiffMoney.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDiffMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDiffMoney.Caption = "الفرق";
-            this.colDiffMoney.DisplayFormat.FormatString = "n2";
-            this.colDiffMoney.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDiffMoney.FieldName = "DiffMoney";
-            this.colDiffMoney.Name = "colDiffMoney";
-            this.colDiffMoney.OptionsColumn.ReadOnly = true;
-            this.colDiffMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DiffMoney", "{0:0.##}")});
-            this.colDiffMoney.Visible = true;
-            this.colDiffMoney.VisibleIndex = 9;
-            // 
-            // colBankMoney
-            // 
-            this.colBankMoney.AppearanceCell.Options.UseTextOptions = true;
-            this.colBankMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBankMoney.AppearanceHeader.Options.UseTextOptions = true;
-            this.colBankMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBankMoney.Caption = "مبلغ الفيزا";
-            this.colBankMoney.DisplayFormat.FormatString = "n2";
-            this.colBankMoney.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colBankMoney.FieldName = "BankMoney";
-            this.colBankMoney.Name = "colBankMoney";
-            this.colBankMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BankMoney", "{0:0.##}")});
-            this.colBankMoney.Visible = true;
-            this.colBankMoney.VisibleIndex = 8;
-            // 
             // colSubCommitte
             // 
             this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
@@ -299,6 +267,18 @@
             this.colDofatSarf.Visible = true;
             this.colDofatSarf.VisibleIndex = 6;
             // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود الاب";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 2;
+            // 
             // colTotal
             // 
             this.colTotal.AppearanceCell.Options.UseTextOptions = true;
@@ -315,17 +295,36 @@
             this.colTotal.Visible = true;
             this.colTotal.VisibleIndex = 7;
             // 
-            // colMMashatId
+            // colBankMoney
             // 
-            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "كود الاب";
-            this.colMMashatId.FieldName = "MMashatId";
-            this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 2;
+            this.colBankMoney.AppearanceCell.Options.UseTextOptions = true;
+            this.colBankMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBankMoney.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBankMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBankMoney.Caption = "مبلغ الفيزا";
+            this.colBankMoney.DisplayFormat.FormatString = "n2";
+            this.colBankMoney.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colBankMoney.FieldName = "BankMoney";
+            this.colBankMoney.Name = "colBankMoney";
+            this.colBankMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BankMoney", "{0:0.##}")});
+            this.colBankMoney.Visible = true;
+            this.colBankMoney.VisibleIndex = 8;
+            // 
+            // colDiffMoney
+            // 
+            this.colDiffMoney.AppearanceCell.Options.UseTextOptions = true;
+            this.colDiffMoney.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDiffMoney.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDiffMoney.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDiffMoney.Caption = "الفرق";
+            this.colDiffMoney.FieldName = "DiffMoney";
+            this.colDiffMoney.Name = "colDiffMoney";
+            this.colDiffMoney.OptionsColumn.ReadOnly = true;
+            this.colDiffMoney.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DiffMoney", "{0:0.##}")});
+            this.colDiffMoney.Visible = true;
+            this.colDiffMoney.VisibleIndex = 9;
             // 
             // repositoryItemDateEditDMY
             // 

@@ -55,11 +55,11 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.LUETBLDofatSarf = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDofatSarf1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.qry09TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.Qry09TableAdapter();
-            this.colDofatSarf1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qry09BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -204,7 +204,6 @@
             this.colMMashatId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
             this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
@@ -468,6 +467,14 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colDofatSarf1
+            // 
+            this.colDofatSarf1.Caption = "الدفعة";
+            this.colDofatSarf1.FieldName = "DofatSarf";
+            this.colDofatSarf1.Name = "colDofatSarf1";
+            this.colDofatSarf1.Visible = true;
+            this.colDofatSarf1.VisibleIndex = 0;
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -502,14 +509,6 @@
             // qry09TableAdapter
             // 
             this.qry09TableAdapter.ClearBeforeFill = true;
-            // 
-            // colDofatSarf1
-            // 
-            this.colDofatSarf1.Caption = "الدفعة";
-            this.colDofatSarf1.FieldName = "DofatSarf";
-            this.colDofatSarf1.Name = "colDofatSarf1";
-            this.colDofatSarf1.Visible = true;
-            this.colDofatSarf1.VisibleIndex = 0;
             // 
             // Qry09Frm
             // 

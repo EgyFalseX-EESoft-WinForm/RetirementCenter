@@ -302,6 +302,30 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.designer.cs">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemEditFrm.Designer.cs">
+      <DependentUpon>TBLHafzaTasleemEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemAddFrm.Designer.cs">
+      <DependentUpon>TBLHafzaTasleemAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLHafzaTasleemFrm.Designer.cs">
+      <DependentUpon>TBLHafzaTasleemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMandoopFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMandoopFrm.Designer.cs">
+      <DependentUpon>TBLMandoopFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLremindFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1294,6 +1318,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaWFrm.resx">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLHafzaTasleemEditFrm.resx">
+      <DependentUpon>TBLHafzaTasleemEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLHafzaTasleemAddFrm.resx">
+      <DependentUpon>TBLHafzaTasleemAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLHafzaTasleemFrm.resx">
+      <DependentUpon>TBLHafzaTasleemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLMandoopFrm.resx">
+      <DependentUpon>TBLMandoopFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLremindFrm.resx">
       <DependentUpon>TBLremindFrm.cs</DependentUpon>

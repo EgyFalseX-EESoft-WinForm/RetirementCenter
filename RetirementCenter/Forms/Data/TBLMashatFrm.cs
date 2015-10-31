@@ -200,6 +200,7 @@ namespace RetirementCenter
             lengthValidationRule.ErrorType = ErrorType.Warning;
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
             tbvisa.Enabled = Program.UserInfo.IsAdmin;
+            ceActivate.Visible = Program.UserInfo.IsAdmin;
             btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)

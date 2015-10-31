@@ -431,6 +431,22 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry80;
                 cmd.ExecuteNonQuery();
+                //vTBLHafzaTasleem
+                if (CheckViewExists("vTBLHafzaTasleem"))
+                {
+                    cmd.CommandText = DropObject("vTBLHafzaTasleem");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLHafzaTasleem;
+                cmd.ExecuteNonQuery();
+                //vQry81
+                if (CheckViewExists("vQry81"))
+                {
+                    cmd.CommandText = DropObject("vQry81");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry81;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -1221,7 +1237,7 @@ GROUP BY TBLWarasa.MMashatId, TBLDofatSarf.DofatSarf, TBLWarasaSarf_arshef.Dofat
 SELECT *,
 Total - BankMoney AS DiffMoney
  FROM CTE1
-WHERE Total <> BankMoney
+WHERE CAST(Total AS INT) <> CAST(BankMoney AS INT)
 ";
             }
         }
@@ -1488,6 +1504,41 @@ FROM            dbo.TBLReprintWarasa INNER JOIN
                     INNER JOIN dbo.TBLWarasa ON CTE1.PersonId = dbo.TBLWarasa.PersonId 
                     INNER JOIN dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId 
                     INNER JOIN dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId ";
+            }
+        }
+        public static string vTBLHafzaTasleem
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLHafzaTasleem]
+                    AS
+                    SELECT        TBLHafzaTasleem.tasleemid, TBLHafzaTasleem.tasleemtype, TBLHafzaTasleem.hafza, TBLHafzaTasleem.SyndicateId, TBLHafzaTasleem.countindata, TBLHafzaTasleem.countrealy, 
+                         TBLHafzaTasleem.MandoopId, TBLHafzaTasleem.tasleemdate, TBLHafzaTasleem.userin, TBLHafzaTasleem.datein, CDMashHala.MashHala, Users.RealName, TBLMandoop.MandoopName, 
+                         TBLMandoop.MandoopMOBIL, CDSyndicate.Syndicate
+                    FROM            TBLHafzaTasleem INNER JOIN
+                         CDMashHala ON TBLHafzaTasleem.tasleemtype = CDMashHala.MashHalaId INNER JOIN
+                         Users ON TBLHafzaTasleem.userin = Users.UserID INNER JOIN
+                         TBLMandoop ON TBLHafzaTasleem.MandoopId = TBLMandoop.MandoopId INNER JOIN
+                         CDSyndicate ON TBLHafzaTasleem.SyndicateId = CDSyndicate.SyndicateId";
+            }
+        }
+        public static string vQry81 
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry81]
+                    AS
+                    SELECT hafza, COUNT(*) AS Num, 1 AS [Type]
+                    FROM dbo.BankExportedData
+                    WHERE (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = dbo.BankExportedData.hafza AND tasleemtype = 1)) AND (hafza IS NOT NULL)
+                    GROUP BY hafza
+                    UNION
+                    SELECT hafza, COUNT(*) AS Num, 2 AS [Type]
+                    FROM dbo.BankExportedDataWarsa
+                    WHERE (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = BankExportedDataWarsa.hafza AND tasleemtype = 2)) AND (hafza IS NOT NULL)
+                    GROUP BY hafza";
             }
         }
     }

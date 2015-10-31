@@ -42,14 +42,14 @@
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitteR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSyndicateR = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.colSubCommitteR = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSyndicateR = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -184,7 +184,6 @@
             this.colSyndicateR});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
             this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
@@ -331,6 +330,30 @@
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 12;
             // 
+            // colSubCommitteR
+            // 
+            this.colSubCommitteR.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitteR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteR.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitteR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteR.Caption = "لجنة العضو";
+            this.colSubCommitteR.FieldName = "SubCommitteR";
+            this.colSubCommitteR.Name = "colSubCommitteR";
+            this.colSubCommitteR.Visible = true;
+            this.colSubCommitteR.VisibleIndex = 5;
+            // 
+            // colSyndicateR
+            // 
+            this.colSyndicateR.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicateR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateR.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicateR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateR.Caption = "فرعية العضو";
+            this.colSyndicateR.FieldName = "SyndicateR";
+            this.colSyndicateR.Name = "colSyndicateR";
+            this.colSyndicateR.Visible = true;
+            this.colSyndicateR.VisibleIndex = 4;
+            // 
             // repositoryItemDateEditDate
             // 
             this.repositoryItemDateEditDate.AutoHeight = false;
@@ -384,30 +407,6 @@
             this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // colSubCommitteR
-            // 
-            this.colSubCommitteR.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitteR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitteR.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitteR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitteR.Caption = "لجنة العضو";
-            this.colSubCommitteR.FieldName = "SubCommitteR";
-            this.colSubCommitteR.Name = "colSubCommitteR";
-            this.colSubCommitteR.Visible = true;
-            this.colSubCommitteR.VisibleIndex = 5;
-            // 
-            // colSyndicateR
-            // 
-            this.colSyndicateR.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicateR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicateR.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSyndicateR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicateR.Caption = "فرعية العضو";
-            this.colSyndicateR.FieldName = "SyndicateR";
-            this.colSyndicateR.Name = "colSyndicateR";
-            this.colSyndicateR.Visible = true;
-            this.colSyndicateR.VisibleIndex = 4;
             // 
             // Qry14Frm
             // 

@@ -42,8 +42,11 @@ namespace RetirementCenter.Forms.Data
         private void btnAdd_Click(object sender, EventArgs e)
         {
             TBLReprintWarasaAddFrm frm = new TBLReprintWarasaAddFrm();
-            frm.ShowDialog();
-            RefreshData();
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                RefreshData();
+                btnAdd_Click(btnAdd, EventArgs.Empty);
+            }
         }
         private void repositoryItemButtonEditDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

@@ -35,6 +35,7 @@
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicateWarasa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitteWarasa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpersonNameR = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpersonNID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +49,6 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.colpersonNameR = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -182,7 +182,6 @@
             this.colMMashatId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
             this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
@@ -242,6 +241,19 @@
             this.colSubCommitteWarasa.Name = "colSubCommitteWarasa";
             this.colSubCommitteWarasa.Visible = true;
             this.colSubCommitteWarasa.VisibleIndex = 3;
+            // 
+            // colpersonNameR
+            // 
+            this.colpersonNameR.AppearanceCell.Options.UseTextOptions = true;
+            this.colpersonNameR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colpersonNameR.AppearanceHeader.Options.UseTextOptions = true;
+            this.colpersonNameR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colpersonNameR.Caption = "اسم المسئول";
+            this.colpersonNameR.FieldName = "personNameR";
+            this.colpersonNameR.Name = "colpersonNameR";
+            this.colpersonNameR.Visible = true;
+            this.colpersonNameR.VisibleIndex = 1;
+            this.colpersonNameR.Width = 92;
             // 
             // colpersonNID
             // 
@@ -382,19 +394,6 @@
             this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // colpersonNameR
-            // 
-            this.colpersonNameR.AppearanceCell.Options.UseTextOptions = true;
-            this.colpersonNameR.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colpersonNameR.AppearanceHeader.Options.UseTextOptions = true;
-            this.colpersonNameR.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colpersonNameR.Caption = "اسم المسئول";
-            this.colpersonNameR.FieldName = "personNameR";
-            this.colpersonNameR.Name = "colpersonNameR";
-            this.colpersonNameR.Visible = true;
-            this.colpersonNameR.VisibleIndex = 1;
-            this.colpersonNameR.Width = 92;
             // 
             // Qry08Frm
             // 

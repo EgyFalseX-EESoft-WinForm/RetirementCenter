@@ -41,8 +41,8 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.LUECDMashHala = new DevExpress.XtraEditors.LookUpEdit();
-            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.LSMSCDMashHala = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -169,7 +169,6 @@
             this.colcounting});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
-            this.gridViewData.OptionsBehavior.Editable = false;
             this.gridViewData.OptionsBehavior.ReadOnly = true;
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
             this.gridViewData.OptionsFind.AlwaysVisible = true;
@@ -295,6 +294,11 @@
             this.LUECDMashHala.TabIndex = 0;
             this.LUECDMashHala.EditValueChanged += new System.EventHandler(this.LUECDMashHala_EditValueChanged);
             // 
+            // LSMSCDMashHala
+            // 
+            this.LSMSCDMashHala.ElementType = typeof(RetirementCenter.DataSources.Linq.CDMashHala);
+            this.LSMSCDMashHala.KeyExpression = "[MashHalaId]";
+            // 
             // btnPrintExport
             // 
             this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -304,11 +308,6 @@
             this.btnPrintExport.TabIndex = 1;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // LSMSCDMashHala
-            // 
-            this.LSMSCDMashHala.ElementType = typeof(RetirementCenter.DataSources.Linq.CDMashHala);
-            this.LSMSCDMashHala.KeyExpression = "[MashHalaId]";
             // 
             // Qry02Frm
             // 

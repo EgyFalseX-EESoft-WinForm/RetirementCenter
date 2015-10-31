@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -43,13 +44,13 @@
             this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
             this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -228,7 +229,9 @@
             this.mbRetCenterQry79 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry80 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLremind = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.mbRetCenterTBLMandoop = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLHafzaTasleem = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -639,10 +642,12 @@
             this.mbRetCenterQry79,
             this.mbRetCenterTBLReprintWarasa,
             this.mbRetCenterQry80,
-            this.mbRetCenterTBLremind});
+            this.mbRetCenterTBLremind,
+            this.mbRetCenterTBLMandoop,
+            this.mbRetCenterTBLHafzaTasleem});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 345;
+            this.ribbonControl.MaxItemId = 347;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -713,6 +718,8 @@
             this.ribbonImageCollection.Images.SetKeyName(49, "tbladminremarks16.png");
             this.ribbonImageCollection.Images.SetKeyName(50, "TBLEstefa16.png");
             this.ribbonImageCollection.Images.SetKeyName(51, "TBLremind16.png");
+            this.ribbonImageCollection.Images.SetKeyName(52, "TBLMandoop16.png");
+            this.ribbonImageCollection.Images.SetKeyName(53, "TBLHafzaTasleem16.png");
             // 
             // mbRetCenterExit
             // 
@@ -2408,6 +2415,22 @@
             this.mbRetCenterTBLremind.LargeImageIndex = 51;
             this.mbRetCenterTBLremind.Name = "mbRetCenterTBLremind";
             // 
+            // mbRetCenterTBLMandoop
+            // 
+            this.mbRetCenterTBLMandoop.Caption = "المناديب";
+            this.mbRetCenterTBLMandoop.Id = 345;
+            this.mbRetCenterTBLMandoop.ImageIndex = 52;
+            this.mbRetCenterTBLMandoop.LargeImageIndex = 52;
+            this.mbRetCenterTBLMandoop.Name = "mbRetCenterTBLMandoop";
+            // 
+            // mbRetCenterTBLHafzaTasleem
+            // 
+            this.mbRetCenterTBLHafzaTasleem.Caption = "تسليم الحوافظ";
+            this.mbRetCenterTBLHafzaTasleem.Id = 346;
+            this.mbRetCenterTBLHafzaTasleem.ImageIndex = 53;
+            this.mbRetCenterTBLHafzaTasleem.LargeImageIndex = 53;
+            this.mbRetCenterTBLHafzaTasleem.Name = "mbRetCenterTBLHafzaTasleem";
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -2464,6 +2487,8 @@
             this.ribbonImageCollectionLarge.Images.SetKeyName(49, "tbladminremarks32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(50, "TBLEstefa32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(51, "TBLremind32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(52, "TBLMandoop32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(53, "TBLHafzaTasleem32.png");
             // 
             // DataribbonPage
             // 
@@ -2490,6 +2515,8 @@
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLEstefa);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLReprint);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLremind);
+            this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLMandoop);
+            this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafzaTasleem);
             this.DataribbonPageGroup.Name = "DataribbonPageGroup";
             this.DataribbonPageGroup.Text = "قائمة ادخال البيانات";
             // 
@@ -2902,6 +2929,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry79;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry80;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLremind;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMandoop;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLHafzaTasleem;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;
