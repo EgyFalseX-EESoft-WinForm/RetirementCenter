@@ -46,6 +46,7 @@
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldeathdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmosthhek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditUpdate = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -62,6 +63,7 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.tblDeathMembersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDeathMembersTableAdapter();
+            this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWData)).BeginInit();
@@ -129,8 +131,10 @@
             this.colyasref,
             this.colMMashatId,
             this.coldeathdate,
+            this.colMMashatNId,
             this.colmosthhek,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colMashHala});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -150,6 +154,8 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.OptionsColumn.AllowEdit = false;
+            this.coldatein.Visible = true;
+            this.coldatein.VisibleIndex = 11;
             this.coldatein.Width = 94;
             // 
             // repositoryItemDateEditdatein
@@ -171,6 +177,9 @@
             this.colRealName1.Caption = "مسئول الادخال";
             this.colRealName1.FieldName = "RealName";
             this.colRealName1.Name = "colRealName1";
+            this.colRealName1.Visible = true;
+            this.colRealName1.VisibleIndex = 12;
+            this.colRealName1.Width = 88;
             // 
             // gridColumnDelete
             // 
@@ -183,7 +192,7 @@
             this.gridColumnDelete.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnDelete.Name = "gridColumnDelete";
             this.gridColumnDelete.Visible = true;
-            this.gridColumnDelete.VisibleIndex = 9;
+            this.gridColumnDelete.VisibleIndex = 13;
             this.gridColumnDelete.Width = 51;
             // 
             // repositoryItemButtonEditDel
@@ -220,7 +229,7 @@
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.OptionsColumn.AllowEdit = false;
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 4;
+            this.colsarfnumber.VisibleIndex = 5;
             // 
             // colSyndicate
             // 
@@ -233,7 +242,7 @@
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.OptionsColumn.AllowEdit = false;
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 2;
+            this.colSyndicate.VisibleIndex = 3;
             this.colSyndicate.Width = 93;
             // 
             // colSubCommitte
@@ -247,7 +256,7 @@
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.OptionsColumn.AllowEdit = false;
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 3;
+            this.colSubCommitte.VisibleIndex = 4;
             this.colSubCommitte.Width = 104;
             // 
             // colyasref
@@ -260,7 +269,7 @@
             this.colyasref.FieldName = "yasref";
             this.colyasref.Name = "colyasref";
             this.colyasref.Visible = true;
-            this.colyasref.VisibleIndex = 5;
+            this.colyasref.VisibleIndex = 7;
             // 
             // colMMashatId
             // 
@@ -285,7 +294,7 @@
             this.coldeathdate.FieldName = "deathdate";
             this.coldeathdate.Name = "coldeathdate";
             this.coldeathdate.Visible = true;
-            this.coldeathdate.VisibleIndex = 6;
+            this.coldeathdate.VisibleIndex = 8;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -301,6 +310,18 @@
             this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
+            // colMMashatNId
+            // 
+            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.Caption = "رقم قومي";
+            this.colMMashatNId.FieldName = "MMashatNId";
+            this.colMMashatNId.Name = "colMMashatNId";
+            this.colMMashatNId.Visible = true;
+            this.colMMashatNId.VisibleIndex = 6;
+            // 
             // colmosthhek
             // 
             this.colmosthhek.AppearanceCell.Options.UseTextOptions = true;
@@ -311,7 +332,7 @@
             this.colmosthhek.FieldName = "mosthhek";
             this.colmosthhek.Name = "colmosthhek";
             this.colmosthhek.Visible = true;
-            this.colmosthhek.VisibleIndex = 7;
+            this.colmosthhek.VisibleIndex = 9;
             this.colmosthhek.Width = 202;
             // 
             // gridColumn1
@@ -324,7 +345,7 @@
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditUpdate;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.VisibleIndex = 10;
             // 
             // repositoryItemButtonEditUpdate
             // 
@@ -466,6 +487,18 @@
             // 
             this.tblDeathMembersTableAdapter.ClearBeforeFill = true;
             // 
+            // colMashHala
+            // 
+            this.colMashHala.AppearanceCell.Options.UseTextOptions = true;
+            this.colMashHala.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMashHala.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala.Caption = "نوع العضو";
+            this.colMashHala.FieldName = "MashHala";
+            this.colMashHala.Name = "colMashHala";
+            this.colMashHala.Visible = true;
+            this.colMashHala.VisibleIndex = 2;
+            // 
             // TBLDeathMembersFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,5 +565,7 @@
         private DataSources.dsRetirementCenterTableAdapters.TBLDeathMembersTableAdapter tblDeathMembersTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditUpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatNId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMashHala;
     }
 }

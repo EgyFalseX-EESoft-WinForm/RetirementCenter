@@ -30,14 +30,16 @@ namespace RetirementCenter.Forms.Data
             tbcountrealy.EditValue = row.countrealy;
             lueMandoopId.EditValue = row.MandoopId;
             detasleemdate.EditValue = row.tasleemdate;
+            tbcountindata.EditValue = row.countindata;
 
             _hafza = row.hafza;
             _count = row.countindata;
+
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLMandoop' table. You can move, or remove it, as needed.
+            this.tBLMandoopTableAdapter.FillBySyndicateId(this.dsRetirementCenter.TBLMandoop, row.SyndicateId);
         }
         private void TBLHafzaTasleemAddFrm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLMandoop' table. You can move, or remove it, as needed.
-            this.tBLMandoopTableAdapter.Fill(this.dsRetirementCenter.TBLMandoop);
             // TODO: This line of code loads data into the 'dsQueries.CDSyndicate' table. You can move, or remove it, as needed.
             this.cDSyndicateTableAdapter.Fill(this.dsQueries.CDSyndicate);
             // TODO: This line of code loads data into the 'dsQueries.CDMashHala' table. You can move, or remove it, as needed.

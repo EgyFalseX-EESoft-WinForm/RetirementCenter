@@ -22,6 +22,7 @@ namespace RetirementCenter
         public TBLDeathMembersWFrm()
         {
             InitializeComponent();
+
         }
         public TBLDeathMembersWFrm(DataSources.dsRetirementCenter.TBLDeathMembersRow row, bool insert, bool update, bool delete)
         {
@@ -88,7 +89,7 @@ namespace RetirementCenter
         private void lueMMashatId_EditValueChanged(object sender, EventArgs e)
         {
             lblMemType.Text = string.Empty; ceYasref.Checked = false;
-            if (lueMMashatId.EditValue == null)
+            if (lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
             {
                 return;
             }
@@ -96,6 +97,18 @@ namespace RetirementCenter
             object obj = adpQ.GetYasrefByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
             if (obj != null)
                 ceYasref.Checked = (bool)obj;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
+            {
+                return;
+            }
+            int id = Convert.ToInt32(lueMMashatId.EditValue);
+            RetirementCenter.Forms.Data.ChangeMemberNameWFrm frm = new Forms.Data.ChangeMemberNameWFrm(id, adpTBLMashat.GetMMashatName(id));
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                return;
+            LSMSTBLMashat.Reload();
         }
        
     }

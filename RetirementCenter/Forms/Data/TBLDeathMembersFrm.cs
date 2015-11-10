@@ -74,15 +74,17 @@ namespace RetirementCenter
         {
             DataSources.dsRetirementCenter ds = new DataSources.dsRetirementCenter();
             DataSources.dsRetirementCenter.TBLDeathMembersRow row = ds.TBLDeathMembers.NewTBLDeathMembersRow();
-            row.MMashatId = -1; row.deathdate = SQLProvider.ServerDateTime(); row.mosthhek = string.Empty; row.sefa = string.Empty;
+            row.MMashatId = -1; row.mosthhek = string.Empty; row.sefa = "وريث"; row.mosthhekmony = 1000;
+            //row.deathdate = SQLProvider.ServerDateTime();
+            
 
             TBLDeathMembersWFrm frm = new TBLDeathMembersWFrm(row, _Insert, _Update, _Delete);
             if (frm.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                 return;
             ds.TBLDeathMembers.AddTBLDeathMembersRow(row);
-            tblDeathMembersTableAdapter.Update(ds.TBLDeathMembers);
-
+            int effected = tblDeathMembersTableAdapter.Update(ds.TBLDeathMembers);
             ResetGridCash();
+            btnNew_Click(btnNew, EventArgs.Empty);
         }
         private void repositoryItemButtonEditUpdate_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

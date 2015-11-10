@@ -672,16 +672,18 @@ namespace RetirementCenter
         {
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
+            int effected = 0;
             try
             {
-                tBLWarasaSarfTableAdapter.InsertIntoTBLWarasaSarf_arshef(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
+                effected = tBLWarasaSarfTableAdapter.InsertIntoTBLWarasaSarf_arshef(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
+
             }
             catch (SqlException ex)
             {
                 Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
             }
-            Program.ShowMsg("تم الاضافة للارشيف", false, this, true);
+            Program.ShowMsg("تم الاضافة للارشيف" + Environment.NewLine + effected, false, this, true);
         }
         private void repositoryItemButtonEditSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

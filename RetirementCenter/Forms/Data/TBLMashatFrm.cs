@@ -165,6 +165,8 @@ namespace RetirementCenter
             repositoryItemButtonEditResarfDel.Buttons[0].Visible = Deleting;
             repositoryItemButtonEditWarasaDel.Buttons[0].Visible = Deleting;
 
+            repositoryItemButtonEditWarasaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
+
         }
         private bool DeathBefore2013(bool NewMem)
         {

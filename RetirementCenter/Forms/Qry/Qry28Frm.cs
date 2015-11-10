@@ -65,9 +65,9 @@ namespace RetirementCenter
             try
             {
                 if (lueSynd.EditValue == null)
-                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId.ToString(), Convert.ToInt32(lueDof.EditValue));
+                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue));
                 else
-                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId.ToString(), Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue));
+                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue));
                 
             }
             catch (System.Data.SqlClient.SqlException ex)

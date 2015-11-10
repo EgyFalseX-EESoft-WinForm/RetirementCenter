@@ -302,6 +302,48 @@
     <Compile Include="Forms\Data\ActivateVisaWarasaWFrm.designer.cs">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\ChangeMemberNameWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\ChangeMemberNameWFrm.Designer.cs">
+      <DependentUpon>ChangeMemberNameWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaAdminFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaAdminFrm.Designer.cs">
+      <DependentUpon>TBLFrookWarasaAdminFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaEditFrm.Designer.cs">
+      <DependentUpon>TBLFrookWarasaEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaAddFrm.Designer.cs">
+      <DependentUpon>TBLFrookWarasaAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLFrookWarasaFrm.Designer.cs">
+      <DependentUpon>TBLFrookWarasaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaTaslemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintWarasaTaslemFrm.Designer.cs">
+      <DependentUpon>TBLReprintWarasaTaslemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberTaslemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLReprintMemberTaslemFrm.Designer.cs">
+      <DependentUpon>TBLReprintMemberTaslemFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLHafzaTasleemEditFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -505,6 +547,24 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry47AFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry47AFrm.designer.cs">
+      <DependentUpon>Qry47AFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry83Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry83Frm.designer.cs">
+      <DependentUpon>Qry83Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry82Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry82Frm.designer.cs">
+      <DependentUpon>Qry82Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry80Frm.cs">
       <SubType>Form</SubType>
@@ -1319,6 +1379,27 @@
     <EmbeddedResource Include="Forms\Data\ActivateVisaWarasaWFrm.resx">
       <DependentUpon>ActivateVisaWarasaWFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\ChangeMemberNameWFrm.resx">
+      <DependentUpon>ChangeMemberNameWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLFrookWarasaAdminFrm.resx">
+      <DependentUpon>TBLFrookWarasaAdminFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLFrookWarasaEditFrm.resx">
+      <DependentUpon>TBLFrookWarasaEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLFrookWarasaAddFrm.resx">
+      <DependentUpon>TBLFrookWarasaAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLFrookWarasaFrm.resx">
+      <DependentUpon>TBLFrookWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintWarasaTaslemFrm.resx">
+      <DependentUpon>TBLReprintWarasaTaslemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLReprintMemberTaslemFrm.resx">
+      <DependentUpon>TBLReprintMemberTaslemFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLHafzaTasleemEditFrm.resx">
       <DependentUpon>TBLHafzaTasleemEditFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1421,6 +1502,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry47AFrm.resx">
+      <DependentUpon>Qry47AFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry83Frm.resx">
+      <DependentUpon>Qry83Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry82Frm.resx">
+      <DependentUpon>Qry82Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry80Frm.resx">
       <DependentUpon>Qry80Frm.cs</DependentUpon>

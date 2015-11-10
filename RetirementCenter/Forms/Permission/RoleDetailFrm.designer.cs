@@ -101,6 +101,8 @@
             this.mbRetCenterTBLMemberSarf = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterPrepareDofaa = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterTBLWarasaSarf = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLFrookWarasa = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLFrookWarasaAdmin = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep02a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep03a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterSarfyaA3da2 = new DevExpress.XtraBars.BarSubItem();
@@ -212,6 +214,8 @@
             this.mbRetCenterQry71 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQryPart3 = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterQry74 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry82 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry83 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry72 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry73 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep16 = new DevExpress.XtraBars.BarButtonItem();
@@ -226,6 +230,8 @@
             this.mbRetCenterTBLReprint = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterTBLReprintMember = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLReprintWarasa = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLReprintMemberTaslem = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLReprintWarasaTaslem = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry79 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry80 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLremind = new DevExpress.XtraBars.BarButtonItem();
@@ -644,10 +650,16 @@
             this.mbRetCenterQry80,
             this.mbRetCenterTBLremind,
             this.mbRetCenterTBLMandoop,
-            this.mbRetCenterTBLHafzaTasleem});
+            this.mbRetCenterTBLHafzaTasleem,
+            this.mbRetCenterQry82,
+            this.mbRetCenterQry83,
+            this.mbRetCenterTBLReprintMemberTaslem,
+            this.mbRetCenterTBLReprintWarasaTaslem,
+            this.mbRetCenterTBLFrookWarasa,
+            this.mbRetCenterTBLFrookWarasaAdmin});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 347;
+            this.ribbonControl.MaxItemId = 353;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1184,7 +1196,9 @@
             this.mbRetCenterPrepareDofaa.LargeImageIndex = 41;
             this.mbRetCenterPrepareDofaa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLMemberSarf),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasaAdmin)});
             this.mbRetCenterPrepareDofaa.Name = "mbRetCenterPrepareDofaa";
             // 
             // mbRetCenterTBLWarasaSarf
@@ -1194,6 +1208,24 @@
             this.mbRetCenterTBLWarasaSarf.ImageIndex = 41;
             this.mbRetCenterTBLWarasaSarf.LargeImageIndex = 41;
             this.mbRetCenterTBLWarasaSarf.Name = "mbRetCenterTBLWarasaSarf";
+            // 
+            // mbRetCenterTBLFrookWarasa
+            // 
+            this.mbRetCenterTBLFrookWarasa.Caption = "فروق الورثة";
+            this.mbRetCenterTBLFrookWarasa.Id = 351;
+            this.mbRetCenterTBLFrookWarasa.ImageIndex = 41;
+            this.mbRetCenterTBLFrookWarasa.LargeImageIndex = 41;
+            this.mbRetCenterTBLFrookWarasa.Name = "mbRetCenterTBLFrookWarasa";
+            this.mbRetCenterTBLFrookWarasa.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterTBLFrookWarasaAdmin
+            // 
+            this.mbRetCenterTBLFrookWarasaAdmin.Caption = "فروق الورثة - مراجع";
+            this.mbRetCenterTBLFrookWarasaAdmin.Id = 352;
+            this.mbRetCenterTBLFrookWarasaAdmin.ImageIndex = 41;
+            this.mbRetCenterTBLFrookWarasaAdmin.LargeImageIndex = 41;
+            this.mbRetCenterTBLFrookWarasaAdmin.Name = "mbRetCenterTBLFrookWarasaAdmin";
+            this.mbRetCenterTBLFrookWarasaAdmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // mbRetCenterXRep02a
             // 
@@ -2250,7 +2282,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry28),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry70),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry71),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry74)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry74),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry82),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry83)});
             this.mbRetCenterQryPart3.Name = "mbRetCenterQryPart3";
             this.mbRetCenterQryPart3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -2262,6 +2296,24 @@
             this.mbRetCenterQry74.LargeImageIndex = 19;
             this.mbRetCenterQry74.Name = "mbRetCenterQry74";
             this.mbRetCenterQry74.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry82
+            // 
+            this.mbRetCenterQry82.Caption = "مقارنة بين صرفيتين اعضاء";
+            this.mbRetCenterQry82.Id = 347;
+            this.mbRetCenterQry82.ImageIndex = 19;
+            this.mbRetCenterQry82.LargeImageIndex = 19;
+            this.mbRetCenterQry82.Name = "mbRetCenterQry82";
+            this.mbRetCenterQry82.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry83
+            // 
+            this.mbRetCenterQry83.Caption = "مقارنة بين صرفيتين ورثة";
+            this.mbRetCenterQry83.Id = 348;
+            this.mbRetCenterQry83.ImageIndex = 19;
+            this.mbRetCenterQry83.LargeImageIndex = 19;
+            this.mbRetCenterQry83.Name = "mbRetCenterQry83";
+            this.mbRetCenterQry83.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // mbRetCenterQry72
             // 
@@ -2368,7 +2420,9 @@
             this.mbRetCenterTBLReprint.LargeImageIndex = 34;
             this.mbRetCenterTBLReprint.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLReprintMember),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLReprintWarasa)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLReprintWarasa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLReprintMemberTaslem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLReprintWarasaTaslem)});
             this.mbRetCenterTBLReprint.Name = "mbRetCenterTBLReprint";
             // 
             // mbRetCenterTBLReprintMember
@@ -2388,6 +2442,24 @@
             this.mbRetCenterTBLReprintWarasa.LargeImageIndex = 34;
             this.mbRetCenterTBLReprintWarasa.Name = "mbRetCenterTBLReprintWarasa";
             this.mbRetCenterTBLReprintWarasa.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterTBLReprintMemberTaslem
+            // 
+            this.mbRetCenterTBLReprintMemberTaslem.Caption = "تسليم الاعضاء";
+            this.mbRetCenterTBLReprintMemberTaslem.Id = 349;
+            this.mbRetCenterTBLReprintMemberTaslem.ImageIndex = 34;
+            this.mbRetCenterTBLReprintMemberTaslem.LargeImageIndex = 34;
+            this.mbRetCenterTBLReprintMemberTaslem.Name = "mbRetCenterTBLReprintMemberTaslem";
+            this.mbRetCenterTBLReprintMemberTaslem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterTBLReprintWarasaTaslem
+            // 
+            this.mbRetCenterTBLReprintWarasaTaslem.Caption = "تسليم الورثة";
+            this.mbRetCenterTBLReprintWarasaTaslem.Id = 350;
+            this.mbRetCenterTBLReprintWarasaTaslem.ImageIndex = 34;
+            this.mbRetCenterTBLReprintWarasaTaslem.LargeImageIndex = 34;
+            this.mbRetCenterTBLReprintWarasaTaslem.Name = "mbRetCenterTBLReprintWarasaTaslem";
+            this.mbRetCenterTBLReprintWarasaTaslem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // mbRetCenterQry79
             // 
@@ -2417,7 +2489,7 @@
             // 
             // mbRetCenterTBLMandoop
             // 
-            this.mbRetCenterTBLMandoop.Caption = "المناديب";
+            this.mbRetCenterTBLMandoop.Caption = "المندوبين";
             this.mbRetCenterTBLMandoop.Id = 345;
             this.mbRetCenterTBLMandoop.ImageIndex = 52;
             this.mbRetCenterTBLMandoop.LargeImageIndex = 52;
@@ -2801,6 +2873,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMemberSarf;
         private DevExpress.XtraBars.BarSubItem mbRetCenterPrepareDofaa;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaSarf;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLFrookWarasa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLFrookWarasaAdmin;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep02a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep03a;
         private DevExpress.XtraBars.BarSubItem mbRetCenterSarfyaA3da2;
@@ -2912,6 +2986,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry71;
         private DevExpress.XtraBars.BarSubItem mbRetCenterQryPart3;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry74;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry82;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry83;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry72;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry73;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep16;
@@ -2926,6 +3002,8 @@
         private DevExpress.XtraBars.BarSubItem mbRetCenterTBLReprint;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLReprintMember;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLReprintWarasa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLReprintMemberTaslem;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLReprintWarasaTaslem;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry79;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry80;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLremind;

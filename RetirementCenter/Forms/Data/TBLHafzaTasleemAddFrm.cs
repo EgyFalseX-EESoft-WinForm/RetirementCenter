@@ -46,18 +46,19 @@ namespace RetirementCenter.Forms.Data
 
         private void TBLHafzaTasleemAddFrm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLMandoop' table. You can move, or remove it, as needed.
-            this.tBLMandoopTableAdapter.Fill(this.dsRetirementCenter.TBLMandoop);
             // TODO: This line of code loads data into the 'dsQueries.CDSyndicate' table. You can move, or remove it, as needed.
             this.cDSyndicateTableAdapter.Fill(this.dsQueries.CDSyndicate);
             // TODO: This line of code loads data into the 'dsQueries.CDMashHala' table. You can move, or remove it, as needed.
             this.cDMashHalaTableAdapter.Fill(this.dsQueries.CDMashHala);
+
+            detasleemdate.EditValue = SQLProvider.ServerDateTime();
         }
-        private void luetasleemtype_EditValueChanged(object sender, EventArgs e)
+        private void lue_EditValueChanged(object sender, EventArgs e)
         {
-            if (luetasleemtype.EditValue == null)
+            if (luetasleemtype.EditValue == null || lueSyndicateId.EditValue == null)
                 return;
-            LSMSDATA.QueryableSource = from q in dsLinq.vQry81s where q.Type == Convert.ToInt32(luetasleemtype.EditValue) select q;
+            LSMSDATA.QueryableSource = from q in dsLinq.vQry81s where q.Type == Convert.ToInt32(luetasleemtype.EditValue) && q.SyndicateId == Convert.ToInt32(lueSyndicateId.EditValue) select q;
+            this.tBLMandoopTableAdapter.FillBySyndicateId(this.dsRetirementCenter.TBLMandoop, Convert.ToInt32(lueSyndicateId.EditValue));
             //LSMSDATA.Reload();
         }
         private void luehafza_EditValueChanged(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace RetirementCenter.Forms.Data
             if (luehafza.EditValue == null)
                 return;
             DataSources.Linq.vQry81 row = (DataSources.Linq.vQry81)luehafza.Properties.View.GetRow(luehafza.Properties.View.FocusedRowHandle);
+            tbcountindata.EditValue = row.Num;
             tbcountrealy.EditValue = row.Num;
         }
 

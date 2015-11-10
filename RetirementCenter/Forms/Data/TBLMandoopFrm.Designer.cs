@@ -33,35 +33,35 @@
             this.XPSCSData = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.UOWData = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemButtonEditdel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colMandoopName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMandoopNID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMandoopJOB = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMandoopMOBIL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMandoopEMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.cDSyndicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colactive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
-            this.cDSyndicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemButtonEditdel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cDSyndicateTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.CDSyndicateTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditdel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -124,38 +124,6 @@
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowDetailButtons = false;
             // 
-            // repositoryItemDateEditDMY
-            // 
-            this.repositoryItemDateEditDMY.AutoHeight = false;
-            this.repositoryItemDateEditDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEditDMY.DisplayFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditDMY.EditFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditDMY.Mask.EditMask = "d/M/yyyy";
-            this.repositoryItemDateEditDMY.Name = "repositoryItemDateEditDMY";
-            this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // repositoryItemButtonEditTransferSave
-            // 
-            this.repositoryItemButtonEditTransferSave.AutoHeight = false;
-            this.repositoryItemButtonEditTransferSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
-            this.repositoryItemButtonEditTransferSave.Name = "repositoryItemButtonEditTransferSave";
-            this.repositoryItemButtonEditTransferSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditTransferSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditTransferSave_ButtonClick);
-            // 
-            // repositoryItemButtonEditdel
-            // 
-            this.repositoryItemButtonEditdel.AutoHeight = false;
-            this.repositoryItemButtonEditdel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.repositoryItemButtonEditdel.Name = "repositoryItemButtonEditdel";
-            this.repositoryItemButtonEditdel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditdel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditdel_ButtonClick);
-            // 
             // colMandoopName
             // 
             this.colMandoopName.AppearanceCell.Options.UseTextOptions = true;
@@ -178,7 +146,7 @@
             this.colMandoopNID.FieldName = "MandoopNID";
             this.colMandoopNID.Name = "colMandoopNID";
             this.colMandoopNID.Visible = true;
-            this.colMandoopNID.VisibleIndex = 1;
+            this.colMandoopNID.VisibleIndex = 3;
             // 
             // colMandoopJOB
             // 
@@ -190,7 +158,7 @@
             this.colMandoopJOB.FieldName = "MandoopJOB";
             this.colMandoopJOB.Name = "colMandoopJOB";
             this.colMandoopJOB.Visible = true;
-            this.colMandoopJOB.VisibleIndex = 2;
+            this.colMandoopJOB.VisibleIndex = 4;
             // 
             // colMandoopMOBIL
             // 
@@ -202,7 +170,7 @@
             this.colMandoopMOBIL.FieldName = "MandoopMOBIL";
             this.colMandoopMOBIL.Name = "colMandoopMOBIL";
             this.colMandoopMOBIL.Visible = true;
-            this.colMandoopMOBIL.VisibleIndex = 3;
+            this.colMandoopMOBIL.VisibleIndex = 1;
             // 
             // colMandoopEMAIL
             // 
@@ -214,7 +182,7 @@
             this.colMandoopEMAIL.FieldName = "MandoopEMAIL";
             this.colMandoopEMAIL.Name = "colMandoopEMAIL";
             this.colMandoopEMAIL.Visible = true;
-            this.colMandoopEMAIL.VisibleIndex = 4;
+            this.colMandoopEMAIL.VisibleIndex = 5;
             // 
             // colSyndicateId
             // 
@@ -227,7 +195,31 @@
             this.colSyndicateId.FieldName = "SyndicateId";
             this.colSyndicateId.Name = "colSyndicateId";
             this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 5;
+            this.colSyndicateId.VisibleIndex = 2;
+            // 
+            // repositoryItemLookUpEditSyndicateId
+            // 
+            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
+            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditSyndicateId.DataSource = this.cDSyndicateBindingSource;
+            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
+            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
+            this.repositoryItemLookUpEditSyndicateId.NullText = "";
+            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
+            // 
+            // cDSyndicateBindingSource
+            // 
+            this.cDSyndicateBindingSource.DataMember = "CDSyndicate";
+            this.cDSyndicateBindingSource.DataSource = this.dsQueries;
+            // 
+            // dsQueries
+            // 
+            this.dsQueries.DataSetName = "dsQueries";
+            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // coluserin
             // 
@@ -256,6 +248,20 @@
             this.coldatein.Visible = true;
             this.coldatein.VisibleIndex = 7;
             // 
+            // repositoryItemDateEditDMY
+            // 
+            this.repositoryItemDateEditDMY.AutoHeight = false;
+            this.repositoryItemDateEditDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditDMY.DisplayFormat.FormatString = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditDMY.EditFormat.FormatString = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditDMY.Mask.EditMask = "d/M/yyyy";
+            this.repositoryItemDateEditDMY.Name = "repositoryItemDateEditDMY";
+            this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
             // colactive
             // 
             this.colactive.AppearanceCell.Options.UseTextOptions = true;
@@ -267,20 +273,6 @@
             this.colactive.Name = "colactive";
             this.colactive.Visible = true;
             this.colactive.VisibleIndex = 8;
-            // 
-            // repositoryItemLookUpEditSyndicateId
-            // 
-            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
-            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditSyndicateId.DataSource = this.cDSyndicateBindingSource;
-            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
-            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
-            this.repositoryItemLookUpEditSyndicateId.NullText = "";
-            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
             // 
             // gridColumn1
             // 
@@ -294,6 +286,15 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 9;
             // 
+            // repositoryItemButtonEditTransferSave
+            // 
+            this.repositoryItemButtonEditTransferSave.AutoHeight = false;
+            this.repositoryItemButtonEditTransferSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.repositoryItemButtonEditTransferSave.Name = "repositoryItemButtonEditTransferSave";
+            this.repositoryItemButtonEditTransferSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditTransferSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditTransferSave_ButtonClick);
+            // 
             // gridColumn2
             // 
             this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
@@ -306,15 +307,14 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 10;
             // 
-            // dsQueries
+            // repositoryItemButtonEditdel
             // 
-            this.dsQueries.DataSetName = "dsQueries";
-            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cDSyndicateBindingSource
-            // 
-            this.cDSyndicateBindingSource.DataMember = "CDSyndicate";
-            this.cDSyndicateBindingSource.DataSource = this.dsQueries;
+            this.repositoryItemButtonEditdel.AutoHeight = false;
+            this.repositoryItemButtonEditdel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
+            this.repositoryItemButtonEditdel.Name = "repositoryItemButtonEditdel";
+            this.repositoryItemButtonEditdel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditdel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditdel_ButtonClick);
             // 
             // cDSyndicateTableAdapter
             // 
@@ -327,20 +327,20 @@
             this.ClientSize = new System.Drawing.Size(892, 399);
             this.Controls.Add(this.gridControlData);
             this.Name = "TBLMandoopFrm";
-            this.Text = "المناديب";
+            this.Text = "المندوبين";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DofatSarfActivityFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditdel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

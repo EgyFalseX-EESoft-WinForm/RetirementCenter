@@ -54,14 +54,16 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.cDMashHalaTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.CDMashHalaTableAdapter();
             this.cDSyndicateTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.CDSyndicateTableAdapter();
             this.tBLMandoopTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLMandoopTableAdapter();
+            this.tbcountindata = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detasleemdate.Properties.VistaTimeProperties)).BeginInit();
@@ -83,15 +85,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcountindata.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlMain
             // 
+            this.layoutControlMain.Controls.Add(this.tbcountindata);
             this.layoutControlMain.Controls.Add(this.detasleemdate);
             this.layoutControlMain.Controls.Add(this.lueMandoopId);
             this.layoutControlMain.Controls.Add(this.tbcountrealy);
@@ -105,14 +110,14 @@
             this.layoutControlMain.Name = "layoutControlMain";
             this.layoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(757, 104, 250, 350);
             this.layoutControlMain.Root = this.layoutControlGroup1;
-            this.layoutControlMain.Size = new System.Drawing.Size(439, 192);
+            this.layoutControlMain.Size = new System.Drawing.Size(439, 216);
             this.layoutControlMain.TabIndex = 0;
             this.layoutControlMain.Text = "layoutControl1";
             // 
             // detasleemdate
             // 
             this.detasleemdate.EditValue = null;
-            this.detasleemdate.Location = new System.Drawing.Point(12, 132);
+            this.detasleemdate.Location = new System.Drawing.Point(12, 156);
             this.detasleemdate.Name = "detasleemdate";
             this.detasleemdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -123,13 +128,13 @@
             this.detasleemdate.Properties.Mask.EditMask = "d/M/yyyy";
             this.detasleemdate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.detasleemdate.Size = new System.Drawing.Size(350, 20);
+            this.detasleemdate.Size = new System.Drawing.Size(346, 20);
             this.detasleemdate.StyleController = this.layoutControlMain;
             this.detasleemdate.TabIndex = 8;
             // 
             // lueMandoopId
             // 
-            this.lueMandoopId.Location = new System.Drawing.Point(12, 108);
+            this.lueMandoopId.Location = new System.Drawing.Point(12, 132);
             this.lueMandoopId.Name = "lueMandoopId";
             this.lueMandoopId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -139,7 +144,7 @@
             this.lueMandoopId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueMandoopId.Properties.ValueMember = "MandoopId";
             this.lueMandoopId.Properties.View = this.gridView1;
-            this.lueMandoopId.Size = new System.Drawing.Size(350, 20);
+            this.lueMandoopId.Size = new System.Drawing.Size(346, 20);
             this.lueMandoopId.StyleController = this.layoutControlMain;
             this.lueMandoopId.TabIndex = 7;
             // 
@@ -189,15 +194,15 @@
             // 
             // tbcountrealy
             // 
-            this.tbcountrealy.Location = new System.Drawing.Point(12, 84);
+            this.tbcountrealy.Location = new System.Drawing.Point(12, 108);
             this.tbcountrealy.Name = "tbcountrealy";
-            this.tbcountrealy.Size = new System.Drawing.Size(350, 20);
+            this.tbcountrealy.Size = new System.Drawing.Size(346, 20);
             this.tbcountrealy.StyleController = this.layoutControlMain;
             this.tbcountrealy.TabIndex = 6;
             // 
             // lueSyndicateId
             // 
-            this.lueSyndicateId.Location = new System.Drawing.Point(12, 60);
+            this.lueSyndicateId.Location = new System.Drawing.Point(12, 36);
             this.lueSyndicateId.Name = "lueSyndicateId";
             this.lueSyndicateId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -208,9 +213,10 @@
             this.lueSyndicateId.Properties.NullText = "";
             this.lueSyndicateId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueSyndicateId.Properties.ValueMember = "SyndicateId";
-            this.lueSyndicateId.Size = new System.Drawing.Size(350, 20);
+            this.lueSyndicateId.Size = new System.Drawing.Size(346, 20);
             this.lueSyndicateId.StyleController = this.layoutControlMain;
             this.lueSyndicateId.TabIndex = 5;
+            this.lueSyndicateId.EditValueChanged += new System.EventHandler(this.lue_EditValueChanged);
             // 
             // cDSyndicateBindingSource
             // 
@@ -235,10 +241,10 @@
             this.luetasleemtype.Properties.NullText = "";
             this.luetasleemtype.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luetasleemtype.Properties.ValueMember = "MashHalaId";
-            this.luetasleemtype.Size = new System.Drawing.Size(350, 20);
+            this.luetasleemtype.Size = new System.Drawing.Size(346, 20);
             this.luetasleemtype.StyleController = this.layoutControlMain;
             this.luetasleemtype.TabIndex = 4;
-            this.luetasleemtype.EditValueChanged += new System.EventHandler(this.luetasleemtype_EditValueChanged);
+            this.luetasleemtype.EditValueChanged += new System.EventHandler(this.lue_EditValueChanged);
             // 
             // cDMashHalaBindingSource
             // 
@@ -248,7 +254,7 @@
             // btnCancel
             // 
             this.btnCancel.Image = global::RetirementCenter.Properties.Resources.cancel_16x16;
-            this.btnCancel.Location = new System.Drawing.Point(319, 156);
+            this.btnCancel.Location = new System.Drawing.Point(319, 180);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 22);
             this.btnCancel.StyleController = this.layoutControlMain;
@@ -259,7 +265,7 @@
             // btnSave
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.save_16x16;
-            this.btnSave.Location = new System.Drawing.Point(12, 156);
+            this.btnSave.Location = new System.Drawing.Point(12, 180);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(303, 22);
             this.btnSave.StyleController = this.layoutControlMain;
@@ -270,7 +276,7 @@
             // luehafza
             // 
             this.luehafza.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.luehafza.Location = new System.Drawing.Point(12, 36);
+            this.luehafza.Location = new System.Drawing.Point(12, 60);
             this.luehafza.Margin = new System.Windows.Forms.Padding(0);
             this.luehafza.Name = "luehafza";
             this.luehafza.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
@@ -282,7 +288,7 @@
             this.luehafza.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luehafza.Properties.ValueMember = "hafza";
             this.luehafza.Properties.View = this.gridLookUpEdit1View;
-            this.luehafza.Size = new System.Drawing.Size(350, 20);
+            this.luehafza.Size = new System.Drawing.Size(346, 20);
             this.luehafza.StyleController = this.layoutControlMain;
             this.luehafza.TabIndex = 0;
             this.luehafza.EditValueChanged += new System.EventHandler(this.luehafza_EditValueChanged);
@@ -337,14 +343,15 @@
             this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(439, 192);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(439, 216);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -354,18 +361,18 @@
             this.layoutControlItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem1.Control = this.luehafza;
             this.layoutControlItem1.CustomizationFormText = "العضو";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem1.Text = "الحافظة";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(62, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSave;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(307, 28);
             this.layoutControlItem3.Text = "layoutControlItem3";
@@ -377,13 +384,52 @@
             // 
             this.layoutControlItem4.Control = this.btnCancel;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(307, 144);
+            this.layoutControlItem4.Location = new System.Drawing.Point(307, 168);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(112, 28);
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem7.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem7.Control = this.tbcountrealy;
+            this.layoutControlItem7.CustomizationFormText = "العدد الفعلي";
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem7.Text = "العدد الفعلي";
+            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(66, 13);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem8.Control = this.lueMandoopId;
+            this.layoutControlItem8.CustomizationFormText = "المندوب";
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem8.Text = "المندوب";
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(66, 13);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem9.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem9.Control = this.detasleemdate;
+            this.layoutControlItem9.CustomizationFormText = "تاريخ التسليم";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem9.Text = "تاريخ التسليم";
+            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem5
             // 
@@ -396,7 +442,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem5.Text = "النوع";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(62, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem6
             // 
@@ -404,51 +450,12 @@
             this.layoutControlItem6.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem6.Control = this.lueSyndicateId;
             this.layoutControlItem6.CustomizationFormText = "الفرعية";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem6.Text = "الفرعية";
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(62, 13);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlItem7.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.layoutControlItem7.Control = this.tbcountrealy;
-            this.layoutControlItem7.CustomizationFormText = "العدد الفعلي";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(419, 24);
-            this.layoutControlItem7.Text = "العدد الفعلي";
-            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(62, 13);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.layoutControlItem8.Control = this.lueMandoopId;
-            this.layoutControlItem8.CustomizationFormText = "المندوب";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(419, 24);
-            this.layoutControlItem8.Text = "المندوب";
-            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(62, 13);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlItem9.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.layoutControlItem9.Control = this.detasleemdate;
-            this.layoutControlItem9.CustomizationFormText = "تاريخ التسليم";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(419, 24);
-            this.layoutControlItem9.Text = "تاريخ التسليم";
-            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(62, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(66, 13);
             // 
             // cDMashHalaTableAdapter
             // 
@@ -462,11 +469,31 @@
             // 
             this.tBLMandoopTableAdapter.ClearBeforeFill = true;
             // 
+            // tbcountindata
+            // 
+            this.tbcountindata.Location = new System.Drawing.Point(12, 84);
+            this.tbcountindata.Name = "tbcountindata";
+            this.tbcountindata.Properties.ReadOnly = true;
+            this.tbcountindata.Size = new System.Drawing.Size(346, 20);
+            this.tbcountindata.StyleController = this.layoutControlMain;
+            this.tbcountindata.TabIndex = 9;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.tbcountindata;
+            this.layoutControlItem2.CustomizationFormText = "العدد المسجل";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem2.Text = "العدد المسجل";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // TBLHafzaTasleemAddFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 192);
+            this.ClientSize = new System.Drawing.Size(439, 216);
             this.Controls.Add(this.layoutControlMain);
             this.Name = "TBLHafzaTasleemAddFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -493,11 +520,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcountindata.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -537,5 +566,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMandoopMOBIL;
         private DevExpress.XtraGrid.Columns.GridColumn colhafza;
         private DevExpress.XtraGrid.Columns.GridColumn colNum;
+        private DevExpress.XtraEditors.TextEdit tbcountindata;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

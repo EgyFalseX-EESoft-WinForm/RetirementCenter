@@ -36,6 +36,7 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ceYasref = new DevExpress.XtraEditors.CheckEdit();
             this.tbsefa = new DevExpress.XtraEditors.TextEdit();
             this.tbmosthhekmony = new DevExpress.XtraEditors.TextEdit();
@@ -65,6 +66,7 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDeathMembersTableAdapter();
+            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -99,7 +101,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(406, 224);
+            this.labelControl4.Location = new System.Drawing.Point(406, 192);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(56, 19);
             this.labelControl4.TabIndex = 0;
@@ -151,6 +153,7 @@
             // 
             // xtpGeneral
             // 
+            this.xtpGeneral.Controls.Add(this.simpleButton1);
             this.xtpGeneral.Controls.Add(this.ceYasref);
             this.xtpGeneral.Controls.Add(this.tbsefa);
             this.xtpGeneral.Controls.Add(this.tbmosthhekmony);
@@ -172,6 +175,15 @@
             this.xtpGeneral.Size = new System.Drawing.Size(519, 321);
             this.xtpGeneral.Text = "بيانات أساسيه";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(292, 49);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(50, 23);
+            this.simpleButton1.TabIndex = 100;
+            this.simpleButton1.Text = "تعديل";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // ceYasref
             // 
             this.ceYasref.Enabled = false;
@@ -188,7 +200,7 @@
             // 
             // tbsefa
             // 
-            this.tbsefa.Location = new System.Drawing.Point(55, 279);
+            this.tbsefa.Location = new System.Drawing.Point(55, 247);
             this.tbsefa.Name = "tbsefa";
             this.tbsefa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tbsefa.Properties.Appearance.Options.UseFont = true;
@@ -197,7 +209,7 @@
             // 
             // tbmosthhekmony
             // 
-            this.tbmosthhekmony.Location = new System.Drawing.Point(53, 187);
+            this.tbmosthhekmony.Location = new System.Drawing.Point(53, 155);
             this.tbmosthhekmony.Name = "tbmosthhekmony";
             this.tbmosthhekmony.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tbmosthhekmony.Properties.Appearance.Options.UseFont = true;
@@ -208,13 +220,14 @@
             // 
             // tbmosthhekNid
             // 
-            this.tbmosthhekNid.Location = new System.Drawing.Point(53, 149);
+            this.tbmosthhekNid.Location = new System.Drawing.Point(55, 286);
             this.tbmosthhekNid.Name = "tbmosthhekNid";
             this.tbmosthhekNid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tbmosthhekNid.Properties.Appearance.Options.UseFont = true;
             this.tbmosthhekNid.Properties.MaxLength = 14;
             this.tbmosthhekNid.Size = new System.Drawing.Size(233, 26);
             this.tbmosthhekNid.TabIndex = 3;
+            this.tbmosthhekNid.Visible = false;
             // 
             // lueMMashatId
             // 
@@ -246,7 +259,8 @@
             this.gridColumn1,
             this.colsarfnumber,
             this.colSyndicate1,
-            this.colSubCommitte});
+            this.colSubCommitte,
+            this.colMMashatNId});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -344,7 +358,7 @@
             // 
             // tbmosthhek
             // 
-            this.tbmosthhek.Location = new System.Drawing.Point(53, 226);
+            this.tbmosthhek.Location = new System.Drawing.Point(53, 194);
             this.tbmosthhek.Name = "tbmosthhek";
             this.tbmosthhek.Properties.MaxLength = 75;
             this.tbmosthhek.Size = new System.Drawing.Size(233, 38);
@@ -353,7 +367,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(427, 282);
+            this.labelControl7.Location = new System.Drawing.Point(427, 250);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(35, 19);
             this.labelControl7.TabIndex = 0;
@@ -371,7 +385,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(384, 190);
+            this.labelControl5.Location = new System.Drawing.Point(384, 158);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(78, 19);
             this.labelControl5.TabIndex = 0;
@@ -380,11 +394,12 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(385, 152);
+            this.labelControl3.Location = new System.Drawing.Point(387, 289);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(77, 19);
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "الرقم قومي";
+            this.labelControl3.Visible = false;
             // 
             // lblMemType
             // 
@@ -474,6 +489,18 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
+            // colMMashatNId
+            // 
+            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.Caption = "رقم قومي";
+            this.colMMashatNId.FieldName = "MMashatNId";
+            this.colMMashatNId.Name = "colMMashatNId";
+            this.colMMashatNId.Visible = true;
+            this.colMMashatNId.VisibleIndex = 4;
+            // 
             // TBLDeathMembersWFrm
             // 
             this.AcceptButton = this.btnSave;
@@ -556,5 +583,7 @@
         private DevExpress.XtraEditors.LabelControl lblMemType;
         private DevExpress.XtraEditors.TextEdit tbsefa;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatNId;
     }
 }

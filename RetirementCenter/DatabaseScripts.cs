@@ -447,6 +447,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry81;
                 cmd.ExecuteNonQuery();
+                //vTBLFrookWarasa
+                if (CheckViewExists("vTBLFrookWarasa"))
+                {
+                    cmd.CommandText = DropObject("vTBLFrookWarasa");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLFrookWarasa;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -963,7 +971,7 @@ FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                          dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
                          dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, TBLWarasa_1.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa_1.MMashatId, 
                          dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, 
-                         dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current
+                         dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank
 FROM            dbo.TBLWarasa RIGHT OUTER JOIN
                          dbo.TBLWarasaSarf_arshef ON dbo.TBLWarasa.PersonId = dbo.TBLWarasaSarf_arshef.responsiblesarfId LEFT OUTER JOIN
                          dbo.TBLMashat RIGHT OUTER JOIN
@@ -1248,13 +1256,15 @@ WHERE CAST(Total AS INT) <> CAST(BankMoney AS INT)
                 return @"
                 CREATE VIEW [dbo].[vTBLDeathMembers]
                     AS
-                                    SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLDeathMembers.datein, TBLDeathMembers.userin, TBLMashat.MMashatName, TBLMashat.SyndicateId, 
-                         TBLMashat.SubCommitteId, TBLMashat.sarfnumber, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.yasref, Users.RealName
-                FROM            TBLDeathMembers INNER JOIN
-                         TBLMashat ON TBLDeathMembers.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
-                         Users ON TBLDeathMembers.userin = Users.UserID";
+                 SELECT        dbo.TBLDeathMembers.MMashatId, dbo.TBLDeathMembers.deathdate, dbo.TBLDeathMembers.mosthhek, dbo.TBLDeathMembers.datein, dbo.TBLDeathMembers.userin, dbo.TBLMashat.MMashatName, 
+                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.yasref, dbo.Users.RealName, 
+                         dbo.TBLMashat.MMashatNId, dbo.CDMashHala.MashHala
+FROM            dbo.TBLDeathMembers INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLDeathMembers.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TBLDeathMembers.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId";
             }
         }
         public static string vQry73
@@ -1434,8 +1444,9 @@ FROM            dbo.TBLEstefa INNER JOIN
                     AS
                     SELECT        dbo.TBLReprintMember.reprintid, dbo.TBLReprintMember.reprintresonid, dbo.TBLReprintMember.reprintdate, dbo.TBLReprintMember.MMashatId, dbo.TBLReprintMember.reprintremark, 
                          dbo.TBLReprintMember.sendbankdate, dbo.TBLReprintMember.waredbankdate, dbo.TBLReprintMember.userin, dbo.TBLReprintMember.datein, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, 
-                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.Users.RealName, dbo.TBLMashat.visa, dbo.CDreprintreson.reprintreson
-                    FROM            dbo.TBLReprintMember INNER JOIN
+                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.Users.RealName, dbo.TBLMashat.visa, dbo.CDreprintreson.reprintreson, 
+                         dbo.TBLReprintMember.mostlem, dbo.TBLReprintMember.datetasleem
+FROM            dbo.TBLReprintMember INNER JOIN
                          dbo.TBLMashat ON dbo.TBLReprintMember.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
@@ -1465,17 +1476,16 @@ FROM            dbo.BankExportedDataWarsa INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLReprintWarasa]
                     AS
-                    SELECT        dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
-                         dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.userin, dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, dbo.CDSyndicate.Syndicate, 
-                         dbo.TBLMashat.MMashatName, dbo.Users.RealName, dbo.CDreprintreson.reprintreson
-FROM            dbo.TBLReprintWarasa INNER JOIN
-                         dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa INNER JOIN
-                         dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid INNER JOIN
-                         dbo.TBLWarasa ON dbo.TBLReprintWarasa.visa = dbo.TBLWarasa.visa INNER JOIN
-                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
-                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
-                         dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID INNER JOIN
-                         dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid";
+                    SELECT dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
+dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.userin, dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, dbo.CDSyndicate.Syndicate, 
+dbo.TBLMashat.MMashatName, dbo.Users.RealName, dbo.CDreprintreson.reprintreson
+FROM dbo.TBLReprintWarasa INNER JOIN dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa 
+INNER JOIN dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid 
+INNER JOIN (SELECT MMashatId, visa, (SELECT TOP 1 SyndicateId FROM TBLWarasa TBL WHERE MMashatId = TBLWarasa.MMashatId) AS SyndicateId FROM TBLWarasa GROUP BY MMashatId, visa) T ON dbo.TBLReprintWarasa.visa = T.visa 
+INNER JOIN dbo.CDSyndicate ON T.SyndicateId = dbo.CDSyndicate.SyndicateId 
+INNER JOIN dbo.TBLMashat ON T.MMashatId = dbo.TBLMashat.MMashatId 
+INNER JOIN dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID 
+INNER JOIN dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid";
             }
         }
         public static string vQry80
@@ -1485,25 +1495,22 @@ FROM            dbo.TBLReprintWarasa INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry80]
                     AS
-                    WITH CTE1 AS
-                    (
-                    SELECT dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
-                    dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.userin, dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, 
-                        dbo.Users.RealName, dbo.CDreprintreson.reprintreson
-                    , (SELECT TOP 1 PersonId FROM TBLWarasa WHERE visa = TBLReprintWarasa.visa) AS PersonId
-                    FROM dbo.TBLReprintWarasa INNER JOIN dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa 
-                    INNER JOIN dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid 
-                    INNER JOIN dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID 
-                    INNER JOIN dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid
-                    )
-                    SELECT reprintid, reprintresonid, CTE1.visa, reprintdate, reprintremark, 
-                    sendbankdate, waredbankdate, CTE1.userin, CTE1.datein, [newid], 
-                        RealName, reprintreson, CTE1.PersonId
-                        , dbo.CDSyndicate.Syndicate, dbo.TBLMashat.MMashatName
-                    FROM CTE1 
-                    INNER JOIN dbo.TBLWarasa ON CTE1.PersonId = dbo.TBLWarasa.PersonId 
-                    INNER JOIN dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId 
-                    INNER JOIN dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId ";
+                    WITH CTE1 AS (
+SELECT dbo.TBLReprintWarasa.reprintid, dbo.TBLReprintWarasa.reprintresonid, dbo.TBLReprintWarasa.visa, dbo.TBLReprintWarasa.reprintdate, dbo.TBLReprintWarasa.reprintremark, 
+dbo.TBLReprintWarasa.sendbankdate, dbo.TBLReprintWarasa.waredbankdate, dbo.TBLReprintWarasa.mostlem, dbo.TBLReprintWarasa.datetasleem, dbo.TBLReprintWarasa.userin, 
+dbo.TBLReprintWarasa.datein, dbo.AwarasaNewId.newid, dbo.Users.RealName, dbo.CDreprintreson.reprintreson,
+(SELECT TOP (1) PersonId FROM dbo.TBLWarasa WHERE (visa = dbo.TBLReprintWarasa.visa)) AS PersonId
+FROM dbo.TBLReprintWarasa INNER JOIN
+dbo.BankExportedDataWarsa ON dbo.TBLReprintWarasa.visa = dbo.BankExportedDataWarsa.visa INNER JOIN
+dbo.AwarasaNewId ON dbo.BankExportedDataWarsa.PersonId = dbo.AwarasaNewId.personid INNER JOIN
+dbo.Users ON dbo.TBLReprintWarasa.userin = dbo.Users.UserID INNER JOIN
+dbo.CDreprintreson ON dbo.TBLReprintWarasa.reprintresonid = dbo.CDreprintreson.reprintresonid)
+SELECT        CTE1_1.reprintid, CTE1_1.reprintresonid, CTE1_1.visa, CTE1_1.reprintdate, CTE1_1.reprintremark, CTE1_1.sendbankdate, CTE1_1.waredbankdate, CTE1_1.userin, CTE1_1.datein, CTE1_1.newid, 
+CTE1_1.RealName, CTE1_1.reprintreson, CTE1_1.PersonId, dbo.CDSyndicate.Syndicate, dbo.TBLMashat.MMashatName, CTE1_1.mostlem, CTE1_1.datetasleem
+FROM            CTE1 AS CTE1_1 INNER JOIN
+dbo.TBLWarasa AS TBLWarasa_1 ON CTE1_1.PersonId = TBLWarasa_1.PersonId INNER JOIN
+dbo.CDSyndicate ON TBLWarasa_1.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+dbo.TBLMashat ON TBLWarasa_1.MMashatId = dbo.TBLMashat.MMashatId ";
             }
         }
         public static string vTBLHafzaTasleem
@@ -1530,15 +1537,37 @@ FROM            dbo.TBLReprintWarasa INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry81]
                     AS
-                    SELECT hafza, COUNT(*) AS Num, 1 AS [Type]
-                    FROM dbo.BankExportedData
-                    WHERE (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = dbo.BankExportedData.hafza AND tasleemtype = 1)) AND (hafza IS NOT NULL)
-                    GROUP BY hafza
-                    UNION
-                    SELECT hafza, COUNT(*) AS Num, 2 AS [Type]
-                    FROM dbo.BankExportedDataWarsa
-                    WHERE (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = BankExportedDataWarsa.hafza AND tasleemtype = 2)) AND (hafza IS NOT NULL)
-                    GROUP BY hafza";
+                    SELECT        BankExportedData.hafza, TBLMashat.SyndicateId, COUNT(*) AS Num, 1 AS Type
+FROM            BankExportedData INNER JOIN
+                         TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId
+WHERE        (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = BankExportedData.hafza AND tasleemtype = 1 And SyndicateId = TBLMashat.SyndicateId)) AND (hafza IS NOT NULL)
+GROUP BY BankExportedData.hafza, TBLMashat.SyndicateId
+UNION
+SELECT        BankExportedDataWarsa.hafza, TBLWarasa.SyndicateId, COUNT(*) AS Num, 2 AS Type
+FROM            BankExportedDataWarsa INNER JOIN
+                         TBLWarasa ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId
+WHERE        (NOT EXISTS (SELECT tasleemid FROM dbo.TBLHafzaTasleem WHERE hafza = BankExportedDataWarsa.hafza AND tasleemtype = 2 And SyndicateId = TBLWarasa.SyndicateId)) AND (BankExportedDataWarsa.hafza IS NOT NULL)
+GROUP BY BankExportedDataWarsa.hafza, TBLWarasa.SyndicateId";
+            }
+        }
+        public static string vTBLFrookWarasa
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLFrookWarasa]
+                    AS
+                    SELECT        dbo.TBLFrookWarasa.frookaouto, dbo.TBLFrookWarasa.PersonId, dbo.TBLFrookWarasa.DofatSarfId, dbo.TBLFrookWarasa.frookid, dbo.TBLFrookWarasa.frookmony, dbo.TBLFrookWarasa.frookreson, 
+                         dbo.TBLFrookWarasa.adminconfirm, dbo.TBLFrookWarasa.userinadmin, dbo.TBLFrookWarasa.userin, dbo.TBLFrookWarasa.datein, dbo.CDFrook.frookname, dbo.Users.RealName, dbo.TBLWarasa.personName, 
+                         dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDDofatSarfFrook.DofatSarf
+FROM            dbo.TBLFrookWarasa INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLFrookWarasa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDFrook ON dbo.TBLFrookWarasa.frookid = dbo.CDFrook.frookid INNER JOIN
+                         dbo.Users ON dbo.TBLFrookWarasa.userin = dbo.Users.UserID INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.CDDofatSarfFrook ON dbo.TBLFrookWarasa.DofatSarfId = dbo.CDDofatSarfFrook.DofatSarfId";
             }
         }
     }

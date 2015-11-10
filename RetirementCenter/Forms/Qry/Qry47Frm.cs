@@ -49,13 +49,8 @@ namespace RetirementCenter
         private void repositoryItemButtonEditStatus_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
-            adp.FillByLastRecord(dt, row.PersonId);
-            if (dt.Rows.Count == 0)
-                return;
-
-            string msg = string.Format("التاريخ : {0} \n\r الحالة : {1} \n\r ملاحظات : {2}", dt[0].datehala, dt[0].yasref == true ? "يصرف" : "لا يصرف", dt[0].halarem);
-            MessageBox.Show(msg, "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            Qry47AFrm frm = new Qry47AFrm(row.PersonId);
+            frm.ShowDialog();
         }
 
         private void repositoryItemButtonEditArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
