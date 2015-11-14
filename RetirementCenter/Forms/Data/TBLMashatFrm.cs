@@ -225,6 +225,7 @@ namespace RetirementCenter
             tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
             warasaVisaTableAdapter.Fill(dsQueries.WarasaVisa, row.MMashatId);
+            tblmembervisaactiveTableAdapter.FillByMMashatId(dsRetirementCenter.tblmembervisaactive, row.MMashatId);
 
             //check if he can edit Sarf or No
             if (row.yasref == false && (row.IsMMashatNIdNull() || row.MMashatNId == string.Empty) && row.MashHalaId == (byte)Program.CDMashHala.Asda2)
@@ -855,7 +856,11 @@ namespace RetirementCenter
                     }
                 }
                 tblNoSarfWarsaTableAdapter.Update(TBLNoSarfDetels);
-                tblvisawarsaactiveAdapter.Update(tblvisawarsaactive);
+                if (tblvisawarsaactive.Rows.Count > 0)
+                {
+                    //tblvisawarsaactiveAdapter.Update(tblvisawarsaactive);
+                    int effected = tblvisawarsaactiveAdapter.InsertForVisa(tblvisawarsaactive[0].activee, tblvisawarsaactive[0].datehala, tblvisawarsaactive[0].halarem, tblvisawarsaactive[0].datein, tblvisawarsaactive[0].userin, TBLWarasa[0].visa);
+                }
                 if (TBLEdafatWarsa.Count > 0)
                 {
                     tBLEdafatWarsaBindingSource.EndEdit();

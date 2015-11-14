@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry44BindingSource = new System.Windows.Forms.BindingSource();
+            this.vQry44BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colExportDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,25 +50,26 @@
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltrteep = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditArc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry44TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry44TableAdapter();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditArc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colActivate_TblMasshat = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry44BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -199,7 +201,8 @@
             this.colActivate,
             this.colActivateDate,
             this.coltrteep,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colActivate_TblMasshat});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
@@ -347,7 +350,7 @@
             // colMMashatNId
             // 
             this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatNId.Caption = "رقم قومي";
@@ -359,7 +362,7 @@
             // colSubCommitteId
             // 
             this.colSubCommitteId.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSubCommitteId.AppearanceHeader.Options.UseTextOptions = true;
             this.colSubCommitteId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSubCommitteId.Caption = "كود اللجنة";
@@ -371,7 +374,7 @@
             // colSyndicateId
             // 
             this.colSyndicateId.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSyndicateId.AppearanceHeader.Options.UseTextOptions = true;
             this.colSyndicateId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSyndicateId.Caption = "كود الفرعية";
@@ -386,7 +389,7 @@
             this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
             this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تم التفعيل";
+            this.colActivate.Caption = "تم التسليم";
             this.colActivate.FieldName = "Activate";
             this.colActivate.Name = "colActivate";
             this.colActivate.Visible = true;
@@ -398,7 +401,7 @@
             this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
             this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.Caption = "تاريخ التفعيل";
+            this.colActivateDate.Caption = "تاريخ التسليم";
             this.colActivateDate.FieldName = "ActivateDate";
             this.colActivateDate.Name = "colActivateDate";
             this.colActivateDate.Visible = true;
@@ -414,7 +417,28 @@
             this.coltrteep.FieldName = "trteep";
             this.coltrteep.Name = "coltrteep";
             this.coltrteep.Visible = true;
-            this.coltrteep.VisibleIndex = 16;
+            this.coltrteep.VisibleIndex = 17;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "الارشيف";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditArc;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 18;
+            // 
+            // repositoryItemButtonEditArc
+            // 
+            this.repositoryItemButtonEditArc.AutoHeight = false;
+            this.repositoryItemButtonEditArc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditArc.Name = "repositoryItemButtonEditArc";
+            this.repositoryItemButtonEditArc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditArc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditArc_ButtonClick);
             // 
             // repositoryItemDateEditDMY
             // 
@@ -471,26 +495,17 @@
             // 
             this.vQry44TableAdapter.ClearBeforeFill = true;
             // 
-            // gridColumn1
+            // colActivate_TblMasshat
             // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "الارشيف";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditArc;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 17;
-            // 
-            // repositoryItemButtonEditArc
-            // 
-            this.repositoryItemButtonEditArc.AutoHeight = false;
-            this.repositoryItemButtonEditArc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEditArc.Name = "repositoryItemButtonEditArc";
-            this.repositoryItemButtonEditArc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditArc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditArc_ButtonClick);
+            this.colActivate_TblMasshat.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate_TblMasshat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate_TblMasshat.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate_TblMasshat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate_TblMasshat.Caption = "مفعل";
+            this.colActivate_TblMasshat.FieldName = "Activate_TblMasshat";
+            this.colActivate_TblMasshat.Name = "colActivate_TblMasshat";
+            this.colActivate_TblMasshat.Visible = true;
+            this.colActivate_TblMasshat.VisibleIndex = 16;
             // 
             // Qry44Frm
             // 
@@ -507,13 +522,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.vQry44BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditArc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,6 +564,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltrteep;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditArc;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivate_TblMasshat;
 
     }
 }

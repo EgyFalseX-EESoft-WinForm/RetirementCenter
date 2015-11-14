@@ -33,10 +33,10 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule14 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -44,7 +44,7 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule13 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule14 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControlMain = new DevExpress.XtraEditors.GroupControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
@@ -268,6 +268,13 @@
             this.warasaVisaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colvisa1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPagetblmembervisaactive = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControltblvisawarsaactive = new DevExpress.XtraGrid.GridControl();
+            this.tblmembervisaactiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridViewtblvisawarsaactive = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colactivee = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldatehala1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhalarem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LSMSCDsarfType = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tBLEdafatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
@@ -290,6 +297,7 @@
             this.tBLReSarfTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
             this.warasaVisaTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.WarasaVisaTableAdapter();
             this.warasaVisaResponsableTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.WarasaVisaResponsableTableAdapter();
+            this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -434,6 +442,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueVisaEditResponsable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warasaVisaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            this.xtraTabPagetblmembervisaactive.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControltblvisawarsaactive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmembervisaactiveBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewtblvisawarsaactive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDsarfType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
@@ -912,7 +924,8 @@
             this.xtraTabPageWarasa,
             this.xtraTabPageChangeToWarasa,
             this.xtraTabPageReSarf,
-            this.xtraTabPageEditResponsable});
+            this.xtraTabPageEditResponsable,
+            this.xtraTabPagetblmembervisaactive});
             this.xtraTabControlMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // xtraTabPageMain
@@ -1008,10 +1021,10 @@
             this.lueDofatSarfId.Properties.ValueMember = "DofatSarfId";
             this.lueDofatSarfId.Size = new System.Drawing.Size(162, 22);
             this.lueDofatSarfId.TabIndex = 0;
-            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule14.ErrorText = "يجب ادخال دفعة الصرف";
-            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule14);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "يجب ادخال دفعة الصرف";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule4);
             // 
             // LSMSTBLDofatSarf
             // 
@@ -1116,10 +1129,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.defiledate.Size = new System.Drawing.Size(162, 22);
             this.defiledate.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "يجب ادخال تاريخ ورود الملف";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.defiledate, conditionValidationRule4);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "يجب ادخال تاريخ ورود الملف";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.defiledate, conditionValidationRule7);
             // 
             // tBLMashatBindingSource
             // 
@@ -2885,10 +2898,10 @@
             this.LUEChangeHala.Properties.ValueMember = "MashHalaId";
             this.LUEChangeHala.Size = new System.Drawing.Size(200, 22);
             this.LUEChangeHala.TabIndex = 32;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "يجب ادخال الوظيفه";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUEChangeHala, conditionValidationRule7);
+            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule14.ErrorText = "يجب ادخال الوظيفه";
+            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUEChangeHala, conditionValidationRule14);
             // 
             // btnChangeHala
             // 
@@ -3328,6 +3341,81 @@
             this.colvisa1.Visible = true;
             this.colvisa1.VisibleIndex = 0;
             // 
+            // xtraTabPagetblmembervisaactive
+            // 
+            this.xtraTabPagetblmembervisaactive.Controls.Add(this.gridControltblvisawarsaactive);
+            this.xtraTabPagetblmembervisaactive.Name = "xtraTabPagetblmembervisaactive";
+            this.xtraTabPagetblmembervisaactive.Size = new System.Drawing.Size(874, 294);
+            this.xtraTabPagetblmembervisaactive.Text = "تفعيل الفيزا";
+            // 
+            // gridControltblvisawarsaactive
+            // 
+            this.gridControltblvisawarsaactive.DataSource = this.tblmembervisaactiveBindingSource;
+            this.gridControltblvisawarsaactive.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControltblvisawarsaactive.Location = new System.Drawing.Point(0, 0);
+            this.gridControltblvisawarsaactive.MainView = this.gridViewtblvisawarsaactive;
+            this.gridControltblvisawarsaactive.Name = "gridControltblvisawarsaactive";
+            this.gridControltblvisawarsaactive.Size = new System.Drawing.Size(874, 294);
+            this.gridControltblvisawarsaactive.TabIndex = 0;
+            this.gridControltblvisawarsaactive.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewtblvisawarsaactive});
+            // 
+            // tblmembervisaactiveBindingSource
+            // 
+            this.tblmembervisaactiveBindingSource.DataMember = "tblmembervisaactive";
+            this.tblmembervisaactiveBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // gridViewtblvisawarsaactive
+            // 
+            this.gridViewtblvisawarsaactive.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colactivee,
+            this.coldatehala1,
+            this.colhalarem});
+            this.gridViewtblvisawarsaactive.GridControl = this.gridControltblvisawarsaactive;
+            this.gridViewtblvisawarsaactive.Name = "gridViewtblvisawarsaactive";
+            this.gridViewtblvisawarsaactive.OptionsBehavior.ReadOnly = true;
+            this.gridViewtblvisawarsaactive.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldatehala1, DevExpress.Data.ColumnSortOrder.Descending)});
+            // 
+            // colactivee
+            // 
+            this.colactivee.AppearanceCell.Options.UseTextOptions = true;
+            this.colactivee.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colactivee.AppearanceHeader.Options.UseTextOptions = true;
+            this.colactivee.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colactivee.Caption = "تفعيل";
+            this.colactivee.FieldName = "activee";
+            this.colactivee.Name = "colactivee";
+            this.colactivee.Visible = true;
+            this.colactivee.VisibleIndex = 0;
+            this.colactivee.Width = 164;
+            // 
+            // coldatehala1
+            // 
+            this.coldatehala1.AppearanceCell.Options.UseTextOptions = true;
+            this.coldatehala1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatehala1.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldatehala1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatehala1.Caption = "تاريخ";
+            this.coldatehala1.FieldName = "datehala";
+            this.coldatehala1.Name = "coldatehala1";
+            this.coldatehala1.Visible = true;
+            this.coldatehala1.VisibleIndex = 1;
+            this.coldatehala1.Width = 252;
+            // 
+            // colhalarem
+            // 
+            this.colhalarem.AppearanceCell.Options.UseTextOptions = true;
+            this.colhalarem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhalarem.AppearanceHeader.Options.UseTextOptions = true;
+            this.colhalarem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colhalarem.Caption = "ملاحظات";
+            this.colhalarem.FieldName = "halarem";
+            this.colhalarem.Name = "colhalarem";
+            this.colhalarem.Visible = true;
+            this.colhalarem.VisibleIndex = 2;
+            this.colhalarem.Width = 1318;
+            // 
             // LSMSCDsarfType
             // 
             this.LSMSCDsarfType.ElementType = typeof(RetirementCenter.DataSources.Linq.CDsarfType);
@@ -3415,6 +3503,10 @@
             // warasaVisaResponsableTableAdapter
             // 
             this.warasaVisaResponsableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblmembervisaactiveTableAdapter
+            // 
+            this.tblmembervisaactiveTableAdapter.ClearBeforeFill = true;
             // 
             // TBLMashatFrm
             // 
@@ -3579,6 +3671,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueVisaEditResponsable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warasaVisaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            this.xtraTabPagetblmembervisaactive.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControltblvisawarsaactive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblmembervisaactiveBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewtblvisawarsaactive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDsarfType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
@@ -3837,5 +3933,13 @@
         private DevExpress.XtraEditors.TextEdit tbMMashatId;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraEditors.CheckEdit ceActivate;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPagetblmembervisaactive;
+        private DevExpress.XtraGrid.GridControl gridControltblvisawarsaactive;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewtblvisawarsaactive;
+        private System.Windows.Forms.BindingSource tblmembervisaactiveBindingSource;
+        private DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter tblmembervisaactiveTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colactivee;
+        private DevExpress.XtraGrid.Columns.GridColumn coldatehala1;
+        private DevExpress.XtraGrid.Columns.GridColumn colhalarem;
     }
 }

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.vQry47BindingSource = new System.Windows.Forms.BindingSource();
+            this.vQry47BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colExportDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +56,9 @@
             this.repositoryItemButtonEditStatus = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditArc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colActivate_TblWarasa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -208,7 +212,10 @@
             this.coltrteep,
             this.colActivateBank,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.colActivate_TblWarasa,
+            this.colSyndicateId,
+            this.colSubCommitteId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
@@ -244,6 +251,7 @@
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
             this.colMMashatName.VisibleIndex = 1;
+            this.colMMashatName.Width = 77;
             // 
             // colpersonName
             // 
@@ -352,6 +360,7 @@
             this.colhafzadate.Name = "colhafzadate";
             this.colhafzadate.Visible = true;
             this.colhafzadate.VisibleIndex = 10;
+            this.colhafzadate.Width = 78;
             // 
             // colPersonId
             // 
@@ -388,6 +397,7 @@
             this.colNameOnCard.Name = "colNameOnCard";
             this.colNameOnCard.Visible = true;
             this.colNameOnCard.VisibleIndex = 13;
+            this.colNameOnCard.Width = 104;
             // 
             // colnewid
             // 
@@ -407,7 +417,7 @@
             this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
             this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تم التفعيل";
+            this.colActivate.Caption = "تم التسليم";
             this.colActivate.FieldName = "Activate";
             this.colActivate.Name = "colActivate";
             this.colActivate.Visible = true;
@@ -419,11 +429,12 @@
             this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
             this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateDate.Caption = "تاريخ التفعيل";
+            this.colActivateDate.Caption = "تاريخ التسليم";
             this.colActivateDate.FieldName = "ActivateDate";
             this.colActivateDate.Name = "colActivateDate";
             this.colActivateDate.Visible = true;
             this.colActivateDate.VisibleIndex = 16;
+            this.colActivateDate.Width = 81;
             // 
             // coltrteep
             // 
@@ -443,11 +454,12 @@
             this.colActivateBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colActivateBank.AppearanceHeader.Options.UseTextOptions = true;
             this.colActivateBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivateBank.Caption = "تم التفعيل جدول بنك";
-            this.colActivateBank.FieldName = "ActivateBank";
+            this.colActivateBank.Caption = "بنك";
+            this.colActivateBank.FieldName = "ActiveBank";
             this.colActivateBank.Name = "colActivateBank";
             this.colActivateBank.Visible = true;
             this.colActivateBank.VisibleIndex = 18;
+            this.colActivateBank.Width = 114;
             // 
             // gridColumn1
             // 
@@ -459,7 +471,8 @@
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditStatus;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 19;
+            this.gridColumn1.VisibleIndex = 20;
+            this.gridColumn1.Width = 100;
             // 
             // repositoryItemButtonEditStatus
             // 
@@ -480,7 +493,7 @@
             this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditArc;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 20;
+            this.gridColumn2.VisibleIndex = 21;
             // 
             // repositoryItemButtonEditArc
             // 
@@ -490,6 +503,42 @@
             this.repositoryItemButtonEditArc.Name = "repositoryItemButtonEditArc";
             this.repositoryItemButtonEditArc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditArc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditArc_ButtonClick);
+            // 
+            // colActivate_TblWarasa
+            // 
+            this.colActivate_TblWarasa.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate_TblWarasa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate_TblWarasa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate_TblWarasa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate_TblWarasa.Caption = "مفعل";
+            this.colActivate_TblWarasa.FieldName = "Activate_TblWarasa";
+            this.colActivate_TblWarasa.Name = "colActivate_TblWarasa";
+            this.colActivate_TblWarasa.Visible = true;
+            this.colActivate_TblWarasa.VisibleIndex = 19;
+            // 
+            // colSyndicateId
+            // 
+            this.colSyndicateId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.Caption = "كود الفرعية";
+            this.colSyndicateId.FieldName = "SyndicateId";
+            this.colSyndicateId.Name = "colSyndicateId";
+            this.colSyndicateId.Visible = true;
+            this.colSyndicateId.VisibleIndex = 22;
+            // 
+            // colSubCommitteId
+            // 
+            this.colSubCommitteId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.Caption = "كود اللجنة";
+            this.colSubCommitteId.FieldName = "SubCommitteId";
+            this.colSubCommitteId.Name = "colSubCommitteId";
+            this.colSubCommitteId.Visible = true;
+            this.colSubCommitteId.VisibleIndex = 23;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -608,6 +657,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditStatus;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditArc;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivate_TblWarasa;
+        private DevExpress.XtraGrid.Columns.GridColumn colSyndicateId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCommitteId;
 
     }
 }

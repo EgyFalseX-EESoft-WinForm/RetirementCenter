@@ -136,6 +136,11 @@ namespace RetirementCenter.Forms.Data
         #region - Event Handlers -
         private void TBLWarasaDlg_Load(object sender, EventArgs e)
         {
+            if (_TBLWarasa[0] != null)
+            {
+                tBLReSarfWarasa_newTableAdapter.FillByPersonId(dsRetirementCenter.TBLReSarfWarasa_new, _TBLWarasa[0].PersonId);
+                tblvisawarsaactiveTableAdapter.FillByPersonId(dsRetirementCenter.tblvisawarsaactive, _TBLWarasa[0].PersonId);
+            }
             ceActivate.Visible = Program.UserInfo.IsAdmin;
         }
         private void ceyasref_CheckedChanged(object sender, EventArgs e)
@@ -505,10 +510,69 @@ namespace RetirementCenter.Forms.Data
         {
             pnlPrivateSarf.Enabled = !cewcompletesarf.Checked;
         }
+        private void gridViewTBLReSarfWarasa_new_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow row = (DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow)((DataRowView)
+           gridViewTBLReSarfWarasa_new.GetRow(e.RowHandle)).Row;
+            row.PersonId = _TBLWarasa[0].PersonId;
+            row.DofatSarfId = (int)SQLProvider.adpQry.MaxDofatSarfId();
+            row.userin = Program.UserInfo.UserId;
+            row.datein = SQLProvider.ServerDateTime();
+        }
+        private void repositoryItemButtonEditTBLReSarfWarasa_newSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow row = (DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow)((DataRowView)
+           gridViewTBLReSarfWarasa_new.GetRow(gridViewTBLReSarfWarasa_new.FocusedRowHandle)).Row;
+            
+            try
+            {
+                if (SQLProvider.adpQry.ExistsTBLReSarfWarasa_newDof(row.DofatSarfIdold, row.PersonId) == null || row.DofatSarfId == row.DofatSarfIdold)
+                {
+                    Program.ShowMsg("خطاء في الدفعة المستحقة", true, this, true);
+                    return;
+                }
+                row.userin = Program.UserInfo.UserId;
+                row.datein = SQLProvider.ServerDateTime();
+                tBLReSarfWarasanewBindingSource.EndEdit();
+                tBLReSarfWarasa_newTableAdapter.Update(row);
+                Program.ShowMsg("تم تعديل بيانات اعادة الصرف", false, this, true);
+                Program.Logger.LogThis("تم تعديل بيانات اعادة الصرف", Text, FXFW.Logger.OpType.success, null, null, this);
+            }
+            catch (SqlException ex)
+            {
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+        }
+        private void repositoryItemButtonEditTBLReSarfWarasa_newDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow row = (DataSources.dsRetirementCenter.TBLReSarfWarasa_newRow)((DataRowView)
+           gridViewTBLReSarfWarasa_new.GetRow(gridViewTBLReSarfWarasa_new.FocusedRowHandle)).Row;
+            try
+            {
+                if (row.RowState == DataRowState.Detached)
+                {
+                    gridViewTBLReSarfWarasa_new.DeleteRow(gridViewTBLReSarfWarasa_new.FocusedRowHandle);
+                    return;
+                }
+                if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                    return;
+                row.userin = Program.UserInfo.UserId;
+                row.datein = SQLProvider.ServerDateTime();
+                tBLReSarfWarasanewBindingSource.EndEdit();
+                tBLReSarfWarasa_newTableAdapter.Delete(row.PersonId, row.DofatSarfIdold);
+                gridViewTBLReSarfWarasa_new.DeleteRow(gridViewTBLReSarfWarasa_new.FocusedRowHandle);
+                Program.ShowMsg("تم الحذف", false, this, true);
+                Program.Logger.LogThis("تم الحذف", Text, FXFW.Logger.OpType.success, null, null, this);
+            }
+            catch (SqlException ex)
+            {
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+        }
 
         #endregion
-
-        
 
     }
 }

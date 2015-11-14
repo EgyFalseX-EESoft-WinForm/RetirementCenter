@@ -49,14 +49,24 @@ namespace RetirementCenter
         private void repositoryItemButtonEditStatus_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
-            Qry47AFrm frm = new Qry47AFrm(row.PersonId);
+            if (row.IsvisaNull())
+            {
+                msgDlg.Show("لا يوجد رقم فيزا", msgDlg.msgButtons.Close);
+                return;
+            }
+            Qry47AFrm frm = new Qry47AFrm(row.visa);
             frm.ShowDialog();
         }
 
         private void repositoryItemButtonEditArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
-            Qry77Frm frm = new Qry77Frm(row.PersonId);
+            if (row.IsvisaNull())
+            {
+                msgDlg.Show("لا يوجد رقم فيزا", msgDlg.msgButtons.Close);
+                return;
+            }
+            Qry77Frm frm = new Qry77Frm(row.visa);
             frm.ShowDialog();
         }
 

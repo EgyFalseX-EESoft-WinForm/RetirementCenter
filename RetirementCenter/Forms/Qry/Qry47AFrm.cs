@@ -17,10 +17,10 @@ namespace RetirementCenter
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
 
         #region -   Functions   -
-        public Qry47AFrm(int id)
+        public Qry47AFrm(string visa)
         {
             InitializeComponent();
-            tBLNoSarfWarsaTableAdapter.FillByLastRecord(dsRetirementCenter.TBLNoSarfWarsa, id);
+            tBLNoSarfWarsaTableAdapter.FillByLastRecord(dsRetirementCenter.TBLNoSarfWarsa, visa);
         }
         #endregion
         #region -   Event Handlers   -

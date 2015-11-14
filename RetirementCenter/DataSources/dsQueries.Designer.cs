@@ -12954,6 +12954,8 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columntrteep;
             
+            private global::System.Data.DataColumn columnActivate_TblMasshat;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vQry44DataTable() {
@@ -13133,6 +13135,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Activate_TblMasshatColumn {
+                get {
+                    return this.columnActivate_TblMasshat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13185,7 +13195,8 @@ namespace RetirementCenter.DataSources {
                         int SubCommitteId, 
                         bool Activate, 
                         System.DateTime ActivateDate, 
-                        int trteep) {
+                        int trteep, 
+                        bool Activate_TblMasshat) {
                 vQry44Row rowvQry44Row = ((vQry44Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -13205,7 +13216,8 @@ namespace RetirementCenter.DataSources {
                         SubCommitteId,
                         Activate,
                         ActivateDate,
-                        trteep};
+                        trteep,
+                        Activate_TblMasshat};
                 rowvQry44Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvQry44Row);
                 return rowvQry44Row;
@@ -13253,6 +13265,7 @@ namespace RetirementCenter.DataSources {
                 this.columnActivate = base.Columns["Activate"];
                 this.columnActivateDate = base.Columns["ActivateDate"];
                 this.columntrteep = base.Columns["trteep"];
+                this.columnActivate_TblMasshat = base.Columns["Activate_TblMasshat"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13294,6 +13307,8 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnActivateDate);
                 this.columntrteep = new global::System.Data.DataColumn("trteep", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrteep);
+                this.columnActivate_TblMasshat = new global::System.Data.DataColumn("Activate_TblMasshat", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate_TblMasshat);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -14475,7 +14490,13 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columntrteep;
             
-            private global::System.Data.DataColumn columnActivateBank;
+            private global::System.Data.DataColumn columnSyndicateId;
+            
+            private global::System.Data.DataColumn columnSubCommitteId;
+            
+            private global::System.Data.DataColumn columnActivate_TblWarasa;
+            
+            private global::System.Data.DataColumn columnActiveBank;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14664,9 +14685,33 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ActivateBankColumn {
+            public global::System.Data.DataColumn SyndicateIdColumn {
                 get {
-                    return this.columnActivateBank;
+                    return this.columnSyndicateId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SubCommitteIdColumn {
+                get {
+                    return this.columnSubCommitteId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Activate_TblWarasaColumn {
+                get {
+                    return this.columnActivate_TblWarasa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActiveBankColumn {
+                get {
+                    return this.columnActiveBank;
                 }
             }
             
@@ -14726,7 +14771,10 @@ namespace RetirementCenter.DataSources {
                         bool Activate, 
                         System.DateTime ActivateDate, 
                         int trteep, 
-                        bool ActivateBank) {
+                        int SyndicateId, 
+                        int SubCommitteId, 
+                        bool Activate_TblWarasa, 
+                        int ActiveBank) {
                 vQry47Row rowvQry47Row = ((vQry47Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MMashatName,
@@ -14748,7 +14796,10 @@ namespace RetirementCenter.DataSources {
                         Activate,
                         ActivateDate,
                         trteep,
-                        ActivateBank};
+                        SyndicateId,
+                        SubCommitteId,
+                        Activate_TblWarasa,
+                        ActiveBank};
                 rowvQry47Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvQry47Row);
                 return rowvQry47Row;
@@ -14797,7 +14848,10 @@ namespace RetirementCenter.DataSources {
                 this.columnActivate = base.Columns["Activate"];
                 this.columnActivateDate = base.Columns["ActivateDate"];
                 this.columntrteep = base.Columns["trteep"];
-                this.columnActivateBank = base.Columns["ActivateBank"];
+                this.columnSyndicateId = base.Columns["SyndicateId"];
+                this.columnSubCommitteId = base.Columns["SubCommitteId"];
+                this.columnActivate_TblWarasa = base.Columns["Activate_TblWarasa"];
+                this.columnActiveBank = base.Columns["ActiveBank"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14841,8 +14895,14 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnActivateDate);
                 this.columntrteep = new global::System.Data.DataColumn("trteep", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrteep);
-                this.columnActivateBank = new global::System.Data.DataColumn("ActivateBank", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnActivateBank);
+                this.columnSyndicateId = new global::System.Data.DataColumn("SyndicateId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSyndicateId);
+                this.columnSubCommitteId = new global::System.Data.DataColumn("SubCommitteId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubCommitteId);
+                this.columnActivate_TblWarasa = new global::System.Data.DataColumn("Activate_TblWarasa", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate_TblWarasa);
+                this.columnActiveBank = new global::System.Data.DataColumn("ActiveBank", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveBank);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonId}, true));
                 this.columnMMashatName.AllowDBNull = false;
@@ -14866,6 +14926,9 @@ namespace RetirementCenter.DataSources {
                 this.columnPersonId.Unique = true;
                 this.columnvisa.MaxLength = 50;
                 this.columnNameOnCard.MaxLength = 50;
+                this.columnSyndicateId.AllowDBNull = false;
+                this.columnSubCommitteId.AllowDBNull = false;
+                this.columnActiveBank.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -35595,6 +35658,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Activate_TblMasshat {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevQry44.Activate_TblMasshatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate_TblMasshat\' in table \'vQry44\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry44.Activate_TblMasshatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsExportDateNull() {
                 return this.IsNull(this.tablevQry44.ExportDateColumn);
             }
@@ -35711,6 +35790,18 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettrteepNull() {
                 this[this.tablevQry44.trteepColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivate_TblMasshatNull() {
+                return this.IsNull(this.tablevQry44.Activate_TblMasshatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivate_TblMasshatNull() {
+                this[this.tablevQry44.Activate_TblMasshatColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -36481,17 +36572,55 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool ActivateBank {
+            public int SyndicateId {
+                get {
+                    return ((int)(this[this.tablevQry47.SyndicateIdColumn]));
+                }
+                set {
+                    this[this.tablevQry47.SyndicateIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int SubCommitteId {
+                get {
+                    return ((int)(this[this.tablevQry47.SubCommitteIdColumn]));
+                }
+                set {
+                    this[this.tablevQry47.SubCommitteIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Activate_TblWarasa {
                 get {
                     try {
-                        return ((bool)(this[this.tablevQry47.ActivateBankColumn]));
+                        return ((bool)(this[this.tablevQry47.Activate_TblWarasaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ActivateBank\' in table \'vQry47\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate_TblWarasa\' in table \'vQry47\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevQry47.ActivateBankColumn] = value;
+                    this[this.tablevQry47.Activate_TblWarasaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ActiveBank {
+                get {
+                    try {
+                        return ((int)(this[this.tablevQry47.ActiveBankColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveBank\' in table \'vQry47\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevQry47.ActiveBankColumn] = value;
                 }
             }
             
@@ -36617,14 +36746,26 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsActivateBankNull() {
-                return this.IsNull(this.tablevQry47.ActivateBankColumn);
+            public bool IsActivate_TblWarasaNull() {
+                return this.IsNull(this.tablevQry47.Activate_TblWarasaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetActivateBankNull() {
-                this[this.tablevQry47.ActivateBankColumn] = global::System.Convert.DBNull;
+            public void SetActivate_TblWarasaNull() {
+                this[this.tablevQry47.Activate_TblWarasaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActiveBankNull() {
+                return this.IsNull(this.tablevQry47.ActiveBankColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActiveBankNull() {
+                this[this.tablevQry47.ActiveBankColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -52110,6 +52251,7 @@ FROM            TBLWarasa INNER JOIN
             tableMapping.ColumnMappings.Add("Activate", "Activate");
             tableMapping.ColumnMappings.Add("ActivateDate", "ActivateDate");
             tableMapping.ColumnMappings.Add("trteep", "trteep");
+            tableMapping.ColumnMappings.Add("Activate_TblMasshat", "Activate_TblMasshat");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -52128,7 +52270,7 @@ FROM            TBLWarasa INNER JOIN
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        BankExportedData.Id, BankExportedData.MMashatId, BankExportedData.ExportDate, TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, 
                          Users.RealName, BankExportedData.visa, BankExportedData.visawarddate, BankExportedData.hafza, BankExportedData.hafzadate, TBLMashat.MMashatNId, TBLMashat.SyndicateId, 
-                         TBLMashat.SubCommitteId, BankExportedData.Activate, BankExportedData.ActivateDate, BankExportedData.trteep
+                         TBLMashat.SubCommitteId, BankExportedData.Activate, BankExportedData.ActivateDate, BankExportedData.trteep, TBLMashat.Activate AS Activate_TblMasshat
 FROM            Users INNER JOIN
                          BankExportedData ON Users.UserID = BankExportedData.userin INNER JOIN
                          TBLMashat INNER JOIN
@@ -52862,7 +53004,10 @@ GROUP BY CDSyndicate.Syndicate";
             tableMapping.ColumnMappings.Add("Activate", "Activate");
             tableMapping.ColumnMappings.Add("ActivateDate", "ActivateDate");
             tableMapping.ColumnMappings.Add("trteep", "trteep");
-            tableMapping.ColumnMappings.Add("ActivateBank", "ActivateBank");
+            tableMapping.ColumnMappings.Add("SyndicateId", "SyndicateId");
+            tableMapping.ColumnMappings.Add("SubCommitteId", "SubCommitteId");
+            tableMapping.ColumnMappings.Add("Activate_TblWarasa", "Activate_TblWarasa");
+            tableMapping.ColumnMappings.Add("ActiveBank", "ActiveBank");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -52879,19 +53024,26 @@ GROUP BY CDSyndicate.Syndicate";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, 
-                         BankExportedDataWarsa.Id, BankExportedDataWarsa.MMashatId, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, 
-                         BankExportedDataWarsa.visa, BankExportedDataWarsa.visawarddate, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, 
-                         BankExportedDataWarsa.NameOnCard, AwarasaNewId.newid, BankExportedDataWarsa.trteep, TBLWarasa.Activate, TBLWarasa.ActivateDate, 
-                         BankExportedDataWarsa.Activate AS ActivateBank
-FROM            CDSubCommitte INNER JOIN
-                         CDSyndicate INNER JOIN
-                         BankExportedDataWarsa INNER JOIN
-                         Users ON BankExportedDataWarsa.userin = Users.UserID INNER JOIN
-                         TBLWarasa ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId ON 
-                         CDSubCommitte.SubCommitteId = TBLWarasa.SubCommitteId INNER JOIN
-                         TBLMashat ON BankExportedDataWarsa.MMashatId = TBLMashat.MMashatId LEFT OUTER JOIN
-                         AwarasaNewId ON BankExportedDataWarsa.PersonId = AwarasaNewId.personid";
+            this._commandCollection[0].CommandText = "SELECT        TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubComm" +
+                "itte, TBLMashat.sarfnumber, Users.RealName, TBLWarasa.personName, BankExportedDa" +
+                "taWarsa.Id, \r\n                         BankExportedDataWarsa.MMashatId, BankExpo" +
+                "rtedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa." +
+                "visa, BankExportedDataWarsa.visawarddate, \r\n                         BankExporte" +
+                "dDataWarsa.hafza, BankExportedDataWarsa.hafzadate, BankExportedDataWarsa.NameOnC" +
+                "ard, AwarasaNewId.newid, BankExportedDataWarsa.trteep, TBLWarasa.SyndicateId, \r\n" +
+                "                         TBLWarasa.SubCommitteId, BankExportedDataWarsa.Activate" +
+                "Date, BankExportedDataWarsa.Activate\r\n, (SELECT TOP 1 Activate FROM TBLWarasa TB" +
+                "L WHERE visa = BankExportedDataWarsa.visa And responsiblesarf = 1) AS Activate_T" +
+                "blWarasa\r\n, CASE WHEN EXISTS (SELECT AutoId FROM tblWarasabank WHERE visanumber " +
+                "= BankExportedDataWarsa.visa) THEN 1 ELSE 0 END AS ActiveBank\r\nFROM            C" +
+                "DSubCommitte INNER JOIN\r\n                         CDSyndicate INNER JOIN\r\n      " +
+                "                   BankExportedDataWarsa INNER JOIN\r\n                         Us" +
+                "ers ON BankExportedDataWarsa.userin = Users.UserID INNER JOIN\r\n                 " +
+                "        TBLWarasa ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId ON CDSy" +
+                "ndicate.SyndicateId = TBLWarasa.SyndicateId ON CDSubCommitte.SubCommitteId = TBL" +
+                "Warasa.SubCommitteId INNER JOIN\r\n                         TBLMashat ON BankExpor" +
+                "tedDataWarsa.MMashatId = TBLMashat.MMashatId LEFT OUTER JOIN\r\n                  " +
+                "       AwarasaNewId ON BankExportedDataWarsa.PersonId = AwarasaNewId.personid";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -59832,7 +59984,7 @@ GROUP BY TBLWarasa.SyndicateId, CDSyndicate.Syndicate
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[36];
+            this._commandCollection = new global::System.Data.IDbCommand[38];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT ISNULL(MAX(MMashatId) +1, 1) AS NewId FROM TBLMashat";
@@ -60068,6 +60220,23 @@ WHERE NOT EXISTS(SELECT TBLBeanWarsa.PersonId FROM TBLBeanWarsa WHERE PersonId =
                 "= @hafza\r\n";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[35])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[35])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafza", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[36] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[36])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[36])).CommandText = @"SELECT        TBLDofatSarf.DofatSarfId
+FROM            TBLDofatSarf INNER JOIN
+                         TBLWarasaSarf_arshef ON TBLDofatSarf.DofatSarfId = TBLWarasaSarf_arshef.DofatSarfId
+WHERE NOT EXISTS(SELECT * FROM [dbo].[TBLReSarfWarasa_new] WHERE [DofatSarfIdold] = TBLDofatSarf.DofatSarfId AND PersonId = @PersonId)
+AND NOT EXISTS(SELECT * FROM [dbo].TBLWarasaSarf_arshef WHERE [DofatSarfId] = TBLDofatSarf.DofatSarfId AND PersonId = @PersonId)
+AND (SELECT MIN(DofatSarfId) FROM [dbo].[TBLWarasaSarf_arshef] TBL WHERE PersonId = @PersonId) < TBLDofatSarf.DofatSarfId
+AND TBLDofatSarf.DofatSarfId = @DofatSarfId
+GROUP BY TBLDofatSarf.DofatSarfId";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[36])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[36])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[36])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[37] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[37])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[37])).CommandText = "SELECT        MAX(DofatSarfId) AS DofatSarfId\r\nFROM            TBLDofatSarf";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[37])).CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61105,6 +61274,64 @@ WHERE NOT EXISTS(SELECT TBLBeanWarsa.PersonId FROM TBLBeanWarsa WHERE PersonId =
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ExistsTBLReSarfWarasa_newDof(int DofatSarfId, int PersonId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[36]));
+            command.Parameters[0].Value = ((int)(DofatSarfId));
+            command.Parameters[1].Value = ((int)(PersonId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> MaxDofatSarfId() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[37]));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

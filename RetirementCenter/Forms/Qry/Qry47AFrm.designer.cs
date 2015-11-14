@@ -36,6 +36,7 @@
             this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatehala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhalarem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -164,6 +165,7 @@
             this.gridViewData.Appearance.VertLine.BackColor = System.Drawing.Color.LightGray;
             this.gridViewData.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPersonName,
             this.colyasref,
             this.coldatehala,
             this.colhalarem});
@@ -193,7 +195,7 @@
             this.colyasref.Name = "colyasref";
             this.colyasref.Visible = true;
             this.colyasref.VisibleIndex = 0;
-            this.colyasref.Width = 239;
+            this.colyasref.Width = 121;
             // 
             // coldatehala
             // 
@@ -206,7 +208,7 @@
             this.coldatehala.Name = "coldatehala";
             this.coldatehala.Visible = true;
             this.coldatehala.VisibleIndex = 1;
-            this.coldatehala.Width = 176;
+            this.coldatehala.Width = 131;
             // 
             // colhalarem
             // 
@@ -218,8 +220,21 @@
             this.colhalarem.FieldName = "halarem";
             this.colhalarem.Name = "colhalarem";
             this.colhalarem.Visible = true;
-            this.colhalarem.VisibleIndex = 2;
-            this.colhalarem.Width = 399;
+            this.colhalarem.VisibleIndex = 3;
+            this.colhalarem.Width = 316;
+            // 
+            // colPersonName
+            // 
+            this.colPersonName.AppearanceCell.Options.UseTextOptions = true;
+            this.colPersonName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPersonName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonName.Caption = "الاسم";
+            this.colPersonName.FieldName = "personName";
+            this.colPersonName.Name = "colPersonName";
+            this.colPersonName.Visible = true;
+            this.colPersonName.VisibleIndex = 2;
+            this.colPersonName.Width = 289;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -316,6 +331,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colyasref;
         private DevExpress.XtraGrid.Columns.GridColumn coldatehala;
         private DevExpress.XtraGrid.Columns.GridColumn colhalarem;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonName;
 
     }
 }

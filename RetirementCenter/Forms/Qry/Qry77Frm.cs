@@ -15,25 +15,25 @@ namespace RetirementCenter
     public partial class Qry77Frm : DevExpress.XtraEditors.XtraForm
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
-        int _personid = 0;
+        string _visa = string.Empty;
         #region -   Functions   -
         public Qry77Frm()
         {
             InitializeComponent();
         }
-        public Qry77Frm(int personid)
+        public Qry77Frm(string visa)
         {
             InitializeComponent();
-            _personid = personid;
+            _visa = visa;
         }
         #endregion
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            if (_personid == 0)
+            if (_visa == string.Empty)
                 LSMS.QueryableSource = dsLinq.vQry77s;
             else
-                LSMS.QueryableSource = from q in dsLinq.vQry77s where q.PersonId == _personid select q;
+                LSMS.QueryableSource = from q in dsLinq.vQry77s where q.visanumber == _visa select q;
             //gridViewData.BestFitColumns();
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
