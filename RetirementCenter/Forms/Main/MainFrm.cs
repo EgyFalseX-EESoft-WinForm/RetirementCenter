@@ -740,6 +740,16 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterTBLHafezSarf_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                TBLHafezSarfFrm FrmData = new TBLHafezSarfFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["TBLAksat.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
 
         private void mbRetCenterXRep01_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -978,6 +988,36 @@ namespace RetirementCenter
             {
                 XRep19 FrmRep = new XRep19();
                 Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterTBLDeathMembersPrint_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                TBLDeathMembersPrintFrm FrmData = new TBLDeathMembersPrintFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Report.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterXRep21_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep21 FrmRep = new XRep21();
+                Misc.Misc.ShowPrintPreview(FrmRep, true);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterXRep22_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep22 FrmRep = new XRep22();
+                Misc.Misc.ShowPrintPreview(FrmRep, true);
             }));
             SplashScreenManager.CloseForm();
         }
@@ -1814,8 +1854,6 @@ namespace RetirementCenter
             SplashScreenManager.CloseForm();
         }
         #endregion
-
-        
 
         
 

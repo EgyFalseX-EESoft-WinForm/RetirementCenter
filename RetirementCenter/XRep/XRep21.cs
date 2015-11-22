@@ -12,39 +12,36 @@ using DevExpress.XtraEditors.Controls;
 
 namespace RetirementCenter
 {
-    public partial class XRep19 : DevExpress.XtraReports.UI.XtraReport
+    public partial class XRep21 : DevExpress.XtraReports.UI.XtraReport
     {
-        public XRep19()
+        public XRep21()
         {
             InitializeComponent();
             LoadDataSource();
-            SQLProvider.SetAllCommandTimeouts(rep19_BTableAdapter, 0);
+            SQLProvider.SetAllCommandTimeouts(rep21_CTableAdapter, 0);
         }
         private void LoadDataSource()
         {
             new DataSources.dsReportsTableAdapters.AppOptionsTableAdapter().Fill(dsReports.AppOptions);
-            rep19_A1TableAdapter.Fill(dsReports.Rep19_A);
+            rep21_ATableAdapter.Fill(dsReports.Rep21_A);
+            rep21_BTableAdapter.Fill(dsReports.Rep21_B);
         }
         private void XRep01_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
         }
         private void XRep01_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
-            if (Parameters["pramDateStart"].Value == DBNull.Value || Parameters["pramDateEnd"].Value == DBNull.Value || Parameters["pramSynd"].Value == DBNull.Value)
+            if (Parameters["pramDof"].Value == DBNull.Value || Parameters["pramSynd"].Value == DBNull.Value)
                 return;
+            int Dof = Convert.ToInt32(Parameters["pramDof"].Value);
             int Synd = Convert.ToInt32(Parameters["pramSynd"].Value);
-            DateTime DateStart = Convert.ToDateTime(Parameters["pramDateStart"].Value);
-            DateTime DateEnd = Convert.ToDateTime(Parameters["pramDateEnd"].Value);
 
-            rep19_BTableAdapter.Fill(dsReports.Rep19_B, Synd, DateStart, DateEnd);
-            if (dsReports.Rep19_B.Count != 0)
+            rep21_CTableAdapter.Fill(dsReports.Rep21_C, Synd, Dof);
+            if (dsReports.Rep21_C.Count != 0)
             {
-                xlSynd.Text = dsReports.Rep19_B[0].Syndicate;
-                xlFrom.Text = DateStart.ToShortDateString();
-                xlTo.Text = DateEnd.ToShortDateString();
+                xlDof.Text = dsReports.Rep21_C[0].DofatSarf;
+                xlSynd.Text = dsReports.Rep21_C[0].Syndicate;
             }
-            //lbl.SizeF = new System.Drawing.SizeF(36, 589);
-            
         }
 
     }

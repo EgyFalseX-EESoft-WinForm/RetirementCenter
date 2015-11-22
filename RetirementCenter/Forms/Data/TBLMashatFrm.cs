@@ -192,6 +192,8 @@ namespace RetirementCenter
         #region - Event Handlers -
         private void TBL_EmpFrm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLDofatSarfMadunea' table. You can move, or remove it, as needed.
+            this.tBLDofatSarfMaduneaTableAdapter.Fill(this.dsRetirementCenter.TBLDofatSarfMadunea);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TBLReSarf' table. You can move, or remove it, as needed.
             this.tBLReSarfTableAdapter.Fill(this.dsRetirementCenter.TBLReSarf);
             
@@ -207,6 +209,7 @@ namespace RetirementCenter
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
+            
             if (LUEEmp.EditValue == null)
             {
                 btnNew_Click(btnNew, new EventArgs());
@@ -241,6 +244,9 @@ namespace RetirementCenter
             this.tBLEdafatTableAdapter.FillByMMashatId(this.dsRetirementCenter.TBLEdafat, row.MMashatId);
 
             tBLReSarfTableAdapter.FillByMMashatId(dsRetirementCenter.TBLReSarf, row.MMashatId);
+
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberMadunea' table. You can move, or remove it, as needed.
+            this.tblMemberMaduneaTableAdapter.FillByMMashatId(this.dsRetirementCenter.TblMemberMadunea, MMashatId);
 
             ReloadSyndicateTransfer();
             ReloadWarasa();
@@ -280,6 +286,7 @@ namespace RetirementCenter
                 xtraTabPageReSarf.PageVisible = true;
                 ceSarfExpetion.Enabled = false;
             }
+            xtraTabPageTblMemberMadunea.PageVisible = true;
 
             btnSave.Enabled = false;
             btnUpdate.Enabled = true;
@@ -319,6 +326,7 @@ namespace RetirementCenter
             xtraTabPageWarasa.PageVisible = false;
             xtraTabPageChangeToWarasa.PageVisible = false;
             xtraTabPageReSarf.PageVisible = false;
+            xtraTabPageTblMemberMadunea.PageVisible = false;
 
             ceSarfExpetion.Checked = false;
 
@@ -1090,8 +1098,6 @@ namespace RetirementCenter
             }
             con.Close();
         }
-        #endregion
-
         private void ceActivate_CheckedChanged(object sender, EventArgs e)
         {
             if (dsRetirementCenter.TBLMashat.Count == 0)
@@ -1099,7 +1105,7 @@ namespace RetirementCenter
                 return;
             }
             DataSources.dsRetirementCenter.TBLMashatRow Mainrow = dsRetirementCenter.TBLMashat[0];
-            
+
             if ((bool)Mainrow["Activate", DataRowVersion.Current] == ceActivate.Checked)
             {
                 dsRetirementCenter.tblmembervisaactive.Clear();
@@ -1119,6 +1125,59 @@ namespace RetirementCenter
             else
                 ceActivate.Checked = !ceActivate.Checked;
         }
+        private void gridViewTblMemberMadunea_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TblMemberMaduneaRow row = (DataSources.dsRetirementCenter.TblMemberMaduneaRow)((DataRowView)gridViewTblMemberMadunea.GetRow(e.RowHandle)).Row;
+            row.MMashatId = Convert.ToInt32(LUEEmp.EditValue);
+            row.userin = Program.UserInfo.UserId;
+            row.datein = SQLProvider.ServerDateTime();
+        }
+        private void repositoryItemButtonEditTblMemberMaduneaSave_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TblMemberMaduneaRow row = (DataSources.dsRetirementCenter.TblMemberMaduneaRow)((DataRowView)gridViewTblMemberMadunea.GetRow(gridViewTblMemberMadunea.FocusedRowHandle)).Row;
+            try
+            {
+                row.userin = Program.UserInfo.UserId;
+                row.datein = SQLProvider.ServerDateTime();
+                tblMemberMaduneaBindingSource.EndEdit();
+                tblMemberMaduneaTableAdapter.Update(row);
+                Program.ShowMsg("تم تعديل بيانات المديونية", false, this, true);
+                Program.Logger.LogThis("تم تعديل بيانات المديونية", Text, FXFW.Logger.OpType.success, null, null, this);
+            }
+            catch (SqlException ex)
+            {
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+        }
+        private void repositoryItemButtonEditTblMemberMaduneaDel_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TblMemberMaduneaRow row = (DataSources.dsRetirementCenter.TblMemberMaduneaRow)((DataRowView)
+           gridViewTblMemberMadunea.GetRow(gridViewTblMemberMadunea.FocusedRowHandle)).Row;
+            try
+            {
+                if (row.RowState == DataRowState.Detached)
+                {
+                    gridViewTblMemberMadunea.DeleteRow(gridViewTblMemberMadunea.FocusedRowHandle);
+                    return;
+                }
+                if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                    return;
+                row.userin = Program.UserInfo.UserId;
+                row.datein = SQLProvider.ServerDateTime();
+                tblMemberMaduneaBindingSource.EndEdit();
+                tblMemberMaduneaTableAdapter.Delete(row.MMashatId, row.DofatSarfMId);
+                gridViewTblMemberMadunea.DeleteRow(gridViewTblMemberMadunea.FocusedRowHandle);
+                Program.ShowMsg("تم الحذف", false, this, true);
+                Program.Logger.LogThis("تم الحذف", Text, FXFW.Logger.OpType.success, null, null, this);
+            }
+            catch (SqlException ex)
+            {
+                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
+                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
+            }
+        }
+        #endregion
 
     }
    

@@ -57,7 +57,12 @@ namespace RetirementCenter
             Qry47AFrm frm = new Qry47AFrm(row.visa);
             frm.ShowDialog();
         }
-
+        private void repositoryItemButtonEditStatusMem_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
+            Qry47BFrm frm = new Qry47BFrm(row.MMashatId);
+            frm.ShowDialog();
+        }
         private void repositoryItemButtonEditArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DataSources.dsQueries.vQry47Row row = (DataSources.dsQueries.vQry47Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
@@ -69,6 +74,8 @@ namespace RetirementCenter
             Qry77Frm frm = new Qry77Frm(row.visa);
             frm.ShowDialog();
         }
+
+       
 
     }
 }

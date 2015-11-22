@@ -237,6 +237,10 @@
             this.mbRetCenterTBLremind = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLMandoop = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLHafzaTasleem = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLDeathMembersPrint = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLHafezSarf = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterXRep21 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterXRep22 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -656,10 +660,14 @@
             this.mbRetCenterTBLReprintMemberTaslem,
             this.mbRetCenterTBLReprintWarasaTaslem,
             this.mbRetCenterTBLFrookWarasa,
-            this.mbRetCenterTBLFrookWarasaAdmin});
+            this.mbRetCenterTBLFrookWarasaAdmin,
+            this.mbRetCenterTBLDeathMembersPrint,
+            this.mbRetCenterTBLHafezSarf,
+            this.mbRetCenterXRep21,
+            this.mbRetCenterXRep22});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 353;
+            this.ribbonControl.MaxItemId = 357;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2503,6 +2511,41 @@
             this.mbRetCenterTBLHafzaTasleem.LargeImageIndex = 53;
             this.mbRetCenterTBLHafzaTasleem.Name = "mbRetCenterTBLHafzaTasleem";
             // 
+            // mbRetCenterTBLDeathMembersPrint
+            // 
+            this.mbRetCenterTBLDeathMembersPrint.Caption = "تقرير اعانة الوفاة 2";
+            this.mbRetCenterTBLDeathMembersPrint.Id = 353;
+            this.mbRetCenterTBLDeathMembersPrint.ImageIndex = 24;
+            this.mbRetCenterTBLDeathMembersPrint.LargeImageIndex = 24;
+            this.mbRetCenterTBLDeathMembersPrint.Name = "mbRetCenterTBLDeathMembersPrint";
+            this.mbRetCenterTBLDeathMembersPrint.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterTBLHafezSarf
+            // 
+            this.mbRetCenterTBLHafezSarf.Caption = "صرف الحافز";
+            this.mbRetCenterTBLHafezSarf.Id = 354;
+            this.mbRetCenterTBLHafezSarf.ImageIndex = 53;
+            this.mbRetCenterTBLHafezSarf.LargeImageIndex = 53;
+            this.mbRetCenterTBLHafezSarf.Name = "mbRetCenterTBLHafezSarf";
+            // 
+            // mbRetCenterXRep21
+            // 
+            this.mbRetCenterXRep21.Caption = "حافز صرف المعاشات";
+            this.mbRetCenterXRep21.Id = 355;
+            this.mbRetCenterXRep21.ImageIndex = 24;
+            this.mbRetCenterXRep21.LargeImageIndex = 24;
+            this.mbRetCenterXRep21.Name = "mbRetCenterXRep21";
+            this.mbRetCenterXRep21.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterXRep22
+            // 
+            this.mbRetCenterXRep22.Caption = "اجمالي صرفية الاعضاء";
+            this.mbRetCenterXRep22.Id = 356;
+            this.mbRetCenterXRep22.ImageIndex = 24;
+            this.mbRetCenterXRep22.LargeImageIndex = 24;
+            this.mbRetCenterXRep22.Name = "mbRetCenterXRep22";
+            this.mbRetCenterXRep22.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -2589,6 +2632,7 @@
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLremind);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLMandoop);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafzaTasleem);
+            this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafezSarf);
             this.DataribbonPageGroup.Name = "DataribbonPageGroup";
             this.DataribbonPageGroup.Text = "قائمة ادخال البيانات";
             // 
@@ -2707,6 +2751,9 @@
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep17);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep18);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep19);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLDeathMembersPrint);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep21);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep22);
             this.ReportribbonPageGroup.Name = "ReportribbonPageGroup";
             this.ReportribbonPageGroup.Text = "التقارير";
             // 
@@ -3009,6 +3056,10 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLremind;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMandoop;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLHafzaTasleem;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLDeathMembersPrint;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLHafezSarf;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep21;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep22;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

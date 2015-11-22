@@ -779,32 +779,6 @@
       <Column Name="responsiblesarfName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vQry27" Member="vQry27s">
-    <Type Name="vQry27">
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SarfTypeedadId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="sarfdatefrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="sarfdateto" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="monymonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="rsmmonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="eshtrakmonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="estktaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="sarf" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Edafat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SarfTypeedad" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Current_Yasref" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.vQry73" Member="vQry73s">
     <Type Name="vQry73">
       <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -1177,6 +1151,80 @@
       <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
       <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="datetasleem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry27" Member="vQry27s">
+    <Type Name="vQry27">
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SarfTypeedadId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="sarfdatefrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sarfdateto" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="monymonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="rsmmonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="eshtrakmonth" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="estktaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sarf" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Edafat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SarfTypeedad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Current_Yasref" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SendBank" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLDeathMembers" Member="vTBLDeathMembers">
+    <Type Name="vTBLDeathMember">
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="deathdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="mosthhek" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMashatNId" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mosthhekNid" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="mosthhekmony" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sefa" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="sarf" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sheekno" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sheekdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="useracc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dateinacc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RealNamecc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLHafezSarf" Member="vTBLHafezSarfs">
+    <Type Name="vTBLHafezSarf">
+      <Column Name="HafezAuto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countmembers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countwarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hafezmembers" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafezwarasa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="maden" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="daen" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="remarks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -65,6 +65,8 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry47TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry47TableAdapter();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditStatusMem = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry47BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -77,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditStatusMem)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -99,7 +102,8 @@
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin,
             this.repositoryItemButtonEditStatus,
-            this.repositoryItemButtonEditArc});
+            this.repositoryItemButtonEditArc,
+            this.repositoryItemButtonEditStatusMem});
             this.gridControlData.Size = new System.Drawing.Size(734, 404);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
@@ -212,6 +216,7 @@
             this.coltrteep,
             this.colActivateBank,
             this.gridColumn1,
+            this.gridColumn3,
             this.gridColumn2,
             this.colActivate_TblWarasa,
             this.colSyndicateId,
@@ -467,7 +472,7 @@
             this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "تعديل حالة الصرف";
+            this.gridColumn1.Caption = "حالة الوريث";
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditStatus;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
@@ -493,7 +498,7 @@
             this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditArc;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 21;
+            this.gridColumn2.VisibleIndex = 22;
             // 
             // repositoryItemButtonEditArc
             // 
@@ -526,7 +531,7 @@
             this.colSyndicateId.FieldName = "SyndicateId";
             this.colSyndicateId.Name = "colSyndicateId";
             this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 22;
+            this.colSyndicateId.VisibleIndex = 23;
             // 
             // colSubCommitteId
             // 
@@ -538,7 +543,7 @@
             this.colSubCommitteId.FieldName = "SubCommitteId";
             this.colSubCommitteId.Name = "colSubCommitteId";
             this.colSubCommitteId.Visible = true;
-            this.colSubCommitteId.VisibleIndex = 23;
+            this.colSubCommitteId.VisibleIndex = 24;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -595,6 +600,27 @@
             // 
             this.vQry47TableAdapter.ClearBeforeFill = true;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "حالة الاب";
+            this.gridColumn3.ColumnEdit = this.repositoryItemButtonEditStatusMem;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 21;
+            // 
+            // repositoryItemButtonEditStatusMem
+            // 
+            this.repositoryItemButtonEditStatusMem.AutoHeight = false;
+            this.repositoryItemButtonEditStatusMem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditStatusMem.Name = "repositoryItemButtonEditStatusMem";
+            this.repositoryItemButtonEditStatusMem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditStatusMem.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditStatusMem_ButtonClick);
+            // 
             // Qry47Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +644,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditStatusMem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -660,6 +687,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colActivate_TblWarasa;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicateId;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitteId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditStatusMem;
 
     }
 }

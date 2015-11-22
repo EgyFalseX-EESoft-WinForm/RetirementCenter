@@ -1,6 +1,6 @@
 ﻿namespace RetirementCenter
 {
-    partial class Qry47AFrm
+    partial class Qry47BFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.tBLNoSarfWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatehala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhalarem = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,9 +41,9 @@
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.tBLNoSarfWarsaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter();
+            this.tBLNoSarfDetelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBLNoSarfDetelsTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLNoSarfWarsaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
@@ -53,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLNoSarfDetelsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -60,7 +60,7 @@
             this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlData.DataSource = this.tBLNoSarfWarsaBindingSource;
+            this.gridControlData.DataSource = this.tBLNoSarfDetelsBindingSource;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
@@ -78,11 +78,6 @@
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewData});
-            // 
-            // tBLNoSarfWarsaBindingSource
-            // 
-            this.tBLNoSarfWarsaBindingSource.DataMember = "TBLNoSarfWarsa";
-            this.tBLNoSarfWarsaBindingSource.DataSource = this.dsRetirementCenter;
             // 
             // dsRetirementCenter
             // 
@@ -165,7 +160,7 @@
             this.gridViewData.Appearance.VertLine.BackColor = System.Drawing.Color.LightGray;
             this.gridViewData.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPersonName,
+            this.colMMashatName,
             this.colyasref,
             this.coldatehala,
             this.colhalarem});
@@ -184,18 +179,18 @@
             this.gridViewData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldatehala, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
-            // colPersonName
+            // colMMashatName
             // 
-            this.colPersonName.AppearanceCell.Options.UseTextOptions = true;
-            this.colPersonName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPersonName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPersonName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPersonName.Caption = "الاسم";
-            this.colPersonName.FieldName = "personName";
-            this.colPersonName.Name = "colPersonName";
-            this.colPersonName.Visible = true;
-            this.colPersonName.VisibleIndex = 2;
-            this.colPersonName.Width = 289;
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.Caption = "الاسم";
+            this.colMMashatName.FieldName = "MMashatName";
+            this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.Visible = true;
+            this.colMMashatName.VisibleIndex = 2;
+            this.colMMashatName.Width = 289;
             // 
             // colyasref
             // 
@@ -287,23 +282,27 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // tBLNoSarfWarsaTableAdapter
+            // tBLNoSarfDetelsBindingSource
             // 
-            this.tBLNoSarfWarsaTableAdapter.ClearBeforeFill = true;
+            this.tBLNoSarfDetelsBindingSource.DataMember = "TBLNoSarfDetels";
+            this.tBLNoSarfDetelsBindingSource.DataSource = this.dsRetirementCenter;
             // 
-            // Qry47AFrm
+            // tBLNoSarfDetelsTableAdapter
+            // 
+            this.tBLNoSarfDetelsTableAdapter.ClearBeforeFill = true;
+            // 
+            // Qry47BFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 462);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
-            this.Name = "Qry47AFrm";
+            this.Name = "Qry47BFrm";
             this.Text = "ارشيف";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Qry06Frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLNoSarfWarsaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
@@ -312,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tBLNoSarfDetelsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,12 +326,12 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnPrintExport;
         private DataSources.dsRetirementCenter dsRetirementCenter;
-        private System.Windows.Forms.BindingSource tBLNoSarfWarsaBindingSource;
-        private DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter tBLNoSarfWarsaTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colyasref;
         private DevExpress.XtraGrid.Columns.GridColumn coldatehala;
         private DevExpress.XtraGrid.Columns.GridColumn colhalarem;
-        private DevExpress.XtraGrid.Columns.GridColumn colPersonName;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
+        private System.Windows.Forms.BindingSource tBLNoSarfDetelsBindingSource;
+        private DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter tBLNoSarfDetelsTableAdapter;
 
     }
 }

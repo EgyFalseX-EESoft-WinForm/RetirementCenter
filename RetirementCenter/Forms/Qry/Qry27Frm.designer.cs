@@ -53,6 +53,7 @@
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
@@ -64,7 +65,7 @@
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -204,7 +205,8 @@
             this.colSubCommitte,
             this.coldatein,
             this.coluserin,
-            this.colCurrent_Yasref});
+            this.colCurrent_Yasref,
+            this.colSendBank});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -463,6 +465,18 @@
             this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
             this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // colCurrent_Yasref
+            // 
+            this.colCurrent_Yasref.AppearanceCell.Options.UseTextOptions = true;
+            this.colCurrent_Yasref.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCurrent_Yasref.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCurrent_Yasref.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCurrent_Yasref.Caption = "يصرف حاليا";
+            this.colCurrent_Yasref.FieldName = "Current_Yasref";
+            this.colCurrent_Yasref.Name = "colCurrent_Yasref";
+            this.colCurrent_Yasref.Visible = true;
+            this.colCurrent_Yasref.VisibleIndex = 17;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -565,17 +579,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colCurrent_Yasref
+            // colSendBank
             // 
-            this.colCurrent_Yasref.AppearanceCell.Options.UseTextOptions = true;
-            this.colCurrent_Yasref.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCurrent_Yasref.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCurrent_Yasref.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCurrent_Yasref.Caption = "يصرف حاليا";
-            this.colCurrent_Yasref.FieldName = "Current_Yasref";
-            this.colCurrent_Yasref.Name = "colCurrent_Yasref";
-            this.colCurrent_Yasref.Visible = true;
-            this.colCurrent_Yasref.VisibleIndex = 17;
+            this.colSendBank.AppearanceCell.Options.UseTextOptions = true;
+            this.colSendBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBank.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSendBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBank.Caption = "تم الاعداد";
+            this.colSendBank.FieldName = "SendBank";
+            this.colSendBank.Name = "colSendBank";
+            this.colSendBank.Visible = true;
+            this.colSendBank.VisibleIndex = 18;
             // 
             // Qry27Frm
             // 
@@ -646,6 +660,7 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDof;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent_Yasref;
+        private DevExpress.XtraGrid.Columns.GridColumn colSendBank;
 
     }
 }
