@@ -54,7 +54,7 @@ namespace RetirementCenter
 
         private void btnBank_Click(object sender, EventArgs e)
         {
-            if (lueDof.EditValue == null)
+            if (lueDof.EditValue == null)          
             {
                 msgDlg.Show("يجب اختيار الدفعة ", msgDlg.msgButtons.Close);
                 return;
@@ -62,12 +62,18 @@ namespace RetirementCenter
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
             int effected = 0;
+            int codestart = 0;
+            int codeend = 999999999;
+            if (tbCodeStart.EditValue != null)
+                codestart = Convert.ToInt32(tbCodeStart.EditValue);
+            if (tbCodeEnd.EditValue != null)
+                codeend = Convert.ToInt32(tbCodeEnd.EditValue);
             try
             {
                 if (lueSynd.EditValue == null)
-                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue));
+                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend);
                 else
-                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue));
+                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend);
                 
             }
             catch (System.Data.SqlClient.SqlException ex)

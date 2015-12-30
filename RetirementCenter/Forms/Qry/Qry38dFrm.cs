@@ -25,7 +25,7 @@ namespace RetirementCenter
             bool output = false;
             SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
             SqlCommand cmd = new SqlCommand(@"INSERT INTO AwarasaNewId
-            SELECT (SELECT ISNULL(MAX(newid) + 1, 60000000) FROM AwarasaNewId) + ROW_NUMBER() OVER(ORDER BY PersonId), PersonId
+            SELECT (SELECT ISNULL(MAX(newid) + 1, 60000000) FROM AwarasaNewId) + ROW_NUMBER() OVER(ORDER BY PersonId), PersonId, NULL
             FROM TBLWarasa WHERE yasref = 1 AND responsiblesarf = 1
             AND NOT EXISTS(SELECT personid FROM [dbo].[AwarasaNewId] WHERE personid = TBLWarasa.PersonId)", con);
             try

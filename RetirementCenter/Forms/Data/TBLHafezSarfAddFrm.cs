@@ -35,7 +35,7 @@ namespace RetirementCenter.Forms.Data
                 return;
             tbcountmembers.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_countmembers(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue));
             tbcountwarasa.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_countwarasa(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue));
-            tbhafezmembers.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_hafezmembers(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue)) *0.7;
+            tbhafezmembers.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_hafezmembers(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue)) * 0.7;
             tbhafezwarasa.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_hafezwarasa(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue)) * 0.7;
         }
         private void btnCancel_Click(object sender, EventArgs e)

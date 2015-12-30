@@ -91,6 +91,11 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
+            if (!row.IsaccReviewNull() && row.accReview == true)
+            {
+                msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
+                return;
+            }
             Update(row, false);
             
         }
@@ -122,6 +127,7 @@ namespace RetirementCenter
         private void btnNew_Click(object sender, EventArgs e)
         {
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = dsRetirementCenter.TblMemberAmanat.NewTblMemberAmanatRow();
+            row.estktaa = 0; row.sefa = "العضو";
             Update(row, false);
         }
         private void Update(DataSources.dsRetirementCenter.TblMemberAmanatRow row, bool DetailsTabFocus)
@@ -143,6 +149,7 @@ namespace RetirementCenter
                 dsRetirementCenter.TblMemberAmanat.AcceptChanges();
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                btnNew_Click(btnNew, EventArgs.Empty);
             }
             catch (Exception ex)
             {

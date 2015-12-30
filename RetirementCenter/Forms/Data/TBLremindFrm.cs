@@ -22,6 +22,7 @@ namespace RetirementCenter.Forms.Data
         private void LoadData()
         {
             XPSCSData.Session.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
+            LSMS.QueryableSource = dsLinq.Users;
         }
         private void ReloadData()
         {

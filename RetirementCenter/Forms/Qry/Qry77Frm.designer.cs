@@ -40,10 +40,12 @@
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamanatmony = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamanatwareddate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -167,7 +169,9 @@
             this.colDofatSarf,
             this.colsarfnumber,
             this.colnewid,
-            this.colMMashatName});
+            this.colMMashatName,
+            this.colamanatmony,
+            this.colamanatwareddate});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -289,6 +293,18 @@
             this.colnewid.Visible = true;
             this.colnewid.VisibleIndex = 9;
             // 
+            // colMMashatName
+            // 
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.Caption = "اسم الاب";
+            this.colMMashatName.FieldName = "MMashatName";
+            this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.Visible = true;
+            this.colMMashatName.VisibleIndex = 2;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -321,17 +337,29 @@
             this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
             // 
-            // colMMashatName
+            // colamanatmony
             // 
-            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "اسم الاب";
-            this.colMMashatName.FieldName = "MMashatName";
-            this.colMMashatName.Name = "colMMashatName";
-            this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 2;
+            this.colamanatmony.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatmony.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatmony.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatmony.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatmony.Caption = "مبلغ الامانات";
+            this.colamanatmony.FieldName = "amanatmony";
+            this.colamanatmony.Name = "colamanatmony";
+            this.colamanatmony.Visible = true;
+            this.colamanatmony.VisibleIndex = 10;
+            // 
+            // colamanatwareddate
+            // 
+            this.colamanatwareddate.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatwareddate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatwareddate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatwareddate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatwareddate.Caption = "تاريخ الامانات";
+            this.colamanatwareddate.FieldName = "amanatwareddate";
+            this.colamanatwareddate.Name = "colamanatwareddate";
+            this.colamanatwareddate.Visible = true;
+            this.colamanatwareddate.VisibleIndex = 11;
             // 
             // Qry77Frm
             // 
@@ -372,6 +400,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
         private DevExpress.XtraGrid.Columns.GridColumn colnewid;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanatmony;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanatwareddate;
 
     }
 }

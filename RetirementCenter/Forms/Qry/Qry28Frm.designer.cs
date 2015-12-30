@@ -60,6 +60,7 @@
             this.colResponsiblesarfName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYasref_Current = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
@@ -71,6 +72,10 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
+            this.tbCodeStart = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -86,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -99,14 +106,14 @@
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlData.EmbeddedNavigator.TextStringFormat = "صف {0} من {1}";
-            this.gridControlData.Location = new System.Drawing.Point(0, 79);
+            this.gridControlData.Location = new System.Drawing.Point(0, 122);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 378);
+            this.gridControlData.Size = new System.Drawing.Size(734, 335);
             this.gridControlData.TabIndex = 1;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -216,7 +223,8 @@
             this.colresponsiblesarfId,
             this.colResponsiblesarfName,
             this.colYasref_Current,
-            this.colSendBank});
+            this.colSendBank,
+            this.colnewid});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -240,7 +248,7 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 3;
+            this.colMMashatId.VisibleIndex = 4;
             // 
             // colsarfdatefrom
             // 
@@ -252,7 +260,7 @@
             this.colsarfdatefrom.FieldName = "sarfdatefrom";
             this.colsarfdatefrom.Name = "colsarfdatefrom";
             this.colsarfdatefrom.Visible = true;
-            this.colsarfdatefrom.VisibleIndex = 7;
+            this.colsarfdatefrom.VisibleIndex = 9;
             // 
             // colsarfdateto
             // 
@@ -264,7 +272,7 @@
             this.colsarfdateto.FieldName = "sarfdateto";
             this.colsarfdateto.Name = "colsarfdateto";
             this.colsarfdateto.Visible = true;
-            this.colsarfdateto.VisibleIndex = 8;
+            this.colsarfdateto.VisibleIndex = 10;
             // 
             // colmonymonth
             // 
@@ -276,7 +284,7 @@
             this.colmonymonth.FieldName = "monymonth";
             this.colmonymonth.Name = "colmonymonth";
             this.colmonymonth.Visible = true;
-            this.colmonymonth.VisibleIndex = 9;
+            this.colmonymonth.VisibleIndex = 11;
             // 
             // colrsmmonth
             // 
@@ -288,7 +296,7 @@
             this.colrsmmonth.FieldName = "rsmmonth";
             this.colrsmmonth.Name = "colrsmmonth";
             this.colrsmmonth.Visible = true;
-            this.colrsmmonth.VisibleIndex = 10;
+            this.colrsmmonth.VisibleIndex = 12;
             // 
             // coleshtrakmonth
             // 
@@ -300,7 +308,7 @@
             this.coleshtrakmonth.FieldName = "eshtrakmonth";
             this.coleshtrakmonth.Name = "coleshtrakmonth";
             this.coleshtrakmonth.Visible = true;
-            this.coleshtrakmonth.VisibleIndex = 11;
+            this.coleshtrakmonth.VisibleIndex = 13;
             // 
             // colestktaa
             // 
@@ -312,7 +320,7 @@
             this.colestktaa.FieldName = "estktaa";
             this.colestktaa.Name = "colestktaa";
             this.colestktaa.Visible = true;
-            this.colestktaa.VisibleIndex = 12;
+            this.colestktaa.VisibleIndex = 14;
             // 
             // colsarf
             // 
@@ -324,7 +332,7 @@
             this.colsarf.FieldName = "sarf";
             this.colsarf.Name = "colsarf";
             this.colsarf.Visible = true;
-            this.colsarf.VisibleIndex = 13;
+            this.colsarf.VisibleIndex = 15;
             // 
             // colEdafat
             // 
@@ -336,7 +344,7 @@
             this.colEdafat.FieldName = "Edafat";
             this.colEdafat.Name = "colEdafat";
             this.colEdafat.Visible = true;
-            this.colEdafat.VisibleIndex = 14;
+            this.colEdafat.VisibleIndex = 16;
             // 
             // colMMashatName
             // 
@@ -348,7 +356,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 4;
+            this.colMMashatName.VisibleIndex = 5;
             // 
             // colsarfnumber
             // 
@@ -360,7 +368,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 15;
+            this.colsarfnumber.VisibleIndex = 17;
             // 
             // colDofatSarf
             // 
@@ -372,7 +380,7 @@
             this.colDofatSarf.FieldName = "DofatSarf";
             this.colDofatSarf.Name = "colDofatSarf";
             this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 5;
+            this.colDofatSarf.VisibleIndex = 6;
             // 
             // colSarfTypeedad
             // 
@@ -384,7 +392,7 @@
             this.colSarfTypeedad.FieldName = "SarfTypeedad";
             this.colSarfTypeedad.Name = "colSarfTypeedad";
             this.colSarfTypeedad.Visible = true;
-            this.colSarfTypeedad.VisibleIndex = 6;
+            this.colSarfTypeedad.VisibleIndex = 8;
             // 
             // colPersonId
             // 
@@ -396,7 +404,7 @@
             this.colPersonId.FieldName = "PersonId";
             this.colPersonId.Name = "colPersonId";
             this.colPersonId.Visible = true;
-            this.colPersonId.VisibleIndex = 1;
+            this.colPersonId.VisibleIndex = 2;
             // 
             // colpersonName
             // 
@@ -408,7 +416,7 @@
             this.colpersonName.FieldName = "personName";
             this.colpersonName.Name = "colpersonName";
             this.colpersonName.Visible = true;
-            this.colpersonName.VisibleIndex = 2;
+            this.colpersonName.VisibleIndex = 3;
             // 
             // colSyndicate
             // 
@@ -420,7 +428,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 16;
+            this.colSyndicate.VisibleIndex = 18;
             // 
             // colSubCommitte
             // 
@@ -432,7 +440,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 17;
+            this.colSubCommitte.VisibleIndex = 19;
             // 
             // coldatein
             // 
@@ -445,7 +453,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 19;
+            this.coldatein.VisibleIndex = 7;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -472,7 +480,8 @@
             this.coluserin.FieldName = "userin";
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 18;
+            this.coluserin.VisibleIndex = 20;
+            this.coluserin.Width = 87;
             // 
             // repositoryItemLookUpEdituserin
             // 
@@ -509,7 +518,7 @@
             this.colresponsiblesarf.FieldName = "responsiblesarf";
             this.colresponsiblesarf.Name = "colresponsiblesarf";
             this.colresponsiblesarf.Visible = true;
-            this.colresponsiblesarf.VisibleIndex = 20;
+            this.colresponsiblesarf.VisibleIndex = 21;
             // 
             // colresponsiblesarfId
             // 
@@ -521,7 +530,7 @@
             this.colresponsiblesarfId.FieldName = "responsiblesarfId";
             this.colresponsiblesarfId.Name = "colresponsiblesarfId";
             this.colresponsiblesarfId.Visible = true;
-            this.colresponsiblesarfId.VisibleIndex = 21;
+            this.colresponsiblesarfId.VisibleIndex = 22;
             // 
             // colResponsiblesarfName
             // 
@@ -533,7 +542,7 @@
             this.colResponsiblesarfName.FieldName = "ResponsiblesarfName";
             this.colResponsiblesarfName.Name = "colResponsiblesarfName";
             this.colResponsiblesarfName.Visible = true;
-            this.colResponsiblesarfName.VisibleIndex = 22;
+            this.colResponsiblesarfName.VisibleIndex = 23;
             // 
             // colYasref_Current
             // 
@@ -545,7 +554,7 @@
             this.colYasref_Current.FieldName = "Yasref_Current";
             this.colYasref_Current.Name = "colYasref_Current";
             this.colYasref_Current.Visible = true;
-            this.colYasref_Current.VisibleIndex = 23;
+            this.colYasref_Current.VisibleIndex = 24;
             // 
             // colSendBank
             // 
@@ -557,7 +566,19 @@
             this.colSendBank.FieldName = "SendBank";
             this.colSendBank.Name = "colSendBank";
             this.colSendBank.Visible = true;
-            this.colSendBank.VisibleIndex = 0;
+            this.colSendBank.VisibleIndex = 1;
+            // 
+            // colnewid
+            // 
+            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
+            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
+            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.Caption = "كود60";
+            this.colnewid.FieldName = "newid";
+            this.colnewid.Name = "colnewid";
+            this.colnewid.Visible = true;
+            this.colnewid.VisibleIndex = 0;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -568,6 +589,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.tbCodeEnd);
+            this.panelControl1.Controls.Add(this.tbCodeStart);
             this.panelControl1.Controls.Add(this.btnBank);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.btnPrintExport);
@@ -577,7 +602,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 73);
+            this.panelControl1.Size = new System.Drawing.Size(734, 116);
             this.panelControl1.TabIndex = 3;
             // 
             // btnBank
@@ -585,7 +610,7 @@
             this.btnBank.Location = new System.Drawing.Point(12, 12);
             this.btnBank.Name = "btnBank";
             this.btnBank.Size = new System.Drawing.Size(75, 49);
-            this.btnBank.TabIndex = 6;
+            this.btnBank.TabIndex = 8;
             this.btnBank.Text = "اعداد البنك";
             this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
             // 
@@ -661,6 +686,48 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(232, 94);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(35, 13);
+            this.labelControl4.TabIndex = 11;
+            this.labelControl4.Text = "الي كود";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(232, 70);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(32, 13);
+            this.labelControl3.TabIndex = 12;
+            this.labelControl3.Text = "من كود";
+            // 
+            // tbCodeEnd
+            // 
+            this.tbCodeEnd.Location = new System.Drawing.Point(100, 91);
+            this.tbCodeEnd.Name = "tbCodeEnd";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.Mask.EditMask = "n0";
+            this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeEnd.TabIndex = 7;
+            // 
+            // tbCodeStart
+            // 
+            this.tbCodeStart.Location = new System.Drawing.Point(100, 67);
+            this.tbCodeStart.Name = "tbCodeStart";
+            this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.Mask.EditMask = "n0";
+            this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeStart.TabIndex = 6;
+            // 
             // Qry28Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -688,6 +755,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -736,6 +805,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colResponsiblesarfName;
         private DevExpress.XtraGrid.Columns.GridColumn colYasref_Current;
         private DevExpress.XtraGrid.Columns.GridColumn colSendBank;
+        private DevExpress.XtraGrid.Columns.GridColumn colnewid;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit tbCodeEnd;
+        private DevExpress.XtraEditors.TextEdit tbCodeStart;
 
     }
 }

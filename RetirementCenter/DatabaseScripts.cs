@@ -471,6 +471,22 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vTBLHafezSarf;
                 cmd.ExecuteNonQuery();
+                //vTblMemberMadunea
+                if (CheckViewExists("vTblMemberMadunea"))
+                {
+                    cmd.CommandText = DropObject("vTblMemberMadunea");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTblMemberMadunea;
+                cmd.ExecuteNonQuery();
+                //vTBLWarasaMadunea
+                if (CheckViewExists("vTBLWarasaMadunea"))
+                {
+                    cmd.CommandText = DropObject("vTBLWarasaMadunea");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLWarasaMadunea;
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -883,13 +899,12 @@ FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLMashat01_V2]
                 AS
-                SELECT MMashatId, DofatSarfId, 
-                (select MMashatName from TBLMashat where MMashatId = TBLMemberSarf.MMashatId) as MMashatName,
-                (select sarfnumber from TBLMashat where MMashatId = TBLMemberSarf.MMashatId) as sarfnumber,
-                (select Syndicate from CDSyndicate where SyndicateId = (select SyndicateId from TBLMashat where MMashatId = TBLMemberSarf.MMashatId)) as Syndicate,
-                (select SubCommitte from CDSubCommitte where SubCommitteId = (select SubCommitteId from TBLMashat where MMashatId = TBLMemberSarf.MMashatId)) as SubCommitte
-                FROM TBLMemberSarf
-                WHERE sarf = 0
+                SELECT MMashatId, DofatSarfId,
+                (SELECT MMashatName FROM dbo.TBLMashat WHERE (MMashatId = dbo.TBLMemberSarf_arshef.MMashatId)) AS MMashatName,
+                (SELECT sarfnumber FROM dbo.TBLMashat WHERE (MMashatId = dbo.TBLMemberSarf_arshef.MMashatId)) AS sarfnumber,
+                (SELECT Syndicate FROM dbo.CDSyndicate WHERE (SyndicateId = (SELECT SyndicateId FROM dbo.TBLMashat WHERE (MMashatId = dbo.TBLMemberSarf_arshef.MMashatId)))) AS Syndicate,
+                (SELECT SubCommitte FROM dbo.CDSubCommitte WHERE (SubCommitteId = (SELECT SubCommitteId FROM dbo.TBLMashat WHERE (MMashatId = dbo.TBLMemberSarf_arshef.MMashatId)))) AS SubCommitte
+                FROM dbo.TBLMemberSarf_arshef 
                 GROUP BY MMashatId, DofatSarfId";
             }
         }
@@ -989,6 +1004,7 @@ FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                          dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, TBLWarasa_1.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa_1.MMashatId, 
                          dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, 
                          dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank
+, (SELECT TOP 1 [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa_1.visa) AS [newid]
 FROM            dbo.TBLWarasa RIGHT OUTER JOIN
                          dbo.TBLWarasaSarf_arshef ON dbo.TBLWarasa.PersonId = dbo.TBLWarasaSarf_arshef.responsiblesarfId LEFT OUTER JOIN
                          dbo.TBLMashat RIGHT OUTER JOIN
@@ -1623,6 +1639,43 @@ FROM            dbo.TBLHafezSarf INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLHafezSarf.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.TBLDofatSarf ON dbo.TBLHafezSarf.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
                          dbo.Users ON dbo.TBLHafezSarf.userin = dbo.Users.UserID";
+            }
+        }
+        public static string vTblMemberMadunea
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTblMemberMadunea]
+                    AS
+                    SELECT        TblMemberMadunea.MaduniaAuto, TblMemberMadunea.MMashatId, TblMemberMadunea.DofatSarfMId, TblMemberMadunea.mostahk, TblMemberMadunea.mremark, TblMemberMadunea.datein, 
+                         TblMemberMadunea.userin, TBLDofatSarfMadunea.DofatSarfM, Users.RealName, TBLMashat.MMashatName, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, TBLMashat.sarfnumber, 
+                         CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+FROM            TblMemberMadunea INNER JOIN
+                         TBLDofatSarfMadunea ON TblMemberMadunea.DofatSarfMId = TBLDofatSarfMadunea.DofatSarfMId INNER JOIN
+                         TBLMashat ON TblMemberMadunea.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         Users ON TblMemberMadunea.userin = Users.UserID INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
+            }
+        }
+        public static string vTBLWarasaMadunea
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLWarasaMadunea]
+                    AS
+                    SELECT        TBLWarasaMadunea.MaduniaAuto, TBLWarasaMadunea.DofatSarfMId, TBLWarasaMadunea.PersonId, TBLWarasaMadunea.mostahk, TBLWarasaMadunea.mremark, TBLWarasaMadunea.datein, 
+                         TBLWarasaMadunea.userin, TBLDofatSarfMadunea.DofatSarfM, Users.RealName, TBLWarasa.personName, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, CDSyndicate.Syndicate, 
+                         CDSubCommitte.SubCommitte, TBLMashat.MMashatName, TBLMashat.sarfnumber
+FROM            TBLWarasaMadunea INNER JOIN
+                         TBLWarasa ON TBLWarasaMadunea.PersonId = TBLWarasa.PersonId INNER JOIN
+                         TBLDofatSarfMadunea ON TBLWarasaMadunea.DofatSarfMId = TBLDofatSarfMadunea.DofatSarfMId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         Users ON TBLWarasaMadunea.userin = Users.UserID INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId";
             }
         }
     }

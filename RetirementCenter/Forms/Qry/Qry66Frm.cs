@@ -49,7 +49,7 @@ namespace RetirementCenter
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-                SqlCommand cmd = new SqlCommand(@"UPDATE [dbo].[tblWarasabank] SET [sendbankdate] = GETDATE() WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId", con);
+                SqlCommand cmd = new SqlCommand(@"UPDATE [dbo].[tblWarasabank] SET [sendbankdate] = GETDATE() WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId AND sendbankdate IS NULL", con);
                 SqlParameter PramId = new SqlParameter("@PersonId", SqlDbType.Int);
                 SqlParameter PramDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int) { Value = Convert.ToInt32(LUETBLDofatSarf.EditValue) };
                 cmd.Parameters.AddRange(new SqlParameter[] { PramId, PramDofatSarfId });

@@ -54,8 +54,13 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
+            this.tbCodeStart = new DevExpress.XtraEditors.TextEdit();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -65,7 +70,6 @@
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -77,6 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
@@ -94,14 +100,14 @@
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlData.EmbeddedNavigator.TextStringFormat = "صف {0} من {1}";
-            this.gridControlData.Location = new System.Drawing.Point(0, 69);
+            this.gridControlData.Location = new System.Drawing.Point(0, 116);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 388);
+            this.gridControlData.Size = new System.Drawing.Size(734, 341);
             this.gridControlData.TabIndex = 4;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -477,6 +483,18 @@
             this.colCurrent_Yasref.Visible = true;
             this.colCurrent_Yasref.VisibleIndex = 17;
             // 
+            // colSendBank
+            // 
+            this.colSendBank.AppearanceCell.Options.UseTextOptions = true;
+            this.colSendBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBank.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSendBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBank.Caption = "تم الاعداد";
+            this.colSendBank.FieldName = "SendBank";
+            this.colSendBank.Name = "colSendBank";
+            this.colSendBank.Visible = true;
+            this.colSendBank.VisibleIndex = 18;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -486,6 +504,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.tbCodeEnd);
+            this.panelControl1.Controls.Add(this.tbCodeStart);
             this.panelControl1.Controls.Add(this.btnBank);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -495,15 +517,57 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 63);
+            this.panelControl1.Size = new System.Drawing.Size(734, 110);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(232, 88);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(35, 13);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "الي كود";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(232, 64);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(32, 13);
+            this.labelControl3.TabIndex = 5;
+            this.labelControl3.Text = "من كود";
+            // 
+            // tbCodeEnd
+            // 
+            this.tbCodeEnd.Location = new System.Drawing.Point(100, 85);
+            this.tbCodeEnd.Name = "tbCodeEnd";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.Mask.EditMask = "n0";
+            this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeEnd.TabIndex = 4;
+            // 
+            // tbCodeStart
+            // 
+            this.tbCodeStart.Location = new System.Drawing.Point(100, 61);
+            this.tbCodeStart.Name = "tbCodeStart";
+            this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.Mask.EditMask = "n0";
+            this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeStart.TabIndex = 3;
             // 
             // btnBank
             // 
             this.btnBank.Location = new System.Drawing.Point(12, 6);
             this.btnBank.Name = "btnBank";
             this.btnBank.Size = new System.Drawing.Size(75, 49);
-            this.btnBank.TabIndex = 2;
+            this.btnBank.TabIndex = 5;
             this.btnBank.Text = "اعداد البنك";
             this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
             // 
@@ -537,7 +601,7 @@
             this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueSynd.Properties.ValueMember = "SyndicateId";
             this.lueSynd.Size = new System.Drawing.Size(125, 20);
-            this.lueSynd.TabIndex = 1;
+            this.lueSynd.TabIndex = 2;
             // 
             // LSMSSyn
             // 
@@ -558,7 +622,7 @@
             this.lueDof.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDof.Properties.ValueMember = "DofatSarfId";
             this.lueDof.Size = new System.Drawing.Size(125, 20);
-            this.lueDof.TabIndex = 0;
+            this.lueDof.TabIndex = 1;
             // 
             // LSMSDof
             // 
@@ -571,25 +635,13 @@
             this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
             this.btnPrintExport.Name = "btnPrintExport";
             this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
-            this.btnPrintExport.TabIndex = 3;
+            this.btnPrintExport.TabIndex = 0;
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // colSendBank
-            // 
-            this.colSendBank.AppearanceCell.Options.UseTextOptions = true;
-            this.colSendBank.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSendBank.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSendBank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSendBank.Caption = "تم الاعداد";
-            this.colSendBank.FieldName = "SendBank";
-            this.colSendBank.Name = "colSendBank";
-            this.colSendBank.Visible = true;
-            this.colSendBank.VisibleIndex = 18;
             // 
             // Qry27Frm
             // 
@@ -614,6 +666,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
@@ -661,6 +715,10 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent_Yasref;
         private DevExpress.XtraGrid.Columns.GridColumn colSendBank;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit tbCodeEnd;
+        private DevExpress.XtraEditors.TextEdit tbCodeStart;
 
     }
 }

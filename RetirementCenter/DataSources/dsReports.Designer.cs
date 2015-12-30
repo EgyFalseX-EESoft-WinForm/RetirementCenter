@@ -100,6 +100,10 @@ namespace RetirementCenter.DataSources {
         
         private Rep22_BDataTable tableRep22_B;
         
+        private Rep23_ADataTable tableRep23_A;
+        
+        private Rep23_BDataTable tableRep23_B;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -241,6 +245,12 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["Rep22_B"] != null)) {
                     base.Tables.Add(new Rep22_BDataTable(ds.Tables["Rep22_B"]));
+                }
+                if ((ds.Tables["Rep23_A"] != null)) {
+                    base.Tables.Add(new Rep23_ADataTable(ds.Tables["Rep23_A"]));
+                }
+                if ((ds.Tables["Rep23_B"] != null)) {
+                    base.Tables.Add(new Rep23_BDataTable(ds.Tables["Rep23_B"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -642,6 +652,26 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Rep23_ADataTable Rep23_A {
+            get {
+                return this.tableRep23_A;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Rep23_BDataTable Rep23_B {
+            get {
+                return this.tableRep23_B;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -820,6 +850,12 @@ namespace RetirementCenter.DataSources {
                 }
                 if ((ds.Tables["Rep22_B"] != null)) {
                     base.Tables.Add(new Rep22_BDataTable(ds.Tables["Rep22_B"]));
+                }
+                if ((ds.Tables["Rep23_A"] != null)) {
+                    base.Tables.Add(new Rep23_ADataTable(ds.Tables["Rep23_A"]));
+                }
+                if ((ds.Tables["Rep23_B"] != null)) {
+                    base.Tables.Add(new Rep23_BDataTable(ds.Tables["Rep23_B"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1082,6 +1118,18 @@ namespace RetirementCenter.DataSources {
                     this.tableRep22_B.InitVars();
                 }
             }
+            this.tableRep23_A = ((Rep23_ADataTable)(base.Tables["Rep23_A"]));
+            if ((initTable == true)) {
+                if ((this.tableRep23_A != null)) {
+                    this.tableRep23_A.InitVars();
+                }
+            }
+            this.tableRep23_B = ((Rep23_BDataTable)(base.Tables["Rep23_B"]));
+            if ((initTable == true)) {
+                if ((this.tableRep23_B != null)) {
+                    this.tableRep23_B.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1168,6 +1216,10 @@ namespace RetirementCenter.DataSources {
             base.Tables.Add(this.tableRep22_A);
             this.tableRep22_B = new Rep22_BDataTable();
             base.Tables.Add(this.tableRep22_B);
+            this.tableRep23_A = new Rep23_ADataTable();
+            base.Tables.Add(this.tableRep23_A);
+            this.tableRep23_B = new Rep23_BDataTable();
+            base.Tables.Add(this.tableRep23_B);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1400,6 +1452,18 @@ namespace RetirementCenter.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeRep23_A() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeRep23_B() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1566,6 +1630,12 @@ namespace RetirementCenter.DataSources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Rep22_BRowChangeEventHandler(object sender, Rep22_BRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Rep23_ARowChangeEventHandler(object sender, Rep23_ARowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Rep23_BRowChangeEventHandler(object sender, Rep23_BRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -13388,9 +13458,9 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnSyndicate;
             
-            private global::System.Data.DataColumn columnsarfdatefrom;
+            private global::System.Data.DataColumn columnDofatSarfDatefrom;
             
-            private global::System.Data.DataColumn columnsarfdateto;
+            private global::System.Data.DataColumn columnDofatSarfDateto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -13507,17 +13577,17 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn sarfdatefromColumn {
+            public global::System.Data.DataColumn DofatSarfDatefromColumn {
                 get {
-                    return this.columnsarfdatefrom;
+                    return this.columnDofatSarfDatefrom;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn sarfdatetoColumn {
+            public global::System.Data.DataColumn DofatSarfDatetoColumn {
                 get {
-                    return this.columnsarfdateto;
+                    return this.columnDofatSarfDateto;
                 }
             }
             
@@ -13558,7 +13628,7 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Rep22_BRow AddRep22_BRow(int countMem, int DofatSarfId, string DofatSarf, double monymonth, double rsmmonth, double eshtrakmonth, double estktaa, double Total, int SyndicateId, string Syndicate, System.DateTime sarfdatefrom, System.DateTime sarfdateto) {
+            public Rep22_BRow AddRep22_BRow(int countMem, int DofatSarfId, string DofatSarf, double monymonth, double rsmmonth, double eshtrakmonth, double estktaa, double Total, int SyndicateId, string Syndicate, System.DateTime DofatSarfDatefrom, System.DateTime DofatSarfDateto) {
                 Rep22_BRow rowRep22_BRow = ((Rep22_BRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         countMem,
@@ -13571,8 +13641,8 @@ namespace RetirementCenter.DataSources {
                         Total,
                         SyndicateId,
                         Syndicate,
-                        sarfdatefrom,
-                        sarfdateto};
+                        DofatSarfDatefrom,
+                        DofatSarfDateto};
                 rowRep22_BRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRep22_BRow);
                 return rowRep22_BRow;
@@ -13605,8 +13675,8 @@ namespace RetirementCenter.DataSources {
                 this.columnTotal = base.Columns["Total"];
                 this.columnSyndicateId = base.Columns["SyndicateId"];
                 this.columnSyndicate = base.Columns["Syndicate"];
-                this.columnsarfdatefrom = base.Columns["sarfdatefrom"];
-                this.columnsarfdateto = base.Columns["sarfdateto"];
+                this.columnDofatSarfDatefrom = base.Columns["DofatSarfDatefrom"];
+                this.columnDofatSarfDateto = base.Columns["DofatSarfDateto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13632,10 +13702,10 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnSyndicateId);
                 this.columnSyndicate = new global::System.Data.DataColumn("Syndicate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSyndicate);
-                this.columnsarfdatefrom = new global::System.Data.DataColumn("sarfdatefrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsarfdatefrom);
-                this.columnsarfdateto = new global::System.Data.DataColumn("sarfdateto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsarfdateto);
+                this.columnDofatSarfDatefrom = new global::System.Data.DataColumn("DofatSarfDatefrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfDatefrom);
+                this.columnDofatSarfDateto = new global::System.Data.DataColumn("DofatSarfDateto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfDateto);
                 this.columncountMem.ReadOnly = true;
                 this.columnDofatSarfId.AllowDBNull = false;
                 this.columnDofatSarf.AllowDBNull = false;
@@ -13648,8 +13718,8 @@ namespace RetirementCenter.DataSources {
                 this.columnSyndicateId.AllowDBNull = false;
                 this.columnSyndicate.AllowDBNull = false;
                 this.columnSyndicate.MaxLength = 50;
-                this.columnsarfdatefrom.AllowDBNull = false;
-                this.columnsarfdateto.AllowDBNull = false;
+                this.columnDofatSarfDatefrom.AllowDBNull = false;
+                this.columnDofatSarfDateto.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13736,6 +13806,695 @@ namespace RetirementCenter.DataSources {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "Rep22_BDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Rep23_ADataTable : global::System.Data.TypedTableBase<Rep23_ARow> {
+            
+            private global::System.Data.DataColumn columnDofatSarfId;
+            
+            private global::System.Data.DataColumn columnDofatSarf;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ADataTable() {
+                this.TableName = "Rep23_A";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Rep23_ADataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Rep23_ADataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfIdColumn {
+                get {
+                    return this.columnDofatSarfId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfColumn {
+                get {
+                    return this.columnDofatSarf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARow this[int index] {
+                get {
+                    return ((Rep23_ARow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_ARowChangeEventHandler Rep23_ARowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_ARowChangeEventHandler Rep23_ARowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_ARowChangeEventHandler Rep23_ARowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_ARowChangeEventHandler Rep23_ARowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddRep23_ARow(Rep23_ARow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARow AddRep23_ARow(int DofatSarfId, string DofatSarf) {
+                Rep23_ARow rowRep23_ARow = ((Rep23_ARow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DofatSarfId,
+                        DofatSarf};
+                rowRep23_ARow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRep23_ARow);
+                return rowRep23_ARow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARow FindByDofatSarfId(int DofatSarfId) {
+                return ((Rep23_ARow)(this.Rows.Find(new object[] {
+                            DofatSarfId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Rep23_ADataTable cln = ((Rep23_ADataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Rep23_ADataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDofatSarfId = base.Columns["DofatSarfId"];
+                this.columnDofatSarf = base.Columns["DofatSarf"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDofatSarfId = new global::System.Data.DataColumn("DofatSarfId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfId);
+                this.columnDofatSarf = new global::System.Data.DataColumn("DofatSarf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarf);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDofatSarfId}, true));
+                this.columnDofatSarfId.AllowDBNull = false;
+                this.columnDofatSarfId.Unique = true;
+                this.columnDofatSarf.AllowDBNull = false;
+                this.columnDofatSarf.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARow NewRep23_ARow() {
+                return ((Rep23_ARow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Rep23_ARow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Rep23_ARow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Rep23_ARowChanged != null)) {
+                    this.Rep23_ARowChanged(this, new Rep23_ARowChangeEvent(((Rep23_ARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Rep23_ARowChanging != null)) {
+                    this.Rep23_ARowChanging(this, new Rep23_ARowChangeEvent(((Rep23_ARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Rep23_ARowDeleted != null)) {
+                    this.Rep23_ARowDeleted(this, new Rep23_ARowChangeEvent(((Rep23_ARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Rep23_ARowDeleting != null)) {
+                    this.Rep23_ARowDeleting(this, new Rep23_ARowChangeEvent(((Rep23_ARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveRep23_ARow(Rep23_ARow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReports ds = new dsReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Rep23_ADataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Rep23_BDataTable : global::System.Data.TypedTableBase<Rep23_BRow> {
+            
+            private global::System.Data.DataColumn columncountMem;
+            
+            private global::System.Data.DataColumn columnDofatSarfId;
+            
+            private global::System.Data.DataColumn columnDofatSarf;
+            
+            private global::System.Data.DataColumn columnmonymonth;
+            
+            private global::System.Data.DataColumn columnrsmmonth;
+            
+            private global::System.Data.DataColumn columneshtrakmonth;
+            
+            private global::System.Data.DataColumn columnestktaa;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnSyndicateId;
+            
+            private global::System.Data.DataColumn columnSyndicate;
+            
+            private global::System.Data.DataColumn columnDofatSarfDatefrom;
+            
+            private global::System.Data.DataColumn columnDofatSarfDateto;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BDataTable() {
+                this.TableName = "Rep23_B";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Rep23_BDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Rep23_BDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn countMemColumn {
+                get {
+                    return this.columncountMem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfIdColumn {
+                get {
+                    return this.columnDofatSarfId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfColumn {
+                get {
+                    return this.columnDofatSarf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn monymonthColumn {
+                get {
+                    return this.columnmonymonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn rsmmonthColumn {
+                get {
+                    return this.columnrsmmonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn eshtrakmonthColumn {
+                get {
+                    return this.columneshtrakmonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estktaaColumn {
+                get {
+                    return this.columnestktaa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SyndicateIdColumn {
+                get {
+                    return this.columnSyndicateId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SyndicateColumn {
+                get {
+                    return this.columnSyndicate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfDatefromColumn {
+                get {
+                    return this.columnDofatSarfDatefrom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DofatSarfDatetoColumn {
+                get {
+                    return this.columnDofatSarfDateto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BRow this[int index] {
+                get {
+                    return ((Rep23_BRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_BRowChangeEventHandler Rep23_BRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_BRowChangeEventHandler Rep23_BRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_BRowChangeEventHandler Rep23_BRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Rep23_BRowChangeEventHandler Rep23_BRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddRep23_BRow(Rep23_BRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BRow AddRep23_BRow(int countMem, int DofatSarfId, string DofatSarf, double monymonth, double rsmmonth, double eshtrakmonth, double estktaa, double Total, int SyndicateId, string Syndicate, System.DateTime DofatSarfDatefrom, System.DateTime DofatSarfDateto) {
+                Rep23_BRow rowRep23_BRow = ((Rep23_BRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        countMem,
+                        DofatSarfId,
+                        DofatSarf,
+                        monymonth,
+                        rsmmonth,
+                        eshtrakmonth,
+                        estktaa,
+                        Total,
+                        SyndicateId,
+                        Syndicate,
+                        DofatSarfDatefrom,
+                        DofatSarfDateto};
+                rowRep23_BRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRep23_BRow);
+                return rowRep23_BRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Rep23_BDataTable cln = ((Rep23_BDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Rep23_BDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columncountMem = base.Columns["countMem"];
+                this.columnDofatSarfId = base.Columns["DofatSarfId"];
+                this.columnDofatSarf = base.Columns["DofatSarf"];
+                this.columnmonymonth = base.Columns["monymonth"];
+                this.columnrsmmonth = base.Columns["rsmmonth"];
+                this.columneshtrakmonth = base.Columns["eshtrakmonth"];
+                this.columnestktaa = base.Columns["estktaa"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnSyndicateId = base.Columns["SyndicateId"];
+                this.columnSyndicate = base.Columns["Syndicate"];
+                this.columnDofatSarfDatefrom = base.Columns["DofatSarfDatefrom"];
+                this.columnDofatSarfDateto = base.Columns["DofatSarfDateto"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columncountMem = new global::System.Data.DataColumn("countMem", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountMem);
+                this.columnDofatSarfId = new global::System.Data.DataColumn("DofatSarfId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfId);
+                this.columnDofatSarf = new global::System.Data.DataColumn("DofatSarf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarf);
+                this.columnmonymonth = new global::System.Data.DataColumn("monymonth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmonymonth);
+                this.columnrsmmonth = new global::System.Data.DataColumn("rsmmonth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrsmmonth);
+                this.columneshtrakmonth = new global::System.Data.DataColumn("eshtrakmonth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columneshtrakmonth);
+                this.columnestktaa = new global::System.Data.DataColumn("estktaa", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestktaa);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnSyndicateId = new global::System.Data.DataColumn("SyndicateId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSyndicateId);
+                this.columnSyndicate = new global::System.Data.DataColumn("Syndicate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSyndicate);
+                this.columnDofatSarfDatefrom = new global::System.Data.DataColumn("DofatSarfDatefrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfDatefrom);
+                this.columnDofatSarfDateto = new global::System.Data.DataColumn("DofatSarfDateto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDofatSarfDateto);
+                this.columncountMem.ReadOnly = true;
+                this.columnDofatSarfId.AllowDBNull = false;
+                this.columnDofatSarf.AllowDBNull = false;
+                this.columnDofatSarf.MaxLength = 50;
+                this.columnmonymonth.ReadOnly = true;
+                this.columnrsmmonth.ReadOnly = true;
+                this.columneshtrakmonth.ReadOnly = true;
+                this.columnestktaa.ReadOnly = true;
+                this.columnTotal.ReadOnly = true;
+                this.columnSyndicateId.AllowDBNull = false;
+                this.columnSyndicate.AllowDBNull = false;
+                this.columnSyndicate.MaxLength = 50;
+                this.columnDofatSarfDatefrom.AllowDBNull = false;
+                this.columnDofatSarfDateto.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BRow NewRep23_BRow() {
+                return ((Rep23_BRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Rep23_BRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Rep23_BRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Rep23_BRowChanged != null)) {
+                    this.Rep23_BRowChanged(this, new Rep23_BRowChangeEvent(((Rep23_BRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Rep23_BRowChanging != null)) {
+                    this.Rep23_BRowChanging(this, new Rep23_BRowChangeEvent(((Rep23_BRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Rep23_BRowDeleted != null)) {
+                    this.Rep23_BRowDeleted(this, new Rep23_BRowChangeEvent(((Rep23_BRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Rep23_BRowDeleting != null)) {
+                    this.Rep23_BRowDeleting(this, new Rep23_BRowChangeEvent(((Rep23_BRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveRep23_BRow(Rep23_BRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReports ds = new dsReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Rep23_BDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -18067,23 +18826,23 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime sarfdatefrom {
+            public System.DateTime DofatSarfDatefrom {
                 get {
-                    return ((global::System.DateTime)(this[this.tableRep22_B.sarfdatefromColumn]));
+                    return ((global::System.DateTime)(this[this.tableRep22_B.DofatSarfDatefromColumn]));
                 }
                 set {
-                    this[this.tableRep22_B.sarfdatefromColumn] = value;
+                    this[this.tableRep22_B.DofatSarfDatefromColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime sarfdateto {
+            public System.DateTime DofatSarfDateto {
                 get {
-                    return ((global::System.DateTime)(this[this.tableRep22_B.sarfdatetoColumn]));
+                    return ((global::System.DateTime)(this[this.tableRep22_B.DofatSarfDatetoColumn]));
                 }
                 set {
-                    this[this.tableRep22_B.sarfdatetoColumn] = value;
+                    this[this.tableRep22_B.DofatSarfDatetoColumn] = value;
                 }
             }
             
@@ -18157,6 +18916,292 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableRep22_B.TotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Rep23_ARow : global::System.Data.DataRow {
+            
+            private Rep23_ADataTable tableRep23_A;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Rep23_ARow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRep23_A = ((Rep23_ADataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DofatSarfId {
+                get {
+                    return ((int)(this[this.tableRep23_A.DofatSarfIdColumn]));
+                }
+                set {
+                    this[this.tableRep23_A.DofatSarfIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DofatSarf {
+                get {
+                    return ((string)(this[this.tableRep23_A.DofatSarfColumn]));
+                }
+                set {
+                    this[this.tableRep23_A.DofatSarfColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Rep23_BRow : global::System.Data.DataRow {
+            
+            private Rep23_BDataTable tableRep23_B;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Rep23_BRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRep23_B = ((Rep23_BDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int countMem {
+                get {
+                    try {
+                        return ((int)(this[this.tableRep23_B.countMemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'countMem\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.countMemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DofatSarfId {
+                get {
+                    return ((int)(this[this.tableRep23_B.DofatSarfIdColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.DofatSarfIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DofatSarf {
+                get {
+                    return ((string)(this[this.tableRep23_B.DofatSarfColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.DofatSarfColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double monymonth {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep23_B.monymonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'monymonth\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.monymonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double rsmmonth {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep23_B.rsmmonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'rsmmonth\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.rsmmonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double eshtrakmonth {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep23_B.eshtrakmonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'eshtrakmonth\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.eshtrakmonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double estktaa {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep23_B.estktaaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'estktaa\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.estktaaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Total {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep23_B.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'Rep23_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep23_B.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int SyndicateId {
+                get {
+                    return ((int)(this[this.tableRep23_B.SyndicateIdColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.SyndicateIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Syndicate {
+                get {
+                    return ((string)(this[this.tableRep23_B.SyndicateColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.SyndicateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DofatSarfDatefrom {
+                get {
+                    return ((global::System.DateTime)(this[this.tableRep23_B.DofatSarfDatefromColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.DofatSarfDatefromColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DofatSarfDateto {
+                get {
+                    return ((global::System.DateTime)(this[this.tableRep23_B.DofatSarfDatetoColumn]));
+                }
+                set {
+                    this[this.tableRep23_B.DofatSarfDatetoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscountMemNull() {
+                return this.IsNull(this.tableRep23_B.countMemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcountMemNull() {
+                this[this.tableRep23_B.countMemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmonymonthNull() {
+                return this.IsNull(this.tableRep23_B.monymonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmonymonthNull() {
+                this[this.tableRep23_B.monymonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsrsmmonthNull() {
+                return this.IsNull(this.tableRep23_B.rsmmonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetrsmmonthNull() {
+                this[this.tableRep23_B.rsmmonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IseshtrakmonthNull() {
+                return this.IsNull(this.tableRep23_B.eshtrakmonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SeteshtrakmonthNull() {
+                this[this.tableRep23_B.eshtrakmonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsestktaaNull() {
+                return this.IsNull(this.tableRep23_B.estktaaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetestktaaNull() {
+                this[this.tableRep23_B.estktaaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableRep23_B.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableRep23_B.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19438,6 +20483,74 @@ namespace RetirementCenter.DataSources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Rep22_BRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Rep23_ARowChangeEvent : global::System.EventArgs {
+            
+            private Rep23_ARow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARowChangeEvent(Rep23_ARow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_ARow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Rep23_BRowChangeEvent : global::System.EventArgs {
+            
+            private Rep23_BRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BRowChangeEvent(Rep23_BRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Rep23_BRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -27052,8 +28165,8 @@ WHERE        (TBLHafezSarf.SyndicateId = @SyndicateId) AND (TBLHafezSarf.DofatSa
             tableMapping.ColumnMappings.Add("Total", "Total");
             tableMapping.ColumnMappings.Add("SyndicateId", "SyndicateId");
             tableMapping.ColumnMappings.Add("Syndicate", "Syndicate");
-            tableMapping.ColumnMappings.Add("sarfdatefrom", "sarfdatefrom");
-            tableMapping.ColumnMappings.Add("sarfdateto", "sarfdateto");
+            tableMapping.ColumnMappings.Add("DofatSarfDatefrom", "DofatSarfDatefrom");
+            tableMapping.ColumnMappings.Add("DofatSarfDateto", "DofatSarfDateto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -27073,12 +28186,13 @@ WHERE        (TBLHafezSarf.SyndicateId = @SyndicateId) AND (TBLHafezSarf.DofatSa
             this._commandCollection[0].CommandText = @"SELECT        COUNT(DISTINCT TBLMemberSarf_arshef.MMashatId) AS countMem, TBLMemberSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, SUM(TBLMemberSarf_arshef.monymonth) AS monymonth, 
                          SUM(TBLMemberSarf_arshef.rsmmonth) AS rsmmonth, SUM(TBLMemberSarf_arshef.eshtrakmonth) AS eshtrakmonth, SUM(TBLMemberSarf_arshef.estktaa) AS estktaa, 
                          SUM(TBLMemberSarf_arshef.monymonth - TBLMemberSarf_arshef.rsmmonth - TBLMemberSarf_arshef.eshtrakmonth - TBLMemberSarf_arshef.estktaa) AS Total, TBLMemberSarf_arshef.SyndicateId, 
-                         CDSyndicate.Syndicate, TBLMemberSarf_arshef.sarfdatefrom, TBLMemberSarf_arshef.sarfdateto
+                         CDSyndicate.Syndicate, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto
 FROM            TBLMemberSarf_arshef INNER JOIN
                          TBLDofatSarf ON TBLMemberSarf_arshef.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
                          CDSyndicate ON TBLMemberSarf_arshef.SyndicateId = CDSyndicate.SyndicateId
-WHERE        (TBLMemberSarf_arshef.DofatSarfId = @DofatSarfId)
-GROUP BY TBLMemberSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLMemberSarf_arshef.SyndicateId, CDSyndicate.Syndicate, TBLMemberSarf_arshef.sarfdatefrom, TBLMemberSarf_arshef.sarfdateto";
+WHERE        (TBLMemberSarf_arshef.DofatSarfId = @DofatSarfId) AND 
+(TBLMemberSarf_arshef.SarfTypeedadId <> 4 AND TBLMemberSarf_arshef.SarfTypeedadId <> 6)
+GROUP BY TBLMemberSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLMemberSarf_arshef.SyndicateId, CDSyndicate.Syndicate, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -27105,6 +28219,365 @@ GROUP BY TBLMemberSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLMemberSarf
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
             dsReports.Rep22_BDataTable dataTable = new dsReports.Rep22_BDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Rep23_ATableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Rep23_ATableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Rep23_A";
+            tableMapping.ColumnMappings.Add("DofatSarfId", "DofatSarfId");
+            tableMapping.ColumnMappings.Add("DofatSarf", "DofatSarf");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        DofatSarfId, DofatSarf\r\nFROM            TBLDofatSarf";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsReports.Rep23_ADataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsReports.Rep23_ADataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsReports.Rep23_ADataTable dataTable = new dsReports.Rep23_ADataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Rep23_BTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Rep23_BTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Rep23_B";
+            tableMapping.ColumnMappings.Add("countMem", "countMem");
+            tableMapping.ColumnMappings.Add("DofatSarfId", "DofatSarfId");
+            tableMapping.ColumnMappings.Add("DofatSarf", "DofatSarf");
+            tableMapping.ColumnMappings.Add("monymonth", "monymonth");
+            tableMapping.ColumnMappings.Add("rsmmonth", "rsmmonth");
+            tableMapping.ColumnMappings.Add("eshtrakmonth", "eshtrakmonth");
+            tableMapping.ColumnMappings.Add("estktaa", "estktaa");
+            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("SyndicateId", "SyndicateId");
+            tableMapping.ColumnMappings.Add("Syndicate", "Syndicate");
+            tableMapping.ColumnMappings.Add("DofatSarfDatefrom", "DofatSarfDatefrom");
+            tableMapping.ColumnMappings.Add("DofatSarfDateto", "DofatSarfDateto");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        COUNT(DISTINCT TBLWarasa.MMashatId) AS countMem, TBLWarasaSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, SUM(TBLWarasaSarf_arshef.monymonth) AS monymonth, 
+                         SUM(TBLWarasaSarf_arshef.rsmmonth) AS rsmmonth, SUM(TBLWarasaSarf_arshef.eshtrakmonth) AS eshtrakmonth, SUM(TBLWarasaSarf_arshef.estktaa) AS estktaa, 
+                         SUM(TBLWarasaSarf_arshef.monymonth - TBLWarasaSarf_arshef.rsmmonth - TBLWarasaSarf_arshef.eshtrakmonth - TBLWarasaSarf_arshef.estktaa) AS Total, TBLWarasaSarf_arshef.SyndicateId, 
+                         CDSyndicate.Syndicate, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto
+FROM            TBLWarasaSarf_arshef INNER JOIN
+                         TBLDofatSarf ON TBLWarasaSarf_arshef.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         CDSyndicate ON TBLWarasaSarf_arshef.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         TBLWarasa ON TBLWarasaSarf_arshef.PersonId = TBLWarasa.PersonId
+WHERE        (TBLWarasaSarf_arshef.DofatSarfId = @DofatSarfId) AND 
+(TBLWarasaSarf_arshef.SarfTypeedadId <> 4 AND TBLWarasaSarf_arshef.SarfTypeedadId <> 6)
+GROUP BY TBLWarasaSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasaSarf_arshef.SyndicateId, CDSyndicate.Syndicate, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsReports.Rep23_BDataTable dataTable, int DofatSarfId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsReports.Rep23_BDataTable GetData(int DofatSarfId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            dsReports.Rep23_BDataTable dataTable = new dsReports.Rep23_BDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

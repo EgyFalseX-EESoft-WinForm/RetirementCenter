@@ -26,6 +26,9 @@ namespace RetirementCenter
             //rep19_A1TableAdapter.Fill(dsReports.Rep19_A);
             foreach (DataSources.dsQueries.vQry84Row item in tbl.Rows)
             {
+                
+                if (!item.IssarfNull() && item.sarf)
+                    continue;
                 DataSources.dsReports.Rep19_BRow row = dsReports.Rep19_B.NewRep19_BRow();
 
                 row.MMashatId = item.MMashatId;
@@ -41,6 +44,7 @@ namespace RetirementCenter
                     row.sefa = item.sefa;
                 row.mosthhekmony = item.mosthhekmony;
                 dsReports.Rep19_B.AddRep19_BRow(row);
+                
             }
         }
         private void XRep01_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)

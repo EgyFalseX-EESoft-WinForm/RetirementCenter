@@ -41,6 +41,7 @@ namespace RetirementCenter.Forms.Data
             LSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs;
             LSMSCDSyndicate.QueryableSource = dsLinq.CDSyndicates;
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
+            LSMSCDnationalty.QueryableSource = dsLinq.CDnationalties;
             LSMSTBLWarasa.QueryableSource =
 
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasas where q.MMashatId == TBLWarasa[0].MMashatId select q;
@@ -68,6 +69,7 @@ namespace RetirementCenter.Forms.Data
 
             tbpersonName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personName", true));
             lueWarasaTypeId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "WarasaTypeId", true));
+            luenationaltyId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "nationaltyId", true));
             tbpersonNID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personNID", true));
             depersonbirth.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personbirth", true));
             tbpersonmobile.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personmobile", true));
@@ -252,7 +254,7 @@ namespace RetirementCenter.Forms.Data
             {
                 ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).PersonId = (int)SQLProvider.adpQry.TBLWarasaNewId();
                 //Must Type NID
-                if (tbpersonNID.EditValue == null || tbpersonNID.EditValue.ToString() == string.Empty)
+                if ((tbpersonNID.EditValue == null || tbpersonNID.EditValue.ToString() == string.Empty) && luenationaltyId.EditValue.ToString() == "1")
                 {
                     Program.ShowMsg("يجب ادخال الرقم القومي", true, this, true);
                     return;

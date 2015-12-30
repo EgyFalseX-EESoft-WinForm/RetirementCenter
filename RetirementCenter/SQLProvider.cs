@@ -92,9 +92,6 @@ namespace RetirementCenter
             int currentVersion = Convert.ToInt32(Application.ProductVersion.Replace(".", ""));
             int? serverVersion = adpQry.AppOptions_GetAppVersion();
 
-
-          
-
             if (serverVersion == null)
 	        {
                 if (!Program.UserInfo.IsAdmin)
@@ -119,8 +116,7 @@ namespace RetirementCenter
                 }
                 else
                 {
-                    if (msgDlg.Show("يوجد اصداره جديده من البرنامج علي الخادم, هل ترغب في التحديث؟", msgDlg.msgButtons.YesNo) == DialogResult.No)
-                        return;
+                    msgDlg.Show("يوجد اصداره جديده من البرنامج علي الخادم, سوف يتم التحديث الان", msgDlg.msgButtons.Close);
                     //if (File.Exists(updatePath))
                     //    File.Delete(updatePath);
                     byte[] data = adpQry.AppOptions_GetAppData();

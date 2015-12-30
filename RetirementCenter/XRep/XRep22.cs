@@ -37,8 +37,8 @@ namespace RetirementCenter
             if (dsReports.Rep22_B.Count != 0)
             {
                 xlDof.Text = dsReports.Rep22_B[0].DofatSarf;
-                xlFrom.Text = dsReports.Rep22_B[0].sarfdatefrom.ToShortDateString();
-                xlTo.Text = dsReports.Rep22_B[0].sarfdateto.ToShortDateString();
+                xlFrom.Text = dsReports.Rep22_B[0].DofatSarfDatefrom.ToShortDateString();
+                xlTo.Text = dsReports.Rep22_B[0].DofatSarfDateto.ToShortDateString();
             }
         }
 

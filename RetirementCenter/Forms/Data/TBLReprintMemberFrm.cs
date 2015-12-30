@@ -65,7 +65,7 @@ namespace RetirementCenter.Forms.Data
                 return;
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
-            adp.Updatesendbankdate(SQLProvider.ServerDateTime(), (DateTime)deFrom.EditValue, (DateTime)deTo.EditValue, -1, SQLProvider.ServerDateTime());
+            adp.Updatesendbankdate(SQLProvider.ServerDateTime(), (DateTime)deFrom.EditValue, (DateTime)deTo.EditValue);
             Program.ShowMsg("تم التعديل", false, this, true);
             Program.Logger.LogThis("تم التعديل", Text, FXFW.Logger.OpType.success, null, null, this);
             RefreshData();

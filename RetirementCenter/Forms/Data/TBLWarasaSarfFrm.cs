@@ -371,12 +371,12 @@ namespace RetirementCenter
                     return;
                 }
                 //check for errors
-                string msg = SQLProvider.CheckForDofaaCreationErrorsLite(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
-                if (msg != string.Empty)
-                {
-                    Program.ShowMsg(msg, false, this, true);
-                    return;
-                }
+                //string msg = SQLProvider.CheckForDofaaCreationErrorsLite(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
+                //if (msg != string.Empty)
+                //{
+                //    Program.ShowMsg(msg, false, this, true);
+                //    return;
+                //}
                 if ((int)SQLProvider.adpQry.DofatSarfActivityClosed(Convert.ToInt32(LUESyndicateId.EditValue), dofaa.DofatSarfId, (byte)Misc.Types.CDMashHala.Warasa) > 0)
                 {
                     if (Program.UserInfo.IsAdmin)
@@ -413,6 +413,7 @@ namespace RetirementCenter
                 warasaExceptionDofaatCreatorTableAdapter.Fill(dsQueries.WarasaExceptionDofaatCreator, Convert.ToInt32(LUESyndicateId.EditValue), dofaa.DofatSarfId);
                 warasaDofaatCreatorTableAdapter.Fill(dsQueries.WarasaDofaatCreator, Convert.ToInt32(LUESyndicateId.EditValue), dofaa.DofatSarfId);
                 warasaExtraDofaatCreatorTableAdapter.Fill(dsQueries.WarasaExtraDofaatCreator, dofaa.DofatSarfId, Convert.ToInt32(LUESyndicateId.EditValue));
+                
 
                 pbc.Properties.Maximum = dsQueries.WarasaDofaatCreator.Count + dsQueries.WarasaExtraDofaatCreator.Count;
                 lblMax.Text = pbc.Properties.Maximum.ToString(); pbc.EditValue = 0; lblValue.Text = "0";
@@ -569,11 +570,6 @@ namespace RetirementCenter
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
 
-                    //if (record.IsNull("monymonth"))
-                    //{
-                    //    string x;
-                    //}
-
                     dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
 
                     //Add Resarf
@@ -602,10 +598,7 @@ namespace RetirementCenter
                         Resarfrecord.datein = serverdatetime;
                         Resarfrecord.userin = Program.UserInfo.UserId;
                         Resarfrecord.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_2;
-                        //if (Resarfrecord.IsNull("monymonth"))
-                        //{
-                        //    string x;
-                        //}
+                        
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
                     }
 
@@ -614,10 +607,12 @@ namespace RetirementCenter
                     Application.DoEvents();
                 }
                 SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
-                tBLWarasaSarfTableAdapter.Update(dsRetirementCenter.TBLWarasaSarf);
-                tBLWarasaSarfTableAdapter.Update(dsRetirementCenter.TBLWarasaSarf);
-                SplashScreenManager.CloseForm();
 
+                tBLWarasaSarfTableAdapter.Update(dsRetirementCenter.TBLWarasaSarf);
+                new DataSources.dsRetirementCenterTableAdapters.TBLWarasaMaduneaTableAdapter().UpdateTBLWarasaSarf(dofaa.DofatSarfId);
+                new DataSources.dsRetirementCenterTableAdapters.TBLFrookWarasaTableAdapter().InsertIntoTBLWarasaSarf(Program.UserInfo.UserId, dofaa.DofatSarfId, Convert.ToInt32(LUESyndicateId.EditValue));
+                tBLWarasaSarfTableAdapter.FillByDofatSarfId_SyndicateId(dsRetirementCenter.TBLWarasaSarf, dofaa.DofatSarfId, Convert.ToInt32(LUESyndicateId.EditValue));
+                SplashScreenManager.CloseForm();
 
                 pbc.EditValue = 0; pcProgress.Visible = false; lblValue.Text = "0"; gcCommands.Enabled = true;
                 LoadTBLWarasaSarf();

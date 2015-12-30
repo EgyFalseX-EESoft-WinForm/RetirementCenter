@@ -19,6 +19,7 @@ namespace RetirementCenter
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter adpResarf = new DataSources.dsRetirementCenterTableAdapters.TBLReSarfTableAdapter();
         DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter adpBank = new DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
+        DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter adpMadunea = new DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
         #region -   Functions   -
         public TBLMemberSarfFrm()
@@ -137,21 +138,36 @@ namespace RetirementCenter
             pbc.Properties.Maximum = dsQueries.TBLEdafatCreator.Count + dsQueries.TBLEdafatCreator2.Count;
             lblMax.Text = pbc.Properties.Maximum.ToString(); pbc.EditValue = 0; lblValue.Text = "0";
             DateTime serverdatetime = SQLProvider.ServerDateTime();
+            //Load Madunea
+            adpMadunea.FillByDofatSarfMId(dsRetirementCenter.TblMemberMadunea, dofaa.DofatSarfId);
+
             foreach (DataSources.dsQueries.TBLEdafatCreatorRow row1 in dsQueries.TBLEdafatCreator.Rows)
             {
                 DataSources.dsRetirementCenter.TBLMemberSarfRow record = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
                 record.DofatSarfId = dofaa.DofatSarfId;
-                int months = TotalMonths(dofaa.DofatSarfDateto, row1.WorkeEndDate);
-                if (months > 15)
-                    months = 15;
-                record.eshtrakmonth = row1.Eshtrak * months;
-                record.estktaa = row1.estktaa;
-                record.SyndicateId = row1.SyndicateId;
-                record.SubCommitteId = row1.SubCommitteId;
+                //Madunea
+                DataSources.dsRetirementCenter.TblMemberMaduneaRow row_Madunea = dsRetirementCenter.TblMemberMadunea.FindByMMashatIdDofatSarfMId(row1.MMashatId, dofaa.DofatSarfId);
+                if (row_Madunea == null)
+                {
+                    int months = TotalMonths(dofaa.DofatSarfDateto, row1.WorkeEndDate);
+                    if (months > 15)
+                        months = 15;
+                    record.eshtrakmonth = row1.Eshtrak * months;
+                    record.estktaa = row1.estktaa;
+                    record.monymonth = row1.feasarf * months;
+                    record.rsmmonth = row1.Rasm * months;
+                }
+                else
+                {
+                    record.eshtrakmonth = 0;
+                    record.estktaa = 0;
+                    record.monymonth = row_Madunea.mostahk;
+                    record.rsmmonth = 0;
+                }
 
                 record.MMashatId = row1.MMashatId;
-                record.monymonth = row1.feasarf * months;
-                record.rsmmonth = row1.Rasm * months;
+                record.SyndicateId = row1.SyndicateId;
+                record.SubCommitteId = row1.SubCommitteId;
                 record.sarf = true;
                 record.Edafat = true;
                 record.sarfdatefrom = row1.WorkeEndDate;

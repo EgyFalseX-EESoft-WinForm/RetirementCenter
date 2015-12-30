@@ -37,6 +37,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSTBLMashat = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,33 +52,41 @@
             this.colDofatSarfDateto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tbamanatrem = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.tbsefa = new DevExpress.XtraEditors.TextEdit();
+            this.tbmostahek = new DevExpress.XtraEditors.TextEdit();
+            this.tbestktaa = new DevExpress.XtraEditors.TextEdit();
             this.tbamanatmony = new DevExpress.XtraEditors.TextEdit();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
-            this.LSMSTBLMashat = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtpGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatrem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbsefa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(388, 49);
+            this.labelControl2.Location = new System.Drawing.Point(388, 18);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 19);
             this.labelControl2.TabIndex = 0;
@@ -86,7 +95,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(412, 123);
+            this.labelControl4.Location = new System.Drawing.Point(412, 243);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(50, 19);
             this.labelControl4.TabIndex = 0;
@@ -96,7 +105,7 @@
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.panelControl1.Controls.Add(this.btnClose);
-            this.panelControl1.Location = new System.Drawing.Point(5, 370);
+            this.panelControl1.Location = new System.Drawing.Point(10, 454);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(520, 44);
             this.panelControl1.TabIndex = 1;
@@ -109,7 +118,7 @@
             this.btnClose.Location = new System.Drawing.Point(7, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 30);
-            this.btnClose.TabIndex = 0;
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "اغلاق";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -117,10 +126,10 @@
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.Save;
             this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(312, 265);
+            this.btnSave.Location = new System.Drawing.Point(312, 348);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 30);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "حفـــــــــــــــــــــــــظ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -130,7 +139,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.xtraTabControl1.SelectedTabPage = this.xtpGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(525, 352);
+            this.xtraTabControl1.Size = new System.Drawing.Size(525, 437);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGeneral});
@@ -143,18 +152,24 @@
             this.xtpGeneral.Controls.Add(this.tbamanatrem);
             this.xtpGeneral.Controls.Add(this.labelControl6);
             this.xtpGeneral.Controls.Add(this.labelControl2);
+            this.xtpGeneral.Controls.Add(this.labelControl7);
+            this.xtpGeneral.Controls.Add(this.labelControl5);
+            this.xtpGeneral.Controls.Add(this.labelControl3);
             this.xtpGeneral.Controls.Add(this.labelControl1);
             this.xtpGeneral.Controls.Add(this.labelControl4);
+            this.xtpGeneral.Controls.Add(this.tbsefa);
+            this.xtpGeneral.Controls.Add(this.tbmostahek);
+            this.xtpGeneral.Controls.Add(this.tbestktaa);
             this.xtpGeneral.Controls.Add(this.tbamanatmony);
             this.xtpGeneral.Image = global::RetirementCenter.Properties.Resources.Edit;
             this.xtpGeneral.Name = "xtpGeneral";
-            this.xtpGeneral.Size = new System.Drawing.Size(519, 305);
+            this.xtpGeneral.Size = new System.Drawing.Size(519, 390);
             this.xtpGeneral.Text = "بيانات أساسيه";
             // 
             // lueMMashatId
             // 
             this.lueMMashatId.EditValue = "";
-            this.lueMMashatId.Location = new System.Drawing.Point(53, 46);
+            this.lueMMashatId.Location = new System.Drawing.Point(53, 15);
             this.lueMMashatId.Name = "lueMMashatId";
             this.lueMMashatId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueMMashatId.Properties.Appearance.Options.UseFont = true;
@@ -168,6 +183,12 @@
             this.lueMMashatId.Properties.View = this.gridView1;
             this.lueMMashatId.Size = new System.Drawing.Size(233, 26);
             this.lueMMashatId.TabIndex = 1;
+            this.lueMMashatId.EditValueChanged += new System.EventHandler(this.lueMMashatId_EditValueChanged);
+            // 
+            // LSMSTBLMashat
+            // 
+            this.LSMSTBLMashat.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLMashat01_V1);
+            this.LSMSTBLMashat.KeyExpression = "MMashatId";
             // 
             // gridView1
             // 
@@ -233,7 +254,7 @@
             // lueDofatSarfAId
             // 
             this.lueDofatSarfAId.EditValue = "";
-            this.lueDofatSarfAId.Location = new System.Drawing.Point(53, 10);
+            this.lueDofatSarfAId.Location = new System.Drawing.Point(53, 49);
             this.lueDofatSarfAId.Name = "lueDofatSarfAId";
             this.lueDofatSarfAId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueDofatSarfAId.Properties.Appearance.Options.UseFont = true;
@@ -247,7 +268,6 @@
             this.lueDofatSarfAId.Properties.View = this.gridLookUpEdit1View;
             this.lueDofatSarfAId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfAId.TabIndex = 0;
-            this.lueDofatSarfAId.EditValueChanged += new System.EventHandler(this.lueDofatSarfAId_EditValueChanged);
             // 
             // cdDofaatAmanatBindingSource
             // 
@@ -308,19 +328,46 @@
             // 
             // tbamanatrem
             // 
-            this.tbamanatrem.Location = new System.Drawing.Point(53, 125);
+            this.tbamanatrem.Location = new System.Drawing.Point(53, 245);
             this.tbamanatrem.Name = "tbamanatrem";
             this.tbamanatrem.Size = new System.Drawing.Size(233, 80);
-            this.tbamanatrem.TabIndex = 3;
+            this.tbamanatrem.TabIndex = 6;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(418, 13);
+            this.labelControl6.Location = new System.Drawing.Point(418, 52);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(42, 19);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "الدفعة";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl7.Location = new System.Drawing.Point(422, 206);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(38, 19);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "الصفه";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Location = new System.Drawing.Point(393, 167);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(67, 19);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "المستحق";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Location = new System.Drawing.Point(390, 128);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(70, 19);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "الاستقطاع";
             // 
             // labelControl1
             // 
@@ -331,8 +378,42 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "المبلغ";
             // 
+            // tbsefa
+            // 
+            this.tbsefa.Location = new System.Drawing.Point(53, 203);
+            this.tbsefa.Name = "tbsefa";
+            this.tbsefa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbsefa.Properties.Appearance.Options.UseFont = true;
+            this.tbsefa.Size = new System.Drawing.Size(233, 26);
+            this.tbsefa.TabIndex = 5;
+            // 
+            // tbmostahek
+            // 
+            this.tbmostahek.Location = new System.Drawing.Point(53, 164);
+            this.tbmostahek.Name = "tbmostahek";
+            this.tbmostahek.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbmostahek.Properties.Appearance.Options.UseFont = true;
+            this.tbmostahek.Size = new System.Drawing.Size(233, 26);
+            this.tbmostahek.TabIndex = 4;
+            // 
+            // tbestktaa
+            // 
+            this.tbestktaa.Location = new System.Drawing.Point(53, 125);
+            this.tbestktaa.Name = "tbestktaa";
+            this.tbestktaa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tbestktaa.Properties.Appearance.Options.UseFont = true;
+            this.tbestktaa.Properties.DisplayFormat.FormatString = "f2";
+            this.tbestktaa.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbestktaa.Properties.EditFormat.FormatString = "f2";
+            this.tbestktaa.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbestktaa.Properties.Mask.EditMask = "f2";
+            this.tbestktaa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbestktaa.Size = new System.Drawing.Size(233, 26);
+            this.tbestktaa.TabIndex = 3;
+            // 
             // tbamanatmony
             // 
+            this.tbamanatmony.EditValue = "0";
             this.tbamanatmony.Location = new System.Drawing.Point(53, 84);
             this.tbamanatmony.Name = "tbamanatmony";
             this.tbamanatmony.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -386,18 +467,13 @@
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
-            // LSMSTBLMashat
-            // 
-            this.LSMSTBLMashat.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLMashat01_V1);
-            this.LSMSTBLMashat.KeyExpression = "MMashatId";
-            // 
             // TblMemberAmanatWFrm
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(542, 426);
+            this.ClientSize = new System.Drawing.Size(542, 505);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -414,14 +490,17 @@
             this.xtpGeneral.ResumeLayout(false);
             this.xtpGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatrem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbsefa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,5 +539,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate1;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSTBLMashat;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit tbsefa;
+        private DevExpress.XtraEditors.TextEdit tbmostahek;
+        private DevExpress.XtraEditors.TextEdit tbestktaa;
     }
 }

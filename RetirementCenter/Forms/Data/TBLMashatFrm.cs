@@ -29,6 +29,7 @@ namespace RetirementCenter
         DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter adpEstefa = new DataSources.dsRetirementCenterTableAdapters.TBLEstefaTableAdapter();
         object DefaultsarfTypeId = "1";
         private int MaxDofatSarfId = (int)new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().MaxId();
+        int WSyn_Default = 0; int WSub_Default = 0;
         public enum TabInfo
         {
             BasicInfo,
@@ -205,7 +206,7 @@ namespace RetirementCenter
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
             tbvisa.Enabled = Program.UserInfo.IsAdmin;
             ceActivate.Visible = Program.UserInfo.IsAdmin;
-            btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
+            //btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
@@ -223,7 +224,7 @@ namespace RetirementCenter
 
             int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
             //check if this id already exported to bank
-            tbMMashatNId.Enabled = !(bool)SQLProvider.adpQry.NIDBankExported_M(MMashatId);
+            //tbMMashatNId.Enabled = !(bool)SQLProvider.adpQry.NIDBankExported_M(MMashatId);
 
             tblMashatTableAdapter.FillByMMashatId(dsRetirementCenter.TBLMashat, MMashatId);
             DataSources.dsRetirementCenter.TBLMashatRow row = dsRetirementCenter.TBLMashat[0];
@@ -316,6 +317,7 @@ namespace RetirementCenter
             tbMMashatName.Focus();
             
             LUEEmp.EditValue = null;
+            tbvisa.EditValue = null;
             
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
@@ -368,9 +370,10 @@ namespace RetirementCenter
                     return;
             }
             object obj = SQLProvider.adpQry.GetMMashatNId(Mainrow.MMashatId);
-            if (Mainrow.yasref == false && (obj == null || obj.ToString() == string.Empty))
+            if (Mainrow.MashHalaId == (byte)Program.CDMashHala.Asda2 && Mainrow.yasref == false && (obj == null || obj.ToString() == string.Empty))
             {
                 msgDlg.Show("يجب ادخال الرقم القومي");
+                ceyasref.EditValue = !ceyasref.Checked;
                 return;
             }
             DataSources.dsRetirementCenter.TBLNoSarfDetelsRow row = dsRetirementCenter.TBLNoSarfDetels.NewTBLNoSarfDetelsRow();
@@ -771,7 +774,13 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLWarasaRow row = dsRetirementCenter.TBLWarasa.NewTBLWarasaRow();
             row.PersonId = -1; row.MMashatId = Convert.ToInt32(LUEEmp.EditValue); row.personName = string.Empty;
             row.yasref = true; row.userin = Program.UserInfo.UserId; row.datein = SQLProvider.ServerDateTime(); row.ImportDateIn = SQLProvider.ServerDateTime();
-            row.responsiblesarf = false; row.wcompletesarf = true; row.wmony = 0; row.westktaat = 0; row.welrasm = 0;
+            row.responsiblesarf = false; row.wcompletesarf = true; row.wmony = 0; row.westktaat = 0; row.welrasm = 0; row.nationaltyId = 1;
+            
+            if (WSyn_Default != 0)
+                row.SyndicateId = WSyn_Default;
+            if (WSub_Default != 0)
+                row.SubCommitteId = WSub_Default;
+
             dsRetirementCenter.TBLWarasa.AddTBLWarasaRow(row);
             //tblEdafatWarsaTableAdapter.FillByPersonId(dsRetirementCenter.TBLEdafatWarsa, -100);
             try
@@ -786,6 +795,7 @@ namespace RetirementCenter
                 if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive, dsRetirementCenter.TBLEdafatWarsa,
                     ref autoOpen, SyndicateId, SubCommitteId))
                 {
+                    WSyn_Default = row.SyndicateId; WSub_Default = row.SubCommitteId;
                     Program.ShowMsg("تم اضافة الورثة", false, this, true);
                     Program.Logger.LogThis("تم اضافة الورثة", Text, FXFW.Logger.OpType.success, null, null, this);
                 }
@@ -886,6 +896,19 @@ namespace RetirementCenter
 
             }
             
+        }
+        private void repositoryItemButtonEditWarasaEstefa_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            RetirementCenter.Forms.Data.dlg.NoteDlg dlg = new RetirementCenter.Forms.Data.dlg.NoteDlg();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                return;
+            DataSources.dsRetirementCenter.TBLWarasaRow row = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)
+             gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row);
+            DateTime dt = SQLProvider.ServerDateTime();
+            if (adpEstefa.Insert(row.MMashatId, dt, dlg.NOTE + " - " + row.personName, false, dt, Program.UserInfo.UserId) == 0)
+                Program.ShowMsg(" لم نتمكن من حفظ الاستيفاء", true, this, true);
+            else
+                Program.ShowMsg(" تم حفظ الاستيفاء", false, this, true);
         }
         private void repositoryItemButtonEditWarasaQuickSave_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
@@ -1061,11 +1084,12 @@ namespace RetirementCenter
             //SQLProvider.adpQry.ChangeVisaResponsable(
             SqlConnection con = new System.Data.SqlClient.SqlConnection(FXFW.SqlDB.SqlConStr);
             SqlCommand cmd = new System.Data.SqlClient.SqlCommand("", con);
-            cmd.CommandText = @"UPDATE TBLWarasa SET responsiblesarfId = @NewId WHERE (visa = @visa) AND (MMashatId = @MMashatId)";
+            cmd.CommandText = @"UPDATE TBLWarasa SET responsiblesarfId = @NewId, userin = @userin, datein = GETDATE() WHERE (visa = @visa) AND (MMashatId = @MMashatId)";
             SqlParameter ParamNewId = new System.Data.SqlClient.SqlParameter("@NewId", SqlDbType.Int) { Value = Convert.ToInt32(lueNewResponsableEditResponsable.EditValue) };
+            SqlParameter Paramuserin = new System.Data.SqlClient.SqlParameter("@userin", SqlDbType.Int) { Value = Program.UserInfo.UserId };
             SqlParameter ParamVisa = new System.Data.SqlClient.SqlParameter("@visa", SqlDbType.NVarChar) { Value = lueVisaEditResponsable.EditValue.ToString() };
             SqlParameter ParamMMashatId = new System.Data.SqlClient.SqlParameter("@MMashatId", SqlDbType.Int) { Value = Convert.ToInt32(LUEEmp.EditValue) };
-            cmd.Parameters.AddRange(new SqlParameter[] { ParamNewId, ParamVisa, ParamMMashatId });
+            cmd.Parameters.AddRange(new SqlParameter[] { ParamNewId, Paramuserin, ParamVisa, ParamMMashatId });
             SqlTransaction trn = null;
             try
             {
@@ -1105,7 +1129,6 @@ namespace RetirementCenter
                 return;
             }
             DataSources.dsRetirementCenter.TBLMashatRow Mainrow = dsRetirementCenter.TBLMashat[0];
-
             if ((bool)Mainrow["Activate", DataRowVersion.Current] == ceActivate.Checked)
             {
                 dsRetirementCenter.tblmembervisaactive.Clear();
@@ -1178,6 +1201,8 @@ namespace RetirementCenter
             }
         }
         #endregion
+
+       
 
     }
    

@@ -48,7 +48,6 @@ namespace RetirementCenter
             ActivePriv();
             LoadDefaultData();
         }
-        double summaryTotal = 0;
         private void btnView_Click(object sender, EventArgs e)
         {
             if (LUETBLDofatSarf.EditValue == null || LUESyndicateId.EditValue == null)
