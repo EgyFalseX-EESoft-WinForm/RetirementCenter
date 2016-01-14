@@ -29,23 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControlMain = new DevExpress.XtraLayout.LayoutControl();
+            this.tbremarks = new DevExpress.XtraEditors.MemoEdit();
+            this.tbdaen = new DevExpress.XtraEditors.TextEdit();
+            this.tbhafezwarasa = new DevExpress.XtraEditors.TextEdit();
+            this.tbhafezmembers = new DevExpress.XtraEditors.TextEdit();
+            this.tbcountwarasa = new DevExpress.XtraEditors.TextEdit();
             this.tbcountmembers = new DevExpress.XtraEditors.TextEdit();
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.tbmaden = new DevExpress.XtraEditors.TextEdit();
             this.lueSyndicateId = new DevExpress.XtraEditors.LookUpEdit();
+            this.cDSyndicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lueDofatSarfId = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.tBLDofatSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,30 +61,29 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbcountwarasa = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbhafezmembers = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbhafezwarasa = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbdaen = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbremarks = new DevExpress.XtraEditors.MemoEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cDSyndicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsQueries = new RetirementCenter.DataSources.dsQueries();
-            this.tBLDofatSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.cDSyndicateTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.CDSyndicateTableAdapter();
             this.tBLDofatSarfTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter();
             this.dxVP = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbremarks.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbdaen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbhafezwarasa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbhafezmembers.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcountwarasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcountmembers.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmaden.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSyndicateId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -85,19 +92,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbcountwarasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbhafezmembers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbhafezwarasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbdaen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbremarks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxVP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +123,61 @@
             this.layoutControlMain.TabIndex = 0;
             this.layoutControlMain.Text = "layoutControl1";
             // 
+            // tbremarks
+            // 
+            this.tbremarks.Location = new System.Drawing.Point(12, 132);
+            this.tbremarks.Name = "tbremarks";
+            this.tbremarks.Size = new System.Drawing.Size(362, 67);
+            this.tbremarks.StyleController = this.layoutControlMain;
+            this.tbremarks.TabIndex = 14;
+            // 
+            // tbdaen
+            // 
+            this.tbdaen.Location = new System.Drawing.Point(12, 108);
+            this.tbdaen.Name = "tbdaen";
+            this.tbdaen.Size = new System.Drawing.Size(128, 20);
+            this.tbdaen.StyleController = this.layoutControlMain;
+            this.tbdaen.TabIndex = 13;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxVP.SetValidationRule(this.tbdaen, conditionValidationRule1);
+            // 
+            // tbhafezwarasa
+            // 
+            this.tbhafezwarasa.Location = new System.Drawing.Point(12, 84);
+            this.tbhafezwarasa.Name = "tbhafezwarasa";
+            this.tbhafezwarasa.Properties.ReadOnly = true;
+            this.tbhafezwarasa.Size = new System.Drawing.Size(128, 20);
+            this.tbhafezwarasa.StyleController = this.layoutControlMain;
+            this.tbhafezwarasa.TabIndex = 12;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxVP.SetValidationRule(this.tbhafezwarasa, conditionValidationRule2);
+            // 
+            // tbhafezmembers
+            // 
+            this.tbhafezmembers.Location = new System.Drawing.Point(244, 84);
+            this.tbhafezmembers.Name = "tbhafezmembers";
+            this.tbhafezmembers.Properties.ReadOnly = true;
+            this.tbhafezmembers.Size = new System.Drawing.Size(130, 20);
+            this.tbhafezmembers.StyleController = this.layoutControlMain;
+            this.tbhafezmembers.TabIndex = 11;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxVP.SetValidationRule(this.tbhafezmembers, conditionValidationRule3);
+            // 
+            // tbcountwarasa
+            // 
+            this.tbcountwarasa.Location = new System.Drawing.Point(12, 60);
+            this.tbcountwarasa.Name = "tbcountwarasa";
+            this.tbcountwarasa.Properties.ReadOnly = true;
+            this.tbcountwarasa.Size = new System.Drawing.Size(128, 20);
+            this.tbcountwarasa.StyleController = this.layoutControlMain;
+            this.tbcountwarasa.TabIndex = 10;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxVP.SetValidationRule(this.tbcountwarasa, conditionValidationRule4);
+            // 
             // tbcountmembers
             // 
             this.tbcountmembers.Location = new System.Drawing.Point(244, 60);
@@ -134,11 +189,6 @@
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.dxVP.SetValidationRule(this.tbcountmembers, conditionValidationRule5);
-            // 
-            // dsRetirementCenter
-            // 
-            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbmaden
             // 
@@ -171,6 +221,16 @@
             conditionValidationRule7.ErrorText = "This value is not valid";
             this.dxVP.SetValidationRule(this.lueSyndicateId, conditionValidationRule7);
             this.lueSyndicateId.EditValueChanged += new System.EventHandler(this.lue_EditValueChanged);
+            // 
+            // cDSyndicateBindingSource
+            // 
+            this.cDSyndicateBindingSource.DataMember = "CDSyndicate";
+            this.cDSyndicateBindingSource.DataSource = this.dsQueries;
+            // 
+            // dsQueries
+            // 
+            this.dsQueries.DataSetName = "dsQueries";
+            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCancel
             // 
@@ -217,6 +277,11 @@
             this.dxVP.SetValidationRule(this.lueDofatSarfId, conditionValidationRule8);
             this.lueDofatSarfId.EditValueChanged += new System.EventHandler(this.lue_EditValueChanged);
             // 
+            // tBLDofatSarfBindingSource
+            // 
+            this.tBLDofatSarfBindingSource.DataMember = "TBLDofatSarf";
+            this.tBLDofatSarfBindingSource.DataSource = this.dsQueries;
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -227,6 +292,14 @@
             this.gridLookUpEdit1View.OptionsView.ColumnAutoWidth = false;
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colDofatSarf
+            // 
+            this.colDofatSarf.Caption = "الاسم";
+            this.colDofatSarf.FieldName = "DofatSarf";
+            this.colDofatSarf.Name = "colDofatSarf";
+            this.colDofatSarf.Visible = true;
+            this.colDofatSarf.VisibleIndex = 0;
             // 
             // layoutControlGroup1
             // 
@@ -260,7 +333,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(466, 24);
-            this.layoutControlItem1.Text = "الحافظة";
+            this.layoutControlItem1.Text = "الدفعة";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(97, 13);
             // 
@@ -327,18 +400,6 @@
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // tbcountwarasa
-            // 
-            this.tbcountwarasa.Location = new System.Drawing.Point(12, 60);
-            this.tbcountwarasa.Name = "tbcountwarasa";
-            this.tbcountwarasa.Properties.ReadOnly = true;
-            this.tbcountwarasa.Size = new System.Drawing.Size(128, 20);
-            this.tbcountwarasa.StyleController = this.layoutControlMain;
-            this.tbcountwarasa.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxVP.SetValidationRule(this.tbcountwarasa, conditionValidationRule4);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
@@ -351,18 +412,6 @@
             this.layoutControlItem5.Text = "عدد الورثة المسجل";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(97, 13);
-            // 
-            // tbhafezmembers
-            // 
-            this.tbhafezmembers.Location = new System.Drawing.Point(244, 84);
-            this.tbhafezmembers.Name = "tbhafezmembers";
-            this.tbhafezmembers.Properties.ReadOnly = true;
-            this.tbhafezmembers.Size = new System.Drawing.Size(130, 20);
-            this.tbhafezmembers.StyleController = this.layoutControlMain;
-            this.tbhafezmembers.TabIndex = 11;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxVP.SetValidationRule(this.tbhafezmembers, conditionValidationRule3);
             // 
             // layoutControlItem10
             // 
@@ -377,18 +426,6 @@
             this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // tbhafezwarasa
-            // 
-            this.tbhafezwarasa.Location = new System.Drawing.Point(12, 84);
-            this.tbhafezwarasa.Name = "tbhafezwarasa";
-            this.tbhafezwarasa.Properties.ReadOnly = true;
-            this.tbhafezwarasa.Size = new System.Drawing.Size(128, 20);
-            this.tbhafezwarasa.StyleController = this.layoutControlMain;
-            this.tbhafezwarasa.TabIndex = 12;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxVP.SetValidationRule(this.tbhafezwarasa, conditionValidationRule2);
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.AppearanceItemCaption.Options.UseTextOptions = true;
@@ -402,17 +439,6 @@
             this.layoutControlItem11.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // tbdaen
-            // 
-            this.tbdaen.Location = new System.Drawing.Point(12, 108);
-            this.tbdaen.Name = "tbdaen";
-            this.tbdaen.Size = new System.Drawing.Size(128, 20);
-            this.tbdaen.StyleController = this.layoutControlMain;
-            this.tbdaen.TabIndex = 13;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxVP.SetValidationRule(this.tbdaen, conditionValidationRule1);
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.AppearanceItemCaption.Options.UseTextOptions = true;
@@ -425,14 +451,6 @@
             this.layoutControlItem12.Text = "دائن";
             this.layoutControlItem12.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(97, 13);
-            // 
-            // tbremarks
-            // 
-            this.tbremarks.Location = new System.Drawing.Point(12, 132);
-            this.tbremarks.Name = "tbremarks";
-            this.tbremarks.Size = new System.Drawing.Size(362, 67);
-            this.tbremarks.StyleController = this.layoutControlMain;
-            this.tbremarks.TabIndex = 14;
             // 
             // layoutControlItem9
             // 
@@ -448,28 +466,10 @@
             this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // colDofatSarf
+            // dsRetirementCenter
             // 
-            this.colDofatSarf.Caption = "الاسم";
-            this.colDofatSarf.FieldName = "DofatSarf";
-            this.colDofatSarf.Name = "colDofatSarf";
-            this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 0;
-            // 
-            // cDSyndicateBindingSource
-            // 
-            this.cDSyndicateBindingSource.DataMember = "CDSyndicate";
-            this.cDSyndicateBindingSource.DataSource = this.dsQueries;
-            // 
-            // dsQueries
-            // 
-            this.dsQueries.DataSetName = "dsQueries";
-            this.dsQueries.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLDofatSarfBindingSource
-            // 
-            this.tBLDofatSarfBindingSource.DataMember = "TBLDofatSarf";
-            this.tBLDofatSarfBindingSource.DataSource = this.dsQueries;
+            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
+            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cDSyndicateTableAdapter
             // 
@@ -479,23 +479,30 @@
             // 
             this.tBLDofatSarfTableAdapter.ClearBeforeFill = true;
             // 
-            // TBLHafezSarfAddFrm
+            // TBLHafezSarfEditFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 237);
             this.Controls.Add(this.layoutControlMain);
-            this.Name = "TBLHafezSarfAddFrm";
+            this.Name = "TBLHafezSarfEditFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة";
             this.Load += new System.EventHandler(this.TBLHafzaTasleemAddFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).EndInit();
             this.layoutControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbremarks.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbdaen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbhafezwarasa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbhafezmembers.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcountwarasa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcountmembers.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbmaden.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSyndicateId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -504,19 +511,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbcountwarasa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbhafezmembers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbhafezwarasa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbdaen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbremarks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDSyndicateBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxVP)).EndInit();
             this.ResumeLayout(false);
 

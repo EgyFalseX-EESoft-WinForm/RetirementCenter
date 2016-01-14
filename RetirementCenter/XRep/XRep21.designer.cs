@@ -156,7 +156,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.calcTotal", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.calcTotal", "{0:#,#.00}")});
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.Weight = 0.43824815380884297D;
@@ -164,7 +164,7 @@
             // xrTableCell10
             // 
             this.xrTableCell10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.maden", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.maden", "{0:#,#.00}")});
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Text = "xrTableCell10";
             this.xrTableCell10.Weight = 0.43824816536153782D;
@@ -172,7 +172,7 @@
             // xrTableCell2
             // 
             this.xrTableCell2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.daen", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.daen", "{0:#,#.00}")});
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "xrTableCell2";
             this.xrTableCell2.Weight = 0.43824814529970024D;
@@ -180,7 +180,7 @@
             // xrTableCell14
             // 
             this.xrTableCell14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezwarasa", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezwarasa", "{0:#,#.00}")});
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.Text = "xrTableCell14";
             this.xrTableCell14.Weight = 0.43824816197835303D;
@@ -188,7 +188,7 @@
             // xrTableCell8
             // 
             this.xrTableCell8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezmembers", "{0:#,#}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezmembers", "{0:#,#.00}")});
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.Weight = 0.43824816197835309D;
@@ -455,7 +455,7 @@
             this.xrTableCell21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.calcTotal")});
             this.xrTableCell21.Name = "xrTableCell21";
-            xrSummary2.FormatString = "{0:#,#}";
+            xrSummary2.FormatString = "{0:#,#.00}";
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell21.Summary = xrSummary2;
             this.xrTableCell21.Text = "xrTableCell21";
@@ -466,7 +466,7 @@
             this.xrTableCell19.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.maden")});
             this.xrTableCell19.Name = "xrTableCell19";
-            xrSummary3.FormatString = "{0:#,#}";
+            xrSummary3.FormatString = "{0:#,#.00}";
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell19.Summary = xrSummary3;
             this.xrTableCell19.Text = "xrTableCell19";
@@ -477,7 +477,7 @@
             this.xrTableCell4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.daen")});
             this.xrTableCell4.Name = "xrTableCell4";
-            xrSummary4.FormatString = "{0:#,#}";
+            xrSummary4.FormatString = "{0:#,#.00}";
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell4.Summary = xrSummary4;
             this.xrTableCell4.Text = "xrTableCell4";
@@ -488,7 +488,7 @@
             this.xrTableCell18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezwarasa")});
             this.xrTableCell18.Name = "xrTableCell18";
-            xrSummary5.FormatString = "{0:#,#}";
+            xrSummary5.FormatString = "{0:#,#.00}";
             xrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell18.Summary = xrSummary5;
             this.xrTableCell18.Text = "xrTableCell18";
@@ -499,7 +499,7 @@
             this.xrTableCell17.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep21_C.hafezmembers")});
             this.xrTableCell17.Name = "xrTableCell17";
-            xrSummary6.FormatString = "{0:#,#}";
+            xrSummary6.FormatString = "{0:#,#.00}";
             xrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell17.Summary = xrSummary6;
             this.xrTableCell17.Text = "xrTableCell17";

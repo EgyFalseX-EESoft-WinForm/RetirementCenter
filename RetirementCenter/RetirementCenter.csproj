@@ -308,6 +308,66 @@
     <Compile Include="Forms\Data\ChangeMemberNameWFrm.Designer.cs">
       <DependentUpon>ChangeMemberNameWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatPrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatPrintFrm.Designer.cs">
+      <DependentUpon>TblWarasaAmanatPrintFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatAccFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatAccFrm.designer.cs">
+      <DependentUpon>TblWarasaAmanatAccFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatSarfFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatSarfFrm.designer.cs">
+      <DependentUpon>TblWarasaAmanatSarfFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatWFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatWFrm.designer.cs">
+      <DependentUpon>TblWarasaAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatFrm.designer.cs">
+      <DependentUpon>TblWarasaAmanatFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLWarasaSarf_arshefEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLWarasaSarf_arshefEditFrm.Designer.cs">
+      <DependentUpon>TBLWarasaSarf_arshefEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLWarasaSarf_arshefFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLWarasaSarf_arshefFrm.Designer.cs">
+      <DependentUpon>TBLWarasaSarf_arshefFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMemberSarf_arshefEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMemberSarf_arshefEditFrm.Designer.cs">
+      <DependentUpon>TBLMemberSarf_arshefEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMemberSarf_arshefFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLMemberSarf_arshefFrm.Designer.cs">
+      <DependentUpon>TBLMemberSarf_arshefFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatPrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatPrintFrm.Designer.cs">
+      <DependentUpon>TblMemberAmanatPrintFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatSarfFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,18 +637,6 @@
     </Compile>
     <Compile Include="Forms\Data\TBLMemberSarf_arshefDeleteFrm.Designer.cs">
       <DependentUpon>TBLMemberSarf_arshefDeleteFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Data\TblWarasaAmanatWFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Data\TblWarasaAmanatWFrm.designer.cs">
-      <DependentUpon>TblWarasaAmanatWFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Data\TblWarasaAmanatFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Data\TblWarasaAmanatFrm.designer.cs">
-      <DependentUpon>TblWarasaAmanatFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatFrm.cs">
       <SubType>Form</SubType>
@@ -1308,6 +1356,18 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep25.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep25.designer.cs">
+      <DependentUpon>XRep25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep24.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep24.designer.cs">
+      <DependentUpon>XRep24.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep23.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1478,6 +1538,7 @@
     </Compile>
     <None Include="Resources\save_16x16.png" />
     <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\add_16x16.png" />
     <Content Include="web.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1495,6 +1556,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ChangeMemberNameWFrm.resx">
       <DependentUpon>ChangeMemberNameWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatPrintFrm.resx">
+      <DependentUpon>TblWarasaAmanatPrintFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatAccFrm.resx">
+      <DependentUpon>TblWarasaAmanatAccFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatSarfFrm.resx">
+      <DependentUpon>TblWarasaAmanatSarfFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatWFrm.resx">
+      <DependentUpon>TblWarasaAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatFrm.resx">
+      <DependentUpon>TblWarasaAmanatFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLWarasaSarf_arshefEditFrm.resx">
+      <DependentUpon>TBLWarasaSarf_arshefEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLWarasaSarf_arshefFrm.resx">
+      <DependentUpon>TBLWarasaSarf_arshefFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLMemberSarf_arshefEditFrm.resx">
+      <DependentUpon>TBLMemberSarf_arshefEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLMemberSarf_arshefFrm.resx">
+      <DependentUpon>TBLMemberSarf_arshefFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblMemberAmanatPrintFrm.resx">
+      <DependentUpon>TblMemberAmanatPrintFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatSarfFrm.resx">
       <DependentUpon>TblMemberAmanatSarfFrm.cs</DependentUpon>
@@ -1631,12 +1722,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLMemberSarf_arshefDeleteFrm.resx">
       <DependentUpon>TBLMemberSarf_arshefDeleteFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatWFrm.resx">
-      <DependentUpon>TblWarasaAmanatWFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatFrm.resx">
-      <DependentUpon>TblWarasaAmanatFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatFrm.resx">
       <DependentUpon>TblMemberAmanatFrm.cs</DependentUpon>
@@ -1941,6 +2026,12 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep25.resx">
+      <DependentUpon>XRep25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep24.resx">
+      <DependentUpon>XRep24.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep23.resx">
       <DependentUpon>XRep23.cs</DependentUpon>
     </EmbeddedResource>

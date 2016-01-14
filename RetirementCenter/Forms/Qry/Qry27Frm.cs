@@ -22,6 +22,7 @@ namespace RetirementCenter
             InitializeComponent();
             btnBank.Visible = Program.UserInfo.IsAdmin;
             btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
         }
         #endregion
         #region -   Event Handlers   -

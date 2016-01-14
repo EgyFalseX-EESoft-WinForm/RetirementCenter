@@ -62656,38 +62656,40 @@ FROM            vTBLDeathMembers";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "WITH CTE1 AS\r\n(\r\nSELECT TBLWarasa.MMashatId, COUNT(TBLWarasa.PersonId) AS AllCoun" +
-                "t\r\nFROM TBLWarasa INNER JOIN\r\nTBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMash" +
-                "atId\r\nWHERE (TBLWarasa.yasref = 1) AND (TBLMashat.yasref = 1)\r\nGROUP BY TBLWaras" +
-                "a.MMashatId\r\n), CTE2 AS\r\n(\r\nSELECT CTE1.MMashatId\r\nFROM CTE1 INNER JOIN \r\n(SELEC" +
-                "T MMashatId, COUNT(PersonId) AS NIDCount\r\nFROM TBLWarasa\r\nWHERE (Len(personNID) " +
-                "= 14) AND [yasref] = 1\r\nGROUP BY MMashatId) T ON CTE1.MMashatId = T.MMashatId\r\nW" +
-                "HERE AllCount = NIDCount\r\n), CTE3 AS\r\n(\r\nSELECT CTE2.MMashatId, [PersonId]\r\n, \'و" +
-                "رثة-\' + (SELECT MMashatName FROM [dbo].TBLMashat WHERE MMashatId = CTE2.MMashatI" +
-                "d) AS MMashatName\r\n, (SELECT sarfnumber FROM [dbo].TBLMashat WHERE MMashatId = C" +
-                "TE2.MMashatId) AS sarfnumber\r\nFROM CTE2 INNER JOIN dbo.TBLWarasa ON CTE2.MMashat" +
-                "Id = TBLWarasa.MMashatId\r\nINNER JOIN \r\n(\r\nSELECT [MMashatId], COUNT([PersonId]) " +
-                "AS NUM\r\nFROM [dbo].[TBLWarasa]\r\nWHERE [responsiblesarf] = 1\r\nGROUP BY [MMashatId" +
-                "]\r\nHAVING COUNT([PersonId]) >= 1--More Than 1 Responsable\r\n) T ON CTE2.MMashatId" +
-                " = T.MMashatId\r\nWHERE [responsiblesarf] = 1 AND yasref = 1 AND (visa IS NULL OR " +
-                "visa = \'\')\r\n)\r\nSELECT CTE3.MMashatId, CTE3.[PersonId], CTE3.MMashatName, CTE3.sa" +
-                "rfnumber, [personbirth], [personNID], personName\r\n, (SELECT [newid] FROM [dbo].[" +
-                "AwarasaNewId] WHERE [personid] = CTE3.[PersonId]) AS [newid]\r\n,CDSyndicate.Syndi" +
-                "cate, CDSubCommitte.SubCommitte,\r\nCASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' T" +
-                "HEN \'19\' ELSE \'20\' END \r\n+ SUBSTRING([personNID], 2, 2) \r\n+ \'-\' \r\n+ SUBSTRING([p" +
-                "ersonNID], 4, 2) \r\n+ \'-\' \r\n+ SUBSTRING([personNID], 6, 2) AS BDate\r\n, Year(GetDa" +
-                "te()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' THEN \'19\' ELSE \'20\' E" +
-                "ND + SUBSTRING([personNID], 2, 2) AS INT) AS Age\r\n, CASE WHEN LEN(CTE3.MMashatNa" +
-                "me) <= 24 THEN CTE3.MMashatName ELSE SUBSTRING(CTE3.MMashatName, 0, 24 - CHARIND" +
-                "EX(\' \', REVERSE(SUBSTRING(CTE3.MMashatName, 0, 24)))) END AS NameOnCard\r\n\r\nFROM " +
-                "CTE3 INNER JOIN [dbo].[TBLWarasa] ON CTE3.[PersonId] = [TBLWarasa].PersonId\r\nINN" +
-                "ER JOIN CDSyndicate ON [TBLWarasa].SyndicateId = CDSyndicate.SyndicateId INNER J" +
-                "OIN\r\nCDSubCommitte ON [TBLWarasa].SubCommitteId = CDSubCommitte.SubCommitteId\r\nW" +
-                "HERE ((Year(GetDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' THEN" +
-                " \'19\' ELSE \'20\' END + SUBSTRING([personNID], 2, 2) AS INT)) BETWEEN 1 AND 105)\r\n" +
-                "AND NOT EXISTS(SELECT * FROM [dbo].BankExportedDataWarsa WHERE PersonId = CTE3.[" +
-                "PersonId])\r\nORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId" +
-                "";
+            this._commandCollection[0].CommandText = "WITH CTE1 AS\r\n(\r\nSELECT TBLWarasa.MMashatId, TBLWarasa.responsiblesarfId, COUNT(T" +
+                "BLWarasa.PersonId) AS AllCount\r\nFROM TBLWarasa INNER JOIN\r\nTBLMashat ON TBLWaras" +
+                "a.MMashatId = TBLMashat.MMashatId\r\nWHERE (TBLWarasa.yasref = 1) AND (TBLMashat.y" +
+                "asref = 1)\r\nGROUP BY TBLWarasa.MMashatId, TBLWarasa.responsiblesarfId\r\n), CTE2 A" +
+                "S\r\n(\r\nSELECT CTE1.MMashatId, CTE1.responsiblesarfId\r\nFROM CTE1 INNER JOIN \r\n(SEL" +
+                "ECT MMashatId, responsiblesarfId, COUNT(PersonId) AS NIDCount\r\nFROM TBLWarasa\r\nW" +
+                "HERE (Len(personNID) = 14) AND [yasref] = 1\r\nGROUP BY MMashatId, responsiblesarf" +
+                "Id) T ON CTE1.MMashatId = T.MMashatId AND CTE1.responsiblesarfId = T.responsible" +
+                "sarfId\r\nWHERE AllCount = NIDCount\r\n), CTE3 AS\r\n(\r\nSELECT CTE2.MMashatId, [Person" +
+                "Id]\r\n, \'ورثة-\' + (SELECT MMashatName FROM [dbo].TBLMashat WHERE MMashatId = CTE2" +
+                ".MMashatId) AS MMashatName\r\n, (SELECT sarfnumber FROM [dbo].TBLMashat WHERE MMas" +
+                "hatId = CTE2.MMashatId) AS sarfnumber\r\nFROM CTE2 INNER JOIN dbo.TBLWarasa ON CTE" +
+                "2.MMashatId = TBLWarasa.MMashatId AND CTE2.responsiblesarfId = TBLWarasa.respons" +
+                "iblesarfId\r\nINNER JOIN \r\n(\r\nSELECT [MMashatId], COUNT([PersonId]) AS NUM\r\nFROM [" +
+                "dbo].[TBLWarasa]\r\nWHERE [responsiblesarf] = 1\r\nGROUP BY [MMashatId]\r\nHAVING COUN" +
+                "T([PersonId]) >= 1--More Than 1 Responsable\r\n) T ON CTE2.MMashatId = T.MMashatId" +
+                "\r\nWHERE [responsiblesarf] = 1 AND yasref = 1 AND (visa IS NULL OR visa = \'\')\r\n)\r" +
+                "\nSELECT CTE3.MMashatId, CTE3.[PersonId], CTE3.MMashatName, CTE3.sarfnumber, [per" +
+                "sonbirth], [personNID], personName\r\n, (SELECT [newid] FROM [dbo].[AwarasaNewId] " +
+                "WHERE [personid] = CTE3.[PersonId]) AS [newid]\r\n,CDSyndicate.Syndicate, CDSubCom" +
+                "mitte.SubCommitte,\r\nCASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' THEN \'19\' ELSE " +
+                "\'20\' END \r\n+ SUBSTRING([personNID], 2, 2) \r\n+ \'-\' \r\n+ SUBSTRING([personNID], 4, " +
+                "2) \r\n+ \'-\' \r\n+ SUBSTRING([personNID], 6, 2) AS BDate\r\n, Year(GetDate()) - CAST( " +
+                "CASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' THEN \'19\' ELSE \'20\' END + SUBSTRING" +
+                "([personNID], 2, 2) AS INT) AS Age\r\n, CASE WHEN LEN(CTE3.MMashatName) <= 24 THEN" +
+                " CTE3.MMashatName ELSE SUBSTRING(CTE3.MMashatName, 0, 24 - CHARINDEX(\' \', REVERS" +
+                "E(SUBSTRING(CTE3.MMashatName, 0, 24)))) END AS NameOnCard\r\n\r\nFROM CTE3 INNER JOI" +
+                "N [dbo].[TBLWarasa] ON CTE3.[PersonId] = [TBLWarasa].PersonId\r\nINNER JOIN CDSynd" +
+                "icate ON [TBLWarasa].SyndicateId = CDSyndicate.SyndicateId INNER JOIN\r\nCDSubComm" +
+                "itte ON [TBLWarasa].SubCommitteId = CDSubCommitte.SubCommitteId\r\nWHERE ((Year(Ge" +
+                "tDate()) - CAST( CASE WHEN SUBSTRING([personNID], 1, 1) = \'2\' THEN \'19\' ELSE \'20" +
+                "\' END + SUBSTRING([personNID], 2, 2) AS INT)) BETWEEN 1 AND 105)\r\nAND NOT EXISTS" +
+                "(SELECT * FROM [dbo].BankExportedDataWarsa WHERE PersonId = CTE3.[PersonId])\r\nOR" +
+                "DER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, MMashatId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

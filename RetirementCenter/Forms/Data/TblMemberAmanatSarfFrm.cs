@@ -13,7 +13,7 @@ namespace RetirementCenter
     {
         bool _Insert, _Update, _Delete;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
-        
+        DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter();
         #region -   Functions   -
         public TblMemberAmanatSarfFrm()
         {
@@ -66,7 +66,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberAmanat' table. You can move, or remove it, as needed.
-            this.tblMemberAmanatTableAdapter.Fill(this.dsRetirementCenter.TblMemberAmanat);
+            this.tblMemberAmanatTableAdapter.FillByaccReview(this.dsRetirementCenter.TblMemberAmanat);
             ActivePriv();
         }
         private void gridViewData_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
@@ -91,13 +91,23 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            row.useracc = Program.UserInfo.UserId;
             row.EndEdit();
-            tblMemberAmanatTableAdapter.Update(row);
+            //tblMemberAmanatTableAdapter.Update(row);
+            tblMemberAmanatTableAdapter.UpdateDofatSarfId(row.DofatSarfId, row.MMashatId, row.DofatSarfAId);
             msgDlg.Show("تم حفظ التعديل", msgDlg.msgButtons.Close);
             
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل انت متأكد؟", "تحزير ...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)
+                return;
+            int effected = adp.InsertTBLMemberSarf_arshef(Program.UserInfo.UserId);
+            Program.ShowMsg("تم الاضافة" + Environment.NewLine + effected, false, this, true);
+            Program.Logger.LogThis("تم الاضافة" + Environment.NewLine + effected, Text, FXFW.Logger.OpType.success, null, null, this);
+        }
         #endregion
+
+        
 
     }
 }

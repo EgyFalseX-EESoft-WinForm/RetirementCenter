@@ -18,6 +18,7 @@ namespace RetirementCenter
         public TblWarasaAmanatFrm()
         {
             InitializeComponent();
+            LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -62,18 +63,41 @@ namespace RetirementCenter
         {
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMSTBLWarasa.QueryableSource = dsLinq.vTBLWarasas;
+            LSMSTBLWarasa.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblWarasaAmanat' table. You can move, or remove it, as needed.
             this.tblWarasaAmanatTableAdapter.Fill(this.dsRetirementCenter.TblWarasaAmanat);
             ActivePriv();
         }
+        private void gridViewData_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+            DataRowView DRV = (DataRowView)e.Row;
+            //Fellowship.DataSources.DSFellowship.TBLSheekWaredRow row = (Fellowship.DataSources.DSFellowship.TBLSheekWaredRow)DRV.Row;
+
+            if (e.ErrorText.Contains("SyndicateId"))
+            {
+                e.ErrorText = "من فضلك بجب ادخال الفرعيه";
+                return;
+            }
+            if (e.ErrorText.Contains("autoID"))
+            {
+                //e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
+                DRV["autoID"] = "-1";
+                return;
+            }
+
+        }
         private void repositoryItemButtonEditSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)GV.GetFocusedDataRow();
-            Update(row);
+            if (!row.IsaccReviewNull() && row.accReview == true)
+            {
+                msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
+                return;
+            }
+            Update(row, false);
             
         }
         private void repositoryItemButtonEditDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -104,11 +128,16 @@ namespace RetirementCenter
         private void btnNew_Click(object sender, EventArgs e)
         {
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = dsRetirementCenter.TblWarasaAmanat.NewTblWarasaAmanatRow();
-            Update(row);
+            row.estktaa = 0; row.sefa = "العضو";
+            Update(row, false);
         }
-        private void Update(DataSources.dsRetirementCenter.TblWarasaAmanatRow row)
+        private void Update(DataSources.dsRetirementCenter.TblWarasaAmanatRow row, bool DetailsTabFocus)
         {
-            TblWarasaAmanatWFrm frm = new TblWarasaAmanatWFrm(row, _Insert, _Update, _Delete);
+            TblWarasaAmanatWFrm frm;
+            if (DetailsTabFocus)
+                frm = new TblWarasaAmanatWFrm(row, _Insert, _Update, _Delete);
+            else
+                frm = new TblWarasaAmanatWFrm(row, _Insert, _Update, _Delete);
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
 
@@ -118,9 +147,10 @@ namespace RetirementCenter
                     dsRetirementCenter.TblWarasaAmanat.AddTblWarasaAmanatRow(row);
                 tblWarasaAmanatBindingSource.EndEdit();
                 tblWarasaAmanatTableAdapter.Update(row);
-                dsRetirementCenter.TblMemberAmanat.AcceptChanges();
+                dsRetirementCenter.TblWarasaAmanat.AcceptChanges();
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                btnNew_Click(btnNew, EventArgs.Empty);
             }
             catch (Exception ex)
             {
