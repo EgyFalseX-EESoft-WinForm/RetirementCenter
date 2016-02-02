@@ -67,7 +67,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblWarasaAmanat' table. You can move, or remove it, as needed.
-            this.tblWarasaAmanatTableAdapter.Fill(this.dsRetirementCenter.TblWarasaAmanat);
+            this.tblWarasaAmanatTableAdapter.FillByMoreInfo(this.dsRetirementCenter.TblWarasaAmanat);
             ActivePriv();
         }
         private void gridViewData_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)

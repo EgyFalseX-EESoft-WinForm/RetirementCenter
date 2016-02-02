@@ -9,24 +9,23 @@ using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-using System.Data.SqlClient;
 
 namespace RetirementCenter
 {
-    public partial class Qry66AFrm : DevExpress.XtraEditors.XtraForm
+    public partial class Qry89Frm : DevExpress.XtraEditors.XtraForm
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         #region -   Functions   -
-        public Qry66AFrm()
+        public Qry89Frm()
         {
             InitializeComponent();
-            SQLProvider.SetAllCommandTimeouts(vQry66ATableAdapter, 0);
         }
         #endregion
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            LSMSTBLDofatSarf.QueryableSource = from q in dsLinq.TBLDofatSarfs select q;
+            LSMS.QueryableSource = from q in dsLinq.vTBLWarasaSarf_arshefs where q.SarfTypeedadId == 6 select q;
+            //gridViewData.BestFitColumns();
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
         {
@@ -36,16 +35,10 @@ namespace RetirementCenter
                 msgDlg.Show("The 'DevExpress.XtraPrinting' library is not found");
                 return;
             }
-
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
-        private void LUETBLDofatSarf_EditValueChanged(object sender, EventArgs e)
-        {
-            vQry66ATableAdapter.Fill(dsQueries.vQry66A, Convert.ToInt32(LUETBLDofatSarf.EditValue));
-            gridControlData.DataSource = dsQueries.vQry66A;
-        }     
-        #endregion
 
+        #endregion
     }
 }

@@ -63,6 +63,8 @@
             this.colsefa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluseracc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamantvisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEDARET = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEDARET1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEdaraMandopName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,7 +74,7 @@
             this.tblWarasaAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblWarasaAmanatTableAdapter();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colamantvisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblWarasaAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -148,7 +150,9 @@
             this.colsefa,
             this.coluseracc,
             this.colsarfcheek,
-            this.colamantvisa});
+            this.colamantvisa,
+            this.gridColumn1,
+            this.gridColumn3});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -387,7 +391,7 @@
             this.gridColumnSave.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnSave.Name = "gridColumnSave";
             this.gridColumnSave.Visible = true;
-            this.gridColumnSave.VisibleIndex = 13;
+            this.gridColumnSave.VisibleIndex = 15;
             this.gridColumnSave.Width = 55;
             // 
             // repositoryItemButtonEditSave
@@ -484,6 +488,30 @@
             this.colsarfcheek.Visible = true;
             this.colsarfcheek.VisibleIndex = 12;
             // 
+            // colamantvisa
+            // 
+            this.colamantvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colamantvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamantvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamantvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamantvisa.Caption = "امانات فيزا";
+            this.colamantvisa.FieldName = "amantvisa";
+            this.colamantvisa.Name = "colamantvisa";
+            this.colamantvisa.Visible = true;
+            this.colamantvisa.VisibleIndex = 11;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "رقم صرف";
+            this.gridColumn1.FieldName = "sarfnumber";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 13;
+            // 
             // colEDARET
             // 
             this.colEDARET.AppearanceCell.Options.UseTextOptions = true;
@@ -567,17 +595,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colamantvisa
+            // gridColumn3
             // 
-            this.colamantvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colamantvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamantvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colamantvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamantvisa.Caption = "امانات فيزا";
-            this.colamantvisa.FieldName = "amantvisa";
-            this.colamantvisa.Name = "colamantvisa";
-            this.colamantvisa.Visible = true;
-            this.colamantvisa.VisibleIndex = 11;
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "كود الاب";
+            this.gridColumn3.FieldName = "MMashatId";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 14;
             // 
             // TblWarasaAmanatAccFrm
             // 
@@ -657,5 +685,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
         private DevExpress.XtraGrid.Columns.GridColumn colamantvisa;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

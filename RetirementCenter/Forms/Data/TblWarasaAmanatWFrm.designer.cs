@@ -71,6 +71,7 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -295,7 +296,8 @@
             this.colsarfnumber,
             this.colSyndicate1,
             this.colSubCommitte,
-            this.colpersonName});
+            this.colpersonName,
+            this.gridColumn3});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -565,6 +567,14 @@
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "كود60";
+            this.gridColumn3.FieldName = "CODE60";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
+            // 
             // TblWarasaAmanatWFrm
             // 
             this.AcceptButton = this.btnSave;
@@ -655,5 +665,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDofatSarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

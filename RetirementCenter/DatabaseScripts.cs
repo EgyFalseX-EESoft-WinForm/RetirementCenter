@@ -511,6 +511,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vtblWarasabank;
                 cmd.ExecuteNonQuery();
+                //vtblWarasabank2
+                if (CheckViewExists("vtblWarasabank2"))
+                {
+                    cmd.CommandText = DropObject("vtblWarasabank2");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vtblWarasabank2;
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -646,6 +654,7 @@ FROM            dbo.TBLWarasa LEFT OUTER JOIN
 						 , dbo.TBLWarasa.visa
 						 ,CASE WHEN LEN(TBLWarasa.personNID) = 14 THEN YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(TBLWarasa.personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(dbo.TBLWarasa.personNID, 2, 2) AS INT) ELSE 0 END AS Age
 						 , TBL.personName AS responsiblesarfName
+, (SELECT [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa.visa) AS CODE60
 FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
                          dbo.Users RIGHT OUTER JOIN
                          dbo.CDSyndicate RIGHT OUTER JOIN
@@ -1757,6 +1766,7 @@ FROM            TBLWarasaSarf_arshef INNER JOIN
                          dbo.tblWarasabank.SubCommitteId, dbo.tblWarasabank.summony, dbo.tblWarasabank.sendbankdate, dbo.tblWarasabank.amanatmony, dbo.tblWarasabank.amanatwareddate, dbo.tblWarasabank.datein, 
                          dbo.tblWarasabank.userin, dbo.tblWarasabank.newid, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.TBLDofatSarf.DofatSarf, dbo.Users.RealName, dbo.TBLWarasa.personName, 
                          dbo.TBLWarasa.yasref, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber
+, (SELECT [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa.visa) AS CODE60
 FROM            dbo.tblWarasabank INNER JOIN
                          dbo.TBLWarasa ON dbo.tblWarasabank.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
                          dbo.TBLMashat ON dbo.tblWarasabank.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
@@ -1764,6 +1774,28 @@ FROM            dbo.tblWarasabank INNER JOIN
                          dbo.CDSyndicate ON dbo.tblWarasabank.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.CDSubCommitte ON dbo.tblWarasabank.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
                          dbo.Users ON dbo.tblWarasabank.userin = dbo.Users.UserID";
+            }
+        }
+        public static string vtblWarasabank2
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vtblWarasabank2]
+                    AS
+                    SELECT        dbo.vtblWarasabank.AutoId, dbo.vtblWarasabank.MMashatId, dbo.vtblWarasabank.DofatSarfId, dbo.vtblWarasabank.PersonId, dbo.vtblWarasabank.visanumber, dbo.vtblWarasabank.SyndicateId, 
+                         dbo.vtblWarasabank.SubCommitteId, dbo.vtblWarasabank.summony, dbo.vtblWarasabank.sendbankdate, dbo.vtblWarasabank.amanatmony, dbo.vtblWarasabank.amanatwareddate, dbo.vtblWarasabank.datein, 
+                         dbo.vtblWarasabank.userin, dbo.vtblWarasabank.newid, dbo.vtblWarasabank.SubCommitte, dbo.vtblWarasabank.Syndicate, dbo.vtblWarasabank.DofatSarf, dbo.vtblWarasabank.RealName, 
+                         dbo.vtblWarasabank.personName, dbo.vtblWarasabank.yasref, dbo.vtblWarasabank.MMashatName, dbo.vtblWarasabank.sarfnumber, dbo.vtblWarasabank.CODE60, dbo.TBLWarasa.responsiblesarfId, 
+                         dbo.TBLWarasa.personName AS ResName
+FROM            dbo.vtblWarasabank INNER JOIN
+                         dbo.TBLWarasa ON dbo.vtblWarasabank.visanumber = dbo.TBLWarasa.visa
+WHERE        (dbo.TBLWarasa.responsiblesarf = 1)
+GROUP BY dbo.vtblWarasabank.AutoId, dbo.vtblWarasabank.MMashatId, dbo.vtblWarasabank.DofatSarfId, dbo.vtblWarasabank.PersonId, dbo.vtblWarasabank.visanumber, dbo.vtblWarasabank.SyndicateId, 
+                         dbo.vtblWarasabank.SubCommitteId, dbo.vtblWarasabank.summony, dbo.vtblWarasabank.sendbankdate, dbo.vtblWarasabank.amanatmony, dbo.vtblWarasabank.amanatwareddate, dbo.vtblWarasabank.datein, 
+                         dbo.vtblWarasabank.userin, dbo.vtblWarasabank.newid, dbo.vtblWarasabank.SubCommitte, dbo.vtblWarasabank.Syndicate, dbo.vtblWarasabank.DofatSarf, dbo.vtblWarasabank.RealName, 
+                         dbo.vtblWarasabank.personName, dbo.vtblWarasabank.MMashatName, dbo.vtblWarasabank.sarfnumber, dbo.vtblWarasabank.CODE60, dbo.TBLWarasa.responsiblesarfId, dbo.TBLWarasa.personName, 
+                         dbo.vtblWarasabank.yasref";
             }
         }
     }

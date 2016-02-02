@@ -23,14 +23,14 @@ namespace RetirementCenter
             InitializeComponent();
             //LSMSTBLWarasa.KeyExpression = "AutoId";
             //this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
-            //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabanks where q.amanatmony > 0 select q;
+            //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
         }
         public TblWarasaAmanatWFrm(DataSources.dsRetirementCenter.TblWarasaAmanatRow row, bool insert, bool update, bool delete)
         {
             InitializeComponent();
             //LSMSTBLWarasa.KeyExpression = "AutoId";
             //this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
-            //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabanks where q.amanatmony > 0 select q;
+            //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
             _row = row;
             _Insert = insert;
             _Update = update;
@@ -77,15 +77,16 @@ namespace RetirementCenter
         
         private void FillFromWarasaBank()
         {
-            DataSources.dsRetirementCenter.tblWarasabankDataTable tbl = adpBank.GetDataByID(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
-            if (tbl.Rows.Count == 0)
+            double? money = adpBank.GetSummonyByID(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            if (money == null)
                 return;
-            tbamanatmony.EditValue = tbl[0].amanatmony;
+            tbamanatmony.EditValue = money;
             tbestktaa.EditValue = 0;
             tbsefa.EditValue = "العضو";
         }
         private void FormWFrm_Load(object sender, EventArgs e)
         {
+            LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
@@ -131,8 +132,8 @@ namespace RetirementCenter
                 object obj = luePersonId.GetSelectedDataRow();
                 if (obj != null)
                 {
-                    if (obj.GetType() == typeof(RetirementCenter.DataSources.Linq.vtblWarasabank))
-                        tbmostahek.EditValue = "ورثة - " + ((RetirementCenter.DataSources.Linq.vtblWarasabank)obj).MMashatName;
+                    if (obj.GetType() == typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2))
+                        tbmostahek.EditValue = "ورثة - " + ((RetirementCenter.DataSources.Linq.vtblWarasabank2)obj).MMashatName;
                     else
                         tbmostahek.EditValue = "ورثة - " + ((RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat)obj).MMashatName;
                 }
@@ -159,7 +160,8 @@ namespace RetirementCenter
             {
                 LSMSTBLWarasa.KeyExpression = "AutoId";
                 this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
-                LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabanks where q.amanatmony > 0 select q;
+                LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
+                luePersonId.Properties.ValueMember = "responsiblesarfId";
                 
                 //FillFromWarasaBank();
             }
@@ -168,6 +170,7 @@ namespace RetirementCenter
                 LSMSTBLWarasa.KeyExpression = "PersonId";
                 this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
                 LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
+                luePersonId.Properties.ValueMember = "PersonId";
             }
 
         }
