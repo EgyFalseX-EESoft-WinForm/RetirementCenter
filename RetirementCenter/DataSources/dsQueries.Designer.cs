@@ -53382,7 +53382,7 @@ WHERE        (yasref = 1) AND (MashHalaId = 1) AND (NOT EXISTS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, 
@@ -53399,6 +53399,19 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, TBLMashat.MMashatName, 
+                         TBLMashat.SyndicateId AS SyndicateIdMashat, TBLMashat.SubCommitteId AS SubCommitteIdMashat, TBLMashat.sarfnumber, TBLMashat.sarffeatype, TBLMashat.countwife, TBLMashat.countson, 
+                         CDsarfType.feasarf, TBLMashat.SarfExpetion, TBLWarasa.wmony, TBLWarasa.wcompletesarf, TBLWarasa.westktaat, TBLWarasa.welrasm
+FROM            TBLWarasa INNER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         vTBLWarasaSarf_arshef2 ON TBLWarasa.PersonId = vTBLWarasaSarf_arshef2.PersonId LEFT OUTER JOIN
+                         CDsarfType ON TBLMashat.sarffeatype = CDsarfType.sarfTypeId
+WHERE        (TBLWarasa.yasref = 1) AND (vTBLWarasaSarf_arshef2.DofatSarfId = @DofatSarfId) AND (CAST(vTBLWarasaSarf_arshef2.datein AS DATE) = @datein) AND SarfTypeedadId = 6";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -53424,6 +53437,34 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(SyndicateId));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DofatSarfId));
+            dsQueries.WarasaDofaatCreatorDataTable dataTable = new dsQueries.WarasaDofaatCreatorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_Dof_DateIn(dsQueries.WarasaDofaatCreatorDataTable dataTable, int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsQueries.WarasaDofaatCreatorDataTable GetDataBy_Dof_DateIn(int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
             dsQueries.WarasaDofaatCreatorDataTable dataTable = new dsQueries.WarasaDofaatCreatorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -53587,7 +53628,7 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TBLEdafatWarsa.PersonId, TBLEdafatWarsa.datesarf, TBLEdafatWarsa.estktaa, TBLEdafatWarsa.DofatSarfId, TBLEdafatWarsa.sarfTypeId, 
@@ -53607,6 +53648,23 @@ WHERE        (TBLEdafatWarsa.DofatSarfId = @DofatSarfId) AND EXISTS
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        TBLEdafatWarsa.PersonId, TBLEdafatWarsa.datesarf, TBLEdafatWarsa.estktaa, TBLEdafatWarsa.DofatSarfId, TBLEdafatWarsa.sarfTypeId, TBLWarasa.personName, TBLWarasa.SyndicateId, 
+                         TBLWarasa.SubCommitteId, TBLWarasa.WarasaTypeId, TBLMashat.MMashatName, CDsarfType.feasarf, TBLDofatSarf.DofatSarfDateto, TBLWarasa.responsiblesarf, 
+                         TBLMashat.SyndicateId AS SyndicateIdMashat, TBLMashat.SubCommitteId AS SubCommitteIdMashat, TBLMashat.sarffeatype, TBLMashat.countwife, TBLMashat.countson, TBLMashat.sarfnumber, 
+                         TBLWarasa.wmony, TBLWarasa.wcompletesarf, TBLWarasa.westktaat, TBLWarasa.welrasm
+FROM            TBLDofatSarf RIGHT OUTER JOIN
+                         vTBLWarasaSarf_arshef2 INNER JOIN
+                         TBLEdafatWarsa ON vTBLWarasaSarf_arshef2.PersonId = TBLEdafatWarsa.PersonId AND vTBLWarasaSarf_arshef2.DofatSarfId = TBLEdafatWarsa.DofatSarfId ON 
+                         TBLDofatSarf.DofatSarfId = TBLEdafatWarsa.DofatSarfId LEFT OUTER JOIN
+                         TBLWarasa LEFT OUTER JOIN
+                         TBLMashat LEFT OUTER JOIN
+                         CDsarfType ON TBLMashat.sarffeatype = CDsarfType.sarfTypeId ON TBLWarasa.MMashatId = TBLMashat.MMashatId ON TBLEdafatWarsa.PersonId = TBLWarasa.PersonId
+WHERE        (TBLWarasa.yasref = 1) AND (vTBLWarasaSarf_arshef2.DofatSarfId = @DofatSarfId) AND (CAST(vTBLWarasaSarf_arshef2.datein AS DATE) = @datein)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -53632,6 +53690,34 @@ WHERE        (TBLEdafatWarsa.DofatSarfId = @DofatSarfId) AND EXISTS
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SyndicateId));
+            dsQueries.WarasaExtraDofaatCreatorDataTable dataTable = new dsQueries.WarasaExtraDofaatCreatorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_Dof_DateIn(dsQueries.WarasaExtraDofaatCreatorDataTable dataTable, int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsQueries.WarasaExtraDofaatCreatorDataTable GetDataBy_Dof_DateIn(int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
             dsQueries.WarasaExtraDofaatCreatorDataTable dataTable = new dsQueries.WarasaExtraDofaatCreatorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -54027,7 +54113,7 @@ NOT EXISTS(SELECT * FROM TBLSarfExpetion WHERE PersonId = TBLWarasa.PersonId AND
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, TBLMashat.MMashatName, 
@@ -54041,6 +54127,20 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, TBLMashat.MMashatName, 
+                         TBLMashat.SyndicateId AS SyndicateIdMashat, TBLMashat.SubCommitteId AS SubCommitteIdMashat, TBLMashat.sarfnumber, TBLMashat.sarffeatype, TBLMashat.countwife, TBLMashat.countson, 
+                         CDsarfType.feasarf, TBLMashat.SarfExpetion, TBLSarfExpetion.wmonymonth, TBLSarfExpetion.wrsmmonth, vTBLWarasaSarf_arshef2.DofatSarfId, vTBLWarasaSarf_arshef2.datein
+FROM            vTBLWarasaSarf_arshef2 INNER JOIN
+                         TBLSarfExpetion ON vTBLWarasaSarf_arshef2.PersonId = TBLSarfExpetion.PersonId AND vTBLWarasaSarf_arshef2.DofatSarfId = TBLSarfExpetion.DofatSarfId LEFT OUTER JOIN
+                         TBLWarasa ON TBLSarfExpetion.PersonId = TBLWarasa.PersonId LEFT OUTER JOIN
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId LEFT OUTER JOIN
+                         CDsarfType ON TBLMashat.sarffeatype = CDsarfType.sarfTypeId
+WHERE        (TBLWarasa.yasref = 1) AND (vTBLWarasaSarf_arshef2.DofatSarfId = @DofatSarfId) AND (CAST(vTBLWarasaSarf_arshef2.datein AS DATE) = @datein) AND SarfTypeedadId = 3";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -54066,6 +54166,34 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(SyndicateId));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DofatSarfId));
+            dsQueries.WarasaExceptionDofaatCreatorDataTable dataTable = new dsQueries.WarasaExceptionDofaatCreatorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_Dof_DateIn(dsQueries.WarasaExceptionDofaatCreatorDataTable dataTable, int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsQueries.WarasaExceptionDofaatCreatorDataTable GetDataBy_Dof_DateIn(int DofatSarfId, System.DateTime datein) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DofatSarfId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datein));
             dsQueries.WarasaExceptionDofaatCreatorDataTable dataTable = new dsQueries.WarasaExceptionDofaatCreatorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -65444,7 +65572,7 @@ WHERE        (tblWarasabank.DofatSarfId = @DofatSarfId) AND (tblWarasabank.amana
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[42];
+            this._commandCollection = new global::System.Data.IDbCommand[43];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT ISNULL(MAX(MMashatId) +1, 1) AS NewId FROM TBLMashat";
@@ -65733,6 +65861,10 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasaSarf_arshef.Do
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[41])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[41])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[41])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[42] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[42])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[42])).CommandText = "DELETE FROM TBLWarasaSarf";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[42])).CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66969,6 +67101,29 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasaSarf_arshef.Do
             else {
                 return new global::System.Nullable<double>(((double)(returnValue)));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DELETE_All_From_TBLWarasaSarf() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[42]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

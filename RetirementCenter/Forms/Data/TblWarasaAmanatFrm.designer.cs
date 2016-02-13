@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.tblWarasaAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblWarasaAmanatBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarfAId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditDofatSarfAId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDofatSarfA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,7 +56,7 @@
             this.repositoryItemDateEditdatein = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnSave = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,6 +74,7 @@
             this.repositoryItemLookUpEditDofatSarfId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMSDofatSarfId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -93,7 +93,6 @@
             this.tblWarasaAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblWarasaAmanatTableAdapter();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblWarasaAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -681,6 +680,18 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 15;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "كود الاب";
+            this.gridColumn3.FieldName = "MMashatId";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 16;
+            // 
             // repositoryItemCalcEditf2
             // 
             this.repositoryItemCalcEditf2.AutoHeight = false;
@@ -711,7 +722,7 @@
             // 
             this.repositoryItemGridLookUpEditSyndicateId.AutoHeight = false;
             this.repositoryItemGridLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemGridLookUpEditSyndicateId.DisplayMember = "Syndicate";
             this.repositoryItemGridLookUpEditSyndicateId.Name = "repositoryItemGridLookUpEditSyndicateId";
             this.repositoryItemGridLookUpEditSyndicateId.NullText = "";
@@ -861,18 +872,6 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "كود الاب";
-            this.gridColumn3.FieldName = "MMashatId";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 16;
             // 
             // TblWarasaAmanatFrm
             // 

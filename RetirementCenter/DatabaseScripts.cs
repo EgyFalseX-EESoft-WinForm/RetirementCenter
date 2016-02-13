@@ -519,7 +519,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vtblWarasabank2;
                 cmd.ExecuteNonQuery();
-
+                //vTBLWarasaSarf_arshef2
+                if (CheckViewExists("vTBLWarasaSarf_arshef2"))
+                {
+                    cmd.CommandText = DropObject("vTBLWarasaSarf_arshef2");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLWarasaSarf_arshef2;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -1016,7 +1023,7 @@ FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
                          dbo.TBLMemberSarf_arshef.monymonth, dbo.TBLMemberSarf_arshef.rsmmonth, dbo.TBLMemberSarf_arshef.eshtrakmonth, dbo.TBLMemberSarf_arshef.estktaa, dbo.TBLMemberSarf_arshef.sarf, 
                          dbo.TBLMemberSarf_arshef.datein, dbo.TBLMemberSarf_arshef.userin, dbo.TBLMemberSarf_arshef.Edafat, dbo.TBLMemberSarf_arshef.SyndicateId, dbo.TBLMemberSarf_arshef.SubCommitteId, 
                          dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
-                         dbo.TBLMashat.yasref AS Current_Yasref, dbo.TBLMemberSarf_arshef.SendBank
+                         dbo.TBLMashat.yasref AS Current_Yasref, dbo.TBLMemberSarf_arshef.SendBank, dbo.TBLMashat.Activate
 FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                          dbo.CDSarfTypeedad ON dbo.TBLMemberSarf_arshef.SarfTypeedadId = dbo.CDSarfTypeedad.SarfTypeedadId LEFT OUTER JOIN
                          dbo.TBLDofatSarf ON dbo.TBLMemberSarf_arshef.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId LEFT OUTER JOIN
@@ -1037,8 +1044,10 @@ FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                          dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
                          dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, TBLWarasa_1.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa_1.MMashatId, 
                          dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, 
-                         dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank
-, (SELECT TOP 1 [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa_1.visa) AS [newid]
+                         dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank,
+                             (SELECT        TOP (1) newid
+                                FROM            dbo.AwarasaNewId
+                                WHERE        (visa = TBLWarasa_1.visa)) AS newid, dbo.TBLWarasa.Activate
 FROM            dbo.TBLWarasa RIGHT OUTER JOIN
                          dbo.TBLWarasaSarf_arshef ON dbo.TBLWarasa.PersonId = dbo.TBLWarasaSarf_arshef.responsiblesarfId LEFT OUTER JOIN
                          dbo.TBLMashat RIGHT OUTER JOIN
@@ -1796,6 +1805,28 @@ GROUP BY dbo.vtblWarasabank.AutoId, dbo.vtblWarasabank.MMashatId, dbo.vtblWarasa
                          dbo.vtblWarasabank.userin, dbo.vtblWarasabank.newid, dbo.vtblWarasabank.SubCommitte, dbo.vtblWarasabank.Syndicate, dbo.vtblWarasabank.DofatSarf, dbo.vtblWarasabank.RealName, 
                          dbo.vtblWarasabank.personName, dbo.vtblWarasabank.MMashatName, dbo.vtblWarasabank.sarfnumber, dbo.vtblWarasabank.CODE60, dbo.TBLWarasa.responsiblesarfId, dbo.TBLWarasa.personName, 
                          dbo.vtblWarasabank.yasref";
+            }
+        }
+        public static string vTBLWarasaSarf_arshef2
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLWarasaSarf_arshef2]
+                    AS
+                    WITH CTE1 AS (SELECT        dbo.TBLWarasaSarf_arshef.DofatSarfId, dbo.TBLWarasaSarf_arshef.SarfTypeedadId, dbo.TBLWarasaSarf_arshef.sarfdatefrom, dbo.TBLWarasaSarf_arshef.sarfdateto, 
+                                                            dbo.TBLWarasaSarf_arshef.monymonth, dbo.TBLWarasaSarf_arshef.rsmmonth, dbo.TBLWarasaSarf_arshef.eshtrakmonth, dbo.TBLWarasaSarf_arshef.estktaa, dbo.TBLWarasaSarf_arshef.sarf, 
+                                                            dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
+                                                            dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, dbo.TBLWarasaSarf_arshef.sarf2in3, dbo.TBLWarasaSarf_arshef.mid, 
+                                                            dbo.TBLWarasaSarf_arshef.SendBank, dbo.TBLWarasaSarf_arshef.madunearem, dbo.TBLWarasa.MMashatId
+                                  FROM            dbo.TBLWarasaSarf_arshef INNER JOIN
+                                                            dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.PersonId = dbo.TBLWarasa.PersonId
+                                  WHERE        (dbo.TBLWarasaSarf_arshef.SarfTypeedadId = 6))
+    SELECT        CTE1_1.DofatSarfId, CTE1_1.SarfTypeedadId, CTE1_1.sarfdatefrom, CTE1_1.sarfdateto, CTE1_1.monymonth, CTE1_1.rsmmonth, CTE1_1.eshtrakmonth, CTE1_1.estktaa, CTE1_1.sarf, CTE1_1.datein, 
+                              CTE1_1.userin, CTE1_1.Edafat, CTE1_1.SyndicateId, CTE1_1.SubCommitteId, CTE1_1.responsiblesarf, CTE1_1.responsiblesarfId, CTE1_1.sarf2in3, CTE1_1.mid, CTE1_1.SendBank, CTE1_1.madunearem, 
+                              CTE1_1.MMashatId, TBLWarasa_1.PersonId
+     FROM            CTE1 AS CTE1_1 INNER JOIN
+                              dbo.TBLWarasa AS TBLWarasa_1 ON CTE1_1.MMashatId = TBLWarasa_1.MMashatId";
             }
         }
     }

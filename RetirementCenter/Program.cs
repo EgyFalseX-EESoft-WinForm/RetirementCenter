@@ -95,6 +95,7 @@ namespace RetirementCenter
                     SQLProvider.PerformUpdate();
                     SQLProvider.SetAllCommandTimeouts(SQLProvider.adpQry, 0);
                     Application.Run(new MainFrm());
+                    //Application.Run(new TblWarasaAmanatSarf2Frm());
                 }
                 catch (Exception ex)
                 {

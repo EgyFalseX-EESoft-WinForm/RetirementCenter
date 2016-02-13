@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.ceCheckAll = new DevExpress.XtraEditors.CheckEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.rep24ABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rep24ABindingSource = new System.Windows.Forms.BindingSource();
             this.dsReports = new RetirementCenter.DataSources.dsReports();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colamanatmony = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,6 +49,7 @@
             this.colSelected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,7 +57,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.rep24_ATableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep24_ATableAdapter();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceCheckAll.Properties)).BeginInit();
@@ -170,7 +169,7 @@
             this.colamanatmony.FieldName = "amanatmony";
             this.colamanatmony.Name = "colamanatmony";
             this.colamanatmony.Visible = true;
-            this.colamanatmony.VisibleIndex = 8;
+            this.colamanatmony.VisibleIndex = 9;
             // 
             // colestktaa
             // 
@@ -182,7 +181,7 @@
             this.colestktaa.FieldName = "estktaa";
             this.colestktaa.Name = "colestktaa";
             this.colestktaa.Visible = true;
-            this.colestktaa.VisibleIndex = 9;
+            this.colestktaa.VisibleIndex = 10;
             // 
             // colmostahek
             // 
@@ -194,7 +193,7 @@
             this.colmostahek.FieldName = "mostahek";
             this.colmostahek.Name = "colmostahek";
             this.colmostahek.Visible = true;
-            this.colmostahek.VisibleIndex = 3;
+            this.colmostahek.VisibleIndex = 4;
             // 
             // colsefa
             // 
@@ -206,7 +205,7 @@
             this.colsefa.FieldName = "sefa";
             this.colsefa.Name = "colsefa";
             this.colsefa.Visible = true;
-            this.colsefa.VisibleIndex = 7;
+            this.colsefa.VisibleIndex = 8;
             // 
             // colDofatSarf
             // 
@@ -218,7 +217,7 @@
             this.colDofatSarf.FieldName = "DofatSarf";
             this.colDofatSarf.Name = "colDofatSarf";
             this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 1;
+            this.colDofatSarf.VisibleIndex = 2;
             // 
             // colSyndicate
             // 
@@ -230,7 +229,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 4;
+            this.colSyndicate.VisibleIndex = 5;
             // 
             // coldatein
             // 
@@ -243,7 +242,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 5;
+            this.coldatein.VisibleIndex = 6;
             // 
             // repositoryItemDateEditYMD
             // 
@@ -269,7 +268,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 6;
+            this.colsarfnumber.VisibleIndex = 7;
             // 
             // colMMashatName
             // 
@@ -281,7 +280,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 2;
+            this.colMMashatName.VisibleIndex = 3;
             // 
             // colTotal
             // 
@@ -294,7 +293,7 @@
             this.colTotal.Name = "colTotal";
             this.colTotal.OptionsColumn.ReadOnly = true;
             this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 10;
+            this.colTotal.VisibleIndex = 11;
             // 
             // colSelected
             // 
@@ -318,7 +317,7 @@
             this.colsarfcheek.FieldName = "sarfcheek";
             this.colsarfcheek.Name = "colsarfcheek";
             this.colsarfcheek.Visible = true;
-            this.colsarfcheek.VisibleIndex = 11;
+            this.colsarfcheek.VisibleIndex = 12;
             // 
             // colMMashatId
             // 
@@ -330,7 +329,19 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 12;
+            this.colMMashatId.VisibleIndex = 1;
+            // 
+            // colRealName
+            // 
+            this.colRealName.AppearanceCell.Options.UseTextOptions = true;
+            this.colRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRealName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRealName.Caption = "مدخل البيان";
+            this.colRealName.FieldName = "RealName";
+            this.colRealName.Name = "colRealName";
+            this.colRealName.Visible = true;
+            this.colRealName.VisibleIndex = 13;
             // 
             // layoutControlGroup1
             // 
@@ -402,18 +413,6 @@
             // rep24_ATableAdapter
             // 
             this.rep24_ATableAdapter.ClearBeforeFill = true;
-            // 
-            // colRealName
-            // 
-            this.colRealName.AppearanceCell.Options.UseTextOptions = true;
-            this.colRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.Caption = "مدخل البيان";
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 13;
             // 
             // TblMemberAmanatPrintFrm
             // 

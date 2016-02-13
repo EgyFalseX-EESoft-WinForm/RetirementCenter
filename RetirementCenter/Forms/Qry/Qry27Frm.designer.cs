@@ -70,6 +70,7 @@
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -212,7 +213,8 @@
             this.coldatein,
             this.coluserin,
             this.colCurrent_Yasref,
-            this.colSendBank});
+            this.colSendBank,
+            this.colActivate});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -643,6 +645,18 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "مفعل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 19;
+            // 
             // Qry27Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,6 +733,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit tbCodeEnd;
         private DevExpress.XtraEditors.TextEdit tbCodeStart;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivate;
 
     }
 }

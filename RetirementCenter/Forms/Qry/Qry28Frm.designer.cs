@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,7 +52,7 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +62,10 @@
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
+            this.tbCodeStart = new DevExpress.XtraEditors.TextEdit();
             this.btnBank = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
@@ -72,10 +75,7 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
-            this.tbCodeStart = new DevExpress.XtraEditors.TextEdit();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -87,12 +87,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -224,7 +224,8 @@
             this.colResponsiblesarfName,
             this.colYasref_Current,
             this.colSendBank,
-            this.colnewid});
+            this.colnewid,
+            this.colActivate});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -605,6 +606,48 @@
             this.panelControl1.Size = new System.Drawing.Size(734, 116);
             this.panelControl1.TabIndex = 3;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(232, 94);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(35, 13);
+            this.labelControl4.TabIndex = 11;
+            this.labelControl4.Text = "الي كود";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(232, 70);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(32, 13);
+            this.labelControl3.TabIndex = 12;
+            this.labelControl3.Text = "من كود";
+            // 
+            // tbCodeEnd
+            // 
+            this.tbCodeEnd.Location = new System.Drawing.Point(100, 91);
+            this.tbCodeEnd.Name = "tbCodeEnd";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeEnd.Properties.Mask.EditMask = "n0";
+            this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeEnd.TabIndex = 7;
+            // 
+            // tbCodeStart
+            // 
+            this.tbCodeStart.Location = new System.Drawing.Point(100, 67);
+            this.tbCodeStart.Name = "tbCodeStart";
+            this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.EditFormat.FormatString = "n0";
+            this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbCodeStart.Properties.Mask.EditMask = "n0";
+            this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeStart.TabIndex = 6;
+            // 
             // btnBank
             // 
             this.btnBank.Location = new System.Drawing.Point(12, 12);
@@ -686,47 +729,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // labelControl4
+            // colActivate
             // 
-            this.labelControl4.Location = new System.Drawing.Point(232, 94);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(35, 13);
-            this.labelControl4.TabIndex = 11;
-            this.labelControl4.Text = "الي كود";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(232, 70);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(32, 13);
-            this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "من كود";
-            // 
-            // tbCodeEnd
-            // 
-            this.tbCodeEnd.Location = new System.Drawing.Point(100, 91);
-            this.tbCodeEnd.Name = "tbCodeEnd";
-            this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
-            this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeEnd.Properties.EditFormat.FormatString = "n0";
-            this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeEnd.Properties.Mask.EditMask = "n0";
-            this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
-            this.tbCodeEnd.TabIndex = 7;
-            // 
-            // tbCodeStart
-            // 
-            this.tbCodeStart.Location = new System.Drawing.Point(100, 67);
-            this.tbCodeStart.Name = "tbCodeStart";
-            this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
-            this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeStart.Properties.EditFormat.FormatString = "n0";
-            this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeStart.Properties.Mask.EditMask = "n0";
-            this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
-            this.tbCodeStart.TabIndex = 6;
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "تفعيل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 25;
             // 
             // Qry28Frm
             // 
@@ -751,12 +764,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -810,6 +823,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit tbCodeEnd;
         private DevExpress.XtraEditors.TextEdit tbCodeStart;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivate;
 
     }
 }
