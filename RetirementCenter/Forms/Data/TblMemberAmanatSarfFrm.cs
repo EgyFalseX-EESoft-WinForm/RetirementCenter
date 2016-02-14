@@ -105,9 +105,13 @@ namespace RetirementCenter
             Program.ShowMsg("تم الاضافة" + Environment.NewLine + effected, false, this, true);
             Program.Logger.LogThis("تم الاضافة" + Environment.NewLine + effected, Text, FXFW.Logger.OpType.success, null, null, this);
         }
+        private void btnSarf_Click(object sender, EventArgs e)
+        {
+            TblMemberAmanatSarf2Frm frm = new TblMemberAmanatSarf2Frm();
+            frm.MdiParent = this.ParentForm;
+            frm.Show();
+        }
         #endregion
-
-        
 
     }
 }
