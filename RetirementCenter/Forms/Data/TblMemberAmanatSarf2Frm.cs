@@ -104,6 +104,10 @@ namespace RetirementCenter
                 Program.ShowMsg("لا يمكن اعداد دفعة مغلقه", true, this, true);
                 return;
             }
+            if (msgDlg.Show("سوف يتم حذف البيانات من جدول الاعداد. هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().DELETE_All_From_TBLMemberSarf();
+            }
             //if ((int)SQLProvider.adpQry.DofatSarfActivityClosed(Convert.ToInt32(LUESyndicateId.EditValue), dofaa.DofatSarfId, (byte)Misc.Types.CDMashHala.A3da2) > 0)
             //{
             //    if (Program.UserInfo.IsAdmin)

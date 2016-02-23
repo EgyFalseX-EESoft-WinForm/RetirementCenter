@@ -47,9 +47,19 @@ namespace RetirementCenter
             Qry76Frm frm = new Qry76Frm(row.MMashatId);
             frm.ShowDialog();
         }
+        private void repositoryItemButtonEditSarfArc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DataSources.dsQueries.vQry44Row row = (DataSources.dsQueries.vQry44Row)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry27Frm frm = new Qry27Frm(row.MMashatId);
+                frm.MdiParent = this.ParentForm;
+                frm.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
-
-        
 
     }
 }

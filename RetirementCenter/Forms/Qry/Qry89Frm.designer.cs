@@ -60,10 +60,12 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatName2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colMMashatName2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -71,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LSMS
@@ -233,21 +237,23 @@
             // 
             // gridControlData
             // 
+            this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlData.DataSource = this.LSMS;
-            this.gridControlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlData.EmbeddedNavigator.TextStringFormat = "صف {0} من {1}";
-            this.gridControlData.Location = new System.Drawing.Point(0, 0);
+            this.gridControlData.Location = new System.Drawing.Point(0, 53);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 462);
+            this.gridControlData.Size = new System.Drawing.Size(734, 409);
             this.gridControlData.TabIndex = 2;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -528,6 +534,18 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 12;
             // 
+            // colMMashatName2
+            // 
+            this.colMMashatName2.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName2.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName2.Caption = "الاب";
+            this.colMMashatName2.FieldName = "MMashatName";
+            this.colMMashatName2.Name = "colMMashatName2";
+            this.colMMashatName2.Visible = true;
+            this.colMMashatName2.VisibleIndex = 5;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -560,23 +578,31 @@
             this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
             // 
-            // colMMashatName2
+            // panelControl1
             // 
-            this.colMMashatName2.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName2.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName2.Caption = "الاب";
-            this.colMMashatName2.FieldName = "MMashatName";
-            this.colMMashatName2.Name = "colMMashatName2";
-            this.colMMashatName2.Visible = true;
-            this.colMMashatName2.VisibleIndex = 5;
+            this.panelControl1.Controls.Add(this.btnPrintExport);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(734, 47);
+            this.panelControl1.TabIndex = 4;
+            // 
+            // btnPrintExport
+            // 
+            this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
+            this.btnPrintExport.Name = "btnPrintExport";
+            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
+            this.btnPrintExport.TabIndex = 0;
+            this.btnPrintExport.Text = "طباعه و تصدير";
+            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
             // Qry89Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry89Frm";
             this.Text = "امانات الورثة منصرفة";
@@ -589,6 +615,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -631,6 +659,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdituserin;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnPrintExport;
 
     }
 }

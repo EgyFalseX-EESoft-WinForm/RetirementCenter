@@ -50,6 +50,8 @@
             this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSelected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,8 +59,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.rep25_ATableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep25_ATableAdapter();
-            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarfAId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceCheckAll.Properties)).BeginInit();
@@ -151,7 +152,8 @@
             this.colSelected,
             this.colsarfcheek,
             this.colnewid,
-            this.colRealName});
+            this.colRealName,
+            this.colDofatSarfAId});
             this.gridViewMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -184,7 +186,7 @@
             this.colamanatmony.FieldName = "amanatmony";
             this.colamanatmony.Name = "colamanatmony";
             this.colamanatmony.Visible = true;
-            this.colamanatmony.VisibleIndex = 9;
+            this.colamanatmony.VisibleIndex = 10;
             // 
             // colestktaa
             // 
@@ -196,7 +198,7 @@
             this.colestktaa.FieldName = "estktaa";
             this.colestktaa.Name = "colestktaa";
             this.colestktaa.Visible = true;
-            this.colestktaa.VisibleIndex = 10;
+            this.colestktaa.VisibleIndex = 11;
             // 
             // colmostahek
             // 
@@ -208,7 +210,7 @@
             this.colmostahek.FieldName = "mostahek";
             this.colmostahek.Name = "colmostahek";
             this.colmostahek.Visible = true;
-            this.colmostahek.VisibleIndex = 4;
+            this.colmostahek.VisibleIndex = 5;
             // 
             // colsefa
             // 
@@ -220,7 +222,7 @@
             this.colsefa.FieldName = "sefa";
             this.colsefa.Name = "colsefa";
             this.colsefa.Visible = true;
-            this.colsefa.VisibleIndex = 8;
+            this.colsefa.VisibleIndex = 9;
             // 
             // colDofatSarf
             // 
@@ -232,7 +234,7 @@
             this.colDofatSarf.FieldName = "DofatSarf";
             this.colDofatSarf.Name = "colDofatSarf";
             this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 3;
+            this.colDofatSarf.VisibleIndex = 4;
             // 
             // colSyndicate
             // 
@@ -244,7 +246,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 5;
+            this.colSyndicate.VisibleIndex = 6;
             // 
             // coldatein
             // 
@@ -257,7 +259,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 6;
+            this.coldatein.VisibleIndex = 7;
             // 
             // repositoryItemDateEditYMD
             // 
@@ -283,7 +285,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 7;
+            this.colsarfnumber.VisibleIndex = 8;
             // 
             // colpersonName
             // 
@@ -308,7 +310,7 @@
             this.colTotal.Name = "colTotal";
             this.colTotal.OptionsColumn.ReadOnly = true;
             this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 11;
+            this.colTotal.VisibleIndex = 12;
             // 
             // colSelected
             // 
@@ -332,7 +334,31 @@
             this.colsarfcheek.FieldName = "sarfcheek";
             this.colsarfcheek.Name = "colsarfcheek";
             this.colsarfcheek.Visible = true;
-            this.colsarfcheek.VisibleIndex = 12;
+            this.colsarfcheek.VisibleIndex = 13;
+            // 
+            // colnewid
+            // 
+            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
+            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
+            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.Caption = "كود60";
+            this.colnewid.FieldName = "newid";
+            this.colnewid.Name = "colnewid";
+            this.colnewid.Visible = true;
+            this.colnewid.VisibleIndex = 14;
+            // 
+            // colRealName
+            // 
+            this.colRealName.AppearanceCell.Options.UseTextOptions = true;
+            this.colRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRealName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRealName.Caption = "مدخل البيان";
+            this.colRealName.FieldName = "RealName";
+            this.colRealName.Name = "colRealName";
+            this.colRealName.Visible = true;
+            this.colRealName.VisibleIndex = 15;
             // 
             // layoutControlGroup1
             // 
@@ -405,29 +431,17 @@
             // 
             this.rep25_ATableAdapter.ClearBeforeFill = true;
             // 
-            // colnewid
+            // colDofatSarfAId
             // 
-            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
-            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
-            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.Caption = "كود60";
-            this.colnewid.FieldName = "newid";
-            this.colnewid.Name = "colnewid";
-            this.colnewid.Visible = true;
-            this.colnewid.VisibleIndex = 13;
-            // 
-            // colRealName
-            // 
-            this.colRealName.AppearanceCell.Options.UseTextOptions = true;
-            this.colRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRealName.Caption = "مدخل البيان";
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 14;
+            this.colDofatSarfAId.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfAId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfAId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId.Caption = "كود الدفعة";
+            this.colDofatSarfAId.FieldName = "DofatSarfAId";
+            this.colDofatSarfAId.Name = "colDofatSarfAId";
+            this.colDofatSarfAId.Visible = true;
+            this.colDofatSarfAId.VisibleIndex = 3;
             // 
             // TblWarasaAmanatPrintFrm
             // 
@@ -489,5 +503,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
         private DevExpress.XtraGrid.Columns.GridColumn colnewid;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfAId;
     }
 }

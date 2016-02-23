@@ -23,6 +23,16 @@ namespace RetirementCenter
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             btnBank.Visible = Program.UserInfo.IsAdmin;
             btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            LSMS.QueryableSource = dsLinq.vQry28s;
+        }
+        public Qry28Frm(int Code60)
+        {
+            InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
+            btnBank.Visible = Program.UserInfo.IsAdmin;
+            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            panelControlMain.Visible = false;
+            LSMS.QueryableSource = from q in dsLinq.vQry28s where q.newid == Code60 select q;
         }
         #endregion
         #region -   Event Handlers   -
@@ -33,8 +43,7 @@ namespace RetirementCenter
 
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMS.QueryableSource = dsLinq.vQry28s;
-
+            
             gridViewData.BestFitColumns();
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
@@ -49,12 +58,9 @@ namespace RetirementCenter
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
-
-        #endregion
-
         private void btnBank_Click(object sender, EventArgs e)
         {
-            if (lueDof.EditValue == null)          
+            if (lueDof.EditValue == null)
             {
                 msgDlg.Show("يجب اختيار الدفعة ", msgDlg.msgButtons.Close);
                 return;
@@ -74,7 +80,7 @@ namespace RetirementCenter
                     effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend);
                 else
                     effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend);
-                
+
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
@@ -83,6 +89,9 @@ namespace RetirementCenter
             }
             Program.ShowMsg("تم الاضافة للبنك" + Environment.NewLine + effected, false, this, true);
         }
+        #endregion
+
+        
 
     }
 }

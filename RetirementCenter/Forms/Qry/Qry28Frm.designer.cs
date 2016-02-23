@@ -60,8 +60,9 @@
             this.colYasref_Current = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
@@ -75,7 +76,6 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -85,8 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
+            this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
@@ -581,6 +581,18 @@
             this.colnewid.Visible = true;
             this.colnewid.VisibleIndex = 0;
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "تفعيل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 25;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -588,23 +600,23 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
-            // panelControl1
+            // panelControlMain
             // 
-            this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.tbCodeEnd);
-            this.panelControl1.Controls.Add(this.tbCodeStart);
-            this.panelControl1.Controls.Add(this.btnBank);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.btnPrintExport);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.lueDof);
-            this.panelControl1.Controls.Add(this.lueSynd);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(734, 116);
-            this.panelControl1.TabIndex = 3;
+            this.panelControlMain.Controls.Add(this.labelControl4);
+            this.panelControlMain.Controls.Add(this.labelControl3);
+            this.panelControlMain.Controls.Add(this.tbCodeEnd);
+            this.panelControlMain.Controls.Add(this.tbCodeStart);
+            this.panelControlMain.Controls.Add(this.btnBank);
+            this.panelControlMain.Controls.Add(this.labelControl2);
+            this.panelControlMain.Controls.Add(this.btnPrintExport);
+            this.panelControlMain.Controls.Add(this.labelControl1);
+            this.panelControlMain.Controls.Add(this.lueDof);
+            this.panelControlMain.Controls.Add(this.lueSynd);
+            this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlMain.Location = new System.Drawing.Point(0, 0);
+            this.panelControlMain.Name = "panelControlMain";
+            this.panelControlMain.Size = new System.Drawing.Size(734, 116);
+            this.panelControlMain.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -729,24 +741,12 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colActivate
-            // 
-            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
-            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colActivate.Caption = "تفعيل";
-            this.colActivate.FieldName = "Activate";
-            this.colActivate.Name = "colActivate";
-            this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 25;
-            // 
             // Qry28Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry28Frm";
             this.Text = "ارشيف صرف الورثة";
@@ -761,9 +761,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
+            this.panelControlMain.ResumeLayout(false);
+            this.panelControlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
@@ -778,7 +778,7 @@
 
         private DevExpress.XtraGrid.GridControl gridControlData;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControlMain;
         private DevExpress.XtraEditors.SimpleButton btnPrintExport;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.Data.Linq.LinqServerModeSource LSMS;

@@ -23,6 +23,16 @@ namespace RetirementCenter
             btnBank.Visible = Program.UserInfo.IsAdmin;
             btnPrintExport.Visible = Program.UserInfo.IsAdmin;
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
+            LSMS.QueryableSource = dsLinq.vQry27s;
+        }
+        public Qry27Frm(int Id)
+        {
+            InitializeComponent();
+            btnBank.Visible = Program.UserInfo.IsAdmin;
+            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
+            panelControlMain.Visible = false;
+            LSMS.QueryableSource = from q in dsLinq.vQry27s where q.MMashatId == Id select q;
         }
         #endregion
         #region -   Event Handlers   -
@@ -30,7 +40,7 @@ namespace RetirementCenter
         {
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMS.QueryableSource = dsLinq.vQry27s;
+            
             LSMSDof.QueryableSource = from q in dsLinq.TBLDofatSarfs select q;
             LSMSSyn.QueryableSource = from q in dsLinq.CDSyndicates select q;
 
@@ -48,9 +58,6 @@ namespace RetirementCenter
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
-
-        #endregion
-
         private void btnBank_Click(object sender, EventArgs e)
         {
             if (lueDof.EditValue == null)
@@ -73,7 +80,7 @@ namespace RetirementCenter
                     effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend);
                 else
                     effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend);
-                
+
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
@@ -82,6 +89,9 @@ namespace RetirementCenter
             }
             Program.ShowMsg("تم الاضافة للبنك" + Environment.NewLine + effected, false, this, true);
         }
+        #endregion
+
+        
 
     }
 }

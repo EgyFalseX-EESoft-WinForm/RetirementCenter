@@ -12,19 +12,20 @@ using DevExpress.XtraSplashScreen;
 
 namespace RetirementCenter
 {
-    public partial class Qry89Frm : DevExpress.XtraEditors.XtraForm
+    public partial class Qry90Frm : DevExpress.XtraEditors.XtraForm
     {
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         #region -   Functions   -
-        public Qry89Frm()
+        public Qry90Frm()
         {
             InitializeComponent();
+            LSMSSyn.QueryableSource = dsLinq.CDSyndicates;
+            LSMSDof.QueryableSource = dsLinq.TBLDofatSarfs;
         }
         #endregion
         #region -   Event Handlers   -
         private void Qry06Frm_Load(object sender, EventArgs e)
         {
-            LSMS.QueryableSource = from q in dsLinq.vTBLWarasaSarf_arshefs where q.SarfTypeedadId == 6 select q;
             //gridViewData.BestFitColumns();
         }
         private void btnPrintExport_Click(object sender, EventArgs e)
@@ -35,11 +36,17 @@ namespace RetirementCenter
                 msgDlg.Show("The 'DevExpress.XtraPrinting' library is not found");
                 return;
             }
-
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
-       
+        private void lueSyn_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lueSyn.EditValue == null || lueDof.EditValue == null)
+            {
+                return;
+            }
+            vQry90TableAdapter.Fill(dsQueries.vQry90, Convert.ToInt32(lueSyn.EditValue), Convert.ToInt32(lueDof.EditValue));
+        }
         #endregion
 
         

@@ -360,7 +360,6 @@ namespace RetirementCenter
                 if (msgDlg.Show("سوف يتم حذف البيانات من جدول الاعداد. هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().DELETE_All_From_TBLWarasaSarf();
-                    return;
                 }
                 //if ((int)SQLProvider.adpQry.DofatSarfActivityClosed(Convert.ToInt32(deDateIn.EditValue), dofaa.DofatSarfId, (byte)Misc.Types.CDMashHala.Warasa) > 0)
                 //{
