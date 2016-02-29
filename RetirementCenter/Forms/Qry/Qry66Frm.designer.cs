@@ -68,6 +68,8 @@
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry66TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry66TableAdapter();
+            this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarf1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry66BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries1)).BeginInit();
@@ -217,7 +219,9 @@
             this.colSyndicate,
             this.colSubCommitte,
             this.colMMashatName1,
-            this.colActivate});
+            this.colActivate,
+            this.colDofatSarfId,
+            this.colDofatSarf1});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -602,6 +606,30 @@
             // 
             this.vQry66TableAdapter.ClearBeforeFill = true;
             // 
+            // colDofatSarfId
+            // 
+            this.colDofatSarfId.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfId.Caption = "DofatSarfId";
+            this.colDofatSarfId.FieldName = "DofatSarfId";
+            this.colDofatSarfId.Name = "colDofatSarfId";
+            this.colDofatSarfId.Visible = true;
+            this.colDofatSarfId.VisibleIndex = 21;
+            // 
+            // colDofatSarf1
+            // 
+            this.colDofatSarf1.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf1.Caption = "DofatSarf";
+            this.colDofatSarf1.FieldName = "DofatSarf";
+            this.colDofatSarf1.Name = "colDofatSarf1";
+            this.colDofatSarf1.Visible = true;
+            this.colDofatSarf1.VisibleIndex = 22;
+            // 
             // Qry66Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,6 +703,8 @@
         private System.Windows.Forms.BindingSource vQry66BindingSource;
         private DataSources.dsQueries dsQueries1;
         private DataSources.dsQueriesTableAdapters.vQry66TableAdapter vQry66TableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfId;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf1;
 
     }
 }

@@ -527,6 +527,24 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vTBLWarasaSarf_arshef2;
                 cmd.ExecuteNonQuery();
+                //vQry91
+                if (CheckViewExists("vQry91"))
+                {
+                    cmd.CommandText = DropObject("vQry91");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry91;
+                cmd.ExecuteNonQuery();
+                //vQry92
+                if (CheckViewExists("vQry92"))
+                {
+                    cmd.CommandText = DropObject("vQry92");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry92;
+                cmd.ExecuteNonQuery();
+
+
             }
             catch (SqlException ex)
             {
@@ -1822,11 +1840,59 @@ GROUP BY dbo.vtblWarasabank.AutoId, dbo.vtblWarasabank.MMashatId, dbo.vtblWarasa
                                   FROM            dbo.TBLWarasaSarf_arshef INNER JOIN
                                                             dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.PersonId = dbo.TBLWarasa.PersonId
                                   WHERE        (dbo.TBLWarasaSarf_arshef.SarfTypeedadId = 6))
-    SELECT        CTE1_1.DofatSarfId, CTE1_1.SarfTypeedadId, CTE1_1.sarfdatefrom, CTE1_1.sarfdateto, CTE1_1.monymonth, CTE1_1.rsmmonth, CTE1_1.eshtrakmonth, CTE1_1.estktaa, CTE1_1.sarf, CTE1_1.datein, 
-                              CTE1_1.userin, CTE1_1.Edafat, CTE1_1.SyndicateId, CTE1_1.SubCommitteId, CTE1_1.responsiblesarf, CTE1_1.responsiblesarfId, CTE1_1.sarf2in3, CTE1_1.mid, CTE1_1.SendBank, CTE1_1.madunearem, 
-                              CTE1_1.MMashatId, TBLWarasa_1.PersonId
+    SELECT        CTE1_1.DofatSarfId, CTE1_1.SarfTypeedadId, CTE1_1.sarfdatefrom, CTE1_1.sarfdateto, CTE1_1.SyndicateId, CTE1_1.SubCommitteId, CTE1_1.responsiblesarf, CTE1_1.responsiblesarfId, CTE1_1.MMashatId, 
+                              TBLWarasa_1.PersonId, CTE1_1.datein
      FROM            CTE1 AS CTE1_1 INNER JOIN
-                              dbo.TBLWarasa AS TBLWarasa_1 ON CTE1_1.MMashatId = TBLWarasa_1.MMashatId";
+                              dbo.TBLWarasa AS TBLWarasa_1 ON CTE1_1.MMashatId = TBLWarasa_1.MMashatId
+     GROUP BY CTE1_1.DofatSarfId, CTE1_1.SarfTypeedadId, CTE1_1.sarfdatefrom, CTE1_1.sarfdateto, CTE1_1.SyndicateId, CTE1_1.SubCommitteId, CTE1_1.responsiblesarfId, CTE1_1.MMashatId, TBLWarasa_1.PersonId, 
+                              CTE1_1.responsiblesarf, CTE1_1.datein";
+            }
+        }
+        public static string vQry91
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry91]
+                    AS
+                    SELECT        dbo.vTBLMemberSarf_arshef.MMashatId, dbo.vTBLMemberSarf_arshef.DofatSarfId, dbo.vTBLMemberSarf_arshef.SarfTypeedadId, dbo.vTBLMemberSarf_arshef.sarfdatefrom, 
+                         dbo.vTBLMemberSarf_arshef.sarfdateto, dbo.vTBLMemberSarf_arshef.monymonth, dbo.vTBLMemberSarf_arshef.rsmmonth, dbo.vTBLMemberSarf_arshef.eshtrakmonth, dbo.vTBLMemberSarf_arshef.estktaa, 
+                         dbo.vTBLMemberSarf_arshef.sarf, dbo.vTBLMemberSarf_arshef.datein, dbo.vTBLMemberSarf_arshef.userin, dbo.vTBLMemberSarf_arshef.Edafat, dbo.vTBLMemberSarf_arshef.SyndicateId, 
+                         dbo.vTBLMemberSarf_arshef.SubCommitteId, dbo.vTBLMemberSarf_arshef.SendBank, dbo.vTBLMemberSarf_arshef.DofatSarf, dbo.vTBLMemberSarf_arshef.RealName, 
+                         dbo.vTBLMemberSarf_arshef.SarfTypeedad, dbo.vTBLMemberSarf_arshef.Syndicate, dbo.vTBLMemberSarf_arshef.SubCommitte, dbo.vTBLMemberSarf_arshef.MMashatName, 
+                         dbo.vTBLMemberSarf_arshef.sarfnumber, dbo.TblMemberAmanat.DofatSarfAId, dbo.TBLDofatSarf.DofatSarf AS DofatSarfA
+FROM            dbo.vTBLMemberSarf_arshef INNER JOIN
+                         dbo.TblMemberAmanat ON dbo.vTBLMemberSarf_arshef.MMashatId = dbo.TblMemberAmanat.MMashatId AND dbo.vTBLMemberSarf_arshef.DofatSarfId = dbo.TblMemberAmanat.DofatSarfId INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TblMemberAmanat.DofatSarfAId = dbo.TBLDofatSarf.DofatSarfId
+WHERE        (dbo.vTBLMemberSarf_arshef.SarfTypeedadId = 6)";
+            }
+        }
+        public static string vQry92
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry92]
+                    AS
+                    SELECT        dbo.vTBLWarasaSarf_arshef.PersonId, dbo.vTBLWarasaSarf_arshef.DofatSarfId, dbo.vTBLWarasaSarf_arshef.SarfTypeedadId, dbo.vTBLWarasaSarf_arshef.sarfdatefrom, 
+                         dbo.vTBLWarasaSarf_arshef.sarfdateto, dbo.vTBLWarasaSarf_arshef.monymonth, dbo.vTBLWarasaSarf_arshef.rsmmonth, dbo.vTBLWarasaSarf_arshef.eshtrakmonth, dbo.vTBLWarasaSarf_arshef.estktaa, 
+                         dbo.vTBLWarasaSarf_arshef.sarf, dbo.vTBLWarasaSarf_arshef.datein, dbo.vTBLWarasaSarf_arshef.userin, dbo.vTBLWarasaSarf_arshef.Edafat, dbo.vTBLWarasaSarf_arshef.SyndicateId, 
+                         dbo.vTBLWarasaSarf_arshef.SubCommitteId, dbo.vTBLWarasaSarf_arshef.responsiblesarf, dbo.vTBLWarasaSarf_arshef.responsiblesarfId, dbo.vTBLWarasaSarf_arshef.SendBank, 
+                         dbo.vTBLWarasaSarf_arshef.Syndicate, dbo.vTBLWarasaSarf_arshef.SubCommitte, dbo.vTBLWarasaSarf_arshef.SarfTypeedad, dbo.vTBLWarasaSarf_arshef.DofatSarf, 
+                         dbo.vTBLWarasaSarf_arshef.personName, dbo.vTBLWarasaSarf_arshef.MMashatName, dbo.vTBLWarasaSarf_arshef.sarfnumber, dbo.vTBLWarasaSarf_arshef.RealName, dbo.TblWarasaAmanat.DofatSarfAId, 
+                         dbo.TBLDofatSarf.DofatSarf AS DofatSarfA, dbo.AwarasaNewId.newid
+FROM            dbo.vTBLWarasaSarf_arshef INNER JOIN
+                         dbo.TblWarasaAmanat ON dbo.vTBLWarasaSarf_arshef.PersonId = dbo.TblWarasaAmanat.PersonId AND dbo.vTBLWarasaSarf_arshef.DofatSarfId = dbo.TblWarasaAmanat.DofatSarfId INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TblWarasaAmanat.DofatSarfAId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
+                         dbo.AwarasaNewId ON dbo.vTBLWarasaSarf_arshef.PersonId = dbo.AwarasaNewId.personid
+GROUP BY dbo.vTBLWarasaSarf_arshef.PersonId, dbo.vTBLWarasaSarf_arshef.DofatSarfId, dbo.vTBLWarasaSarf_arshef.SarfTypeedadId, dbo.vTBLWarasaSarf_arshef.sarfdatefrom, 
+                         dbo.vTBLWarasaSarf_arshef.sarfdateto, dbo.vTBLWarasaSarf_arshef.monymonth, dbo.vTBLWarasaSarf_arshef.rsmmonth, dbo.vTBLWarasaSarf_arshef.eshtrakmonth, dbo.vTBLWarasaSarf_arshef.estktaa, 
+                         dbo.vTBLWarasaSarf_arshef.datein, dbo.vTBLWarasaSarf_arshef.userin, dbo.vTBLWarasaSarf_arshef.SyndicateId, dbo.vTBLWarasaSarf_arshef.SubCommitteId, dbo.vTBLWarasaSarf_arshef.responsiblesarfId, 
+                         dbo.vTBLWarasaSarf_arshef.Syndicate, dbo.vTBLWarasaSarf_arshef.SubCommitte, dbo.vTBLWarasaSarf_arshef.SarfTypeedad, dbo.vTBLWarasaSarf_arshef.DofatSarf, 
+                         dbo.vTBLWarasaSarf_arshef.personName, dbo.vTBLWarasaSarf_arshef.MMashatName, dbo.vTBLWarasaSarf_arshef.sarfnumber, dbo.vTBLWarasaSarf_arshef.RealName, dbo.TblWarasaAmanat.DofatSarfAId, 
+                         dbo.TBLDofatSarf.DofatSarf, dbo.vTBLWarasaSarf_arshef.sarf, dbo.vTBLWarasaSarf_arshef.Edafat, dbo.vTBLWarasaSarf_arshef.responsiblesarf, dbo.vTBLWarasaSarf_arshef.SendBank, 
+                         dbo.AwarasaNewId.newid
+HAVING        (dbo.vTBLWarasaSarf_arshef.SarfTypeedadId = 6)";
             }
         }
     }

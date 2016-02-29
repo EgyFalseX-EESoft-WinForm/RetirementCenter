@@ -423,9 +423,8 @@ namespace RetirementCenter
                     record.datein = serverdatetime;
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.astsnaa_3;
-
-                    dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
-
+                    if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(record.SarfTypeedadId, record.PersonId, record.DofatSarfId) == null)
+                        dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
                 }
                 //Add Extra
                 foreach (DataSources.dsQueries.WarasaExtraDofaatCreatorRow row1 in dsQueries.WarasaExtraDofaatCreator.Rows)
@@ -498,8 +497,8 @@ namespace RetirementCenter
                         //{
                         //    string x;
                         //}
-
-                        dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
+                        if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(Resarfrecord.SarfTypeedadId, Resarfrecord.PersonId, Resarfrecord.DofatSarfId) == null)
+                            dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
                     }
 
                     pbc.EditValue = (int)pbc.EditValue + 1;
@@ -547,9 +546,9 @@ namespace RetirementCenter
                     record.datein = serverdatetime;
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
-
-                    dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
-
+                    if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(record.SarfTypeedadId, record.PersonId, record.DofatSarfId) == null)
+                        dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
+                    
                     //Add Resarf
                     adpSarf.FillByPersonId_DofatSarfId_Arc(dsRetirementCenter.TBLReSarfWarasa, row2.PersonId, dofaa.DofatSarfId);
                     foreach (DataSources.dsRetirementCenter.TBLReSarfWarasaRow ResarfRow in dsRetirementCenter.TBLReSarfWarasa)
@@ -576,8 +575,8 @@ namespace RetirementCenter
                         Resarfrecord.datein = serverdatetime;
                         Resarfrecord.userin = Program.UserInfo.UserId;
                         Resarfrecord.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_2;
-                        
-                        dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
+                        if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(Resarfrecord.SarfTypeedadId, Resarfrecord.PersonId, Resarfrecord.DofatSarfId) == null)
+                            dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
                     }
 
                     pbc.EditValue = (int)pbc.EditValue + 1;
@@ -672,9 +671,6 @@ namespace RetirementCenter
             Program.ShowMsg("تم الاضافة للارشيف" + Environment.NewLine + effected, false, this, true);
         }
         #endregion
-
-        
-
 
     }
 }

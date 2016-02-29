@@ -172,6 +172,7 @@ namespace RetirementCenter
                 record.userin = Program.UserInfo.UserId;
                 record.sarfnumber = row1.sarfnumber;
                 record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
+                //dsRetirementCenter.TBLMemberSarf.FindBySarfTypeedadIdDofatSarfIdMMashatId(record.SarfTypeedadId, record.DofatSarfId, record.MMashatId);
                 dsRetirementCenter.TBLMemberSarf.AddTBLMemberSarfRow(record);
                 try
                 { tblMemberSarfTableAdapter.Update(record); }
