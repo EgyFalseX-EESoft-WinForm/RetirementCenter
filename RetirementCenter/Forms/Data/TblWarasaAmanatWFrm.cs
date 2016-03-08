@@ -77,7 +77,7 @@ namespace RetirementCenter
         
         private void FillFromWarasaBank()
         {
-            double? money = Convert.ToDouble(adpBank.GetSummonyByID(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue)));
+            double? money = Convert.ToDouble(adpBank.GetSummonyByID(Convert.ToInt32(lueDofatSarfAId.EditValue), Convert.ToInt32(luePersonId.EditValue)));
             if (money == null)
                 return;
             tbamanatmony.EditValue = money;

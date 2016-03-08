@@ -66433,7 +66433,7 @@ WHERE (SyndicateId = @SyndicateId)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[44];
+            this._commandCollection = new global::System.Data.IDbCommand[50];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT ISNULL(MAX(MMashatId) +1, 1) AS NewId FROM TBLMashat";
@@ -66730,6 +66730,63 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasaSarf_arshef.Do
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[43])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[43])).CommandText = "DELETE FROM TBLMemberSarf";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[43])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[44] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).CommandText = "UPDATE       BankExportedData\r\nSET                Activate = @Activate, userin = " +
+                "@userin, ActivateDate = @ActivateDate\r\nWHERE        (MMashatId = @MMashatId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[44])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[45] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).CommandText = @"UPDATE       BankExportedData
+SET                BankExportedData.Activate = @Activate, userin = @userin, ActivateDate = GETDATE()
+FROM            BankExportedData INNER JOIN
+                         TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId
+WHERE        (TBLMashat.SyndicateId = @SyndicateId) AND (TBLMashat.SubCommitteId = @SubCommitteId) AND (BankExportedData.hafza = @hafza)
+AND BankExportedData.Activate <> 1";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubCommitteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SubCommitteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[45])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafza", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[46] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).CommandText = "UPDATE       BankExportedDataWarsa\r\nSET                Activate = @Activate, user" +
+                "in = @userin, ActivateDate = @ActivateDate\r\nWHERE        (PersonId = @PersonId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[46])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[47] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).CommandText = @"UPDATE       BankExportedDataWarsa
+SET                Activate = @Activate, userin = @userin, ActivateDate = GETDATE()
+FROM            BankExportedDataWarsa INNER JOIN
+                         TBLWarasa ON BankExportedDataWarsa.PersonId = TBLWarasa.PersonId
+WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasa.SubCommitteId = @SubCommitteId) AND (BankExportedDataWarsa.hafza = @hafza) AND (BankExportedDataWarsa.Activate <> 1)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "userin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SyndicateId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubCommitteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SubCommitteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[47])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafza", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[48] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[48])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[48])).CommandText = "UPDATE    TBLMashat\r\nSET Activate = 1, ActivateDate = GETDATE()\r\nFROM a_active_me" +
+                "m_date INNER JOIN TBLMashat ON a_active_mem_date.MMashatId = TBLMashat.MMashatId" +
+                "\r\nWHERE (TBLMashat.Activate = 0) OR (TBLMashat.Activate IS NULL)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[48])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[49] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[49])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[49])).CommandText = "UPDATE TBLWarasa\r\nSET Activate = 1, ActivateDate = GETDATE()\r\nFROM TBLWarasa INNE" +
+                "R JOIN a_warasa_active_date ON TBLWarasa.visa = a_warasa_active_date.visa\r\nWHERE" +
+                " (TBLWarasa.Activate = 0) OR (TBLWarasa.Activate IS NULL)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[49])).CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -67997,6 +68054,212 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasaSarf_arshef.Do
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DELETE_All_From_TBLMemberSarf() {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[43]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_BankExportedData_Active(global::System.Nullable<bool> Activate, global::System.Nullable<int> userin, global::System.Nullable<global::System.DateTime> ActivateDate, int MMashatId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[44]));
+            if ((Activate.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(Activate.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((userin.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(userin.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ActivateDate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[3].Value = ((int)(MMashatId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_BankExportedData_Active_ByHafza(global::System.Nullable<bool> Activate, global::System.Nullable<int> userin, int SyndicateId, int SubCommitteId, global::System.Nullable<int> hafza) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[45]));
+            if ((Activate.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(Activate.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((userin.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(userin.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[2].Value = ((int)(SyndicateId));
+            command.Parameters[3].Value = ((int)(SubCommitteId));
+            if ((hafza.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(hafza.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_BankExportedDataWarsa_Active(global::System.Nullable<bool> Activate, int userin, global::System.Nullable<global::System.DateTime> ActivateDate, int PersonId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[46]));
+            if ((Activate.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(Activate.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(userin));
+            if ((ActivateDate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[3].Value = ((int)(PersonId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_BankExportedDataWarsa_Active_ByHafza(global::System.Nullable<bool> Activate, int userin, int SyndicateId, int SubCommitteId, global::System.Nullable<int> hafza) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[47]));
+            if ((Activate.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(Activate.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(userin));
+            command.Parameters[2].Value = ((int)(SyndicateId));
+            command.Parameters[3].Value = ((int)(SubCommitteId));
+            if ((hafza.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(hafza.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_TBLMashat_Activate() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[48]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_TBLWarasa_Active() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[49]));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

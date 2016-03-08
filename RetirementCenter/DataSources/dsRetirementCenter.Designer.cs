@@ -52044,11 +52044,12 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        SUM(amanatmony)\r\nFROM            tblWarasabank\r\nWHERE PersonId = @P" +
-                "ersonId AND DofatSarfId = @DofatSarfId";
+            this._commandCollection[2].CommandText = "SELECT        SUM(amanatmony)\r\nFROM            tblWarasabank\r\nWHERE   \r\n[visanumb" +
+                "er] = (SELECT visa FROM [dbo].[TBLWarasa] WHERE PersonId = @PersonId)\r\nAND Dofat" +
+                "SarfId = @DofatSarfId";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52274,10 +52275,10 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetSummonyByID(int PersonId, int DofatSarfId) {
+        public virtual object GetSummonyByID(int DofatSarfId, int PersonId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(PersonId));
-            command.Parameters[1].Value = ((int)(DofatSarfId));
+            command.Parameters[0].Value = ((int)(DofatSarfId));
+            command.Parameters[1].Value = ((int)(PersonId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

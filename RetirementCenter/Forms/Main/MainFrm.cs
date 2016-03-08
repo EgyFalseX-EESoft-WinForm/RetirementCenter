@@ -820,6 +820,26 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterBankExportedDataActivate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                BankExportedDataActivateFrm FrmData = new BankExportedDataActivateFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Visa32.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterBankExportedDataWarsaActivate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                BankExportedDataWarsaActivateFrm FrmData = new BankExportedDataWarsaActivateFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Visa32.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
 
         private void mbRetCenterXRep01_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -2054,6 +2074,10 @@ namespace RetirementCenter
             SplashScreenManager.CloseForm();
         }
         #endregion
+
+        
+
+        
 
         
 

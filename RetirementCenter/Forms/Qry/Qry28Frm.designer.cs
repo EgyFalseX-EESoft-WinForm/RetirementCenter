@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,7 +53,7 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.colresponsiblesarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colresponsiblesarfId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -122,7 +123,7 @@
             // LSMS
             // 
             this.LSMS.ElementType = typeof(RetirementCenter.DataSources.Linq.vQry28);
-            this.LSMS.KeyExpression = "PersonId;DofatSarfId;SarfTypeedadId";
+            this.LSMS.KeyExpression = "[PersonId], [DofatSarfId], [SarfTypeedadId]";
             // 
             // gridViewData
             // 
