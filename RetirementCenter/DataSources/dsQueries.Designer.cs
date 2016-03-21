@@ -54073,14 +54073,26 @@ WHERE        (TBLWarasa.yasref = 1) AND (TBLWarasa.SyndicateId = @SyndicateId) A
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, TBLMashat.MMashatName, 
-                         TBLMashat.SyndicateId AS SyndicateIdMashat, TBLMashat.SubCommitteId AS SubCommitteIdMashat, TBLMashat.sarfnumber, TBLMashat.sarffeatype, TBLMashat.countwife, TBLMashat.countson, 
-                         CDsarfType.feasarf, TBLMashat.SarfExpetion, TBLWarasa.wmony, TBLWarasa.wcompletesarf, TBLWarasa.westktaat, TBLWarasa.welrasm
-FROM            TBLWarasa INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         vTBLWarasaSarf_arshef2 ON TBLWarasa.PersonId = vTBLWarasaSarf_arshef2.PersonId LEFT OUTER JOIN
-                         CDsarfType ON TBLMashat.sarffeatype = CDsarfType.sarfTypeId
-WHERE        (TBLWarasa.yasref = 1) AND (vTBLWarasaSarf_arshef2.DofatSarfId = @DofatSarfId) AND (CAST(vTBLWarasaSarf_arshef2.datein AS DATE) = @datein) AND SarfTypeedadId = 6";
+            this._commandCollection[1].CommandText = "SELECT        TBLWarasa.PersonId, TBLWarasa.personName, TBLWarasa.WarasaTypeId, T" +
+                "BLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, TBLMas" +
+                "hat.MMashatName, \r\n                         TBLMashat.SyndicateId AS SyndicateId" +
+                "Mashat, TBLMashat.SubCommitteId AS SubCommitteIdMashat, TBLMashat.sarfnumber, TB" +
+                "LMashat.sarffeatype, TBLMashat.countwife, TBLMashat.countson, \r\n                " +
+                "         CDsarfType.feasarf, TBLMashat.SarfExpetion, TBLWarasa.wmony, TBLWarasa." +
+                "wcompletesarf, TBLWarasa.westktaat, TBLWarasa.welrasm\r\nFROM            TBLWarasa" +
+                " INNER JOIN\r\n                         TBLMashat ON TBLWarasa.MMashatId = TBLMash" +
+                "at.MMashatId INNER JOIN\r\n                         vTBLWarasaSarf_arshef2 ON TBLW" +
+                "arasa.PersonId = vTBLWarasaSarf_arshef2.PersonId LEFT OUTER JOIN\r\n              " +
+                "           CDsarfType ON TBLMashat.sarffeatype = CDsarfType.sarfTypeId\r\nWHERE   " +
+                "     (TBLWarasa.yasref = 1) AND (vTBLWarasaSarf_arshef2.DofatSarfId = @DofatSarf" +
+                "Id) AND (CAST(vTBLWarasaSarf_arshef2.datein AS DATE) = @datein) AND (vTBLWarasaS" +
+                "arf_arshef2.SarfTypeedadId = 6)\r\nGROUP BY TBLWarasa.PersonId, TBLWarasa.personNa" +
+                "me, TBLWarasa.WarasaTypeId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLM" +
+                "ashat.MMashatName, TBLMashat.SyndicateId, \r\n                         TBLMashat.S" +
+                "ubCommitteId, TBLMashat.sarfnumber, TBLMashat.sarffeatype, TBLMashat.countwife, " +
+                "TBLMashat.countson, CDsarfType.feasarf, TBLWarasa.wmony, TBLWarasa.westktaat, TB" +
+                "LWarasa.welrasm, \r\n                         TBLWarasa.responsiblesarf, TBLMashat" +
+                ".SarfExpetion, TBLWarasa.wcompletesarf";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
