@@ -77,6 +77,8 @@ namespace RetirementCenter
         
         private void FillFromWarasaBank()
         {
+            tbamanatmony.EditValue = 0;
+            tbestktaa.EditValue = 0;
             double? money = Convert.ToDouble(adpBank.GetSummonyByID(Convert.ToInt32(lueDofatSarfAId.EditValue), Convert.ToInt32(luePersonId.EditValue)));
             if (money == null)
                 return;
@@ -153,7 +155,7 @@ namespace RetirementCenter
         private void ceamantvisa_CheckedChanged(object sender, EventArgs e)
         {
             tbamanatmony.Properties.ReadOnly = ceamantvisa.Checked;
-            tbestktaa.Properties.ReadOnly = ceamantvisa.Checked;
+            //tbestktaa.Properties.ReadOnly = ceamantvisa.Checked;
             tbmostahek.Properties.ReadOnly = ceamantvisa.Checked;
             tbsefa.Properties.ReadOnly = ceamantvisa.Checked;
             if (ceamantvisa.Checked)

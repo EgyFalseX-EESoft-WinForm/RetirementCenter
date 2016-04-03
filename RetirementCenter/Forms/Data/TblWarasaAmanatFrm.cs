@@ -146,10 +146,19 @@ namespace RetirementCenter
                 if (row.RowState == DataRowState.Detached)
                     dsRetirementCenter.TblWarasaAmanat.AddTblWarasaAmanatRow(row);
                 tblWarasaAmanatBindingSource.EndEdit();
-                tblWarasaAmanatTableAdapter.Update(row);
-                dsRetirementCenter.TblWarasaAmanat.AcceptChanges();
-                Program.ShowMsg("تم الحفظ", false, this, true);
-                Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                int effected = tblWarasaAmanatTableAdapter.Update(row);
+                if (effected == 0)
+                {
+                    Program.ShowMsg("لم يتم الحفظ", true, this, true);
+                    Program.Logger.LogThis("لم يتم الحفظ", Text, FXFW.Logger.OpType.fail, null, null, this);
+                }
+                else
+                {
+                    dsRetirementCenter.TblWarasaAmanat.AcceptChanges();
+                    Program.ShowMsg("تم الحفظ", false, this, true);
+                    Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                }
+                
                 btnNew_Click(btnNew, EventArgs.Empty);
             }
             catch (Exception ex)

@@ -792,6 +792,7 @@ namespace RetirementCenter
                     SyndicateId = (int)e.GetAttachedProperty("SyndicateId");
                 if (e.GetAttachedProperty("SubCommitteId") != null)
                     SubCommitteId = (int)e.GetAttachedProperty("SubCommitteId");
+                //if (e.GetAttachedProperty("yasref") != null)
                 if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive, dsRetirementCenter.TBLEdafatWarsa,
                     ref autoOpen, SyndicateId, SubCommitteId))
                 {
@@ -805,6 +806,7 @@ namespace RetirementCenter
                     arg.SetAttachedProperty("auto", "true");
                     arg.SetAttachedProperty("SyndicateId", row.SyndicateId);
                     arg.SetAttachedProperty("SubCommitteId", row.SubCommitteId);
+                    arg.SetAttachedProperty("yasref", row.yasref);
                     btnAddTBLWarasa_Click(btnAddTBLWarasa, arg);
                 }
                 ReloadWarasa();

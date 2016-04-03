@@ -87,6 +87,8 @@ namespace RetirementCenter
         }
         private void FillFromMemberBank()
         {
+            tbamanatmony.EditValue = 0;
+            tbestktaa.EditValue = 0;
             DataSources.dsRetirementCenter.tblmemberbankDataTable tbl = adpBank.GetDataByID(Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
             if (tbl.Rows.Count == 0)
                 return;
@@ -161,7 +163,7 @@ namespace RetirementCenter
         private void ceamantvisa_CheckedChanged(object sender, EventArgs e)
         {
             tbamanatmony.Properties.ReadOnly = ceamantvisa.Checked;
-            tbestktaa.Properties.ReadOnly = ceamantvisa.Checked;
+            //tbestktaa.Properties.ReadOnly = ceamantvisa.Checked;
             tbmostahek.Properties.ReadOnly = ceamantvisa.Checked;
             tbsefa.Properties.ReadOnly = ceamantvisa.Checked;
             if (ceamantvisa.Checked && lueDofatSarfAId.EditValue != null && lueMMashatId.EditValue != null && lueDofatSarfAId.EditValue.ToString() != string.Empty && lueMMashatId.EditValue.ToString() != string.Empty)

@@ -58,13 +58,16 @@ namespace RetirementCenter.Forms.Data
                     tabExtra.PageVisible = false;
                     tabSarfExpetion.PageVisible = false;
                     tabResarf.PageVisible = false;
-                    xtraTabPageTBLWarasaMadunea.PageVisible = false;
                     LSMSUsers.QueryableSource = dsLinq.Users;
                     ReloadRemark();
                     return;
                 case OpenReason.Edit:
                     tabRemark.PageVisible = false;
                     break;
+            }
+            if (TBLWarasa[0].PersonId == -1)
+            {
+                xtraTabPageTBLWarasaMadunea.PageVisible = false;
             }
 
             tbpersonName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personName", true));
