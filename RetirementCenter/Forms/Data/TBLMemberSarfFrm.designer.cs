@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tBLMemberSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -64,6 +64,9 @@
             this.repositoryItemCalcEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemCalcEditn0 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gcCommands = new DevExpress.XtraEditors.GroupControl();
+            this.lueSarfTypeedad = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.LUESyndicateId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,6 +77,7 @@
             this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.btnArc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddAll = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -86,6 +90,8 @@
             this.lblMax = new DevExpress.XtraEditors.LabelControl();
             this.lblValue = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.LSMSSarfTypeedadId = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colSarfTypeedad = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMemberSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -105,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCommands)).BeginInit();
             this.gcCommands.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSarfTypeedad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUESyndicateId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf.Properties)).BeginInit();
@@ -117,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcProgress)).BeginInit();
             this.pcProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSarfTypeedadId)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -140,7 +149,7 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemGridLookUpEditSyndicateId,
             this.repositoryItemGridLookUpEditSubCommitteId});
-            this.gridControlData.Size = new System.Drawing.Size(883, 306);
+            this.gridControlData.Size = new System.Drawing.Size(883, 353);
             this.gridControlData.TabIndex = 0;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -531,19 +540,59 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcCommands.AppearanceCaption.Options.UseTextOptions = true;
             this.gcCommands.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gcCommands.Controls.Add(this.lueSarfTypeedad);
+            this.gcCommands.Controls.Add(this.labelControl2);
             this.gcCommands.Controls.Add(this.LUESyndicateId);
             this.gcCommands.Controls.Add(this.labelControl1);
             this.gcCommands.Controls.Add(this.LUETBLDofatSarf);
             this.gcCommands.Controls.Add(this.labelControl7);
             this.gcCommands.Controls.Add(this.btnArc);
+            this.gcCommands.Controls.Add(this.btnPrint);
             this.gcCommands.Controls.Add(this.btnDelete);
             this.gcCommands.Controls.Add(this.btnAddAll);
             this.gcCommands.Location = new System.Drawing.Point(12, 12);
             this.gcCommands.Name = "gcCommands";
             this.gcCommands.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gcCommands.Size = new System.Drawing.Size(887, 102);
+            this.gcCommands.Size = new System.Drawing.Size(887, 135);
             this.gcCommands.TabIndex = 0;
             this.gcCommands.Text = "خيارات";
+            // 
+            // lueSarfTypeedad
+            // 
+            this.lueSarfTypeedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueSarfTypeedad.Location = new System.Drawing.Point(607, 86);
+            this.lueSarfTypeedad.Name = "lueSarfTypeedad";
+            this.lueSarfTypeedad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lueSarfTypeedad.Properties.Appearance.Options.UseFont = true;
+            this.lueSarfTypeedad.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueSarfTypeedad.Properties.DataSource = this.LSMSSarfTypeedadId;
+            this.lueSarfTypeedad.Properties.DisplayMember = "SarfTypeedad";
+            this.lueSarfTypeedad.Properties.NullText = "";
+            this.lueSarfTypeedad.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueSarfTypeedad.Properties.ValueMember = "SarfTypeedadId";
+            this.lueSarfTypeedad.Properties.View = this.gridView3;
+            this.lueSarfTypeedad.Size = new System.Drawing.Size(236, 22);
+            this.lueSarfTypeedad.TabIndex = 1;
+            this.lueSarfTypeedad.EditValueChanged += new System.EventHandler(this.LUESyndicateId_EditValueChanged);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSarfTypeedad});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(849, 89);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(22, 13);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "النوع";
             // 
             // LUESyndicateId
             // 
@@ -562,10 +611,10 @@
             this.LUESyndicateId.Properties.View = this.gridView1;
             this.LUESyndicateId.Size = new System.Drawing.Size(236, 22);
             this.LUESyndicateId.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "يجب اختيار فرعية";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "يجب اختيار فرعية";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule1);
             this.LUESyndicateId.EditValueChanged += new System.EventHandler(this.LUESyndicateId_EditValueChanged);
             // 
             // gridView1
@@ -615,10 +664,10 @@
             this.LUETBLDofatSarf.Properties.View = this.gridLookUpEdit1View;
             this.LUETBLDofatSarf.Size = new System.Drawing.Size(236, 22);
             this.LUETBLDofatSarf.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "يجب اختيار دفعة";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "يجب اختيار دفعة";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule2);
             this.LUETBLDofatSarf.EditValueChanged += new System.EventHandler(this.LUETBLDofatSarf_EditValueChanged);
             // 
             // LSMSTBLDofatSarf
@@ -666,6 +715,17 @@
             this.btnArc.Text = "ارشيف الدفعة";
             this.btnArc.Click += new System.EventHandler(this.btnArc_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Image = global::RetirementCenter.Properties.Resources.Print;
+            this.btnPrint.Location = new System.Drawing.Point(693, 111);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(150, 22);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "طباعة";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -694,10 +754,10 @@
             this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
             this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.groupControl2.Controls.Add(this.gridControlData);
-            this.groupControl2.Location = new System.Drawing.Point(12, 120);
+            this.groupControl2.Location = new System.Drawing.Point(12, 153);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupControl2.Size = new System.Drawing.Size(887, 329);
+            this.groupControl2.Size = new System.Drawing.Size(887, 376);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "التفاصيل";
             // 
@@ -757,11 +817,24 @@
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "0";
             // 
+            // LSMSSarfTypeedadId
+            // 
+            this.LSMSSarfTypeedadId.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSarfTypeedad);
+            this.LSMSSarfTypeedadId.KeyExpression = "[SarfTypeedadId]";
+            // 
+            // colSarfTypeedad
+            // 
+            this.colSarfTypeedad.Caption = "الاسم";
+            this.colSarfTypeedad.FieldName = "SarfTypeedad";
+            this.colSarfTypeedad.Name = "colSarfTypeedad";
+            this.colSarfTypeedad.Visible = true;
+            this.colSarfTypeedad.VisibleIndex = 0;
+            // 
             // TBLMemberSarfFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 461);
+            this.ClientSize = new System.Drawing.Size(911, 541);
             this.Controls.Add(this.pcProgress);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.gcCommands);
@@ -789,6 +862,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcCommands)).EndInit();
             this.gcCommands.ResumeLayout(false);
             this.gcCommands.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSarfTypeedad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUESyndicateId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf.Properties)).EndInit();
@@ -802,6 +877,7 @@
             this.pcProgress.ResumeLayout(false);
             this.pcProgress.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSarfTypeedadId)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -863,5 +939,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colEdafat;
         private DevExpress.XtraEditors.SimpleButton btnArc;
+        private DevExpress.XtraEditors.GridLookUpEdit lueSarfTypeedad;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSSarfTypeedadId;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraGrid.Columns.GridColumn colSarfTypeedad;
     }
 }

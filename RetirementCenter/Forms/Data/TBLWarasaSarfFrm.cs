@@ -297,6 +297,7 @@ namespace RetirementCenter
 
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
             LSMSCDWarasaType.QueryableSource = dsLinq.CDWarasaTypes;
+            LSMSCDSarfTypeedad.QueryableSource = dsLinq.CDSarfTypeedads;
 
             if (FXFW.SqlDB.IsNullOrEmpty(LUETBLDofatSarf.EditValue))
                 LUETBLDofatSarf.EditValue = MaxDofatSarfId;
@@ -665,7 +666,7 @@ namespace RetirementCenter
         }
         private void btnArc_Click(object sender, EventArgs e)
         {
-            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            if (msgDlg.Show("سيتم ترحيل  المبالغ الموجوده للارشيف" + Environment.NewLine + "يرجي الحرص الشديد قبل الموافقة" + Environment.NewLine + "هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
             int effected = 0;
             try
@@ -733,8 +734,22 @@ namespace RetirementCenter
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
             }
         }
-        #endregion
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (LUESyndicateId.EditValue == null || LUETBLDofatSarf.EditValue == null || lueSarfTypeedadId.EditValue == null)
+                return;
 
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep26 FrmRep = new XRep26(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue), Convert.ToByte(lueSarfTypeedadId.EditValue));
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+
+        }
+        #endregion
+        
 
     }
 }

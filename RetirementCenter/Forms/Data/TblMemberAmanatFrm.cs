@@ -112,7 +112,12 @@ namespace RetirementCenter
                 return;
             try
             {
-
+                if (row.accReview)
+                {
+                    Program.ShowMsg("لا يمكن حذف عنصر تم مراجعتة", true, this);
+                    Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
+                    return;
+                }
                 tblMemberAmanatTableAdapter.Delete(row.MMashatId, row.DofatSarfAId);
                 gridViewData.DeleteRow(GV.FocusedRowHandle);
                 

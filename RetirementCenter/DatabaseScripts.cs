@@ -1055,7 +1055,7 @@ FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
                          dbo.TBLMemberSarf_arshef.monymonth, dbo.TBLMemberSarf_arshef.rsmmonth, dbo.TBLMemberSarf_arshef.eshtrakmonth, dbo.TBLMemberSarf_arshef.estktaa, dbo.TBLMemberSarf_arshef.sarf, 
                          dbo.TBLMemberSarf_arshef.datein, dbo.TBLMemberSarf_arshef.userin, dbo.TBLMemberSarf_arshef.Edafat, dbo.TBLMemberSarf_arshef.SyndicateId, dbo.TBLMemberSarf_arshef.SubCommitteId, 
                          dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
-                         dbo.TBLMashat.yasref AS Current_Yasref, dbo.TBLMemberSarf_arshef.SendBank, dbo.TBLMashat.Activate
+                         dbo.TBLMashat.yasref AS Current_Yasref, dbo.TBLMemberSarf_arshef.SendBank, dbo.TBLMashat.Activate, dbo.TBLMashat.visa
 FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                          dbo.CDSarfTypeedad ON dbo.TBLMemberSarf_arshef.SarfTypeedadId = dbo.CDSarfTypeedad.SarfTypeedadId LEFT OUTER JOIN
                          dbo.TBLDofatSarf ON dbo.TBLMemberSarf_arshef.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId LEFT OUTER JOIN
@@ -1072,20 +1072,22 @@ FROM            dbo.TBLMemberSarf_arshef LEFT OUTER JOIN
                 CREATE VIEW [dbo].[vQry28]
                 AS
                 SELECT        dbo.TBLWarasaSarf_arshef.PersonId, dbo.TBLWarasaSarf_arshef.DofatSarfId, dbo.TBLWarasaSarf_arshef.SarfTypeedadId, dbo.TBLWarasaSarf_arshef.sarfdatefrom, dbo.TBLWarasaSarf_arshef.sarfdateto, 
-dbo.TBLWarasaSarf_arshef.monymonth, dbo.TBLWarasaSarf_arshef.rsmmonth, dbo.TBLWarasaSarf_arshef.eshtrakmonth, dbo.TBLWarasaSarf_arshef.estktaa, dbo.TBLWarasaSarf_arshef.sarf, 
-dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
-dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, TBLWarasa_1.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa_1.MMashatId, 
-dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, 
-dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank, dbo.TBLWarasa.Activate
-, (SELECT [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa_1.visa) AS [newid]
+                         dbo.TBLWarasaSarf_arshef.monymonth, dbo.TBLWarasaSarf_arshef.rsmmonth, dbo.TBLWarasaSarf_arshef.eshtrakmonth, dbo.TBLWarasaSarf_arshef.estktaa, dbo.TBLWarasaSarf_arshef.sarf, 
+                         dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
+                         dbo.TBLDofatSarf.DofatSarf, dbo.CDSarfTypeedad.SarfTypeedad, TBLWarasa_1.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa_1.MMashatId, 
+                         dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, 
+                         dbo.TBLWarasa.personName AS ResponsiblesarfName, TBLWarasa_1.yasref AS Yasref_Current, dbo.TBLWarasaSarf_arshef.SendBank, dbo.TBLWarasa.Activate,
+                             (SELECT        newid
+                                FROM            dbo.AwarasaNewId
+                                WHERE        (visa = TBLWarasa_1.visa)) AS newid, TBLWarasa_1.visa
 FROM            dbo.TBLDofatSarf INNER JOIN
-dbo.TBLWarasa AS TBLWarasa_1 INNER JOIN
-dbo.TBLWarasaSarf_arshef ON TBLWarasa_1.PersonId = dbo.TBLWarasaSarf_arshef.PersonId INNER JOIN
-dbo.TBLMashat ON TBLWarasa_1.MMashatId = dbo.TBLMashat.MMashatId ON dbo.TBLDofatSarf.DofatSarfId = dbo.TBLWarasaSarf_arshef.DofatSarfId INNER JOIN
-dbo.CDSyndicate ON dbo.TBLWarasaSarf_arshef.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
-dbo.CDSubCommitte ON dbo.TBLWarasaSarf_arshef.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
-dbo.CDSarfTypeedad ON dbo.TBLWarasaSarf_arshef.SarfTypeedadId = dbo.CDSarfTypeedad.SarfTypeedadId LEFT OUTER JOIN
-dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.responsiblesarfId = dbo.TBLWarasa.PersonId";
+                         dbo.TBLWarasa AS TBLWarasa_1 INNER JOIN
+                         dbo.TBLWarasaSarf_arshef ON TBLWarasa_1.PersonId = dbo.TBLWarasaSarf_arshef.PersonId INNER JOIN
+                         dbo.TBLMashat ON TBLWarasa_1.MMashatId = dbo.TBLMashat.MMashatId ON dbo.TBLDofatSarf.DofatSarfId = dbo.TBLWarasaSarf_arshef.DofatSarfId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasaSarf_arshef.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasaSarf_arshef.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.CDSarfTypeedad ON dbo.TBLWarasaSarf_arshef.SarfTypeedadId = dbo.CDSarfTypeedad.SarfTypeedadId LEFT OUTER JOIN
+                         dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.responsiblesarfId = dbo.TBLWarasa.PersonId";
             }
         }
         public static string vQry31

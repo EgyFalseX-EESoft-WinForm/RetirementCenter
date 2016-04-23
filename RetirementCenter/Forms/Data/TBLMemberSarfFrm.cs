@@ -11,6 +11,7 @@ using FXFW;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Linq;
 using DevExpress.XtraGrid;
+using DevExpress.XtraSplashScreen;
 
 namespace RetirementCenter
 {
@@ -89,6 +90,7 @@ namespace RetirementCenter
             else
                 LSMSCDSyndicate.QueryableSource = from q in dsLinq.CDSyndicates where Program.UserInfo.Syndicates.Contains(q.SyndicateId) select q;
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
+            LSMSSarfTypeedadId.QueryableSource = dsLinq.CDSarfTypeedads;
 
             if (FXFW.SqlDB.IsNullOrEmpty(LUETBLDofatSarf.EditValue))
                 LUETBLDofatSarf.EditValue = MaxDofatSarfId;
@@ -422,8 +424,9 @@ namespace RetirementCenter
         }
         private void btnArc_Click(object sender, EventArgs e)
         {
-            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            if (msgDlg.Show("سيتم ترحيل  المبالغ الموجوده للارشيف" + Environment.NewLine + "يرجي الحرص الشديد قبل الموافقة" + Environment.NewLine + "هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
+            
             try
             {
                 tblMemberSarfTableAdapter.InsertIntoTBLMemberSarf_arshef(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue));
@@ -461,10 +464,20 @@ namespace RetirementCenter
                 }
             }
         }
-
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (LUESyndicateId.EditValue == null || LUETBLDofatSarf.EditValue == null || lueSarfTypeedad.EditValue == null)
+                return;
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep27 FrmRep = new XRep27(Convert.ToInt32(LUETBLDofatSarf.EditValue), Convert.ToInt32(LUESyndicateId.EditValue), Convert.ToByte(lueSarfTypeedad.EditValue));
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
 
-        
 
     }
 }

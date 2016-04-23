@@ -674,6 +674,18 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry28aFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry28aFrm.designer.cs">
+      <DependentUpon>Qry28aFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry27aFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry27aFrm.designer.cs">
+      <DependentUpon>Qry27aFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry92Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1410,6 +1422,18 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep27.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep27.designer.cs">
+      <DependentUpon>XRep27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep26.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep26.designer.cs">
+      <DependentUpon>XRep26.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep25.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1796,6 +1820,12 @@
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry28aFrm.resx">
+      <DependentUpon>Qry28aFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry27aFrm.resx">
+      <DependentUpon>Qry27aFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry92Frm.resx">
       <DependentUpon>Qry92Frm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2108,6 +2138,12 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep27.resx">
+      <DependentUpon>XRep27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep26.resx">
+      <DependentUpon>XRep26.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep25.resx">
       <DependentUpon>XRep25.cs</DependentUpon>
     </EmbeddedResource>
