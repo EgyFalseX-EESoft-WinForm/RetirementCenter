@@ -47369,9 +47369,11 @@ WHERE        (TblMemberAmanat.accReview = 1)";
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfAId, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, TblMemberAmanat.userin, TblMemberAmanat.datein, TblMemberAmanat.estktaa, 
                          TblMemberAmanat.mostahek, TblMemberAmanat.sefa, TblMemberAmanat.accReview, TblMemberAmanat.useracc, TblMemberAmanat.DofatSarfId, TblMemberAmanat.dateReview, TblMemberAmanat.amantvisa, 
-                         TblMemberAmanat.sarfcheek, TBLMashat.sarfnumber
+                         TblMemberAmanat.sarfcheek, TBLMashat.sarfnumber, TBLMashat.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
 FROM            TblMemberAmanat INNER JOIN
-                         TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId";
+                         TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -48323,10 +48325,12 @@ WHERE        (TblWarasaAmanat.accReview = 1)";
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.userin, TblWarasaAmanat.datein, TblWarasaAmanat.estktaa, 
                          TblWarasaAmanat.mostahek, TblWarasaAmanat.DofatSarfId, TblWarasaAmanat.sefa, TblWarasaAmanat.accReview, TblWarasaAmanat.dateReview, TblWarasaAmanat.useracc, TblWarasaAmanat.amantvisa, 
-                         TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId
+                         TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId, TBLWarasa.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId";
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
