@@ -41,7 +41,7 @@
             this.colestktaa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmostahek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsefa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDofatSarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarfA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditYMD = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -52,6 +52,8 @@
             this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarfAId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarf_SarfIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,7 +61,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.rep25_ATableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep25_ATableAdapter();
-            this.colDofatSarfAId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceCheckAll.Properties)).BeginInit();
@@ -143,7 +144,7 @@
             this.colestktaa,
             this.colmostahek,
             this.colsefa,
-            this.colDofatSarf,
+            this.colDofatSarfA,
             this.colSyndicate,
             this.coldatein,
             this.colsarfnumber,
@@ -153,7 +154,8 @@
             this.colsarfcheek,
             this.colnewid,
             this.colRealName,
-            this.colDofatSarfAId});
+            this.colDofatSarfAId,
+            this.colDofatSarf_SarfIn});
             this.gridViewMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -224,17 +226,17 @@
             this.colsefa.Visible = true;
             this.colsefa.VisibleIndex = 9;
             // 
-            // colDofatSarf
+            // colDofatSarfA
             // 
-            this.colDofatSarf.AppearanceCell.Options.UseTextOptions = true;
-            this.colDofatSarf.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarf.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDofatSarf.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarf.Caption = "الدفعة";
-            this.colDofatSarf.FieldName = "DofatSarf";
-            this.colDofatSarf.Name = "colDofatSarf";
-            this.colDofatSarf.Visible = true;
-            this.colDofatSarf.VisibleIndex = 4;
+            this.colDofatSarfA.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfA.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfA.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfA.Caption = "دفعة الامانات";
+            this.colDofatSarfA.FieldName = "DofatSarfA";
+            this.colDofatSarfA.Name = "colDofatSarfA";
+            this.colDofatSarfA.Visible = true;
+            this.colDofatSarfA.VisibleIndex = 4;
             // 
             // colSyndicate
             // 
@@ -321,6 +323,8 @@
             this.colSelected.Caption = "اختر";
             this.colSelected.FieldName = "Selected";
             this.colSelected.Name = "colSelected";
+            this.colSelected.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Selected", "{0}")});
             this.colSelected.Visible = true;
             this.colSelected.VisibleIndex = 0;
             // 
@@ -359,6 +363,27 @@
             this.colRealName.Name = "colRealName";
             this.colRealName.Visible = true;
             this.colRealName.VisibleIndex = 15;
+            // 
+            // colDofatSarfAId
+            // 
+            this.colDofatSarfAId.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfAId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfAId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId.Caption = "كود الدفعة";
+            this.colDofatSarfAId.FieldName = "DofatSarfAId";
+            this.colDofatSarfAId.Name = "colDofatSarfAId";
+            this.colDofatSarfAId.Visible = true;
+            this.colDofatSarfAId.VisibleIndex = 3;
+            // 
+            // colDofatSarf_SarfIn
+            // 
+            this.colDofatSarf_SarfIn.Caption = "تصرف في دفعة";
+            this.colDofatSarf_SarfIn.FieldName = "DofatSarf_SarfIn";
+            this.colDofatSarf_SarfIn.Name = "colDofatSarf_SarfIn";
+            this.colDofatSarf_SarfIn.Visible = true;
+            this.colDofatSarf_SarfIn.VisibleIndex = 16;
+            this.colDofatSarf_SarfIn.Width = 90;
             // 
             // layoutControlGroup1
             // 
@@ -431,18 +456,6 @@
             // 
             this.rep25_ATableAdapter.ClearBeforeFill = true;
             // 
-            // colDofatSarfAId
-            // 
-            this.colDofatSarfAId.AppearanceCell.Options.UseTextOptions = true;
-            this.colDofatSarfAId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarfAId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDofatSarfAId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarfAId.Caption = "كود الدفعة";
-            this.colDofatSarfAId.FieldName = "DofatSarfAId";
-            this.colDofatSarfAId.Name = "colDofatSarfAId";
-            this.colDofatSarfAId.Visible = true;
-            this.colDofatSarfAId.VisibleIndex = 3;
-            // 
             // TblWarasaAmanatPrintFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,7 +504,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colestktaa;
         private DevExpress.XtraGrid.Columns.GridColumn colmostahek;
         private DevExpress.XtraGrid.Columns.GridColumn colsefa;
-        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfA;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn coldatein;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditYMD;
@@ -504,5 +517,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnewid;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName;
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfAId;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_SarfIn;
     }
 }

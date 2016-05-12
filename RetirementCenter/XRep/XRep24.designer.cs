@@ -203,7 +203,7 @@
             // xrTableCell14
             // 
             this.xrTableCell14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep24_A.DofatSarf")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Rep24_A.DofatSarfA")});
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.Text = "xrTableCell14";
             this.xrTableCell14.Weight = 0.36033178408570254D;

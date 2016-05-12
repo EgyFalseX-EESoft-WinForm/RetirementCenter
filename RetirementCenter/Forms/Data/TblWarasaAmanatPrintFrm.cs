@@ -50,7 +50,7 @@ namespace RetirementCenter.Forms.Data
                     rowPrint.mostahek = row.mostahek;
                 if (!row.IsNull("sefa"))
                     rowPrint.sefa = row.sefa;
-                rowPrint.DofatSarf = row.DofatSarf;
+                rowPrint.DofatSarfA = row.DofatSarfA;
                 rowPrint.Syndicate = row.Syndicate;
                 rowPrint.datein = row.datein;
                 rowPrint.sarfnumber = row.sarfnumber;

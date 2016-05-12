@@ -1269,6 +1269,7 @@
             this.repositoryItemDateEditResarfDMY.EditFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditResarfDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditResarfDMY.Mask.EditMask = "dd/MM/yyyy";
+            this.repositoryItemDateEditResarfDMY.MinValue = new System.DateTime(2000, 1, 1, 22, 29, 0, 0);
             this.repositoryItemDateEditResarfDMY.Name = "repositoryItemDateEditResarfDMY";
             this.repositoryItemDateEditResarfDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});

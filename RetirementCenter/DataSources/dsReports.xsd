@@ -1383,13 +1383,14 @@ GROUP BY TBLWarasaSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasaSarf
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CAST(0 AS bit) AS Selected, TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfAId, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, TblMemberAmanat.estktaa, 
-                         TblMemberAmanat.mostahek, TblMemberAmanat.sefa, TBLDofatSarf.DofatSarf, CDSyndicate.Syndicate, TblMemberAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
-                         TblMemberAmanat.amanatmony - TblMemberAmanat.estktaa AS Total, TblMemberAmanat.sarfcheek, Users.RealName
+                         TblMemberAmanat.mostahek, TblMemberAmanat.sefa, CDSyndicate.Syndicate, TblMemberAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
+                         TblMemberAmanat.amanatmony - TblMemberAmanat.estktaa AS Total, TblMemberAmanat.sarfcheek, Users.RealName, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA
 FROM            TblMemberAmanat INNER JOIN
                          TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         TBLDofatSarf ON TblMemberAmanat.DofatSarfAId = TBLDofatSarf.DofatSarfId INNER JOIN
-                         Users ON TblMemberAmanat.userin = Users.UserID</CommandText>
+                         Users ON TblMemberAmanat.userin = Users.UserID LEFT OUTER JOIN
+                         CdDofaatAmanat ON TblMemberAmanat.DofatSarfAId = CdDofaatAmanat.DofatSarfAId LEFT OUTER JOIN
+                         TBLDofatSarf AS TBLDofatSarf_1 ON TblMemberAmanat.DofatSarfId = TBLDofatSarf_1.DofatSarfId</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1403,7 +1404,6 @@ FROM            TblMemberAmanat INNER JOIN
               <Mapping SourceColumn="estktaa" DataSetColumn="estktaa" />
               <Mapping SourceColumn="mostahek" DataSetColumn="mostahek" />
               <Mapping SourceColumn="sefa" DataSetColumn="sefa" />
-              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="datein" DataSetColumn="datein" />
               <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
@@ -1412,6 +1412,8 @@ FROM            TblMemberAmanat INNER JOIN
               <Mapping SourceColumn="Selected" DataSetColumn="Selected" />
               <Mapping SourceColumn="sarfcheek" DataSetColumn="sarfcheek" />
               <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="DofatSarf_SarfIn" DataSetColumn="DofatSarf_SarfIn" />
+              <Mapping SourceColumn="DofatSarfA" DataSetColumn="DofatSarfA" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1421,14 +1423,15 @@ FROM            TblMemberAmanat INNER JOIN
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CAST(0 AS bit) AS Selected, TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.estktaa, TblWarasaAmanat.mostahek, 
-                         TblWarasaAmanat.sefa, TBLDofatSarf.DofatSarf, CDSyndicate.Syndicate, TblWarasaAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
-                         TblWarasaAmanat.amanatmony - TblWarasaAmanat.estktaa AS Total, TblWarasaAmanat.sarfcheek, TBLWarasa.personName, Users.RealName, AwarasaNewId.newid
+                         TblWarasaAmanat.sefa, CDSyndicate.Syndicate, TblWarasaAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, TblWarasaAmanat.amanatmony - TblWarasaAmanat.estktaa AS Total, 
+                         TblWarasaAmanat.sarfcheek, TBLWarasa.personName, Users.RealName, AwarasaNewId.newid, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
                          CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
                          TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         TBLDofatSarf ON TblWarasaAmanat.DofatSarfAId = TBLDofatSarf.DofatSarfId INNER JOIN
                          Users ON TblWarasaAmanat.userin = Users.UserID LEFT OUTER JOIN
+                         CdDofaatAmanat ON TblWarasaAmanat.DofatSarfAId = CdDofaatAmanat.DofatSarfAId LEFT OUTER JOIN
+                         TBLDofatSarf AS TBLDofatSarf_1 ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf_1.DofatSarfId LEFT OUTER JOIN
                          AwarasaNewId ON TblWarasaAmanat.PersonId = AwarasaNewId.personid</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1444,7 +1447,6 @@ FROM            TblWarasaAmanat INNER JOIN
               <Mapping SourceColumn="estktaa" DataSetColumn="estktaa" />
               <Mapping SourceColumn="mostahek" DataSetColumn="mostahek" />
               <Mapping SourceColumn="sefa" DataSetColumn="sefa" />
-              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
               <Mapping SourceColumn="datein" DataSetColumn="datein" />
               <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
@@ -1454,6 +1456,8 @@ FROM            TblWarasaAmanat INNER JOIN
               <Mapping SourceColumn="personName" DataSetColumn="personName" />
               <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
               <Mapping SourceColumn="newid" DataSetColumn="newid" />
+              <Mapping SourceColumn="DofatSarf_SarfIn" DataSetColumn="DofatSarf_SarfIn" />
+              <Mapping SourceColumn="DofatSarfA" DataSetColumn="DofatSarfA" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2570,13 +2574,6 @@ WHERE        (DofatSarfId = @DofatSarfId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DofatSarf" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2597,6 +2594,20 @@ WHERE        (DofatSarfId = @DofatSarfId)</CommandText>
               <xs:element name="Selected" msprop:Generator_ColumnVarNameInTable="columnSelected" msprop:Generator_ColumnPropNameInRow="Selected" msprop:Generator_ColumnPropNameInTable="SelectedColumn" msprop:Generator_UserColumnName="Selected" type="xs:boolean" minOccurs="0" />
               <xs:element name="sarfcheek" msprop:Generator_ColumnVarNameInTable="columnsarfcheek" msprop:Generator_ColumnPropNameInRow="sarfcheek" msprop:Generator_ColumnPropNameInTable="sarfcheekColumn" msprop:Generator_UserColumnName="sarfcheek" type="xs:boolean" minOccurs="0" />
               <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarf_SarfIn" msprop:Generator_ColumnVarNameInTable="columnDofatSarf_SarfIn" msprop:Generator_ColumnPropNameInRow="DofatSarf_SarfIn" msprop:Generator_ColumnPropNameInTable="DofatSarf_SarfInColumn" msprop:Generator_UserColumnName="DofatSarf_SarfIn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarfA" msprop:Generator_ColumnVarNameInTable="columnDofatSarfA" msprop:Generator_ColumnPropNameInRow="DofatSarfA" msprop:Generator_ColumnPropNameInTable="DofatSarfAColumn" msprop:Generator_UserColumnName="DofatSarfA" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -2635,13 +2646,6 @@ WHERE        (DofatSarfId = @DofatSarfId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DofatSarf" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2675,6 +2679,20 @@ WHERE        (DofatSarfId = @DofatSarfId)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="newid" msprop:Generator_ColumnVarNameInTable="columnnewid" msprop:Generator_ColumnPropNameInRow="newid" msprop:Generator_ColumnPropNameInTable="newidColumn" msprop:Generator_UserColumnName="newid" type="xs:int" minOccurs="0" />
+              <xs:element name="DofatSarf_SarfIn" msprop:Generator_ColumnVarNameInTable="columnDofatSarf_SarfIn" msprop:Generator_ColumnPropNameInRow="DofatSarf_SarfIn" msprop:Generator_ColumnPropNameInTable="DofatSarf_SarfInColumn" msprop:Generator_UserColumnName="DofatSarf_SarfIn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarfA" msprop:Generator_ColumnVarNameInTable="columnDofatSarfA" msprop:Generator_ColumnPropNameInRow="DofatSarfA" msprop:Generator_ColumnPropNameInTable="DofatSarfAColumn" msprop:Generator_UserColumnName="DofatSarfA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

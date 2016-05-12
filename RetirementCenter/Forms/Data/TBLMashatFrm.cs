@@ -1029,6 +1029,18 @@ namespace RetirementCenter
             {
                 
                 tBLReSarfBindingSource.EndEdit();
+                if (row.datefrom >= row.dateto)
+                {
+                    Program.ShowMsg("تاريخ بداية المدة يجب ان يكون اصغر من تاريخ نهاية المدة", true, this, true);
+                    return;
+                }
+                double days = row.dateto.Subtract(row.datefrom).TotalDays;
+                if (days < 30 || days > 470)
+                {
+                    Program.ShowMsg("الفرق ما بين تاريخ البداية و النهاية يجب ان يكون ما بين 30 و 470 يوم", true, this, true);
+                    return;
+                }
+
                 tBLReSarfTableAdapter.Update(row);
                 Program.ShowMsg("تم تعديل بيانات اعادة الصرف", false, this, true);
                 Program.Logger.LogThis("تم اضافة بيانات اعادة الصرف", Text, FXFW.Logger.OpType.success, null, null, this);

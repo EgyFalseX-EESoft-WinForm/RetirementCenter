@@ -138,6 +138,12 @@ namespace RetirementCenter
                     pramsarffeatype.Value = (int)Misc.Types.CDsarfType.Armala;
                 else if (Convert.ToInt32(row["countwife"]) > 0 && Convert.ToInt32(row["countson"]) > 0)
                     pramsarffeatype.Value = (int)Misc.Types.CDsarfType.Armala_Abnaa;
+                else
+                {
+                    msgDlg.Show("العضو " + Environment.NewLine + row[0] + Environment.NewLine + "لا يوجد له زوجات و لا اولاد", msgDlg.msgButtons.Close);
+                    //continue;
+                    pramsarffeatype.Value = 99;
+                }
                 cmdUpdate.ExecuteNonQuery();
                 Application.DoEvents();
             }
