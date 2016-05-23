@@ -89,10 +89,13 @@ namespace RetirementCenter
         {
             tbamanatmony.EditValue = 0;
             tbestktaa.EditValue = 0;
-            DataSources.dsRetirementCenter.tblmemberbankDataTable tbl = adpBank.GetDataByID(Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
-            if (tbl.Rows.Count == 0)
+            //DataSources.dsRetirementCenter.tblmemberbankDataTable tbl = adpBank.GetDataByID(Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            //if (tbl.Rows.Count == 0)
+            //    return;
+            RetirementCenter.Forms.Data.TblMemberAmanatWGridFrm dlg = new Forms.Data.TblMemberAmanatWGridFrm(Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
-            tbamanatmony.EditValue = tbl[0].amanatmony;
+            tbamanatmony.EditValue = dlg.Amount;
             tbestktaa.EditValue = 0;
             tbsefa.EditValue = "الغضو";
         }

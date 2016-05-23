@@ -79,10 +79,13 @@ namespace RetirementCenter
         {
             tbamanatmony.EditValue = 0;
             tbestktaa.EditValue = 0;
-            double? money = Convert.ToDouble(adpBank.GetSummonyByID(Convert.ToInt32(lueDofatSarfAId.EditValue), Convert.ToInt32(luePersonId.EditValue)));
-            if (money == null)
+            //double? money = Convert.ToDouble(adpBank.GetSummonyByID(Convert.ToInt32(lueDofatSarfAId.EditValue), Convert.ToInt32(luePersonId.EditValue)));
+            //if (money == null)
+            //    return;
+            RetirementCenter.Forms.Data.TblWarasaAmanatWGridFrm dlg = new Forms.Data.TblWarasaAmanatWGridFrm(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
-            tbamanatmony.EditValue = money;
+            tbamanatmony.EditValue = dlg.Amount;
             tbestktaa.EditValue = 0;
             tbsefa.EditValue = "العضو";
         }
@@ -160,19 +163,21 @@ namespace RetirementCenter
             tbsefa.Properties.ReadOnly = ceamantvisa.Checked;
             if (ceamantvisa.Checked)
             {
-                LSMSTBLWarasa.KeyExpression = "AutoId";
+                LSMSTBLWarasa.KeyExpression = "";
                 this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
                 LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
                 luePersonId.Properties.ValueMember = "responsiblesarfId";
+                LSMSTBLWarasa.KeyExpression = "AutoId";
                 
                 //FillFromWarasaBank();
             }
             else
             {
-                LSMSTBLWarasa.KeyExpression = "PersonId";
+                LSMSTBLWarasa.KeyExpression = "";
                 this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
                 LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
                 luePersonId.Properties.ValueMember = "PersonId";
+                LSMSTBLWarasa.KeyExpression = "PersonId";
             }
 
         }
