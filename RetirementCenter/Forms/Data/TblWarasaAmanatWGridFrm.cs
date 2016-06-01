@@ -16,11 +16,16 @@ namespace RetirementCenter.Forms.Data
         {
             InitializeComponent();
             this.tblWarasabankTableAdapter.GetBy_visa_Dof(this.dsRetirementCenter.tblWarasabank, DofatSarfAId, PersonId);
+            
         }
 
         private void TblMemberAmanatWGridFrm_Load(object sender, EventArgs e)
         {
-            
+            if (dsRetirementCenter.tblWarasabank.Count == 0)
+            {
+                DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

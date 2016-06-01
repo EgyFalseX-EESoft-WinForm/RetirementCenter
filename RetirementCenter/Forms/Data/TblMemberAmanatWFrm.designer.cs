@@ -324,7 +324,6 @@
             this.lueDofatSarfId.Properties.View = this.gridView2;
             this.lueDofatSarfId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfId.TabIndex = 8;
-            this.lueDofatSarfId.EditValueChanged += new System.EventHandler(this.lueDofatSarfAId_EditValueChanged);
             // 
             // LSMSDofatSarfId
             // 

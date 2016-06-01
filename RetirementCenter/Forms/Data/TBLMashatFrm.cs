@@ -210,6 +210,7 @@ namespace RetirementCenter
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
+            e.SetAttachedProperty("auto", null); e.SetAttachedProperty("SyndicateId", null); e.SetAttachedProperty("SubCommitteId", null); WSyn_Default = 0; WSub_Default = 0;
             
             if (LUEEmp.EditValue == null)
             {

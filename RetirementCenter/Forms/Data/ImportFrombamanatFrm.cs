@@ -111,10 +111,11 @@ namespace RetirementCenter
                     return;
                 ///////////////
                 string msg = string.Empty;
-                int update3Result = adpSql.Update3(deGetback.DateTime, Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
-                msg += "تم تحديث " + update3Result + " من جدول tblmemberbank";
-                int update4Result = adpSql.Update4(Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
-                msg += Environment.NewLine + "تم تحديث " + update4Result + " لحقل okok ";
+                int update3Result = adpSql.Update3(Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
+                msg += Environment.NewLine + "تم تحديث " + update3Result + " لحقل okok ";
+                int update4Result = adpSql.Update4(deGetback.DateTime, Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
+                msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
+                
                 int update5Result = adpSql.Update5();
                 msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
                 int insert1Result = adpSql.Insert1(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId));

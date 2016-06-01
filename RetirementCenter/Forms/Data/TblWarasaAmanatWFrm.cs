@@ -48,9 +48,9 @@ namespace RetirementCenter
             }
             if (!_row.IsNull("PersonId"))
             {
-                IsBinding = true;
+                //IsBinding = true;
                 luePersonId.EditValue = _row.PersonId;
-                IsBinding = false;
+                //IsBinding = false;
             }
             if (!_row.IsNull("amanatmony"))
                 tbamanatmony.EditValue = _row.amanatmony;
@@ -91,6 +91,7 @@ namespace RetirementCenter
         }
         private void FormWFrm_Load(object sender, EventArgs e)
         {
+            IsBinding = true;
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
@@ -99,10 +100,17 @@ namespace RetirementCenter
             if (_row.RowState != DataRowState.Detached)
             { }
             LoadBinding();
+
+            IsBinding = false;
         }
         
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty)
+            {
+                msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
+                return;
+            }
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
             if (lueDofatSarfAId.EditValue != null)
@@ -132,6 +140,8 @@ namespace RetirementCenter
         }
         private void luePersonId_EditValueChanged(object sender, EventArgs e)
         {
+            if (IsBinding)
+                return;
             if (luePersonId.EditValue != null)
             {
                 object obj = luePersonId.GetSelectedDataRow();
@@ -150,6 +160,8 @@ namespace RetirementCenter
         }
         private void lueDofatSarfAId_EditValueChanged(object sender, EventArgs e)
         {
+            if (IsBinding)
+                return;
             if (ceamantvisa.Checked && lueDofatSarfAId.EditValue != null && luePersonId.EditValue != null && lueDofatSarfAId.EditValue.ToString() != string.Empty && luePersonId.EditValue.ToString() != string.Empty)
             {
                 FillFromWarasaBank();
@@ -164,7 +176,7 @@ namespace RetirementCenter
             if (ceamantvisa.Checked)
             {
                 LSMSTBLWarasa.KeyExpression = "";
-                this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
+                this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2);
                 LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
                 luePersonId.Properties.ValueMember = "responsiblesarfId";
                 LSMSTBLWarasa.KeyExpression = "AutoId";

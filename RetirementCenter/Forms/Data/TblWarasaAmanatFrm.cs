@@ -112,7 +112,7 @@ namespace RetirementCenter
                 return;
             try
             {
-                if (row.accReview)
+                if (!row.IsaccReviewNull() && row.accReview)
                 {
                     Program.ShowMsg("لا يمكن حذف عنصر تم مراجعتة", true, this);
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
@@ -168,6 +168,10 @@ namespace RetirementCenter
             }
             catch (Exception ex)
             {
+                if (ex.Message.Contains("is already present."))
+                {
+                    Program.ShowMsg("لم نتمكن من الحفظ ... موجود مسبقا", true, this, true);
+                }
                 Program.ShowMsg(Misc.Misc.ExceptionMessage(ex), true, this);
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, ex, null, this);
             }

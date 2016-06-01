@@ -17,10 +17,16 @@ namespace RetirementCenter.Forms.Data
             InitializeComponent();
             // TODO: This line of code loads data into the 'dsRetirementCenter.tblmemberbank' table. You can move, or remove it, as needed.
             this.tblmemberbankTableAdapter.FillByID(this.dsRetirementCenter.tblmemberbank, MMashatId, DofatSarfAId);
+            
         }
 
         private void TblMemberAmanatWGridFrm_Load(object sender, EventArgs e)
         {
+            if (dsRetirementCenter.tblmemberbank.Count == 0)
+            {
+                DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

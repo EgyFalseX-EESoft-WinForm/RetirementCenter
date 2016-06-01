@@ -30,37 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.tblmemberbankBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblmemberbankTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
+            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colvisanumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsummony = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colsendbankdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEditYMD = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colamanatmony = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colamanatwareddate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tblmemberbankTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAccept = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnAccept = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.repositoryItemDateEditYMD = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblmemberbankBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.VistaTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
@@ -77,6 +77,16 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // tblmemberbankBindingSource
+            // 
+            this.tblmemberbankBindingSource.DataMember = "tblmemberbank";
+            this.tblmemberbankBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // dsRetirementCenter
+            // 
+            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
+            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -88,20 +98,6 @@
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsBehavior.Editable = false;
-            // 
-            // dsRetirementCenter
-            // 
-            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblmemberbankBindingSource
-            // 
-            this.tblmemberbankBindingSource.DataMember = "tblmemberbank";
-            this.tblmemberbankBindingSource.DataSource = this.dsRetirementCenter;
-            // 
-            // tblmemberbankTableAdapter
-            // 
-            this.tblmemberbankTableAdapter.ClearBeforeFill = true;
             // 
             // colvisanumber
             // 
@@ -128,6 +124,17 @@
             this.colsummony.Visible = true;
             this.colsummony.VisibleIndex = 1;
             // 
+            // repositoryItemTextEditn2
+            // 
+            this.repositoryItemTextEditn2.AutoHeight = false;
+            this.repositoryItemTextEditn2.DisplayFormat.FormatString = "n2";
+            this.repositoryItemTextEditn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditn2.EditFormat.FormatString = "n2";
+            this.repositoryItemTextEditn2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditn2.Mask.EditMask = "n2";
+            this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
+            // 
             // colsendbankdate
             // 
             this.colsendbankdate.AppearanceCell.Options.UseTextOptions = true;
@@ -140,6 +147,20 @@
             this.colsendbankdate.Name = "colsendbankdate";
             this.colsendbankdate.Visible = true;
             this.colsendbankdate.VisibleIndex = 2;
+            // 
+            // repositoryItemDateEditYMD
+            // 
+            this.repositoryItemDateEditYMD.AutoHeight = false;
+            this.repositoryItemDateEditYMD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditYMD.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.repositoryItemDateEditYMD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditYMD.EditFormat.FormatString = "yyyy-MM-dd";
+            this.repositoryItemDateEditYMD.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEditYMD.Mask.EditMask = "yyyy-MM-dd";
+            this.repositoryItemDateEditYMD.Name = "repositoryItemDateEditYMD";
+            this.repositoryItemDateEditYMD.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // colamanatmony
             // 
@@ -167,6 +188,10 @@
             this.colamanatwareddate.Visible = true;
             this.colamanatwareddate.VisibleIndex = 4;
             // 
+            // tblmemberbankTableAdapter
+            // 
+            this.tblmemberbankTableAdapter.ClearBeforeFill = true;
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnCancel);
@@ -180,6 +205,29 @@
             this.layoutControl1.Size = new System.Drawing.Size(708, 269);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Image = global::RetirementCenter.Properties.Resources.cancel_16x16;
+            this.btnCancel.Location = new System.Drawing.Point(493, 235);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(203, 22);
+            this.btnCancel.StyleController = this.layoutControl1;
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "الغاء";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Image = global::RetirementCenter.Properties.Resources.save_16x16;
+            this.btnAccept.Location = new System.Drawing.Point(12, 235);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(477, 22);
+            this.btnAccept.StyleController = this.layoutControl1;
+            this.btnAccept.TabIndex = 4;
+            this.btnAccept.Text = "موافق";
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // layoutControlGroup1
             // 
@@ -208,17 +256,6 @@
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
-            // btnAccept
-            // 
-            this.btnAccept.Image = global::RetirementCenter.Properties.Resources.save_16x16;
-            this.btnAccept.Location = new System.Drawing.Point(12, 235);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(477, 22);
-            this.btnAccept.StyleController = this.layoutControl1;
-            this.btnAccept.TabIndex = 4;
-            this.btnAccept.Text = "موافق";
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnAccept;
@@ -230,18 +267,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Image = global::RetirementCenter.Properties.Resources.cancel_16x16;
-            this.btnCancel.Location = new System.Drawing.Point(493, 235);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(203, 22);
-            this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "الغاء";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // layoutControlItem3
             // 
@@ -255,31 +280,6 @@
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
-            // repositoryItemTextEditn2
-            // 
-            this.repositoryItemTextEditn2.AutoHeight = false;
-            this.repositoryItemTextEditn2.DisplayFormat.FormatString = "n2";
-            this.repositoryItemTextEditn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEditn2.EditFormat.FormatString = "n2";
-            this.repositoryItemTextEditn2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEditn2.Mask.EditMask = "n2";
-            this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
-            // 
-            // repositoryItemDateEditYMD
-            // 
-            this.repositoryItemDateEditYMD.AutoHeight = false;
-            this.repositoryItemDateEditYMD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEditYMD.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.repositoryItemDateEditYMD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditYMD.EditFormat.FormatString = "yyyy-MM-dd";
-            this.repositoryItemDateEditYMD.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditYMD.Mask.EditMask = "yyyy-MM-dd";
-            this.repositoryItemDateEditYMD.Name = "repositoryItemDateEditYMD";
-            this.repositoryItemDateEditYMD.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
             // TblMemberAmanatWGridFrm
             // 
             this.AcceptButton = this.btnAccept;
@@ -292,18 +292,18 @@
             this.Text = "اختر القيمه";
             this.Load += new System.EventHandler(this.TblMemberAmanatWGridFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblmemberbankBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).EndInit();
             this.ResumeLayout(false);
 
         }

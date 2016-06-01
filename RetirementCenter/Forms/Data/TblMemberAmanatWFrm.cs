@@ -42,9 +42,9 @@ namespace RetirementCenter
             }
             if (!_row.IsNull("MMashatId"))
             {
-                IsBinding = true;
+                //IsBinding = true;
                 lueMMashatId.EditValue = _row.MMashatId;
-                IsBinding = false;
+                //IsBinding = false;
             }
             if (!_row.IsNull("amanatmony"))
                 tbamanatmony.EditValue = _row.amanatmony;
@@ -87,6 +87,8 @@ namespace RetirementCenter
         }
         private void FillFromMemberBank()
         {
+            if (IsBinding)
+                return;
             tbamanatmony.EditValue = 0;
             tbestktaa.EditValue = 0;
             //DataSources.dsRetirementCenter.tblmemberbankDataTable tbl = adpBank.GetDataByID(Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
@@ -101,6 +103,7 @@ namespace RetirementCenter
         }
         private void FormWFrm_Load(object sender, EventArgs e)
         {
+            IsBinding = true;
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
@@ -112,10 +115,18 @@ namespace RetirementCenter
             }
             FillMemberData();
             LoadBinding();
+            IsBinding = false;
+            //lueMMashatId.EditValueChanged += lueMMashatId_EditValueChanged;
+            //lueDofatSarfAId.EditValueChanged += lueDofatSarfAId_EditValueChanged;
         }
         
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty)
+            {
+                msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
+                return;
+            }
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
             if (lueDofatSarfAId.EditValue != null)
@@ -155,6 +166,7 @@ namespace RetirementCenter
             {
                 FillFromMemberBank();
             }
+
         }
         private void lueDofatSarfAId_EditValueChanged(object sender, EventArgs e)
         {

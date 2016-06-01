@@ -9,13 +9,13 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace RetirementCenter
 {
-    public partial class TblMemberAmanatAccFrm : XtraForm
+    public partial class TblWarasaAmanatCheekFrm : XtraForm
     {
         bool _Insert, _Update, _Delete;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         
         #region -   Functions   -
-        public TblMemberAmanatAccFrm()
+        public TblWarasaAmanatCheekFrm()
         {
             InitializeComponent();
         }
@@ -62,11 +62,11 @@ namespace RetirementCenter
         {
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;
+            LSMSTBLWarasa.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
-            // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberAmanat' table. You can move, or remove it, as needed.
-            this.tblMemberAmanatTableAdapter.FillByMoreInfo(this.dsRetirementCenter.TblMemberAmanat);
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TblWarasaAmanat' table. You can move, or remove it, as needed.
+            this.tblWarasaAmanatTableAdapter.FillByCheek(this.dsRetirementCenter.TblWarasaAmanat);
             ActivePriv();
         }
         private void gridViewData_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
@@ -90,8 +90,8 @@ namespace RetirementCenter
         private void repositoryItemButtonEditSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             GridView GV = (GridView)gridControlData.MainView;
-            DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            row.useracc = Program.UserInfo.UserId;
+            DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)GV.GetFocusedDataRow();
+            //row.useracc = Program.UserInfo.UserId
             row.EndEdit();
             if (row["cheekno", DataRowVersion.Original] != row["cheekno", DataRowVersion.Current])
             {
@@ -104,14 +104,14 @@ namespace RetirementCenter
                 row.datincheek = SQLProvider.ServerDateTime();
             }
             row.EndEdit();
-            tblMemberAmanatTableAdapter.Update(row);
+            tblWarasaAmanatTableAdapter.Update(row);
             msgDlg.Show("تم حفظ التعديل", msgDlg.msgButtons.Close);
             
         }
         private void gridViewData_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
         {
             GridView view = sender as GridView;
-            DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)view.GetFocusedDataRow();
+            DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)view.GetFocusedDataRow();
             if (row == null)
                 return;
 

@@ -325,6 +325,18 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatCheekFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatCheekFrm.designer.cs">
+      <DependentUpon>TblWarasaAmanatCheekFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatCheekFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatCheekFrm.designer.cs">
+      <DependentUpon>TblMemberAmanatCheekFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TblWarasaAmanatWGridFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -696,6 +708,18 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry94Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry94Frm.designer.cs">
+      <DependentUpon>Qry94Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry93Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry93Frm.designer.cs">
+      <DependentUpon>Qry93Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry28aFrm.cs">
       <SubType>Form</SubType>
@@ -1445,6 +1469,12 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep16A.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep16A.designer.cs">
+      <DependentUpon>XRep16A.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep27.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1678,6 +1708,12 @@
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatCheekFrm.resx">
+      <DependentUpon>TblWarasaAmanatCheekFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblMemberAmanatCheekFrm.resx">
+      <DependentUpon>TblMemberAmanatCheekFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblWarasaAmanatWGridFrm.resx">
       <DependentUpon>TblWarasaAmanatWGridFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1866,6 +1902,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry94Frm.resx">
+      <DependentUpon>Qry94Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry93Frm.resx">
+      <DependentUpon>Qry93Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry28aFrm.resx">
       <DependentUpon>Qry28aFrm.cs</DependentUpon>
@@ -2185,6 +2227,9 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep16A.resx">
+      <DependentUpon>XRep16A.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep27.resx">
       <DependentUpon>XRep27.cs</DependentUpon>
     </EmbeddedResource>

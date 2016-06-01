@@ -9,13 +9,13 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace RetirementCenter
 {
-    public partial class TblMemberAmanatAccFrm : XtraForm
+    public partial class TblMemberAmanatCheekFrm : XtraForm
     {
         bool _Insert, _Update, _Delete;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         
         #region -   Functions   -
-        public TblMemberAmanatAccFrm()
+        public TblMemberAmanatCheekFrm()
         {
             InitializeComponent();
         }
@@ -66,7 +66,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberAmanat' table. You can move, or remove it, as needed.
-            this.tblMemberAmanatTableAdapter.FillByMoreInfo(this.dsRetirementCenter.TblMemberAmanat);
+            this.tblMemberAmanatTableAdapter.FillByCheek(this.dsRetirementCenter.TblMemberAmanat);
             ActivePriv();
         }
         private void gridViewData_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
@@ -91,7 +91,7 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            row.useracc = Program.UserInfo.UserId;
+            //row.useracc = Program.UserInfo.UserId;
             row.EndEdit();
             if (row["cheekno", DataRowVersion.Original] != row["cheekno", DataRowVersion.Current])
             {

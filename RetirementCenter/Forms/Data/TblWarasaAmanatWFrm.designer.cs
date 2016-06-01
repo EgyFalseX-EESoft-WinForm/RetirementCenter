@@ -52,6 +52,7 @@
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpersonName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueDofatSarfAId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -71,7 +72,6 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -376,6 +376,14 @@
             this.colpersonName.Visible = true;
             this.colpersonName.VisibleIndex = 0;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "كود60";
+            this.gridColumn3.FieldName = "CODE60";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
+            // 
             // lueDofatSarfAId
             // 
             this.lueDofatSarfAId.EditValue = "";
@@ -566,14 +574,6 @@
             // cdDofaatAmanatTableAdapter
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "كود60";
-            this.gridColumn3.FieldName = "CODE60";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
             // 
             // TblWarasaAmanatWFrm
             // 

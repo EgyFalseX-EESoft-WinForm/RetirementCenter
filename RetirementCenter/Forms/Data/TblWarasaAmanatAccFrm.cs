@@ -93,11 +93,34 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)GV.GetFocusedDataRow();
             row.useracc = Program.UserInfo.UserId;
             row.EndEdit();
+            if (row["cheekno", DataRowVersion.Original] != row["cheekno", DataRowVersion.Current])
+            {
+                if (!row.IstasleemdateNull())
+                {
+                    msgDlg.Show("لا يمكن تعديل رقم الشيك لهذا الحقل ذلك للاعتبارات التالية" + Environment.NewLine + "تم التسليم", msgDlg.msgButtons.Close);
+                    return;
+                }
+                row.userincheek = Program.UserInfo.UserId;
+                row.datincheek = SQLProvider.ServerDateTime();
+            }
+            row.EndEdit();
             tblWarasaAmanatTableAdapter.Update(row);
             msgDlg.Show("تم حفظ التعديل", msgDlg.msgButtons.Close);
             
         }
+        private void gridViewData_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridView view = sender as GridView;
+            DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)view.GetFocusedDataRow();
+            if (row == null)
+                return;
+
+            if (view.FocusedColumn.FieldName == "cheekno" && !row.sarfcheek)
+                e.Cancel = true;
+        }
         #endregion
+
+        
 
     }
 }
