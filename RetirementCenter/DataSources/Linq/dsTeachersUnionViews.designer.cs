@@ -27829,6 +27829,8 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _visa;
 		
+		private System.Nullable<bool> _amanatvisa;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -27883,6 +27885,8 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnActivateChanged();
     partial void OnvisaChanging(string value);
     partial void OnvisaChanged();
+    partial void OnamanatvisaChanging(System.Nullable<bool> value);
+    partial void OnamanatvisaChanged();
     #endregion
 		
 		public vQry27()
@@ -28390,6 +28394,26 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amanatvisa", DbType="Bit")]
+		public System.Nullable<bool> amanatvisa
+		{
+			get
+			{
+				return this._amanatvisa;
+			}
+			set
+			{
+				if ((this._amanatvisa != value))
+				{
+					this.OnamanatvisaChanging(value);
+					this.SendPropertyChanging();
+					this._amanatvisa = value;
+					this.SendPropertyChanged("amanatvisa");
+					this.OnamanatvisaChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -28479,6 +28503,8 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _visa;
 		
+		private System.Nullable<bool> _amanatvisa;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -28545,6 +28571,8 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnnewidChanged();
     partial void OnvisaChanging(string value);
     partial void OnvisaChanged();
+    partial void OnamanatvisaChanging(System.Nullable<bool> value);
+    partial void OnamanatvisaChanged();
     #endregion
 		
 		public vQry28()
@@ -29168,6 +29196,26 @@ namespace RetirementCenter.DataSources.Linq
 					this._visa = value;
 					this.SendPropertyChanged("visa");
 					this.OnvisaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amanatvisa", DbType="Bit")]
+		public System.Nullable<bool> amanatvisa
+		{
+			get
+			{
+				return this._amanatvisa;
+			}
+			set
+			{
+				if ((this._amanatvisa != value))
+				{
+					this.OnamanatvisaChanging(value);
+					this.SendPropertyChanging();
+					this._amanatvisa = value;
+					this.SendPropertyChanged("amanatvisa");
+					this.OnamanatvisaChanged();
 				}
 			}
 		}

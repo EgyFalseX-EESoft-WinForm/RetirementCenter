@@ -88,7 +88,7 @@
         <classShapeMoniker Id="c0f5cfcc-daf8-406e-89b2-ad1283f8d60d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.53125 : 5.3862939453125); (3.53125 : 19.8235358299967); (3.52083333333333 : 19.8235358299967 : JumpStart); (3.35416666666667 : 19.8235358299967 : JumpEnd); (3.25 : 19.8235358299967)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.53125 : 5.3862939453125); (3.53125 : 19.8235358299967); (3.25 : 19.8235358299967)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/CDMashHala/CDMashHala_TBLMashat" />
       <nodes>
         <classShapeMoniker Id="19709f8c-b097-4dbe-a1ed-416726572101" />
@@ -102,7 +102,7 @@
         <classShapeMoniker Id="5dc21d7f-2def-4cf0-9782-381bbb1c4a26" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.84375 : 12.8381982421875); (7.84375 : 21.1640852635905); (6.17708333333333 : 21.1640852635905 : JumpStart); (6.01041666666667 : 21.1640852635905 : JumpEnd); (3.25 : 21.1640852635905)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.84375 : 12.8381982421875); (7.84375 : 21.1640852635905); (6.91146083333333 : 21.1640852635905 : JumpStart); (6.74479416666667 : 21.1640852635905 : JumpEnd); (6.67708333333333 : 21.1640852635905 : JumpStart); (6.51041666666667 : 21.1640852635905 : JumpEnd); (3.25 : 21.1640852635905)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/User/User_TBLMashat" />
       <nodes>
         <classShapeMoniker Id="9a5cd784-9d23-48c3-92f4-607efe643562" />
@@ -115,14 +115,14 @@
         <elementListCompartment Id="69a34b0b-f784-420d-9a01-17769cf4d946" absoluteBounds="5.015, 15.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.375 : 10.3469962565104); (3.44791666666667 : 10.3469962565104 : JumpStart); (3.64583333333333 : 10.3469962565104 : JumpEnd); (3.75 : 10.3469962565104); (3.75 : 14.4439111328125); (6 : 14.4439111328125); (6 : 15.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.375 : 10.3469962565104); (3.38541666666667 : 10.3469962565104 : JumpStart); (3.55208333333333 : 10.3469962565104 : JumpEnd); (3.75 : 10.3469962565104); (3.75 : 14.4439111328125); (6 : 14.4439111328125); (6 : 15.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/CDWarasaType/CDWarasaType_TBLWarasa" />
       <nodes>
         <classShapeMoniker Id="1bb50ecf-590c-48d3-837c-24a7b88ea6fc" />
         <classShapeMoniker Id="df3964d4-cc88-4925-a5c5-1504f221731a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.25 : 18.2021348640951); (3.47916666666667 : 18.2021348640951 : JumpStart); (3.64583333333333 : 18.2021348640951 : JumpEnd); (5 : 18.2021348640951)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.25 : 18.2021348640951); (3.38541666666667 : 18.2021348640951 : JumpStart); (3.61458333333333 : 18.2021348640951 : JumpEnd); (5 : 18.2021348640951)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/TBLMashat/TBLMashat_TBLWarasa" />
       <nodes>
         <classShapeMoniker Id="5dc21d7f-2def-4cf0-9782-381bbb1c4a26" />
@@ -155,7 +155,7 @@
         <elementListCompartment Id="25bf16ae-9816-428e-98d0-3ca83dc49878" absoluteBounds="1.2650000000000001, 24.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.59375 : 18.9439111328125); (6.59375 : 25.037865600586); (6.17708333333333 : 25.037865600586 : JumpStart); (6.01041666666667 : 25.037865600586 : JumpEnd); (3.64583333333333 : 25.037865600586 : JumpStart); (3.47916666666667 : 25.037865600586 : JumpEnd); (3.25 : 25.037865600586)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(6.59375 : 18.9439111328125); (6.59375 : 25.037865600586); (3.64583333333333 : 25.037865600586 : JumpStart); (3.47916666666667 : 25.037865600586 : JumpEnd); (3.25 : 25.037865600586)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/TBLWarasa/TBLWarasa_TBLWarasaSarf" />
       <nodes>
         <classShapeMoniker Id="df3964d4-cc88-4925-a5c5-1504f221731a" />
@@ -568,14 +568,14 @@
         <elementListCompartment Id="bbd5c800-ae46-4f00-894c-94d4da96a930" absoluteBounds="8.515, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.40625 : 2.69399251302083); (10.40625 : 23.2796541341146); (6.17708333333333 : 23.2796541341146 : JumpStart); (6.01041666666667 : 23.2796541341146 : JumpEnd); (6 : 23.2796541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.40625 : 2.69399251302083); (10.40625 : 23.2796541341146); (6.91146083333333 : 23.2796541341146 : JumpStart); (6.74479416666667 : 23.2796541341146 : JumpEnd); (6.67708333333333 : 23.2796541341146 : JumpStart); (6.51041666666667 : 23.2796541341146 : JumpEnd); (6 : 23.2796541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/CDSarfTypeedad/CDSarfTypeedad_TBLMemberSarf" />
       <nodes>
         <classShapeMoniker Id="ee0eb8b1-dc84-4ce9-9f51-ae2bceaece39" />
         <classShapeMoniker Id="c85ab7a4-4ab2-4fe0-8317-7c58c2cb8c1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.3749975 : 2.69399251302083); (10.3749975 : 25.0132312011719); (6.91146083333333 : 25.0132312011719 : JumpStart); (6.74479416666667 : 25.0132312011719 : JumpEnd); (6.17708333333333 : 25.0132312011719 : JumpStart); (6.01041666666667 : 25.0132312011719 : JumpEnd); (3.25 : 25.0132312011719)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.3749975 : 2.69399251302083); (10.3749975 : 25.0132312011719); (6.91146083333333 : 25.0132312011719 : JumpStart); (6.74479416666667 : 25.0132312011719 : JumpEnd); (3.64583333333333 : 25.0132312011719 : JumpStart); (3.47916666666667 : 25.0132312011719 : JumpEnd); (3.25 : 25.0132312011719)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsTeachersUnionViewsDataContext/CDSarfTypeedad/CDSarfTypeedad_TBLWarasaSarf" />
       <nodes>
         <classShapeMoniker Id="ee0eb8b1-dc84-4ce9-9f51-ae2bceaece39" />
@@ -630,16 +630,16 @@
         <elementListCompartment Id="d57e183c-244e-47ae-af8d-070c2fc9eb4a" absoluteBounds="7.14, 108.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e6b3460c-ab56-42b3-bf0f-59750a290fd1" absoluteBounds="6.875, 54.125, 2, 5.6169254557291657">
+    <classShape Id="080220bf-57a7-4ee9-a666-047f4c9a5395" absoluteBounds="7.5, 54, 2, 5.8092268880208326">
       <DataClassMoniker Name="/dsTeachersUnionViewsDataContext/vQry27" />
       <nestedChildShapes>
-        <elementListCompartment Id="75735d5e-b576-4551-a474-45003ab68f3d" absoluteBounds="6.89, 54.585, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5f079f59-32f4-441e-ae3d-bffbb2a6400f" absoluteBounds="7.515, 54.46, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c27e5669-59c4-4a72-adae-487b72760213" absoluteBounds="1.5, 54.5, 2, 6.7707340494791657">
+    <classShape Id="25b902f2-85b2-478c-8e24-82eb09fb9434" absoluteBounds="1.25, 55.125, 2, 6.9630354817708326">
       <DataClassMoniker Name="/dsTeachersUnionViewsDataContext/vQry28" />
       <nestedChildShapes>
-        <elementListCompartment Id="ac140439-da11-43be-be1f-3facaea2232f" absoluteBounds="1.5150000000000001, 54.96, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="11f0eea5-2c6e-418f-a756-5169f1408756" absoluteBounds="1.2650000000000001, 55.585, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

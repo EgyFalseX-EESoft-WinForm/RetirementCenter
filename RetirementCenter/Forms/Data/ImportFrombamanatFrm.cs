@@ -19,6 +19,7 @@ namespace RetirementCenter
         public ImportFrombamanatFrm()
         {
             InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(adpSql, 0);
         }
         private void ActivePriv()
         {
@@ -30,6 +31,16 @@ namespace RetirementCenter
                 btnImport.Visible = true;
             else
                 btnImport.Visible = false;
+        }
+        private void ActivateControls(bool active)
+        {
+            this.Invoke(new MethodInvoker(() =>
+            {
+                btnImport.Enabled = active;
+                btnA3da2.Enabled = active;
+                btnWarasa.Enabled = active;
+            }));
+            
         }
         private void ImportFromWebFrm_Load(object sender, EventArgs e)
         {
@@ -54,10 +65,7 @@ namespace RetirementCenter
                 return;
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
-                btnImport.Invoke(new MethodInvoker(() =>
-                {
-                    btnImport.Enabled = false;
-                }));
+                ActivateControls(false);
 
                 adpAccess.Fill(dsbamanat.Sheet1);
                 adpSql.DeleteAll();
@@ -102,33 +110,70 @@ namespace RetirementCenter
                 {
                     pbc.EditValue = 0;
                 }));
-                if (msgDlg.Show("تم استيراد " + allImportedRow.ToString() + Environment.NewLine + "هل ترغب في الاستمرار؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-                    return;
-                int updatedMem = adpSql.Update1();
-                int updatedwar = adpSql.Update2();
-                int nullpantypeCount = (int)adpSql.GetNullpantypeCount();
-                if (msgDlg.Show("تم تحديث " + updatedMem + " عضو " + Environment.NewLine + "تم تحديث "  + updatedwar + " وريث " + Environment.NewLine + "هل ترغب في الاستمرار؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-                    return;
-                ///////////////
+                if (msgDlg.Show("تم استيراد " + allImportedRow.ToString() + Environment.NewLine + "هل ترغب في الاستمرار؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    int updatedMem = adpSql.Update1();
+                    int updatedwar = adpSql.Update2();
+                    int nullpantypeCount = (int)adpSql.GetNullpantypeCount();
+                    msgDlg.Show("تم تحديث " + updatedMem + " عضو " + Environment.NewLine + "تم تحديث " + updatedwar + " وريث ", msgDlg.msgButtons.Close);
+                }
+                ActivateControls(true);
+                
+            });
+
+        }
+
+        private void btnA3da2_Click(object sender, EventArgs e)
+        {
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                ActivateControls(false);
+
                 string msg = string.Empty;
                 int update3Result = adpSql.Update3(Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
                 msg += Environment.NewLine + "تم تحديث " + update3Result + " لحقل okok ";
                 int update4Result = adpSql.Update4(deGetback.DateTime, Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
                 msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
-                
+
                 int update5Result = adpSql.Update5();
                 msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
                 int insert1Result = adpSql.Insert1(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId));
                 msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول TBLNoSarfDetels";
 
+                ActivateControls(true);
+
+                msgDlg.Show(msg, msgDlg.msgButtons.Close);
+
+            });
+        }
+
+        private void btnWarasa_Click(object sender, EventArgs e)
+        {
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
                 btnImport.Invoke(new MethodInvoker(() =>
                 {
-                    btnImport.Enabled = true;
+                    ActivateControls(false);
+                }));
+                string msg = string.Empty;
+                int update3Result = adpSql.Update3W(Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
+                msg += Environment.NewLine + "تم تحديث " + update3Result + " لحقل okok ";
+                int update4Result = adpSql.Update4W(deGetback.DateTime, Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
+                msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
+
+                int update5Result = adpSql.Update5W();
+                msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
+                int insert1Result = adpSql.Insert1W(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId));
+                msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول TBLNoSarfWarsa";
+
+                btnImport.Invoke(new MethodInvoker(() =>
+                {
+                    ActivateControls(true);
                 }));
 
                 msgDlg.Show(msg, msgDlg.msgButtons.Close);
-            });
 
+            });
         }
         
     }

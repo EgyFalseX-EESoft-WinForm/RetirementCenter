@@ -34,12 +34,10 @@
             DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            this.deGetback = new DevExpress.XtraEditors.DateEdit();
             this.deSendbankDate = new DevExpress.XtraEditors.DateEdit();
+            this.deGetback = new DevExpress.XtraEditors.DateEdit();
             this.groupControlInfo = new DevExpress.XtraEditors.GroupControl();
             this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
-            this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -49,19 +47,22 @@
             this.groupControlOp = new DevExpress.XtraEditors.GroupControl();
             this.pbc = new DevExpress.XtraEditors.ProgressBarControl();
             this.dsdatam = new RetirementCenter.DataSources.dsdatam();
-            this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.dxvp_NotBlank = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxvpIsBigerDate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dsbamanat = new RetirementCenter.DataSources.dsbamanat();
-            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties)).BeginInit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnA3da2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnWarasa = new DevExpress.XtraEditors.SimpleButton();
+            this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
+            this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.deSendbankDate.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deSendbankDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlInfo)).BeginInit();
             this.groupControlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlOp)).BeginInit();
             this.groupControlOp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).BeginInit();
@@ -69,27 +70,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxvp_NotBlank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvpIsBigerDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsbamanat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             this.SuspendLayout();
-            // 
-            // deGetback
-            // 
-            this.deGetback.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deGetback.EditValue = null;
-            this.deGetback.Location = new System.Drawing.Point(37, 50);
-            this.deGetback.Name = "deGetback";
-            this.deGetback.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deGetback.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deGetback.Size = new System.Drawing.Size(192, 20);
-            this.deGetback.TabIndex = 1;
-            compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Greater;
-            compareAgainstControlValidationRule1.Control = this.deSendbankDate;
-            compareAgainstControlValidationRule1.ErrorText = "يجب ان يكون تاريخ الارسال اقل من تاريخ الوصول";
-            this.dxvpIsBigerDate.SetValidationRule(this.deGetback, compareAgainstControlValidationRule1);
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxvp_NotBlank.SetValidationRule(this.deGetback, conditionValidationRule2);
             // 
             // deSendbankDate
             // 
@@ -103,13 +88,33 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.deSendbankDate.Size = new System.Drawing.Size(192, 20);
             this.deSendbankDate.TabIndex = 0;
-            compareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Less;
-            compareAgainstControlValidationRule2.Control = this.deGetback;
+            compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Less;
+            compareAgainstControlValidationRule1.Control = this.deGetback;
+            compareAgainstControlValidationRule1.ErrorText = "يجب ان يكون تاريخ الارسال اقل من تاريخ الوصول";
+            this.dxvpIsBigerDate.SetValidationRule(this.deSendbankDate, compareAgainstControlValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxvp_NotBlank.SetValidationRule(this.deSendbankDate, conditionValidationRule2);
+            // 
+            // deGetback
+            // 
+            this.deGetback.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deGetback.EditValue = null;
+            this.deGetback.Location = new System.Drawing.Point(37, 50);
+            this.deGetback.Name = "deGetback";
+            this.deGetback.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deGetback.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deGetback.Size = new System.Drawing.Size(192, 20);
+            this.deGetback.TabIndex = 1;
+            compareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Greater;
+            compareAgainstControlValidationRule2.Control = this.deSendbankDate;
             compareAgainstControlValidationRule2.ErrorText = "يجب ان يكون تاريخ الارسال اقل من تاريخ الوصول";
-            this.dxvpIsBigerDate.SetValidationRule(this.deSendbankDate, compareAgainstControlValidationRule2);
+            this.dxvpIsBigerDate.SetValidationRule(this.deGetback, compareAgainstControlValidationRule2);
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxvp_NotBlank.SetValidationRule(this.deSendbankDate, conditionValidationRule1);
+            this.dxvp_NotBlank.SetValidationRule(this.deGetback, conditionValidationRule1);
             // 
             // groupControlInfo
             // 
@@ -151,16 +156,6 @@
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxvp_NotBlank.SetValidationRule(this.lueDof, conditionValidationRule3);
-            // 
-            // cdDofaatAmanatBindingSource
-            // 
-            this.cdDofaatAmanatBindingSource.DataMember = "CdDofaatAmanat";
-            this.cdDofaatAmanatBindingSource.DataSource = this.dsRetirementCenter;
-            // 
-            // dsRetirementCenter
-            // 
-            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
-            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnImport
             // 
@@ -243,35 +238,76 @@
             this.dsdatam.DataSetName = "dsdatam";
             this.dsdatam.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cdDofaatAmanatTableAdapter
-            // 
-            this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
-            // 
             // dsbamanat
             // 
             this.dsbamanat.DataSetName = "dsbamanat";
             this.dsbamanat.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.btnWarasa);
+            this.groupControl1.Controls.Add(this.btnA3da2);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(327, 142);
+            this.groupControl1.TabIndex = 2;
+            this.groupControl1.Text = "العمليات";
+            // 
+            // btnA3da2
+            // 
+            this.btnA3da2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnA3da2.Location = new System.Drawing.Point(212, 43);
+            this.btnA3da2.Name = "btnA3da2";
+            this.btnA3da2.Size = new System.Drawing.Size(100, 23);
+            this.btnA3da2.TabIndex = 3;
+            this.btnA3da2.Text = "اعضاء";
+            this.btnA3da2.Click += new System.EventHandler(this.btnA3da2_Click);
+            // 
+            // btnWarasa
+            // 
+            this.btnWarasa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnWarasa.Location = new System.Drawing.Point(30, 43);
+            this.btnWarasa.Name = "btnWarasa";
+            this.btnWarasa.Size = new System.Drawing.Size(100, 23);
+            this.btnWarasa.TabIndex = 3;
+            this.btnWarasa.Text = "روثة";
+            this.btnWarasa.Click += new System.EventHandler(this.btnWarasa_Click);
+            // 
+            // cdDofaatAmanatBindingSource
+            // 
+            this.cdDofaatAmanatBindingSource.DataMember = "CdDofaatAmanat";
+            this.cdDofaatAmanatBindingSource.DataSource = this.dsRetirementCenter;
+            // 
+            // dsRetirementCenter
+            // 
+            this.dsRetirementCenter.DataSetName = "dsRetirementCenter";
+            this.dsRetirementCenter.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cdDofaatAmanatTableAdapter
+            // 
+            this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
             // ImportFrombamanatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 223);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControlOp);
             this.Controls.Add(this.groupControlInfo);
             this.Name = "ImportFrombamanatFrm";
             this.Text = "استيراد";
             this.Load += new System.EventHandler(this.ImportFromWebFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deSendbankDate.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deSendbankDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deGetback.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlInfo)).EndInit();
             this.groupControlInfo.ResumeLayout(false);
             this.groupControlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlOp)).EndInit();
             this.groupControlOp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).EndInit();
@@ -279,6 +315,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxvp_NotBlank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvpIsBigerDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsbamanat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +344,8 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxvp_NotBlank;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxvpIsBigerDate;
         private DataSources.dsbamanat dsbamanat;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton btnWarasa;
+        private DevExpress.XtraEditors.SimpleButton btnA3da2;
     }
 }

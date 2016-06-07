@@ -77,6 +77,7 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -226,7 +227,8 @@
             this.colYasref_Current,
             this.colSendBank,
             this.colnewid,
-            this.colActivate});
+            this.colActivate,
+            this.colamanatvisa});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -742,6 +744,18 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // colamanatvisa
+            // 
+            this.colamanatvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.Caption = "امانات فيزا";
+            this.colamanatvisa.FieldName = "amanatvisa";
+            this.colamanatvisa.Name = "colamanatvisa";
+            this.colamanatvisa.Visible = true;
+            this.colamanatvisa.VisibleIndex = 26;
+            // 
             // Qry28Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,6 +839,7 @@
         private DevExpress.XtraEditors.TextEdit tbCodeEnd;
         private DevExpress.XtraEditors.TextEdit tbCodeStart;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanatvisa;
 
     }
 }

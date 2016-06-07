@@ -1479,6 +1479,7 @@
       <Column Name="SendBank" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="amanatvisa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vQry28" Member="vQry28s">
@@ -1514,6 +1515,7 @@
       <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="newid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="amanatvisa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

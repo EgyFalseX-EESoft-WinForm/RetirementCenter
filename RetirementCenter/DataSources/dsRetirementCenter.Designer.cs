@@ -48399,13 +48399,14 @@ FROM            TblMemberAmanat INNER JOIN
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank)
+            this._commandCollection[4].CommandText = @"INSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)
 SELECT TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, SUM(TblMemberAmanat.amanatmony), 0, 0, ISNULL(SUM(TblMemberAmanat.estktaa), 0), 1
-, GETDATE(), @userin, 0, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END
+, GETDATE(), @userin, 0, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END, TblMemberAmanat.amantvisa
 FROM TblMemberAmanat INNER JOIN TBLDofatSarf ON TblMemberAmanat.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId
 WHERE        (TblMemberAmanat.accReview = 1) AND (TblMemberAmanat.DofatSarfId IS NOT NULL)
 AND NOT EXISTS(SELECT MMashatId FROM TBLMemberSarf_arshef WHERE MMashatId = TblMemberAmanat.MMashatId AND DofatSarfId = TblMemberAmanat.DofatSarfId AND SarfTypeedadId = 6)
-GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, sarfcheek";
+GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, sarfcheek, TblMemberAmanat.amantvisa
+";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -49506,33 +49507,34 @@ FROM            TblWarasaAmanat INNER JOIN
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "INSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdate" +
                 "from, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, user" +
-                "in, Edafat, SyndicateId, SubCommitteId, SendBank)\r\nSELECT TblWarasaAmanat.Person" +
-                "Id, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf" +
-                ".DofatSarfDateto, SUM(TblWarasaAmanat.amanatmony), 0, 0, ISNULL(SUM(TblWarasaAma" +
-                "nat.estktaa), 0), 1\r\n, GETDATE(), @userin, 0, TBLWarasa.SyndicateId, TBLWarasa.S" +
-                "ubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END\r\nFROM TblWar" +
-                "asaAmanat INNER JOIN TBLDofatSarf ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf." +
-                "DofatSarfId INNER JOIN TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonI" +
-                "d\r\nWHERE (TblWarasaAmanat.accReview = 1) AND (TblWarasaAmanat.DofatSarfId IS NOT" +
-                " NULL)\r\nAND NOT EXISTS(SELECT PersonId FROM TBLWarasaSarf_arshef WHERE PersonId " +
-                "= TblWarasaAmanat.PersonId AND DofatSarfId = TblWarasaAmanat.DofatSarfId AND Sar" +
-                "fTypeedadId = 6)\r\nGROUP BY TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfId" +
-                ", TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, TBLWarasa.Syndic" +
-                "ateId, TBLWarasa.SubCommitteId, sarfcheek\r\n\r\nINSERT INTO TBLWarasaSarf_arshef (P" +
-                "ersonId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmo" +
-                "nth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommit" +
-                "teId, SendBank)\r\nSELECT TBLWarasa.PersonId, TblWarasaAmanat.DofatSarfId, 6, TBLD" +
-                "ofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, 0, 0, 0, 0, 1\r\n, GETDA" +
-                "TE(), @userin, 0, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, CASE WHEN sarf" +
-                "cheek IS NULL THEN 0 ELSE sarfcheek END\r\nFROM TblWarasaAmanat INNER JOIN TBLDofa" +
-                "tSarf ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf.DofatSarfId \r\nINNER JOIN TBL" +
-                "Warasa ON TblWarasaAmanat.PersonId = TBLWarasa.responsiblesarfId\r\nWHERE (TblWara" +
-                "saAmanat.accReview = 1) AND (TblWarasaAmanat.DofatSarfId IS NOT NULL)\r\nAND NOT E" +
-                "XISTS(SELECT PersonId FROM TBLWarasaSarf_arshef WHERE PersonId = TblWarasaAmanat" +
-                ".PersonId AND DofatSarfId = TblWarasaAmanat.DofatSarfId AND SarfTypeedadId = 6)\r" +
-                "\nGROUP BY TBLWarasa.PersonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSar" +
-                "fDatefrom, TBLDofatSarf.DofatSarfDateto, TBLWarasa.SyndicateId, TBLWarasa.SubCom" +
-                "mitteId, sarfcheek\r\n";
+                "in, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TblWarasaA" +
+                "manat.PersonId, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, " +
+                "TBLDofatSarf.DofatSarfDateto, SUM(TblWarasaAmanat.amanatmony), 0, 0, ISNULL(SUM(" +
+                "TblWarasaAmanat.estktaa), 0), 1\r\n, GETDATE(), @userin, 0, TBLWarasa.SyndicateId," +
+                " TBLWarasa.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END," +
+                " amantvisa\r\nFROM TblWarasaAmanat INNER JOIN TBLDofatSarf ON TblWarasaAmanat.Dofa" +
+                "tSarfId = TBLDofatSarf.DofatSarfId INNER JOIN TBLWarasa ON TblWarasaAmanat.Perso" +
+                "nId = TBLWarasa.PersonId\r\nWHERE (TblWarasaAmanat.accReview = 1) AND (TblWarasaAm" +
+                "anat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT PersonId FROM TBLWarasaSarf" +
+                "_arshef WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarfId = TblWarasaAma" +
+                "nat.DofatSarfId AND SarfTypeedadId = 6)\r\nGROUP BY TblWarasaAmanat.PersonId, TblW" +
+                "arasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfD" +
+                "ateto, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, sarfcheek, amantvisa\r\n\r\nI" +
+                "NSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdate" +
+                "from, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, user" +
+                "in, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TBLWarasa." +
+                "PersonId, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDof" +
+                "atSarf.DofatSarfDateto, 0, 0, 0, 0, 1\r\n, GETDATE(), @userin, 0, TBLWarasa.Syndic" +
+                "ateId, TBLWarasa.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfchee" +
+                "k END, amantvisa\r\nFROM TblWarasaAmanat INNER JOIN TBLDofatSarf ON TblWarasaAmana" +
+                "t.DofatSarfId = TBLDofatSarf.DofatSarfId \r\nINNER JOIN TBLWarasa ON TblWarasaAman" +
+                "at.PersonId = TBLWarasa.responsiblesarfId\r\nWHERE (TblWarasaAmanat.accReview = 1)" +
+                " AND (TblWarasaAmanat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT PersonId F" +
+                "ROM TBLWarasaSarf_arshef WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarf" +
+                "Id = TblWarasaAmanat.DofatSarfId AND SarfTypeedadId = 6)\r\nGROUP BY TBLWarasa.Per" +
+                "sonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf" +
+                ".DofatSarfDateto, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, sarfcheek, ama" +
+                "ntvisa\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -61230,7 +61232,7 @@ SELECT HafezAuto, SyndicateId, DofatSarfId, countmembers, countwarasa, hafezmemb
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[13];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        id, amount, pan, pantype, tt, okok\r\nFROM            for_amanat_bank" +
@@ -61256,45 +61258,83 @@ WHERE        (TBLMashat.MashHalaId = 1)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.SmallInt, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE    for_amanat_bank\r\nSET              pantype = 1\r\nFROM         for_amanat_" +
-                "bank INNER JOIN\r\n                      TBLMashat ON for_amanat_bank.pan = TBLMas" +
-                "hat.visa\r\nWHERE     (for_amanat_bank.pantype IS NULL)\r\n";
+            this._commandCollection[4].CommandText = @"INSERT INTO TBLNoSarfWarsa (PersonId, yasref, datehala, halarem, datein, userin)
+SELECT        TBLWarasa.PersonId, 0, @Getback, 'ايقاف لرد المستحقات امانات فيزا', GETDATE(), @userin
+FROM            TBLWarasa INNER JOIN for_amanat_bank ON TBLWarasa.visa = for_amanat_bank.pan";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Getback", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE    for_amanat_bank\r\nSET              pantype = 2\r\nFROM         for_amanat_" +
-                "bank INNER JOIN\r\n                      TBLWarasa ON for_amanat_bank.pan = TBLWar" +
-                "asa.visa\r\nWHERE     (for_amanat_bank.pantype IS NULL)\r\n";
+            this._commandCollection[5].CommandText = "UPDATE    for_amanat_bank\r\nSET              pantype = 1\r\nFROM         for_amanat_" +
+                "bank INNER JOIN\r\n                      TBLMashat ON for_amanat_bank.pan = TBLMas" +
+                "hat.visa\r\nWHERE     (for_amanat_bank.pantype IS NULL)\r\n";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"UPDATE       for_amanat_bank
+            this._commandCollection[6].CommandText = "UPDATE    for_amanat_bank\r\nSET              pantype = 2\r\nFROM         for_amanat_" +
+                "bank INNER JOIN\r\n                      TBLWarasa ON for_amanat_bank.pan = TBLWar" +
+                "asa.visa\r\nWHERE     (for_amanat_bank.pantype IS NULL)\r\n";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"UPDATE       for_amanat_bank
 SET                okok = 1
 FROM            for_amanat_bank INNER JOIN
                          tblmemberbank ON for_amanat_bank.pan = tblmemberbank.visanumber AND for_amanat_bank.tt = tblmemberbank.summony
 WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pantype = 1) AND (tblmemberbank.sendbankdate = @sendbankdate) AND (tblmemberbank.amanatmony = 0) AND 
                          (tblmemberbank.amanatwareddate IS NULL)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE       tblmemberbank
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"UPDATE       for_amanat_bank
+SET                okok = 1
+FROM            for_amanat_bank INNER JOIN
+tblwarasabank ON for_amanat_bank.pan = tblwarasabank.visanumber AND for_amanat_bank.tt = ROUND(tblWarasabank.summony, 2, 1)
+WHERE        (tblwarasabank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pantype = 2) AND (tblwarasabank.sendbankdate = @sendbankdate) AND (tblwarasabank.amanatmony = 0) AND 
+(tblwarasabank.amanatwareddate IS NULL)
+";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"UPDATE       tblmemberbank
 SET                amanatmony = for_amanat_bank.amount, amanatwareddate = @amanatwareddate
 FROM            for_amanat_bank INNER JOIN
                          tblmemberbank ON for_amanat_bank.pan = tblmemberbank.visanumber AND for_amanat_bank.tt = tblmemberbank.summony
 WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pantype = 1) AND (tblmemberbank.sendbankdate = @sendbankdate) AND (tblmemberbank.amanatmony = 0) AND 
                          (tblmemberbank.amanatwareddate IS NULL)";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanatwareddate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "amanatwareddate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE       TBLMashat\r\nSET                yasref = 0\r\nFROM            for_amanat" +
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanatwareddate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "amanatwareddate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = @"UPDATE       tblwarasabank
+SET                amanatmony = for_amanat_bank.amount, amanatwareddate = @amanatwareddate
+FROM            for_amanat_bank INNER JOIN
+                         tblwarasabank ON for_amanat_bank.pan = tblwarasabank.visanumber AND for_amanat_bank.tt = ROUND(tblWarasabank.summony, 2, 1)
+WHERE        (tblwarasabank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pantype = 2) AND (tblwarasabank.sendbankdate = @sendbankdate) AND (tblwarasabank.amanatmony = 0) AND 
+                         (tblwarasabank.amanatwareddate IS NULL)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanatwareddate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "amanatwareddate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "UPDATE       TBLMashat\r\nSET                yasref = 0\r\nFROM            for_amanat" +
                 "_bank INNER JOIN\r\n                         TBLMashat ON for_amanat_bank.pan = TB" +
                 "LMashat.visa\r\nWHERE        (TBLMashat.MashHalaId = 1)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "UPDATE       TBLWarasa\r\nSET                yasref = 0\r\nFROM            for_amanat" +
+                "_bank INNER JOIN\r\n                         TBLWarasa ON for_amanat_bank.pan = TB" +
+                "LWarasa.visa";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61480,9 +61520,11 @@ WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Update1() {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int Insert1W(System.DateTime Getback, int userin) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            command.Parameters[0].Value = ((System.DateTime)(Getback));
+            command.Parameters[1].Value = ((int)(userin));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -61504,7 +61546,7 @@ WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Update2() {
+        public virtual int Update1() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -61527,8 +61569,61 @@ WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Update3(int DofatSarfId, global::System.Nullable<global::System.DateTime> sendbankdate) {
+        public virtual int Update2() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update3(int DofatSarfId, global::System.Nullable<global::System.DateTime> sendbankdate) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            command.Parameters[0].Value = ((int)(DofatSarfId));
+            if ((sendbankdate.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(sendbankdate.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update3W(int DofatSarfId, global::System.Nullable<global::System.DateTime> sendbankdate) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((int)(DofatSarfId));
             if ((sendbankdate.HasValue == true)) {
                 command.Parameters[1].Value = ((System.DateTime)(sendbankdate.Value));
@@ -61557,7 +61652,43 @@ WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update4(global::System.Nullable<global::System.DateTime> amanatwareddate, int DofatSarfId, global::System.Nullable<global::System.DateTime> sendbankdate) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
+            if ((amanatwareddate.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(amanatwareddate.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(DofatSarfId));
+            if ((sendbankdate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(sendbankdate.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update4W(global::System.Nullable<global::System.DateTime> amanatwareddate, int DofatSarfId, global::System.Nullable<global::System.DateTime> sendbankdate) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             if ((amanatwareddate.HasValue == true)) {
                 command.Parameters[0].Value = ((System.DateTime)(amanatwareddate.Value));
             }
@@ -61593,7 +61724,30 @@ WHERE        (tblmemberbank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int Update5() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update5W() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[12];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

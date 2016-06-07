@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,7 +51,7 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,6 +71,7 @@
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -213,7 +215,8 @@
             this.coluserin,
             this.colCurrent_Yasref,
             this.colSendBank,
-            this.colActivate});
+            this.colActivate,
+            this.colamanatvisa});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -656,6 +659,18 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // colamanatvisa
+            // 
+            this.colamanatvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.Caption = "امانات فيزا";
+            this.colamanatvisa.FieldName = "amanatvisa";
+            this.colamanatvisa.Name = "colamanatvisa";
+            this.colamanatvisa.Visible = true;
+            this.colamanatvisa.VisibleIndex = 20;
+            // 
             // Qry27Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,6 +748,7 @@
         private DevExpress.XtraEditors.TextEdit tbCodeEnd;
         private DevExpress.XtraEditors.TextEdit tbCodeStart;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanatvisa;
 
     }
 }
