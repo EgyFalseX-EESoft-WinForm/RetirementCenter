@@ -156,16 +156,16 @@ namespace RetirementCenter
                     ActivateControls(false);
                 }));
                 string msg = string.Empty;
-                int update3Result = adpSql.Update3W(Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
+                int update3Result = adpSql.Update3W(deSendbankDate.DateTime, Convert.ToInt32(lueDof.EditValue));
                 msg += Environment.NewLine + "تم تحديث " + update3Result + " لحقل okok ";
                 int update4Result = adpSql.Update4W(deGetback.DateTime, Convert.ToInt32(lueDof.EditValue), deSendbankDate.DateTime);
                 msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
 
-                int update5Result = adpSql.Update5W();
+                int update5Result = adpSql.Update5W(deSendbankDate.DateTime);
                 msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
-                int insert1Result = adpSql.Insert1W(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId));
+                int insert1Result = adpSql.Insert1W(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId), deSendbankDate.DateTime);
                 msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول TBLNoSarfWarsa";
-
+                msg += Environment.NewLine + "عدد ما لم يتم ألحاقه " + adpSql.NullOkOkCount() + " ريكورد";
                 btnImport.Invoke(new MethodInvoker(() =>
                 {
                     ActivateControls(true);
