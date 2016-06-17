@@ -189,6 +189,9 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvQry28(vQry28 instance);
     partial void UpdatevQry28(vQry28 instance);
     partial void DeletevQry28(vQry28 instance);
+    partial void Insertcd_amanattype(cd_amanattype instance);
+    partial void Updatecd_amanattype(cd_amanattype instance);
+    partial void Deletecd_amanattype(cd_amanattype instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -922,6 +925,14 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vQry28>();
+			}
+		}
+		
+		public System.Data.Linq.Table<cd_amanattype> cd_amanattypes
+		{
+			get
+			{
+				return this.GetTable<cd_amanattype>();
 			}
 		}
 	}
@@ -29216,6 +29227,92 @@ namespace RetirementCenter.DataSources.Linq
 					this._amanatvisa = value;
 					this.SendPropertyChanged("amanatvisa");
 					this.OnamanatvisaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cd_amanattype")]
+	public partial class cd_amanattype : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private byte _amanattypeid;
+		
+		private string _amanattype;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnamanattypeidChanging(byte value);
+    partial void OnamanattypeidChanged();
+    partial void OnamanattypeChanging(string value);
+    partial void OnamanattypeChanged();
+    #endregion
+		
+		public cd_amanattype()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amanattypeid", DbType="TinyInt NOT NULL", IsPrimaryKey=true)]
+		public byte amanattypeid
+		{
+			get
+			{
+				return this._amanattypeid;
+			}
+			set
+			{
+				if ((this._amanattypeid != value))
+				{
+					this.OnamanattypeidChanging(value);
+					this.SendPropertyChanging();
+					this._amanattypeid = value;
+					this.SendPropertyChanged("amanattypeid");
+					this.OnamanattypeidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amanattype", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string amanattype
+		{
+			get
+			{
+				return this._amanattype;
+			}
+			set
+			{
+				if ((this._amanattype != value))
+				{
+					this.OnamanattypeChanging(value);
+					this.SendPropertyChanging();
+					this._amanattype = value;
+					this.SendPropertyChanged("amanattype");
+					this.OnamanattypeChanged();
 				}
 			}
 		}

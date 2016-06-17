@@ -1518,4 +1518,10 @@
       <Column Name="amanatvisa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.cd_amanattype" Member="cd_amanattypes">
+    <Type Name="cd_amanattype">
+      <Column Name="amanattypeid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="amanattype" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

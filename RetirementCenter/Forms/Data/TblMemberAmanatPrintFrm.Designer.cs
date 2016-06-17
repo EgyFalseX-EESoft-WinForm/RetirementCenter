@@ -60,6 +60,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.rep24_ATableAdapter = new RetirementCenter.DataSources.dsReportsTableAdapters.Rep24_ATableAdapter();
+            this.colamanattype = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceCheckAll.Properties)).BeginInit();
@@ -153,7 +154,8 @@
             this.colMMashatId,
             this.colRealName,
             this.colDofatSarfAId,
-            this.colDofatSarf_SarfIn});
+            this.colDofatSarf_SarfIn,
+            this.colamanattype});
             this.gridViewMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -446,6 +448,18 @@
             // 
             this.rep24_ATableAdapter.ClearBeforeFill = true;
             // 
+            // colamanattype
+            // 
+            this.colamanattype.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanattype.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanattype.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanattype.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanattype.Caption = "نوع الامانات";
+            this.colamanattype.FieldName = "amanattype";
+            this.colamanattype.Name = "colamanattype";
+            this.colamanattype.Visible = true;
+            this.colamanattype.VisibleIndex = 16;
+            // 
             // TblMemberAmanatPrintFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,5 +521,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRealName;
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfAId;
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_SarfIn;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanattype;
     }
 }

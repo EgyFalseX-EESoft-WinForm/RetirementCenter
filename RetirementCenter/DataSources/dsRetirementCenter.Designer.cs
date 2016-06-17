@@ -12183,6 +12183,8 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columndatincheek;
             
+            private global::System.Data.DataColumn columnamanattypeid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TblMemberAmanatDataTable() {
@@ -12378,6 +12380,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amanattypeidColumn {
+                get {
+                    return this.columnamanattypeid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -12433,7 +12443,8 @@ namespace RetirementCenter.DataSources {
                         System.DateTime tasleemdate, 
                         string mostlemsheek, 
                         int userincheek, 
-                        System.DateTime datincheek) {
+                        System.DateTime datincheek, 
+                        byte amanattypeid) {
                 TblMemberAmanatRow rowTblMemberAmanatRow = ((TblMemberAmanatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -12455,7 +12466,8 @@ namespace RetirementCenter.DataSources {
                         tasleemdate,
                         mostlemsheek,
                         userincheek,
-                        datincheek};
+                        datincheek,
+                        amanattypeid};
                 if ((parentTBLMashatRowByFK_TblMemberAmanat_TBLMashat != null)) {
                     columnValuesArray[0] = parentTBLMashatRowByFK_TblMemberAmanat_TBLMashat[0];
                 }
@@ -12469,10 +12481,11 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TblMemberAmanatRow FindByMMashatIdDofatSarfAId(int MMashatId, int DofatSarfAId) {
+            public TblMemberAmanatRow FindByMMashatIdDofatSarfAIdamanattypeid(int MMashatId, int DofatSarfAId, byte amanattypeid) {
                 return ((TblMemberAmanatRow)(this.Rows.Find(new object[] {
                             MMashatId,
-                            DofatSarfAId})));
+                            DofatSarfAId,
+                            amanattypeid})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12512,6 +12525,7 @@ namespace RetirementCenter.DataSources {
                 this.columnmostlemsheek = base.Columns["mostlemsheek"];
                 this.columnuserincheek = base.Columns["userincheek"];
                 this.columndatincheek = base.Columns["datincheek"];
+                this.columnamanattypeid = base.Columns["amanattypeid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12557,9 +12571,12 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnuserincheek);
                 this.columndatincheek = new global::System.Data.DataColumn("datincheek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndatincheek);
+                this.columnamanattypeid = new global::System.Data.DataColumn("amanattypeid", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamanattypeid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMMashatId,
-                                this.columnDofatSarfAId}, true));
+                                this.columnDofatSarfAId,
+                                this.columnamanattypeid}, true));
                 this.columnMMashatId.AllowDBNull = false;
                 this.columnDofatSarfAId.AllowDBNull = false;
                 this.columnamanatmony.AllowDBNull = false;
@@ -12573,6 +12590,7 @@ namespace RetirementCenter.DataSources {
                 this.columnsefa.MaxLength = 25;
                 this.columncheekno.MaxLength = 50;
                 this.columnmostlemsheek.MaxLength = 50;
+                this.columnamanattypeid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13065,6 +13083,8 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columndatincheek;
             
+            private global::System.Data.DataColumn columnamanattypeid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TblWarasaAmanatDataTable() {
@@ -13260,6 +13280,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amanattypeidColumn {
+                get {
+                    return this.columnamanattypeid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13315,7 +13343,8 @@ namespace RetirementCenter.DataSources {
                         System.DateTime tasleemdate, 
                         string mostlemsheek, 
                         int userincheek, 
-                        System.DateTime datincheek) {
+                        System.DateTime datincheek, 
+                        byte amanattypeid) {
                 TblWarasaAmanatRow rowTblWarasaAmanatRow = ((TblWarasaAmanatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -13337,7 +13366,8 @@ namespace RetirementCenter.DataSources {
                         tasleemdate,
                         mostlemsheek,
                         userincheek,
-                        datincheek};
+                        datincheek,
+                        amanattypeid};
                 if ((parentTBLWarasaRowByFK_TblWarasaAmanat_TBLWarasa != null)) {
                     columnValuesArray[0] = parentTBLWarasaRowByFK_TblWarasaAmanat_TBLWarasa[0];
                 }
@@ -13351,10 +13381,11 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TblWarasaAmanatRow FindByPersonIdDofatSarfAId(int PersonId, int DofatSarfAId) {
+            public TblWarasaAmanatRow FindByPersonIdDofatSarfAIdamanattypeid(int PersonId, int DofatSarfAId, byte amanattypeid) {
                 return ((TblWarasaAmanatRow)(this.Rows.Find(new object[] {
                             PersonId,
-                            DofatSarfAId})));
+                            DofatSarfAId,
+                            amanattypeid})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13394,6 +13425,7 @@ namespace RetirementCenter.DataSources {
                 this.columnmostlemsheek = base.Columns["mostlemsheek"];
                 this.columnuserincheek = base.Columns["userincheek"];
                 this.columndatincheek = base.Columns["datincheek"];
+                this.columnamanattypeid = base.Columns["amanattypeid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13439,9 +13471,12 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnuserincheek);
                 this.columndatincheek = new global::System.Data.DataColumn("datincheek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndatincheek);
+                this.columnamanattypeid = new global::System.Data.DataColumn("amanattypeid", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamanattypeid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonId,
-                                this.columnDofatSarfAId}, true));
+                                this.columnDofatSarfAId,
+                                this.columnamanattypeid}, true));
                 this.columnPersonId.AllowDBNull = false;
                 this.columnDofatSarfAId.AllowDBNull = false;
                 this.columnamanatmony.AllowDBNull = false;
@@ -13455,6 +13490,7 @@ namespace RetirementCenter.DataSources {
                 this.columnsefa.MaxLength = 25;
                 this.columncheekno.MaxLength = 50;
                 this.columnmostlemsheek.MaxLength = 50;
+                this.columnamanattypeid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29921,6 +29957,17 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte amanattypeid {
+                get {
+                    return ((byte)(this[this.tableTblMemberAmanat.amanattypeidColumn]));
+                }
+                set {
+                    this[this.tableTblMemberAmanat.amanattypeidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CdDofaatAmanatRow CdDofaatAmanatRow {
                 get {
                     return ((CdDofaatAmanatRow)(this.GetParentRow(this.Table.ParentRelations["FK_TblMemberAmanat_CdDofaatAmanat"])));
@@ -30497,6 +30544,17 @@ namespace RetirementCenter.DataSources {
                 }
                 set {
                     this[this.tableTblWarasaAmanat.datincheekColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte amanattypeid {
+                get {
+                    return ((byte)(this[this.tableTblWarasaAmanat.amanattypeidColumn]));
+                }
+                set {
+                    this[this.tableTblWarasaAmanat.amanattypeidColumn] = value;
                 }
             }
             
@@ -48328,18 +48386,21 @@ WHERE        (TBLReSarf.MMashatId = @MMashatId) AND (TBLReSarf.DofatSarfId = @Do
             tableMapping.ColumnMappings.Add("mostlemsheek", "mostlemsheek");
             tableMapping.ColumnMappings.Add("userincheek", "userincheek");
             tableMapping.ColumnMappings.Add("datincheek", "datincheek");
+            tableMapping.ColumnMappings.Add("amanattypeid", "amanattypeid");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TblMemberAmanat] WHERE (([MMashatId] = @Original_MMashatId) AND ([Do" +
-                "fatSarfAId] = @Original_DofatSarfAId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM TblMemberAmanat\r\nWHERE        (MMashatId = @Original_MMashatId) AND (" +
+                "DofatSarfAId = @Original_DofatSarfAId) AND (amanattypeid = @Original_amanattypei" +
+                "d)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amanattypeid", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblMemberAmanat] ([MMashatId], [DofatSarfAId], [amanatmony], [amanatrem], [userin], [datein], [estktaa], [mostahek], [sefa], [accReview], [useracc], [DofatSarfId], [dateReview], [amantvisa], [sarfcheek], [cheekno], [tasleemdate], [mostlemsheek], [userincheek], [datincheek]) VALUES (@MMashatId, @DofatSarfAId, @amanatmony, @amanatrem, @userin, @datein, @estktaa, @mostahek, @sefa, @accReview, @useracc, @DofatSarfId, @dateReview, @amantvisa, @sarfcheek, @cheekno, @tasleemdate, @mostlemsheek, @userincheek, @datincheek);
-SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek FROM TblMemberAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (MMashatId = @MMashatId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblMemberAmanat] ([MMashatId], [DofatSarfAId], [amanatmony], [amanatrem], [userin], [datein], [estktaa], [mostahek], [sefa], [accReview], [useracc], [DofatSarfId], [dateReview], [amantvisa], [sarfcheek], [cheekno], [tasleemdate], [mostlemsheek], [userincheek], [datincheek], [amanattypeid]) VALUES (@MMashatId, @DofatSarfAId, @amanatmony, @amanatrem, @userin, @datein, @estktaa, @mostahek, @sefa, @accReview, @useracc, @DofatSarfId, @dateReview, @amantvisa, @sarfcheek, @cheekno, @tasleemdate, @mostlemsheek, @userincheek, @datincheek, @amanattypeid);
+SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, amanattypeid FROM TblMemberAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (MMashatId = @MMashatId) AND (amanattypeid = @amanattypeid)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -48361,10 +48422,11 @@ SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mostlemsheek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mostlemsheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userincheek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datincheek", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TblMemberAmanat] SET [MMashatId] = @MMashatId, [DofatSarfAId] = @DofatSarfAId, [amanatmony] = @amanatmony, [amanatrem] = @amanatrem, [userin] = @userin, [datein] = @datein, [estktaa] = @estktaa, [mostahek] = @mostahek, [sefa] = @sefa, [accReview] = @accReview, [useracc] = @useracc, [DofatSarfId] = @DofatSarfId, [dateReview] = @dateReview, [amantvisa] = @amantvisa, [sarfcheek] = @sarfcheek, [cheekno] = @cheekno, [tasleemdate] = @tasleemdate, [mostlemsheek] = @mostlemsheek, [userincheek] = @userincheek, [datincheek] = @datincheek WHERE (([MMashatId] = @Original_MMashatId) AND ([DofatSarfAId] = @Original_DofatSarfAId));
-SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek FROM TblMemberAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (MMashatId = @MMashatId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TblMemberAmanat] SET [MMashatId] = @MMashatId, [DofatSarfAId] = @DofatSarfAId, [amanatmony] = @amanatmony, [amanatrem] = @amanatrem, [userin] = @userin, [datein] = @datein, [estktaa] = @estktaa, [mostahek] = @mostahek, [sefa] = @sefa, [accReview] = @accReview, [useracc] = @useracc, [DofatSarfId] = @DofatSarfId, [dateReview] = @dateReview, [amantvisa] = @amantvisa, [sarfcheek] = @sarfcheek, [cheekno] = @cheekno, [tasleemdate] = @tasleemdate, [mostlemsheek] = @mostlemsheek, [userincheek] = @userincheek, [datincheek] = @datincheek, [amanattypeid] = @amanattypeid WHERE (([MMashatId] = @Original_MMashatId) AND ([DofatSarfAId] = @Original_DofatSarfAId) AND ([amanattypeid] = @Original_amanattypeid));
+SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, amanattypeid FROM TblMemberAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (MMashatId = @MMashatId) AND (amanattypeid = @amanattypeid)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -48386,8 +48448,10 @@ SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mostlemsheek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mostlemsheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userincheek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datincheek", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -48404,14 +48468,16 @@ SELECT MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        MMashatId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, 
-                         userincheek, datincheek
-FROM            TblMemberAmanat";
+                         userincheek, datincheek, amanattypeid
+
+FROM            TblMemberAmanat
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        TblMemberAmanat.DofatSarfAId, TblMemberAmanat.DofatSarfId, TblMemberAmanat.MMashatId, TblMemberAmanat.accReview, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, 
                          TblMemberAmanat.amantvisa, TblMemberAmanat.dateReview, TblMemberAmanat.datein, TblMemberAmanat.estktaa, TblMemberAmanat.mostahek, TblMemberAmanat.sarfcheek, TblMemberAmanat.sefa, 
-                         TblMemberAmanat.useracc, TblMemberAmanat.userin, TBLMashat.sarfnumber
+                         TblMemberAmanat.useracc, TblMemberAmanat.userin, TBLMashat.sarfnumber, TblMemberAmanat.amanattypeid
 FROM            TblMemberAmanat INNER JOIN
                          TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId
 WHERE        (TblMemberAmanat.accReview = 1)";
@@ -48421,11 +48487,12 @@ WHERE        (TblMemberAmanat.accReview = 1)";
             this._commandCollection[2].CommandText = @"SELECT        TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfAId, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, TblMemberAmanat.userin, TblMemberAmanat.datein, TblMemberAmanat.estktaa, 
                          TblMemberAmanat.mostahek, TblMemberAmanat.sefa, TblMemberAmanat.accReview, TblMemberAmanat.useracc, TblMemberAmanat.DofatSarfId, TblMemberAmanat.dateReview, TblMemberAmanat.amantvisa, 
                          TblMemberAmanat.sarfcheek, TBLMashat.sarfnumber, TBLMashat.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TblMemberAmanat.cheekno, TblMemberAmanat.tasleemdate, 
-                         TblMemberAmanat.mostlemsheek, TblMemberAmanat.userincheek, TblMemberAmanat.datincheek
+                         TblMemberAmanat.mostlemsheek, TblMemberAmanat.userincheek, TblMemberAmanat.datincheek, TblMemberAmanat.amanattypeid, cd_amanattype.amanattype
 FROM            TblMemberAmanat INNER JOIN
                          TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         cd_amanattype ON TblMemberAmanat.amanattypeid = cd_amanattype.amanattypeid
 WHERE        (TblMemberAmanat.sarfcheek = 1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -48433,11 +48500,12 @@ WHERE        (TblMemberAmanat.sarfcheek = 1)";
             this._commandCollection[3].CommandText = @"SELECT        TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfAId, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, TblMemberAmanat.userin, TblMemberAmanat.datein, TblMemberAmanat.estktaa, 
                          TblMemberAmanat.mostahek, TblMemberAmanat.sefa, TblMemberAmanat.accReview, TblMemberAmanat.useracc, TblMemberAmanat.DofatSarfId, TblMemberAmanat.dateReview, TblMemberAmanat.amantvisa, 
                          TblMemberAmanat.sarfcheek, TBLMashat.sarfnumber, TBLMashat.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TblMemberAmanat.cheekno, TblMemberAmanat.tasleemdate, 
-                         TblMemberAmanat.mostlemsheek, TblMemberAmanat.userincheek, TblMemberAmanat.datincheek
+                         TblMemberAmanat.mostlemsheek, TblMemberAmanat.userincheek, TblMemberAmanat.datincheek, TblMemberAmanat.amanattypeid, cd_amanattype.amanattype
 FROM            TblMemberAmanat INNER JOIN
                          TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId";
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         cd_amanattype ON TblMemberAmanat.amanattypeid = cd_amanattype.amanattypeid";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -48590,9 +48658,10 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_MMashatId, int Original_DofatSarfAId) {
+        public virtual int Delete(int Original_MMashatId, int Original_DofatSarfAId, byte Original_amanattypeid) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_MMashatId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((byte)(Original_amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -48633,7 +48702,8 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
                     global::System.Nullable<global::System.DateTime> tasleemdate, 
                     string mostlemsheek, 
                     global::System.Nullable<int> userincheek, 
-                    global::System.Nullable<global::System.DateTime> datincheek) {
+                    global::System.Nullable<global::System.DateTime> datincheek, 
+                    byte amanattypeid) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(MMashatId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(DofatSarfAId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((double)(amanatmony));
@@ -48724,6 +48794,7 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[20].Value = ((byte)(amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -48765,8 +48836,10 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
                     string mostlemsheek, 
                     global::System.Nullable<int> userincheek, 
                     global::System.Nullable<global::System.DateTime> datincheek, 
+                    byte amanattypeid, 
                     int Original_MMashatId, 
-                    int Original_DofatSarfAId) {
+                    int Original_DofatSarfAId, 
+                    byte Original_amanattypeid) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(MMashatId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(DofatSarfAId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(amanatmony));
@@ -48857,8 +48930,10 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_MMashatId));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((byte)(amanattypeid));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_MMashatId));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(Original_amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -48899,8 +48974,9 @@ GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.Do
                     global::System.Nullable<int> userincheek, 
                     global::System.Nullable<global::System.DateTime> datincheek, 
                     int Original_MMashatId, 
-                    int Original_DofatSarfAId) {
-            return this.Update(Original_MMashatId, Original_DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Original_MMashatId, Original_DofatSarfAId);
+                    int Original_DofatSarfAId, 
+                    byte Original_amanattypeid) {
+            return this.Update(Original_MMashatId, Original_DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, sefa, accReview, useracc, DofatSarfId, dateReview, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Original_amanattypeid, Original_MMashatId, Original_DofatSarfAId, Original_amanattypeid);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49431,18 +49507,21 @@ SELECT DofatSarfAId, DofatSarfA, DofatSarfDatefrom, DofatSarfDateto, remd FROM C
             tableMapping.ColumnMappings.Add("mostlemsheek", "mostlemsheek");
             tableMapping.ColumnMappings.Add("userincheek", "userincheek");
             tableMapping.ColumnMappings.Add("datincheek", "datincheek");
+            tableMapping.ColumnMappings.Add("amanattypeid", "amanattypeid");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TblWarasaAmanat] WHERE (([PersonId] = @Original_PersonId) AND ([Dofa" +
-                "tSarfAId] = @Original_DofatSarfAId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM TblWarasaAmanat\r\nWHERE        (PersonId = @Original_PersonId) AND (Do" +
+                "fatSarfAId = @Original_DofatSarfAId) AND (amanattypeid = @Original_amanattypeid)" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amanattypeid", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblWarasaAmanat] ([PersonId], [DofatSarfAId], [amanatmony], [amanatrem], [userin], [datein], [estktaa], [mostahek], [DofatSarfId], [sefa], [accReview], [dateReview], [useracc], [amantvisa], [sarfcheek], [cheekno], [tasleemdate], [mostlemsheek], [userincheek], [datincheek]) VALUES (@PersonId, @DofatSarfAId, @amanatmony, @amanatrem, @userin, @datein, @estktaa, @mostahek, @DofatSarfId, @sefa, @accReview, @dateReview, @useracc, @amantvisa, @sarfcheek, @cheekno, @tasleemdate, @mostlemsheek, @userincheek, @datincheek);
-SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek FROM TblWarasaAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (PersonId = @PersonId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblWarasaAmanat] ([PersonId], [DofatSarfAId], [amanatmony], [amanatrem], [userin], [datein], [estktaa], [mostahek], [DofatSarfId], [sefa], [accReview], [dateReview], [useracc], [amantvisa], [sarfcheek], [cheekno], [tasleemdate], [mostlemsheek], [userincheek], [datincheek], [amanattypeid]) VALUES (@PersonId, @DofatSarfAId, @amanatmony, @amanatrem, @userin, @datein, @estktaa, @mostahek, @DofatSarfId, @sefa, @accReview, @dateReview, @useracc, @amantvisa, @sarfcheek, @cheekno, @tasleemdate, @mostlemsheek, @userincheek, @datincheek, @amanattypeid);
+SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, amanattypeid FROM TblWarasaAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (PersonId = @PersonId) AND (amanattypeid = @amanattypeid)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -49464,10 +49543,11 @@ SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, m
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mostlemsheek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mostlemsheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userincheek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datincheek", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TblWarasaAmanat] SET [PersonId] = @PersonId, [DofatSarfAId] = @DofatSarfAId, [amanatmony] = @amanatmony, [amanatrem] = @amanatrem, [userin] = @userin, [datein] = @datein, [estktaa] = @estktaa, [mostahek] = @mostahek, [DofatSarfId] = @DofatSarfId, [sefa] = @sefa, [accReview] = @accReview, [dateReview] = @dateReview, [useracc] = @useracc, [amantvisa] = @amantvisa, [sarfcheek] = @sarfcheek, [cheekno] = @cheekno, [tasleemdate] = @tasleemdate, [mostlemsheek] = @mostlemsheek, [userincheek] = @userincheek, [datincheek] = @datincheek WHERE (([PersonId] = @Original_PersonId) AND ([DofatSarfAId] = @Original_DofatSarfAId));
-SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek FROM TblWarasaAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (PersonId = @PersonId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TblWarasaAmanat] SET [PersonId] = @PersonId, [DofatSarfAId] = @DofatSarfAId, [amanatmony] = @amanatmony, [amanatrem] = @amanatrem, [userin] = @userin, [datein] = @datein, [estktaa] = @estktaa, [mostahek] = @mostahek, [DofatSarfId] = @DofatSarfId, [sefa] = @sefa, [accReview] = @accReview, [dateReview] = @dateReview, [useracc] = @useracc, [amantvisa] = @amantvisa, [sarfcheek] = @sarfcheek, [cheekno] = @cheekno, [tasleemdate] = @tasleemdate, [mostlemsheek] = @mostlemsheek, [userincheek] = @userincheek, [datincheek] = @datincheek, [amanattypeid] = @amanattypeid WHERE (([PersonId] = @Original_PersonId) AND ([DofatSarfAId] = @Original_DofatSarfAId) AND ([amanattypeid] = @Original_amanattypeid));
+SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, amanattypeid FROM TblWarasaAmanat WHERE (DofatSarfAId = @DofatSarfAId) AND (PersonId = @PersonId) AND (amanattypeid = @amanattypeid)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -49489,8 +49569,10 @@ SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, m
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mostlemsheek", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mostlemsheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userincheek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datincheek", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datincheek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DofatSarfAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amanattypeid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amanattypeid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49507,17 +49589,20 @@ SELECT PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, m
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        PersonId, DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, 
-                         datincheek
-FROM            TblWarasaAmanat";
+                         datincheek, amanattypeid
+
+FROM            TblWarasaAmanat
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.userin, TblWarasaAmanat.datein, TblWarasaAmanat.estktaa, 
                          TblWarasaAmanat.mostahek, TblWarasaAmanat.DofatSarfId, TblWarasaAmanat.sefa, TblWarasaAmanat.accReview, TblWarasaAmanat.dateReview, TblWarasaAmanat.useracc, TblWarasaAmanat.amantvisa, 
-                         TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId
+                         TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId, TblWarasaAmanat.amanattypeid, cd_amanattype.amanattype
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         cd_amanattype ON TblWarasaAmanat.amanattypeid = cd_amanattype.amanattypeid
 WHERE        (TblWarasaAmanat.accReview = 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -49525,12 +49610,13 @@ WHERE        (TblWarasaAmanat.accReview = 1)";
             this._commandCollection[2].CommandText = @"SELECT        TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.userin, TblWarasaAmanat.datein, TblWarasaAmanat.estktaa, 
                          TblWarasaAmanat.mostahek, TblWarasaAmanat.DofatSarfId, TblWarasaAmanat.sefa, TblWarasaAmanat.accReview, TblWarasaAmanat.dateReview, TblWarasaAmanat.useracc, TblWarasaAmanat.amantvisa, 
                          TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId, TBLWarasa.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TblWarasaAmanat.cheekno, 
-                         TblWarasaAmanat.tasleemdate, TblWarasaAmanat.mostlemsheek, TblWarasaAmanat.userincheek, TblWarasaAmanat.datincheek
+                         TblWarasaAmanat.tasleemdate, TblWarasaAmanat.mostlemsheek, TblWarasaAmanat.userincheek, TblWarasaAmanat.datincheek, TblWarasaAmanat.amanattypeid, cd_amanattype.amanattype
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
                          TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         cd_amanattype ON TblWarasaAmanat.amanattypeid = cd_amanattype.amanattypeid
 WHERE        (TblWarasaAmanat.sarfcheek = 1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -49538,12 +49624,13 @@ WHERE        (TblWarasaAmanat.sarfcheek = 1)";
             this._commandCollection[3].CommandText = @"SELECT        TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.userin, TblWarasaAmanat.datein, TblWarasaAmanat.estktaa, 
                          TblWarasaAmanat.mostahek, TblWarasaAmanat.DofatSarfId, TblWarasaAmanat.sefa, TblWarasaAmanat.accReview, TblWarasaAmanat.dateReview, TblWarasaAmanat.useracc, TblWarasaAmanat.amantvisa, 
                          TblWarasaAmanat.sarfcheek, TBLMashat.sarfnumber, TBLWarasa.MMashatId, TBLWarasa.visa, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TblWarasaAmanat.cheekno, 
-                         TblWarasaAmanat.tasleemdate, TblWarasaAmanat.mostlemsheek, TblWarasaAmanat.userincheek, TblWarasaAmanat.datincheek
+                         TblWarasaAmanat.tasleemdate, TblWarasaAmanat.mostlemsheek, TblWarasaAmanat.userincheek, TblWarasaAmanat.datincheek, TblWarasaAmanat.amanattypeid, cd_amanattype.amanattype
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
                          TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId";
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         cd_amanattype ON TblWarasaAmanat.amanattypeid = cd_amanattype.amanattypeid";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -49719,9 +49806,10 @@ FROM            TblWarasaAmanat INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PersonId, int Original_DofatSarfAId) {
+        public virtual int Delete(int Original_PersonId, int Original_DofatSarfAId, byte Original_amanattypeid) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PersonId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((byte)(Original_amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -49762,7 +49850,8 @@ FROM            TblWarasaAmanat INNER JOIN
                     global::System.Nullable<global::System.DateTime> tasleemdate, 
                     string mostlemsheek, 
                     global::System.Nullable<int> userincheek, 
-                    global::System.Nullable<global::System.DateTime> datincheek) {
+                    global::System.Nullable<global::System.DateTime> datincheek, 
+                    byte amanattypeid) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PersonId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(DofatSarfAId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((double)(amanatmony));
@@ -49853,6 +49942,7 @@ FROM            TblWarasaAmanat INNER JOIN
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[20].Value = ((byte)(amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -49894,8 +49984,10 @@ FROM            TblWarasaAmanat INNER JOIN
                     string mostlemsheek, 
                     global::System.Nullable<int> userincheek, 
                     global::System.Nullable<global::System.DateTime> datincheek, 
+                    byte amanattypeid, 
                     int Original_PersonId, 
-                    int Original_DofatSarfAId) {
+                    int Original_DofatSarfAId, 
+                    byte Original_amanattypeid) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PersonId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(DofatSarfAId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(amanatmony));
@@ -49986,8 +50078,10 @@ FROM            TblWarasaAmanat INNER JOIN
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_PersonId));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((byte)(amanattypeid));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_PersonId));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_DofatSarfAId));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(Original_amanattypeid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -50028,8 +50122,9 @@ FROM            TblWarasaAmanat INNER JOIN
                     global::System.Nullable<int> userincheek, 
                     global::System.Nullable<global::System.DateTime> datincheek, 
                     int Original_PersonId, 
-                    int Original_DofatSarfAId) {
-            return this.Update(Original_PersonId, Original_DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Original_PersonId, Original_DofatSarfAId);
+                    int Original_DofatSarfAId, 
+                    byte Original_amanattypeid) {
+            return this.Update(Original_PersonId, Original_DofatSarfAId, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Original_amanattypeid, Original_PersonId, Original_DofatSarfAId, Original_amanattypeid);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

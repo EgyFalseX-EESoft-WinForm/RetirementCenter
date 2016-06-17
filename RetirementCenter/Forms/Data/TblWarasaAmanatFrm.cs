@@ -64,6 +64,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLWarasa.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
+            LSMScd_amanattype.QueryableSource = dsLinq.cd_amanattypes;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblWarasaAmanat' table. You can move, or remove it, as needed.
@@ -118,7 +119,7 @@ namespace RetirementCenter
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
                     return;
                 }
-                tblWarasaAmanatTableAdapter.Delete(row.PersonId, row.DofatSarfAId);
+                tblWarasaAmanatTableAdapter.Delete(row.PersonId, row.DofatSarfAId, row.amanattypeid);
                 gridViewData.DeleteRow(GV.FocusedRowHandle);
                 
                 Program.ShowMsg("تم الحذف", false, this);

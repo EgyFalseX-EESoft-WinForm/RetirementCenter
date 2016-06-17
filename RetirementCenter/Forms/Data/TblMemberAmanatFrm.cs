@@ -64,6 +64,7 @@ namespace RetirementCenter
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
+            LSMScd_amanattype.QueryableSource = dsLinq.cd_amanattypes;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberAmanat' table. You can move, or remove it, as needed.
@@ -118,7 +119,7 @@ namespace RetirementCenter
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
                     return;
                 }
-                tblMemberAmanatTableAdapter.Delete(row.MMashatId, row.DofatSarfAId);
+                tblMemberAmanatTableAdapter.Delete(row.MMashatId, row.DofatSarfAId, row.amanattypeid);
                 gridViewData.DeleteRow(GV.FocusedRowHandle);
                 
                 Program.ShowMsg("تم الحذف", false, this);
@@ -133,6 +134,7 @@ namespace RetirementCenter
         private void btnNew_Click(object sender, EventArgs e)
         {
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = dsRetirementCenter.TblMemberAmanat.NewTblMemberAmanatRow();
+            row.amanattypeid = 1;
             row.estktaa = 0; row.sefa = "العضو";
             Update(row, false);
         }

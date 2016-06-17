@@ -14845,6 +14845,8 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnDofatSarfA;
             
+            private global::System.Data.DataColumn columnamanattype;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Rep24_ADataTable() {
@@ -15016,6 +15018,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amanattypeColumn {
+                get {
+                    return this.columnamanattype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15068,7 +15078,8 @@ namespace RetirementCenter.DataSources {
                         bool sarfcheek, 
                         string RealName, 
                         string DofatSarf_SarfIn, 
-                        string DofatSarfA) {
+                        string DofatSarfA, 
+                        string amanattype) {
                 Rep24_ARow rowRep24_ARow = ((Rep24_ARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MMashatId,
@@ -15087,7 +15098,8 @@ namespace RetirementCenter.DataSources {
                         sarfcheek,
                         RealName,
                         DofatSarf_SarfIn,
-                        DofatSarfA};
+                        DofatSarfA,
+                        amanattype};
                 rowRep24_ARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRep24_ARow);
                 return rowRep24_ARow;
@@ -15135,6 +15147,7 @@ namespace RetirementCenter.DataSources {
                 this.columnRealName = base.Columns["RealName"];
                 this.columnDofatSarf_SarfIn = base.Columns["DofatSarf_SarfIn"];
                 this.columnDofatSarfA = base.Columns["DofatSarfA"];
+                this.columnamanattype = base.Columns["amanattype"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15174,6 +15187,8 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnDofatSarf_SarfIn);
                 this.columnDofatSarfA = new global::System.Data.DataColumn("DofatSarfA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDofatSarfA);
+                this.columnamanattype = new global::System.Data.DataColumn("amanattype", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamanattype);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMMashatId,
                                 this.columnDofatSarfAId}, true));
@@ -15196,6 +15211,8 @@ namespace RetirementCenter.DataSources {
                 this.columnRealName.MaxLength = 50;
                 this.columnDofatSarf_SarfIn.MaxLength = 50;
                 this.columnDofatSarfA.MaxLength = 50;
+                this.columnamanattype.AllowDBNull = false;
+                this.columnamanattype.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15366,6 +15383,8 @@ namespace RetirementCenter.DataSources {
             private global::System.Data.DataColumn columnDofatSarf_SarfIn;
             
             private global::System.Data.DataColumn columnDofatSarfA;
+            
+            private global::System.Data.DataColumn columnamanattype;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -15554,6 +15573,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amanattypeColumn {
+                get {
+                    return this.columnamanattype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15608,7 +15635,8 @@ namespace RetirementCenter.DataSources {
                         string RealName, 
                         int newid, 
                         string DofatSarf_SarfIn, 
-                        string DofatSarfA) {
+                        string DofatSarfA, 
+                        string amanattype) {
                 Rep25_ARow rowRep25_ARow = ((Rep25_ARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Selected,
@@ -15629,7 +15657,8 @@ namespace RetirementCenter.DataSources {
                         RealName,
                         newid,
                         DofatSarf_SarfIn,
-                        DofatSarfA};
+                        DofatSarfA,
+                        amanattype};
                 rowRep25_ARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRep25_ARow);
                 return rowRep25_ARow;
@@ -15679,6 +15708,7 @@ namespace RetirementCenter.DataSources {
                 this.columnnewid = base.Columns["newid"];
                 this.columnDofatSarf_SarfIn = base.Columns["DofatSarf_SarfIn"];
                 this.columnDofatSarfA = base.Columns["DofatSarfA"];
+                this.columnamanattype = base.Columns["amanattype"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15722,6 +15752,8 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnDofatSarf_SarfIn);
                 this.columnDofatSarfA = new global::System.Data.DataColumn("DofatSarfA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDofatSarfA);
+                this.columnamanattype = new global::System.Data.DataColumn("amanattype", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamanattype);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonId,
                                 this.columnDofatSarfAId}, true));
@@ -15746,6 +15778,8 @@ namespace RetirementCenter.DataSources {
                 this.columnRealName.MaxLength = 50;
                 this.columnDofatSarf_SarfIn.MaxLength = 50;
                 this.columnDofatSarfA.MaxLength = 50;
+                this.columnamanattype.AllowDBNull = false;
+                this.columnamanattype.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22714,6 +22748,17 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string amanattype {
+                get {
+                    return ((string)(this[this.tableRep24_A.amanattypeColumn]));
+                }
+                set {
+                    this[this.tableRep24_A.amanattypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsamanatremNull() {
                 return this.IsNull(this.tableRep24_A.amanatremColumn);
             }
@@ -23057,6 +23102,17 @@ namespace RetirementCenter.DataSources {
                 }
                 set {
                     this[this.tableRep25_A.DofatSarfAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string amanattype {
+                get {
+                    return ((string)(this[this.tableRep25_A.amanattypeColumn]));
+                }
+                set {
+                    this[this.tableRep25_A.amanattypeColumn] = value;
                 }
             }
             
@@ -33987,6 +34043,7 @@ GROUP BY TBLWarasaSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasaSarf
             tableMapping.ColumnMappings.Add("RealName", "RealName");
             tableMapping.ColumnMappings.Add("DofatSarf_SarfIn", "DofatSarf_SarfIn");
             tableMapping.ColumnMappings.Add("DofatSarfA", "DofatSarfA");
+            tableMapping.ColumnMappings.Add("amanattype", "amanattype");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -34005,11 +34062,13 @@ GROUP BY TBLWarasaSarf_arshef.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasaSarf
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CAST(0 AS bit) AS Selected, TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfAId, TblMemberAmanat.amanatmony, TblMemberAmanat.amanatrem, TblMemberAmanat.estktaa, 
                          TblMemberAmanat.mostahek, TblMemberAmanat.sefa, CDSyndicate.Syndicate, TblMemberAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
-                         TblMemberAmanat.amanatmony - TblMemberAmanat.estktaa AS Total, TblMemberAmanat.sarfcheek, Users.RealName, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA
+                         TblMemberAmanat.amanatmony - TblMemberAmanat.estktaa AS Total, TblMemberAmanat.sarfcheek, Users.RealName, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA, 
+                         cd_amanattype.amanattype
 FROM            TblMemberAmanat INNER JOIN
                          TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         Users ON TblMemberAmanat.userin = Users.UserID LEFT OUTER JOIN
+                         Users ON TblMemberAmanat.userin = Users.UserID INNER JOIN
+                         cd_amanattype ON TblMemberAmanat.amanattypeid = cd_amanattype.amanattypeid LEFT OUTER JOIN
                          CdDofaatAmanat ON TblMemberAmanat.DofatSarfAId = CdDofaatAmanat.DofatSarfAId LEFT OUTER JOIN
                          TBLDofatSarf AS TBLDofatSarf_1 ON TblMemberAmanat.DofatSarfId = TBLDofatSarf_1.DofatSarfId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -34180,6 +34239,7 @@ FROM            TblMemberAmanat INNER JOIN
             tableMapping.ColumnMappings.Add("newid", "newid");
             tableMapping.ColumnMappings.Add("DofatSarf_SarfIn", "DofatSarf_SarfIn");
             tableMapping.ColumnMappings.Add("DofatSarfA", "DofatSarfA");
+            tableMapping.ColumnMappings.Add("amanattype", "amanattype");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -34198,12 +34258,13 @@ FROM            TblMemberAmanat INNER JOIN
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CAST(0 AS bit) AS Selected, TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfAId, TblWarasaAmanat.amanatmony, TblWarasaAmanat.amanatrem, TblWarasaAmanat.estktaa, TblWarasaAmanat.mostahek, 
                          TblWarasaAmanat.sefa, CDSyndicate.Syndicate, TblWarasaAmanat.datein, TBLMashat.sarfnumber, TBLMashat.MMashatName, TblWarasaAmanat.amanatmony - TblWarasaAmanat.estktaa AS Total, 
-                         TblWarasaAmanat.sarfcheek, TBLWarasa.personName, Users.RealName, AwarasaNewId.newid, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA
+                         TblWarasaAmanat.sarfcheek, TBLWarasa.personName, Users.RealName, AwarasaNewId.newid, TBLDofatSarf_1.DofatSarf AS DofatSarf_SarfIn, CdDofaatAmanat.DofatSarfA, cd_amanattype.amanattype
 FROM            TblWarasaAmanat INNER JOIN
                          TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
                          CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
                          TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         Users ON TblWarasaAmanat.userin = Users.UserID LEFT OUTER JOIN
+                         Users ON TblWarasaAmanat.userin = Users.UserID INNER JOIN
+                         cd_amanattype ON TblWarasaAmanat.amanattypeid = cd_amanattype.amanattypeid LEFT OUTER JOIN
                          CdDofaatAmanat ON TblWarasaAmanat.DofatSarfAId = CdDofaatAmanat.DofatSarfAId LEFT OUTER JOIN
                          TBLDofatSarf AS TBLDofatSarf_1 ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf_1.DofatSarfId LEFT OUTER JOIN
                          AwarasaNewId ON TblWarasaAmanat.PersonId = AwarasaNewId.personid";

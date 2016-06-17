@@ -63,6 +63,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;
+            LSMScd_amanattype.QueryableSource = dsLinq.cd_amanattypes;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             // TODO: This line of code loads data into the 'dsRetirementCenter.TblMemberAmanat' table. You can move, or remove it, as needed.
