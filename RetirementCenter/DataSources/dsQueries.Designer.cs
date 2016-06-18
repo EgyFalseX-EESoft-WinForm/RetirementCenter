@@ -54886,10 +54886,10 @@ TBLMashat.SubCommitteId, TBLMashat.SyndicateId, WorkeEndDate,
 FROM TBLMashat INNER JOIN TBLMemberSarf_arshef ON TBLMashat.MMashatId = TBLMemberSarf_arshef.MMashatId  
 WHERE (yasref = 1) AND (MashHalaId = 1) AND TBLMemberSarf_arshef.SarfTypeedadId = 6 AND (CAST(TBLMemberSarf_arshef.datein AS DATE) = @datein)
 AND (NOT EXISTS (SELECT MMashatId FROM TBLEdafat WHERE (MMashatId = TBLMashat.MMashatId) AND (DofatSarfId = @DofatSarfId)))
-";
+AND TBLMemberSarf_arshef.DofatSarfId = @DofatSarfId";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DofatSarfId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DofatSarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT (SELECT DofatSarfDatefrom FROM TBLDofatSarf WHERE (DofatSarfId = @DofatSarfId)) AS DofatSarfDatefrom, (SELECT TOP (1) Eshtrak FROM AppOptions AS AppOptions_1) AS Eshtrak, MMashatId, (SELECT TOP (1) Rasm FROM AppOptions) AS Rasm, SubCommitteId, SyndicateId, WorkeEndDate, (SELECT feasarf FROM CDsarfType WHERE (sarfTypeId = 1)) AS feasarf, mcompletesarf, melrasm, meshtrakat, mestktaat, mmony, sarfnumber FROM TBLMashat WHERE (SyndicateId = @SyndicateId) AND (yasref = 1) AND (MashHalaId = 1) AND (NOT EXISTS (SELECT MMashatId FROM TBLEdafat WHERE (MMashatId = TBLMashat.MMashatId) AND (DofatSarfId = @DofatSarfId)))";

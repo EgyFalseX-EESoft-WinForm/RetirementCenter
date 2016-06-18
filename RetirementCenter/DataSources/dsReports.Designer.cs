@@ -15107,14 +15107,6 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Rep24_ARow FindByMMashatIdDofatSarfAId(int MMashatId, int DofatSarfAId) {
-                return ((Rep24_ARow)(this.Rows.Find(new object[] {
-                            MMashatId,
-                            DofatSarfAId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 Rep24_ADataTable cln = ((Rep24_ADataTable)(base.Clone()));
                 cln.InitVars();
@@ -15189,11 +15181,6 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnDofatSarfA);
                 this.columnamanattype = new global::System.Data.DataColumn("amanattype", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamanattype);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMMashatId,
-                                this.columnDofatSarfAId}, true));
-                this.columnMMashatId.AllowDBNull = false;
-                this.columnDofatSarfAId.AllowDBNull = false;
                 this.columnamanatmony.AllowDBNull = false;
                 this.columnamanatrem.MaxLength = 100;
                 this.columnestktaa.AllowDBNull = false;
@@ -15211,7 +15198,6 @@ namespace RetirementCenter.DataSources {
                 this.columnRealName.MaxLength = 50;
                 this.columnDofatSarf_SarfIn.MaxLength = 50;
                 this.columnDofatSarfA.MaxLength = 50;
-                this.columnamanattype.AllowDBNull = false;
                 this.columnamanattype.MaxLength = 30;
             }
             
@@ -15666,14 +15652,6 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Rep25_ARow FindByPersonIdDofatSarfAId(int PersonId, int DofatSarfAId) {
-                return ((Rep25_ARow)(this.Rows.Find(new object[] {
-                            PersonId,
-                            DofatSarfAId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 Rep25_ADataTable cln = ((Rep25_ADataTable)(base.Clone()));
                 cln.InitVars();
@@ -15754,11 +15732,6 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnDofatSarfA);
                 this.columnamanattype = new global::System.Data.DataColumn("amanattype", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamanattype);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPersonId,
-                                this.columnDofatSarfAId}, true));
-                this.columnPersonId.AllowDBNull = false;
-                this.columnDofatSarfAId.AllowDBNull = false;
                 this.columnamanatmony.AllowDBNull = false;
                 this.columnamanatrem.MaxLength = 100;
                 this.columnestktaa.AllowDBNull = false;
@@ -15778,7 +15751,6 @@ namespace RetirementCenter.DataSources {
                 this.columnRealName.MaxLength = 50;
                 this.columnDofatSarf_SarfIn.MaxLength = 50;
                 this.columnDofatSarfA.MaxLength = 50;
-                this.columnamanattype.AllowDBNull = false;
                 this.columnamanattype.MaxLength = 30;
             }
             
@@ -22528,7 +22500,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int MMashatId {
                 get {
-                    return ((int)(this[this.tableRep24_A.MMashatIdColumn]));
+                    try {
+                        return ((int)(this[this.tableRep24_A.MMashatIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MMashatId\' in table \'Rep24_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep24_A.MMashatIdColumn] = value;
@@ -22539,7 +22516,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int DofatSarfAId {
                 get {
-                    return ((int)(this[this.tableRep24_A.DofatSarfAIdColumn]));
+                    try {
+                        return ((int)(this[this.tableRep24_A.DofatSarfAIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DofatSarfAId\' in table \'Rep24_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep24_A.DofatSarfAIdColumn] = value;
@@ -22750,11 +22732,40 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string amanattype {
                 get {
-                    return ((string)(this[this.tableRep24_A.amanattypeColumn]));
+                    try {
+                        return ((string)(this[this.tableRep24_A.amanattypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amanattype\' in table \'Rep24_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep24_A.amanattypeColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMMashatIdNull() {
+                return this.IsNull(this.tableRep24_A.MMashatIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMMashatIdNull() {
+                this[this.tableRep24_A.MMashatIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDofatSarfAIdNull() {
+                return this.IsNull(this.tableRep24_A.DofatSarfAIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDofatSarfAIdNull() {
+                this[this.tableRep24_A.DofatSarfAIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22840,6 +22851,18 @@ namespace RetirementCenter.DataSources {
             public void SetDofatSarfANull() {
                 this[this.tableRep24_A.DofatSarfAColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsamanattypeNull() {
+                return this.IsNull(this.tableRep24_A.amanattypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetamanattypeNull() {
+                this[this.tableRep24_A.amanattypeColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -22876,7 +22899,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PersonId {
                 get {
-                    return ((int)(this[this.tableRep25_A.PersonIdColumn]));
+                    try {
+                        return ((int)(this[this.tableRep25_A.PersonIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonId\' in table \'Rep25_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep25_A.PersonIdColumn] = value;
@@ -22887,7 +22915,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int DofatSarfAId {
                 get {
-                    return ((int)(this[this.tableRep25_A.DofatSarfAIdColumn]));
+                    try {
+                        return ((int)(this[this.tableRep25_A.DofatSarfAIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DofatSarfAId\' in table \'Rep25_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep25_A.DofatSarfAIdColumn] = value;
@@ -23109,7 +23142,12 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string amanattype {
                 get {
-                    return ((string)(this[this.tableRep25_A.amanattypeColumn]));
+                    try {
+                        return ((string)(this[this.tableRep25_A.amanattypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amanattype\' in table \'Rep25_A\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRep25_A.amanattypeColumn] = value;
@@ -23126,6 +23164,30 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSelectedNull() {
                 this[this.tableRep25_A.SelectedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonIdNull() {
+                return this.IsNull(this.tableRep25_A.PersonIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonIdNull() {
+                this[this.tableRep25_A.PersonIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDofatSarfAIdNull() {
+                return this.IsNull(this.tableRep25_A.DofatSarfAIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDofatSarfAIdNull() {
+                this[this.tableRep25_A.DofatSarfAIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23210,6 +23272,18 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDofatSarfANull() {
                 this[this.tableRep25_A.DofatSarfAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsamanattypeNull() {
+                return this.IsNull(this.tableRep25_A.amanattypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetamanattypeNull() {
+                this[this.tableRep25_A.amanattypeColumn] = global::System.Convert.DBNull;
             }
         }
         

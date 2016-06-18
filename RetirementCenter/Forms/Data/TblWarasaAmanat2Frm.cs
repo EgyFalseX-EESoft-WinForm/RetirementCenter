@@ -9,13 +9,13 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace RetirementCenter
 {
-    public partial class TblWarasaAmanatFrm : XtraForm
+    public partial class TblWarasaAmanat2Frm : XtraForm
     {
         bool _Insert, _Update, _Delete;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         
         #region -   Functions   -
-        public TblWarasaAmanatFrm()
+        public TblWarasaAmanat2Frm()
         {
             InitializeComponent();
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
@@ -135,16 +135,15 @@ namespace RetirementCenter
         {
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = dsRetirementCenter.TblWarasaAmanat.NewTblWarasaAmanatRow();
             row.estktaa = 0; row.sefa = "العضو";
-            row.amanattypeid = 1;
             Update(row, false);
         }
         private void Update(DataSources.dsRetirementCenter.TblWarasaAmanatRow row, bool DetailsTabFocus)
         {
-            TblWarasaAmanatWFrm frm;
+            TblWarasaAmanatW2Frm frm;
             if (DetailsTabFocus)
-                frm = new TblWarasaAmanatWFrm(row, _Insert, _Update, _Delete);
+                frm = new TblWarasaAmanatW2Frm(row, _Insert, _Update, _Delete);
             else
-                frm = new TblWarasaAmanatWFrm(row, _Insert, _Update, _Delete);
+                frm = new TblWarasaAmanatW2Frm(row, _Insert, _Update, _Delete);
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
 

@@ -18,6 +18,7 @@ namespace RetirementCenter
         public TblWarasaAmanatSarfFrm()
         {
             InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {

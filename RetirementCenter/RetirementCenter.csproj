@@ -325,6 +325,30 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatW2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanatW2Frm.designer.cs">
+      <DependentUpon>TblWarasaAmanatW2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanat2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblWarasaAmanat2Frm.designer.cs">
+      <DependentUpon>TblWarasaAmanat2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatW2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanatW2Frm.designer.cs">
+      <DependentUpon>TblMemberAmanatW2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanat2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblMemberAmanat2Frm.designer.cs">
+      <DependentUpon>TblMemberAmanat2Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TblWarasaAmanatCheekFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1707,6 +1731,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanatW2Frm.resx">
+      <DependentUpon>TblWarasaAmanatW2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblWarasaAmanat2Frm.resx">
+      <DependentUpon>TblWarasaAmanat2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblMemberAmanatW2Frm.resx">
+      <DependentUpon>TblMemberAmanatW2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblMemberAmanat2Frm.resx">
+      <DependentUpon>TblMemberAmanat2Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblWarasaAmanatCheekFrm.resx">
       <DependentUpon>TblWarasaAmanatCheekFrm.cs</DependentUpon>
