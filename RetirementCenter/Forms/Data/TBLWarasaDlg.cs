@@ -42,6 +42,7 @@ namespace RetirementCenter.Forms.Data
             LSMSCDSyndicate.QueryableSource = dsLinq.CDSyndicates;
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
             LSMSCDnationalty.QueryableSource = dsLinq.CDnationalties;
+            LSMSsarfresonid.QueryableSource = dsLinq.cd_sarfresons;
             LSMSTBLWarasa.QueryableSource =
 
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasas where q.MMashatId == TBLWarasa[0].MMashatId select q;
@@ -84,6 +85,7 @@ namespace RetirementCenter.Forms.Data
             LUEresponsiblesarfId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarfId", true));
             tbvisa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "visa", true));
             ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", true));
+            luesarfresonid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "sarfresonid", true));
 
             cewcompletesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wcompletesarf", true));
             tbwmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wmony", true));

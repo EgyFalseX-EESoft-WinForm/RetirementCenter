@@ -689,20 +689,21 @@ FROM            dbo.TBLWarasa LEFT OUTER JOIN
                          dbo.TBLWarasa.personmobile, dbo.TBLWarasa.yasref, dbo.TBLWarasa.userin, dbo.TBLWarasa.datein, dbo.Users.RealName, dbo.CDWarasaType.WarasaType, dbo.TBLMashat.MMashatName, 
                          dbo.TBLMashat.sarfnumber, CDSyndicate_1.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.CDEndwork.EndworkReson, 
                          dbo.TBLMashat.EndworkId, dbo.TBLMashat.WorkeEndDate, dbo.TBLWarasa.SyndicateId AS SyndicateIdWarasa, dbo.TBLWarasa.SubCommitteId AS SubCommitteIdWarasa, 
-                         dbo.CDSyndicate.Syndicate AS SyndicateWarasa, CDSubCommitte_1.SubCommitte AS SubCommitteWarasa, dbo.TBLWarasa.responsiblesarf
-						 , dbo.TBLWarasa.visa
-						 ,CASE WHEN LEN(TBLWarasa.personNID) = 14 THEN YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(TBLWarasa.personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(dbo.TBLWarasa.personNID, 2, 2) AS INT) ELSE 0 END AS Age
-						 , TBL.personName AS responsiblesarfName
-, (SELECT [newid] FROM [dbo].[AwarasaNewId] WHERE [visa] = TBLWarasa.visa) AS CODE60
-FROM            dbo.CDSubCommitte RIGHT OUTER JOIN
-                         dbo.Users RIGHT OUTER JOIN
-                         dbo.CDSyndicate RIGHT OUTER JOIN
+                         dbo.CDSyndicate.Syndicate AS SyndicateWarasa, CDSubCommitte_1.SubCommitte AS SubCommitteWarasa, dbo.TBLWarasa.responsiblesarf, dbo.TBLWarasa.visa, CASE WHEN LEN(TBLWarasa.personNID) 
+                         = 14 THEN YEAR(GETDATE()) - CAST(CASE WHEN SUBSTRING(TBLWarasa.personNID, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(dbo.TBLWarasa.personNID, 2, 2) AS INT) ELSE 0 END AS Age, 
+                         TBL.personName AS responsiblesarfName,
+                             (SELECT newid FROM dbo.AwarasaNewId WHERE (visa = dbo.TBLWarasa.visa)) AS CODE60, dbo.TBLWarasa.sarfresonid, dbo.cd_sarfreson.sarfreson
+                FROM            dbo.CDEndwork RIGHT OUTER JOIN
+                         dbo.CDWarasaType RIGHT OUTER JOIN
+                         dbo.CDSubCommitte AS CDSubCommitte_1 RIGHT OUTER JOIN
                          dbo.TBLWarasa LEFT OUTER JOIN
-                         dbo.CDSubCommitte AS CDSubCommitte_1 ON dbo.TBLWarasa.SubCommitteId = CDSubCommitte_1.SubCommitteId ON dbo.CDSyndicate.SyndicateId = dbo.TBLWarasa.SyndicateId LEFT OUTER JOIN
+                         dbo.cd_sarfreson ON dbo.TBLWarasa.sarfresonid = dbo.cd_sarfreson.sarfresonid ON CDSubCommitte_1.SubCommitteId = dbo.TBLWarasa.SubCommitteId LEFT OUTER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId LEFT OUTER JOIN
                          dbo.TBLMashat LEFT OUTER JOIN
-                         dbo.CDSyndicate AS CDSyndicate_1 ON dbo.TBLMashat.SyndicateId = CDSyndicate_1.SyndicateId ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId LEFT OUTER JOIN
-                         dbo.CDWarasaType ON dbo.TBLWarasa.WarasaTypeId = dbo.CDWarasaType.WarasaTypeId ON dbo.Users.UserID = dbo.TBLWarasa.userin LEFT OUTER JOIN
-                         dbo.CDEndwork ON dbo.TBLMashat.EndworkId = dbo.CDEndwork.EndworkId ON dbo.CDSubCommitte.SubCommitteId = dbo.TBLMashat.SubCommitteId LEFT OUTER JOIN
+                         dbo.CDSyndicate AS CDSyndicate_1 ON dbo.TBLMashat.SyndicateId = CDSyndicate_1.SyndicateId ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId ON 
+                         dbo.CDWarasaType.WarasaTypeId = dbo.TBLWarasa.WarasaTypeId LEFT OUTER JOIN
+                         dbo.Users ON dbo.TBLWarasa.userin = dbo.Users.UserID ON dbo.CDEndwork.EndworkId = dbo.TBLMashat.EndworkId LEFT OUTER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId LEFT OUTER JOIN
                          dbo.TBLWarasa AS TBL ON dbo.TBLWarasa.responsiblesarfId = TBL.PersonId
 ";
             }

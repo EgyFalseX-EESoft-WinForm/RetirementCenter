@@ -6816,6 +6816,8 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnnationaltyId;
             
+            private global::System.Data.DataColumn columnsarfresonid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBLWarasaDataTable() {
@@ -7035,6 +7037,14 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sarfresonidColumn {
+                get {
+                    return this.columnsarfresonid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7093,7 +7103,8 @@ namespace RetirementCenter.DataSources {
                         string visa, 
                         System.DateTime ImportDateIn, 
                         bool Activate, 
-                        byte nationaltyId) {
+                        byte nationaltyId, 
+                        byte sarfresonid) {
                 TBLWarasaRow rowTBLWarasaRow = ((TBLWarasaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PersonId,
@@ -7118,7 +7129,8 @@ namespace RetirementCenter.DataSources {
                         visa,
                         ImportDateIn,
                         Activate,
-                        nationaltyId};
+                        nationaltyId,
+                        sarfresonid};
                 if ((parentTBLMashatRowByFK_TBLWarasa_TBLMashat != null)) {
                     columnValuesArray[1] = parentTBLMashatRowByFK_TBLWarasa_TBLMashat[0];
                 }
@@ -7174,6 +7186,7 @@ namespace RetirementCenter.DataSources {
                 this.columnImportDateIn = base.Columns["ImportDateIn"];
                 this.columnActivate = base.Columns["Activate"];
                 this.columnnationaltyId = base.Columns["nationaltyId"];
+                this.columnsarfresonid = base.Columns["sarfresonid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7225,6 +7238,8 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnActivate);
                 this.columnnationaltyId = new global::System.Data.DataColumn("nationaltyId", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnationaltyId);
+                this.columnsarfresonid = new global::System.Data.DataColumn("sarfresonid", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsarfresonid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonId}, true));
                 this.columnPersonId.AllowDBNull = false;
@@ -26946,6 +26961,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte sarfresonid {
+                get {
+                    try {
+                        return ((byte)(this[this.tableTBLWarasa.sarfresonidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sarfresonid\' in table \'TBLWarasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLWarasa.sarfresonidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBLMashatRow TBLMashatRow {
                 get {
                     return ((TBLMashatRow)(this.GetParentRow(this.Table.ParentRelations["FK_TBLWarasa_TBLMashat"])));
@@ -27239,6 +27270,18 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnationaltyIdNull() {
                 this[this.tableTBLWarasa.nationaltyIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssarfresonidNull() {
+                return this.IsNull(this.tableTBLWarasa.sarfresonidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsarfresonidNull() {
+                this[this.tableTBLWarasa.sarfresonidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -42819,6 +42862,7 @@ SELECT id, MMashatId, OldSyndicateId, NewSyndicateId, OldSubCommitteId, NewSubCo
             tableMapping.ColumnMappings.Add("ImportDateIn", "ImportDateIn");
             tableMapping.ColumnMappings.Add("Activate", "Activate");
             tableMapping.ColumnMappings.Add("nationaltyId", "nationaltyId");
+            tableMapping.ColumnMappings.Add("sarfresonid", "sarfresonid");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -42827,8 +42871,8 @@ SELECT id, MMashatId, OldSyndicateId, NewSyndicateId, OldSubCommitteId, NewSubCo
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLWarasa] ([PersonId], [MMashatId], [WarasaTypeId], [personName], [personNID], [personbirth], [personAddres], [personmobile], [yasref], [userin], [datein], [SyndicateId], [SubCommitteId], [responsiblesarf], [responsiblesarfId], [wmony], [wcompletesarf], [westktaat], [welrasm], [visa], [ImportDateIn], [Activate], [nationaltyId]) VALUES (@PersonId, @MMashatId, @WarasaTypeId, @personName, @personNID, @personbirth, @personAddres, @personmobile, @yasref, @userin, @datein, @SyndicateId, @SubCommitteId, @responsiblesarf, @responsiblesarfId, @wmony, @wcompletesarf, @westktaat, @welrasm, @visa, @ImportDateIn, @Activate, @nationaltyId);
-SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId FROM TBLWarasa WHERE (PersonId = @PersonId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLWarasa] ([PersonId], [MMashatId], [WarasaTypeId], [personName], [personNID], [personbirth], [personAddres], [personmobile], [yasref], [userin], [datein], [SyndicateId], [SubCommitteId], [responsiblesarf], [responsiblesarfId], [wmony], [wcompletesarf], [westktaat], [welrasm], [visa], [ImportDateIn], [Activate], [nationaltyId], [sarfresonid]) VALUES (@PersonId, @MMashatId, @WarasaTypeId, @personName, @personNID, @personbirth, @personAddres, @personmobile, @yasref, @userin, @datein, @SyndicateId, @SubCommitteId, @responsiblesarf, @responsiblesarfId, @wmony, @wcompletesarf, @westktaat, @welrasm, @visa, @ImportDateIn, @Activate, @nationaltyId, @sarfresonid);
+SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId, sarfresonid FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -42853,10 +42897,11 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, pe
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportDateIn", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportDateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nationaltyId", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nationaltyId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sarfresonid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sarfresonid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLWarasa] SET [PersonId] = @PersonId, [MMashatId] = @MMashatId, [WarasaTypeId] = @WarasaTypeId, [personName] = @personName, [personNID] = @personNID, [personbirth] = @personbirth, [personAddres] = @personAddres, [personmobile] = @personmobile, [yasref] = @yasref, [userin] = @userin, [datein] = @datein, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [responsiblesarf] = @responsiblesarf, [responsiblesarfId] = @responsiblesarfId, [wmony] = @wmony, [wcompletesarf] = @wcompletesarf, [westktaat] = @westktaat, [welrasm] = @welrasm, [visa] = @visa, [ImportDateIn] = @ImportDateIn, [Activate] = @Activate, [nationaltyId] = @nationaltyId WHERE (([PersonId] = @Original_PersonId));
-SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId FROM TBLWarasa WHERE (PersonId = @PersonId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLWarasa] SET [PersonId] = @PersonId, [MMashatId] = @MMashatId, [WarasaTypeId] = @WarasaTypeId, [personName] = @personName, [personNID] = @personNID, [personbirth] = @personbirth, [personAddres] = @personAddres, [personmobile] = @personmobile, [yasref] = @yasref, [userin] = @userin, [datein] = @datein, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [responsiblesarf] = @responsiblesarf, [responsiblesarfId] = @responsiblesarfId, [wmony] = @wmony, [wcompletesarf] = @wcompletesarf, [westktaat] = @westktaat, [welrasm] = @welrasm, [visa] = @visa, [ImportDateIn] = @ImportDateIn, [Activate] = @Activate, [nationaltyId] = @nationaltyId, [sarfresonid] = @sarfresonid WHERE (([PersonId] = @Original_PersonId));
+SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId, sarfresonid FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -42881,6 +42926,7 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, pe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportDateIn", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportDateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nationaltyId", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nationaltyId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sarfresonid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sarfresonid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -42898,17 +42944,17 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, pe
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, 
-                         wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId
+                         wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId, sarfresonid
 FROM            TBLWarasa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Activate, ImportDateIn, MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, nationaltyId, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, responsiblesarfId, userin, visa, wcompletesarf, welrasm, westktaat, wmony, yasref FROM TBLWarasa WHERE (MMashatId = @MMashatId)";
+            this._commandCollection[1].CommandText = @"SELECT Activate, ImportDateIn, MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, nationaltyId, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, responsiblesarfId, sarfresonid, userin, visa, wcompletesarf, welrasm, westktaat, wmony, yasref FROM TBLWarasa WHERE (MMashatId = @MMashatId)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Activate, ImportDateIn, MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, nationaltyId, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, responsiblesarfId, userin, visa, wcompletesarf, welrasm, westktaat, wmony, yasref FROM TBLWarasa WHERE (PersonId = @PersonId)";
+            this._commandCollection[2].CommandText = @"SELECT Activate, ImportDateIn, MMashatId, PersonId, SubCommitteId, SyndicateId, WarasaTypeId, datein, nationaltyId, personAddres, personNID, personName, personbirth, personmobile, responsiblesarf, responsiblesarfId, sarfresonid, userin, visa, wcompletesarf, welrasm, westktaat, wmony, yasref FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -43118,7 +43164,8 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
                     string visa, 
                     global::System.Nullable<global::System.DateTime> ImportDateIn, 
                     global::System.Nullable<bool> Activate, 
-                    global::System.Nullable<byte> nationaltyId) {
+                    global::System.Nullable<byte> nationaltyId, 
+                    global::System.Nullable<byte> sarfresonid) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PersonId));
             if ((MMashatId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MMashatId.Value));
@@ -43252,6 +43299,12 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
             else {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
+            if ((sarfresonid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((byte)(sarfresonid.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -43296,6 +43349,7 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
                     global::System.Nullable<global::System.DateTime> ImportDateIn, 
                     global::System.Nullable<bool> Activate, 
                     global::System.Nullable<byte> nationaltyId, 
+                    global::System.Nullable<byte> sarfresonid, 
                     int Original_PersonId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PersonId));
             if ((MMashatId.HasValue == true)) {
@@ -43430,7 +43484,13 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_PersonId));
+            if ((sarfresonid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(sarfresonid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_PersonId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -43474,8 +43534,9 @@ WHERE MMashatId = @MMashatId AND SyndicateId = @SyndicateId AND SubCommitteId = 
                     global::System.Nullable<global::System.DateTime> ImportDateIn, 
                     global::System.Nullable<bool> Activate, 
                     global::System.Nullable<byte> nationaltyId, 
+                    global::System.Nullable<byte> sarfresonid, 
                     int Original_PersonId) {
-            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId, Original_PersonId);
+            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, personNID, personbirth, personAddres, personmobile, yasref, userin, datein, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, wmony, wcompletesarf, westktaat, welrasm, visa, ImportDateIn, Activate, nationaltyId, sarfresonid, Original_PersonId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
