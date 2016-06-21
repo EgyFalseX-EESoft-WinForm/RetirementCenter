@@ -136,9 +136,9 @@ namespace RetirementCenter
                 msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
 
                 int update5Result = adpSql.Update5();
-                msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
+                msg += Environment.NewLine + "تم تحديث activee ل " + update5Result + " عضو";
                 int insert1Result = adpSql.Insert1(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId));
-                msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول TBLNoSarfDetels";
+                msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول tblmembervisaactive";
 
                 ActivateControls(true);
 
@@ -162,9 +162,9 @@ namespace RetirementCenter
                 msg += "تم تحديث " + update4Result + " من جدول tblmemberbank";
 
                 int update5Result = adpSql.Update5W(deSendbankDate.DateTime);
-                msg += Environment.NewLine + "تم تحديث yasref ل " + update5Result + " عضو";
+                msg += Environment.NewLine + "تم تحديث activee ل " + update5Result + " عضو";
                 int insert1Result = adpSql.Insert1W(deGetback.DateTime, Convert.ToInt16(Program.UserInfo.UserId), deSendbankDate.DateTime);
-                msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول TBLNoSarfWarsa";
+                msg += Environment.NewLine + "تم اضافة " + insert1Result + " في جدول tblvisawarsaactive";
                 msg += Environment.NewLine + "عدد ما لم يتم ألحاقه " + adpSql.NullOkOkCount() + " ريكورد";
                 btnImport.Invoke(new MethodInvoker(() =>
                 {

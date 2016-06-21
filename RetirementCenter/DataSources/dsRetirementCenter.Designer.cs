@@ -55559,7 +55559,7 @@ SELECT PersonId, activee, datehala, halarem, datein, userin FROM tblvisawarsaact
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PersonId, activee, datehala, halarem, datein, userin FROM dbo.tblvisawarsa" +
@@ -55583,6 +55583,16 @@ SELECT PersonId, activee, datehala, halarem, datein, userin FROM tblvisawarsaact
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datein", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@visa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "visa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO [dbo].[tblvisawarsaactive] ([PersonId], [activee], [datehala], [halar" +
+                "em], [datein], [userin])\r\nSELECT PersonId, 1, GETDATE(), @halarem, GETDATE(), @u" +
+                "serin\r\nFROM TblWarasa Where visa = (SELECT visa FROM TBLWarasa tbl WHERE PersonI" +
+                "d = @PersonId)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@halarem", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -55785,6 +55795,37 @@ SELECT PersonId, activee, datehala, halarem, datein, userin FROM tblvisawarsaact
             else {
                 command.Parameters[5].Value = ((string)(visa));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertForVisaByPerson(string halarem, int userin, int PersonId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((halarem == null)) {
+                throw new global::System.ArgumentNullException("halarem");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(halarem));
+            }
+            command.Parameters[1].Value = ((int)(userin));
+            command.Parameters[2].Value = ((int)(PersonId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -61448,21 +61489,21 @@ SELECT HafezAuto, SyndicateId, DofatSarfId, countmembers, countwarasa, hafezmemb
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"INSERT INTO TBLNoSarfDetels (MMashatId, yasref, datehala, halarem, datein, userin)
+            this._commandCollection[3].CommandText = @"INSERT INTO tblmembervisaactive (MMashatId, activee, datehala, halarem, datein, userin)
 SELECT        TBLMashat.MMashatId, 0, @Getback, 'ايقاف لرد المستحقات امانات فيزا', GETDATE(), @userin
 FROM            TBLMashat INNER JOIN
                          for_amanat_bank ON TBLMashat.visa = for_amanat_bank.pan
-WHERE        (TBLMashat.MashHalaId = 1) AND NOT EXISTS(SELECT MMashatId FROM TBLNoSarfDetels WHERE MMashatId = TBLMashat.MMashatId AND yasref = 0 AND datehala = @Getback)
+WHERE        (TBLMashat.MashHalaId = 1) AND NOT EXISTS(SELECT MMashatId FROM tblmembervisaactive WHERE MMashatId = TBLMashat.MMashatId AND activee = 0 AND datehala = @Getback)
 ";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Getback", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO TBLNoSarfWarsa (PersonId, yasref, datehala, halarem, datein, userin)
+            this._commandCollection[4].CommandText = @"INSERT INTO tblvisawarsaactive (PersonId, activee, datehala, halarem, datein, userin)
 SELECT        TBLWarasa.PersonId, 0, @Getback, 'ايقاف لرد المستحقات امانات فيزا', GETDATE(), @userin
 FROM            TBLWarasa INNER JOIN for_amanat_bank ON TBLWarasa.visa = for_amanat_bank.pan
-WHERE sendbankdate = @sendbankdate AND NOT EXISTS(SELECT PersonId FROM TBLNoSarfWarsa WHERE PersonId = TBLWarasa.PersonId AND yasref = 0 AND datehala = @Getback)";
+WHERE sendbankdate = @sendbankdate AND NOT EXISTS(SELECT PersonId FROM tblvisawarsaactive WHERE PersonId = TBLWarasa.PersonId AND activee = 0 AND datehala = @Getback)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Getback", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -61532,15 +61573,15 @@ WHERE        (tblwarasabank.DofatSarfId = @DofatSarfId) AND (for_amanat_bank.pan
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "UPDATE       TBLMashat\r\nSET                yasref = 0\r\nFROM            for_amanat" +
-                "_bank INNER JOIN\r\n                         TBLMashat ON for_amanat_bank.pan = TB" +
-                "LMashat.visa\r\nWHERE        (TBLMashat.MashHalaId = 1)";
+            this._commandCollection[12].CommandText = "UPDATE       TBLMashat\r\nSET                Activate = 0\r\nFROM            for_aman" +
+                "at_bank INNER JOIN\r\n                         TBLMashat ON for_amanat_bank.pan = " +
+                "TBLMashat.visa\r\nWHERE        (TBLMashat.MashHalaId = 1)";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "UPDATE       TBLWarasa\r\nSET                yasref = 0\r\nFROM            for_amanat" +
-                "_bank INNER JOIN\r\n                         TBLWarasa ON for_amanat_bank.pan = TB" +
-                "LWarasa.visa\r\nWHERE sendbankdate = @sendbankdate";
+            this._commandCollection[13].CommandText = "UPDATE       TBLWarasa\r\nSET                Activate = 0\r\nFROM            for_aman" +
+                "at_bank INNER JOIN\r\n                         TBLWarasa ON for_amanat_bank.pan = " +
+                "TBLWarasa.visa\r\nWHERE sendbankdate = @sendbankdate";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sendbankdate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "sendbankdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }

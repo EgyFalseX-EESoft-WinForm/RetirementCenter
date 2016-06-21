@@ -68031,7 +68031,7 @@ GROUP BY TBLMemberSarf_arshef.MMashatId, TBLMashat.MMashatName, CDSyndicate.Synd
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[50];
+            this._commandCollection = new global::System.Data.IDbCommand[51];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT ISNULL(MAX(MMashatId) +1, 1) AS NewId FROM TBLMashat";
@@ -68385,6 +68385,12 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasa.SubCommitteId
                 "R JOIN a_warasa_active_date ON TBLWarasa.visa = a_warasa_active_date.visa\r\nWHERE" +
                 " (TBLWarasa.Activate = 0) OR (TBLWarasa.Activate IS NULL)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[49])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[50] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[50])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[50])).CommandText = "UPDATE       TBLWarasa\r\nSET                Activate = 1\r\nWHERE visa = (SELECT vis" +
+                "a FROM TBLWarasa tbl WHERE PersonId = @PersonId)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[50])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[50])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -69858,6 +69864,30 @@ WHERE        (TBLWarasa.SyndicateId = @SyndicateId) AND (TBLWarasa.SubCommitteId
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int Update_TBLWarasa_Active() {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[49]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_TblWarasa_Active_byVisa(int PersonId) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[50]));
+            command.Parameters[0].Value = ((int)(PersonId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
