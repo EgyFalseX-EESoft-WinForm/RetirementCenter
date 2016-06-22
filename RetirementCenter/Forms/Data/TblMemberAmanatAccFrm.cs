@@ -105,6 +105,12 @@ namespace RetirementCenter
             }
             row.EndEdit();
             tblMemberAmanatTableAdapter.Update(row);
+            //ReActive any Person with same visa as current Person
+            if (row.accReview)
+            {
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_byID(row.MMashatId);
+                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter().Insert(row.MMashatId, true, SQLProvider.ServerDateTime(), "تم تقديم طلب امانات", SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
+            }
             msgDlg.Show("تم حفظ التعديل", msgDlg.msgButtons.Close);
             
         }
