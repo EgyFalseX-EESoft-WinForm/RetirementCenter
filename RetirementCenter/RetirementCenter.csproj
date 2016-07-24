@@ -733,6 +733,12 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry95Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry95Frm.designer.cs">
+      <DependentUpon>Qry95Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry94Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1938,6 +1944,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry95Frm.resx">
+      <DependentUpon>Qry95Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry94Frm.resx">
       <DependentUpon>Qry94Frm.cs</DependentUpon>
