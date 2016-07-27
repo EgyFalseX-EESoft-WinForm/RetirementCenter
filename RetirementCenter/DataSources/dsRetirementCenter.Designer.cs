@@ -48570,14 +48570,42 @@ FROM            TblMemberAmanat INNER JOIN
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)
-SELECT TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, SUM(TblMemberAmanat.amanatmony), 0, 0, ISNULL(SUM(TblMemberAmanat.estktaa), 0), 1
-, GETDATE(), @userin, 0, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END, TblMemberAmanat.amantvisa
-FROM TblMemberAmanat INNER JOIN TBLDofatSarf ON TblMemberAmanat.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN TBLMashat ON TblMemberAmanat.MMashatId = TBLMashat.MMashatId
-WHERE        (TblMemberAmanat.accReview = 1) AND (TblMemberAmanat.DofatSarfId IS NOT NULL)
-AND NOT EXISTS(SELECT MMashatId FROM TBLMemberSarf_arshef WHERE MMashatId = TblMemberAmanat.MMashatId AND DofatSarfId = TblMemberAmanat.DofatSarfId AND SarfTypeedadId = 6)
-GROUP BY TblMemberAmanat.MMashatId, TblMemberAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfDateto, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, sarfcheek, TblMemberAmanat.amantvisa
-";
+            this._commandCollection[4].CommandText = "\r\nINSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfd" +
+                "atefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, u" +
+                "serin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TblMemb" +
+                "erAmanat.MMashatId\r\n, (SELECT TOP 1 DofatSarfId FROM TblMemberAmanat TBL WHERE M" +
+                "MashatId = TblMemberAmanat.MMashatId AND accReview = 1 AND DofatSarfId IS NOT NU" +
+                "LL order by datein desc) AS DofatSarfId\r\n, 6\r\n, (SELECT DofatSarfDatefrom FROM T" +
+                "BLDofatSarf WHERE DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblMemberAmanat T" +
+                "BL WHERE MMashatId = TblMemberAmanat.MMashatId AND DofatSarfId = (SELECT TOP 1 D" +
+                "ofatSarfId FROM TblMemberAmanat TBL WHERE MMashatId = TblMemberAmanat.MMashatId " +
+                "AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein desc) AND accRevie" +
+                "w = 1 AND DofatSarfId IS NOT NULL order by datein desc)) AS DofatSarfDatefrom\r\n," +
+                " (SELECT DofatSarfDateto FROM TBLDofatSarf WHERE DofatSarfId = (SELECT TOP 1 Dof" +
+                "atSarfId FROM TblMemberAmanat TBL WHERE MMashatId = TblMemberAmanat.MMashatId AN" +
+                "D DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblMemberAmanat TBL WHERE MMashat" +
+                "Id = TblMemberAmanat.MMashatId AND accReview = 1 AND DofatSarfId IS NOT NULL ord" +
+                "er by datein desc) AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein" +
+                " desc)) AS DofatSarfDateto\r\n, SUM(TblMemberAmanat.amanatmony) / COUNT(*), 0, 0, " +
+                "ISNULL(SUM(TblMemberAmanat.estktaa), 0) / COUNT(*), 1\r\n, GETDATE(), @userin, 0, " +
+                "TBLMashat.SyndicateId, TBLMashat.SubCommitteId\r\n, (SELECT TOP 1 CASE WHEN sarfch" +
+                "eek IS NULL THEN 0 ELSE sarfcheek END FROM TblMemberAmanat TBL WHERE MMashatId =" +
+                " TblMemberAmanat.MMashatId AND DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblM" +
+                "emberAmanat TBL WHERE MMashatId = TblMemberAmanat.MMashatId AND accReview = 1 AN" +
+                "D DofatSarfId IS NOT NULL order by datein desc) AND accReview = 1 AND DofatSarfI" +
+                "d IS NOT NULL order by datein desc) AS sarfcheek\r\n, (SELECT TOP 1 amantvisa FROM" +
+                " TblMemberAmanat TBL WHERE MMashatId = TblMemberAmanat.MMashatId AND DofatSarfId" +
+                " = (SELECT TOP 1 DofatSarfId FROM TblMemberAmanat TBL WHERE MMashatId = TblMembe" +
+                "rAmanat.MMashatId AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein " +
+                "desc) AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein desc) AS ama" +
+                "ntvisa\r\nFROM TblMemberAmanat INNER JOIN TBLMashat ON TblMemberAmanat.MMashatId =" +
+                " TBLMashat.MMashatId\r\nWHERE        (TblMemberAmanat.accReview = 1) AND (TblMembe" +
+                "rAmanat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT MMashatId FROM TBLMember" +
+                "Sarf_arshef WHERE MMashatId = TblMemberAmanat.MMashatId AND DofatSarfId = (SELEC" +
+                "T TOP 1 DofatSarfId FROM TblMemberAmanat TBL WHERE MMashatId = TblMemberAmanat.M" +
+                "MashatId AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein desc) AND" +
+                " SarfTypeedadId = 6)\r\nGROUP BY TblMemberAmanat.MMashatId, TBLMashat.SyndicateId," +
+                " TBLMashat.SubCommitteId\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -49698,33 +49726,54 @@ FROM            TblWarasaAmanat INNER JOIN
             this._commandCollection[4].CommandText = "INSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdate" +
                 "from, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, user" +
                 "in, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TblWarasaA" +
-                "manat.PersonId, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, " +
-                "TBLDofatSarf.DofatSarfDateto, SUM(TblWarasaAmanat.amanatmony), 0, 0, ISNULL(SUM(" +
-                "TblWarasaAmanat.estktaa), 0), 1\r\n, GETDATE(), @userin, 0, TBLWarasa.SyndicateId," +
+                "manat.PersonId\r\n, (SELECT TOP 1 DofatSarfId FROM TblWarasaAmanat TBL WHERE Perso" +
+                "nId = TblWarasaAmanat.PersonId AND accReview = 1 AND DofatSarfId IS NOT NULL ord" +
+                "er by datein desc) AS DofatSarfId\r\n, 6\r\n, (SELECT DofatSarfDatefrom FROM TBLDofa" +
+                "tSarf WHERE DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblWarasaAmanat TBL WHE" +
+                "RE PersonId = TblWarasaAmanat.PersonId AND DofatSarfId = (SELECT TOP 1 DofatSarf" +
+                "Id FROM TblWarasaAmanat TBL WHERE PersonId = TblWarasaAmanat.PersonId AND accRev" +
+                "iew = 1 AND DofatSarfId IS NOT NULL order by datein desc) AND accReview = 1 AND " +
+                "DofatSarfId IS NOT NULL order by datein desc)) AS DofatSarfDatefrom\r\n, (SELECT D" +
+                "ofatSarfDateto FROM TBLDofatSarf WHERE DofatSarfId = (SELECT TOP 1 DofatSarfId F" +
+                "ROM TblWarasaAmanat TBL WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarfI" +
+                "d = (SELECT TOP 1 DofatSarfId FROM TblWarasaAmanat TBL WHERE PersonId = TblWaras" +
+                "aAmanat.PersonId AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein d" +
+                "esc) AND accReview = 1 AND DofatSarfId IS NOT NULL order by datein desc)) AS Dof" +
+                "atSarfDateto\r\n, SUM(TblWarasaAmanat.amanatmony) / COUNT(*), 0, 0, ISNULL(SUM(Tbl" +
+                "WarasaAmanat.estktaa), 0) / COUNT(*), 1\r\n, GETDATE(), @userin, 0, TBLWarasa.Synd" +
+                "icateId, TBLWarasa.SubCommitteId\r\n, (SELECT TOP 1 CASE WHEN sarfcheek IS NULL TH" +
+                "EN 0 ELSE sarfcheek END FROM TblWarasaAmanat TBL WHERE PersonId = TblWarasaAmana" +
+                "t.PersonId AND DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblWarasaAmanat TBL " +
+                "WHERE PersonId = TblWarasaAmanat.PersonId AND accReview = 1 AND DofatSarfId IS N" +
+                "OT NULL order by datein desc) AND accReview = 1 AND DofatSarfId IS NOT NULL orde" +
+                "r by datein desc) AS sarfcheek\r\n, (SELECT TOP 1 amantvisa FROM TblWarasaAmanat T" +
+                "BL WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarfId = (SELECT TOP 1 Dof" +
+                "atSarfId FROM TblWarasaAmanat TBL WHERE PersonId = TblWarasaAmanat.PersonId AND " +
+                "accReview = 1 AND DofatSarfId IS NOT NULL order by datein desc) AND accReview = " +
+                "1 AND DofatSarfId IS NOT NULL order by datein desc) AS amantvisa\r\nFROM TblWarasa" +
+                "Amanat INNER JOIN TBLDofatSarf ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf.Dof" +
+                "atSarfId INNER JOIN TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId\r\n" +
+                "WHERE (TblWarasaAmanat.accReview = 1) AND (TblWarasaAmanat.DofatSarfId IS NOT NU" +
+                "LL)\r\nAND NOT EXISTS(SELECT PersonId FROM TBLWarasaSarf_arshef WHERE PersonId = T" +
+                "blWarasaAmanat.PersonId AND DofatSarfId = (SELECT TOP 1 DofatSarfId FROM TblWara" +
+                "saAmanat TBL WHERE PersonId = TblWarasaAmanat.PersonId AND accReview = 1 AND Dof" +
+                "atSarfId IS NOT NULL order by datein desc) AND SarfTypeedadId = 6)\r\nGROUP BY Tbl" +
+                "WarasaAmanat.PersonId, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId\r\n\r\nINSERT " +
+                "INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdatefrom, " +
+                "sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Ed" +
+                "afat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TBLWarasa.Person" +
+                "Id, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf" +
+                ".DofatSarfDateto, 0, 0, 0, 0, 1\r\n, GETDATE(), @userin, 0, TBLWarasa.SyndicateId," +
                 " TBLWarasa.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfcheek END," +
                 " amantvisa\r\nFROM TblWarasaAmanat INNER JOIN TBLDofatSarf ON TblWarasaAmanat.Dofa" +
-                "tSarfId = TBLDofatSarf.DofatSarfId INNER JOIN TBLWarasa ON TblWarasaAmanat.Perso" +
-                "nId = TBLWarasa.PersonId\r\nWHERE (TblWarasaAmanat.accReview = 1) AND (TblWarasaAm" +
-                "anat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT PersonId FROM TBLWarasaSarf" +
-                "_arshef WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarfId = TblWarasaAma" +
-                "nat.DofatSarfId AND SarfTypeedadId = 6)\r\nGROUP BY TblWarasaAmanat.PersonId, TblW" +
-                "arasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.DofatSarfD" +
-                "ateto, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, sarfcheek, amantvisa\r\n\r\nI" +
-                "NSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdate" +
-                "from, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, user" +
-                "in, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)\r\nSELECT TBLWarasa." +
-                "PersonId, TblWarasaAmanat.DofatSarfId, 6, TBLDofatSarf.DofatSarfDatefrom, TBLDof" +
-                "atSarf.DofatSarfDateto, 0, 0, 0, 0, 1\r\n, GETDATE(), @userin, 0, TBLWarasa.Syndic" +
-                "ateId, TBLWarasa.SubCommitteId, CASE WHEN sarfcheek IS NULL THEN 0 ELSE sarfchee" +
-                "k END, amantvisa\r\nFROM TblWarasaAmanat INNER JOIN TBLDofatSarf ON TblWarasaAmana" +
-                "t.DofatSarfId = TBLDofatSarf.DofatSarfId \r\nINNER JOIN TBLWarasa ON TblWarasaAman" +
-                "at.PersonId = TBLWarasa.responsiblesarfId\r\nWHERE (TblWarasaAmanat.accReview = 1)" +
-                " AND (TblWarasaAmanat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT PersonId F" +
-                "ROM TBLWarasaSarf_arshef WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarf" +
-                "Id = TblWarasaAmanat.DofatSarfId AND SarfTypeedadId = 6)\r\nGROUP BY TBLWarasa.Per" +
-                "sonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf" +
-                ".DofatSarfDateto, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, sarfcheek, ama" +
-                "ntvisa\r\n";
+                "tSarfId = TBLDofatSarf.DofatSarfId \r\nINNER JOIN TBLWarasa ON TblWarasaAmanat.Per" +
+                "sonId = TBLWarasa.responsiblesarfId\r\nWHERE (TblWarasaAmanat.accReview = 1) AND (" +
+                "TblWarasaAmanat.DofatSarfId IS NOT NULL)\r\nAND NOT EXISTS(SELECT PersonId FROM TB" +
+                "LWarasaSarf_arshef WHERE PersonId = TblWarasaAmanat.PersonId AND DofatSarfId = T" +
+                "blWarasaAmanat.DofatSarfId AND SarfTypeedadId = 6)\r\nGROUP BY TBLWarasa.PersonId," +
+                " TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarfDatefrom, TBLDofatSarf.Dofat" +
+                "SarfDateto, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, sarfcheek, amantvisa" +
+                "\r\n\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userin", global::System.Data.SqlDbType.Int, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();

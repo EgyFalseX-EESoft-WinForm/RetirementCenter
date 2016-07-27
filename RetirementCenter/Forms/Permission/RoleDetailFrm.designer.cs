@@ -270,6 +270,7 @@
             this.mbRetCenterTblWarasaAmanatCheek = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblWarasaAmanat2 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry95 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry96 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep25 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterBankExportedDataActivate = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterVisa = new DevExpress.XtraBars.BarSubItem();
@@ -738,10 +739,11 @@
             this.mbRetCenterQry94,
             this.mbRetCenterTblMemberAmanat2,
             this.mbRetCenterTblWarasaAmanat2,
-            this.mbRetCenterQry95});
+            this.mbRetCenterQry95,
+            this.mbRetCenterQry96});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 397;
+            this.ribbonControl.MaxItemId = 398;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2848,7 +2850,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTblWarasaAmanatAcc),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTblWarasaAmanatCheek),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTblWarasaAmanat2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry95)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry95),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry96)});
             this.mbRetCenterTblWarasaAmanatMenu.Name = "mbRetCenterTblWarasaAmanatMenu";
             // 
             // mbRetCenterTblWarasaAmanatSarf
@@ -2890,6 +2893,14 @@
             this.mbRetCenterQry95.ImageIndex = 19;
             this.mbRetCenterQry95.LargeImageIndexDisabled = 19;
             this.mbRetCenterQry95.Name = "mbRetCenterQry95";
+            // 
+            // mbRetCenterQry96
+            // 
+            this.mbRetCenterQry96.Caption = "ورثة لم يتم ترحلهم لاخطاء الادخال";
+            this.mbRetCenterQry96.Id = 397;
+            this.mbRetCenterQry96.ImageIndex = 19;
+            this.mbRetCenterQry96.LargeImageIndexDisabled = 19;
+            this.mbRetCenterQry96.Name = "mbRetCenterQry96";
             // 
             // mbRetCenterXRep25
             // 
@@ -3513,6 +3524,7 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblWarasaAmanatCheek;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblWarasaAmanat2;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry95;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry96;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep25;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterBankExportedDataActivate;
         private DevExpress.XtraBars.BarSubItem mbRetCenterVisa;

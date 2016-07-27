@@ -3307,6 +3307,35 @@ GROUP BY TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.Dof
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry96TableAdapter" GeneratorDataComponentClassName="vQry96TableAdapter" Name="vQry96" UserDataComponentName="vQry96TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasa.MMashatId, TBLWarasa.personName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+FROM            TblWarasaAmanat INNER JOIN
+                         TBLWarasa ON TblWarasaAmanat.PersonId = TBLWarasa.PersonId INNER JOIN
+                         TBLDofatSarf ON TblWarasaAmanat.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
+GROUP BY TblWarasaAmanat.PersonId, TblWarasaAmanat.DofatSarfId, TBLDofatSarf.DofatSarf, TBLWarasa.MMashatId, TBLWarasa.personName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+HAVING        (COUNT(*) &gt; 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="DofatSarfId" DataSetColumn="DofatSarfId" />
+              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MemberNewId" MethodsParameterType="CLR" Modifier="Public" Name="MemberNewId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MemberNewId">
@@ -6976,6 +7005,43 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vQry96" msprop:Generator_TableClassName="vQry96DataTable" msprop:Generator_TableVarName="tablevQry96" msprop:Generator_RowChangedName="vQry96RowChanged" msprop:Generator_TablePropName="vQry96" msprop:Generator_RowDeletingName="vQry96RowDeleting" msprop:Generator_RowChangingName="vQry96RowChanging" msprop:Generator_RowEvHandlerName="vQry96RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry96RowDeleted" msprop:Generator_RowClassName="vQry96Row" msprop:Generator_UserTableName="vQry96" msprop:Generator_RowEvArgName="vQry96RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
+              <xs:element name="DofatSarfId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfId" msprop:Generator_ColumnPropNameInRow="DofatSarfId" msprop:Generator_ColumnPropNameInTable="DofatSarfIdColumn" msprop:Generator_UserColumnName="DofatSarfId" type="xs:int" />
+              <xs:element name="DofatSarf" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -7180,6 +7246,11 @@ WHERE        (MMashatId = @MMashatId)</CommandText>
     <xs:unique name="vQry94_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vQry94" />
       <xs:field xpath="mstns:MMashatId" />
+    </xs:unique>
+    <xs:unique name="vQry96_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry96" />
+      <xs:field xpath="mstns:PersonId" />
+      <xs:field xpath="mstns:DofatSarfId" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

@@ -2182,7 +2182,19 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterQry96_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry96Frm FrmData = new Qry96Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
+
+        
 
 
     }
