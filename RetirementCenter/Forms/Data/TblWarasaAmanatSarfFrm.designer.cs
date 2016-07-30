@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tblWarasaAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -59,6 +59,9 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarfAId1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamanattypeid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditamanattypeid = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
             this.repositoryItemDateEditdatein = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemGridLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -75,10 +78,6 @@
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnSarf = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.colamanattypeid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditamanattypeid = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblWarasaAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -92,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditamanatrem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditamanattypeid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditdatein)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditdatein.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdituserin)).BeginInit();
@@ -101,8 +102,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditamanattypeid)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -331,7 +330,7 @@
             // 
             this.repositoryItemButtonEditSave.AutoHeight = false;
             this.repositoryItemButtonEditSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditSave.Name = "repositoryItemButtonEditSave";
             this.repositoryItemButtonEditSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSave_ButtonClick);
@@ -456,6 +455,38 @@
             this.colDofatSarfAId1.Name = "colDofatSarfAId1";
             this.colDofatSarfAId1.Visible = true;
             this.colDofatSarfAId1.VisibleIndex = 1;
+            // 
+            // colamanattypeid
+            // 
+            this.colamanattypeid.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanattypeid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanattypeid.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanattypeid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanattypeid.Caption = "نوع الامانات";
+            this.colamanattypeid.ColumnEdit = this.repositoryItemLookUpEditamanattypeid;
+            this.colamanattypeid.FieldName = "amanattypeid";
+            this.colamanattypeid.Name = "colamanattypeid";
+            this.colamanattypeid.Visible = true;
+            this.colamanattypeid.VisibleIndex = 13;
+            // 
+            // repositoryItemLookUpEditamanattypeid
+            // 
+            this.repositoryItemLookUpEditamanattypeid.AutoHeight = false;
+            this.repositoryItemLookUpEditamanattypeid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditamanattypeid.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("amanattype", "الاسم", 68, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditamanattypeid.DataSource = this.LSMScd_amanattype;
+            this.repositoryItemLookUpEditamanattypeid.DisplayMember = "amanattype";
+            this.repositoryItemLookUpEditamanattypeid.Name = "repositoryItemLookUpEditamanattypeid";
+            this.repositoryItemLookUpEditamanattypeid.NullText = "";
+            this.repositoryItemLookUpEditamanattypeid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditamanattypeid.ValueMember = "amanattypeid";
+            // 
+            // LSMScd_amanattype
+            // 
+            this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
+            this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
             // 
             // repositoryItemDateEditdatein
             // 
@@ -600,55 +631,12 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.btnSarf);
             this.groupControl2.Controls.Add(this.btnAdd);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl2.Location = new System.Drawing.Point(0, 321);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(984, 67);
             this.groupControl2.TabIndex = 3;
-            // 
-            // btnSarf
-            // 
-            this.btnSarf.Image = global::RetirementCenter.Properties.Resources.Edit;
-            this.btnSarf.Location = new System.Drawing.Point(14, 24);
-            this.btnSarf.Name = "btnSarf";
-            this.btnSarf.Size = new System.Drawing.Size(114, 38);
-            this.btnSarf.TabIndex = 2;
-            this.btnSarf.Text = "اعداد الصرف";
-            this.btnSarf.Click += new System.EventHandler(this.btnSarf_Click);
-            // 
-            // LSMScd_amanattype
-            // 
-            this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
-            this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
-            // 
-            // colamanattypeid
-            // 
-            this.colamanattypeid.AppearanceCell.Options.UseTextOptions = true;
-            this.colamanattypeid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanattypeid.AppearanceHeader.Options.UseTextOptions = true;
-            this.colamanattypeid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanattypeid.Caption = "نوع الامانات";
-            this.colamanattypeid.ColumnEdit = this.repositoryItemLookUpEditamanattypeid;
-            this.colamanattypeid.FieldName = "amanattypeid";
-            this.colamanattypeid.Name = "colamanattypeid";
-            this.colamanattypeid.Visible = true;
-            this.colamanattypeid.VisibleIndex = 13;
-            // 
-            // repositoryItemLookUpEditamanattypeid
-            // 
-            this.repositoryItemLookUpEditamanattypeid.AutoHeight = false;
-            this.repositoryItemLookUpEditamanattypeid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditamanattypeid.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("amanattype", "الاسم", 68, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditamanattypeid.DataSource = this.LSMScd_amanattype;
-            this.repositoryItemLookUpEditamanattypeid.DisplayMember = "amanattype";
-            this.repositoryItemLookUpEditamanattypeid.Name = "repositoryItemLookUpEditamanattypeid";
-            this.repositoryItemLookUpEditamanattypeid.NullText = "";
-            this.repositoryItemLookUpEditamanattypeid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditamanattypeid.ValueMember = "amanattypeid";
             // 
             // TblWarasaAmanatSarfFrm
             // 
@@ -673,6 +661,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditamanatrem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditamanattypeid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditdatein.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditdatein)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdituserin)).EndInit();
@@ -682,8 +672,6 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditamanattypeid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,7 +722,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
-        private DevExpress.XtraEditors.SimpleButton btnSarf;
         private DevExpress.XtraGrid.Columns.GridColumn colDofatSarfAId1;
         private DevExpress.XtraGrid.Columns.GridColumn colamanattypeid;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditamanattypeid;

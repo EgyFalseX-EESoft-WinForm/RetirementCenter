@@ -20,18 +20,15 @@ namespace RetirementCenter
         public Qry27Frm()
         {
             InitializeComponent();
-            btnBank.Visible = Program.UserInfo.IsAdmin;
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             LSMS.QueryableSource = dsLinq.vQry27s;
         }
         public Qry27Frm(int Id)
         {
             InitializeComponent();
-            btnBank.Visible = Program.UserInfo.IsAdmin;
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
-            panelControlMain.Visible = false;
             LSMS.QueryableSource = from q in dsLinq.vQry27s where q.MMashatId == Id select q;
         }
         #endregion
@@ -60,34 +57,7 @@ namespace RetirementCenter
         }
         private void btnBank_Click(object sender, EventArgs e)
         {
-            if (lueDof.EditValue == null)
-            {
-                msgDlg.Show("يجب اختيار الدفعة و الفرعية", msgDlg.msgButtons.Close);
-                return;
-            }
-            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-                return;
-            int effected = 0;
-            int codestart = 0;
-            int codeend = 999999999;
-            if (tbCodeStart.EditValue != null)
-                codestart = Convert.ToInt32(tbCodeStart.EditValue);
-            if (tbCodeEnd.EditValue != null)
-                codeend = Convert.ToInt32(tbCodeEnd.EditValue);
-            try
-            {
-                if (lueSynd.EditValue == null)
-                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend);
-                else
-                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend);
-
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
-                Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
-            }
-            Program.ShowMsg("تم الاضافة للبنك" + Environment.NewLine + effected, false, this, true);
+            
         }
         #endregion
 

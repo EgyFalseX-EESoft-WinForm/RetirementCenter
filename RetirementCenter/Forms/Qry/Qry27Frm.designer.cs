@@ -56,22 +56,11 @@
             this.colCurrent_Yasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.tbCodeEnd = new DevExpress.XtraEditors.TextEdit();
-            this.tbCodeStart = new DevExpress.XtraEditors.TextEdit();
-            this.btnBank = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -81,35 +70,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
-            this.panelControlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
             // 
-            this.gridControlData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlData.DataSource = this.LSMS;
+            this.gridControlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlData.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlData.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlData.EmbeddedNavigator.TextStringFormat = "صف {0} من {1}";
-            this.gridControlData.Location = new System.Drawing.Point(0, 116);
+            this.gridControlData.Location = new System.Drawing.Point(0, 0);
             this.gridControlData.MainView = this.gridViewData;
             this.gridControlData.Name = "gridControlData";
             this.gridControlData.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEditDMY,
             this.repositoryItemMemoExEdit1,
             this.repositoryItemLookUpEdituserin});
-            this.gridControlData.Size = new System.Drawing.Size(734, 341);
+            this.gridControlData.Size = new System.Drawing.Size(734, 462);
             this.gridControlData.TabIndex = 4;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -511,154 +492,6 @@
             this.colActivate.Visible = true;
             this.colActivate.VisibleIndex = 19;
             // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
-            // 
-            // panelControlMain
-            // 
-            this.panelControlMain.Controls.Add(this.labelControl4);
-            this.panelControlMain.Controls.Add(this.labelControl3);
-            this.panelControlMain.Controls.Add(this.tbCodeEnd);
-            this.panelControlMain.Controls.Add(this.tbCodeStart);
-            this.panelControlMain.Controls.Add(this.btnBank);
-            this.panelControlMain.Controls.Add(this.labelControl2);
-            this.panelControlMain.Controls.Add(this.labelControl1);
-            this.panelControlMain.Controls.Add(this.lueSynd);
-            this.panelControlMain.Controls.Add(this.lueDof);
-            this.panelControlMain.Controls.Add(this.btnPrintExport);
-            this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlMain.Location = new System.Drawing.Point(0, 0);
-            this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(734, 110);
-            this.panelControlMain.TabIndex = 0;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(232, 88);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(35, 13);
-            this.labelControl4.TabIndex = 5;
-            this.labelControl4.Text = "الي كود";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(232, 64);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(32, 13);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "من كود";
-            // 
-            // tbCodeEnd
-            // 
-            this.tbCodeEnd.Location = new System.Drawing.Point(100, 85);
-            this.tbCodeEnd.Name = "tbCodeEnd";
-            this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
-            this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeEnd.Properties.EditFormat.FormatString = "n0";
-            this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeEnd.Properties.Mask.EditMask = "n0";
-            this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
-            this.tbCodeEnd.TabIndex = 4;
-            // 
-            // tbCodeStart
-            // 
-            this.tbCodeStart.Location = new System.Drawing.Point(100, 61);
-            this.tbCodeStart.Name = "tbCodeStart";
-            this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
-            this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeStart.Properties.EditFormat.FormatString = "n0";
-            this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.tbCodeStart.Properties.Mask.EditMask = "n0";
-            this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
-            this.tbCodeStart.TabIndex = 3;
-            // 
-            // btnBank
-            // 
-            this.btnBank.Location = new System.Drawing.Point(12, 6);
-            this.btnBank.Name = "btnBank";
-            this.btnBank.Size = new System.Drawing.Size(75, 49);
-            this.btnBank.TabIndex = 5;
-            this.btnBank.Text = "اعداد البنك";
-            this.btnBank.Click += new System.EventHandler(this.btnBank_Click);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(232, 38);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(34, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "الفرعية";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(237, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(29, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "الدفعة";
-            // 
-            // lueSynd
-            // 
-            this.lueSynd.Location = new System.Drawing.Point(100, 35);
-            this.lueSynd.Name = "lueSynd";
-            this.lueSynd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSynd.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueSynd.Properties.DataSource = this.LSMSSyn;
-            this.lueSynd.Properties.DisplayMember = "Syndicate";
-            this.lueSynd.Properties.NullText = "";
-            this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueSynd.Properties.ValueMember = "SyndicateId";
-            this.lueSynd.Size = new System.Drawing.Size(125, 20);
-            this.lueSynd.TabIndex = 2;
-            // 
-            // LSMSSyn
-            // 
-            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
-            this.LSMSSyn.KeyExpression = "[SyndicateId]";
-            // 
-            // lueDof
-            // 
-            this.lueDof.Location = new System.Drawing.Point(100, 9);
-            this.lueDof.Name = "lueDof";
-            this.lueDof.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueDof.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueDof.Properties.DataSource = this.LSMSDof;
-            this.lueDof.Properties.DisplayMember = "DofatSarf";
-            this.lueDof.Properties.NullText = "";
-            this.lueDof.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDof.Properties.ValueMember = "DofatSarfId";
-            this.lueDof.Size = new System.Drawing.Size(125, 20);
-            this.lueDof.TabIndex = 1;
-            // 
-            // LSMSDof
-            // 
-            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDof.KeyExpression = "[DofatSarfId]";
-            // 
-            // btnPrintExport
-            // 
-            this.btnPrintExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintExport.Location = new System.Drawing.Point(588, 12);
-            this.btnPrintExport.Name = "btnPrintExport";
-            this.btnPrintExport.Size = new System.Drawing.Size(134, 23);
-            this.btnPrintExport.TabIndex = 0;
-            this.btnPrintExport.Text = "طباعه و تصدير";
-            this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
             // colamanatvisa
             // 
             this.colamanatvisa.AppearanceCell.Options.UseTextOptions = true;
@@ -671,12 +504,32 @@
             this.colamanatvisa.Visible = true;
             this.colamanatvisa.VisibleIndex = 20;
             // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
+            // LSMSSyn
+            // 
+            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
+            this.LSMSSyn.KeyExpression = "[SyndicateId]";
+            // 
+            // LSMSDof
+            // 
+            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
             // Qry27Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
-            this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.gridControlData);
             this.Name = "Qry27Frm";
             this.Text = "ارشيف صرف الاعضاء";
@@ -691,14 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
-            this.panelControlMain.ResumeLayout(false);
-            this.panelControlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
             this.ResumeLayout(false);
 
@@ -708,8 +554,6 @@
 
         private DevExpress.XtraGrid.GridControl gridControlData;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
-        private DevExpress.XtraEditors.PanelControl panelControlMain;
-        private DevExpress.XtraEditors.SimpleButton btnPrintExport;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.Data.Linq.LinqServerModeSource LSMS;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
@@ -734,19 +578,10 @@
         private DataSources.dsRetirementCenter dsRetirementCenter;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter usersTableAdapter;
-        private DevExpress.XtraEditors.SimpleButton btnBank;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LookUpEdit lueSynd;
-        private DevExpress.XtraEditors.LookUpEdit lueDof;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDof;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent_Yasref;
         private DevExpress.XtraGrid.Columns.GridColumn colSendBank;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit tbCodeEnd;
-        private DevExpress.XtraEditors.TextEdit tbCodeStart;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraGrid.Columns.GridColumn colamanatvisa;
 

@@ -103,8 +103,6 @@
             this.mbRetCenterTBLWarasaSarf = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLFrookWarasa = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLFrookWarasaAdmin = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterTBLMemberSarf_arshef = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterTBLWarasaSarf_arshef = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep02a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep03a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterSarfyaA3da2 = new DevExpress.XtraBars.BarSubItem();
@@ -163,16 +161,10 @@
             this.mbRetCenterQry37 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry39 = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry38a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38b = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38c = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry40 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry41 = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry61 = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry66 = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry62 = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry38d = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterQry38e = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblChekNid = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry42 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry43 = new DevExpress.XtraBars.BarButtonItem();
@@ -273,12 +265,12 @@
             this.mbRetCenterQry96 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep25 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterBankExportedDataActivate = new DevExpress.XtraBars.BarButtonItem();
-            this.mbRetCenterVisa = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterBankExportedDataWarsaActivate = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterImportFrombamanat = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep16A = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry93 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry94 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterVisa = new DevExpress.XtraBars.BarSubItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -626,7 +618,6 @@
             this.mbRetCenterQry43,
             this.mbRetCenterXRep09,
             this.mbRetCenterTBLProofDoc,
-            this.mbRetCenterQry38a,
             this.mbRetCenterQry44,
             this.mbRetCenterBankQry,
             this.mbRetCenterQry45,
@@ -649,21 +640,16 @@
             this.mbRetCenterActivateVisaWarasa,
             this.mbRetCenterQry38c,
             this.mbRetCenterQry60,
-            this.mbRetCenterQry61,
             this.mbRetCenterXRep10,
             this.mbRetCenterXRep11,
-            this.mbRetCenterQry62,
             this.mbRetCenterStopYasrefByTBLBeanWarsa,
             this.mbRetCenterTBLBeanWarsaMenu,
             this.mbRetCenterQry64,
             this.mbRetCenterQry63,
-            this.mbRetCenterQry66,
             this.mbRetCenterQry67,
             this.mbRetCenterXRep12,
             this.mbRetCenterXRep13,
             this.mbRetCenterTBLDeathMembers,
-            this.mbRetCenterQry38d,
-            this.mbRetCenterQry38e,
             this.mbRetCenterXRep14,
             this.mbRetCenterXRep15,
             this.mbRetCenterQry68,
@@ -715,8 +701,6 @@
             this.mbRetCenterQry66A,
             this.mbRetCenterTblMemberAmanatSarf,
             this.mbRetCenterXRep24,
-            this.mbRetCenterTBLMemberSarf_arshef,
-            this.mbRetCenterTBLWarasaSarf_arshef,
             this.mbRetCenterTblWarasaAmanatMenu,
             this.mbRetCenterTblWarasaAmanatSarf,
             this.mbRetCenterTblWarasaAmanatAcc,
@@ -727,7 +711,6 @@
             this.mbRetCenterQry91,
             this.mbRetCenterQry92,
             this.mbRetCenterBankExportedDataActivate,
-            this.mbRetCenterVisa,
             this.mbRetCenterBankExportedDataWarsaActivate,
             this.mbRetCenterQry27a,
             this.mbRetCenterQry28a,
@@ -740,10 +723,11 @@
             this.mbRetCenterTblMemberAmanat2,
             this.mbRetCenterTblWarasaAmanat2,
             this.mbRetCenterQry95,
-            this.mbRetCenterQry96});
+            this.mbRetCenterQry96,
+            this.mbRetCenterVisa});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 398;
+            this.ribbonControl.MaxItemId = 399;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1283,9 +1267,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLMemberSarf),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasa),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasaAdmin),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLMemberSarf_arshef),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf_arshef)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasaAdmin)});
             this.mbRetCenterPrepareDofaa.Name = "mbRetCenterPrepareDofaa";
             // 
             // mbRetCenterTBLWarasaSarf
@@ -1313,23 +1295,6 @@
             this.mbRetCenterTBLFrookWarasaAdmin.LargeImageIndex = 41;
             this.mbRetCenterTBLFrookWarasaAdmin.Name = "mbRetCenterTBLFrookWarasaAdmin";
             this.mbRetCenterTBLFrookWarasaAdmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterTBLMemberSarf_arshef
-            // 
-            this.mbRetCenterTBLMemberSarf_arshef.Caption = "ارشيف صرف الاعضاء";
-            this.mbRetCenterTBLMemberSarf_arshef.Id = 370;
-            this.mbRetCenterTBLMemberSarf_arshef.ImageIndex = 41;
-            this.mbRetCenterTBLMemberSarf_arshef.LargeImageIndex = 41;
-            this.mbRetCenterTBLMemberSarf_arshef.Name = "mbRetCenterTBLMemberSarf_arshef";
-            this.mbRetCenterTBLMemberSarf_arshef.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterTBLWarasaSarf_arshef
-            // 
-            this.mbRetCenterTBLWarasaSarf_arshef.Caption = "ارشيف صرف الورثة";
-            this.mbRetCenterTBLWarasaSarf_arshef.Id = 371;
-            this.mbRetCenterTBLWarasaSarf_arshef.ImageIndex = 41;
-            this.mbRetCenterTBLWarasaSarf_arshef.LargeImageIndex = 41;
-            this.mbRetCenterTBLWarasaSarf_arshef.Name = "mbRetCenterTBLWarasaSarf_arshef";
             // 
             // mbRetCenterXRep02a
             // 
@@ -1841,16 +1806,10 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry37),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry39),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38a),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38b),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38c),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry40),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry41),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry61),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry66),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry62),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38d),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38e)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry41)});
             this.mbRetCenterQryPart2.Name = "mbRetCenterQryPart2";
             this.mbRetCenterQryPart2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -1899,15 +1858,6 @@
             this.mbRetCenterQry39.Name = "mbRetCenterQry39";
             this.mbRetCenterQry39.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // mbRetCenterQry38a
-            // 
-            this.mbRetCenterQry38a.Caption = "بيانات اعضاء البنك- شرط سن";
-            this.mbRetCenterQry38a.Id = 276;
-            this.mbRetCenterQry38a.ImageIndex = 19;
-            this.mbRetCenterQry38a.LargeImageIndex = 19;
-            this.mbRetCenterQry38a.Name = "mbRetCenterQry38a";
-            this.mbRetCenterQry38a.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
             // mbRetCenterQry38b
             // 
             this.mbRetCenterQry38b.Caption = "بيانات ورثة البنك- شرط ارملة 25 (المسئول1)";
@@ -1943,51 +1893,6 @@
             this.mbRetCenterQry41.LargeImageIndex = 19;
             this.mbRetCenterQry41.Name = "mbRetCenterQry41";
             this.mbRetCenterQry41.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterQry61
-            // 
-            this.mbRetCenterQry61.Caption = "بيانات دفعات الاعضاء للبنك";
-            this.mbRetCenterQry61.Id = 300;
-            this.mbRetCenterQry61.ImageIndex = 19;
-            this.mbRetCenterQry61.LargeImageIndex = 19;
-            this.mbRetCenterQry61.Name = "mbRetCenterQry61";
-            this.mbRetCenterQry61.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterQry66
-            // 
-            this.mbRetCenterQry66.Caption = "بيانات دفعات الورثة للبنك";
-            this.mbRetCenterQry66.Id = 308;
-            this.mbRetCenterQry66.ImageIndex = 19;
-            this.mbRetCenterQry66.LargeImageIndex = 19;
-            this.mbRetCenterQry66.Name = "mbRetCenterQry66";
-            this.mbRetCenterQry66.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterQry62
-            // 
-            this.mbRetCenterQry62.Caption = "توريد الدفعات للبنك تفصيلي";
-            this.mbRetCenterQry62.Id = 303;
-            this.mbRetCenterQry62.ImageIndex = 19;
-            this.mbRetCenterQry62.LargeImageIndex = 19;
-            this.mbRetCenterQry62.Name = "mbRetCenterQry62";
-            this.mbRetCenterQry62.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterQry38d
-            // 
-            this.mbRetCenterQry38d.Caption = "بيانات ورثة البنك- (المسئول1)";
-            this.mbRetCenterQry38d.Id = 313;
-            this.mbRetCenterQry38d.ImageIndex = 19;
-            this.mbRetCenterQry38d.LargeImageIndex = 19;
-            this.mbRetCenterQry38d.Name = "mbRetCenterQry38d";
-            this.mbRetCenterQry38d.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // mbRetCenterQry38e
-            // 
-            this.mbRetCenterQry38e.Caption = "بيانات ورثة البنك- (المسئول اكثر من مسئول)";
-            this.mbRetCenterQry38e.Id = 314;
-            this.mbRetCenterQry38e.ImageIndex = 19;
-            this.mbRetCenterQry38e.LargeImageIndex = 19;
-            this.mbRetCenterQry38e.Name = "mbRetCenterQry38e";
-            this.mbRetCenterQry38e.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // mbRetCenterTblChekNid
             // 
@@ -2919,17 +2824,6 @@
             this.mbRetCenterBankExportedDataActivate.LargeImageIndex = 54;
             this.mbRetCenterBankExportedDataActivate.Name = "mbRetCenterBankExportedDataActivate";
             // 
-            // mbRetCenterVisa
-            // 
-            this.mbRetCenterVisa.Caption = "الفيزا";
-            this.mbRetCenterVisa.Id = 383;
-            this.mbRetCenterVisa.ImageIndex = 54;
-            this.mbRetCenterVisa.LargeImageIndex = 54;
-            this.mbRetCenterVisa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterBankExportedDataActivate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterBankExportedDataWarsaActivate)});
-            this.mbRetCenterVisa.Name = "mbRetCenterVisa";
-            // 
             // mbRetCenterBankExportedDataWarsaActivate
             // 
             this.mbRetCenterBankExportedDataWarsaActivate.Caption = "تفعيل فيزا الورثة";
@@ -2971,6 +2865,17 @@
             this.mbRetCenterQry94.ImageIndex = 19;
             this.mbRetCenterQry94.LargeImageIndex = 19;
             this.mbRetCenterQry94.Name = "mbRetCenterQry94";
+            // 
+            // mbRetCenterVisa
+            // 
+            this.mbRetCenterVisa.Caption = "الفيزا";
+            this.mbRetCenterVisa.Id = 398;
+            this.mbRetCenterVisa.ImageIndex = 54;
+            this.mbRetCenterVisa.LargeImageIndex = 54;
+            this.mbRetCenterVisa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterBankExportedDataActivate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterBankExportedDataWarsaActivate)});
+            this.mbRetCenterVisa.Name = "mbRetCenterVisa";
             // 
             // ribbonImageCollectionLarge
             // 
@@ -3357,8 +3262,6 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaSarf;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLFrookWarasa;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLFrookWarasaAdmin;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMemberSarf_arshef;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaSarf_arshef;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep02a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep03a;
         private DevExpress.XtraBars.BarSubItem mbRetCenterSarfyaA3da2;
@@ -3417,16 +3320,10 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry37;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry39;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38b;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38c;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry40;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry41;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry61;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry66;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry62;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38d;
-        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38e;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblChekNid;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry42;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry43;
@@ -3527,12 +3424,12 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry96;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep25;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterBankExportedDataActivate;
-        private DevExpress.XtraBars.BarSubItem mbRetCenterVisa;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterBankExportedDataWarsaActivate;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterImportFrombamanat;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep16A;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry93;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry94;
+        private DevExpress.XtraBars.BarSubItem mbRetCenterVisa;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

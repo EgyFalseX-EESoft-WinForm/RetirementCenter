@@ -52,6 +52,7 @@
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnActive = new DevExpress.XtraEditors.SimpleButton();
             this.tbHafza = new DevExpress.XtraEditors.TextEdit();
@@ -67,7 +68,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -343,6 +343,18 @@
             this.repositoryItemButtonEditTransferSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditTransferSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditTransferSave_ButtonClick);
             // 
+            // colMMashatNId
+            // 
+            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.Caption = "رقم قومي";
+            this.colMMashatNId.FieldName = "MMashatNId";
+            this.colMMashatNId.Name = "colMMashatNId";
+            this.colMMashatNId.Visible = true;
+            this.colMMashatNId.VisibleIndex = 4;
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnActive);
@@ -361,12 +373,14 @@
             // 
             // btnActive
             // 
+            this.btnActive.Enabled = false;
             this.btnActive.Location = new System.Drawing.Point(640, 84);
             this.btnActive.Name = "btnActive";
             this.btnActive.Size = new System.Drawing.Size(299, 22);
             this.btnActive.StyleController = this.layoutControl1;
             this.btnActive.TabIndex = 7;
             this.btnActive.Text = "تفعيل";
+            this.btnActive.Visible = false;
             this.btnActive.Click += new System.EventHandler(this.btnActive_Click);
             // 
             // tbHafza
@@ -521,18 +535,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
-            // 
-            // colMMashatNId
-            // 
-            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatNId.Caption = "رقم قومي";
-            this.colMMashatNId.FieldName = "MMashatNId";
-            this.colMMashatNId.Name = "colMMashatNId";
-            this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 4;
             // 
             // BankExportedDataActivateFrm
             // 
