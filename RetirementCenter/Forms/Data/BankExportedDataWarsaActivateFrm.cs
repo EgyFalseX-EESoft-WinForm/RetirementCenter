@@ -94,7 +94,7 @@ namespace RetirementCenter.Forms.Data
         }
         private void BankExportedDataWarsaActivateFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            adpQry.Update_TBLWarasa_Active();
+            //adpQry.Update_TBLWarasa_Active();
         }
     }
 }

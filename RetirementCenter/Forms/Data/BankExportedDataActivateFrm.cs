@@ -97,7 +97,7 @@ namespace RetirementCenter.Forms.Data
         }
         private void BankExportedDataActivateFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            adpQry.Update_TBLMashat_Activate();
+            //adpQry.Update_TBLMashat_Activate();
         }
     }
 }

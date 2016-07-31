@@ -51,9 +51,6 @@
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colMMashatName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnActive = new DevExpress.XtraEditors.SimpleButton();
             this.tbHafza = new DevExpress.XtraEditors.TextEdit();
@@ -69,6 +66,9 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.colMMashatName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -337,42 +337,6 @@
             this.repositoryItemButtonEditTransferSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditTransferSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditTransferSave_ButtonClick);
             // 
-            // colMMashatName1
-            // 
-            this.colMMashatName1.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName1.Caption = "اسم الاب";
-            this.colMMashatName1.FieldName = "MMashatName";
-            this.colMMashatName1.Name = "colMMashatName1";
-            this.colMMashatName1.Visible = true;
-            this.colMMashatName1.VisibleIndex = 10;
-            // 
-            // colsarfnumber
-            // 
-            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.Caption = "رقم الصرف";
-            this.colsarfnumber.FieldName = "sarfnumber";
-            this.colsarfnumber.Name = "colsarfnumber";
-            this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 9;
-            // 
-            // colnewid
-            // 
-            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
-            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
-            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colnewid.Caption = "كود60";
-            this.colnewid.FieldName = "newid";
-            this.colnewid.Name = "colnewid";
-            this.colnewid.Visible = true;
-            this.colnewid.VisibleIndex = 7;
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnActive);
@@ -391,14 +355,12 @@
             // 
             // btnActive
             // 
-            this.btnActive.Enabled = false;
             this.btnActive.Location = new System.Drawing.Point(640, 84);
             this.btnActive.Name = "btnActive";
             this.btnActive.Size = new System.Drawing.Size(299, 22);
             this.btnActive.StyleController = this.layoutControl1;
             this.btnActive.TabIndex = 7;
             this.btnActive.Text = "تفعيل";
-            this.btnActive.Visible = false;
             this.btnActive.Click += new System.EventHandler(this.btnActive_Click);
             // 
             // tbHafza
@@ -553,6 +515,42 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
+            // 
+            // colMMashatName1
+            // 
+            this.colMMashatName1.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName1.Caption = "اسم الاب";
+            this.colMMashatName1.FieldName = "MMashatName";
+            this.colMMashatName1.Name = "colMMashatName1";
+            this.colMMashatName1.Visible = true;
+            this.colMMashatName1.VisibleIndex = 10;
+            // 
+            // colsarfnumber
+            // 
+            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfnumber.Caption = "رقم الصرف";
+            this.colsarfnumber.FieldName = "sarfnumber";
+            this.colsarfnumber.Name = "colsarfnumber";
+            this.colsarfnumber.Visible = true;
+            this.colsarfnumber.VisibleIndex = 9;
+            // 
+            // colnewid
+            // 
+            this.colnewid.AppearanceCell.Options.UseTextOptions = true;
+            this.colnewid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.AppearanceHeader.Options.UseTextOptions = true;
+            this.colnewid.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnewid.Caption = "كود60";
+            this.colnewid.FieldName = "newid";
+            this.colnewid.Name = "colnewid";
+            this.colnewid.Visible = true;
+            this.colnewid.VisibleIndex = 7;
             // 
             // BankExportedDataWarsaActivateFrm
             // 
