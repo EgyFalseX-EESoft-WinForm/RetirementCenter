@@ -114,6 +114,8 @@ namespace RetirementCenter
                 msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
                 return;
             }
+            if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLWarasaSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(luePersonId.EditValue)) == null)
+                msgDlg.Show("عليك مراجعة اعادة الصرف للوريث", msgDlg.msgButtons.Close);
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
             if (lueDofatSarfAId.EditValue != null)

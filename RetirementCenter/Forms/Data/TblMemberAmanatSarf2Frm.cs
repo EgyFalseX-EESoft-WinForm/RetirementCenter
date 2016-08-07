@@ -93,12 +93,13 @@ namespace RetirementCenter
         }
         private void btnAddAll_Click(object sender, EventArgs e)
         {
-            if (LUETBLDofatSarf.EditValue ==  null || deDateIn.EditValue == null)
+            if (LUETBLDofatSarf.EditValue ==  null || deDateIn.EditValue == null || LUETBLDofatSarf2.EditValue ==  null)
             {
                 Program.ShowMsg("من فضلك اختار الدفعة و التاريخ", true, this, true);
                 return;
             }
             DataSources.Linq.TBLDofatSarf dofaa = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf.GetSelectedDataRow();
+            DataSources.Linq.TBLDofatSarf dofaa2 = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf2.GetSelectedDataRow();
             if ((bool)dofaa.dofclosed)
             {
                 Program.ShowMsg("لا يمكن اعداد دفعة مغلقه", true, this, true);
@@ -140,12 +141,12 @@ namespace RetirementCenter
             foreach (DataSources.dsQueries.TBLEdafatCreatorRow row1 in dsQueries.TBLEdafatCreator.Rows)
             {
                 DataSources.dsRetirementCenter.TBLMemberSarfRow record = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
-                record.DofatSarfId = dofaa.DofatSarfId;
+                record.DofatSarfId = dofaa2.DofatSarfId;
                 //Madunea
                 DataSources.dsRetirementCenter.TblMemberMaduneaRow row_Madunea = dsRetirementCenter.TblMemberMadunea.FindByMMashatIdDofatSarfMId(row1.MMashatId, dofaa.DofatSarfId);
                 if (row_Madunea == null)
                 {
-                    int months = TotalMonths(dofaa.DofatSarfDateto, row1.WorkeEndDate);
+                    int months = TotalMonths(dofaa2.DofatSarfDateto, row1.WorkeEndDate);
                     if (months > 15)
                         months = 15;
                     record.eshtrakmonth = row1.Eshtrak * months;
@@ -167,7 +168,7 @@ namespace RetirementCenter
                 record.sarf = true;
                 record.Edafat = true;
                 record.sarfdatefrom = row1.WorkeEndDate;
-                record.sarfdateto = dofaa.DofatSarfDateto;
+                record.sarfdateto = dofaa2.DofatSarfDateto;
                 record.datein = serverdatetime;
                 record.userin = Program.UserInfo.UserId;
                 record.sarfnumber = row1.sarfnumber;
@@ -186,7 +187,7 @@ namespace RetirementCenter
                 foreach (DataSources.dsRetirementCenter.TBLReSarfRow ResarfRow in dsRetirementCenter.TBLReSarf)
                 {
                     DataSources.dsRetirementCenter.TBLMemberSarfRow Resarfrecord = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
-                    Resarfrecord.DofatSarfId = dofaa.DofatSarfId;
+                    Resarfrecord.DofatSarfId = dofaa2.DofatSarfId;
                     int ResarfManths = TotalMonths(ResarfRow.dateto, ResarfRow.datefrom);
                     if (ResarfManths > 15)
                         ResarfManths = 15;
@@ -223,8 +224,8 @@ namespace RetirementCenter
             foreach (DataSources.dsQueries.TBLEdafatCreator2Row row2 in dsQueries.TBLEdafatCreator2.Rows)
             {
                 DataSources.dsRetirementCenter.TBLMemberSarfRow record = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
-                record.DofatSarfId = dofaa.DofatSarfId;
-                int months = TotalMonths(dofaa.DofatSarfDateto, dofaa.DofatSarfDatefrom);
+                record.DofatSarfId = dofaa2.DofatSarfId;
+                int months = TotalMonths(dofaa2.DofatSarfDateto, dofaa2.DofatSarfDatefrom);
                 
                 if (months > 15)
                     months = 15;
@@ -247,8 +248,8 @@ namespace RetirementCenter
                 
                 record.sarf = true;
                 record.Edafat = false;
-                record.sarfdatefrom = dofaa.DofatSarfDatefrom;
-                record.sarfdateto = dofaa.DofatSarfDateto;
+                record.sarfdatefrom = dofaa2.DofatSarfDatefrom;
+                record.sarfdateto = dofaa2.DofatSarfDateto;
                 record.datein = serverdatetime;
                 record.userin = Program.UserInfo.UserId;
                 record.SyndicateId = row2.SyndicateId;
@@ -268,7 +269,7 @@ namespace RetirementCenter
                 foreach (DataSources.dsRetirementCenter.TBLReSarfRow ResarfRow in dsRetirementCenter.TBLReSarf)
                 {
                     DataSources.dsRetirementCenter.TBLMemberSarfRow Resarfrecord = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
-                    Resarfrecord.DofatSarfId = dofaa.DofatSarfId;
+                    Resarfrecord.DofatSarfId = dofaa2.DofatSarfId;
                     int ResarfManths = TotalMonths(ResarfRow.dateto, ResarfRow.datefrom);
                     if (ResarfManths > 15)
                         ResarfManths = 15;

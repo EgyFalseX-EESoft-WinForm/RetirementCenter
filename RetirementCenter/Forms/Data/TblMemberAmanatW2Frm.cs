@@ -16,6 +16,7 @@ namespace RetirementCenter
         DataSources.dsRetirementCenter.TblMemberAmanatRow _row;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter adpBank = new DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
+        DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();
         bool IsBinding = false;
         bool _Insert, _Update, _Delete;
         public TblMemberAmanatW2Frm()
@@ -130,6 +131,8 @@ namespace RetirementCenter
                 msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
                 return;
             }
+            if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLMemberSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(lueMMashatId.EditValue)) == null)
+                msgDlg.Show("عليك مراجعة اعادة الصرف للعضو", msgDlg.msgButtons.Close);
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
             if (lueDofatSarfAId.EditValue != null)

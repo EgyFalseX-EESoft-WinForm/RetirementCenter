@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tBLMemberSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -76,6 +76,10 @@
             this.lblMax = new DevExpress.XtraEditors.LabelControl();
             this.lblValue = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LUETBLDofatSarf2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMemberSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -103,6 +107,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcProgress)).BeginInit();
             this.pcProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -122,7 +128,7 @@
             this.repositoryItemDateEditDMY,
             this.repositoryItemGridLookUpEditSyndicateId,
             this.repositoryItemGridLookUpEditSubCommitteId});
-            this.gridControlData.Size = new System.Drawing.Size(883, 320);
+            this.gridControlData.Size = new System.Drawing.Size(883, 285);
             this.gridControlData.TabIndex = 0;
             this.gridControlData.UseEmbeddedNavigator = true;
             this.gridControlData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -443,6 +449,8 @@
             this.gcCommands.AppearanceCaption.Options.UseTextOptions = true;
             this.gcCommands.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.gcCommands.Controls.Add(this.labelControl1);
+            this.gcCommands.Controls.Add(this.LUETBLDofatSarf2);
+            this.gcCommands.Controls.Add(this.labelControl2);
             this.gcCommands.Controls.Add(this.LUETBLDofatSarf);
             this.gcCommands.Controls.Add(this.labelControl7);
             this.gcCommands.Controls.Add(this.btnArc);
@@ -451,7 +459,7 @@
             this.gcCommands.Location = new System.Drawing.Point(12, 12);
             this.gcCommands.Name = "gcCommands";
             this.gcCommands.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gcCommands.Size = new System.Drawing.Size(887, 88);
+            this.gcCommands.Size = new System.Drawing.Size(887, 123);
             this.gcCommands.TabIndex = 0;
             this.gcCommands.Text = "خيارات";
             // 
@@ -479,12 +487,12 @@
             this.LUETBLDofatSarf.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LUETBLDofatSarf.Properties.ValueMember = "DofatSarfId";
             this.LUETBLDofatSarf.Properties.View = this.gridLookUpEdit1View;
-            this.LUETBLDofatSarf.Size = new System.Drawing.Size(236, 22);
+            this.LUETBLDofatSarf.Size = new System.Drawing.Size(214, 22);
             this.LUETBLDofatSarf.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "يجب اختيار دفعة";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "يجب اختيار دفعة";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUETBLDofatSarf, conditionValidationRule2);
             // 
             // LSMSTBLDofatSarf
             // 
@@ -558,7 +566,7 @@
             this.deDateIn.Properties.Mask.EditMask = "yyyy-MM-dd";
             this.deDateIn.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deDateIn.Size = new System.Drawing.Size(236, 22);
+            this.deDateIn.Size = new System.Drawing.Size(214, 22);
             this.deDateIn.TabIndex = 1;
             // 
             // groupControl2
@@ -569,10 +577,10 @@
             this.groupControl2.AppearanceCaption.Options.UseTextOptions = true;
             this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.groupControl2.Controls.Add(this.gridControlData);
-            this.groupControl2.Location = new System.Drawing.Point(12, 106);
+            this.groupControl2.Location = new System.Drawing.Point(12, 141);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupControl2.Size = new System.Drawing.Size(887, 343);
+            this.groupControl2.Size = new System.Drawing.Size(887, 308);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "التفاصيل";
             // 
@@ -632,6 +640,54 @@
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "0";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(822, 89);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(56, 13);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "دفعة الاعداد";
+            // 
+            // LUETBLDofatSarf2
+            // 
+            this.LUETBLDofatSarf2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LUETBLDofatSarf2.Location = new System.Drawing.Point(607, 86);
+            this.LUETBLDofatSarf2.Name = "LUETBLDofatSarf2";
+            this.LUETBLDofatSarf2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.LUETBLDofatSarf2.Properties.Appearance.Options.UseFont = true;
+            this.LUETBLDofatSarf2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LUETBLDofatSarf2.Properties.DataSource = this.LSMSTBLDofatSarf;
+            this.LUETBLDofatSarf2.Properties.DisplayMember = "DofatSarf";
+            this.LUETBLDofatSarf2.Properties.NullText = "";
+            this.LUETBLDofatSarf2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.LUETBLDofatSarf2.Properties.ValueMember = "DofatSarfId";
+            this.LUETBLDofatSarf2.Properties.View = this.gridView1;
+            this.LUETBLDofatSarf2.Size = new System.Drawing.Size(214, 22);
+            this.LUETBLDofatSarf2.TabIndex = 0;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "اسم الدفعة";
+            this.gridColumn1.FieldName = "DofatSarf";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
             // TblMemberAmanatSarf2Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -673,6 +729,8 @@
             this.pcProgress.ResumeLayout(false);
             this.pcProgress.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUETBLDofatSarf2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -725,5 +783,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEdafat;
         private DevExpress.XtraEditors.SimpleButton btnArc;
         private DevExpress.XtraEditors.DateEdit deDateIn;
+        private DevExpress.XtraEditors.GridLookUpEdit LUETBLDofatSarf2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

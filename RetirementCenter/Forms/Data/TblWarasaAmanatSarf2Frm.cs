@@ -361,6 +361,7 @@ namespace RetirementCenter
                     return;
                 }
                 DataSources.Linq.TBLDofatSarf dofaa = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf.GetSelectedDataRow();
+                DataSources.Linq.TBLDofatSarf dofaa2 = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf2.GetSelectedDataRow();
                 if ((bool)dofaa.dofclosed)
                 {
                     Program.ShowMsg("لا يمكن اعداد دفعة مغلقه", true, this, true);
@@ -395,7 +396,7 @@ namespace RetirementCenter
 
                 double Rasm = Convert.ToDouble(SQLProvider.adpQry.ScalarQueryRasm());
                 //Update Member's sarffeatype b4 start
-                UpdateTBLMashat_sarffeatype(dofaa.DofatSarfId, deDateIn.DateTime.Date);
+                UpdateTBLMashat_sarffeatype(dofaa2.DofatSarfId, deDateIn.DateTime.Date);
 
                 warasaExceptionDofaatCreatorTableAdapter.FillBy_Dof_DateIn(dsQueries.WarasaExceptionDofaatCreator, dofaa.DofatSarfId, deDateIn.DateTime.Date);
                 warasaDofaatCreatorTableAdapter.FillBy_Dof_DateIn(dsQueries.WarasaDofaatCreator, dofaa.DofatSarfId, deDateIn.DateTime.Date);
@@ -410,7 +411,7 @@ namespace RetirementCenter
                 foreach (DataSources.dsQueries.WarasaExceptionDofaatCreatorRow row0 in dsQueries.WarasaExceptionDofaatCreator.Rows)
                 {
                     DataSources.dsRetirementCenter.TBLWarasaSarfRow record = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();
-                    record.DofatSarfId = dofaa.DofatSarfId;
+                    record.DofatSarfId = dofaa2.DofatSarfId;
                     record.eshtrakmonth = 0;
                     record.estktaa = 0;
                     record.PersonId = row0.PersonId;
@@ -427,8 +428,8 @@ namespace RetirementCenter
                     record.rsmmonth = row0.wrsmmonth;
                     record.sarf = true;
                     record.Edafat = true;
-                    record.sarfdatefrom = dofaa.DofatSarfDatefrom;
-                    record.sarfdateto = dofaa.DofatSarfDateto;
+                    record.sarfdatefrom = dofaa2.DofatSarfDatefrom;
+                    record.sarfdateto = dofaa2.DofatSarfDateto;
                     record.datein = serverdatetime;
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.astsnaa_3;
@@ -439,8 +440,8 @@ namespace RetirementCenter
                 foreach (DataSources.dsQueries.WarasaExtraDofaatCreatorRow row1 in dsQueries.WarasaExtraDofaatCreator.Rows)
                 {
                     DataSources.dsRetirementCenter.TBLWarasaSarfRow record = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();
-                    record.DofatSarfId = dofaa.DofatSarfId;
-                    int months = TotalMonths(dofaa.DofatSarfDateto, row1.datesarf);
+                    record.DofatSarfId = dofaa2.DofatSarfId;
+                    int months = TotalMonths(dofaa2.DofatSarfDateto, row1.datesarf);
                     if (months > 15)
                         months = 15;
                     record.eshtrakmonth = 0;
@@ -462,7 +463,7 @@ namespace RetirementCenter
                     record.sarf = true;
                     record.Edafat = true;
                     record.sarfdatefrom = row1.datesarf;
-                    record.sarfdateto = dofaa.DofatSarfDateto;
+                    record.sarfdateto = dofaa2.DofatSarfDateto;
                     record.datein = serverdatetime;
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
@@ -480,7 +481,7 @@ namespace RetirementCenter
                     {
 
                         DataSources.dsRetirementCenter.TBLWarasaSarfRow Resarfrecord = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();
-                        Resarfrecord.DofatSarfId = dofaa.DofatSarfId;
+                        Resarfrecord.DofatSarfId = dofaa2.DofatSarfId;
                         int ResarfManths = TotalMonths(ResarfRow.dateto, ResarfRow.datefrom);
                         if (ResarfManths > 15)
                             ResarfManths = 15;
@@ -520,8 +521,8 @@ namespace RetirementCenter
                 {
 
                     DataSources.dsRetirementCenter.TBLWarasaSarfRow record = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();
-                    record.DofatSarfId = dofaa.DofatSarfId;
-                    int months = TotalMonths(dofaa.DofatSarfDateto, dofaa.DofatSarfDatefrom);
+                    record.DofatSarfId = dofaa2.DofatSarfId;
+                    int months = TotalMonths(dofaa2.DofatSarfDateto, dofaa2.DofatSarfDatefrom);
 
                     if (months > 15)
                         months = 15;
@@ -550,8 +551,8 @@ namespace RetirementCenter
 
                     record.sarf = true;
                     record.Edafat = false;
-                    record.sarfdatefrom = dofaa.DofatSarfDatefrom;
-                    record.sarfdateto = dofaa.DofatSarfDateto;
+                    record.sarfdatefrom = dofaa2.DofatSarfDatefrom;
+                    record.sarfdateto = dofaa2.DofatSarfDateto;
                     record.datein = serverdatetime;
                     record.userin = Program.UserInfo.UserId;
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
@@ -563,7 +564,7 @@ namespace RetirementCenter
                     foreach (DataSources.dsRetirementCenter.TBLReSarfWarasaRow ResarfRow in dsRetirementCenter.TBLReSarfWarasa)
                     {
                         DataSources.dsRetirementCenter.TBLWarasaSarfRow Resarfrecord = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();
-                        Resarfrecord.DofatSarfId = dofaa.DofatSarfId;
+                        Resarfrecord.DofatSarfId = dofaa2.DofatSarfId;
                         int ResarfManths = TotalMonths(ResarfRow.dateto, ResarfRow.datefrom);
                         if (ResarfManths > 15)
                             ResarfManths = 15;
@@ -594,9 +595,9 @@ namespace RetirementCenter
                 }
                 SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
                 tBLWarasaSarfTableAdapter.Update(dsRetirementCenter.TBLWarasaSarf);
-                new DataSources.dsRetirementCenterTableAdapters.TBLWarasaMaduneaTableAdapter().UpdateTBLWarasaSarf(dofaa.DofatSarfId);
-                new DataSources.dsRetirementCenterTableAdapters.TBLFrookWarasaTableAdapter().InsertIntoTBLWarasaSarf2(Program.UserInfo.UserId, dofaa.DofatSarfId, deDateIn.DateTime.Date);
-                tBLWarasaSarfTableAdapter.FillByDofatSarfId_DateIn(dsRetirementCenter.TBLWarasaSarf, dofaa.DofatSarfId, deDateIn.DateTime.Date);
+                new DataSources.dsRetirementCenterTableAdapters.TBLWarasaMaduneaTableAdapter().UpdateTBLWarasaSarf(dofaa2.DofatSarfId);
+                new DataSources.dsRetirementCenterTableAdapters.TBLFrookWarasaTableAdapter().InsertIntoTBLWarasaSarf2(Program.UserInfo.UserId, dofaa2.DofatSarfId, deDateIn.DateTime.Date);
+                tBLWarasaSarfTableAdapter.FillByDofatSarfId_DateIn(dsRetirementCenter.TBLWarasaSarf, dofaa2.DofatSarfId, deDateIn.DateTime.Date);
                 SplashScreenManager.CloseForm();
 
                 pbc.EditValue = 0; pcProgress.Visible = false; lblValue.Text = "0"; gcCommands.Enabled = true;
