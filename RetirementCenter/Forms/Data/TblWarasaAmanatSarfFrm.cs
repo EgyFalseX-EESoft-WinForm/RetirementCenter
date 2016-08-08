@@ -13,7 +13,7 @@ namespace RetirementCenter
     {
         bool _Insert, _Update, _Delete;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
-        DataSources.dsRetirementCenterTableAdapters.TblWarasaAmanatTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TblWarasaAmanatTableAdapter();
+        DataSources.dsRetirementCenterTableAdapters.ForInsertTBLWarasaSarf_arshefTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.ForInsertTBLWarasaSarf_arshefTableAdapter();
         #region -   Functions   -
         public TblWarasaAmanatSarfFrm()
         {
@@ -102,9 +102,52 @@ namespace RetirementCenter
         {
             if (MessageBox.Show("هل انت متأكد؟", "تحزير ...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)
                 return;
-            int effected = adp.InsertTBLWarasaSarf_arshef(Program.UserInfo.UserId);
-            Program.ShowMsg("تم الاضافة" + Environment.NewLine + effected, false, this, true);
-            Program.Logger.LogThis("تم الاضافة" + Environment.NewLine + effected, Text, FXFW.Logger.OpType.success, null, null, this);
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa)
+            VALUES (@PersonId, @DofatSarfId, 6, @sarfdatefrom, @sarfdateto, @monymonth, 0, 0, 0, 1, GETDATE(), @userin, 0, @SyndicateId, @SubCommitteId, @SendBank, @amanatvisa)
+            ", con);
+            SqlParameter paramPersonId = new SqlParameter("@PersonId", SqlDbType.Int);
+            SqlParameter paramDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
+            SqlParameter paramsarfdatefrom = new SqlParameter("@sarfdatefrom", SqlDbType.DateTime);
+            SqlParameter paramsarfdateto = new SqlParameter("@sarfdateto", SqlDbType.DateTime);
+            SqlParameter parammonymonth = new SqlParameter("@monymonth", SqlDbType.Float);
+            SqlParameter paramuserin = new SqlParameter("@userin", SqlDbType.Int) { Value = Program.UserInfo.UserId };
+            SqlParameter paramSyndicateId = new SqlParameter("@SyndicateId", SqlDbType.Int);
+            SqlParameter paramSubCommitteId = new SqlParameter("@SubCommitteId", SqlDbType.Int);
+            SqlParameter paramSendBank = new SqlParameter("@SendBank", SqlDbType.Bit);
+            SqlParameter paramamanatvisa = new SqlParameter("@amanatvisa", SqlDbType.Bit);
+            cmd.Parameters.AddRange(new[] { paramPersonId, paramDofatSarfId, paramsarfdatefrom, paramsarfdateto, parammonymonth
+                , paramuserin, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa});
+
+            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLWarasaSarf_arshef WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId AND SarfTypeedadId = 6", con);
+            SqlParameter paramCheckPersonId = new SqlParameter("@PersonId", SqlDbType.Int);
+            SqlParameter paramCheckDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
+            cmdCheck.Parameters.AddRange(new[] { paramCheckPersonId, paramCheckDofatSarfId });
+
+            DataSources.dsRetirementCenter.ForInsertTBLWarasaSarf_arshefDataTable tbl = adp.GetData();
+            int effected = 0;
+            con.Open();
+            foreach (DataSources.dsRetirementCenter.ForInsertTBLWarasaSarf_arshefRow item in tbl)
+            {
+                paramCheckPersonId.Value = item.PersonId;
+                paramCheckDofatSarfId.Value = item.DofatSarfId;
+                if ((int)cmdCheck.ExecuteScalar() != 0)
+                    continue;
+                paramPersonId.Value = item.PersonId;
+                paramDofatSarfId.Value = item.DofatSarfId;
+                paramsarfdatefrom.Value = item.DofatSarfDatefrom;
+                paramsarfdateto.Value = item.DofatSarfDateto;
+                parammonymonth.Value = item.amanatmony;
+                paramSyndicateId.Value = item.SyndicateId;
+                paramSubCommitteId.Value = item.SubCommitteId;
+                paramSendBank.Value = item.sarfcheek;
+                paramamanatvisa.Value = item.amantvisa;
+                cmd.ExecuteNonQuery();
+                effected++;
+            }
+            con.Close();
+            Program.ShowMsg("تم الاضافة" + Environment.NewLine + effected + "من اجمالي" + Environment.NewLine + tbl.Count, false, this, true);
+            Program.Logger.LogThis("تم الاضافة" + Environment.NewLine + effected + "من اجمالي" + Environment.NewLine + tbl.Count, Text, FXFW.Logger.OpType.success, null, null, this);
         }
         private void btnSarf_Click(object sender, EventArgs e)
         {
