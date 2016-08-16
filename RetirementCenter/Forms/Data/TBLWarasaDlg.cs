@@ -43,6 +43,7 @@ namespace RetirementCenter.Forms.Data
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
             LSMSCDnationalty.QueryableSource = dsLinq.CDnationalties;
             LSMSsarfresonid.QueryableSource = dsLinq.cd_sarfresons;
+            LSMSUsers.QueryableSource = dsLinq.Users;
             LSMSTBLWarasa.QueryableSource =
 
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasas where q.MMashatId == TBLWarasa[0].MMashatId select q;
@@ -59,7 +60,7 @@ namespace RetirementCenter.Forms.Data
                     tabExtra.PageVisible = false;
                     tabSarfExpetion.PageVisible = false;
                     tabResarf.PageVisible = false;
-                    LSMSUsers.QueryableSource = dsLinq.Users;
+                    
                     ReloadRemark();
                     return;
                 case OpenReason.Edit:

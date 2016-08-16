@@ -19,6 +19,7 @@ namespace RetirementCenter
         {
             InitializeComponent();
             SQLProvider.SetAllCommandTimeouts(adp, 0);
+            SQLProvider.SetAllCommandTimeouts(tblMemberAmanatTableAdapter, 0);
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -61,6 +62,8 @@ namespace RetirementCenter
         #region - Event Handlers -
         private void FormFrm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLDofatSarf' table. You can move, or remove it, as needed.
+            this.tBLDofatSarfTableAdapter.Fill(this.dsRetirementCenter.TBLDofatSarf);
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;
@@ -104,8 +107,8 @@ namespace RetirementCenter
             if (MessageBox.Show("هل انت متأكد؟", "تحزير ...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)
                 return;
             SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa) 
-            VALUES (@MMashatId, @DofatSarfId, @SarfTypeedadId, @sarfdatefrom, @sarfdateto, @monymonth, @rsmmonth, @eshtrakmonth, @estktaa, @sarf, GETDATE(), @userin, @Edafat, @SyndicateId, @SubCommitteId, @SendBank, @amanatvisa)
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO TBLMemberSarf_arshef (MMashatId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa, amanatAutoId, sarfcheek) 
+            VALUES (@MMashatId, @DofatSarfId, @SarfTypeedadId, @sarfdatefrom, @sarfdateto, @monymonth, @rsmmonth, @eshtrakmonth, @estktaa, @sarf, GETDATE(), @userin, @Edafat, @SyndicateId, @SubCommitteId, @SendBank, @amanatvisa, @amanatAutoId, @sarfcheek)
             ", con);
             SqlParameter paramMMashatId = new SqlParameter("@MMashatId", SqlDbType.Int);
             SqlParameter paramDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
@@ -123,8 +126,10 @@ namespace RetirementCenter
             SqlParameter paramSubCommitteId = new SqlParameter("@SubCommitteId", SqlDbType.Int);
             SqlParameter paramSendBank = new SqlParameter("@SendBank", SqlDbType.Bit);
             SqlParameter paramamanatvisa = new SqlParameter("@amanatvisa", SqlDbType.Bit);
+            SqlParameter paramamanatAutoId = new SqlParameter("@amanatAutoId", SqlDbType.Int);
+            SqlParameter paramsarfcheek = new SqlParameter("@sarfcheek", SqlDbType.Bit);
             cmd.Parameters.AddRange(new[] { paramMMashatId, paramDofatSarfId, paramSarfTypeedadId, paramsarfdatefrom, paramsarfdateto, parammonymonth, paramrsmmonth, parameshtrakmonth, paramestktaa
-                , paramsarf, paramuserin, paramEdafat, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa});
+                , paramsarf, paramuserin, paramEdafat, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa, paramamanatAutoId, paramsarfcheek});
 
             SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLMemberSarf_arshef WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId AND SarfTypeedadId = 6", con);
             SqlParameter paramCheckMMashatId = new SqlParameter("@MMashatId", SqlDbType.Int);
@@ -151,8 +156,10 @@ namespace RetirementCenter
                 paramestktaa.Value = item.estktaa;
                 paramSyndicateId.Value = item.SyndicateId;
                 paramSubCommitteId.Value = item.SubCommitteId;
-                paramSendBank.Value = item.sarfcheek;
+                paramSendBank.Value = 0;
                 paramamanatvisa.Value = item.amantvisa;
+                paramamanatAutoId.Value = item.AutoId;
+                paramsarfcheek.Value = item.sarfcheek;
                 cmd.ExecuteNonQuery();
                 effected++;
             }

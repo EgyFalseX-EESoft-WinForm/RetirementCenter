@@ -94,7 +94,7 @@ namespace RetirementCenter
         private void LoadTBLWarasaSarfArc()
         {
             if (LUETBLDofatSarf.EditValue != null && deDateIn.EditValue != null)
-                adpArc.FillBy_Dof_UserIn(dsRetirementCenter.TBLWarasaSarf_arshef, Convert.ToInt32(LUETBLDofatSarf.EditValue), deDateIn.DateTime.Date); 
+                adpArc.FillBy_Dof_UserIn(dsRetirementCenter.TBLWarasaSarf_arshef, Convert.ToInt32(LUETBLDofatSarf2.EditValue), deDateIn.DateTime.Date); 
         }
         private void UpdateTBLMashat_sarffeatype(int Dof, DateTime DateIn)
         {
@@ -305,7 +305,7 @@ namespace RetirementCenter
         private void TBLWarasaSarfFrm_Load(object sender, EventArgs e)
         {
             ActivePriv();
-            LSMSTBLDofatSarf.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
+            LSMSTBLDofatSarf.QueryableSource = from q in dsLinq.TBLDofatSarfs select q;
             if (Program.UserInfo.IsAdmin)
                 LSMSCDSyndicate.QueryableSource = dsLinq.CDSyndicates;
             else
@@ -362,7 +362,7 @@ namespace RetirementCenter
                 }
                 DataSources.Linq.TBLDofatSarf dofaa = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf.GetSelectedDataRow();
                 DataSources.Linq.TBLDofatSarf dofaa2 = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf2.GetSelectedDataRow();
-                if ((bool)dofaa.dofclosed)
+                if ((bool)dofaa2.dofclosed)
                 {
                     Program.ShowMsg("لا يمكن اعداد دفعة مغلقه", true, this, true);
                     return;

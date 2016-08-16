@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tblMemberAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDofatSarfAId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarfAId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditDofatSarfAId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.cdDofaatAmanatBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,8 +67,9 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colamantvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDofatSarfAId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDofatSarfId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditDofatSarfId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.tBLDofatSarfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,6 +83,8 @@
             this.tblMemberAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.tBLDofatSarfTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfTableAdapter();
+            this.coldateReview = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMemberAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -99,6 +103,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDofatSarfId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -122,7 +128,8 @@
             this.repositoryItemMemoExEditamanatrem,
             this.repositoryItemGridLookUpEditMMashatId,
             this.repositoryItemGridLookUpEditDofatSarfAId,
-            this.repositoryItemCheckEdit1});
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemLookUpEditDofatSarfId});
             this.gridControlData.Size = new System.Drawing.Size(756, 341);
             this.gridControlData.TabIndex = 0;
             this.gridControlData.UseEmbeddedNavigator = true;
@@ -143,6 +150,7 @@
             // gridViewData
             // 
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDofatSarfAId1,
             this.colDofatSarfAId,
             this.colMMashatId,
             this.colamanatrem,
@@ -159,12 +167,12 @@
             this.gridColumn1,
             this.colamantvisa,
             this.colMMashatId1,
-            this.colDofatSarfAId1,
             this.colDofatSarfId,
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
-            this.colcheekno});
+            this.colcheekno,
+            this.coldateReview});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -174,6 +182,18 @@
             this.gridViewData.OptionsView.ShowDetailButtons = false;
             this.gridViewData.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridViewData_ShowingEditor);
             this.gridViewData.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridViewData_InvalidRowException);
+            // 
+            // colDofatSarfAId1
+            // 
+            this.colDofatSarfAId1.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarfAId1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarfAId1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarfAId1.Caption = "كود الدفعة";
+            this.colDofatSarfAId1.FieldName = "DofatSarfAId";
+            this.colDofatSarfAId1.Name = "colDofatSarfAId1";
+            this.colDofatSarfAId1.Visible = true;
+            this.colDofatSarfAId1.VisibleIndex = 1;
             // 
             // colDofatSarfAId
             // 
@@ -198,6 +218,8 @@
             this.repositoryItemGridLookUpEditDofatSarfAId.DataSource = this.cdDofaatAmanatBindingSource;
             this.repositoryItemGridLookUpEditDofatSarfAId.DisplayMember = "DofatSarfA";
             this.repositoryItemGridLookUpEditDofatSarfAId.Name = "repositoryItemGridLookUpEditDofatSarfAId";
+            this.repositoryItemGridLookUpEditDofatSarfAId.NullText = "";
+            this.repositoryItemGridLookUpEditDofatSarfAId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditDofatSarfAId.ValueMember = "DofatSarfAId";
             this.repositoryItemGridLookUpEditDofatSarfAId.View = this.gridView3;
             // 
@@ -404,14 +426,14 @@
             this.gridColumnSave.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnSave.Name = "gridColumnSave";
             this.gridColumnSave.Visible = true;
-            this.gridColumnSave.VisibleIndex = 21;
+            this.gridColumnSave.VisibleIndex = 22;
             this.gridColumnSave.Width = 55;
             // 
             // repositoryItemButtonEditSave
             // 
             this.repositoryItemButtonEditSave.AutoHeight = false;
             this.repositoryItemButtonEditSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditSave.Name = "repositoryItemButtonEditSave";
             this.repositoryItemButtonEditSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSave_ButtonClick);
@@ -499,7 +521,7 @@
             this.colsarfcheek.FieldName = "sarfcheek";
             this.colsarfcheek.Name = "colsarfcheek";
             this.colsarfcheek.Visible = true;
-            this.colsarfcheek.VisibleIndex = 17;
+            this.colsarfcheek.VisibleIndex = 18;
             this.colsarfcheek.Width = 77;
             // 
             // gridColumn1
@@ -513,7 +535,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 18;
+            this.gridColumn1.VisibleIndex = 19;
             // 
             // colamantvisa
             // 
@@ -525,7 +547,7 @@
             this.colamantvisa.FieldName = "amantvisa";
             this.colamantvisa.Name = "colamantvisa";
             this.colamantvisa.Visible = true;
-            this.colamantvisa.VisibleIndex = 19;
+            this.colamantvisa.VisibleIndex = 20;
             // 
             // colMMashatId1
             // 
@@ -539,18 +561,6 @@
             this.colMMashatId1.Visible = true;
             this.colMMashatId1.VisibleIndex = 0;
             // 
-            // colDofatSarfAId1
-            // 
-            this.colDofatSarfAId1.AppearanceCell.Options.UseTextOptions = true;
-            this.colDofatSarfAId1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarfAId1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDofatSarfAId1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDofatSarfAId1.Caption = "كود الدفعة";
-            this.colDofatSarfAId1.FieldName = "DofatSarfAId";
-            this.colDofatSarfAId1.Name = "colDofatSarfAId1";
-            this.colDofatSarfAId1.Visible = true;
-            this.colDofatSarfAId1.VisibleIndex = 1;
-            // 
             // colDofatSarfId
             // 
             this.colDofatSarfId.AppearanceCell.Options.UseTextOptions = true;
@@ -558,12 +568,31 @@
             this.colDofatSarfId.AppearanceHeader.Options.UseTextOptions = true;
             this.colDofatSarfId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDofatSarfId.Caption = "تصرف في دفعة";
-            this.colDofatSarfId.ColumnEdit = this.repositoryItemGridLookUpEditDofatSarfAId;
+            this.colDofatSarfId.ColumnEdit = this.repositoryItemLookUpEditDofatSarfId;
             this.colDofatSarfId.FieldName = "DofatSarfId";
             this.colDofatSarfId.Name = "colDofatSarfId";
             this.colDofatSarfId.Visible = true;
             this.colDofatSarfId.VisibleIndex = 3;
             this.colDofatSarfId.Width = 90;
+            // 
+            // repositoryItemLookUpEditDofatSarfId
+            // 
+            this.repositoryItemLookUpEditDofatSarfId.AutoHeight = false;
+            this.repositoryItemLookUpEditDofatSarfId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditDofatSarfId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditDofatSarfId.DataSource = this.tBLDofatSarfBindingSource;
+            this.repositoryItemLookUpEditDofatSarfId.DisplayMember = "DofatSarf";
+            this.repositoryItemLookUpEditDofatSarfId.Name = "repositoryItemLookUpEditDofatSarfId";
+            this.repositoryItemLookUpEditDofatSarfId.NullText = "";
+            this.repositoryItemLookUpEditDofatSarfId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditDofatSarfId.ValueMember = "DofatSarfId";
+            // 
+            // tBLDofatSarfBindingSource
+            // 
+            this.tBLDofatSarfBindingSource.DataMember = "TBLDofatSarf";
+            this.tBLDofatSarfBindingSource.DataSource = this.dsRetirementCenter;
             // 
             // gridColumn3
             // 
@@ -614,7 +643,7 @@
             this.colcheekno.FieldName = "cheekno";
             this.colcheekno.Name = "colcheekno";
             this.colcheekno.Visible = true;
-            this.colcheekno.VisibleIndex = 20;
+            this.colcheekno.VisibleIndex = 21;
             // 
             // colEDARET
             // 
@@ -699,6 +728,24 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // tBLDofatSarfTableAdapter
+            // 
+            this.tBLDofatSarfTableAdapter.ClearBeforeFill = true;
+            // 
+            // coldateReview
+            // 
+            this.coldateReview.AppearanceCell.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.Caption = "تاريخ مراجعة حسابات";
+            this.coldateReview.ColumnEdit = this.repositoryItemDateEditdatein;
+            this.coldateReview.FieldName = "dateReview";
+            this.coldateReview.Name = "coldateReview";
+            this.coldateReview.Visible = true;
+            this.coldateReview.VisibleIndex = 17;
+            this.coldateReview.Width = 116;
+            // 
             // TblMemberAmanatAccFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,6 +773,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDofatSarfId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLDofatSarfBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -785,5 +834,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn colcheekno;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditDofatSarfId;
+        private System.Windows.Forms.BindingSource tBLDofatSarfBindingSource;
+        private DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfTableAdapter tBLDofatSarfTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn coldateReview;
     }
 }

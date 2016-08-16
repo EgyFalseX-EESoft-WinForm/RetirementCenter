@@ -81,7 +81,7 @@ namespace RetirementCenter
         private void TBLMemberSarfFrm_Load(object sender, EventArgs e)
         {
             ActivePriv();
-            LSMSTBLDofatSarf.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
+            LSMSTBLDofatSarf.QueryableSource = from q in dsLinq.TBLDofatSarfs select q;
             if (Program.UserInfo.IsAdmin)
                 LSMSCDSyndicate.QueryableSource = dsLinq.CDSyndicates;
             else
@@ -100,7 +100,7 @@ namespace RetirementCenter
             }
             DataSources.Linq.TBLDofatSarf dofaa = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf.GetSelectedDataRow();
             DataSources.Linq.TBLDofatSarf dofaa2 = (DataSources.Linq.TBLDofatSarf)LUETBLDofatSarf2.GetSelectedDataRow();
-            if ((bool)dofaa.dofclosed)
+            if ((bool)dofaa2.dofclosed)
             {
                 Program.ShowMsg("لا يمكن اعداد دفعة مغلقه", true, this, true);
                 return;

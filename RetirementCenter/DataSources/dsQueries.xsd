@@ -3336,6 +3336,112 @@ HAVING        (COUNT(*) &gt; 1)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry97TableAdapter" GeneratorDataComponentClassName="vQry97TableAdapter" Name="vQry97" UserDataComponentName="vQry97TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.vTblMemberAmanat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AutoId, MMashatId, DofatSarfAId, amanattypeid, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, 
+                         mostlemsheek, userincheek, datincheek, DofatSarfA, DofatSarf, MMashatName, sarfnumber, SyndicateId, SubCommitteId, Syndicate, SubCommitte, userin_RealName, accuser_RealName, 
+                         usercheek_RealName
+FROM            vTblMemberAmanat
+WHERE NOT EXISTS(SELECT AutoId FROM [dbo].[TBLMemberSarf_arshef] WHERE amanatAutoId = vTblMemberAmanat.AutoId)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="DofatSarfAId" DataSetColumn="DofatSarfAId" />
+              <Mapping SourceColumn="amanattypeid" DataSetColumn="amanattypeid" />
+              <Mapping SourceColumn="amanatmony" DataSetColumn="amanatmony" />
+              <Mapping SourceColumn="amanatrem" DataSetColumn="amanatrem" />
+              <Mapping SourceColumn="userin" DataSetColumn="userin" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="estktaa" DataSetColumn="estktaa" />
+              <Mapping SourceColumn="mostahek" DataSetColumn="mostahek" />
+              <Mapping SourceColumn="DofatSarfId" DataSetColumn="DofatSarfId" />
+              <Mapping SourceColumn="sefa" DataSetColumn="sefa" />
+              <Mapping SourceColumn="accReview" DataSetColumn="accReview" />
+              <Mapping SourceColumn="dateReview" DataSetColumn="dateReview" />
+              <Mapping SourceColumn="useracc" DataSetColumn="useracc" />
+              <Mapping SourceColumn="amantvisa" DataSetColumn="amantvisa" />
+              <Mapping SourceColumn="sarfcheek" DataSetColumn="sarfcheek" />
+              <Mapping SourceColumn="cheekno" DataSetColumn="cheekno" />
+              <Mapping SourceColumn="tasleemdate" DataSetColumn="tasleemdate" />
+              <Mapping SourceColumn="mostlemsheek" DataSetColumn="mostlemsheek" />
+              <Mapping SourceColumn="userincheek" DataSetColumn="userincheek" />
+              <Mapping SourceColumn="datincheek" DataSetColumn="datincheek" />
+              <Mapping SourceColumn="DofatSarfA" DataSetColumn="DofatSarfA" />
+              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="SyndicateId" DataSetColumn="SyndicateId" />
+              <Mapping SourceColumn="SubCommitteId" DataSetColumn="SubCommitteId" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="userin_RealName" DataSetColumn="userin_RealName" />
+              <Mapping SourceColumn="accuser_RealName" DataSetColumn="accuser_RealName" />
+              <Mapping SourceColumn="usercheek_RealName" DataSetColumn="usercheek_RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry98TableAdapter" GeneratorDataComponentClassName="vQry98TableAdapter" Name="vQry98" UserDataComponentName="vQry98TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.vTblWarasaAmanat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AutoId, PersonId, DofatSarfAId, amanattypeid, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, visa, cheekno, tasleemdate, 
+                         mostlemsheek, userincheek, datincheek, DofatSarf, DofatSarfA, MMashatId, personName, Syndicate, SubCommitte, MMashatName, sarfnumber, userin_RealName, useracc_RealName, usercheek_RealName, 
+                         Activate
+FROM            vTblWarasaAmanat
+WHERE NOT EXISTS(SELECT AutoId FROM [dbo].TBLWarasaSarf_arshef WHERE amanatAutoId = vTblWarasaAmanat.AutoId)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="PersonId" DataSetColumn="PersonId" />
+              <Mapping SourceColumn="DofatSarfAId" DataSetColumn="DofatSarfAId" />
+              <Mapping SourceColumn="amanattypeid" DataSetColumn="amanattypeid" />
+              <Mapping SourceColumn="amanatmony" DataSetColumn="amanatmony" />
+              <Mapping SourceColumn="amanatrem" DataSetColumn="amanatrem" />
+              <Mapping SourceColumn="userin" DataSetColumn="userin" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="estktaa" DataSetColumn="estktaa" />
+              <Mapping SourceColumn="mostahek" DataSetColumn="mostahek" />
+              <Mapping SourceColumn="DofatSarfId" DataSetColumn="DofatSarfId" />
+              <Mapping SourceColumn="sefa" DataSetColumn="sefa" />
+              <Mapping SourceColumn="accReview" DataSetColumn="accReview" />
+              <Mapping SourceColumn="dateReview" DataSetColumn="dateReview" />
+              <Mapping SourceColumn="useracc" DataSetColumn="useracc" />
+              <Mapping SourceColumn="amantvisa" DataSetColumn="amantvisa" />
+              <Mapping SourceColumn="sarfcheek" DataSetColumn="sarfcheek" />
+              <Mapping SourceColumn="visa" DataSetColumn="visa" />
+              <Mapping SourceColumn="cheekno" DataSetColumn="cheekno" />
+              <Mapping SourceColumn="tasleemdate" DataSetColumn="tasleemdate" />
+              <Mapping SourceColumn="mostlemsheek" DataSetColumn="mostlemsheek" />
+              <Mapping SourceColumn="userincheek" DataSetColumn="userincheek" />
+              <Mapping SourceColumn="datincheek" DataSetColumn="datincheek" />
+              <Mapping SourceColumn="DofatSarf" DataSetColumn="DofatSarf" />
+              <Mapping SourceColumn="DofatSarfA" DataSetColumn="DofatSarfA" />
+              <Mapping SourceColumn="MMashatId" DataSetColumn="MMashatId" />
+              <Mapping SourceColumn="personName" DataSetColumn="personName" />
+              <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
+              <Mapping SourceColumn="MMashatName" DataSetColumn="MMashatName" />
+              <Mapping SourceColumn="sarfnumber" DataSetColumn="sarfnumber" />
+              <Mapping SourceColumn="userin_RealName" DataSetColumn="userin_RealName" />
+              <Mapping SourceColumn="useracc_RealName" DataSetColumn="useracc_RealName" />
+              <Mapping SourceColumn="usercheek_RealName" DataSetColumn="usercheek_RealName" />
+              <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MemberNewId" MethodsParameterType="CLR" Modifier="Public" Name="MemberNewId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MemberNewId">
@@ -3996,6 +4102,30 @@ WHERE        (DofatSarfId = @DofatSarfId) AND (PersonId = @PersonId) AND (SarfTy
                 <Parameters>
                   <Parameter AllowDbNull="false" AutogeneratedName="DofatSarfId" ColumnName="DofatSarfId" DataSourceName="RetirementCenter.dbo.TBLWarasaSarf_arshef" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DofatSarfId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DofatSarfId" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="false" AutogeneratedName="PersonId" ColumnName="PersonId" DataSourceName="RetirementCenter.dbo.TBLWarasaSarf_arshef" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PersonId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PersonId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TblMemberAmanat" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ExistsTblMemberAmanat1" MethodsParameterType="CLR" Modifier="Public" Name="ExistsTblMemberAmanat1" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy54" UserSourceName="ExistsTblMemberAmanat1">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT TOP 1 AutoId FROM [dbo].[TblMemberAmanat]
+WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="MMashatId" ColumnName="MMashatId" DataSourceName="RetirementCenter.dbo.TblMemberAmanat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MMashatId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MMashatId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="DofatSarfId" ColumnName="DofatSarfId" DataSourceName="RetirementCenter.dbo.TblMemberAmanat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DofatSarfId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DofatSarfId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TblWarasaAmanat" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ExistsTblWarasaAmanat1" MethodsParameterType="CLR" Modifier="Public" Name="ExistsTblWarasaAmanat1" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy55" UserSourceName="ExistsTblWarasaAmanat1">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT TOP 1 AutoId FROM [dbo].TblWarasaAmanat
+WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="PersonId" ColumnName="PersonId" DataSourceName="RetirementCenter.dbo.TblWarasaAmanat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PersonId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PersonId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="DofatSarfId" ColumnName="DofatSarfId" DataSourceName="RetirementCenter.dbo.TblWarasaAmanat" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DofatSarfId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DofatSarfId" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -7065,6 +7195,254 @@ WHERE        (DofatSarfId = @DofatSarfId) AND (PersonId = @PersonId) AND (SarfTy
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry97" msprop:Generator_TableClassName="vQry97DataTable" msprop:Generator_TableVarName="tablevQry97" msprop:Generator_TablePropName="vQry97" msprop:Generator_RowDeletingName="vQry97RowDeleting" msprop:Generator_RowChangingName="vQry97RowChanging" msprop:Generator_RowEvHandlerName="vQry97RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry97RowDeleted" msprop:Generator_UserTableName="vQry97" msprop:Generator_RowChangedName="vQry97RowChanged" msprop:Generator_RowEvArgName="vQry97RowChangeEvent" msprop:Generator_RowClassName="vQry97Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:int" minOccurs="0" />
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" minOccurs="0" />
+              <xs:element name="DofatSarfAId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfAId" msprop:Generator_ColumnPropNameInRow="DofatSarfAId" msprop:Generator_ColumnPropNameInTable="DofatSarfAIdColumn" msprop:Generator_UserColumnName="DofatSarfAId" type="xs:int" minOccurs="0" />
+              <xs:element name="amanattypeid" msprop:Generator_ColumnVarNameInTable="columnamanattypeid" msprop:Generator_ColumnPropNameInRow="amanattypeid" msprop:Generator_ColumnPropNameInTable="amanattypeidColumn" msprop:Generator_UserColumnName="amanattypeid" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="amanatmony" msprop:Generator_ColumnVarNameInTable="columnamanatmony" msprop:Generator_ColumnPropNameInRow="amanatmony" msprop:Generator_ColumnPropNameInTable="amanatmonyColumn" msprop:Generator_UserColumnName="amanatmony" type="xs:double" minOccurs="0" />
+              <xs:element name="amanatrem" msprop:Generator_ColumnVarNameInTable="columnamanatrem" msprop:Generator_ColumnPropNameInRow="amanatrem" msprop:Generator_ColumnPropNameInTable="amanatremColumn" msprop:Generator_UserColumnName="amanatrem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="userin" msprop:Generator_ColumnVarNameInTable="columnuserin" msprop:Generator_ColumnPropNameInRow="userin" msprop:Generator_ColumnPropNameInTable="userinColumn" msprop:Generator_UserColumnName="userin" type="xs:int" minOccurs="0" />
+              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="estktaa" msprop:Generator_ColumnVarNameInTable="columnestktaa" msprop:Generator_ColumnPropNameInRow="estktaa" msprop:Generator_ColumnPropNameInTable="estktaaColumn" msprop:Generator_UserColumnName="estktaa" type="xs:double" minOccurs="0" />
+              <xs:element name="mostahek" msprop:Generator_ColumnVarNameInTable="columnmostahek" msprop:Generator_ColumnPropNameInRow="mostahek" msprop:Generator_ColumnPropNameInTable="mostahekColumn" msprop:Generator_UserColumnName="mostahek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarfId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfId" msprop:Generator_ColumnPropNameInRow="DofatSarfId" msprop:Generator_ColumnPropNameInTable="DofatSarfIdColumn" msprop:Generator_UserColumnName="DofatSarfId" type="xs:int" minOccurs="0" />
+              <xs:element name="sefa" msprop:Generator_ColumnVarNameInTable="columnsefa" msprop:Generator_ColumnPropNameInRow="sefa" msprop:Generator_ColumnPropNameInTable="sefaColumn" msprop:Generator_UserColumnName="sefa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="accReview" msprop:Generator_ColumnVarNameInTable="columnaccReview" msprop:Generator_ColumnPropNameInRow="accReview" msprop:Generator_ColumnPropNameInTable="accReviewColumn" msprop:Generator_UserColumnName="accReview" type="xs:boolean" minOccurs="0" />
+              <xs:element name="dateReview" msprop:Generator_ColumnVarNameInTable="columndateReview" msprop:Generator_ColumnPropNameInRow="dateReview" msprop:Generator_ColumnPropNameInTable="dateReviewColumn" msprop:Generator_UserColumnName="dateReview" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="useracc" msprop:Generator_ColumnVarNameInTable="columnuseracc" msprop:Generator_ColumnPropNameInRow="useracc" msprop:Generator_ColumnPropNameInTable="useraccColumn" msprop:Generator_UserColumnName="useracc" type="xs:int" minOccurs="0" />
+              <xs:element name="amantvisa" msprop:Generator_ColumnVarNameInTable="columnamantvisa" msprop:Generator_ColumnPropNameInRow="amantvisa" msprop:Generator_ColumnPropNameInTable="amantvisaColumn" msprop:Generator_UserColumnName="amantvisa" type="xs:boolean" minOccurs="0" />
+              <xs:element name="sarfcheek" msprop:Generator_ColumnVarNameInTable="columnsarfcheek" msprop:Generator_ColumnPropNameInRow="sarfcheek" msprop:Generator_ColumnPropNameInTable="sarfcheekColumn" msprop:Generator_UserColumnName="sarfcheek" type="xs:boolean" minOccurs="0" />
+              <xs:element name="cheekno" msprop:Generator_ColumnVarNameInTable="columncheekno" msprop:Generator_ColumnPropNameInRow="cheekno" msprop:Generator_ColumnPropNameInTable="cheeknoColumn" msprop:Generator_UserColumnName="cheekno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tasleemdate" msprop:Generator_ColumnVarNameInTable="columntasleemdate" msprop:Generator_ColumnPropNameInRow="tasleemdate" msprop:Generator_ColumnPropNameInTable="tasleemdateColumn" msprop:Generator_UserColumnName="tasleemdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="mostlemsheek" msprop:Generator_ColumnVarNameInTable="columnmostlemsheek" msprop:Generator_ColumnPropNameInRow="mostlemsheek" msprop:Generator_ColumnPropNameInTable="mostlemsheekColumn" msprop:Generator_UserColumnName="mostlemsheek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="userincheek" msprop:Generator_ColumnVarNameInTable="columnuserincheek" msprop:Generator_ColumnPropNameInRow="userincheek" msprop:Generator_ColumnPropNameInTable="userincheekColumn" msprop:Generator_UserColumnName="userincheek" type="xs:int" minOccurs="0" />
+              <xs:element name="datincheek" msprop:Generator_ColumnVarNameInTable="columndatincheek" msprop:Generator_ColumnPropNameInRow="datincheek" msprop:Generator_ColumnPropNameInTable="datincheekColumn" msprop:Generator_UserColumnName="datincheek" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DofatSarfA" msprop:Generator_ColumnVarNameInTable="columnDofatSarfA" msprop:Generator_ColumnPropNameInRow="DofatSarfA" msprop:Generator_ColumnPropNameInTable="DofatSarfAColumn" msprop:Generator_UserColumnName="DofatSarfA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarf" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" minOccurs="0" />
+              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" minOccurs="0" />
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="userin_RealName" msprop:Generator_ColumnVarNameInTable="columnuserin_RealName" msprop:Generator_ColumnPropNameInRow="userin_RealName" msprop:Generator_ColumnPropNameInTable="userin_RealNameColumn" msprop:Generator_UserColumnName="userin_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="accuser_RealName" msprop:Generator_ColumnVarNameInTable="columnaccuser_RealName" msprop:Generator_ColumnPropNameInRow="accuser_RealName" msprop:Generator_ColumnPropNameInTable="accuser_RealNameColumn" msprop:Generator_UserColumnName="accuser_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="usercheek_RealName" msprop:Generator_ColumnVarNameInTable="columnusercheek_RealName" msprop:Generator_ColumnPropNameInRow="usercheek_RealName" msprop:Generator_ColumnPropNameInTable="usercheek_RealNameColumn" msprop:Generator_UserColumnName="usercheek_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry98" msprop:Generator_TableClassName="vQry98DataTable" msprop:Generator_TableVarName="tablevQry98" msprop:Generator_TablePropName="vQry98" msprop:Generator_RowDeletingName="vQry98RowDeleting" msprop:Generator_RowChangingName="vQry98RowChanging" msprop:Generator_RowEvHandlerName="vQry98RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry98RowDeleted" msprop:Generator_UserTableName="vQry98" msprop:Generator_RowChangedName="vQry98RowChanged" msprop:Generator_RowEvArgName="vQry98RowChangeEvent" msprop:Generator_RowClassName="vQry98Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" minOccurs="0" />
+              <xs:element name="DofatSarfAId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfAId" msprop:Generator_ColumnPropNameInRow="DofatSarfAId" msprop:Generator_ColumnPropNameInTable="DofatSarfAIdColumn" msprop:Generator_UserColumnName="DofatSarfAId" type="xs:int" minOccurs="0" />
+              <xs:element name="amanattypeid" msprop:Generator_ColumnVarNameInTable="columnamanattypeid" msprop:Generator_ColumnPropNameInRow="amanattypeid" msprop:Generator_ColumnPropNameInTable="amanattypeidColumn" msprop:Generator_UserColumnName="amanattypeid" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="amanatmony" msprop:Generator_ColumnVarNameInTable="columnamanatmony" msprop:Generator_ColumnPropNameInRow="amanatmony" msprop:Generator_ColumnPropNameInTable="amanatmonyColumn" msprop:Generator_UserColumnName="amanatmony" type="xs:double" minOccurs="0" />
+              <xs:element name="amanatrem" msprop:Generator_ColumnVarNameInTable="columnamanatrem" msprop:Generator_ColumnPropNameInRow="amanatrem" msprop:Generator_ColumnPropNameInTable="amanatremColumn" msprop:Generator_UserColumnName="amanatrem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="userin" msprop:Generator_ColumnVarNameInTable="columnuserin" msprop:Generator_ColumnPropNameInRow="userin" msprop:Generator_ColumnPropNameInTable="userinColumn" msprop:Generator_UserColumnName="userin" type="xs:int" minOccurs="0" />
+              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="estktaa" msprop:Generator_ColumnVarNameInTable="columnestktaa" msprop:Generator_ColumnPropNameInRow="estktaa" msprop:Generator_ColumnPropNameInTable="estktaaColumn" msprop:Generator_UserColumnName="estktaa" type="xs:double" minOccurs="0" />
+              <xs:element name="mostahek" msprop:Generator_ColumnVarNameInTable="columnmostahek" msprop:Generator_ColumnPropNameInRow="mostahek" msprop:Generator_ColumnPropNameInTable="mostahekColumn" msprop:Generator_UserColumnName="mostahek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarfId" msprop:Generator_ColumnVarNameInTable="columnDofatSarfId" msprop:Generator_ColumnPropNameInRow="DofatSarfId" msprop:Generator_ColumnPropNameInTable="DofatSarfIdColumn" msprop:Generator_UserColumnName="DofatSarfId" type="xs:int" minOccurs="0" />
+              <xs:element name="sefa" msprop:Generator_ColumnVarNameInTable="columnsefa" msprop:Generator_ColumnPropNameInRow="sefa" msprop:Generator_ColumnPropNameInTable="sefaColumn" msprop:Generator_UserColumnName="sefa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="accReview" msprop:Generator_ColumnVarNameInTable="columnaccReview" msprop:Generator_ColumnPropNameInRow="accReview" msprop:Generator_ColumnPropNameInTable="accReviewColumn" msprop:Generator_UserColumnName="accReview" type="xs:boolean" minOccurs="0" />
+              <xs:element name="dateReview" msprop:Generator_ColumnVarNameInTable="columndateReview" msprop:Generator_ColumnPropNameInRow="dateReview" msprop:Generator_ColumnPropNameInTable="dateReviewColumn" msprop:Generator_UserColumnName="dateReview" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="useracc" msprop:Generator_ColumnVarNameInTable="columnuseracc" msprop:Generator_ColumnPropNameInRow="useracc" msprop:Generator_ColumnPropNameInTable="useraccColumn" msprop:Generator_UserColumnName="useracc" type="xs:int" minOccurs="0" />
+              <xs:element name="amantvisa" msprop:Generator_ColumnVarNameInTable="columnamantvisa" msprop:Generator_ColumnPropNameInRow="amantvisa" msprop:Generator_ColumnPropNameInTable="amantvisaColumn" msprop:Generator_UserColumnName="amantvisa" type="xs:boolean" minOccurs="0" />
+              <xs:element name="sarfcheek" msprop:Generator_ColumnVarNameInTable="columnsarfcheek" msprop:Generator_ColumnPropNameInRow="sarfcheek" msprop:Generator_ColumnPropNameInTable="sarfcheekColumn" msprop:Generator_UserColumnName="sarfcheek" type="xs:boolean" minOccurs="0" />
+              <xs:element name="visa" msprop:Generator_ColumnVarNameInTable="columnvisa" msprop:Generator_ColumnPropNameInRow="visa" msprop:Generator_ColumnPropNameInTable="visaColumn" msprop:Generator_UserColumnName="visa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cheekno" msprop:Generator_ColumnVarNameInTable="columncheekno" msprop:Generator_ColumnPropNameInRow="cheekno" msprop:Generator_ColumnPropNameInTable="cheeknoColumn" msprop:Generator_UserColumnName="cheekno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tasleemdate" msprop:Generator_ColumnVarNameInTable="columntasleemdate" msprop:Generator_ColumnPropNameInRow="tasleemdate" msprop:Generator_ColumnPropNameInTable="tasleemdateColumn" msprop:Generator_UserColumnName="tasleemdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="mostlemsheek" msprop:Generator_ColumnVarNameInTable="columnmostlemsheek" msprop:Generator_ColumnPropNameInRow="mostlemsheek" msprop:Generator_ColumnPropNameInTable="mostlemsheekColumn" msprop:Generator_UserColumnName="mostlemsheek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="userincheek" msprop:Generator_ColumnVarNameInTable="columnuserincheek" msprop:Generator_ColumnPropNameInRow="userincheek" msprop:Generator_ColumnPropNameInTable="userincheekColumn" msprop:Generator_UserColumnName="userincheek" type="xs:int" minOccurs="0" />
+              <xs:element name="datincheek" msprop:Generator_ColumnVarNameInTable="columndatincheek" msprop:Generator_ColumnPropNameInRow="datincheek" msprop:Generator_ColumnPropNameInTable="datincheekColumn" msprop:Generator_UserColumnName="datincheek" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DofatSarf" msprop:Generator_ColumnVarNameInTable="columnDofatSarf" msprop:Generator_ColumnPropNameInRow="DofatSarf" msprop:Generator_ColumnPropNameInTable="DofatSarfColumn" msprop:Generator_UserColumnName="DofatSarf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DofatSarfA" msprop:Generator_ColumnVarNameInTable="columnDofatSarfA" msprop:Generator_ColumnPropNameInRow="DofatSarfA" msprop:Generator_ColumnPropNameInTable="DofatSarfAColumn" msprop:Generator_UserColumnName="DofatSarfA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" minOccurs="0" />
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Syndicate" msprop:Generator_ColumnVarNameInTable="columnSyndicate" msprop:Generator_ColumnPropNameInRow="Syndicate" msprop:Generator_ColumnPropNameInTable="SyndicateColumn" msprop:Generator_UserColumnName="Syndicate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCommitte" msprop:Generator_ColumnVarNameInTable="columnSubCommitte" msprop:Generator_ColumnPropNameInRow="SubCommitte" msprop:Generator_ColumnPropNameInTable="SubCommitteColumn" msprop:Generator_UserColumnName="SubCommitte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="userin_RealName" msprop:Generator_ColumnVarNameInTable="columnuserin_RealName" msprop:Generator_ColumnPropNameInRow="userin_RealName" msprop:Generator_ColumnPropNameInTable="userin_RealNameColumn" msprop:Generator_UserColumnName="userin_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="useracc_RealName" msprop:Generator_ColumnVarNameInTable="columnuseracc_RealName" msprop:Generator_ColumnPropNameInRow="useracc_RealName" msprop:Generator_ColumnPropNameInTable="useracc_RealNameColumn" msprop:Generator_UserColumnName="useracc_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="usercheek_RealName" msprop:Generator_ColumnVarNameInTable="columnusercheek_RealName" msprop:Generator_ColumnPropNameInRow="usercheek_RealName" msprop:Generator_ColumnPropNameInTable="usercheek_RealNameColumn" msprop:Generator_UserColumnName="usercheek_RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activate" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

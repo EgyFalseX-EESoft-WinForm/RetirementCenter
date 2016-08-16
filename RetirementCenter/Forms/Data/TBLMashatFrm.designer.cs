@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule16 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -43,8 +42,9 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule13 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule14 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule15 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControlMain = new DevExpress.XtraEditors.GroupControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
@@ -315,6 +315,12 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
+            this.coldatein2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluserin2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditvisaactive = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.coldatein3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluserin3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditmaduneauser = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -479,6 +485,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditvisaactive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditmaduneauser)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -726,10 +734,10 @@
             this.tbMMashatName.Properties.Appearance.Options.UseFont = true;
             this.tbMMashatName.Size = new System.Drawing.Size(446, 22);
             this.tbMMashatName.TabIndex = 0;
-            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule16.ErrorText = "يجب ادخال الاسم";
-            conditionValidationRule16.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbMMashatName, conditionValidationRule16);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "يجب ادخال الاسم";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbMMashatName, conditionValidationRule1);
             this.tbMMashatName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // dsRetirementCenter
@@ -840,10 +848,10 @@
             this.LUESubCommitteId.Properties.ValueMember = "SubCommitteId";
             this.LUESubCommitteId.Size = new System.Drawing.Size(162, 22);
             this.LUESubCommitteId.TabIndex = 2;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "يجب ادخال اللجنة النقابية";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESubCommitteId, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "يجب ادخال اللجنة النقابية";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESubCommitteId, conditionValidationRule2);
             this.LUESubCommitteId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // LSMSCDSubCommitte
@@ -872,10 +880,10 @@
             this.LUESyndicateId.Properties.ValueMember = "SyndicateId";
             this.LUESyndicateId.Size = new System.Drawing.Size(161, 22);
             this.LUESyndicateId.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "يجب ادخال النقابة الفرعية";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "يجب ادخال النقابة الفرعية";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUESyndicateId, conditionValidationRule3);
             this.LUESyndicateId.EditValueChanged += new System.EventHandler(this.LUESyndicateId_EditValueChanged);
             this.LUESyndicateId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
@@ -916,10 +924,10 @@
             this.LUEMashHalaId.Properties.ValueMember = "MashHalaId";
             this.LUEMashHalaId.Size = new System.Drawing.Size(161, 22);
             this.LUEMashHalaId.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "يجب ادخال الوظيفه";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUEMashHalaId, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "يجب ادخال الوظيفه";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUEMashHalaId, conditionValidationRule4);
             this.LUEMashHalaId.EditValueChanged += new System.EventHandler(this.LUEMashHalaId_EditValueChanged);
             this.LUEMashHalaId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
@@ -1048,10 +1056,10 @@
             this.lueDofatSarfId.Properties.ValueMember = "DofatSarfId";
             this.lueDofatSarfId.Size = new System.Drawing.Size(162, 22);
             this.lueDofatSarfId.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "يجب ادخال دفعة الصرف";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "يجب ادخال دفعة الصرف";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.lueDofatSarfId, conditionValidationRule5);
             // 
             // LSMSTBLDofatSarf
             // 
@@ -1080,10 +1088,10 @@
             this.luesarfTypeId.Properties.ValueMember = "MashHalaId";
             this.luesarfTypeId.Size = new System.Drawing.Size(162, 22);
             this.luesarfTypeId.TabIndex = 1;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "يجب ادخال فئة الصرف";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.luesarfTypeId, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "يجب ادخال فئة الصرف";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.luesarfTypeId, conditionValidationRule6);
             // 
             // tbestktaa
             // 
@@ -1099,10 +1107,10 @@
             this.tbestktaa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbestktaa.Size = new System.Drawing.Size(162, 22);
             this.tbestktaa.TabIndex = 2;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "يجب ادخال الاستقطاع";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderEdafat.SetValidationRule(this.tbestktaa, conditionValidationRule6);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "يجب ادخال الاستقطاع";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderEdafat.SetValidationRule(this.tbestktaa, conditionValidationRule7);
             // 
             // labelControl10
             // 
@@ -1156,10 +1164,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.defiledate.Size = new System.Drawing.Size(162, 22);
             this.defiledate.TabIndex = 10;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "يجب ادخال تاريخ ورود الملف";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.defiledate, conditionValidationRule7);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "يجب ادخال تاريخ ورود الملف";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.defiledate, conditionValidationRule8);
             // 
             // tBLMashatBindingSource
             // 
@@ -1182,10 +1190,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.deWorkeEndDate.Size = new System.Drawing.Size(162, 22);
             this.deWorkeEndDate.TabIndex = 8;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "يجب ادخال تاريخ نهاية الخدمة";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.deWorkeEndDate, conditionValidationRule8);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "يجب ادخال تاريخ نهاية الخدمة";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.deWorkeEndDate, conditionValidationRule9);
             // 
             // ceActivate
             // 
@@ -1364,10 +1372,10 @@
             this.lueEndworkId.Properties.ValueMember = "EndworkId";
             this.lueEndworkId.Size = new System.Drawing.Size(162, 22);
             this.lueEndworkId.TabIndex = 9;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "يجب ادخال سبب انهاء الخدمة";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.lueEndworkId, conditionValidationRule9);
+            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule10.ErrorText = "يجب ادخال سبب انهاء الخدمة";
+            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.lueEndworkId, conditionValidationRule10);
             this.lueEndworkId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // cDEndworkBindingSource
@@ -1410,10 +1418,10 @@
             this.tbMMashatNId.Properties.MaxLength = 14;
             this.tbMMashatNId.Size = new System.Drawing.Size(162, 22);
             this.tbMMashatNId.TabIndex = 5;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "يجب ادخال الرقم القومي";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbMMashatNId, conditionValidationRule10);
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule11.ErrorText = "يجب ادخال الرقم القومي";
+            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbMMashatNId, conditionValidationRule11);
             this.tbMMashatNId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // tbvisa
@@ -1441,10 +1449,10 @@
             this.tbKideNumber.Properties.Appearance.Options.UseFont = true;
             this.tbKideNumber.Size = new System.Drawing.Size(162, 22);
             this.tbKideNumber.TabIndex = 7;
-            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule11.ErrorText = "يجب ادخال رقم القيد";
-            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbKideNumber, conditionValidationRule11);
+            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule12.ErrorText = "يجب ادخال رقم القيد";
+            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbKideNumber, conditionValidationRule12);
             this.tbKideNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // textEdit2
@@ -1488,10 +1496,10 @@
             this.tbfilenumber.Properties.Appearance.Options.UseFont = true;
             this.tbfilenumber.Size = new System.Drawing.Size(162, 22);
             this.tbfilenumber.TabIndex = 11;
-            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule12.ErrorText = "يجب ادخال رقم الملف";
-            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbfilenumber, conditionValidationRule12);
+            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule13.ErrorText = "يجب ادخال رقم الملف";
+            conditionValidationRule13.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbfilenumber, conditionValidationRule13);
             this.tbfilenumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // textEdit1
@@ -1521,10 +1529,10 @@
             this.tbsarfnumber.Properties.Appearance.Options.UseFont = true;
             this.tbsarfnumber.Size = new System.Drawing.Size(162, 22);
             this.tbsarfnumber.TabIndex = 4;
-            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule13.ErrorText = "يجب ادخال رقم الصرف";
-            conditionValidationRule13.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.tbsarfnumber, conditionValidationRule13);
+            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule14.ErrorText = "يجب ادخال رقم الصرف";
+            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.tbsarfnumber, conditionValidationRule14);
             this.tbsarfnumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // xtraTabPageNoSarf
@@ -2632,7 +2640,7 @@
             // 
             this.repositoryItemButtonEditWarasaQuickSave.AutoHeight = false;
             this.repositoryItemButtonEditWarasaQuickSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, false, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, false, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditWarasaQuickSave.Name = "repositoryItemButtonEditWarasaQuickSave";
             this.repositoryItemButtonEditWarasaQuickSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditWarasaQuickSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditWarasaQuickSave_ButtonClick);
@@ -2949,10 +2957,10 @@
             this.LUEChangeHala.Properties.ValueMember = "MashHalaId";
             this.LUEChangeHala.Size = new System.Drawing.Size(200, 22);
             this.LUEChangeHala.TabIndex = 32;
-            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule14.ErrorText = "يجب ادخال الوظيفه";
-            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProviderMain.SetValidationRule(this.LUEChangeHala, conditionValidationRule14);
+            conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule15.ErrorText = "يجب ادخال الوظيفه";
+            conditionValidationRule15.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProviderMain.SetValidationRule(this.LUEChangeHala, conditionValidationRule15);
             // 
             // btnChangeHala
             // 
@@ -3407,6 +3415,8 @@
             this.gridControltblvisawarsaactive.Location = new System.Drawing.Point(0, 0);
             this.gridControltblvisawarsaactive.MainView = this.gridViewtblvisawarsaactive;
             this.gridControltblvisawarsaactive.Name = "gridControltblvisawarsaactive";
+            this.gridControltblvisawarsaactive.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEditvisaactive});
             this.gridControltblvisawarsaactive.Size = new System.Drawing.Size(1135, 294);
             this.gridControltblvisawarsaactive.TabIndex = 0;
             this.gridControltblvisawarsaactive.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -3422,7 +3432,9 @@
             this.gridViewtblvisawarsaactive.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colactivee,
             this.coldatehala1,
-            this.colhalarem});
+            this.colhalarem,
+            this.coldatein2,
+            this.coluserin2});
             this.gridViewtblvisawarsaactive.GridControl = this.gridControltblvisawarsaactive;
             this.gridViewtblvisawarsaactive.Name = "gridViewtblvisawarsaactive";
             this.gridViewtblvisawarsaactive.OptionsBehavior.ReadOnly = true;
@@ -3440,7 +3452,7 @@
             this.colactivee.Name = "colactivee";
             this.colactivee.Visible = true;
             this.colactivee.VisibleIndex = 0;
-            this.colactivee.Width = 164;
+            this.colactivee.Width = 97;
             // 
             // coldatehala1
             // 
@@ -3453,7 +3465,7 @@
             this.coldatehala1.Name = "coldatehala1";
             this.coldatehala1.Visible = true;
             this.coldatehala1.VisibleIndex = 1;
-            this.coldatehala1.Width = 252;
+            this.coldatehala1.Width = 149;
             // 
             // colhalarem
             // 
@@ -3466,7 +3478,7 @@
             this.colhalarem.Name = "colhalarem";
             this.colhalarem.Visible = true;
             this.colhalarem.VisibleIndex = 2;
-            this.colhalarem.Width = 1318;
+            this.colhalarem.Width = 724;
             // 
             // xtraTabPageTblMemberMadunea
             // 
@@ -3490,7 +3502,8 @@
             this.gridControlTblMemberMadunea.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEditTblMemberMaduneaSave,
             this.repositoryItemButtonEditTblMemberMaduneaDel,
-            this.repositoryItemLookUpEditTblMemberMaduneaDof});
+            this.repositoryItemLookUpEditTblMemberMaduneaDof,
+            this.repositoryItemLookUpEditmaduneauser});
             this.gridControlTblMemberMadunea.Size = new System.Drawing.Size(1135, 294);
             this.gridControlTblMemberMadunea.TabIndex = 2;
             this.gridControlTblMemberMadunea.UseEmbeddedNavigator = true;
@@ -3509,7 +3522,9 @@
             this.colmostahk,
             this.colmremark,
             this.gridColumn16,
-            this.gridColumn18});
+            this.gridColumn18,
+            this.coldatein3,
+            this.coluserin3});
             this.gridViewTblMemberMadunea.GridControl = this.gridControlTblMemberMadunea;
             this.gridViewTblMemberMadunea.Name = "gridViewTblMemberMadunea";
             this.gridViewTblMemberMadunea.NewItemRowText = "اضغط لاضافة جديد";
@@ -3572,6 +3587,7 @@
             this.colmremark.Name = "colmremark";
             this.colmremark.Visible = true;
             this.colmremark.VisibleIndex = 2;
+            this.colmremark.Width = 229;
             // 
             // gridColumn16
             // 
@@ -3714,6 +3730,81 @@
             // tBLDofatSarfMaduneaTableAdapter
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
+            // 
+            // coldatein2
+            // 
+            this.coldatein2.AppearanceCell.Options.UseTextOptions = true;
+            this.coldatein2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein2.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldatein2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein2.Caption = "تاريخ الادخال";
+            this.coldatein2.FieldName = "datein";
+            this.coldatein2.Name = "coldatein2";
+            this.coldatein2.OptionsColumn.ReadOnly = true;
+            this.coldatein2.Visible = true;
+            this.coldatein2.VisibleIndex = 3;
+            this.coldatein2.Width = 71;
+            // 
+            // coluserin2
+            // 
+            this.coluserin2.AppearanceCell.Options.UseTextOptions = true;
+            this.coluserin2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin2.AppearanceHeader.Options.UseTextOptions = true;
+            this.coluserin2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin2.Caption = "مسئول الادخال";
+            this.coluserin2.ColumnEdit = this.repositoryItemLookUpEditvisaactive;
+            this.coluserin2.FieldName = "userin";
+            this.coluserin2.Name = "coluserin2";
+            this.coluserin2.OptionsColumn.ReadOnly = true;
+            this.coluserin2.Visible = true;
+            this.coluserin2.VisibleIndex = 4;
+            this.coluserin2.Width = 76;
+            // 
+            // repositoryItemLookUpEditvisaactive
+            // 
+            this.repositoryItemLookUpEditvisaactive.AutoHeight = false;
+            this.repositoryItemLookUpEditvisaactive.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditvisaactive.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditvisaactive.DataSource = this.usersBindingSource;
+            this.repositoryItemLookUpEditvisaactive.DisplayMember = "RealName";
+            this.repositoryItemLookUpEditvisaactive.Name = "repositoryItemLookUpEditvisaactive";
+            this.repositoryItemLookUpEditvisaactive.ValueMember = "UserID";
+            // 
+            // coldatein3
+            // 
+            this.coldatein3.Caption = "تاريخ الادخال";
+            this.coldatein3.FieldName = "datein";
+            this.coldatein3.Name = "coldatein3";
+            this.coldatein3.OptionsColumn.ReadOnly = true;
+            this.coldatein3.Visible = true;
+            this.coldatein3.VisibleIndex = 5;
+            // 
+            // coluserin3
+            // 
+            this.coluserin3.Caption = "مسئول الادخال";
+            this.coluserin3.ColumnEdit = this.repositoryItemLookUpEditmaduneauser;
+            this.coluserin3.FieldName = "userin";
+            this.coluserin3.Name = "coluserin3";
+            this.coluserin3.OptionsColumn.ReadOnly = true;
+            this.coluserin3.Visible = true;
+            this.coluserin3.VisibleIndex = 6;
+            this.coluserin3.Width = 88;
+            // 
+            // repositoryItemLookUpEditmaduneauser
+            // 
+            this.repositoryItemLookUpEditmaduneauser.AutoHeight = false;
+            this.repositoryItemLookUpEditmaduneauser.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditmaduneauser.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditmaduneauser.DataSource = this.usersBindingSource;
+            this.repositoryItemLookUpEditmaduneauser.DisplayMember = "RealName";
+            this.repositoryItemLookUpEditmaduneauser.Name = "repositoryItemLookUpEditmaduneauser";
+            this.repositoryItemLookUpEditmaduneauser.NullText = "";
+            this.repositoryItemLookUpEditmaduneauser.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditmaduneauser.ValueMember = "UserID";
             // 
             // TBLMashatFrm
             // 
@@ -3898,6 +3989,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditvisaactive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditmaduneauser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4174,5 +4267,11 @@
         private DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter tBLDofatSarfMaduneaTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditWarasaEstefa;
+        private DevExpress.XtraGrid.Columns.GridColumn coldatein2;
+        private DevExpress.XtraGrid.Columns.GridColumn coluserin2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditvisaactive;
+        private DevExpress.XtraGrid.Columns.GridColumn coldatein3;
+        private DevExpress.XtraGrid.Columns.GridColumn coluserin3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditmaduneauser;
     }
 }

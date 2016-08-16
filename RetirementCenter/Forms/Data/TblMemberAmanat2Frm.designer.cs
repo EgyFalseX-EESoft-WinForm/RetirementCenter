@@ -74,6 +74,7 @@
             this.colamanattypeid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditamanattypeid = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.coldateReview = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -193,7 +194,8 @@
             this.colsarfcheek,
             this.gridColumn1,
             this.colDofatSarfAId1,
-            this.colamanattypeid});
+            this.colamanattypeid,
+            this.coldateReview});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -445,7 +447,7 @@
             this.gridColumnSave.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnSave.Name = "gridColumnSave";
             this.gridColumnSave.Visible = true;
-            this.gridColumnSave.VisibleIndex = 18;
+            this.gridColumnSave.VisibleIndex = 19;
             this.gridColumnSave.Width = 55;
             // 
             // repositoryItemButtonEditSave
@@ -468,7 +470,7 @@
             this.gridColumnDelete.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnDelete.Name = "gridColumnDelete";
             this.gridColumnDelete.Visible = true;
-            this.gridColumnDelete.VisibleIndex = 19;
+            this.gridColumnDelete.VisibleIndex = 20;
             this.gridColumnDelete.Width = 51;
             // 
             // repositoryItemButtonEditDel
@@ -559,7 +561,7 @@
             this.colamantvisa.Name = "colamantvisa";
             this.colamantvisa.OptionsColumn.ReadOnly = true;
             this.colamantvisa.Visible = true;
-            this.colamantvisa.VisibleIndex = 13;
+            this.colamantvisa.VisibleIndex = 14;
             // 
             // colDofatSarfId
             // 
@@ -573,8 +575,8 @@
             this.colDofatSarfId.Name = "colDofatSarfId";
             this.colDofatSarfId.OptionsColumn.ReadOnly = true;
             this.colDofatSarfId.Visible = true;
-            this.colDofatSarfId.VisibleIndex = 15;
-            this.colDofatSarfId.Width = 87;
+            this.colDofatSarfId.VisibleIndex = 16;
+            this.colDofatSarfId.Width = 99;
             // 
             // repositoryItemLookUpEditDofatSarfId
             // 
@@ -606,7 +608,8 @@
             this.colsarfcheek.Name = "colsarfcheek";
             this.colsarfcheek.OptionsColumn.ReadOnly = true;
             this.colsarfcheek.Visible = true;
-            this.colsarfcheek.VisibleIndex = 14;
+            this.colsarfcheek.VisibleIndex = 15;
+            this.colsarfcheek.Width = 77;
             // 
             // gridColumn1
             // 
@@ -619,7 +622,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 16;
+            this.gridColumn1.VisibleIndex = 17;
             // 
             // colDofatSarfAId1
             // 
@@ -642,7 +645,7 @@
             this.colamanattypeid.OptionsColumn.AllowEdit = false;
             this.colamanattypeid.OptionsColumn.ReadOnly = true;
             this.colamanattypeid.Visible = true;
-            this.colamanattypeid.VisibleIndex = 17;
+            this.colamanattypeid.VisibleIndex = 18;
             // 
             // repositoryItemLookUpEditamanattypeid
             // 
@@ -662,6 +665,20 @@
             // 
             this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
             this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
+            // 
+            // coldateReview
+            // 
+            this.coldateReview.AppearanceCell.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.Caption = "تاريخ مراجعة حسابات";
+            this.coldateReview.ColumnEdit = this.repositoryItemDateEditdatein;
+            this.coldateReview.FieldName = "dateReview";
+            this.coldateReview.Name = "coldateReview";
+            this.coldateReview.Visible = true;
+            this.coldateReview.VisibleIndex = 13;
+            this.coldateReview.Width = 116;
             // 
             // repositoryItemCalcEditf2
             // 
@@ -955,5 +972,6 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMScd_amanattype;
         private DevExpress.XtraGrid.Columns.GridColumn colamanattypeid;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditamanattypeid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldateReview;
     }
 }

@@ -733,6 +733,18 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry98Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry98Frm.designer.cs">
+      <DependentUpon>Qry98Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry97Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry97Frm.designer.cs">
+      <DependentUpon>Qry97Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry96Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1950,6 +1962,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry98Frm.resx">
+      <DependentUpon>Qry98Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry97Frm.resx">
+      <DependentUpon>Qry97Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry96Frm.resx">
       <DependentUpon>Qry96Frm.cs</DependentUpon>

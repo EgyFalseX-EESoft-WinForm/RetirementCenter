@@ -34,7 +34,10 @@ namespace RetirementCenter
             CDJobtitle,
             CDAttachmentType,
             CDsarfType,
-            TBLDofatSarf
+            TBLDofatSarf,
+            CdDofaatAmanat,
+            CDDofatSarfFrook,
+            TBLDofatSarfMadunea,
         }
         private readonly TableNames ViewName;
         #endregion
@@ -136,6 +139,21 @@ namespace RetirementCenter
                     LoadData(TableNames.TBLDofatSarf);
                     Text += " دفعات الصرف";
                     break;
+                case TableNames.CdDofaatAmanat:
+                    gridControlCode.MainView = gridViewCdDofaatAmanat;
+                    LoadData(TableNames.CdDofaatAmanat);
+                    Text += " دفعات الامانات";
+                    break;
+                case TableNames.CDDofatSarfFrook:
+                    gridControlCode.MainView = gridViewCDDofatSarfFrook;
+                    LoadData(TableNames.CDDofatSarfFrook);
+                    Text += " دفعات الفروق";
+                    break;
+                case TableNames.TBLDofatSarfMadunea:
+                    gridControlCode.MainView = gridViewTBLDofatSarfMadunea;
+                    LoadData(TableNames.TBLDofatSarfMadunea);
+                    Text += " دفعات المديونية";
+                    break;
                 default:
                     break;
             }
@@ -210,6 +228,15 @@ namespace RetirementCenter
                     break;
                 case TableNames.TBLDofatSarf:
                     dt = SQLProvider.SelectTBLDofatSarf();
+                    break;
+                case TableNames.CdDofaatAmanat:
+                    dt = SQLProvider.SelectCdDofaatAmanat();
+                    break;
+                case TableNames.CDDofatSarfFrook:
+                    dt = SQLProvider.SelectCDDofatSarfFrook();
+                    break;
+                case TableNames.TBLDofatSarfMadunea:
+                    dt = SQLProvider.SelectTBLDofatSarfMadunea();
                     break;
                 default:
                     break;
@@ -398,12 +425,79 @@ namespace RetirementCenter
                                 return;
                             }
                         }
+
                         if (rowgridViewTBLDofatSarf["DofatSarfId"].ToString() == string.Empty)
                             SQLProvider.InsertTBLDofatSarf(rowgridViewTBLDofatSarf["DofatSarf"], rowgridViewTBLDofatSarf["DofatSarfDatefrom"],
                                 rowgridViewTBLDofatSarf["DofatSarfDateto"], rowgridViewTBLDofatSarf["remd"], rowgridViewTBLDofatSarf["dofclosed"]);
                         else
+                        {
+                            object closed = new DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfTableAdapter().Getdofclosed((int)rowgridViewTBLDofatSarf["DofatSarfId"]);
+                            if (rowgridViewTBLDofatSarf["dofclosed"] != null && (bool)rowgridViewTBLDofatSarf["dofclosed"] == false && closed != null && (bool)closed == true)
+                            {
+                                Program.ShowMsg("لا يمكن اعادة فتح دفعة تم اغلاقها مسبقا", true, this, true);
+                                return;
+                            }
                             SQLProvider.UpdateTBLDofatSarf(rowgridViewTBLDofatSarf["DofatSarfId"], rowgridViewTBLDofatSarf["DofatSarf"],
                                 rowgridViewTBLDofatSarf["DofatSarfDatefrom"], rowgridViewTBLDofatSarf["DofatSarfDateto"], rowgridViewTBLDofatSarf["remd"], rowgridViewTBLDofatSarf["dofclosed"]);
+                        }
+                        break;
+                    case "gridViewCdDofaatAmanat":
+                        DataRow rowgridViewCdDofaatAmanat = gridViewCdDofaatAmanat.GetFocusedDataRow();
+                        if (rowgridViewCdDofaatAmanat["DofatSarfDateto"].ToString() != string.Empty)
+                        {
+                            DateTime dt = Convert.ToDateTime(rowgridViewCdDofaatAmanat["DofatSarfDateto"]);
+                            if (DateTime.DaysInMonth(dt.Year, dt.Month) != dt.Day)
+                            {
+                                Program.ShowMsg("يجب ان يكون اخر يوم في الشهر 'من تاريخ'", true, this, true);
+                                return;
+                            }
+                        }
+
+                        if (rowgridViewCdDofaatAmanat["DofatSarfAId"].ToString() == string.Empty)
+                            SQLProvider.InsertTBLDofatSarf(rowgridViewCdDofaatAmanat["DofatSarfA"], rowgridViewCdDofaatAmanat["DofatSarfDatefrom"],
+                                rowgridViewCdDofaatAmanat["DofatSarfDateto"], rowgridViewCdDofaatAmanat["remd"], rowgridViewCdDofaatAmanat["Closed"]);
+                        else
+                        {
+                            object closed = new DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter().GetClosed((int)rowgridViewCdDofaatAmanat["DofatSarfAId"]);
+                            if (rowgridViewCdDofaatAmanat["Closed"] != null && (bool)rowgridViewCdDofaatAmanat["Closed"] == false && closed != null && (bool)closed == true)
+                            {
+                                Program.ShowMsg("لا يمكن اعادة فتح دفعة تم اغلاقها مسبقا", true, this, true);
+                                return;
+                            }
+                            SQLProvider.UpdateTBLDofatSarf(rowgridViewCdDofaatAmanat["DofatSarfAId"], rowgridViewCdDofaatAmanat["DofatSarfA"],
+                                rowgridViewCdDofaatAmanat["DofatSarfDatefrom"], rowgridViewCdDofaatAmanat["DofatSarfDateto"], rowgridViewCdDofaatAmanat["remd"], rowgridViewCdDofaatAmanat["Closed"]);
+                        }
+                        break;
+
+                    case "gridViewCDDofatSarfFrook":
+                        DataRow rowgridViewCDDofatSarfFrook = gridViewCDDofatSarfFrook.GetFocusedDataRow();
+                        if (rowgridViewCDDofatSarfFrook["DofatSarfId"].ToString() == string.Empty)
+                            SQLProvider.InsertCDDofatSarfFrook(rowgridViewCDDofatSarfFrook["DofatSarf"], rowgridViewCDDofatSarfFrook["Closed"]);
+                        else
+                        {
+                            object closed = new DataSources.dsRetirementCenterTableAdapters.CDDofatSarfFrookTableAdapter().GetClosed((int)rowgridViewCDDofatSarfFrook["DofatSarfId"]);
+                            if (rowgridViewCDDofatSarfFrook["Closed"] != null && (bool)rowgridViewCDDofatSarfFrook["Closed"] == false && closed != null && (bool)closed == true)
+                            {
+                                Program.ShowMsg("لا يمكن اعادة فتح دفعة تم اغلاقها مسبقا", true, this, true);
+                                return;
+                            }
+                            SQLProvider.UpdateCDDofatSarfFrook(rowgridViewCDDofatSarfFrook["DofatSarfId"], rowgridViewCDDofatSarfFrook["DofatSarf"], rowgridViewCDDofatSarfFrook["Closed"]);
+                        }
+                        break;
+                    case "gridViewTBLDofatSarfMadunea":
+                        DataRow rowgridViewTBLDofatSarfMadunea = gridViewTBLDofatSarfMadunea.GetFocusedDataRow();
+                        if (rowgridViewTBLDofatSarfMadunea["DofatSarfMId"].ToString() == string.Empty)
+                            SQLProvider.InsertTBLDofatSarfMadunea(rowgridViewTBLDofatSarfMadunea["DofatSarfM"], rowgridViewTBLDofatSarfMadunea["Closed"]);
+                        else
+                        {
+                            object closed = new DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter().GetClosed((int)rowgridViewTBLDofatSarfMadunea["DofatSarfMId"]);
+                            if (rowgridViewTBLDofatSarfMadunea["Closed"] != null && (bool)rowgridViewTBLDofatSarfMadunea["Closed"] == false && closed != null && (bool)closed == true)
+                            {
+                                Program.ShowMsg("لا يمكن اعادة فتح دفعة تم اغلاقها مسبقا", true, this, true);
+                                return;
+                            }
+                            SQLProvider.UpdateTBLDofatSarfMadunea(rowgridViewTBLDofatSarfMadunea["DofatSarfMId"], rowgridViewTBLDofatSarfMadunea["DofatSarfM"], rowgridViewTBLDofatSarfMadunea["Closed"]);
+                        }
                         break;
                     default:
                         break;
@@ -511,6 +605,21 @@ namespace RetirementCenter
                         DataRow rowgridViewTBLDofatSarf = gridViewTBLDofatSarf.GetFocusedDataRow();
                         if (rowgridViewTBLDofatSarf["DofatSarfId"].ToString() != string.Empty)
                             SQLProvider.DeleteTBLDofatSarf(rowgridViewTBLDofatSarf["DofatSarfId"]);
+                        break;
+                    case "gridViewCdDofaatAmanat":
+                        DataRow rowgridViewCdDofaatAmanat = gridViewCdDofaatAmanat.GetFocusedDataRow();
+                        if (rowgridViewCdDofaatAmanat["DofatSarfAId"].ToString() != string.Empty)
+                            SQLProvider.DeleteCdDofaatAmanat(rowgridViewCdDofaatAmanat["DofatSarfAId"]);
+                        break;
+                    case "gridViewCDDofatSarfFrook":
+                        DataRow rowgridViewCDDofatSarfFrook = gridViewCDDofatSarfFrook.GetFocusedDataRow();
+                        if (rowgridViewCDDofatSarfFrook["DofatSarfId"].ToString() != string.Empty)
+                            SQLProvider.DeleteCDDofatSarfFrook(rowgridViewCDDofatSarfFrook["DofatSarfId"]);
+                        break;
+                    case "gridViewTBLDofatSarfMadunea":
+                        DataRow rowgridViewTBLDofatSarfMadunea = gridViewTBLDofatSarfMadunea.GetFocusedDataRow();
+                        if (rowgridViewTBLDofatSarfMadunea["DofatSarfMId"].ToString() != string.Empty)
+                            SQLProvider.DeleteTBLDofatSarfMadunea(rowgridViewTBLDofatSarfMadunea["DofatSarfMId"]);
                         break;
                     default:
                         break;

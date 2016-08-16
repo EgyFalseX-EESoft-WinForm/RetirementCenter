@@ -60,6 +60,8 @@ namespace RetirementCenter
         #region - Event Handlers -
         private void FormFrm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLDofatSarf' table. You can move, or remove it, as needed.
+            this.tBLDofatSarfTableAdapter.Fill(this.dsRetirementCenter.TBLDofatSarf);
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;

@@ -45,6 +45,9 @@
             DevExpress.XtraGrid.GridLevelNode gridLevelNode15 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode16 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode17 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode18 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode19 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode20 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridViewCDMarkez = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -161,13 +164,31 @@
             this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditMEM = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewCDGov = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn106 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn116 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn117 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridViewCdDofaatAmanat = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn79 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn80 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn81 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn82 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn84 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn85 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridViewCDDofatSarfFrook = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn87 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn88 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn89 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn90 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridViewTBLDofatSarfMadunea = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn86 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn91 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn92 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn93 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCDMarkez)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditGovId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -211,6 +232,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMEM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCDGov)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCdDofaatAmanat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCDDofatSarfFrook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTBLDofatSarfMadunea)).BeginInit();
             this.SuspendLayout();
             // 
             // gridViewCDMarkez
@@ -371,6 +395,12 @@
             gridLevelNode16.RelationName = "Level16";
             gridLevelNode17.LevelTemplate = this.gridViewTBLDofatSarf;
             gridLevelNode17.RelationName = "Level17";
+            gridLevelNode18.LevelTemplate = this.gridViewCdDofaatAmanat;
+            gridLevelNode18.RelationName = "Level18";
+            gridLevelNode19.LevelTemplate = this.gridViewCDDofatSarfFrook;
+            gridLevelNode19.RelationName = "Level19";
+            gridLevelNode20.LevelTemplate = this.gridViewTBLDofatSarfMadunea;
+            gridLevelNode20.RelationName = "Level20";
             this.gridControlCode.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2,
@@ -388,7 +418,10 @@
             gridLevelNode14,
             gridLevelNode15,
             gridLevelNode16,
-            gridLevelNode17});
+            gridLevelNode17,
+            gridLevelNode18,
+            gridLevelNode19,
+            gridLevelNode20});
             this.gridControlCode.Location = new System.Drawing.Point(0, 0);
             this.gridControlCode.MainView = this.gridViewCDGov;
             this.gridControlCode.Name = "gridControlCode";
@@ -429,7 +462,10 @@
             this.gridViewCDsarfType,
             this.gridViewTBLDofatSarf,
             this.gridViewCDGov,
-            this.gridViewCDMarkez});
+            this.gridViewCDMarkez,
+            this.gridViewCdDofaatAmanat,
+            this.gridViewCDDofatSarfFrook,
+            this.gridViewTBLDofatSarfMadunea});
             this.gridControlCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // gridViewCDSyndicate
@@ -1662,6 +1698,19 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEditMEM.Name = "repositoryItemMemoExEditMEM";
             // 
+            // gridColumn78
+            // 
+            this.gridColumn78.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn78.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn78.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn78.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn78.Caption = "اغلاق";
+            this.gridColumn78.ColumnEdit = this.repositoryItemCheckEditCheckMe;
+            this.gridColumn78.FieldName = "dofclosed";
+            this.gridColumn78.Name = "gridColumn78";
+            this.gridColumn78.Visible = true;
+            this.gridColumn78.VisibleIndex = 4;
+            // 
             // gridColumn76
             // 
             this.gridColumn76.AppearanceCell.Options.UseTextOptions = true;
@@ -1735,18 +1784,223 @@
             this.gridColumn117.VisibleIndex = 2;
             this.gridColumn117.Width = 133;
             // 
-            // gridColumn78
+            // gridViewCdDofaatAmanat
             // 
-            this.gridColumn78.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn78.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn78.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn78.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn78.Caption = "اغلاق";
-            this.gridColumn78.ColumnEdit = this.repositoryItemCheckEditCheckMe;
-            this.gridColumn78.FieldName = "dofclosed";
-            this.gridColumn78.Name = "gridColumn78";
-            this.gridColumn78.Visible = true;
-            this.gridColumn78.VisibleIndex = 4;
+            this.gridViewCdDofaatAmanat.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn79,
+            this.gridColumn80,
+            this.gridColumn81,
+            this.gridColumn82,
+            this.gridColumn83,
+            this.gridColumn84,
+            this.gridColumn85});
+            this.gridViewCdDofaatAmanat.GridControl = this.gridControlCode;
+            this.gridViewCdDofaatAmanat.Name = "gridViewCdDofaatAmanat";
+            // 
+            // gridColumn79
+            // 
+            this.gridColumn79.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn79.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn79.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn79.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn79.Caption = "الاسم";
+            this.gridColumn79.FieldName = "DofatSarfA";
+            this.gridColumn79.Name = "gridColumn79";
+            this.gridColumn79.Visible = true;
+            this.gridColumn79.VisibleIndex = 0;
+            // 
+            // gridColumn80
+            // 
+            this.gridColumn80.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn80.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn80.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn80.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn80.Caption = "من تاريخ";
+            this.gridColumn80.ColumnEdit = this.repositoryItemDateEditDMY;
+            this.gridColumn80.FieldName = "DofatSarfDatefrom";
+            this.gridColumn80.Name = "gridColumn80";
+            this.gridColumn80.Visible = true;
+            this.gridColumn80.VisibleIndex = 1;
+            // 
+            // gridColumn81
+            // 
+            this.gridColumn81.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn81.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn81.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn81.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn81.Caption = "الي تاريخ";
+            this.gridColumn81.ColumnEdit = this.repositoryItemDateEditDMY;
+            this.gridColumn81.FieldName = "DofatSarfDateto";
+            this.gridColumn81.Name = "gridColumn81";
+            this.gridColumn81.Visible = true;
+            this.gridColumn81.VisibleIndex = 2;
+            // 
+            // gridColumn82
+            // 
+            this.gridColumn82.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn82.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn82.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn82.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn82.Caption = "ملاحظات";
+            this.gridColumn82.FieldName = "remd";
+            this.gridColumn82.Name = "gridColumn82";
+            this.gridColumn82.Visible = true;
+            this.gridColumn82.VisibleIndex = 3;
+            // 
+            // gridColumn83
+            // 
+            this.gridColumn83.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn83.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn83.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn83.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn83.Caption = "اغلاق";
+            this.gridColumn83.ColumnEdit = this.repositoryItemCheckEditCheckMe;
+            this.gridColumn83.FieldName = "Closed";
+            this.gridColumn83.Name = "gridColumn83";
+            this.gridColumn83.Visible = true;
+            this.gridColumn83.VisibleIndex = 4;
+            // 
+            // gridColumn84
+            // 
+            this.gridColumn84.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn84.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn84.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn84.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn84.Caption = "حفظ";
+            this.gridColumn84.ColumnEdit = this.repositoryItemButtonEditSave;
+            this.gridColumn84.Name = "gridColumn84";
+            this.gridColumn84.Visible = true;
+            this.gridColumn84.VisibleIndex = 5;
+            // 
+            // gridColumn85
+            // 
+            this.gridColumn85.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn85.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn85.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn85.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn85.Caption = "حذف";
+            this.gridColumn85.ColumnEdit = this.repositoryItemButtonEditDel;
+            this.gridColumn85.Name = "gridColumn85";
+            this.gridColumn85.Visible = true;
+            this.gridColumn85.VisibleIndex = 6;
+            // 
+            // gridViewCDDofatSarfFrook
+            // 
+            this.gridViewCDDofatSarfFrook.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn87,
+            this.gridColumn88,
+            this.gridColumn89,
+            this.gridColumn90});
+            this.gridViewCDDofatSarfFrook.GridControl = this.gridControlCode;
+            this.gridViewCDDofatSarfFrook.Name = "gridViewCDDofatSarfFrook";
+            // 
+            // gridColumn87
+            // 
+            this.gridColumn87.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn87.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn87.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn87.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn87.Caption = "الاسم";
+            this.gridColumn87.FieldName = "DofatSarf";
+            this.gridColumn87.Name = "gridColumn87";
+            this.gridColumn87.Visible = true;
+            this.gridColumn87.VisibleIndex = 0;
+            // 
+            // gridColumn88
+            // 
+            this.gridColumn88.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn88.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn88.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn88.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn88.Caption = "اغلاق";
+            this.gridColumn88.ColumnEdit = this.repositoryItemCheckEditCheckMe;
+            this.gridColumn88.FieldName = "Closed";
+            this.gridColumn88.Name = "gridColumn88";
+            this.gridColumn88.Visible = true;
+            this.gridColumn88.VisibleIndex = 1;
+            // 
+            // gridColumn89
+            // 
+            this.gridColumn89.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn89.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn89.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn89.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn89.Caption = "حفظ";
+            this.gridColumn89.ColumnEdit = this.repositoryItemButtonEditSave;
+            this.gridColumn89.Name = "gridColumn89";
+            this.gridColumn89.Visible = true;
+            this.gridColumn89.VisibleIndex = 2;
+            // 
+            // gridColumn90
+            // 
+            this.gridColumn90.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn90.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn90.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn90.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn90.Caption = "حذف";
+            this.gridColumn90.ColumnEdit = this.repositoryItemButtonEditDel;
+            this.gridColumn90.Name = "gridColumn90";
+            this.gridColumn90.Visible = true;
+            this.gridColumn90.VisibleIndex = 3;
+            // 
+            // gridViewTBLDofatSarfMadunea
+            // 
+            this.gridViewTBLDofatSarfMadunea.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn86,
+            this.gridColumn91,
+            this.gridColumn92,
+            this.gridColumn93});
+            this.gridViewTBLDofatSarfMadunea.GridControl = this.gridControlCode;
+            this.gridViewTBLDofatSarfMadunea.Name = "gridViewTBLDofatSarfMadunea";
+            // 
+            // gridColumn86
+            // 
+            this.gridColumn86.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn86.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn86.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn86.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn86.Caption = "الاسم";
+            this.gridColumn86.FieldName = "DofatSarfM";
+            this.gridColumn86.Name = "gridColumn86";
+            this.gridColumn86.Visible = true;
+            this.gridColumn86.VisibleIndex = 0;
+            // 
+            // gridColumn91
+            // 
+            this.gridColumn91.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn91.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn91.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn91.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn91.Caption = "اغلاق";
+            this.gridColumn91.ColumnEdit = this.repositoryItemCheckEditCheckMe;
+            this.gridColumn91.FieldName = "Closed";
+            this.gridColumn91.Name = "gridColumn91";
+            this.gridColumn91.Visible = true;
+            this.gridColumn91.VisibleIndex = 1;
+            // 
+            // gridColumn92
+            // 
+            this.gridColumn92.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn92.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn92.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn92.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn92.Caption = "حفظ";
+            this.gridColumn92.ColumnEdit = this.repositoryItemButtonEditSave;
+            this.gridColumn92.Name = "gridColumn92";
+            this.gridColumn92.Visible = true;
+            this.gridColumn92.VisibleIndex = 2;
+            // 
+            // gridColumn93
+            // 
+            this.gridColumn93.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn93.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn93.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn93.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn93.Caption = "حذف";
+            this.gridColumn93.ColumnEdit = this.repositoryItemButtonEditDel;
+            this.gridColumn93.Name = "gridColumn93";
+            this.gridColumn93.Visible = true;
+            this.gridColumn93.VisibleIndex = 3;
             // 
             // CodeFrm
             // 
@@ -1801,6 +2055,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMEM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCDGov)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCdDofaatAmanat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCDDofatSarfFrook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTBLDofatSarfMadunea)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1930,5 +2187,23 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn76;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn77;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn78;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCdDofaatAmanat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn79;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn80;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn81;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn82;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn83;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn84;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn85;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCDDofatSarfFrook;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn87;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn88;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn89;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn90;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTBLDofatSarfMadunea;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn86;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn91;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn92;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn93;
     }
 }

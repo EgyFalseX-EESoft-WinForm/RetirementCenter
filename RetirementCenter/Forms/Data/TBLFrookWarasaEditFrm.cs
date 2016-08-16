@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -19,7 +20,7 @@ namespace RetirementCenter.Forms.Data
         public TBLFrookWarasaEditFrm(int id)
         {
             InitializeComponent();
-            LSMSDofatSarfId.QueryableSource = dsLinq.CDDofatSarfFrooks;
+            LSMSDofatSarfId.QueryableSource = from q in dsLinq.CDDofatSarfFrooks where q.Closed == false select q;
             LSMSfrookid.QueryableSource = dsLinq.CDFrooks;
             LSMSPersonId.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
             _id = id;

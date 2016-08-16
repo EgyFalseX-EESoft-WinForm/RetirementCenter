@@ -95,7 +95,7 @@ namespace RetirementCenter
         {
             IsBinding = true;
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
-            LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
+            LSMSDofatSarfId.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
             LSMScd_amanattype.QueryableSource = dsLinq.cd_amanattypes;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
@@ -116,8 +116,7 @@ namespace RetirementCenter
             }
             if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLWarasaSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(luePersonId.EditValue)) == null)
                 msgDlg.Show("عليك مراجعة اعادة الصرف للوريث", msgDlg.msgButtons.Close);
-            DialogResult = System.Windows.Forms.DialogResult.OK;
-
+            
             if (lueDofatSarfAId.EditValue != null)
                 _row.DofatSarfAId = Convert.ToInt32(lueDofatSarfAId.EditValue);
             if (luePersonId.EditValue != null)
@@ -138,8 +137,18 @@ namespace RetirementCenter
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
             _row.datein = SQLProvider.ServerDateTime();
             _row.userin = Program.UserInfo.UserId;
-            if (lueDofatSarfId.EditValue != null)
+
+            if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
+            {
                 _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
+                var result = SQLProvider.adpQry.ExistsTblWarasaAmanat1(_row.PersonId, _row.DofatSarfId);
+                if (result != null && (int)result != _row.AutoId)
+                {
+                    msgDlg.Show("موجود مسبقا", msgDlg.msgButtons.Close);
+                    return;
+                }
+            }
+            DialogResult = System.Windows.Forms.DialogResult.OK;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

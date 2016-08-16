@@ -60,6 +60,8 @@ namespace RetirementCenter
         #region - Event Handlers -
         private void FormFrm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLDofatSarf' table. You can move, or remove it, as needed.
+            this.tBLDofatSarfTableAdapter.Fill(this.dsRetirementCenter.TBLDofatSarf);
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             LSMSTBLMashat.QueryableSource = dsLinq.vTBLMashats;
@@ -102,6 +104,13 @@ namespace RetirementCenter
                 }
                 row.userincheek = Program.UserInfo.UserId;
                 row.datincheek = SQLProvider.ServerDateTime();
+            }
+            string orgAccCheck = row["accReview", DataRowVersion.Original] == null ? string.Empty : row["accReview", DataRowVersion.Original].ToString();
+            string curAccCheck = row["accReview", DataRowVersion.Current] == null ? string.Empty : row["accReview", DataRowVersion.Current].ToString();
+            if (orgAccCheck != curAccCheck)
+            {
+                row.useracc = Program.UserInfo.UserId;
+                row.dateReview = SQLProvider.ServerDateTime();
             }
             row.EndEdit();
             tblMemberAmanatTableAdapter.Update(row);

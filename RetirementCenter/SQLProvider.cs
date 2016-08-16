@@ -400,6 +400,18 @@ namespace RetirementCenter
         {
             return FXFW.SqlDB.LoadDataTable(@"SELECT DofatSarfId, DofatSarf, DofatSarfDatefrom, DofatSarfDateto, remd, dofclosed FROM TBLDofatSarf");
         }
+        public static DataTable SelectCdDofaatAmanat()
+        {
+            return FXFW.SqlDB.LoadDataTable(@"SELECT DofatSarfAId, DofatSarfA, DofatSarfDatefrom, DofatSarfDateto, remd, Closed FROM CdDofaatAmanat");
+        }
+        public static DataTable SelectCDDofatSarfFrook()
+        {
+            return FXFW.SqlDB.LoadDataTable(@"SELECT DofatSarfId, DofatSarf, Closed FROM CDDofatSarfFrook");
+        }
+        public static DataTable SelectTBLDofatSarfMadunea()
+        {
+            return FXFW.SqlDB.LoadDataTable(@"SELECT DofatSarfMId, DofatSarfM, Closed FROM TBLDofatSarfMadunea");
+        }
         //Data
         public static DataTable SelectTBLMembers(object MemberId = null)
         {
@@ -909,6 +921,78 @@ namespace RetirementCenter
                 con.Open();
                 cmd.CommandText = @"INSERT INTO TBLDofatSarf (DofatSarfId, DofatSarf, DofatSarfDatefrom, DofatSarfDateto, remd, dofclosed) VALUES 
                 ((SELECT ISNULL(MAX(DofatSarfId) + 1, 1) FROM TBLDofatSarf), @DofatSarf, @DofatSarfDatefrom, @DofatSarfDateto, @remd, @dofclosed)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool InsertCdDofaatAmanat(object DofatSarfA, object DofatSarfDatefrom, object DofatSarfDateto, object remd, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfA", SqlDbType.NVarChar) { Value = DofatSarfA });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfDatefrom", SqlDbType.Date) { Value = DofatSarfDatefrom });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfDateto", SqlDbType.Date) { Value = DofatSarfDateto });
+            cmd.Parameters.Add(new SqlParameter("@remd", SqlDbType.NVarChar) { Value = remd });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"INSERT INTO CdDofaatAmanat (DofatSarfAId, DofatSarfA, DofatSarfDatefrom, DofatSarfDateto, remd, Closed) VALUES 
+                ((SELECT ISNULL(MAX(DofatSarfAId) + 1, 1) FROM CdDofaatAmanat), @DofatSarfA, @DofatSarfDatefrom, @DofatSarfDateto, @remd, @Closed)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool InsertCDDofatSarfFrook(object DofatSarf, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarf", SqlDbType.NVarChar) { Value = DofatSarf });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"INSERT INTO CDDofatSarfFrook (DofatSarfId, DofatSarf, Closed) VALUES 
+                ((SELECT ISNULL(MAX(DofatSarfId) + 1, 1) FROM CDDofatSarfFrook), @DofatSarf, @Closed)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool InsertTBLDofatSarfMadunea(object DofatSarfM, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfM", SqlDbType.NVarChar) { Value = DofatSarfM });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"INSERT INTO TBLDofatSarfMadunea (DofatSarfMId, DofatSarfM, Closed) VALUES 
+                ((SELECT ISNULL(MAX(DofatSarfMId) + 1, 1) FROM TBLDofatSarfMadunea), @DofatSarfM, @Closed)";
                 InsertEmptyValue(ref cmd);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -1728,6 +1812,76 @@ namespace RetirementCenter
                 throw ex;
             }
         }
+        public static bool UpdateCdDofaatAmanat(object DofatSarfAId, object DofatSarfA, object DofatSarfDatefrom, object DofatSarfDateto, object remd, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfAId", SqlDbType.Int) { Value = DofatSarfAId });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfA", SqlDbType.NVarChar) { Value = DofatSarfA });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfDatefrom", SqlDbType.Date) { Value = DofatSarfDatefrom });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfDateto", SqlDbType.Date) { Value = DofatSarfDateto });
+            cmd.Parameters.Add(new SqlParameter("@remd", SqlDbType.NVarChar) { Value = remd });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"UPDATE CdDofaatAmanat SET DofatSarfA = @DofatSarfA, DofatSarfDatefrom = @DofatSarfDatefrom,
+                DofatSarfDateto =@DofatSarfDateto, remd =@remd, Closed = @Closed WHERE DofatSarfAId = @DofatSarfAId";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool UpdateCDDofatSarfFrook(object DofatSarfId, object DofatSarf, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfId", SqlDbType.Int) { Value = DofatSarfId });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarf", SqlDbType.NVarChar) { Value = DofatSarf });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"UPDATE CDDofatSarfFrook SET DofatSarf = @DofatSarf, Closed = @Closed WHERE DofatSarfId = @DofatSarfId";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool UpdateTBLDofatSarfMadunea(object DofatSarfMId, object DofatSarfM, object Closed)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfMId", SqlDbType.Int) { Value = DofatSarfMId });
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfM", SqlDbType.NVarChar) { Value = DofatSarfM });
+            cmd.Parameters.Add(new SqlParameter("@Closed", SqlDbType.Bit) { Value = Closed });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"UPDATE TBLDofatSarfMadunea SET DofatSarfM = @DofatSarfM, Closed = @Closed WHERE DofatSarfMId = @DofatSarfMId";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
 
         //Data
         public static bool UpdateTBLMembers(object MemberId, object MemberNId, object MemberName, object BirthDate, object MemberBPlace, object MemberGender,
@@ -2445,6 +2599,66 @@ namespace RetirementCenter
             {
                 con.Open();
                 cmd.CommandText = @"DELETE FROM TBLDofatSarf WHERE (DofatSarfId = @DofatSarfId)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool DeleteCdDofaatAmanat(object DofatSarfAId)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfAId", SqlDbType.Int) { Value = DofatSarfAId });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"DELETE FROM CdDofaatAmanat WHERE (DofatSarfAId = @DofatSarfAId)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool DeleteCDDofatSarfFrook(object DofatSarfAId)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfAId", SqlDbType.Int) { Value = DofatSarfAId });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"DELETE FROM CDDofatSarfFrook WHERE (DofatSarfAId = @DofatSarfAId)";
+                InsertEmptyValue(ref cmd);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                con.Close();
+                throw ex;
+            }
+        }
+        public static bool DeleteTBLDofatSarfMadunea(object DofatSarfMId)
+        {
+            SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
+            SqlCommand cmd = new SqlCommand("", con);
+
+            cmd.Parameters.Add(new SqlParameter("@DofatSarfMId", SqlDbType.Int) { Value = DofatSarfMId });
+            try
+            {
+                con.Open();
+                cmd.CommandText = @"DELETE FROM TBLDofatSarfMadunea WHERE (DofatSarfMId = @DofatSarfMId)";
                 InsertEmptyValue(ref cmd);
                 cmd.ExecuteNonQuery();
                 return true;

@@ -1155,7 +1155,7 @@ namespace RetirementCenter
                     return;
             }
             DataSources.dsRetirementCenter.tblmembervisaactiveRow row = dsRetirementCenter.tblmembervisaactive.NewtblmembervisaactiveRow();
-            row.MMashatId = -1; row.datehala = DateTime.Now; row.halarem = string.Empty; row.activee = ceActivate.Checked;
+            row.MMashatId = dsRetirementCenter.TBLMashat[0].MMashatId; row.datehala = DateTime.Now; row.halarem = string.Empty; row.activee = ceActivate.Checked;
             tblmembervisaactiveDlg dlg = new tblmembervisaactiveDlg(row);
 
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)

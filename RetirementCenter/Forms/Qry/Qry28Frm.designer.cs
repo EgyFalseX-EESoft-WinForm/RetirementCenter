@@ -62,6 +62,8 @@
             this.colSendBank = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -77,7 +79,7 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendBankDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -228,7 +230,9 @@
             this.colSendBank,
             this.colnewid,
             this.colActivate,
-            this.colamanatvisa});
+            this.colamanatvisa,
+            this.colsarfcheek,
+            this.colSendBankDate});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -596,6 +600,30 @@
             this.colActivate.Visible = true;
             this.colActivate.VisibleIndex = 25;
             // 
+            // colamanatvisa
+            // 
+            this.colamanatvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatvisa.Caption = "امانات فيزا";
+            this.colamanatvisa.FieldName = "amanatvisa";
+            this.colamanatvisa.Name = "colamanatvisa";
+            this.colamanatvisa.Visible = true;
+            this.colamanatvisa.VisibleIndex = 26;
+            // 
+            // colsarfcheek
+            // 
+            this.colsarfcheek.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.Caption = "شيك";
+            this.colsarfcheek.FieldName = "sarfcheek";
+            this.colsarfcheek.Name = "colsarfcheek";
+            this.colsarfcheek.Visible = true;
+            this.colsarfcheek.VisibleIndex = 27;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -744,17 +772,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colamanatvisa
+            // colSendBankDate
             // 
-            this.colamanatvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colamanatvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanatvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colamanatvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanatvisa.Caption = "امانات فيزا";
-            this.colamanatvisa.FieldName = "amanatvisa";
-            this.colamanatvisa.Name = "colamanatvisa";
-            this.colamanatvisa.Visible = true;
-            this.colamanatvisa.VisibleIndex = 26;
+            this.colSendBankDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSendBankDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBankDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSendBankDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBankDate.Caption = "تاريخ";
+            this.colSendBankDate.FieldName = "SendBankDate";
+            this.colSendBankDate.Name = "colSendBankDate";
+            this.colSendBankDate.Visible = true;
+            this.colSendBankDate.VisibleIndex = 28;
             // 
             // Qry28Frm
             // 
@@ -840,6 +868,8 @@
         private DevExpress.XtraEditors.TextEdit tbCodeStart;
         private DevExpress.XtraGrid.Columns.GridColumn colActivate;
         private DevExpress.XtraGrid.Columns.GridColumn colamanatvisa;
+        private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
+        private DevExpress.XtraGrid.Columns.GridColumn colSendBankDate;
 
     }
 }

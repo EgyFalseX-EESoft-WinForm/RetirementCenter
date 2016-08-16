@@ -105,7 +105,7 @@ namespace RetirementCenter
         private void FormWFrm_Load(object sender, EventArgs e)
         {
             IsBinding = true;
-            LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
+            LSMSDofatSarfId.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             ActivePriv();
@@ -132,7 +132,7 @@ namespace RetirementCenter
             if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLMemberSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(lueMMashatId.EditValue)) == null)
                 msgDlg.Show("عليك مراجعة اعادة الصرف للعضو", msgDlg.msgButtons.Close);
 
-            DialogResult = System.Windows.Forms.DialogResult.OK;
+            
 
             if (lueDofatSarfAId.EditValue != null)
                 _row.DofatSarfAId = Convert.ToInt32(lueDofatSarfAId.EditValue);
@@ -153,7 +153,17 @@ namespace RetirementCenter
             _row.datein = SQLProvider.ServerDateTime();
             _row.userin = Program.UserInfo.UserId;
             if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
+            {
                 _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
+                var result = SQLProvider.adpQry.ExistsTblMemberAmanat1(_row.MMashatId, _row.DofatSarfId);
+                if (result != null && (int)result != _row.AutoId)
+                {
+                    msgDlg.Show("موجود مسبقا", msgDlg.msgButtons.Close);
+                    return;
+                }
+            }
+
+            DialogResult = System.Windows.Forms.DialogResult.OK;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
