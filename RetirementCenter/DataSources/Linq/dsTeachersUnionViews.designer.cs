@@ -195,6 +195,9 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvtblWarasabank(vtblWarasabank instance);
     partial void UpdatevtblWarasabank(vtblWarasabank instance);
     partial void DeletevtblWarasabank(vtblWarasabank instance);
+    partial void InsertvtblWarasabank2(vtblWarasabank2 instance);
+    partial void UpdatevtblWarasabank2(vtblWarasabank2 instance);
+    partial void DeletevtblWarasabank2(vtblWarasabank2 instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -29156,8 +29159,10 @@ namespace RetirementCenter.DataSources.Linq
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vtblWarasabank2")]
-	public partial class vtblWarasabank2
+	public partial class vtblWarasabank2 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private long _AutoId;
 		
@@ -29207,13 +29212,66 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private int _responsiblesarfId;
 		
-		private string _ResName;
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAutoIdChanging(long value);
+    partial void OnAutoIdChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnDofatSarfIdChanging(int value);
+    partial void OnDofatSarfIdChanged();
+    partial void OnPersonIdChanging(int value);
+    partial void OnPersonIdChanged();
+    partial void OnvisanumberChanging(string value);
+    partial void OnvisanumberChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnsummonyChanging(double value);
+    partial void OnsummonyChanged();
+    partial void OnsendbankdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnsendbankdateChanged();
+    partial void OnamanatmonyChanging(System.Nullable<double> value);
+    partial void OnamanatmonyChanged();
+    partial void OnamanatwareddateChanging(System.Nullable<System.DateTime> value);
+    partial void OnamanatwareddateChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OnnewidChanging(int value);
+    partial void OnnewidChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnDofatSarfChanging(string value);
+    partial void OnDofatSarfChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnpersonNameChanging(string value);
+    partial void OnpersonNameChanged();
+    partial void OnyasrefChanging(bool value);
+    partial void OnyasrefChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnCODE60Changing(System.Nullable<int> value);
+    partial void OnCODE60Changed();
+    partial void OnresponsiblesarfIdChanging(int value);
+    partial void OnresponsiblesarfIdChanged();
+    #endregion
 		
 		public vtblWarasabank2()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AutoId", DbType="BigInt NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AutoId", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
 		public long AutoId
 		{
 			get
@@ -29224,7 +29282,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._AutoId != value))
 				{
+					this.OnAutoIdChanging(value);
+					this.SendPropertyChanging();
 					this._AutoId = value;
+					this.SendPropertyChanged("AutoId");
+					this.OnAutoIdChanged();
 				}
 			}
 		}
@@ -29240,7 +29302,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._MMashatId != value))
 				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
 					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
 				}
 			}
 		}
@@ -29256,7 +29322,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._DofatSarfId != value))
 				{
+					this.OnDofatSarfIdChanging(value);
+					this.SendPropertyChanging();
 					this._DofatSarfId = value;
+					this.SendPropertyChanged("DofatSarfId");
+					this.OnDofatSarfIdChanged();
 				}
 			}
 		}
@@ -29272,7 +29342,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._PersonId != value))
 				{
+					this.OnPersonIdChanging(value);
+					this.SendPropertyChanging();
 					this._PersonId = value;
+					this.SendPropertyChanged("PersonId");
+					this.OnPersonIdChanged();
 				}
 			}
 		}
@@ -29288,7 +29362,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._visanumber != value))
 				{
+					this.OnvisanumberChanging(value);
+					this.SendPropertyChanging();
 					this._visanumber = value;
+					this.SendPropertyChanged("visanumber");
+					this.OnvisanumberChanged();
 				}
 			}
 		}
@@ -29304,7 +29382,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._SyndicateId != value))
 				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
 					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
 				}
 			}
 		}
@@ -29320,7 +29402,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._SubCommitteId != value))
 				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
 					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
 				}
 			}
 		}
@@ -29336,7 +29422,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._summony != value))
 				{
+					this.OnsummonyChanging(value);
+					this.SendPropertyChanging();
 					this._summony = value;
+					this.SendPropertyChanged("summony");
+					this.OnsummonyChanged();
 				}
 			}
 		}
@@ -29352,7 +29442,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._sendbankdate != value))
 				{
+					this.OnsendbankdateChanging(value);
+					this.SendPropertyChanging();
 					this._sendbankdate = value;
+					this.SendPropertyChanged("sendbankdate");
+					this.OnsendbankdateChanged();
 				}
 			}
 		}
@@ -29368,7 +29462,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._amanatmony != value))
 				{
+					this.OnamanatmonyChanging(value);
+					this.SendPropertyChanging();
 					this._amanatmony = value;
+					this.SendPropertyChanged("amanatmony");
+					this.OnamanatmonyChanged();
 				}
 			}
 		}
@@ -29384,7 +29482,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._amanatwareddate != value))
 				{
+					this.OnamanatwareddateChanging(value);
+					this.SendPropertyChanging();
 					this._amanatwareddate = value;
+					this.SendPropertyChanged("amanatwareddate");
+					this.OnamanatwareddateChanged();
 				}
 			}
 		}
@@ -29400,7 +29502,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._datein != value))
 				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
 					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
 				}
 			}
 		}
@@ -29416,7 +29522,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._userin != value))
 				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
 					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
 				}
 			}
 		}
@@ -29432,7 +29542,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._newid != value))
 				{
+					this.OnnewidChanging(value);
+					this.SendPropertyChanging();
 					this._newid = value;
+					this.SendPropertyChanged("newid");
+					this.OnnewidChanged();
 				}
 			}
 		}
@@ -29448,7 +29562,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._SubCommitte != value))
 				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
 					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
 				}
 			}
 		}
@@ -29464,7 +29582,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._Syndicate != value))
 				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
 					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
 				}
 			}
 		}
@@ -29480,7 +29602,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._DofatSarf != value))
 				{
+					this.OnDofatSarfChanging(value);
+					this.SendPropertyChanging();
 					this._DofatSarf = value;
+					this.SendPropertyChanged("DofatSarf");
+					this.OnDofatSarfChanged();
 				}
 			}
 		}
@@ -29496,7 +29622,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._RealName != value))
 				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
 					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
 				}
 			}
 		}
@@ -29512,7 +29642,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._personName != value))
 				{
+					this.OnpersonNameChanging(value);
+					this.SendPropertyChanging();
 					this._personName = value;
+					this.SendPropertyChanged("personName");
+					this.OnpersonNameChanged();
 				}
 			}
 		}
@@ -29528,7 +29662,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._yasref != value))
 				{
+					this.OnyasrefChanging(value);
+					this.SendPropertyChanging();
 					this._yasref = value;
+					this.SendPropertyChanged("yasref");
+					this.OnyasrefChanged();
 				}
 			}
 		}
@@ -29544,7 +29682,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._MMashatName != value))
 				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
 					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
 				}
 			}
 		}
@@ -29560,7 +29702,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._sarfnumber != value))
 				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
 					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
 				}
 			}
 		}
@@ -29576,7 +29722,11 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._CODE60 != value))
 				{
+					this.OnCODE60Changing(value);
+					this.SendPropertyChanging();
 					this._CODE60 = value;
+					this.SendPropertyChanged("CODE60");
+					this.OnCODE60Changed();
 				}
 			}
 		}
@@ -29592,24 +29742,32 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				if ((this._responsiblesarfId != value))
 				{
+					this.OnresponsiblesarfIdChanging(value);
+					this.SendPropertyChanging();
 					this._responsiblesarfId = value;
+					this.SendPropertyChanged("responsiblesarfId");
+					this.OnresponsiblesarfIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ResName
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			get
+			if ((this.PropertyChanging != null))
 			{
-				return this._ResName;
+				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
-			set
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
 			{
-				if ((this._ResName != value))
-				{
-					this._ResName = value;
-				}
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -27,6 +27,7 @@ namespace RetirementCenter.Forms.Data
         DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable _TBLNoSarfWarsa;
         DataSources.dsRetirementCenter.tblvisawarsaactiveDataTable _tblvisawarsaactive;
         DataSources.dsRetirementCenter.TBLEdafatWarsaDataTable _TBLEdafatWarsa;
+        public bool DataChangedByUser = false;
 
         #endregion
         #region -   Functions   -
@@ -141,6 +142,47 @@ namespace RetirementCenter.Forms.Data
             // TODO: This line of code loads data into the 'dsRetirementCenter.TBLWarasaremarks' table. You can move, or remove it, as needed.
             this.tBLWarasaremarksTableAdapter.FillByPersonId(this.dsRetirementCenter.TBLWarasaremarks, _TBLWarasa[0].PersonId);
         }
+        private void AddEventHandlerToDataChange(bool Add)
+        {
+            if (Add)
+            {
+                lueWarasaTypeId.EditValueChanged += DataChanged;
+                luenationaltyId.EditValueChanged += DataChanged;
+                tbpersonNID.EditValueChanged += DataChanged;
+                depersonbirth.EditValueChanged += DataChanged;
+                tbpersonmobile.EditValueChanged += DataChanged;
+                tbpersonAddres.EditValueChanged += DataChanged;
+                ceyasref.EditValueChanged += DataChanged;
+                luesarfresonid.EditValueChanged += DataChanged;
+                LUESyndicateId.EditValueChanged += DataChanged;
+                LUESubCommitteId.EditValueChanged += DataChanged;
+                ceresponsiblesarf.EditValueChanged += DataChanged;
+                LUEresponsiblesarfId.EditValueChanged += DataChanged;
+                tbvisa.EditValueChanged += DataChanged;
+                ceActivate.EditValueChanged += DataChanged;
+            }
+            else
+            {
+                lueWarasaTypeId.EditValueChanged -= DataChanged;
+                luenationaltyId.EditValueChanged -= DataChanged;
+                tbpersonNID.EditValueChanged -= DataChanged;
+                depersonbirth.EditValueChanged -= DataChanged;
+                tbpersonmobile.EditValueChanged -= DataChanged;
+                tbpersonAddres.EditValueChanged -= DataChanged;
+                ceyasref.EditValueChanged -= DataChanged;
+                luesarfresonid.EditValueChanged -= DataChanged;
+                LUESyndicateId.EditValueChanged -= DataChanged;
+                LUESubCommitteId.EditValueChanged -= DataChanged;
+                ceresponsiblesarf.EditValueChanged -= DataChanged;
+                LUEresponsiblesarfId.EditValueChanged -= DataChanged;
+                tbvisa.EditValueChanged -= DataChanged;
+                ceActivate.EditValueChanged -= DataChanged;
+            }
+        }
+        private void DataChanged(object o, EventArgs e)
+        {
+            DataChangedByUser = true;
+        }
         #endregion
         #region - Event Handlers -
         private void TBLWarasaDlg_Load(object sender, EventArgs e)
@@ -152,7 +194,14 @@ namespace RetirementCenter.Forms.Data
                 tblvisawarsaactiveTableAdapter.FillByPersonId(dsRetirementCenter.tblvisawarsaactive, _TBLWarasa[0].PersonId);
             }
             ceActivate.Visible = Program.UserInfo.IsAdmin;
+
+            xtraTabControlMain.SelectedTabPage = tabExtra;
+            xtraTabControlMain.SelectedTabPage = tabMain;
+
+            tbpersonName.EditValueChanged += DataChanged;
+            AddEventHandlerToDataChange(true);
         }
+        
         private void ceyasref_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -242,6 +291,7 @@ namespace RetirementCenter.Forms.Data
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            AddEventHandlerToDataChange(false);
             if (!dxValidationProviderMain.Validate())
                 return;
             if (ceEnableEdafat.Checked)

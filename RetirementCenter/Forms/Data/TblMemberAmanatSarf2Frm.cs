@@ -314,7 +314,7 @@ namespace RetirementCenter
                 return;
             try
             {
-                tblMemberSarfTableAdapter.InsertIntoTBLMemberSarf_arshef2(Convert.ToInt32(LUETBLDofatSarf.EditValue));
+                tblMemberSarfTableAdapter.InsertIntoTBLMemberSarf_arshef2(Convert.ToInt32(LUETBLDofatSarf2.EditValue));
             }
             catch (SqlException ex)
             {

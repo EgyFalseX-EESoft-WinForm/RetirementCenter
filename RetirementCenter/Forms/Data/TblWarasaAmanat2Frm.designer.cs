@@ -80,6 +80,7 @@
             this.colamanattypeid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditamanattypeid = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.coldateReview = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -98,7 +99,6 @@
             this.tblWarasaAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblWarasaAmanatTableAdapter();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.coldateReview = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblWarasaAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -750,6 +750,20 @@
             this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
             this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
             // 
+            // coldateReview
+            // 
+            this.coldateReview.AppearanceCell.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldateReview.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldateReview.Caption = "تاريخ مراجعة حسابات";
+            this.coldateReview.ColumnEdit = this.repositoryItemDateEditdatein;
+            this.coldateReview.FieldName = "dateReview";
+            this.coldateReview.Name = "coldateReview";
+            this.coldateReview.Visible = true;
+            this.coldateReview.VisibleIndex = 13;
+            this.coldateReview.Width = 116;
+            // 
             // repositoryItemCalcEditf2
             // 
             this.repositoryItemCalcEditf2.AutoHeight = false;
@@ -930,20 +944,6 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // coldateReview
-            // 
-            this.coldateReview.AppearanceCell.Options.UseTextOptions = true;
-            this.coldateReview.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldateReview.AppearanceHeader.Options.UseTextOptions = true;
-            this.coldateReview.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldateReview.Caption = "تاريخ مراجعة حسابات";
-            this.coldateReview.ColumnEdit = this.repositoryItemDateEditdatein;
-            this.coldateReview.FieldName = "dateReview";
-            this.coldateReview.Name = "coldateReview";
-            this.coldateReview.Visible = true;
-            this.coldateReview.VisibleIndex = 13;
-            this.coldateReview.Width = 116;
             // 
             // TblWarasaAmanat2Frm
             // 

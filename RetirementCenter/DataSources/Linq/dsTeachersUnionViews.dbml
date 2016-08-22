@@ -1520,7 +1520,7 @@
   </Table>
   <Table Name="dbo.vtblWarasabank2" Member="vtblWarasabank2s">
     <Type Name="vtblWarasabank2">
-      <Column Name="AutoId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AutoId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -1544,7 +1544,6 @@
       <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CODE60" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="responsiblesarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ResName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

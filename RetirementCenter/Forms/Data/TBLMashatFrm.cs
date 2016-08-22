@@ -159,7 +159,7 @@ namespace RetirementCenter
             btnChangeHala.Visible = Updateing;
             repositoryItemButtonEditResarfSave.Buttons[0].Visible = Updateing;
             repositoryItemButtonEditWarasaQuickSave.Buttons[0].Visible = Updateing;
-            repositoryItemButtonEditWarasaSarf.Buttons[0].Visible = Updateing;
+            repositoryItemButtonEditWarasaSarf.Buttons[0].Visible = Selecting;
             repositoryItemButtonEditTransferSave.Buttons[0].Visible = Updateing;
 
             btnDelete.Visible = Deleting;
@@ -863,8 +863,11 @@ namespace RetirementCenter
             }
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                TBLWarasa[0].userin = Program.UserInfo.UserId;
-                TBLWarasa[0].datein = SQLProvider.ServerDateTime();
+                if (dlg.DataChangedByUser)
+                {
+                    TBLWarasa[0].userin = Program.UserInfo.UserId;
+                    TBLWarasa[0].datein = SQLProvider.ServerDateTime();
+                }
                 tBLWarasaBindingSource.EndEdit();
                 tBLWarasaTableAdapter.Update(TBLWarasa);
                 //estefa
@@ -1217,7 +1220,8 @@ namespace RetirementCenter
         }
         #endregion
 
-       
+
+
 
     }
    

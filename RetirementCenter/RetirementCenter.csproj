@@ -325,6 +325,12 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TBLWarasaFastEdit2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TBLWarasaFastEdit2Frm.Designer.cs">
+      <DependentUpon>TBLWarasaFastEdit2Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TblWarasaAmanatW2Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1755,6 +1761,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TBLWarasaFastEdit2Frm.resx">
+      <DependentUpon>TBLWarasaFastEdit2Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblWarasaAmanatW2Frm.resx">
       <DependentUpon>TblWarasaAmanatW2Frm.cs</DependentUpon>

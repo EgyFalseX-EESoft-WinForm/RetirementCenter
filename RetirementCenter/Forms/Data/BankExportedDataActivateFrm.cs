@@ -27,6 +27,8 @@ namespace RetirementCenter.Forms.Data
             LSMS.QueryableSource = from q in dsLinq.vBankExportedData_Activates where q.visa != string.Empty select q;
             LSMSSn.QueryableSource = dsLinq.CDSyndicates;
             LSMSSub.QueryableSource = dsLinq.CDSubCommittes;
+            LSMSUser.QueryableSource = dsLinq.Users;
+
         }
         private void ReloadData()
         {

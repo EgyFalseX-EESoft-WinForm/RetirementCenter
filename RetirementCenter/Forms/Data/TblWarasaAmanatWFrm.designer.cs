@@ -44,7 +44,8 @@
             this.cesarfcheek = new DevExpress.XtraEditors.CheckEdit();
             this.ceamantvisa = new DevExpress.XtraEditors.CheckEdit();
             this.luePersonId = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.XPSCSvtblWarasabank2 = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.sessionvtblWarasabank2 = new DevExpress.Xpo.Session(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,6 +69,8 @@
             this.tbmostahek = new DevExpress.XtraEditors.TextEdit();
             this.tbestktaa = new DevExpress.XtraEditors.TextEdit();
             this.tbamanatmony = new DevExpress.XtraEditors.TextEdit();
+            this.LSMSvtblWarasabank2 = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceamantvisa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePersonId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).BeginInit();
@@ -94,12 +98,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSvtblWarasabank2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(419, 59);
+            this.labelControl2.Location = new System.Drawing.Point(419, 90);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 19);
             this.labelControl2.TabIndex = 0;
@@ -267,7 +273,7 @@
             // luePersonId
             // 
             this.luePersonId.EditValue = "";
-            this.luePersonId.Location = new System.Drawing.Point(53, 56);
+            this.luePersonId.Location = new System.Drawing.Point(53, 87);
             this.luePersonId.Name = "luePersonId";
             this.luePersonId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.luePersonId.Properties.Appearance.Options.UseFont = true;
@@ -283,10 +289,14 @@
             this.luePersonId.TabIndex = 2;
             this.luePersonId.EditValueChanged += new System.EventHandler(this.luePersonId_EditValueChanged);
             // 
-            // LSMSTBLWarasa
+            // XPSCSvtblWarasabank2
             // 
-            this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
-            this.LSMSTBLWarasa.KeyExpression = "PersonId";
+            this.XPSCSvtblWarasabank2.ObjectType = typeof(RetirementCenter.DataSources.dsQueries.vtblWarasabank2DataTable);
+            this.XPSCSvtblWarasabank2.Session = this.sessionvtblWarasabank2;
+            // 
+            // sessionvtblWarasabank2
+            // 
+            this.sessionvtblWarasabank2.TrackPropertiesModifications = false;
             // 
             // gridView1
             // 
@@ -387,7 +397,7 @@
             // lueDofatSarfAId
             // 
             this.lueDofatSarfAId.EditValue = "";
-            this.lueDofatSarfAId.Location = new System.Drawing.Point(53, 90);
+            this.lueDofatSarfAId.Location = new System.Drawing.Point(53, 51);
             this.lueDofatSarfAId.Name = "lueDofatSarfAId";
             this.lueDofatSarfAId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueDofatSarfAId.Properties.Appearance.Options.UseFont = true;
@@ -400,7 +410,7 @@
             this.lueDofatSarfAId.Properties.ValueMember = "DofatSarfAId";
             this.lueDofatSarfAId.Properties.View = this.gridLookUpEdit1View;
             this.lueDofatSarfAId.Size = new System.Drawing.Size(233, 26);
-            this.lueDofatSarfAId.TabIndex = 0;
+            this.lueDofatSarfAId.TabIndex = 1;
             this.lueDofatSarfAId.EditValueChanged += new System.EventHandler(this.lueDofatSarfAId_EditValueChanged);
             // 
             // cdDofaatAmanatBindingSource
@@ -444,7 +454,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(418, 93);
+            this.labelControl6.Location = new System.Drawing.Point(418, 54);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(42, 19);
             this.labelControl6.TabIndex = 0;
@@ -535,6 +545,16 @@
             this.tbamanatmony.Size = new System.Drawing.Size(233, 26);
             this.tbamanatmony.TabIndex = 3;
             // 
+            // LSMSvtblWarasabank2
+            // 
+            this.LSMSvtblWarasabank2.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2);
+            this.LSMSvtblWarasabank2.KeyExpression = "AutoId";
+            // 
+            // LSMSTBLWarasa
+            // 
+            this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
+            this.LSMSTBLWarasa.KeyExpression = "PersonId";
+            // 
             // colMonthName
             // 
             this.colMonthName.AppearanceCell.Options.UseTextOptions = true;
@@ -603,7 +623,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceamantvisa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePersonId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).EndInit();
@@ -614,6 +635,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSvtblWarasabank2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -666,5 +689,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDofatSarfId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSvtblWarasabank2;
+        private DevExpress.Xpo.XPServerCollectionSource XPSCSvtblWarasabank2;
+        private DevExpress.Xpo.Session sessionvtblWarasabank2;
     }
 }

@@ -21,6 +21,7 @@ namespace RetirementCenter
         public TblWarasaAmanatW2Frm()
         {
             InitializeComponent();
+            sessionvtblWarasabank2.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
             //LSMSTBLWarasa.KeyExpression = "AutoId";
             //this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
             //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
@@ -28,6 +29,7 @@ namespace RetirementCenter
         public TblWarasaAmanatW2Frm(DataSources.dsRetirementCenter.TblWarasaAmanatRow row, bool insert, bool update, bool delete)
         {
             InitializeComponent();
+            sessionvtblWarasabank2.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
             //LSMSTBLWarasa.KeyExpression = "AutoId";
             //this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank);
             //LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
@@ -163,8 +165,8 @@ namespace RetirementCenter
                 object obj = luePersonId.GetSelectedDataRow();
                 if (obj != null)
                 {
-                    if (obj.GetType() == typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2))
-                        tbmostahek.EditValue = "ورثة - " + ((RetirementCenter.DataSources.Linq.vtblWarasabank2)obj).MMashatName;
+                    if (obj.GetType() == typeof(DevExpress.Xpo.Metadata.XPDataTableObject))
+                        tbmostahek.EditValue = "ورثة - " + ((DevExpress.Xpo.Metadata.XPDataTableObject)obj).GetMemberValue("MMashatName");
                     else
                         tbmostahek.EditValue = "ورثة - " + ((RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat)obj).MMashatName;
                 }
@@ -178,6 +180,20 @@ namespace RetirementCenter
         {
             if (IsBinding)
                 return;
+            if (lueDofatSarfAId.EditValue != null)
+            {
+                if (ceamantvisa.Checked)
+                {
+                    XPSCSvtblWarasabank2.FixedFilterString = "DofatSarfId = " + lueDofatSarfAId.EditValue;
+                    luePersonId.Properties.DataSource = XPSCSvtblWarasabank2;
+                    luePersonId.Properties.ValueMember = "responsiblesarfId";
+                }
+                else
+                {
+                    luePersonId.Properties.DataSource = LSMSTBLWarasa;
+                    luePersonId.Properties.ValueMember = "PersonId";
+                }
+            }
             if (ceamantvisa.Checked && lueDofatSarfAId.EditValue != null && luePersonId.EditValue != null && lueDofatSarfAId.EditValue.ToString() != string.Empty && luePersonId.EditValue.ToString() != string.Empty)
             {
                 FillFromWarasaBank();
@@ -189,24 +205,7 @@ namespace RetirementCenter
             //tbestktaa.Properties.ReadOnly = ceamantvisa.Checked;
             tbmostahek.Properties.ReadOnly = ceamantvisa.Checked;
             tbsefa.Properties.ReadOnly = ceamantvisa.Checked;
-            if (ceamantvisa.Checked)
-            {
-                LSMSTBLWarasa.KeyExpression = "";
-                this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2);
-                LSMSTBLWarasa.QueryableSource = from q in dsLinq.vtblWarasabank2s where q.amanatmony > 0 select q;
-                luePersonId.Properties.ValueMember = "responsiblesarfId";
-                LSMSTBLWarasa.KeyExpression = "AutoId";
-                
-                //FillFromWarasaBank();
-            }
-            else
-            {
-                LSMSTBLWarasa.KeyExpression = "";
-                this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
-                LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
-                luePersonId.Properties.ValueMember = "PersonId";
-                LSMSTBLWarasa.KeyExpression = "PersonId";
-            }
+           
 
         }
         

@@ -670,7 +670,7 @@ namespace RetirementCenter
             int effected = 0;
             try
             {
-                effected = tBLWarasaSarfTableAdapter.InsertIntoTBLWarasaSarf_arshef2(Convert.ToInt32(LUETBLDofatSarf.EditValue));
+                effected = tBLWarasaSarfTableAdapter.InsertIntoTBLWarasaSarf_arshef2(Convert.ToInt32(LUETBLDofatSarf2.EditValue));
 
             }
             catch (SqlException ex)

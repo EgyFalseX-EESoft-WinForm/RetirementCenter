@@ -920,6 +920,16 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterTBLWarasaFastEdit2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                TBLWarasaFastEdit2Frm FrmData = new TBLWarasaFastEdit2Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["TBLMembers.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         private void mbRetCenterXRep01_ItemClick(object sender, ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
@@ -2243,6 +2253,8 @@ namespace RetirementCenter
             SplashScreenManager.CloseForm();
         }
         #endregion
+
+        
 
         
 
