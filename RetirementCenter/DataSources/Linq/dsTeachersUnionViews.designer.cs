@@ -198,6 +198,12 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvtblWarasabank2(vtblWarasabank2 instance);
     partial void UpdatevtblWarasabank2(vtblWarasabank2 instance);
     partial void DeletevtblWarasabank2(vtblWarasabank2 instance);
+    partial void InsertCDAttachmentType(CDAttachmentType instance);
+    partial void UpdateCDAttachmentType(CDAttachmentType instance);
+    partial void DeleteCDAttachmentType(CDAttachmentType instance);
+    partial void InsertvTblAttach(vTblAttach instance);
+    partial void UpdatevTblAttach(vTblAttach instance);
+    partial void DeletevTblAttach(vTblAttach instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -955,6 +961,22 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vtblWarasabank2>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CDAttachmentType> CDAttachmentTypes
+		{
+			get
+			{
+				return this.GetTable<CDAttachmentType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTblAttach> vTblAttaches
+		{
+			get
+			{
+				return this.GetTable<vTblAttach>();
 			}
 		}
 	}
@@ -29747,6 +29769,514 @@ namespace RetirementCenter.DataSources.Linq
 					this._responsiblesarfId = value;
 					this.SendPropertyChanged("responsiblesarfId");
 					this.OnresponsiblesarfIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CDAttachmentType")]
+	public partial class CDAttachmentType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AttachmentTypeId;
+		
+		private string _AttachmentName;
+		
+		private string _AttachmentExt;
+		
+		private System.Data.Linq.Binary _AttachmentImg;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAttachmentTypeIdChanging(int value);
+    partial void OnAttachmentTypeIdChanged();
+    partial void OnAttachmentNameChanging(string value);
+    partial void OnAttachmentNameChanged();
+    partial void OnAttachmentExtChanging(string value);
+    partial void OnAttachmentExtChanged();
+    partial void OnAttachmentImgChanging(System.Data.Linq.Binary value);
+    partial void OnAttachmentImgChanged();
+    #endregion
+		
+		public CDAttachmentType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentTypeId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int AttachmentTypeId
+		{
+			get
+			{
+				return this._AttachmentTypeId;
+			}
+			set
+			{
+				if ((this._AttachmentTypeId != value))
+				{
+					this.OnAttachmentTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentTypeId = value;
+					this.SendPropertyChanged("AttachmentTypeId");
+					this.OnAttachmentTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AttachmentName
+		{
+			get
+			{
+				return this._AttachmentName;
+			}
+			set
+			{
+				if ((this._AttachmentName != value))
+				{
+					this.OnAttachmentNameChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentName = value;
+					this.SendPropertyChanged("AttachmentName");
+					this.OnAttachmentNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentExt", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string AttachmentExt
+		{
+			get
+			{
+				return this._AttachmentExt;
+			}
+			set
+			{
+				if ((this._AttachmentExt != value))
+				{
+					this.OnAttachmentExtChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentExt = value;
+					this.SendPropertyChanged("AttachmentExt");
+					this.OnAttachmentExtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentImg", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary AttachmentImg
+		{
+			get
+			{
+				return this._AttachmentImg;
+			}
+			set
+			{
+				if ((this._AttachmentImg != value))
+				{
+					this.OnAttachmentImgChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentImg = value;
+					this.SendPropertyChanged("AttachmentImg");
+					this.OnAttachmentImgChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTblAttach")]
+	public partial class vTblAttach : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _attachid;
+		
+		private int _AttachmentTypeId;
+		
+		private int _MMashatId;
+		
+		private string _attachpath;
+		
+		private System.DateTime _attachdate;
+		
+		private int _userin;
+		
+		private string _AttachmentName;
+		
+		private string _RealName;
+		
+		private string _MMashatName;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private int _sarfnumber;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnattachidChanging(int value);
+    partial void OnattachidChanged();
+    partial void OnAttachmentTypeIdChanging(int value);
+    partial void OnAttachmentTypeIdChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnattachpathChanging(string value);
+    partial void OnattachpathChanged();
+    partial void OnattachdateChanging(System.DateTime value);
+    partial void OnattachdateChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OnAttachmentNameChanging(string value);
+    partial void OnAttachmentNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    #endregion
+		
+		public vTblAttach()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attachid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int attachid
+		{
+			get
+			{
+				return this._attachid;
+			}
+			set
+			{
+				if ((this._attachid != value))
+				{
+					this.OnattachidChanging(value);
+					this.SendPropertyChanging();
+					this._attachid = value;
+					this.SendPropertyChanged("attachid");
+					this.OnattachidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentTypeId", DbType="Int NOT NULL")]
+		public int AttachmentTypeId
+		{
+			get
+			{
+				return this._AttachmentTypeId;
+			}
+			set
+			{
+				if ((this._AttachmentTypeId != value))
+				{
+					this.OnAttachmentTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentTypeId = value;
+					this.SendPropertyChanged("AttachmentTypeId");
+					this.OnAttachmentTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attachpath", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string attachpath
+		{
+			get
+			{
+				return this._attachpath;
+			}
+			set
+			{
+				if ((this._attachpath != value))
+				{
+					this.OnattachpathChanging(value);
+					this.SendPropertyChanging();
+					this._attachpath = value;
+					this.SendPropertyChanged("attachpath");
+					this.OnattachpathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attachdate", DbType="Date NOT NULL")]
+		public System.DateTime attachdate
+		{
+			get
+			{
+				return this._attachdate;
+			}
+			set
+			{
+				if ((this._attachdate != value))
+				{
+					this.OnattachdateChanging(value);
+					this.SendPropertyChanging();
+					this._attachdate = value;
+					this.SendPropertyChanged("attachdate");
+					this.OnattachdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AttachmentName
+		{
+			get
+			{
+				return this._AttachmentName;
+			}
+			set
+			{
+				if ((this._AttachmentName != value))
+				{
+					this.OnAttachmentNameChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentName = value;
+					this.SendPropertyChanged("AttachmentName");
+					this.OnAttachmentNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
 				}
 			}
 		}

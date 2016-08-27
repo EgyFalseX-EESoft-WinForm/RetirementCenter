@@ -575,6 +575,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vTblWarasaAmanat;
                 cmd.ExecuteNonQuery();
+                //vTblAttach
+                if (CheckViewExists("vTblAttach"))
+                {
+                    cmd.CommandText = DropObject("vTblAttach");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTblAttach;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -2019,6 +2027,24 @@ FROM            dbo.Users RIGHT OUTER JOIN
                          dbo.TBLDofatSarf ON dbo.TblWarasaAmanat.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId LEFT OUTER JOIN
                          dbo.Users AS Users_1 ON dbo.TblWarasaAmanat.useracc = Users_1.UserID LEFT OUTER JOIN
                          dbo.Users AS Users_2 ON dbo.TblWarasaAmanat.userincheek = Users_2.UserID";
+            }
+        }
+        public static string vTblAttach
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTblAttach]
+                    AS
+                    SELECT        dbo.TblAttach.attachid, dbo.TblAttach.AttachmentTypeId, dbo.TblAttach.MMashatId, dbo.TblAttach.attachpath, dbo.TblAttach.attachdate, dbo.TblAttach.userin, dbo.CDAttachmentType.AttachmentName, 
+                         dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, 
+                         dbo.CDSubCommitte.SubCommitte
+FROM            dbo.TblAttach INNER JOIN
+                         dbo.CDAttachmentType ON dbo.TblAttach.AttachmentTypeId = dbo.CDAttachmentType.AttachmentTypeId INNER JOIN
+                         dbo.TBLMashat ON dbo.TblAttach.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TblAttach.userin = dbo.Users.UserID";
             }
         }
 

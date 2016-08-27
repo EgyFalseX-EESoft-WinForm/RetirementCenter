@@ -88,6 +88,7 @@ namespace RetirementCenter.Forms.Data
             tbvisa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "visa", true));
             ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", true));
             luesarfresonid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "sarfresonid", true));
+            tbCode60.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "code60", true));
 
             cewcompletesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wcompletesarf", true));
             tbwmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wmony", true));
@@ -102,6 +103,7 @@ namespace RetirementCenter.Forms.Data
             //edit visa for admin only
             tbvisa.Visible = lblvisa .Visible = Program.UserInfo.IsAdmin;
             ceActivate.Visible = lblActivate.Visible = Program.UserInfo.IsAdmin;
+            tbCode60.Visible = tbCode60.Visible = Program.UserInfo.IsAdmin;
 
             if (_TBLEdafatWarsa.Count > 0)
                 ceEnableEdafat.Checked = true;
@@ -158,8 +160,9 @@ namespace RetirementCenter.Forms.Data
                 LUESubCommitteId.EditValueChanged += DataChanged;
                 ceresponsiblesarf.EditValueChanged += DataChanged;
                 LUEresponsiblesarfId.EditValueChanged += DataChanged;
-                tbvisa.EditValueChanged += DataChanged;
-                ceActivate.EditValueChanged += DataChanged;
+                //tbvisa.EditValueChanged += DataChanged;
+                //ceActivate.EditValueChanged += DataChanged;
+                //tbCode60.EditValueChanged += DataChanged;
             }
             else
             {
@@ -175,8 +178,9 @@ namespace RetirementCenter.Forms.Data
                 LUESubCommitteId.EditValueChanged -= DataChanged;
                 ceresponsiblesarf.EditValueChanged -= DataChanged;
                 LUEresponsiblesarfId.EditValueChanged -= DataChanged;
-                tbvisa.EditValueChanged -= DataChanged;
-                ceActivate.EditValueChanged -= DataChanged;
+                //tbvisa.EditValueChanged -= DataChanged;
+                //ceActivate.EditValueChanged -= DataChanged;
+                //tbCode60.EditValueChanged -= DataChanged;
             }
         }
         private void DataChanged(object o, EventArgs e)
@@ -640,6 +644,7 @@ namespace RetirementCenter.Forms.Data
         }
 
         #endregion
+
 
     }
 }

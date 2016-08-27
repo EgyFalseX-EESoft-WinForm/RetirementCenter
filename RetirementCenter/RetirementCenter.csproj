@@ -325,6 +325,24 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\TblAttachEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblAttachEditFrm.Designer.cs">
+      <DependentUpon>TblAttachEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblAttachAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblAttachAddFrm.Designer.cs">
+      <DependentUpon>TblAttachAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TblAttachFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TblAttachFrm.Designer.cs">
+      <DependentUpon>TblAttachFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TBLWarasaFastEdit2Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -738,6 +756,18 @@
     </Compile>
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry100Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry100Frm.designer.cs">
+      <DependentUpon>Qry100Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry99Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry99Frm.designer.cs">
+      <DependentUpon>Qry99Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry98Frm.cs">
       <SubType>Form</SubType>
@@ -1762,6 +1792,15 @@
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblAttachEditFrm.resx">
+      <DependentUpon>TblAttachEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblAttachAddFrm.resx">
+      <DependentUpon>TblAttachAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TblAttachFrm.resx">
+      <DependentUpon>TblAttachFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLWarasaFastEdit2Frm.resx">
       <DependentUpon>TBLWarasaFastEdit2Frm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1971,6 +2010,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry100Frm.resx">
+      <DependentUpon>Qry100Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry99Frm.resx">
+      <DependentUpon>Qry99Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry98Frm.resx">
       <DependentUpon>Qry98Frm.cs</DependentUpon>

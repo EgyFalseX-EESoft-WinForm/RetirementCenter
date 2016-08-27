@@ -69,6 +69,7 @@ namespace RetirementCenter
             this.mbRetCenterTBLWarasaNIDFastEditFrm = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterRemoveTBLMashatNID = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterRemoveTBLWarasaNID = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLWarasaFastEdit2 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterJobs = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterCDJobtitle = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterCDAttachmentType = new DevExpress.XtraBars.BarButtonItem();
@@ -272,6 +273,7 @@ namespace RetirementCenter
             this.mbRetCenterCdDofaatAmanat = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterCDDofatSarfFrook = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLDofatSarfMadunea = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTblAttach = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -299,7 +301,8 @@ namespace RetirementCenter
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PBBackground = new System.Windows.Forms.PictureBox();
-            this.mbRetCenterTBLWarasaFastEdit2 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry99 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry100 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
@@ -559,10 +562,13 @@ namespace RetirementCenter
             this.mbRetCenterTBLDofatSarfMadunea,
             this.mbRetCenterQry97,
             this.mbRetCenterQry98,
-            this.mbRetCenterTBLWarasaFastEdit2});
+            this.mbRetCenterTBLWarasaFastEdit2,
+            this.mbRetCenterTblAttach,
+            this.mbRetCenterQry99,
+            this.mbRetCenterQry100});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 404;
+            this.ribbonControl.MaxItemId = 407;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -748,6 +754,7 @@ namespace RetirementCenter
             this.ribbonImageCollection.Images.SetKeyName(52, "TBLMandoop16.png");
             this.ribbonImageCollection.Images.SetKeyName(53, "TBLHafzaTasleem16.png");
             this.ribbonImageCollection.Images.SetKeyName(54, "Visa16.png");
+            this.ribbonImageCollection.Images.SetKeyName(55, "TblAttach16.png");
             // 
             // mbRetCenterHelp
             // 
@@ -1044,6 +1051,15 @@ namespace RetirementCenter
             this.mbRetCenterRemoveTBLWarasaNID.LargeImageIndex = 36;
             this.mbRetCenterRemoveTBLWarasaNID.Name = "mbRetCenterRemoveTBLWarasaNID";
             this.mbRetCenterRemoveTBLWarasaNID.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterRemoveTBLWarasaNID_ItemClick);
+            // 
+            // mbRetCenterTBLWarasaFastEdit2
+            // 
+            this.mbRetCenterTBLWarasaFastEdit2.Caption = "«” À‰«∆«  «·Ê—À…";
+            this.mbRetCenterTBLWarasaFastEdit2.Id = 403;
+            this.mbRetCenterTBLWarasaFastEdit2.ImageIndex = 17;
+            this.mbRetCenterTBLWarasaFastEdit2.LargeImageIndex = 17;
+            this.mbRetCenterTBLWarasaFastEdit2.Name = "mbRetCenterTBLWarasaFastEdit2";
+            this.mbRetCenterTBLWarasaFastEdit2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTBLWarasaFastEdit2_ItemClick);
             // 
             // mbRetCenterJobs
             // 
@@ -2471,7 +2487,9 @@ namespace RetirementCenter
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry91),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry89),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry92),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry90)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry90),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry99),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry100)});
             this.mbRetCenterQryPart3.Name = "mbRetCenterQryPart3";
             this.mbRetCenterQryPart3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -3129,6 +3147,15 @@ namespace RetirementCenter
             this.mbRetCenterTBLDofatSarfMadunea.Name = "mbRetCenterTBLDofatSarfMadunea";
             this.mbRetCenterTBLDofatSarfMadunea.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTBLDofatSarfMadunea_ItemClick);
             // 
+            // mbRetCenterTblAttach
+            // 
+            this.mbRetCenterTblAttach.Caption = "«·„—›ﬁ« ";
+            this.mbRetCenterTblAttach.Id = 404;
+            this.mbRetCenterTblAttach.ImageIndex = 55;
+            this.mbRetCenterTblAttach.LargeImageIndex = 55;
+            this.mbRetCenterTblAttach.Name = "mbRetCenterTblAttach";
+            this.mbRetCenterTblAttach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTblAttach_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -3188,6 +3215,7 @@ namespace RetirementCenter
             this.ribbonImageCollectionLarge.Images.SetKeyName(52, "TBLMandoop32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(53, "TBLHafzaTasleem32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(54, "Visa32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(55, "TblAttach32.png");
             // 
             // DataribbonPage
             // 
@@ -3218,6 +3246,7 @@ namespace RetirementCenter
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafzaTasleem);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafezSarf);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterVisa);
+            this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTblAttach);
             this.DataribbonPageGroup.Name = "DataribbonPageGroup";
             this.DataribbonPageGroup.Text = "ﬁ«∆„… «œŒ«· «·»Ì«‰« ";
             // 
@@ -3460,14 +3489,23 @@ namespace RetirementCenter
             this.PBBackground.TabIndex = 5;
             this.PBBackground.TabStop = false;
             // 
-            // mbRetCenterTBLWarasaFastEdit2
+            // mbRetCenterQry99
             // 
-            this.mbRetCenterTBLWarasaFastEdit2.Caption = "«” À‰«∆«  «·Ê—À…";
-            this.mbRetCenterTBLWarasaFastEdit2.Id = 403;
-            this.mbRetCenterTBLWarasaFastEdit2.ImageIndex = 17;
-            this.mbRetCenterTBLWarasaFastEdit2.LargeImageIndex = 17;
-            this.mbRetCenterTBLWarasaFastEdit2.Name = "mbRetCenterTBLWarasaFastEdit2";
-            this.mbRetCenterTBLWarasaFastEdit2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterTBLWarasaFastEdit2_ItemClick);
+            this.mbRetCenterQry99.Caption = "«Ã„«·Ì «·œ›⁄«  - Ê—À…";
+            this.mbRetCenterQry99.Id = 405;
+            this.mbRetCenterQry99.ImageIndex = 19;
+            this.mbRetCenterQry99.LargeImageIndex = 19;
+            this.mbRetCenterQry99.Name = "mbRetCenterQry99";
+            this.mbRetCenterQry99.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry99_ItemClick);
+            // 
+            // mbRetCenterQry100
+            // 
+            this.mbRetCenterQry100.Caption = "«Ã„«·Ì «·œ›⁄«  - «⁄÷«¡";
+            this.mbRetCenterQry100.Id = 406;
+            this.mbRetCenterQry100.ImageIndex = 19;
+            this.mbRetCenterQry100.LargeImageIndex = 19;
+            this.mbRetCenterQry100.Name = "mbRetCenterQry100";
+            this.mbRetCenterQry100.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry100_ItemClick);
             // 
             // MainFrm
             // 
@@ -3777,5 +3815,8 @@ namespace RetirementCenter
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry97;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry98;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaFastEdit2;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTblAttach;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry99;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry100;
     }
 }
