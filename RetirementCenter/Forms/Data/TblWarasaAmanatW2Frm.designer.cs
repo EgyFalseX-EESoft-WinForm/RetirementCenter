@@ -77,8 +77,8 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
-            this.XPSCSvtblWarasabank2 = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.sessionvtblWarasabank2 = new DevExpress.Xpo.Session(this.components);
+            this.XPCvtblWarasabank2 = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -104,8 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPCvtblWarasabank2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -638,14 +638,15 @@
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
-            // XPSCSvtblWarasabank2
-            // 
-            this.XPSCSvtblWarasabank2.ObjectType = typeof(RetirementCenter.DataSources.dsQueries.vtblWarasabank2DataTable);
-            this.XPSCSvtblWarasabank2.Session = this.sessionvtblWarasabank2;
-            // 
             // sessionvtblWarasabank2
             // 
             this.sessionvtblWarasabank2.TrackPropertiesModifications = false;
+            // 
+            // XPCvtblWarasabank2
+            // 
+            this.XPCvtblWarasabank2.CriteriaString = "1 = 2";
+            this.XPCvtblWarasabank2.ObjectType = typeof(RetirementCenter.DataSources.dsQueries.vtblWarasabank2DataTable);
+            this.XPCvtblWarasabank2.Session = this.sessionvtblWarasabank2;
             // 
             // TblWarasaAmanatW2Frm
             // 
@@ -689,8 +690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPCvtblWarasabank2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -748,7 +749,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.Data.Linq.LinqServerModeSource LSMScd_amanattype;
         private DevExpress.XtraGrid.Columns.GridColumn colamanattype;
-        private DevExpress.Xpo.XPServerCollectionSource XPSCSvtblWarasabank2;
         private DevExpress.Xpo.Session sessionvtblWarasabank2;
+        private DevExpress.Xpo.XPCollection XPCvtblWarasabank2;
     }
 }

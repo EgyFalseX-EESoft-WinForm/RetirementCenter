@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControlMain = new DevExpress.XtraLayout.LayoutControl();
             this.tbestktaa = new DevExpress.XtraEditors.TextEdit();
             this.tbeshtrakmonth = new DevExpress.XtraEditors.TextEdit();
@@ -57,6 +57,7 @@
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -70,7 +71,10 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tbAuto = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cesarfcheek = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
@@ -97,10 +101,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAuto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlMain
             // 
+            this.layoutControlMain.Controls.Add(this.cesarfcheek);
+            this.layoutControlMain.Controls.Add(this.tbAuto);
             this.layoutControlMain.Controls.Add(this.tbestktaa);
             this.layoutControlMain.Controls.Add(this.tbeshtrakmonth);
             this.layoutControlMain.Controls.Add(this.tbrsmmonth);
@@ -115,63 +125,63 @@
             this.layoutControlMain.Name = "layoutControlMain";
             this.layoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(916, 206, 250, 350);
             this.layoutControlMain.Root = this.layoutControlGroup1;
-            this.layoutControlMain.Size = new System.Drawing.Size(478, 168);
+            this.layoutControlMain.Size = new System.Drawing.Size(478, 192);
             this.layoutControlMain.TabIndex = 0;
             this.layoutControlMain.Text = "layoutControl1";
             // 
             // tbestktaa
             // 
-            this.tbestktaa.Location = new System.Drawing.Point(12, 108);
+            this.tbestktaa.Location = new System.Drawing.Point(12, 132);
             this.tbestktaa.Name = "tbestktaa";
-            this.tbestktaa.Size = new System.Drawing.Size(86, 20);
+            this.tbestktaa.Size = new System.Drawing.Size(93, 20);
             this.tbestktaa.StyleController = this.layoutControlMain;
             this.tbestktaa.TabIndex = 10;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.tbestktaa, conditionValidationRule1);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "This value is not valid";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.tbestktaa, conditionValidationRule8);
             // 
             // tbeshtrakmonth
             // 
-            this.tbeshtrakmonth.Location = new System.Drawing.Point(158, 108);
+            this.tbeshtrakmonth.Location = new System.Drawing.Point(165, 132);
             this.tbeshtrakmonth.Name = "tbeshtrakmonth";
-            this.tbeshtrakmonth.Size = new System.Drawing.Size(95, 20);
+            this.tbeshtrakmonth.Size = new System.Drawing.Size(92, 20);
             this.tbeshtrakmonth.StyleController = this.layoutControlMain;
             this.tbeshtrakmonth.TabIndex = 9;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.tbeshtrakmonth, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.tbeshtrakmonth, conditionValidationRule1);
             // 
             // tbrsmmonth
             // 
             this.tbrsmmonth.EditValue = "";
-            this.tbrsmmonth.Location = new System.Drawing.Point(313, 108);
+            this.tbrsmmonth.Location = new System.Drawing.Point(317, 132);
             this.tbrsmmonth.Name = "tbrsmmonth";
-            this.tbrsmmonth.Size = new System.Drawing.Size(97, 20);
+            this.tbrsmmonth.Size = new System.Drawing.Size(93, 20);
             this.tbrsmmonth.StyleController = this.layoutControlMain;
             this.tbrsmmonth.TabIndex = 8;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.tbrsmmonth, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.tbrsmmonth, conditionValidationRule2);
             // 
             // tbmonymonth
             // 
-            this.tbmonymonth.Location = new System.Drawing.Point(12, 84);
+            this.tbmonymonth.Location = new System.Drawing.Point(12, 108);
             this.tbmonymonth.Name = "tbmonymonth";
             this.tbmonymonth.Size = new System.Drawing.Size(398, 20);
             this.tbmonymonth.StyleController = this.layoutControlMain;
             this.tbmonymonth.TabIndex = 7;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.tbmonymonth, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.tbmonymonth, conditionValidationRule3);
             // 
             // lueSarfTypeedadId
             // 
             this.lueSarfTypeedadId.EditValue = "";
-            this.lueSarfTypeedadId.Location = new System.Drawing.Point(12, 36);
+            this.lueSarfTypeedadId.Location = new System.Drawing.Point(12, 60);
             this.lueSarfTypeedadId.Name = "lueSarfTypeedadId";
             this.lueSarfTypeedadId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -184,10 +194,10 @@
             this.lueSarfTypeedadId.Size = new System.Drawing.Size(398, 20);
             this.lueSarfTypeedadId.StyleController = this.layoutControlMain;
             this.lueSarfTypeedadId.TabIndex = 5;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.lueSarfTypeedadId, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.lueSarfTypeedadId, conditionValidationRule4);
             // 
             // LSMSSarfTypeedadId
             // 
@@ -215,7 +225,7 @@
             // lueDofatSarfId
             // 
             this.lueDofatSarfId.EditValue = "";
-            this.lueDofatSarfId.Location = new System.Drawing.Point(12, 12);
+            this.lueDofatSarfId.Location = new System.Drawing.Point(12, 36);
             this.lueDofatSarfId.Name = "lueDofatSarfId";
             this.lueDofatSarfId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -228,10 +238,10 @@
             this.lueDofatSarfId.Size = new System.Drawing.Size(398, 20);
             this.lueDofatSarfId.StyleController = this.layoutControlMain;
             this.lueDofatSarfId.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "This value is not valid";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.lueDofatSarfId, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.lueDofatSarfId, conditionValidationRule5);
             // 
             // LSMSDofatSarfId
             // 
@@ -259,7 +269,7 @@
             // luePersonId
             // 
             this.luePersonId.EditValue = "";
-            this.luePersonId.Location = new System.Drawing.Point(12, 60);
+            this.luePersonId.Location = new System.Drawing.Point(12, 84);
             this.luePersonId.Name = "luePersonId";
             this.luePersonId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -272,10 +282,10 @@
             this.luePersonId.Size = new System.Drawing.Size(398, 20);
             this.luePersonId.StyleController = this.layoutControlMain;
             this.luePersonId.TabIndex = 5;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "This value is not valid";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.luePersonId, conditionValidationRule7);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.luePersonId, conditionValidationRule6);
             // 
             // LSMSPersonId
             // 
@@ -357,10 +367,22 @@
             this.colSubCommitte.Visible = true;
             this.colSubCommitte.VisibleIndex = 4;
             // 
+            // colMMashatName
+            // 
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.Caption = "اسم الاب";
+            this.colMMashatName.FieldName = "MMashatName";
+            this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.Visible = true;
+            this.colMMashatName.VisibleIndex = 5;
+            // 
             // btnCancel
             // 
             this.btnCancel.Image = global::RetirementCenter.Properties.Resources.cancel_16x16;
-            this.btnCancel.Location = new System.Drawing.Point(348, 132);
+            this.btnCancel.Location = new System.Drawing.Point(348, 156);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(118, 22);
             this.btnCancel.StyleController = this.layoutControlMain;
@@ -371,7 +393,7 @@
             // btnSave
             // 
             this.btnSave.Image = global::RetirementCenter.Properties.Resources.save_16x16;
-            this.btnSave.Location = new System.Drawing.Point(12, 132);
+            this.btnSave.Location = new System.Drawing.Point(12, 156);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(332, 22);
             this.btnSave.StyleController = this.layoutControlMain;
@@ -393,10 +415,12 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem1,
+            this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(478, 168);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(478, 192);
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -404,7 +428,7 @@
             // 
             this.layoutControlItem3.Control = this.btnSave;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(336, 28);
             this.layoutControlItem3.Text = "layoutControlItem3";
@@ -416,7 +440,7 @@
             // 
             this.layoutControlItem4.Control = this.btnCancel;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(336, 120);
+            this.layoutControlItem4.Location = new System.Drawing.Point(336, 144);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(122, 28);
             this.layoutControlItem4.Text = "layoutControlItem4";
@@ -430,7 +454,7 @@
             this.layoutControlItem5.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem5.Control = this.luePersonId;
             this.layoutControlItem5.CustomizationFormText = "العضو";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(458, 24);
             this.layoutControlItem5.Text = "الوريث";
@@ -443,7 +467,7 @@
             this.layoutControlItem7.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem7.Control = this.lueDofatSarfId;
             this.layoutControlItem7.CustomizationFormText = "الدفعة";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(458, 24);
             this.layoutControlItem7.Text = "الدفعة";
@@ -456,7 +480,7 @@
             this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem8.Control = this.lueSarfTypeedadId;
             this.layoutControlItem8.CustomizationFormText = "نوع الصرفية";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(458, 24);
             this.layoutControlItem8.Text = "نوع الصرفية";
@@ -469,7 +493,7 @@
             this.layoutControlItem9.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem9.Control = this.tbmonymonth;
             this.layoutControlItem9.CustomizationFormText = "المبلغ";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(458, 24);
             this.layoutControlItem9.Text = "المبلغ";
@@ -482,9 +506,9 @@
             this.layoutControlItem10.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem10.Control = this.tbrsmmonth;
             this.layoutControlItem10.CustomizationFormText = "رسم";
-            this.layoutControlItem10.Location = new System.Drawing.Point(301, 96);
+            this.layoutControlItem10.Location = new System.Drawing.Point(305, 120);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(157, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(153, 24);
             this.layoutControlItem10.Text = "رسم";
             this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(53, 13);
@@ -495,9 +519,9 @@
             this.layoutControlItem11.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem11.Control = this.tbeshtrakmonth;
             this.layoutControlItem11.CustomizationFormText = "اشتراك";
-            this.layoutControlItem11.Location = new System.Drawing.Point(146, 96);
+            this.layoutControlItem11.Location = new System.Drawing.Point(153, 120);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(155, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(152, 24);
             this.layoutControlItem11.Text = "اشتراك";
             this.layoutControlItem11.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(53, 13);
@@ -508,30 +532,66 @@
             this.layoutControlItem12.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem12.Control = this.tbestktaa;
             this.layoutControlItem12.CustomizationFormText = "استقطاع";
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(146, 24);
+            this.layoutControlItem12.Size = new System.Drawing.Size(153, 24);
             this.layoutControlItem12.Text = "استقطاع";
             this.layoutControlItem12.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(53, 13);
             // 
-            // colMMashatName
+            // tbAuto
             // 
-            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "اسم الاب";
-            this.colMMashatName.FieldName = "MMashatName";
-            this.colMMashatName.Name = "colMMashatName";
-            this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 5;
+            this.tbAuto.Location = new System.Drawing.Point(118, 12);
+            this.tbAuto.Name = "tbAuto";
+            this.tbAuto.Properties.DisplayFormat.FormatString = "n0";
+            this.tbAuto.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbAuto.Properties.EditFormat.FormatString = "n0";
+            this.tbAuto.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.tbAuto.Properties.Mask.EditMask = "n0";
+            this.tbAuto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.tbAuto.Size = new System.Drawing.Size(292, 20);
+            this.tbAuto.StyleController = this.layoutControlMain;
+            this.tbAuto.TabIndex = 11;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem1.Control = this.tbAuto;
+            this.layoutControlItem1.CustomizationFormText = "تلقائي";
+            this.layoutControlItem1.Location = new System.Drawing.Point(106, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(352, 24);
+            this.layoutControlItem1.Text = "تلقائي";
+            this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(53, 13);
+            // 
+            // cesarfcheek
+            // 
+            this.cesarfcheek.Location = new System.Drawing.Point(12, 12);
+            this.cesarfcheek.Name = "cesarfcheek";
+            this.cesarfcheek.Properties.Caption = "شيك";
+            this.cesarfcheek.Size = new System.Drawing.Size(102, 19);
+            this.cesarfcheek.StyleController = this.layoutControlMain;
+            this.cesarfcheek.TabIndex = 12;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.cesarfcheek;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(106, 24);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
             // 
             // TBLWarasaSarf_arshefEditFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 168);
+            this.ClientSize = new System.Drawing.Size(478, 192);
             this.Controls.Add(this.layoutControlMain);
             this.Name = "TBLWarasaSarf_arshefEditFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -562,6 +622,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAuto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,5 +667,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxvp;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
+        private DevExpress.XtraEditors.CheckEdit cesarfcheek;
+        private DevExpress.XtraEditors.TextEdit tbAuto;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

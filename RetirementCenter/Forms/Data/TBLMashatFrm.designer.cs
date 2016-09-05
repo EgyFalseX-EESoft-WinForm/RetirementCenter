@@ -230,6 +230,7 @@
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditWarasaEstefa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.xtraTabPageChangeToWarasa = new DevExpress.XtraTab.XtraTabPage();
             this.LUEChangeHala = new DevExpress.XtraEditors.LookUpEdit();
@@ -321,7 +322,6 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
-            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -2922,6 +2922,18 @@
             this.repositoryItemButtonEditWarasaEstefa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditWarasaEstefa.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditWarasaEstefa_ButtonClick);
             // 
+            // colcode60
+            // 
+            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
+            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.Caption = "كود 60";
+            this.colcode60.FieldName = "code60";
+            this.colcode60.Name = "colcode60";
+            this.colcode60.Visible = true;
+            this.colcode60.VisibleIndex = 3;
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -3109,7 +3121,7 @@
             this.coldatefrom.FieldName = "datefrom";
             this.coldatefrom.Name = "coldatefrom";
             this.coldatefrom.Visible = true;
-            this.coldatefrom.VisibleIndex = 1;
+            this.coldatefrom.VisibleIndex = 3;
             this.coldatefrom.Width = 83;
             // 
             // repositoryItemDateEditResarfDMY
@@ -3138,7 +3150,7 @@
             this.coldateto.FieldName = "dateto";
             this.coldateto.Name = "coldateto";
             this.coldateto.Visible = true;
-            this.coldateto.VisibleIndex = 2;
+            this.coldateto.VisibleIndex = 4;
             this.coldateto.Width = 80;
             // 
             // colreestktaa
@@ -3152,7 +3164,7 @@
             this.colreestktaa.FieldName = "reestktaa";
             this.colreestktaa.Name = "colreestktaa";
             this.colreestktaa.Visible = true;
-            this.colreestktaa.VisibleIndex = 3;
+            this.colreestktaa.VisibleIndex = 1;
             // 
             // repositoryItemTextEditResarff2
             // 
@@ -3176,7 +3188,7 @@
             this.colremarks.FieldName = "remarks";
             this.colremarks.Name = "colremarks";
             this.colremarks.Visible = true;
-            this.colremarks.VisibleIndex = 4;
+            this.colremarks.VisibleIndex = 2;
             // 
             // repositoryItemMemoExEdit2
             // 
@@ -3807,18 +3819,6 @@
             // tBLDofatSarfMaduneaTableAdapter
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
-            // 
-            // colcode60
-            // 
-            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
-            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
-            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colcode60.Caption = "كود 60";
-            this.colcode60.FieldName = "code60";
-            this.colcode60.Name = "colcode60";
-            this.colcode60.Visible = true;
-            this.colcode60.VisibleIndex = 3;
             // 
             // TBLMashatFrm
             // 

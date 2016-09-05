@@ -44,8 +44,7 @@
             this.cesarfcheek = new DevExpress.XtraEditors.CheckEdit();
             this.ceamantvisa = new DevExpress.XtraEditors.CheckEdit();
             this.luePersonId = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.XPSCSvtblWarasabank2 = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.sessionvtblWarasabank2 = new DevExpress.Xpo.Session(this.components);
+            this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,12 +68,13 @@
             this.tbmostahek = new DevExpress.XtraEditors.TextEdit();
             this.tbestktaa = new DevExpress.XtraEditors.TextEdit();
             this.tbamanatmony = new DevExpress.XtraEditors.TextEdit();
+            this.sessionvtblWarasabank2 = new DevExpress.Xpo.Session(this.components);
             this.LSMSvtblWarasabank2 = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.LSMSTBLWarasa = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
+            this.XPCvtblWarasabank2 = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -86,8 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceamantvisa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePersonId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).BeginInit();
@@ -98,8 +97,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSvtblWarasabank2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPCvtblWarasabank2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -289,14 +289,10 @@
             this.luePersonId.TabIndex = 2;
             this.luePersonId.EditValueChanged += new System.EventHandler(this.luePersonId_EditValueChanged);
             // 
-            // XPSCSvtblWarasabank2
+            // LSMSTBLWarasa
             // 
-            this.XPSCSvtblWarasabank2.ObjectType = typeof(RetirementCenter.DataSources.dsQueries.vtblWarasabank2DataTable);
-            this.XPSCSvtblWarasabank2.Session = this.sessionvtblWarasabank2;
-            // 
-            // sessionvtblWarasabank2
-            // 
-            this.sessionvtblWarasabank2.TrackPropertiesModifications = false;
+            this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
+            this.LSMSTBLWarasa.KeyExpression = "PersonId";
             // 
             // gridView1
             // 
@@ -545,15 +541,14 @@
             this.tbamanatmony.Size = new System.Drawing.Size(233, 26);
             this.tbamanatmony.TabIndex = 3;
             // 
+            // sessionvtblWarasabank2
+            // 
+            this.sessionvtblWarasabank2.TrackPropertiesModifications = false;
+            // 
             // LSMSvtblWarasabank2
             // 
             this.LSMSvtblWarasabank2.ElementType = typeof(RetirementCenter.DataSources.Linq.vtblWarasabank2);
             this.LSMSvtblWarasabank2.KeyExpression = "AutoId";
-            // 
-            // LSMSTBLWarasa
-            // 
-            this.LSMSTBLWarasa.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLWarasa_TBLMashat);
-            this.LSMSTBLWarasa.KeyExpression = "PersonId";
             // 
             // colMonthName
             // 
@@ -595,6 +590,12 @@
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
+            // XPCvtblWarasabank2
+            // 
+            this.XPCvtblWarasabank2.CriteriaString = "1 = 2";
+            this.XPCvtblWarasabank2.ObjectType = typeof(RetirementCenter.DataSources.dsQueries.vtblWarasabank2DataTable);
+            this.XPCvtblWarasabank2.Session = this.sessionvtblWarasabank2;
+            // 
             // TblWarasaAmanatWFrm
             // 
             this.AcceptButton = this.btnSave;
@@ -623,8 +624,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cesarfcheek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceamantvisa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePersonId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSvtblWarasabank2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdDofaatAmanatBindingSource)).EndInit();
@@ -635,8 +635,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionvtblWarasabank2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSvtblWarasabank2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPCvtblWarasabank2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -690,7 +691,7 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDofatSarfId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSvtblWarasabank2;
-        private DevExpress.Xpo.XPServerCollectionSource XPSCSvtblWarasabank2;
         private DevExpress.Xpo.Session sessionvtblWarasabank2;
+        private DevExpress.Xpo.XPCollection XPCvtblWarasabank2;
     }
 }

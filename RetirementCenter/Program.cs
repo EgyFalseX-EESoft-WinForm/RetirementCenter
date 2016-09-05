@@ -39,6 +39,10 @@ namespace RetirementCenter
             Asda2 = 1,
             Warasa = 2
         }
+        public enum CDEndwork
+        {
+            Belog_el_sann = 1,
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -88,14 +92,16 @@ namespace RetirementCenter
                         //Create Administrator user if not exists b4 show login form
                         if (!SQLProvider.PrepareBaseRole())
                             return;
-                        DatabaseScripts.FireScript();//add my views
+                        DatabaseScripts.FireScriptView();//add my views
+                        DatabaseScripts.FireScriptSP();//add my SP
                         FrmLogin.ShowDialog();
                     }
 
                     SQLProvider.PerformUpdate();
                     SQLProvider.SetAllCommandTimeouts(SQLProvider.adpQry, 0);
+                    //Application.Run(new Qry76Frm());
                     Application.Run(new MainFrm());
-                    //Application.Run(new TblWarasaAmanatSarf2Frm());
+                    
                 }
                 catch (Exception ex)
                 {

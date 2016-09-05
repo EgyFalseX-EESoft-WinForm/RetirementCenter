@@ -10,7 +10,7 @@ namespace RetirementCenter
     public static class DatabaseScripts
     {
 
-        public static void FireScript()
+        public static void FireScriptView()
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
             SqlCommand cmd = new SqlCommand("", con);
@@ -20,7 +20,7 @@ namespace RetirementCenter
                 //vTBLMashat
                 if (CheckViewExists("vTBLMashat"))
                 {
-                    cmd.CommandText = DropObject("vTBLMashat");
+                    cmd.CommandText = DropView("vTBLMashat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLMashat;
@@ -28,7 +28,7 @@ namespace RetirementCenter
                 //vTBLEdafat
                 if (CheckViewExists("vTBLEdafat"))
                 {
-                    cmd.CommandText = DropObject("vTBLEdafat");
+                    cmd.CommandText = DropView("vTBLEdafat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLEdafat;
@@ -36,7 +36,7 @@ namespace RetirementCenter
                 //vTBLEdafatWarasa
                 if (CheckViewExists("vTBLEdafatWarasa"))
                 {
-                    cmd.CommandText = DropObject("vTBLEdafatWarasa");
+                    cmd.CommandText = DropView("vTBLEdafatWarasa");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLEdafatWarasa;
@@ -44,7 +44,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry01"))
                 {
-                    cmd.CommandText = DropObject("vQry01");
+                    cmd.CommandText = DropView("vQry01");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry01;
@@ -52,7 +52,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry02"))
                 {
-                    cmd.CommandText = DropObject("vQry02");
+                    cmd.CommandText = DropView("vQry02");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry02;
@@ -60,7 +60,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry02a"))
                 {
-                    cmd.CommandText = DropObject("vQry02a");
+                    cmd.CommandText = DropView("vQry02a");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry02a;
@@ -68,7 +68,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vTBLWarasa"))
                 {
-                    cmd.CommandText = DropObject("vTBLWarasa");
+                    cmd.CommandText = DropView("vTBLWarasa");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLWarasa;
@@ -76,7 +76,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vTBLWarasa_TBLMashat"))
                 {
-                    cmd.CommandText = DropObject("vTBLWarasa_TBLMashat");
+                    cmd.CommandText = DropView("vTBLWarasa_TBLMashat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLWarasa_TBLMashat;
@@ -84,7 +84,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry06"))
                 {
-                    cmd.CommandText = DropObject("vQry06");
+                    cmd.CommandText = DropView("vQry06");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry06;
@@ -92,7 +92,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry07"))
                 {
-                    cmd.CommandText = DropObject("vQry07");
+                    cmd.CommandText = DropView("vQry07");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry07;
@@ -100,7 +100,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry08"))
                 {
-                    cmd.CommandText = DropObject("vQry08");
+                    cmd.CommandText = DropView("vQry08");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry08;
@@ -108,7 +108,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry10"))
                 {
-                    cmd.CommandText = DropObject("vQry10");
+                    cmd.CommandText = DropView("vQry10");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry10;
@@ -116,7 +116,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry11"))
                 {
-                    cmd.CommandText = DropObject("vQry11");
+                    cmd.CommandText = DropView("vQry11");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry11;
@@ -124,7 +124,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry12"))
                 {
-                    cmd.CommandText = DropObject("vQry12");
+                    cmd.CommandText = DropView("vQry12");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry12;
@@ -132,7 +132,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry13"))
                 {
-                    cmd.CommandText = DropObject("vQry13");
+                    cmd.CommandText = DropView("vQry13");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry13;
@@ -140,7 +140,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry14"))
                 {
-                    cmd.CommandText = DropObject("vQry14");
+                    cmd.CommandText = DropView("vQry14");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry14;
@@ -148,7 +148,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry15"))
                 {
-                    cmd.CommandText = DropObject("vQry15");
+                    cmd.CommandText = DropView("vQry15");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry15;
@@ -156,7 +156,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry19"))
                 {
-                    cmd.CommandText = DropObject("vQry19");
+                    cmd.CommandText = DropView("vQry19");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry19;
@@ -164,7 +164,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry20"))
                 {
-                    cmd.CommandText = DropObject("vQry20");
+                    cmd.CommandText = DropView("vQry20");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry20;
@@ -172,7 +172,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vTBLMashat01_V1"))
                 {
-                    cmd.CommandText = DropObject("vTBLMashat01_V1");
+                    cmd.CommandText = DropView("vTBLMashat01_V1");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLMashat01_V1;
@@ -180,7 +180,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vTBLMashat01_V2"))
                 {
-                    cmd.CommandText = DropObject("vTBLMashat01_V2");
+                    cmd.CommandText = DropView("vTBLMashat01_V2");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLMashat01_V2;
@@ -188,7 +188,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry22"))
                 {
-                    cmd.CommandText = DropObject("vQry22");
+                    cmd.CommandText = DropView("vQry22");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry22;
@@ -196,7 +196,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry23"))
                 {
-                    cmd.CommandText = DropObject("vQry23");
+                    cmd.CommandText = DropView("vQry23");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry23;
@@ -204,7 +204,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry25"))
                 {
-                    cmd.CommandText = DropObject("vQry25");
+                    cmd.CommandText = DropView("vQry25");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry25;
@@ -212,7 +212,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry26"))
                 {
-                    cmd.CommandText = DropObject("vQry26");
+                    cmd.CommandText = DropView("vQry26");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry26;
@@ -220,7 +220,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry27"))
                 {
-                    cmd.CommandText = DropObject("vQry27");
+                    cmd.CommandText = DropView("vQry27");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry27;
@@ -228,7 +228,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry28"))
                 {
-                    cmd.CommandText = DropObject("vQry28");
+                    cmd.CommandText = DropView("vQry28");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry28;
@@ -236,7 +236,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry31"))
                 {
-                    cmd.CommandText = DropObject("vQry31");
+                    cmd.CommandText = DropView("vQry31");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry31;
@@ -244,7 +244,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry32"))
                 {
-                    cmd.CommandText = DropObject("vQry32");
+                    cmd.CommandText = DropView("vQry32");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry32;
@@ -252,7 +252,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry33"))
                 {
-                    cmd.CommandText = DropObject("vQry33");
+                    cmd.CommandText = DropView("vQry33");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry33;
@@ -260,7 +260,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry35"))
                 {
-                    cmd.CommandText = DropObject("vQry35");
+                    cmd.CommandText = DropView("vQry35");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry35;
@@ -268,7 +268,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry42"))
                 {
-                    cmd.CommandText = DropObject("vQry42");
+                    cmd.CommandText = DropView("vQry42");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry42;
@@ -276,7 +276,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry43"))
                 {
-                    cmd.CommandText = DropObject("vQry43");
+                    cmd.CommandText = DropView("vQry43");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry43;
@@ -284,7 +284,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry57"))
                 {
-                    cmd.CommandText = DropObject("vQry57");
+                    cmd.CommandText = DropView("vQry57");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry57;
@@ -292,7 +292,7 @@ namespace RetirementCenter
 
                 if (CheckViewExists("vQry58"))
                 {
-                    cmd.CommandText = DropObject("vQry58");
+                    cmd.CommandText = DropView("vQry58");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry58;
@@ -300,7 +300,7 @@ namespace RetirementCenter
                 //vQry59
                 if (CheckViewExists("vQry59"))
                 {
-                    cmd.CommandText = DropObject("vQry59");
+                    cmd.CommandText = DropView("vQry59");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry59;
@@ -314,7 +314,7 @@ namespace RetirementCenter
                 //vTBLDeathMembers
                 if (CheckViewExists("vTBLDeathMembers"))
                 {
-                    cmd.CommandText = DropObject("vTBLDeathMembers");
+                    cmd.CommandText = DropView("vTBLDeathMembers");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLDeathMembers;
@@ -322,7 +322,7 @@ namespace RetirementCenter
                 //vQry71
                 if (CheckViewExists("vQry71"))
                 {
-                    cmd.CommandText = DropObject("vQry71");
+                    cmd.CommandText = DropView("vQry71");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry71;
@@ -330,7 +330,7 @@ namespace RetirementCenter
                 //vQry73
                 if (CheckViewExists("vQry73"))
                 {
-                    cmd.CommandText = DropObject("vQry73");
+                    cmd.CommandText = DropView("vQry73");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry73;
@@ -338,7 +338,7 @@ namespace RetirementCenter
                 //vtbladminremarks
                 if (CheckViewExists("vtbladminremarks"))
                 {
-                    cmd.CommandText = DropObject("vtbladminremarks");
+                    cmd.CommandText = DropView("vtbladminremarks");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vtbladminremarks;
@@ -346,7 +346,7 @@ namespace RetirementCenter
                 //vQry74
                 if (CheckViewExists("vQry74"))
                 {
-                    cmd.CommandText = DropObject("vQry74");
+                    cmd.CommandText = DropView("vQry74");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry74;
@@ -354,7 +354,7 @@ namespace RetirementCenter
                 //vQry75
                 if (CheckViewExists("vQry75"))
                 {
-                    cmd.CommandText = DropObject("vQry75");
+                    cmd.CommandText = DropView("vQry75");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry75;
@@ -362,7 +362,7 @@ namespace RetirementCenter
                 //vQry76
                 if (CheckViewExists("vQry76"))
                 {
-                    cmd.CommandText = DropObject("vQry76");
+                    cmd.CommandText = DropView("vQry76");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry76;
@@ -370,7 +370,7 @@ namespace RetirementCenter
                 //vQry77
                 if (CheckViewExists("vQry77"))
                 {
-                    cmd.CommandText = DropObject("vQry77");
+                    cmd.CommandText = DropView("vQry77");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry77;
@@ -378,7 +378,7 @@ namespace RetirementCenter
                 //vTBLEstefa
                 if (CheckViewExists("vTBLEstefa"))
                 {
-                    cmd.CommandText = DropObject("vTBLEstefa");
+                    cmd.CommandText = DropView("vTBLEstefa");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLEstefa;
@@ -386,7 +386,7 @@ namespace RetirementCenter
                 //vQry78
                 if (CheckViewExists("vQry78"))
                 {
-                    cmd.CommandText = DropObject("vQry78");
+                    cmd.CommandText = DropView("vQry78");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry78;
@@ -394,7 +394,7 @@ namespace RetirementCenter
                 //vTBLReprintMember
                 if (CheckViewExists("vTBLReprintMember"))
                 {
-                    cmd.CommandText = DropObject("vTBLReprintMember");
+                    cmd.CommandText = DropView("vTBLReprintMember");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLReprintMember;
@@ -402,7 +402,7 @@ namespace RetirementCenter
                 //vQry79
                 if (CheckViewExists("vQry79"))
                 {
-                    cmd.CommandText = DropObject("vQry79");
+                    cmd.CommandText = DropView("vQry79");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry79;
@@ -410,7 +410,7 @@ namespace RetirementCenter
                 //vTBLReprintWarasa01
                 if (CheckViewExists("vTBLReprintWarasa01"))
                 {
-                    cmd.CommandText = DropObject("vTBLReprintWarasa01");
+                    cmd.CommandText = DropView("vTBLReprintWarasa01");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLReprintWarasa01;
@@ -418,7 +418,7 @@ namespace RetirementCenter
                 //vTBLReprintWarasa
                 if (CheckViewExists("vTBLReprintWarasa"))
                 {
-                    cmd.CommandText = DropObject("vTBLReprintWarasa");
+                    cmd.CommandText = DropView("vTBLReprintWarasa");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLReprintWarasa;
@@ -426,7 +426,7 @@ namespace RetirementCenter
                 //vQry80
                 if (CheckViewExists("vQry80"))
                 {
-                    cmd.CommandText = DropObject("vQry80");
+                    cmd.CommandText = DropView("vQry80");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry80;
@@ -434,7 +434,7 @@ namespace RetirementCenter
                 //vTBLHafzaTasleem
                 if (CheckViewExists("vTBLHafzaTasleem"))
                 {
-                    cmd.CommandText = DropObject("vTBLHafzaTasleem");
+                    cmd.CommandText = DropView("vTBLHafzaTasleem");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLHafzaTasleem;
@@ -442,7 +442,7 @@ namespace RetirementCenter
                 //vQry81
                 if (CheckViewExists("vQry81"))
                 {
-                    cmd.CommandText = DropObject("vQry81");
+                    cmd.CommandText = DropView("vQry81");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry81;
@@ -450,7 +450,7 @@ namespace RetirementCenter
                 //vTBLFrookWarasa
                 if (CheckViewExists("vTBLFrookWarasa"))
                 {
-                    cmd.CommandText = DropObject("vTBLFrookWarasa");
+                    cmd.CommandText = DropView("vTBLFrookWarasa");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLFrookWarasa;
@@ -458,7 +458,7 @@ namespace RetirementCenter
                 //vQry84
                 if (CheckViewExists("vQry84"))
                 {
-                    cmd.CommandText = DropObject("vQry84");
+                    cmd.CommandText = DropView("vQry84");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry84;
@@ -466,7 +466,7 @@ namespace RetirementCenter
                 //vTBLHafezSarf
                 if (CheckViewExists("vTBLHafezSarf"))
                 {
-                    cmd.CommandText = DropObject("vTBLHafezSarf");
+                    cmd.CommandText = DropView("vTBLHafezSarf");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLHafezSarf;
@@ -474,7 +474,7 @@ namespace RetirementCenter
                 //vTblMemberMadunea
                 if (CheckViewExists("vTblMemberMadunea"))
                 {
-                    cmd.CommandText = DropObject("vTblMemberMadunea");
+                    cmd.CommandText = DropView("vTblMemberMadunea");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTblMemberMadunea;
@@ -482,7 +482,7 @@ namespace RetirementCenter
                 //vTBLWarasaMadunea
                 if (CheckViewExists("vTBLWarasaMadunea"))
                 {
-                    cmd.CommandText = DropObject("vTBLWarasaMadunea");
+                    cmd.CommandText = DropView("vTBLWarasaMadunea");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLWarasaMadunea;
@@ -490,7 +490,7 @@ namespace RetirementCenter
                 //vTBLMemberSarf_arshef
                 if (CheckViewExists("vTBLMemberSarf_arshef"))
                 {
-                    cmd.CommandText = DropObject("vTBLMemberSarf_arshef");
+                    cmd.CommandText = DropView("vTBLMemberSarf_arshef");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLMemberSarf_arshef;
@@ -498,7 +498,7 @@ namespace RetirementCenter
                 //vTBLWarasaSarf_arshef
                 if (CheckViewExists("vTBLWarasaSarf_arshef"))
                 {
-                    cmd.CommandText = DropObject("vTBLWarasaSarf_arshef");
+                    cmd.CommandText = DropView("vTBLWarasaSarf_arshef");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLWarasaSarf_arshef;
@@ -506,7 +506,7 @@ namespace RetirementCenter
                 //vtblWarasabank
                 if (CheckViewExists("vtblWarasabank"))
                 {
-                    cmd.CommandText = DropObject("vtblWarasabank");
+                    cmd.CommandText = DropView("vtblWarasabank");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vtblWarasabank;
@@ -514,7 +514,7 @@ namespace RetirementCenter
                 //vtblWarasabank2
                 if (CheckViewExists("vtblWarasabank2"))
                 {
-                    cmd.CommandText = DropObject("vtblWarasabank2");
+                    cmd.CommandText = DropView("vtblWarasabank2");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vtblWarasabank2;
@@ -522,7 +522,7 @@ namespace RetirementCenter
                 //vTBLWarasaSarf_arshef2
                 if (CheckViewExists("vTBLWarasaSarf_arshef2"))
                 {
-                    cmd.CommandText = DropObject("vTBLWarasaSarf_arshef2");
+                    cmd.CommandText = DropView("vTBLWarasaSarf_arshef2");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTBLWarasaSarf_arshef2;
@@ -530,7 +530,7 @@ namespace RetirementCenter
                 //vQry91
                 if (CheckViewExists("vQry91"))
                 {
-                    cmd.CommandText = DropObject("vQry91");
+                    cmd.CommandText = DropView("vQry91");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry91;
@@ -538,7 +538,7 @@ namespace RetirementCenter
                 //vQry92
                 if (CheckViewExists("vQry92"))
                 {
-                    cmd.CommandText = DropObject("vQry92");
+                    cmd.CommandText = DropView("vQry92");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vQry92;
@@ -546,7 +546,7 @@ namespace RetirementCenter
                 //vBankExportedData_Activate
                 if (CheckViewExists("vBankExportedData_Activate"))
                 {
-                    cmd.CommandText = DropObject("vBankExportedData_Activate");
+                    cmd.CommandText = DropView("vBankExportedData_Activate");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vBankExportedData_Activate;
@@ -554,7 +554,7 @@ namespace RetirementCenter
                 //vBankExportedDataWarsa_Activate
                 if (CheckViewExists("vBankExportedDataWarsa_Activate"))
                 {
-                    cmd.CommandText = DropObject("vBankExportedDataWarsa_Activate");
+                    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vBankExportedDataWarsa_Activate;
@@ -562,7 +562,7 @@ namespace RetirementCenter
                 //vTblMemberAmanat
                 if (CheckViewExists("vTblMemberAmanat"))
                 {
-                    cmd.CommandText = DropObject("vTblMemberAmanat");
+                    cmd.CommandText = DropView("vTblMemberAmanat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTblMemberAmanat;
@@ -570,7 +570,7 @@ namespace RetirementCenter
                 //vTblWarasaAmanat
                 if (CheckViewExists("vTblWarasaAmanat"))
                 {
-                    cmd.CommandText = DropObject("vTblWarasaAmanat");
+                    cmd.CommandText = DropView("vTblWarasaAmanat");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTblWarasaAmanat;
@@ -578,17 +578,71 @@ namespace RetirementCenter
                 //vTblAttach
                 if (CheckViewExists("vTblAttach"))
                 {
-                    cmd.CommandText = DropObject("vTblAttach");
+                    cmd.CommandText = DropView("vTblAttach");
                     cmd.ExecuteNonQuery();
                 }
                 cmd.CommandText = vTblAttach;
                 cmd.ExecuteNonQuery();
+                //vQry103
+                if (CheckViewExists("vQry103"))
+                {
+                    cmd.CommandText = DropView("vQry103");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry103;
+                cmd.ExecuteNonQuery();
+                //vQry105
+                if (CheckViewExists("vQry105"))
+                {
+                    cmd.CommandText = DropView("vQry105");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry105;
+                cmd.ExecuteNonQuery();
+
             }
             catch (SqlException ex)
             {
                 Program.Logger.LogThis(FXFW.SqlDB.CheckExp(ex), "Fire Scripting", FXFW.Logger.OpType.success, null, ex, null);
             }
             con.Close();
+        }
+        public static void FireScriptSP()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand("", con);
+            try
+            {
+                con.Open();
+                //fn_SplitPram
+                if (CheckSPExists("fn_SplitPram"))
+                {
+                    cmd.CommandText = DropFunction("fn_SplitPram");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = fn_SplitPram;
+                cmd.ExecuteNonQuery();
+                //sp_001
+                if (CheckSPExists("sp_001"))
+                {
+                    cmd.CommandText = DropProcedure("sp_001");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = sp_001;
+                cmd.ExecuteNonQuery();
+                //sp_002
+                if (CheckSPExists("sp_002"))
+                {
+                    cmd.CommandText = DropProcedure("sp_002");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = sp_002;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Program.Logger.LogThis(FXFW.SqlDB.CheckExp(ex), "Fire Scripting", FXFW.Logger.OpType.success, null, ex, null);
+            }
         }
 
         public static bool CheckViewExists(string viewName)
@@ -615,11 +669,42 @@ namespace RetirementCenter
             con.Close();
             return exist;
         }
-        private static string DropObject(string objName)
+        public static bool CheckSPExists(string spName)
+        {
+            bool exist = false;
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+            SqlCommand cmd = new SqlCommand("", con);
+            cmd.CommandText = string.Format(@"IF EXISTS(SELECT [Routine_Name] FROM [INFORMATION_SCHEMA].[ROUTINES] WHERE [Routine_Name] = '{0}')
+                                            SELECT 1
+                                            ELSE
+                                            SELECT 0", spName);
+            try
+            {
+                con.Open();
+                if (cmd.ExecuteScalar().ToString() == "1")
+                    exist = true;
+                else
+                    exist = false;
+            }
+            catch (SqlException ex)
+            {
+                Program.Logger.LogThis(FXFW.SqlDB.CheckExp(ex), "Fire Scripting", FXFW.Logger.OpType.success, null, ex, null);
+            }
+            con.Close();
+            return exist;
+        }
+        private static string DropView(string objName)
         {
             return string.Format(@"DROP VIEW [dbo].[{0}]", objName);
         }
-
+        private static string DropFunction(string objName)
+        {
+            return string.Format(@"DROP FUNCTION [dbo].[{0}]", objName);
+        }
+        private static string DropProcedure(string objName)
+        {
+            return string.Format(@"DROP PROCEDURE [dbo].[{0}]", objName);
+        }
         public static string vTBLMashat
         {
             get
@@ -1788,7 +1873,7 @@ FROM            TBLWarasaMadunea INNER JOIN
                          dbo.TBLMemberSarf_arshef.monymonth, dbo.TBLMemberSarf_arshef.rsmmonth, dbo.TBLMemberSarf_arshef.eshtrakmonth, dbo.TBLMemberSarf_arshef.estktaa, dbo.TBLMemberSarf_arshef.sarf, 
                          dbo.TBLMemberSarf_arshef.datein, dbo.TBLMemberSarf_arshef.userin, dbo.TBLMemberSarf_arshef.Edafat, dbo.TBLMemberSarf_arshef.SyndicateId, dbo.TBLMemberSarf_arshef.SubCommitteId, 
                          dbo.TBLMemberSarf_arshef.SendBank, dbo.TBLDofatSarf.DofatSarf, dbo.Users.RealName, dbo.CDSarfTypeedad.SarfTypeedad, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
-                         dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber
+                         dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLMemberSarf_arshef.amanatAutoId, dbo.TBLMemberSarf_arshef.sarfcheek
 FROM            dbo.TBLMemberSarf_arshef INNER JOIN
                          dbo.TBLDofatSarf ON dbo.TBLMemberSarf_arshef.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
                          dbo.TBLMashat ON dbo.TBLMemberSarf_arshef.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
@@ -1805,19 +1890,20 @@ FROM            dbo.TBLMemberSarf_arshef INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLWarasaSarf_arshef]
                     AS
-                    SELECT        TBLWarasaSarf_arshef.PersonId, TBLWarasaSarf_arshef.DofatSarfId, TBLWarasaSarf_arshef.SarfTypeedadId, TBLWarasaSarf_arshef.sarfdatefrom, TBLWarasaSarf_arshef.sarfdateto, 
-                         TBLWarasaSarf_arshef.monymonth, TBLWarasaSarf_arshef.rsmmonth, TBLWarasaSarf_arshef.eshtrakmonth, TBLWarasaSarf_arshef.estktaa, TBLWarasaSarf_arshef.sarf, TBLWarasaSarf_arshef.datein, 
-                         TBLWarasaSarf_arshef.userin, TBLWarasaSarf_arshef.Edafat, TBLWarasaSarf_arshef.SyndicateId, TBLWarasaSarf_arshef.SubCommitteId, TBLWarasaSarf_arshef.responsiblesarf, 
-                         TBLWarasaSarf_arshef.responsiblesarfId, TBLWarasaSarf_arshef.SendBank, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, CDSarfTypeedad.SarfTypeedad, TBLDofatSarf.DofatSarf, 
-                         TBLWarasa.personName, TBLMashat.MMashatName, TBLMashat.sarfnumber, Users.RealName
-FROM            TBLWarasaSarf_arshef INNER JOIN
-                         TBLDofatSarf ON TBLWarasaSarf_arshef.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
-                         CDSarfTypeedad ON TBLWarasaSarf_arshef.SarfTypeedadId = CDSarfTypeedad.SarfTypeedadId INNER JOIN
-                         TBLWarasa ON TBLWarasaSarf_arshef.PersonId = TBLWarasa.PersonId INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         CDSyndicate ON TBLWarasaSarf_arshef.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLWarasaSarf_arshef.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
-                         Users ON TBLWarasaSarf_arshef.userin = Users.UserID";
+                    SELECT        dbo.TBLWarasaSarf_arshef.PersonId, dbo.TBLWarasaSarf_arshef.DofatSarfId, dbo.TBLWarasaSarf_arshef.SarfTypeedadId, dbo.TBLWarasaSarf_arshef.sarfdatefrom, dbo.TBLWarasaSarf_arshef.sarfdateto, 
+                         dbo.TBLWarasaSarf_arshef.monymonth, dbo.TBLWarasaSarf_arshef.rsmmonth, dbo.TBLWarasaSarf_arshef.eshtrakmonth, dbo.TBLWarasaSarf_arshef.estktaa, dbo.TBLWarasaSarf_arshef.sarf, 
+                         dbo.TBLWarasaSarf_arshef.datein, dbo.TBLWarasaSarf_arshef.userin, dbo.TBLWarasaSarf_arshef.Edafat, dbo.TBLWarasaSarf_arshef.SyndicateId, dbo.TBLWarasaSarf_arshef.SubCommitteId, 
+                         dbo.TBLWarasaSarf_arshef.responsiblesarf, dbo.TBLWarasaSarf_arshef.responsiblesarfId, dbo.TBLWarasaSarf_arshef.SendBank, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
+                         dbo.CDSarfTypeedad.SarfTypeedad, dbo.TBLDofatSarf.DofatSarf, dbo.TBLWarasa.personName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.Users.RealName, 
+                         dbo.TBLWarasaSarf_arshef.amanatAutoId, dbo.TBLWarasaSarf_arshef.sarfcheek
+FROM            dbo.TBLWarasaSarf_arshef INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TBLWarasaSarf_arshef.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
+                         dbo.CDSarfTypeedad ON dbo.TBLWarasaSarf_arshef.SarfTypeedadId = dbo.CDSarfTypeedad.SarfTypeedadId INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasaSarf_arshef.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasaSarf_arshef.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.TBLWarasaSarf_arshef.userin = dbo.Users.UserID";
             }
         }
         public static string vtblWarasabank
@@ -2047,6 +2133,171 @@ FROM            dbo.TblAttach INNER JOIN
                          dbo.Users ON dbo.TblAttach.userin = dbo.Users.UserID";
             }
         }
+        public static string fn_SplitPram
+        {
+            get
+            {
+                return @"
+CREATE FUNCTION [dbo].[fn_SplitPram]
+(
+@List nvarchar(max),
+@SplitOn nvarchar(5)
+)  
+RETURNS @RtnValue table 
+(
 
+Id int identity(1,1),
+Value nvarchar(max)
+) 
+AS  
+BEGIN
+While (Charindex(@SplitOn,@List)>0)
+Begin 
+Insert Into @RtnValue (value)
+Select
+Value = ltrim(rtrim(Substring(@List,1,Charindex(@SplitOn,@List)-1))) 
+Set @List = Substring(@List,Charindex(@SplitOn,@List)+len(@SplitOn),len(@List))
+End 
+
+Insert Into @RtnValue (Value)
+Select Value = ltrim(rtrim(@List))
+Return
+END";
+            }
+        }
+        public static string sp_001
+        {
+            get
+            {
+                return @"
+CREATE PROCEDURE [dbo].[sp_001]
+@DofatSarfId NVARCHAR(MAX) = NULL
+,@SarfTypeedadId NVARCHAR(MAX) = NULL
+AS
+BEGIN
+SET NOCOUNT ON;
+--@DofatSarfIdTbl Table
+Declare @DofatSarfIdTbl Table(DofatSarfId NVarChar(100) Not Null Primary Key Clustered)
+INSERT INTO @DofatSarfIdTbl
+SELECT Value FROM dbo.fn_SplitPram(@DofatSarfId,',')  GROUP BY Value
+--@SarfTypeedadIdTbl Table
+Declare @SarfTypeedadIdTbl Table(SarfTypeedadId INT Not Null Primary Key Clustered)
+INSERT INTO @SarfTypeedadIdTbl
+SELECT Value FROM dbo.fn_SplitPram(@SarfTypeedadId,',')  GROUP BY Value
+
+DECLARE @OutputTbl TABLE (MMashatId INT NOT NULL PRIMARY KEY CLUSTERED, Total FLOAT)
+INSERT INTO @OutputTbl
+SELECT MMashatId, SUM(monymonth - rsmmonth - eshtrakmonth - estktaa) AS Total
+FROM TBLWarasaSarf_arshef INNER JOIN @DofatSarfIdTbl DofatSarfIdTbl ON TBLWarasaSarf_arshef.DofatSarfId = DofatSarfIdTbl.DofatSarfId
+INNER JOIN @SarfTypeedadIdTbl SarfTypeedadIdTbl ON TBLWarasaSarf_arshef.SarfTypeedadId = SarfTypeedadIdTbl.SarfTypeedadId
+INNER JOIN dbo.TBLWarasa ON TBLWarasaSarf_arshef.PersonId = TBLWarasa.PersonId
+GROUP BY MMashatId
+
+DECLARE @Bankbl TABLE (MMashatId INT NOT NULL PRIMARY KEY CLUSTERED, BankMoney FLOAT, AmantaMoney FLOAT)
+INSERT INTO @Bankbl
+SELECT MMashatId, SUM(summony) AS BankMoney, SUM(amanatmony) AS AmantaMoney
+FROM tblWarasabank INNER JOIN @DofatSarfIdTbl DofatSarfIdTbl ON tblWarasabank.DofatSarfId = DofatSarfIdTbl.DofatSarfId
+GROUP BY MMashatId
+
+SELECT OutputTbl.MMashatId, Total
+, CASE WHEN BankMoney IS NULL THEN 0 ELSE BankMoney END AS BankMoney
+, CASE WHEN AmantaMoney IS NULL THEN 0 ELSE AmantaMoney END AS AmantaMoney
+, TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+FROM @OutputTbl OutputTbl LEFT OUTER JOIN @Bankbl Bankbl ON OutputTbl.MMashatId = Bankbl.MMashatId
+INNER JOIN dbo.TBLMashat ON OutputTbl.MMashatId = TBLMashat.MMashatId
+INNER JOIN dbo.CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
+INNER JOIN dbo.CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
+END";
+            }
+        }
+        public static string sp_002
+        {
+            get
+            {
+                return @"
+CREATE PROCEDURE [dbo].[sp_002]
+@DofatSarfId NVARCHAR(MAX) = NULL
+,@SarfTypeedadId NVARCHAR(MAX) = NULL
+AS
+BEGIN
+SET NOCOUNT ON;
+--@DofatSarfIdTbl Table
+Declare @DofatSarfIdTbl Table(DofatSarfId INT Not Null Primary Key Clustered)
+INSERT INTO @DofatSarfIdTbl
+SELECT Value FROM dbo.fn_SplitPram(@DofatSarfId,',')  GROUP BY Value
+--@SarfTypeedadIdTbl Table
+Declare @SarfTypeedadIdTbl Table(SarfTypeedadId INT Not Null Primary Key Clustered)
+INSERT INTO @SarfTypeedadIdTbl
+SELECT Value FROM dbo.fn_SplitPram(@SarfTypeedadId,',')  GROUP BY Value
+
+DECLARE @OutputTbl TABLE (MMashatId INT NOT NULL PRIMARY KEY CLUSTERED, Total FLOAT)
+INSERT INTO @OutputTbl
+SELECT MMashatId, SUM(monymonth - rsmmonth - eshtrakmonth - estktaa) AS Total
+FROM TBLMemberSarf_arshef INNER JOIN @DofatSarfIdTbl DofatSarfIdTbl ON TBLMemberSarf_arshef.DofatSarfId = DofatSarfIdTbl.DofatSarfId
+INNER JOIN @SarfTypeedadIdTbl SarfTypeedadIdTbl ON TBLMemberSarf_arshef.SarfTypeedadId = SarfTypeedadIdTbl.SarfTypeedadId
+GROUP BY MMashatId
+
+DECLARE @Bankbl TABLE (MMashatId INT NOT NULL PRIMARY KEY CLUSTERED, BankMoney FLOAT, AmantaMoney FLOAT)
+INSERT INTO @Bankbl
+SELECT MMashatId, SUM(summony) AS BankMoney, SUM(amanatmony) AS AmantaMoney
+FROM tblmemberbank INNER JOIN @DofatSarfIdTbl DofatSarfIdTbl ON tblmemberbank.DofatSarfId = DofatSarfIdTbl.DofatSarfId
+GROUP BY MMashatId
+
+SELECT OutputTbl.MMashatId, Total
+, CASE WHEN BankMoney IS NULL THEN 0 ELSE BankMoney END AS BankMoney
+, CASE WHEN AmantaMoney IS NULL THEN 0 ELSE AmantaMoney END AS AmantaMoney
+, TBLMashat.MMashatName, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte
+FROM @OutputTbl OutputTbl LEFT OUTER JOIN @Bankbl Bankbl ON OutputTbl.MMashatId = Bankbl.MMashatId
+INNER JOIN dbo.TBLMashat ON OutputTbl.MMashatId = TBLMashat.MMashatId
+INNER JOIN dbo.CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
+INNER JOIN dbo.CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
+END";
+            }
+        }
+        public static string vQry103
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry103]
+                    AS
+                    SELECT        dbo.TBLMemberSarf_arshef.MMashatId, dbo.TBLMemberSarf_arshef.DofatSarfId, dbo.TBLMemberSarf_arshef.sarfdatefrom, dbo.TBLMemberSarf_arshef.sarfdateto, dbo.TBLMemberSarf_arshef.datein, 
+dbo.TBLMemberSarf_arshef.userin, dbo.TBLDofatSarf.DofatSarf AS DofatSarf_Inside, TBLDofatSarf_1.DofatSarf, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, 
+dbo.CDSubCommitte.SubCommitte, dbo.TBLDofatSarf.DofatSarfId AS DofatSarfId_Insert
+, CASE WHEN EXISTS(SELECT MMashatId FROM dbo.TBLMemberSarf_arshef TBL WHERE MMashatId = TBLMemberSarf_arshef.MMashatId AND DofatSarfId = TBLDofatSarf.DofatSarfId AND SarfTypeedadId = 1) THEN CAST(1 AS bit) ELSE CAST(0 AS bit) END AS [Done]
+FROM            dbo.TBLMemberSarf_arshef INNER JOIN
+dbo.TBLDofatSarf ON dbo.TBLMemberSarf_arshef.sarfdatefrom BETWEEN dbo.TBLDofatSarf.DofatSarfDatefrom AND dbo.TBLDofatSarf.DofatSarfDateto OR
+dbo.TBLMemberSarf_arshef.sarfdateto BETWEEN dbo.TBLDofatSarf.DofatSarfDatefrom AND dbo.TBLDofatSarf.DofatSarfDateto INNER JOIN
+dbo.TBLDofatSarf AS TBLDofatSarf_1 ON dbo.TBLMemberSarf_arshef.DofatSarfId = TBLDofatSarf_1.DofatSarfId INNER JOIN
+dbo.TBLMashat ON dbo.TBLMemberSarf_arshef.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId
+WHERE        (dbo.TBLMemberSarf_arshef.SarfTypeedadId = 2)
+";
+            }
+        }
+        public static string vQry105
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry105]
+                    AS
+                    SELECT        dbo.TBLWarasaSarf_arshef.PersonId, dbo.TBLWarasaSarf_arshef.DofatSarfId, dbo.TBLWarasaSarf_arshef.sarfdatefrom, dbo.TBLWarasaSarf_arshef.sarfdateto, dbo.TBLWarasaSarf_arshef.datein, 
+                         dbo.TBLWarasaSarf_arshef.userin, dbo.TBLDofatSarf.DofatSarf AS DofatSarf_Inside, TBLDofatSarf_1.DofatSarf, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
+                         dbo.TBLDofatSarf.DofatSarfId AS DofatSarfId_Insert, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLMashat.MMashatId
+, CASE WHEN EXISTS(SELECT PersonId FROM dbo.TBLWarasaSarf_arshef TBL WHERE PersonId = TBLWarasaSarf_arshef.PersonId AND DofatSarfId = TBLDofatSarf.DofatSarfId AND SarfTypeedadId = 1) THEN CAST(1 AS bit) ELSE CAST(0 AS bit) END AS [Done]
+FROM            dbo.TBLWarasaSarf_arshef INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TBLWarasaSarf_arshef.sarfdatefrom BETWEEN dbo.TBLDofatSarf.DofatSarfDatefrom AND dbo.TBLDofatSarf.DofatSarfDateto OR
+                         dbo.TBLWarasaSarf_arshef.sarfdateto BETWEEN dbo.TBLDofatSarf.DofatSarfDatefrom AND dbo.TBLDofatSarf.DofatSarfDateto INNER JOIN
+                         dbo.TBLDofatSarf AS TBLDofatSarf_1 ON dbo.TBLWarasaSarf_arshef.DofatSarfId = TBLDofatSarf_1.DofatSarfId INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLWarasaSarf_arshef.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId
+WHERE        (dbo.TBLWarasaSarf_arshef.SarfTypeedadId = 2)
+";
+            }
+        }
     }
 }

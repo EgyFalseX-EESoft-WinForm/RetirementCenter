@@ -72,11 +72,16 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLMashatDataTable Tbl = adpTBLMashat.GetDataByMMashatId(MMashatId);
             if (Tbl[0].yasref && Tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2)
             {
-                DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
-                int result = adp.Insert(MMashatId, false, ServerDatetime, "ايقاف للتسجيل في اعانة الوفاة", ServerDatetime, Program.UserInfo.UserId);
-                if (result == 1)
-                    adpTBLMashat.UpdateQueryYasref(false, ServerDatetime, Program.UserInfo.UserId, MMashatId);
+                adpTBLMashat.UpdateQueryYasref(false, ServerDatetime, Program.UserInfo.UserId, MMashatId);
             }
+            DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
+            int result = adp.Insert(MMashatId, false, ServerDatetime, "ايقاف للتسجيل في اعانة الوفاة", ServerDatetime, Program.UserInfo.UserId);
+
+            new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_ChangeActive_byID(false, MMashatId);
+            //Add recored in tblmembervisaactive
+            new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter().Insert(MMashatId, false, SQLProvider.ServerDateTime(), "تم ايقاف التفعيل تلقائي بعد التفعيل في أعانة الوفاه"
+                , SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
+
 
             DialogResult = System.Windows.Forms.DialogResult.OK;
             _row.datein = SQLProvider.ServerDateTime();

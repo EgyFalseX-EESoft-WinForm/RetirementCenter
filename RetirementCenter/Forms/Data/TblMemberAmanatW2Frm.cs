@@ -133,7 +133,8 @@ namespace RetirementCenter
             }
             if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLMemberSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(lueMMashatId.EditValue)) == null)
                 msgDlg.Show("عليك مراجعة اعادة الصرف للعضو", msgDlg.msgButtons.Close);
-            
+
+            DateTime serverDateTime = SQLProvider.ServerDateTime();
 
             if (lueDofatSarfAId.EditValue != null)
                 _row.DofatSarfAId = Convert.ToInt32(lueDofatSarfAId.EditValue);
@@ -153,6 +154,15 @@ namespace RetirementCenter
             _row.sarfcheek = cesarfcheek.Checked;
             if (lueamanattypeid.EditValue != null)
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            {
+                _row.accReview = true;
+                _row.useracc = Program.UserInfo.UserId;
+                _row.dateReview = serverDateTime;
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_byID(_row.MMashatId);
+                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter().Insert(_row.MMashatId, true, SQLProvider.ServerDateTime(), "تم تقديم طلب امانات", SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
+            }
+
             _row.datein = SQLProvider.ServerDateTime();
             _row.userin = Program.UserInfo.UserId;
             

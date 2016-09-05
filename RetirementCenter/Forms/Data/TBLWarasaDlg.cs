@@ -198,6 +198,7 @@ namespace RetirementCenter.Forms.Data
                 tblvisawarsaactiveTableAdapter.FillByPersonId(dsRetirementCenter.tblvisawarsaactive, _TBLWarasa[0].PersonId);
             }
             ceActivate.Visible = Program.UserInfo.IsAdmin;
+            repositoryItemButtonEditResarfDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
 
             xtraTabControlMain.SelectedTabPage = tabExtra;
             xtraTabControlMain.SelectedTabPage = tabMain;

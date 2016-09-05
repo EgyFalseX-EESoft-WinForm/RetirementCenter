@@ -64,6 +64,7 @@
             this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colamanatvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendBankDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -79,7 +80,6 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colSendBankDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -255,6 +255,7 @@
             this.colMMashatId.Caption = "كود العضو";
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 4;
             // 
@@ -411,6 +412,7 @@
             this.colPersonId.Caption = "كود الوريث";
             this.colPersonId.FieldName = "PersonId";
             this.colPersonId.Name = "colPersonId";
+            this.colPersonId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colPersonId.Visible = true;
             this.colPersonId.VisibleIndex = 2;
             // 
@@ -585,6 +587,7 @@
             this.colnewid.Caption = "كود60";
             this.colnewid.FieldName = "newid";
             this.colnewid.Name = "colnewid";
+            this.colnewid.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colnewid.Visible = true;
             this.colnewid.VisibleIndex = 0;
             // 
@@ -623,6 +626,18 @@
             this.colsarfcheek.Name = "colsarfcheek";
             this.colsarfcheek.Visible = true;
             this.colsarfcheek.VisibleIndex = 27;
+            // 
+            // colSendBankDate
+            // 
+            this.colSendBankDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSendBankDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBankDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSendBankDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSendBankDate.Caption = "تاريخ";
+            this.colSendBankDate.FieldName = "SendBankDate";
+            this.colSendBankDate.Name = "colSendBankDate";
+            this.colSendBankDate.Visible = true;
+            this.colSendBankDate.VisibleIndex = 28;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -771,18 +786,6 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // colSendBankDate
-            // 
-            this.colSendBankDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colSendBankDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSendBankDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSendBankDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSendBankDate.Caption = "تاريخ";
-            this.colSendBankDate.FieldName = "SendBankDate";
-            this.colSendBankDate.Name = "colSendBankDate";
-            this.colSendBankDate.Visible = true;
-            this.colSendBankDate.VisibleIndex = 28;
             // 
             // Qry28Frm
             // 

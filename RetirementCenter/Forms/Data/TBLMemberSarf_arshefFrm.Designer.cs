@@ -54,6 +54,7 @@
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colamanatAutoId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,6 +72,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -147,7 +149,9 @@
             this.colMMashatName,
             this.colsarfnumber,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.colamanatAutoId,
+            this.colsarfcheek});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
@@ -165,7 +169,7 @@
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 0;
+            this.colMMashatId.VisibleIndex = 1;
             // 
             // colsarfdatefrom
             // 
@@ -177,7 +181,7 @@
             this.colsarfdatefrom.FieldName = "sarfdatefrom";
             this.colsarfdatefrom.Name = "colsarfdatefrom";
             this.colsarfdatefrom.Visible = true;
-            this.colsarfdatefrom.VisibleIndex = 4;
+            this.colsarfdatefrom.VisibleIndex = 5;
             // 
             // colsarfdateto
             // 
@@ -189,7 +193,7 @@
             this.colsarfdateto.FieldName = "sarfdateto";
             this.colsarfdateto.Name = "colsarfdateto";
             this.colsarfdateto.Visible = true;
-            this.colsarfdateto.VisibleIndex = 5;
+            this.colsarfdateto.VisibleIndex = 6;
             // 
             // colmonymonth
             // 
@@ -201,7 +205,7 @@
             this.colmonymonth.FieldName = "monymonth";
             this.colmonymonth.Name = "colmonymonth";
             this.colmonymonth.Visible = true;
-            this.colmonymonth.VisibleIndex = 6;
+            this.colmonymonth.VisibleIndex = 7;
             // 
             // colrsmmonth
             // 
@@ -213,7 +217,7 @@
             this.colrsmmonth.FieldName = "rsmmonth";
             this.colrsmmonth.Name = "colrsmmonth";
             this.colrsmmonth.Visible = true;
-            this.colrsmmonth.VisibleIndex = 7;
+            this.colrsmmonth.VisibleIndex = 8;
             // 
             // coleshtrakmonth
             // 
@@ -225,7 +229,7 @@
             this.coleshtrakmonth.FieldName = "eshtrakmonth";
             this.coleshtrakmonth.Name = "coleshtrakmonth";
             this.coleshtrakmonth.Visible = true;
-            this.coleshtrakmonth.VisibleIndex = 8;
+            this.coleshtrakmonth.VisibleIndex = 9;
             // 
             // colestktaa
             // 
@@ -237,7 +241,7 @@
             this.colestktaa.FieldName = "estktaa";
             this.colestktaa.Name = "colestktaa";
             this.colestktaa.Visible = true;
-            this.colestktaa.VisibleIndex = 9;
+            this.colestktaa.VisibleIndex = 10;
             // 
             // colsarf
             // 
@@ -249,7 +253,7 @@
             this.colsarf.FieldName = "sarf";
             this.colsarf.Name = "colsarf";
             this.colsarf.Visible = true;
-            this.colsarf.VisibleIndex = 10;
+            this.colsarf.VisibleIndex = 11;
             // 
             // coldatein
             // 
@@ -262,7 +266,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 16;
+            this.coldatein.VisibleIndex = 18;
             // 
             // repositoryItemDateEditYMD
             // 
@@ -288,7 +292,7 @@
             this.colEdafat.FieldName = "Edafat";
             this.colEdafat.Name = "colEdafat";
             this.colEdafat.Visible = true;
-            this.colEdafat.VisibleIndex = 11;
+            this.colEdafat.VisibleIndex = 12;
             // 
             // colSendBank
             // 
@@ -300,7 +304,7 @@
             this.colSendBank.FieldName = "SendBank";
             this.colSendBank.Name = "colSendBank";
             this.colSendBank.Visible = true;
-            this.colSendBank.VisibleIndex = 12;
+            this.colSendBank.VisibleIndex = 13;
             this.colSendBank.Width = 86;
             // 
             // colDofatSarf1
@@ -313,7 +317,7 @@
             this.colDofatSarf1.FieldName = "DofatSarf";
             this.colDofatSarf1.Name = "colDofatSarf1";
             this.colDofatSarf1.Visible = true;
-            this.colDofatSarf1.VisibleIndex = 2;
+            this.colDofatSarf1.VisibleIndex = 3;
             // 
             // colRealName
             // 
@@ -325,7 +329,7 @@
             this.colRealName.FieldName = "RealName";
             this.colRealName.Name = "colRealName";
             this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 17;
+            this.colRealName.VisibleIndex = 19;
             // 
             // colSarfTypeedad
             // 
@@ -337,7 +341,7 @@
             this.colSarfTypeedad.FieldName = "SarfTypeedad";
             this.colSarfTypeedad.Name = "colSarfTypeedad";
             this.colSarfTypeedad.Visible = true;
-            this.colSarfTypeedad.VisibleIndex = 3;
+            this.colSarfTypeedad.VisibleIndex = 4;
             // 
             // colSyndicate
             // 
@@ -349,7 +353,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 13;
+            this.colSyndicate.VisibleIndex = 15;
             // 
             // colSubCommitte
             // 
@@ -361,7 +365,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 14;
+            this.colSubCommitte.VisibleIndex = 16;
             // 
             // colMMashatName
             // 
@@ -373,7 +377,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 1;
+            this.colMMashatName.VisibleIndex = 2;
             // 
             // colsarfnumber
             // 
@@ -385,7 +389,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 15;
+            this.colsarfnumber.VisibleIndex = 17;
             // 
             // gridColumn1
             // 
@@ -397,7 +401,7 @@
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 18;
+            this.gridColumn1.VisibleIndex = 20;
             // 
             // repositoryItemButtonEditTransferSave
             // 
@@ -418,7 +422,7 @@
             this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditDelete;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 19;
+            this.gridColumn2.VisibleIndex = 21;
             // 
             // repositoryItemButtonEditDelete
             // 
@@ -428,6 +432,18 @@
             this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
             this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
+            // 
+            // colamanatAutoId
+            // 
+            this.colamanatAutoId.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatAutoId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatAutoId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatAutoId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatAutoId.Caption = "تلقائي";
+            this.colamanatAutoId.FieldName = "amanatAutoId";
+            this.colamanatAutoId.Name = "colamanatAutoId";
+            this.colamanatAutoId.Visible = true;
+            this.colamanatAutoId.VisibleIndex = 0;
             // 
             // repositoryItemGridLookUpEditSyndicateId
             // 
@@ -614,6 +630,18 @@
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // colsarfcheek
+            // 
+            this.colsarfcheek.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.Caption = "شيك";
+            this.colsarfcheek.FieldName = "sarfcheek";
+            this.colsarfcheek.Name = "colsarfcheek";
+            this.colsarfcheek.Visible = true;
+            this.colsarfcheek.VisibleIndex = 14;
+            // 
             // TBLMemberSarf_arshefFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,5 +722,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colamanatAutoId;
+        private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
     }
 }

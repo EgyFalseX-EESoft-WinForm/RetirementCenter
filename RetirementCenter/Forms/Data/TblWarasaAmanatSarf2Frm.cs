@@ -476,7 +476,7 @@ namespace RetirementCenter
                     dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
 
                     //Add Resarf
-                    adpSarf.FillByPersonId_DofatSarfId(dsRetirementCenter.TBLReSarfWarasa, row1.PersonId, dofaa.DofatSarfId);
+                    adpSarf.FillByPersonId_DofatSarfId(dsRetirementCenter.TBLReSarfWarasa, row1.PersonId, dofaa2.DofatSarfId);
                     foreach (DataSources.dsRetirementCenter.TBLReSarfWarasaRow ResarfRow in dsRetirementCenter.TBLReSarfWarasa)
                     {
 
@@ -560,7 +560,7 @@ namespace RetirementCenter
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
                     
                     //Add Resarf
-                    adpSarf.FillByPersonId_DofatSarfId_Arc(dsRetirementCenter.TBLReSarfWarasa, row2.PersonId, dofaa.DofatSarfId);
+                    adpSarf.FillByPersonId_DofatSarfId_Arc(dsRetirementCenter.TBLReSarfWarasa, row2.PersonId, dofaa2.DofatSarfId);
                     foreach (DataSources.dsRetirementCenter.TBLReSarfWarasaRow ResarfRow in dsRetirementCenter.TBLReSarfWarasa)
                     {
                         DataSources.dsRetirementCenter.TBLWarasaSarfRow Resarfrecord = dsRetirementCenter.TBLWarasaSarf.NewTBLWarasaSarfRow();

@@ -118,7 +118,9 @@ namespace RetirementCenter
             }
             if (new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().CheckExistsTBLWarasaSarf_arshefbyPrama(Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToInt32(luePersonId.EditValue)) == null)
                 msgDlg.Show("عليك مراجعة اعادة الصرف للوريث", msgDlg.msgButtons.Close);
-            
+
+            DateTime serverDateTime = SQLProvider.ServerDateTime();
+
             if (lueDofatSarfAId.EditValue != null)
                 _row.DofatSarfAId = Convert.ToInt32(lueDofatSarfAId.EditValue);
             if (luePersonId.EditValue != null)
@@ -137,6 +139,16 @@ namespace RetirementCenter
             _row.sarfcheek = cesarfcheek.Checked;
             if (lueamanattypeid.EditValue != null)
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
+
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            {
+                _row.accReview = true;
+                _row.useracc = Program.UserInfo.UserId;
+                _row.dateReview = serverDateTime;
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_byVisa(_row.PersonId);
+                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter().InsertForVisaByPerson("تم تقديم طلب امانات", Program.UserInfo.UserId, _row.PersonId);
+            }
+
             _row.datein = SQLProvider.ServerDateTime();
             _row.userin = Program.UserInfo.UserId;
 
@@ -184,8 +196,8 @@ namespace RetirementCenter
             {
                 if (ceamantvisa.Checked)
                 {
-                    XPSCSvtblWarasabank2.FixedFilterString = "DofatSarfId = " + lueDofatSarfAId.EditValue;
-                    luePersonId.Properties.DataSource = XPSCSvtblWarasabank2;
+                    XPCvtblWarasabank2.CriteriaString = "DofatSarfId = " + lueDofatSarfAId.EditValue;
+                    luePersonId.Properties.DataSource = XPCvtblWarasabank2;
                     luePersonId.Properties.ValueMember = "responsiblesarfId";
                 }
                 else

@@ -136,14 +136,14 @@ namespace RetirementCenter
             lblMax.Text = pbc.Properties.Maximum.ToString(); pbc.EditValue = 0; lblValue.Text = "0";
             DateTime serverdatetime = SQLProvider.ServerDateTime();
             //Load Madunea
-            adpMadunea.FillByDofatSarfMId(dsRetirementCenter.TblMemberMadunea, dofaa.DofatSarfId);
+            adpMadunea.FillByDofatSarfMId(dsRetirementCenter.TblMemberMadunea, dofaa2.DofatSarfId);
 
             foreach (DataSources.dsQueries.TBLEdafatCreatorRow row1 in dsQueries.TBLEdafatCreator.Rows)
             {
                 DataSources.dsRetirementCenter.TBLMemberSarfRow record = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
                 record.DofatSarfId = dofaa2.DofatSarfId;
                 //Madunea
-                DataSources.dsRetirementCenter.TblMemberMaduneaRow row_Madunea = dsRetirementCenter.TblMemberMadunea.FindByMMashatIdDofatSarfMId(row1.MMashatId, dofaa.DofatSarfId);
+                DataSources.dsRetirementCenter.TblMemberMaduneaRow row_Madunea = dsRetirementCenter.TblMemberMadunea.FindByMMashatIdDofatSarfMId(row1.MMashatId, dofaa2.DofatSarfId);
                 if (row_Madunea == null)
                 {
                     int months = TotalMonths(dofaa2.DofatSarfDateto, row1.WorkeEndDate);
@@ -183,7 +183,7 @@ namespace RetirementCenter
                 }
 
                 //Add Resarf
-                adpResarf.FillByMMashatId_DofatSarfId(dsRetirementCenter.TBLReSarf, row1.MMashatId, dofaa.DofatSarfId);
+                adpResarf.FillByMMashatId_DofatSarfId(dsRetirementCenter.TBLReSarf, row1.MMashatId, dofaa2.DofatSarfId);
                 foreach (DataSources.dsRetirementCenter.TBLReSarfRow ResarfRow in dsRetirementCenter.TBLReSarf)
                 {
                     DataSources.dsRetirementCenter.TBLMemberSarfRow Resarfrecord = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();
@@ -265,7 +265,7 @@ namespace RetirementCenter
                 }
 
                 //Add Resarf
-                adpResarf.FillByMMashatId_DofatSarfId(dsRetirementCenter.TBLReSarf, row2.MMashatId, dofaa.DofatSarfId);
+                adpResarf.FillByMMashatId_DofatSarfId(dsRetirementCenter.TBLReSarf, row2.MMashatId, dofaa2.DofatSarfId);
                 foreach (DataSources.dsRetirementCenter.TBLReSarfRow ResarfRow in dsRetirementCenter.TBLReSarf)
                 {
                     DataSources.dsRetirementCenter.TBLMemberSarfRow Resarfrecord = dsRetirementCenter.TBLMemberSarf.NewTBLMemberSarfRow();

@@ -205,7 +205,7 @@ namespace RetirementCenter
             lengthValidationRule.ErrorType = ErrorType.Warning;
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
             tbvisa.Enabled = Program.UserInfo.IsAdmin;
-            ceActivate.Visible = Program.UserInfo.IsAdmin;
+            ceActivate.Enabled = Program.UserInfo.IsAdmin;
             //btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
@@ -429,11 +429,12 @@ namespace RetirementCenter
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
-        {
-
+        {            
             if (!dxValidationProviderMain.Validate(tbMMashatName) || !dxValidationProviderMain.Validate(LUESyndicateId) ||
                 !dxValidationProviderMain.Validate(LUESubCommitteId) || !dxValidationProviderMain.Validate(tbsarfnumber) ||
-                !dxValidationProviderMain.Validate(LUEMashHalaId) || !dxValidationProviderMain.Validate(LUEMashHalaId))
+                !dxValidationProviderMain.Validate(LUEMashHalaId) || !dxValidationProviderMain.Validate(LUEMashHalaId) ||
+                !dxValidationProviderMain.Validate(lueEndworkId) || !dxValidationProviderMain.Validate(deWorkeEndDate) ||
+                !dxValidationProviderMain.Validate(lueDofatSarfId))
                 return;
             if ((tbMMashatNId.EditValue == null || tbMMashatNId.EditValue.ToString() == string.Empty) && !DeathBefore2013(true))
             {
@@ -450,6 +451,12 @@ namespace RetirementCenter
                 Program.ShowMsg("يجب ان تكون الحالة أعضاء", true, this, true);
                 return;
             }
+            if (!ceEnableEdafat.Checked)
+            {
+                Program.ShowMsg("يجب تفعيل الاضافات", true, this, true);
+                return;
+            }
+         
             try
             {
                 if (tbMMashatNId.EditValue != null && tbMMashatNId.EditValue.ToString() != string.Empty)
@@ -481,6 +488,25 @@ namespace RetirementCenter
                     }
                     
                 }
+                if (Convert.ToInt32(lueEndworkId.EditValue) == Convert.ToInt32(Program.CDEndwork.Belog_el_sann))
+                {
+                    DateTime validDate = row.BirthDate.AddYears(60).AddDays(-1);
+                    if (deWorkeEndDate.DateTime < validDate)
+                    {
+                        Program.ShowMsg("راجع تاريخ نهاية الخدمة" + Environment.NewLine + "يجب ان يكون اكبر من " + validDate.ToShortDateString(), true, this, true);
+                        Program.Logger.LogThis("راجع تاريخ نهاية الخدمة" + Environment.NewLine + "يجب ان يكون اكبر من " + validDate.ToShortDateString(), Text, FXFW.Logger.OpType.fail, null, null, this);
+                        return;
+                    }
+                }
+                RetirementCenter.DataSources.Linq.TBLDofatSarf Edafat_dof = (RetirementCenter.DataSources.Linq.TBLDofatSarf)lueDofatSarfId.GetSelectedDataRow();
+                if (Edafat_dof.DofatSarfDateto < deWorkeEndDate.DateTime)
+                {
+                    Program.ShowMsg("تاريخ نهاية الخدمه يجب ان يكون اقل من تاريخ نهاية دفعة الاضافات", true, this, true);
+                    Program.Logger.LogThis("تاريخ نهاية الخدمه يجب ان يكون اقل من تاريخ نهاية دفعة الاضافات", Text, FXFW.Logger.OpType.fail, null, null, this);
+                    return;
+                }
+
+
                 if (tbvisa.EditValue != null)
                     row.visa = tbvisa.EditValue.ToString();
                 row.datein = SQLProvider.ServerDateTime();
@@ -1011,7 +1037,13 @@ namespace RetirementCenter
             if ((byte)LUEChangeHala.EditValue == (byte)Misc.Types.CDMashHala.A3da2)
                 tBLMRemarksTableAdapter.Insert(Convert.ToInt32(LUEEmp.EditValue), "تغيير من ورثة الي اعضاء ", SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
             else
+            {
                 tBLMRemarksTableAdapter.Insert(Convert.ToInt32(LUEEmp.EditValue), "تغيير من اعضاء لورثة ", SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
+                new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_ChangeActive_byID(false, Convert.ToInt32(LUEEmp.EditValue));
+                //Add recored in tblmembervisaactive
+                tblmembervisaactiveAdapter.Insert(Convert.ToInt32(LUEEmp.EditValue), false, SQLProvider.ServerDateTime(), "تم ايقاف التفعيل تلقائي بعد تغير حالة العضو الي ورثه"
+                    , SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
+            }
             LUEMashHalaId.EditValue = (byte)LUEChangeHala.EditValue;
             Program.ShowMsg("تم تعديل حالة العضو", false, this, true);
             btnNew_Click(btnNew, EventArgs.Empty);

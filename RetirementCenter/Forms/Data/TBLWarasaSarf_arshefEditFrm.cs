@@ -25,7 +25,7 @@ namespace RetirementCenter.Forms.Data
             LSMSSarfTypeedadId.QueryableSource = dsLinq.CDSarfTypeedads;
 
             _row = row;
-
+            tbAuto.EditValue = row.amanatAutoId;
             lueDofatSarfId.EditValue = row.DofatSarfId;
             lueSarfTypeedadId.EditValue = row.SarfTypeedadId;
             luePersonId.EditValue = row.PersonId;
@@ -33,6 +33,10 @@ namespace RetirementCenter.Forms.Data
             tbrsmmonth.EditValue = row.rsmmonth;
             tbeshtrakmonth.EditValue = row.eshtrakmonth;
             tbestktaa.EditValue = row.estktaa;
+            if (row.sarfcheek == null)
+                cesarfcheek.EditValue = false;
+            else
+                cesarfcheek.EditValue = row.sarfcheek;
         }
         public TBLWarasaSarf_arshefEditFrm()
         {
@@ -58,13 +62,13 @@ namespace RetirementCenter.Forms.Data
                 {
                     effected = adp.Insert(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToByte(lueSarfTypeedadId.EditValue)
                     , dof.DofatSarfDatefrom, dof.DofatSarfDateto, Convert.ToDouble(tbmonymonth.EditValue), Convert.ToDouble(tbrsmmonth.EditValue), Convert.ToDouble(tbeshtrakmonth.EditValue), Convert.ToDouble(tbestktaa.EditValue)
-                    , true, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, false, (int)mem.SyndicateId, (int)mem.SubCommitteId);
+                    , true, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, false, (int)mem.SyndicateId, (int)mem.SubCommitteId, Convert.ToInt32(tbAuto.EditValue), cesarfcheek.Checked);
                 }
                 else
                 {
                     effected = adp.Update(Convert.ToInt32(luePersonId.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue), Convert.ToByte(lueSarfTypeedadId.EditValue)
                     , dof.DofatSarfDatefrom, dof.DofatSarfDateto, Convert.ToDouble(tbmonymonth.EditValue), Convert.ToDouble(tbrsmmonth.EditValue), Convert.ToDouble(tbeshtrakmonth.EditValue), Convert.ToDouble(tbestktaa.EditValue)
-                    , true, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, false, (int)mem.SyndicateId, (int)mem.SubCommitteId, _row.PersonId, _row.DofatSarfId, _row.SarfTypeedadId);
+                    , true, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, false, (int)mem.SyndicateId, (int)mem.SubCommitteId, Convert.ToInt32(tbAuto.EditValue), cesarfcheek.Checked, _row.PersonId, _row.DofatSarfId, _row.SarfTypeedadId);
                 }
                 
                 if (effected > 0)

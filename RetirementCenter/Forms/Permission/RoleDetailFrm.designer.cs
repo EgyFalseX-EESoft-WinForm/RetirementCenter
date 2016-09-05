@@ -220,6 +220,8 @@
             this.mbRetCenterQryPart3 = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterQry27a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry28a = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry27b = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry28b = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry87 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry74 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry82 = new DevExpress.XtraBars.BarButtonItem();
@@ -233,6 +235,10 @@
             this.mbRetCenterQry90 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry99 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry100 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry104 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry101 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry103 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry105 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry72 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry73 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep16 = new DevExpress.XtraBars.BarButtonItem();
@@ -758,10 +764,16 @@
             this.mbRetCenterTBLWarasaFastEdit2,
             this.mbRetCenterTblAttach,
             this.mbRetCenterQry99,
-            this.mbRetCenterQry100});
+            this.mbRetCenterQry100,
+            this.mbRetCenterQry27b,
+            this.mbRetCenterQry28b,
+            this.mbRetCenterQry101,
+            this.mbRetCenterQry103,
+            this.mbRetCenterQry104,
+            this.mbRetCenterQry105});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 407;
+            this.ribbonControl.MaxItemId = 413;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2434,6 +2446,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry28),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry27a),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry28a),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry27b),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry28b),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry70),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry71),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry87),
@@ -2448,7 +2462,11 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry92),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry90),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry99),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry100)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry100),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry104),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry101),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry103),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry105)});
             this.mbRetCenterQryPart3.Name = "mbRetCenterQryPart3";
             this.mbRetCenterQryPart3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -2467,6 +2485,22 @@
             this.mbRetCenterQry28a.ImageIndex = 19;
             this.mbRetCenterQry28a.LargeImageIndex = 19;
             this.mbRetCenterQry28a.Name = "mbRetCenterQry28a";
+            // 
+            // mbRetCenterQry27b
+            // 
+            this.mbRetCenterQry27b.Caption = "ارشيف صرف الاعضاء - بالكود";
+            this.mbRetCenterQry27b.Id = 407;
+            this.mbRetCenterQry27b.ImageIndex = 19;
+            this.mbRetCenterQry27b.LargeImageIndex = 19;
+            this.mbRetCenterQry27b.Name = "mbRetCenterQry27b";
+            // 
+            // mbRetCenterQry28b
+            // 
+            this.mbRetCenterQry28b.Caption = "ارشيف صرف الورثة - بالكود";
+            this.mbRetCenterQry28b.Id = 408;
+            this.mbRetCenterQry28b.ImageIndex = 19;
+            this.mbRetCenterQry28b.LargeImageIndex = 19;
+            this.mbRetCenterQry28b.Name = "mbRetCenterQry28b";
             // 
             // mbRetCenterQry87
             // 
@@ -2577,6 +2611,38 @@
             this.mbRetCenterQry100.ImageIndex = 19;
             this.mbRetCenterQry100.LargeImageIndex = 19;
             this.mbRetCenterQry100.Name = "mbRetCenterQry100";
+            // 
+            // mbRetCenterQry104
+            // 
+            this.mbRetCenterQry104.Caption = "اجمالي الدفعات و الامانات و البنك - اعضاء";
+            this.mbRetCenterQry104.Id = 411;
+            this.mbRetCenterQry104.ImageIndex = 19;
+            this.mbRetCenterQry104.LargeImageIndex = 19;
+            this.mbRetCenterQry104.Name = "mbRetCenterQry104";
+            // 
+            // mbRetCenterQry101
+            // 
+            this.mbRetCenterQry101.Caption = "اجمالي الدفعات و الامانات و البنك - ورثة";
+            this.mbRetCenterQry101.Id = 409;
+            this.mbRetCenterQry101.ImageIndex = 19;
+            this.mbRetCenterQry101.LargeImageIndex = 19;
+            this.mbRetCenterQry101.Name = "mbRetCenterQry101";
+            // 
+            // mbRetCenterQry103
+            // 
+            this.mbRetCenterQry103.Caption = "اعادة الصرف و الدفعه التي تقع فيها - اعضاء";
+            this.mbRetCenterQry103.Id = 410;
+            this.mbRetCenterQry103.ImageIndex = 19;
+            this.mbRetCenterQry103.LargeImageIndex = 19;
+            this.mbRetCenterQry103.Name = "mbRetCenterQry103";
+            // 
+            // mbRetCenterQry105
+            // 
+            this.mbRetCenterQry105.Caption = "اعادة الصرف و الدفعه التي تقع فيها - ورثة";
+            this.mbRetCenterQry105.Id = 412;
+            this.mbRetCenterQry105.ImageIndex = 19;
+            this.mbRetCenterQry105.LargeImageIndex = 19;
+            this.mbRetCenterQry105.Name = "mbRetCenterQry105";
             // 
             // mbRetCenterQry72
             // 
@@ -3575,6 +3641,8 @@
         private DevExpress.XtraBars.BarSubItem mbRetCenterQryPart3;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry27a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry28a;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry27b;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry28b;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry87;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry74;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry82;
@@ -3588,6 +3656,10 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry90;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry99;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry100;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry104;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry101;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry103;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry105;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry72;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry73;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep16;
