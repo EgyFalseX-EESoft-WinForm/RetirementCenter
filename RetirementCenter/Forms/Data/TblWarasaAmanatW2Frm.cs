@@ -140,6 +140,17 @@ namespace RetirementCenter
             if (lueamanattypeid.EditValue != null)
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
 
+            //if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
+            //{
+            //    _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
+            //    var result = SQLProvider.adpQry.ExistsTblWarasaAmanat1(_row.PersonId, _row.DofatSarfId);
+            //    if (result != null && (int)result != _row.AutoId)
+            //    {
+            //        msgDlg.Show("موجود مسبقا", msgDlg.msgButtons.Close);
+            //        return;
+            //    }
+            //}
+
             if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
             {
                 _row.accReview = true;
@@ -151,17 +162,7 @@ namespace RetirementCenter
 
             _row.datein = SQLProvider.ServerDateTime();
             _row.userin = Program.UserInfo.UserId;
-
-            if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
-            {
-                _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
-                var result = SQLProvider.adpQry.ExistsTblWarasaAmanat1(_row.PersonId, _row.DofatSarfId);
-                if (result != null && (int)result != _row.AutoId)
-                {
-                    msgDlg.Show("موجود مسبقا", msgDlg.msgButtons.Close);
-                    return;
-                }
-            }
+            
             DialogResult = System.Windows.Forms.DialogResult.OK;
         }
         private void btnClose_Click(object sender, EventArgs e)

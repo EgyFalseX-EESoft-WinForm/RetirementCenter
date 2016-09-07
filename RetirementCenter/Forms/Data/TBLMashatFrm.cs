@@ -73,6 +73,7 @@ namespace RetirementCenter
             LUEEmp.Properties.View.BestFitColumns();
             LSMSCDMashHala.QueryableSource = dsLinq.CDMashHalas; LUEMashHalaId.Properties.BestFit();
             LSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs; lueDofatSarfId.Properties.BestFit();
+            LSMSCdDofaatAmanat.QueryableSource = dsLinq.CdDofaatAmanats;
             LSMSCDsarfType.QueryableSource = dsLinq.CDsarfTypes; luesarfTypeId.Properties.BestFit();
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
@@ -195,8 +196,6 @@ namespace RetirementCenter
         {
             // TODO: This line of code loads data into the 'dsRetirementCenter.TBLDofatSarfMadunea' table. You can move, or remove it, as needed.
             this.tBLDofatSarfMaduneaTableAdapter.Fill(this.dsRetirementCenter.TBLDofatSarfMadunea);
-            // TODO: This line of code loads data into the 'dsRetirementCenter.TBLReSarf' table. You can move, or remove it, as needed.
-            this.tBLReSarfTableAdapter.Fill(this.dsRetirementCenter.TBLReSarf);
             
             ActivePriv();
             LoadData();
@@ -1057,6 +1056,17 @@ namespace RetirementCenter
             row.datein = SQLProvider.ServerDateTime();
             row.reestktaa = 0;
         }
+        private void gridViewResarf_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TBLReSarfRow row = (DataSources.dsRetirementCenter.TBLReSarfRow)((DataRowView)
+            gridViewResarf.GetRow(gridViewResarf.FocusedRowHandle)).Row;
+            if (row.IsNull("dofato"))
+                return;
+            System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_to = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofato) select q);
+            foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_to)
+                row.dateto = dof.DofatSarfDateto;
+
+        }
         private void repositoryItemButtonEditResarfSave_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             DataSources.dsRetirementCenter.TBLReSarfRow row = (DataSources.dsRetirementCenter.TBLReSarfRow)((DataRowView)
@@ -1067,15 +1077,36 @@ namespace RetirementCenter
                 tBLReSarfBindingSource.EndEdit();
                 if (row.datefrom >= row.dateto)
                 {
-                    Program.ShowMsg("تاريخ بداية المدة يجب ان يكون اصغر من تاريخ نهاية المدة", true, this, true);
+                    msgDlg.Show("تاريخ بداية المدة يجب ان يكون اصغر من تاريخ نهاية المدة");
                     return;
                 }
                 double days = row.dateto.Subtract(row.datefrom).TotalDays;
                 if (days < 30 || days > 470)
                 {
-                    Program.ShowMsg("الفرق ما بين تاريخ البداية و النهاية يجب ان يكون ما بين 30 و 470 يوم", true, this, true);
+                    msgDlg.Show("الفرق ما بين تاريخ البداية و النهاية يجب ان يكون ما بين 30 و 470 يوم");
                     return;
                 }
+                // Set dateto to dof.DofatSarfDateto
+                System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_to = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofato) select q);
+                foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_to)
+                    row.dateto = dof.DofatSarfDateto;
+
+                System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_from = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofafrom) select q);
+                foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_from)
+                {
+                    if (row.datefrom < dof.DofatSarfDatefrom || row.datefrom > dof.DofatSarfDateto)
+                    {
+                        msgDlg.Show("خطاء في من تاريخ");
+                        return;
+                    }
+                }
+                int result = (int)SQLProvider.adpQry.TBLMemberSarf_arshef_GetCount_Dof_ID(row.datefrom, row.dateto, row.MMashatId);
+                if (result > 0)
+                {
+                    msgDlg.Show("تم صرف للعضو في الدفعات المدخله");
+                    return;
+                }
+
 
                 tBLReSarfTableAdapter.Update(row);
                 Program.ShowMsg("تم تعديل بيانات اعادة الصرف", false, this, true);
@@ -1251,6 +1282,8 @@ namespace RetirementCenter
             }
         }
         #endregion
+
+        
 
     }
    
