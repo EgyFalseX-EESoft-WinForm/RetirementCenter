@@ -16,7 +16,7 @@ namespace RetirementCenter.Forms.Data
         {
             InitializeComponent();
             // TODO: This line of code loads data into the 'dsRetirementCenter.tblmemberbank' table. You can move, or remove it, as needed.
-            this.tblmemberbankTableAdapter.FillByID(this.dsRetirementCenter.tblmemberbank, MMashatId, DofatSarfAId);
+            this.tblmemberbankTableAdapter.FillByID_NotExistInAmanat(this.dsRetirementCenter.tblmemberbank, MMashatId, DofatSarfAId, DofatSarfAId);
             
         }
 

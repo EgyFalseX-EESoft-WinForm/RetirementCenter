@@ -104,17 +104,6 @@
       <Association Name="User_TBLMashat" Member="TBLMashats" ThisKey="UserID" OtherKey="userin" Type="TBLMashat" />
     </Type>
   </Table>
-  <Table Name="dbo.TBLDofatSarf" Member="TBLDofatSarfs">
-    <Type Name="TBLDofatSarf">
-      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DofatSarfDatefrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="DofatSarfDateto" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="remd" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="dofclosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TBLDofatSarf_TBLMemberSarf" Member="TBLMemberSarfs" ThisKey="DofatSarfId" OtherKey="DofatSarfId" Type="TBLMemberSarf" />
-    </Type>
-  </Table>
   <Table Name="dbo.TBLMashat" Member="TBLMashats">
     <Type Name="TBLMashat">
       <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -195,9 +184,9 @@
       <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Edafat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TBLDofatSarf_TBLMemberSarf" Member="TBLDofatSarf" ThisKey="DofatSarfId" OtherKey="DofatSarfId" Type="TBLDofatSarf" IsForeignKey="true" />
       <Association Name="TBLMashat_TBLMemberSarf" Member="TBLMashat" ThisKey="MMashatId" OtherKey="MMashatId" Type="TBLMashat" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="CDSarfTypeedad_TBLMemberSarf" Member="CDSarfTypeedad" ThisKey="SarfTypeedadId" OtherKey="SarfTypeedadId" Type="CDSarfTypeedad" IsForeignKey="true" />
+      <Association Name="TBLDofatSarf_TBLMemberSarf" Member="TBLDofatSarf" ThisKey="DofatSarfId" OtherKey="DofatSarfId" Type="TBLDofatSarf" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBLWarasaSarf" Member="TBLWarasaSarfs">
@@ -1574,6 +1563,18 @@
       <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="amanatAutoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="sarfcheek" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLDofatSarf" Member="TBLDofatSarfs">
+    <Type Name="TBLDofatSarf">
+      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarfDatefrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarfDateto" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="remd" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dofclosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="resarfd" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBLDofatSarf_TBLMemberSarf" Member="TBLMemberSarfs" ThisKey="DofatSarfId" OtherKey="DofatSarfId" Type="TBLMemberSarf" />
     </Type>
   </Table>
 </Database>

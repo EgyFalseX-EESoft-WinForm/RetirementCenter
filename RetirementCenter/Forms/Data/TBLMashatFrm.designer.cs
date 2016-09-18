@@ -259,6 +259,10 @@
             this.repositoryItemButtonEditResarfSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditResarfDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.coldofafrom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditCdDofaatAmanat = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSCdDofaatAmanat = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.coldofato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.xtraTabPageEditResponsable = new DevExpress.XtraTab.XtraTabPage();
             this.btnChangeResponsable = new DevExpress.XtraEditors.SimpleButton();
@@ -322,10 +326,7 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
-            this.coldofafrom = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldofato = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LSMSCdDofaatAmanat = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemLookUpEditCdDofaatAmanat = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSTBLDofatSarf2 = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
@@ -464,6 +465,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfDel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCdDofaatAmanat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCdDofaatAmanat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             this.xtraTabPageEditResponsable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueNewResponsableEditResponsable.Properties)).BeginInit();
@@ -492,8 +495,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCdDofaatAmanat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCdDofaatAmanat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -3092,7 +3094,7 @@
             this.repositoryItemGridLookUpEditDofatSarfId.AutoHeight = false;
             this.repositoryItemGridLookUpEditDofatSarfId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditDofatSarfId.DataSource = this.LSMSTBLDofatSarf;
+            this.repositoryItemGridLookUpEditDofatSarfId.DataSource = this.LSMSTBLDofatSarf2;
             this.repositoryItemGridLookUpEditDofatSarfId.DisplayMember = "DofatSarf";
             this.repositoryItemGridLookUpEditDofatSarfId.Name = "repositoryItemGridLookUpEditDofatSarfId";
             this.repositoryItemGridLookUpEditDofatSarfId.NullText = "";
@@ -3311,6 +3313,51 @@
             this.repositoryItemButtonEditResarfDel.Name = "repositoryItemButtonEditResarfDel";
             this.repositoryItemButtonEditResarfDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditResarfDel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditResarfDel_ButtonClick);
+            // 
+            // coldofafrom
+            // 
+            this.coldofafrom.AppearanceCell.Options.UseTextOptions = true;
+            this.coldofafrom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldofafrom.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldofafrom.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldofafrom.Caption = "من دفعة";
+            this.coldofafrom.ColumnEdit = this.repositoryItemLookUpEditCdDofaatAmanat;
+            this.coldofafrom.FieldName = "dofafrom";
+            this.coldofafrom.Name = "coldofafrom";
+            this.coldofafrom.Visible = true;
+            this.coldofafrom.VisibleIndex = 1;
+            // 
+            // repositoryItemLookUpEditCdDofaatAmanat
+            // 
+            this.repositoryItemLookUpEditCdDofaatAmanat.AutoHeight = false;
+            this.repositoryItemLookUpEditCdDofaatAmanat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditCdDofaatAmanat.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfA", "الاسم", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditCdDofaatAmanat.DataSource = this.LSMSCdDofaatAmanat;
+            this.repositoryItemLookUpEditCdDofaatAmanat.DisplayMember = "DofatSarfA";
+            this.repositoryItemLookUpEditCdDofaatAmanat.Name = "repositoryItemLookUpEditCdDofaatAmanat";
+            this.repositoryItemLookUpEditCdDofaatAmanat.NullText = "";
+            this.repositoryItemLookUpEditCdDofaatAmanat.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditCdDofaatAmanat.ValueMember = "DofatSarfAId";
+            // 
+            // LSMSCdDofaatAmanat
+            // 
+            this.LSMSCdDofaatAmanat.ElementType = typeof(RetirementCenter.DataSources.Linq.CdDofaatAmanat);
+            this.LSMSCdDofaatAmanat.KeyExpression = "[DofatSarfAId]";
+            // 
+            // coldofato
+            // 
+            this.coldofato.AppearanceCell.Options.UseTextOptions = true;
+            this.coldofato.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldofato.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldofato.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldofato.Caption = "الي دفعة";
+            this.coldofato.ColumnEdit = this.repositoryItemLookUpEditCdDofaatAmanat;
+            this.coldofato.FieldName = "dofato";
+            this.coldofato.Name = "coldofato";
+            this.coldofato.Visible = true;
+            this.coldofato.VisibleIndex = 2;
             // 
             // repositoryItemMemoEdit4
             // 
@@ -3832,50 +3879,10 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
-            // coldofafrom
+            // LSMSTBLDofatSarf2
             // 
-            this.coldofafrom.AppearanceCell.Options.UseTextOptions = true;
-            this.coldofafrom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldofafrom.AppearanceHeader.Options.UseTextOptions = true;
-            this.coldofafrom.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldofafrom.Caption = "من دفعة";
-            this.coldofafrom.ColumnEdit = this.repositoryItemLookUpEditCdDofaatAmanat;
-            this.coldofafrom.FieldName = "dofafrom";
-            this.coldofafrom.Name = "coldofafrom";
-            this.coldofafrom.Visible = true;
-            this.coldofafrom.VisibleIndex = 1;
-            // 
-            // coldofato
-            // 
-            this.coldofato.AppearanceCell.Options.UseTextOptions = true;
-            this.coldofato.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldofato.AppearanceHeader.Options.UseTextOptions = true;
-            this.coldofato.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldofato.Caption = "الي دفعة";
-            this.coldofato.ColumnEdit = this.repositoryItemLookUpEditCdDofaatAmanat;
-            this.coldofato.FieldName = "dofato";
-            this.coldofato.Name = "coldofato";
-            this.coldofato.Visible = true;
-            this.coldofato.VisibleIndex = 2;
-            // 
-            // LSMSCdDofaatAmanat
-            // 
-            this.LSMSCdDofaatAmanat.ElementType = typeof(RetirementCenter.DataSources.Linq.CdDofaatAmanat);
-            this.LSMSCdDofaatAmanat.KeyExpression = "[DofatSarfAId]";
-            // 
-            // repositoryItemLookUpEditCdDofaatAmanat
-            // 
-            this.repositoryItemLookUpEditCdDofaatAmanat.AutoHeight = false;
-            this.repositoryItemLookUpEditCdDofaatAmanat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditCdDofaatAmanat.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfA", "الاسم", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditCdDofaatAmanat.DataSource = this.LSMSCdDofaatAmanat;
-            this.repositoryItemLookUpEditCdDofaatAmanat.DisplayMember = "DofatSarfA";
-            this.repositoryItemLookUpEditCdDofaatAmanat.Name = "repositoryItemLookUpEditCdDofaatAmanat";
-            this.repositoryItemLookUpEditCdDofaatAmanat.NullText = "";
-            this.repositoryItemLookUpEditCdDofaatAmanat.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditCdDofaatAmanat.ValueMember = "DofatSarfAId";
+            this.LSMSTBLDofatSarf2.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSTBLDofatSarf2.KeyExpression = "[DofatSarfId]";
             // 
             // TBLMashatFrm
             // 
@@ -4033,6 +4040,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfDel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCdDofaatAmanat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCdDofaatAmanat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
             this.xtraTabPageEditResponsable.ResumeLayout(false);
             this.xtraTabPageEditResponsable.PerformLayout();
@@ -4062,8 +4071,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCdDofaatAmanat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditCdDofaatAmanat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4351,5 +4359,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldofato;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCdDofaatAmanat;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditCdDofaatAmanat;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSTBLDofatSarf2;
     }
 }

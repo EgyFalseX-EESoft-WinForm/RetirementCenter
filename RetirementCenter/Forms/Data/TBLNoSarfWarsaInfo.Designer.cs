@@ -42,9 +42,10 @@
             this.coldatein1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tBLNoSarfWarsaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter();
+            this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTBLNoSarfWarsa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLNoSarfWarsaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -55,8 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlTBLNoSarfWarsa
@@ -77,7 +79,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemCheckEdit1,
             this.repositoryItemDateEdit3,
-            this.repositoryItemLookUpEdit1});
+            this.repositoryItemLookUpEdituserin});
             this.gridControlTBLNoSarfWarsa.Size = new System.Drawing.Size(773, 321);
             this.gridControlTBLNoSarfWarsa.TabIndex = 2;
             this.gridControlTBLNoSarfWarsa.UseEmbeddedNavigator = true;
@@ -211,7 +213,7 @@
             this.coluserin1.AppearanceHeader.Options.UseTextOptions = true;
             this.coluserin1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coluserin1.Caption = "مسئول الادخال";
-            this.coluserin1.ColumnEdit = this.repositoryItemLookUpEdit1;
+            this.coluserin1.ColumnEdit = this.repositoryItemLookUpEdituserin;
             this.coluserin1.FieldName = "userin";
             this.coluserin1.Name = "coluserin1";
             this.coluserin1.OptionsColumn.AllowEdit = false;
@@ -220,17 +222,19 @@
             this.coluserin1.VisibleIndex = 4;
             this.coluserin1.Width = 139;
             // 
-            // repositoryItemLookUpEdit1
+            // repositoryItemLookUpEdituserin
             // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemLookUpEdituserin.AutoHeight = false;
+            this.repositoryItemLookUpEdituserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
-            this.repositoryItemLookUpEdit1.DisplayMember = "RealName";
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            this.repositoryItemLookUpEdit1.NullText = "";
-            this.repositoryItemLookUpEdit1.ValueMember = "UserID";
+            this.repositoryItemLookUpEdituserin.DataSource = this.LSMSUsers;
+            this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
+            this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
+            this.repositoryItemLookUpEdituserin.NullText = "";
+            this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
             // 
             // repositoryItemButtonEdit1
             // 
@@ -243,6 +247,11 @@
             // tBLNoSarfWarsaTableAdapter
             // 
             this.tBLNoSarfWarsaTableAdapter.ClearBeforeFill = true;
+            // 
+            // LSMSUsers
+            // 
+            this.LSMSUsers.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
+            this.LSMSUsers.KeyExpression = "[UserID]";
             // 
             // TBLNoSarfWarsaInfo
             // 
@@ -266,8 +275,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,10 +295,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldatein1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn coluserin1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdituserin;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DataSources.dsRetirementCenter dsRetirementCenter;
         private System.Windows.Forms.BindingSource tBLNoSarfWarsaBindingSource;
         private DataSources.dsRetirementCenterTableAdapters.TBLNoSarfWarsaTableAdapter tBLNoSarfWarsaTableAdapter;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSUsers;
     }
 }

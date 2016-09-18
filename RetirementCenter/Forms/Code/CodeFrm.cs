@@ -454,17 +454,17 @@ namespace RetirementCenter
                         }
 
                         if (rowgridViewCdDofaatAmanat["DofatSarfAId"].ToString() == string.Empty)
-                            SQLProvider.InsertTBLDofatSarf(rowgridViewCdDofaatAmanat["DofatSarfA"], rowgridViewCdDofaatAmanat["DofatSarfDatefrom"],
+                            SQLProvider.InsertCdDofaatAmanat(rowgridViewCdDofaatAmanat["DofatSarfA"], rowgridViewCdDofaatAmanat["DofatSarfDatefrom"],
                                 rowgridViewCdDofaatAmanat["DofatSarfDateto"], rowgridViewCdDofaatAmanat["remd"], rowgridViewCdDofaatAmanat["Closed"]);
                         else
                         {
                             object closed = new DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter().GetClosed((int)rowgridViewCdDofaatAmanat["DofatSarfAId"]);
-                            if (rowgridViewCdDofaatAmanat["Closed"] != null && (bool)rowgridViewCdDofaatAmanat["Closed"] == false && closed != null && (bool)closed == true)
+                            if (rowgridViewCdDofaatAmanat["Closed"] != null && closed != null && (bool)rowgridViewCdDofaatAmanat["Closed"] == false && closed != null && (bool)closed == true)
                             {
                                 Program.ShowMsg("لا يمكن اعادة فتح دفعة تم اغلاقها مسبقا", true, this, true);
                                 return;
                             }
-                            SQLProvider.UpdateTBLDofatSarf(rowgridViewCdDofaatAmanat["DofatSarfAId"], rowgridViewCdDofaatAmanat["DofatSarfA"],
+                            SQLProvider.UpdateCdDofaatAmanat(rowgridViewCdDofaatAmanat["DofatSarfAId"], rowgridViewCdDofaatAmanat["DofatSarfA"],
                                 rowgridViewCdDofaatAmanat["DofatSarfDatefrom"], rowgridViewCdDofaatAmanat["DofatSarfDateto"], rowgridViewCdDofaatAmanat["remd"], rowgridViewCdDofaatAmanat["Closed"]);
                         }
                         break;

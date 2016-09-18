@@ -107,10 +107,11 @@ namespace RetirementCenter
                 return;
             SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
             SqlCommand cmd = new SqlCommand(@"INSERT INTO TBLWarasaSarf_arshef (PersonId, DofatSarfId, SarfTypeedadId, sarfdatefrom, sarfdateto, monymonth, rsmmonth, eshtrakmonth, estktaa, sarf, datein, userin, Edafat, SyndicateId, SubCommitteId, SendBank, amanatvisa, amanatAutoId, sarfcheek)
-            VALUES (@PersonId, @DofatSarfId, 6, @sarfdatefrom, @sarfdateto, @monymonth, 0, 0, @estktaa, 1, GETDATE(), @userin, 0, @SyndicateId, @SubCommitteId, @SendBank, @amanatvisa, @amanatAutoId, @sarfcheek)
+            VALUES (@PersonId, @DofatSarfId, @SarfTypeedadId, @sarfdatefrom, @sarfdateto, @monymonth, 0, 0, @estktaa, 1, GETDATE(), @userin, 0, @SyndicateId, @SubCommitteId, @SendBank, @amanatvisa, @amanatAutoId, @sarfcheek)
             ", con);
             SqlParameter paramPersonId = new SqlParameter("@PersonId", SqlDbType.Int);
             SqlParameter paramDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
+            SqlParameter paramSarfTypeedadId = new SqlParameter("@SarfTypeedadId", SqlDbType.Int);
             SqlParameter paramsarfdatefrom = new SqlParameter("@sarfdatefrom", SqlDbType.DateTime);
             SqlParameter paramsarfdateto = new SqlParameter("@sarfdateto", SqlDbType.DateTime);
             SqlParameter parammonymonth = new SqlParameter("@monymonth", SqlDbType.Float);
@@ -122,10 +123,10 @@ namespace RetirementCenter
             SqlParameter paramamanatvisa = new SqlParameter("@amanatvisa", SqlDbType.Bit);
             SqlParameter paramamanatAutoId = new SqlParameter("@amanatAutoId", SqlDbType.Int);
             SqlParameter paramsarfcheek = new SqlParameter("@sarfcheek", SqlDbType.Bit);
-            cmd.Parameters.AddRange(new[] { paramPersonId, paramDofatSarfId, paramsarfdatefrom, paramsarfdateto, parammonymonth, paramestktaa
+            cmd.Parameters.AddRange(new[] { paramPersonId, paramDofatSarfId, paramSarfTypeedadId, paramsarfdatefrom, paramsarfdateto, parammonymonth, paramestktaa
                 , paramuserin, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa, paramamanatAutoId, paramsarfcheek});
 
-            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLWarasaSarf_arshef WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId AND SarfTypeedadId = 6", con);
+            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLWarasaSarf_arshef WHERE PersonId = @PersonId AND DofatSarfId = @DofatSarfId AND (SarfTypeedadId = 6 OR SarfTypeedadId = 7)", con);
             SqlParameter paramCheckPersonId = new SqlParameter("@PersonId", SqlDbType.Int);
             SqlParameter paramCheckDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
             cmdCheck.Parameters.AddRange(new[] { paramCheckPersonId, paramCheckDofatSarfId });
@@ -137,8 +138,15 @@ namespace RetirementCenter
             {
                 paramCheckPersonId.Value = item.PersonId;
                 paramCheckDofatSarfId.Value = item.DofatSarfId;
+                
+                if (item.amanattypeid == 1)
+                    paramSarfTypeedadId.Value = 6;
+                else
+                    paramSarfTypeedadId.Value = 7;
+
                 if ((int)cmdCheck.ExecuteScalar() != 0)
                     continue;
+
                 paramPersonId.Value = item.PersonId;
                 paramDofatSarfId.Value = item.DofatSarfId;
                 paramsarfdatefrom.Value = item.DofatSarfDatefrom;

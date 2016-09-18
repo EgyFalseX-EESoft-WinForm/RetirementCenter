@@ -488,8 +488,8 @@ namespace RetirementCenter
                         Resarfrecord.eshtrakmonth = 0;
                         Resarfrecord.estktaa = ResarfRow.reestktaa;
                         Resarfrecord.PersonId = ResarfRow.PersonId;
-                        Resarfrecord.SyndicateId = ResarfRow.SyndicateId;
-                        Resarfrecord.SubCommitteId = ResarfRow.SubCommitteId;
+                        Resarfrecord.SyndicateId = Convert.ToInt32(ResarfRow["SyndicateId"]);
+                        Resarfrecord.SubCommitteId = Convert.ToInt32(ResarfRow["SubCommitteId"]);
 
                         Getmonymonth(row1, ref Resarfrecord, ResarfManths);
                         Getrasmmonth(row1, ref Resarfrecord, Rasm, ResarfManths);

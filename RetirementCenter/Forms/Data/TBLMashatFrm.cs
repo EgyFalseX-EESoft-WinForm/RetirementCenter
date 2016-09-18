@@ -73,6 +73,7 @@ namespace RetirementCenter
             LUEEmp.Properties.View.BestFitColumns();
             LSMSCDMashHala.QueryableSource = dsLinq.CDMashHalas; LUEMashHalaId.Properties.BestFit();
             LSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs; lueDofatSarfId.Properties.BestFit();
+            LSMSTBLDofatSarf2.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.resarfd == true select q;
             LSMSCdDofaatAmanat.QueryableSource = dsLinq.CdDofaatAmanats;
             LSMSCDsarfType.QueryableSource = dsLinq.CDsarfTypes; luesarfTypeId.Properties.BestFit();
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
@@ -164,11 +165,12 @@ namespace RetirementCenter
             repositoryItemButtonEditTransferSave.Buttons[0].Visible = Updateing;
 
             btnDelete.Visible = Deleting;
-            repositoryItemButtonEditResarfDel.Buttons[0].Visible = Deleting;
+            
             repositoryItemButtonEditWarasaDel.Buttons[0].Visible = Deleting;
 
             repositoryItemButtonEditWarasaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
-
+            repositoryItemButtonEditResarfDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
+            repositoryItemButtonEditTblMemberMaduneaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
         }
         private bool DeathBefore2013(bool NewMem)
         {
@@ -1096,15 +1098,31 @@ namespace RetirementCenter
                 {
                     if (row.datefrom < dof.DofatSarfDatefrom || row.datefrom > dof.DofatSarfDateto)
                     {
-                        msgDlg.Show("خطاء في من تاريخ");
-                        return;
+                        if (!Program.UserInfo.IsAdmin)
+                        {
+                            msgDlg.Show("خطاء في من تاريخ");
+                            return;
+                        }
+                        else
+                        {
+                            if (msgDlg.Show("خطاء في من تاريخ", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                                return;
+                        }
                     }
                 }
                 int result = (int)SQLProvider.adpQry.TBLMemberSarf_arshef_GetCount_Dof_ID(row.datefrom, row.dateto, row.MMashatId);
                 if (result > 0)
                 {
-                    msgDlg.Show("تم صرف للعضو في الدفعات المدخله");
-                    return;
+                    if (!Program.UserInfo.IsAdmin)
+                    {
+                        msgDlg.Show("تم صرف للوريث في الدفعات المدخله");
+                        return;
+                    }
+                    else
+                    {
+                        if (msgDlg.Show("تم صرف للوريث في الدفعات المدخله", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                            return;
+                    }
                 }
 
 

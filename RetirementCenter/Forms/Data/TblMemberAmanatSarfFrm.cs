@@ -131,7 +131,7 @@ namespace RetirementCenter
             cmd.Parameters.AddRange(new[] { paramMMashatId, paramDofatSarfId, paramSarfTypeedadId, paramsarfdatefrom, paramsarfdateto, parammonymonth, paramrsmmonth, parameshtrakmonth, paramestktaa
                 , paramsarf, paramuserin, paramEdafat, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa, paramamanatAutoId, paramsarfcheek});
 
-            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLMemberSarf_arshef WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId AND SarfTypeedadId = 6", con);
+            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLMemberSarf_arshef WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId AND (SarfTypeedadId = 6 OR SarfTypeedadId = 7)", con);
             SqlParameter paramCheckMMashatId = new SqlParameter("@MMashatId", SqlDbType.Int);
             SqlParameter paramCheckDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
             cmdCheck.Parameters.AddRange(new[] { paramCheckMMashatId, paramCheckDofatSarfId });
@@ -147,7 +147,12 @@ namespace RetirementCenter
                     continue;
                 paramMMashatId.Value = item.MMashatId;
                 paramDofatSarfId.Value = item.DofatSarfId;
-                paramSarfTypeedadId.Value = item.SarfTypeedadId;
+
+                if (item.amanattypeid == 1)
+                    paramSarfTypeedadId.Value = 6;
+                else
+                    paramSarfTypeedadId.Value = 7;
+
                 paramsarfdatefrom.Value = item.DofatSarfDatefrom;
                 paramsarfdateto.Value = item.DofatSarfDateto;
                 parammonymonth.Value = item.amanatmony;

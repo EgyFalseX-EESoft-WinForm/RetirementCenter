@@ -51,9 +51,6 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    partial void InsertTBLDofatSarf(TBLDofatSarf instance);
-    partial void UpdateTBLDofatSarf(TBLDofatSarf instance);
-    partial void DeleteTBLDofatSarf(TBLDofatSarf instance);
     partial void InsertTBLMashat(TBLMashat instance);
     partial void UpdateTBLMashat(TBLMashat instance);
     partial void DeleteTBLMashat(TBLMashat instance);
@@ -204,6 +201,9 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvTBLWarasaSarf_arshef(vTBLWarasaSarf_arshef instance);
     partial void UpdatevTBLWarasaSarf_arshef(vTBLWarasaSarf_arshef instance);
     partial void DeletevTBLWarasaSarf_arshef(vTBLWarasaSarf_arshef instance);
+    partial void InsertTBLDofatSarf(TBLDofatSarf instance);
+    partial void UpdateTBLDofatSarf(TBLDofatSarf instance);
+    partial void DeleteTBLDofatSarf(TBLDofatSarf instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -313,14 +313,6 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<User>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBLDofatSarf> TBLDofatSarfs
-		{
-			get
-			{
-				return this.GetTable<TBLDofatSarf>();
 			}
 		}
 		
@@ -977,6 +969,14 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vTBLWarasaSarf_arshef>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBLDofatSarf> TBLDofatSarfs
+		{
+			get
+			{
+				return this.GetTable<TBLDofatSarf>();
 			}
 		}
 	}
@@ -2688,216 +2688,6 @@ namespace RetirementCenter.DataSources.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLDofatSarf")]
-	public partial class TBLDofatSarf : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DofatSarfId;
-		
-		private string _DofatSarf;
-		
-		private System.DateTime _DofatSarfDatefrom;
-		
-		private System.DateTime _DofatSarfDateto;
-		
-		private string _remd;
-		
-		private System.Nullable<bool> _dofclosed;
-		
-		private EntitySet<TBLMemberSarf> _TBLMemberSarfs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDofatSarfIdChanging(int value);
-    partial void OnDofatSarfIdChanged();
-    partial void OnDofatSarfChanging(string value);
-    partial void OnDofatSarfChanged();
-    partial void OnDofatSarfDatefromChanging(System.DateTime value);
-    partial void OnDofatSarfDatefromChanged();
-    partial void OnDofatSarfDatetoChanging(System.DateTime value);
-    partial void OnDofatSarfDatetoChanged();
-    partial void OnremdChanging(string value);
-    partial void OnremdChanged();
-    partial void OndofclosedChanging(System.Nullable<bool> value);
-    partial void OndofclosedChanged();
-    #endregion
-		
-		public TBLDofatSarf()
-		{
-			this._TBLMemberSarfs = new EntitySet<TBLMemberSarf>(new Action<TBLMemberSarf>(this.attach_TBLMemberSarfs), new Action<TBLMemberSarf>(this.detach_TBLMemberSarfs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DofatSarfId
-		{
-			get
-			{
-				return this._DofatSarfId;
-			}
-			set
-			{
-				if ((this._DofatSarfId != value))
-				{
-					this.OnDofatSarfIdChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfId = value;
-					this.SendPropertyChanged("DofatSarfId");
-					this.OnDofatSarfIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DofatSarf
-		{
-			get
-			{
-				return this._DofatSarf;
-			}
-			set
-			{
-				if ((this._DofatSarf != value))
-				{
-					this.OnDofatSarfChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarf = value;
-					this.SendPropertyChanged("DofatSarf");
-					this.OnDofatSarfChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfDatefrom", DbType="Date NOT NULL")]
-		public System.DateTime DofatSarfDatefrom
-		{
-			get
-			{
-				return this._DofatSarfDatefrom;
-			}
-			set
-			{
-				if ((this._DofatSarfDatefrom != value))
-				{
-					this.OnDofatSarfDatefromChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfDatefrom = value;
-					this.SendPropertyChanged("DofatSarfDatefrom");
-					this.OnDofatSarfDatefromChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfDateto", DbType="Date NOT NULL")]
-		public System.DateTime DofatSarfDateto
-		{
-			get
-			{
-				return this._DofatSarfDateto;
-			}
-			set
-			{
-				if ((this._DofatSarfDateto != value))
-				{
-					this.OnDofatSarfDatetoChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfDateto = value;
-					this.SendPropertyChanged("DofatSarfDateto");
-					this.OnDofatSarfDatetoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_remd", DbType="NVarChar(100)")]
-		public string remd
-		{
-			get
-			{
-				return this._remd;
-			}
-			set
-			{
-				if ((this._remd != value))
-				{
-					this.OnremdChanging(value);
-					this.SendPropertyChanging();
-					this._remd = value;
-					this.SendPropertyChanged("remd");
-					this.OnremdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dofclosed", DbType="Bit")]
-		public System.Nullable<bool> dofclosed
-		{
-			get
-			{
-				return this._dofclosed;
-			}
-			set
-			{
-				if ((this._dofclosed != value))
-				{
-					this.OndofclosedChanging(value);
-					this.SendPropertyChanging();
-					this._dofclosed = value;
-					this.SendPropertyChanged("dofclosed");
-					this.OndofclosedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLDofatSarf_TBLMemberSarf", Storage="_TBLMemberSarfs", ThisKey="DofatSarfId", OtherKey="DofatSarfId")]
-		public EntitySet<TBLMemberSarf> TBLMemberSarfs
-		{
-			get
-			{
-				return this._TBLMemberSarfs;
-			}
-			set
-			{
-				this._TBLMemberSarfs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBLMemberSarfs(TBLMemberSarf entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBLDofatSarf = this;
-		}
-		
-		private void detach_TBLMemberSarfs(TBLMemberSarf entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBLDofatSarf = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLMashat")]
 	public partial class TBLMashat : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4504,11 +4294,11 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private System.Nullable<bool> _Edafat;
 		
-		private EntityRef<TBLDofatSarf> _TBLDofatSarf;
-		
 		private EntityRef<TBLMashat> _TBLMashat;
 		
 		private EntityRef<CDSarfTypeedad> _CDSarfTypeedad;
+		
+		private EntityRef<TBLDofatSarf> _TBLDofatSarf;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4544,9 +4334,9 @@ namespace RetirementCenter.DataSources.Linq
 		
 		public TBLMemberSarf()
 		{
-			this._TBLDofatSarf = default(EntityRef<TBLDofatSarf>);
 			this._TBLMashat = default(EntityRef<TBLMashat>);
 			this._CDSarfTypeedad = default(EntityRef<CDSarfTypeedad>);
+			this._TBLDofatSarf = default(EntityRef<TBLDofatSarf>);
 			OnCreated();
 		}
 		
@@ -4822,40 +4612,6 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLDofatSarf_TBLMemberSarf", Storage="_TBLDofatSarf", ThisKey="DofatSarfId", OtherKey="DofatSarfId", IsForeignKey=true)]
-		public TBLDofatSarf TBLDofatSarf
-		{
-			get
-			{
-				return this._TBLDofatSarf.Entity;
-			}
-			set
-			{
-				TBLDofatSarf previousValue = this._TBLDofatSarf.Entity;
-				if (((previousValue != value) 
-							|| (this._TBLDofatSarf.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBLDofatSarf.Entity = null;
-						previousValue.TBLMemberSarfs.Remove(this);
-					}
-					this._TBLDofatSarf.Entity = value;
-					if ((value != null))
-					{
-						value.TBLMemberSarfs.Add(this);
-						this._DofatSarfId = value.DofatSarfId;
-					}
-					else
-					{
-						this._DofatSarfId = default(int);
-					}
-					this.SendPropertyChanged("TBLDofatSarf");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLMashat_TBLMemberSarf", Storage="_TBLMashat", ThisKey="MMashatId", OtherKey="MMashatId", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public TBLMashat TBLMashat
 		{
@@ -4920,6 +4676,40 @@ namespace RetirementCenter.DataSources.Linq
 						this._SarfTypeedadId = default(byte);
 					}
 					this.SendPropertyChanged("CDSarfTypeedad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLDofatSarf_TBLMemberSarf", Storage="_TBLDofatSarf", ThisKey="DofatSarfId", OtherKey="DofatSarfId", IsForeignKey=true)]
+		public TBLDofatSarf TBLDofatSarf
+		{
+			get
+			{
+				return this._TBLDofatSarf.Entity;
+			}
+			set
+			{
+				TBLDofatSarf previousValue = this._TBLDofatSarf.Entity;
+				if (((previousValue != value) 
+							|| (this._TBLDofatSarf.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBLDofatSarf.Entity = null;
+						previousValue.TBLMemberSarfs.Remove(this);
+					}
+					this._TBLDofatSarf.Entity = value;
+					if ((value != null))
+					{
+						value.TBLMemberSarfs.Add(this);
+						this._DofatSarfId = value.DofatSarfId;
+					}
+					else
+					{
+						this._DofatSarfId = default(int);
+					}
+					this.SendPropertyChanged("TBLDofatSarf");
 				}
 			}
 		}
@@ -30395,6 +30185,240 @@ namespace RetirementCenter.DataSources.Linq
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLDofatSarf")]
+	public partial class TBLDofatSarf : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DofatSarfId;
+		
+		private string _DofatSarf;
+		
+		private System.DateTime _DofatSarfDatefrom;
+		
+		private System.DateTime _DofatSarfDateto;
+		
+		private string _remd;
+		
+		private System.Nullable<bool> _dofclosed;
+		
+		private System.Nullable<bool> _resarfd;
+		
+		private EntitySet<TBLMemberSarf> _TBLMemberSarfs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDofatSarfIdChanging(int value);
+    partial void OnDofatSarfIdChanged();
+    partial void OnDofatSarfChanging(string value);
+    partial void OnDofatSarfChanged();
+    partial void OnDofatSarfDatefromChanging(System.DateTime value);
+    partial void OnDofatSarfDatefromChanged();
+    partial void OnDofatSarfDatetoChanging(System.DateTime value);
+    partial void OnDofatSarfDatetoChanged();
+    partial void OnremdChanging(string value);
+    partial void OnremdChanged();
+    partial void OndofclosedChanging(System.Nullable<bool> value);
+    partial void OndofclosedChanged();
+    partial void OnresarfdChanging(System.Nullable<bool> value);
+    partial void OnresarfdChanged();
+    #endregion
+		
+		public TBLDofatSarf()
+		{
+			this._TBLMemberSarfs = new EntitySet<TBLMemberSarf>(new Action<TBLMemberSarf>(this.attach_TBLMemberSarfs), new Action<TBLMemberSarf>(this.detach_TBLMemberSarfs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DofatSarfId
+		{
+			get
+			{
+				return this._DofatSarfId;
+			}
+			set
+			{
+				if ((this._DofatSarfId != value))
+				{
+					this.OnDofatSarfIdChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfId = value;
+					this.SendPropertyChanged("DofatSarfId");
+					this.OnDofatSarfIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DofatSarf
+		{
+			get
+			{
+				return this._DofatSarf;
+			}
+			set
+			{
+				if ((this._DofatSarf != value))
+				{
+					this.OnDofatSarfChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarf = value;
+					this.SendPropertyChanged("DofatSarf");
+					this.OnDofatSarfChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfDatefrom", DbType="Date NOT NULL")]
+		public System.DateTime DofatSarfDatefrom
+		{
+			get
+			{
+				return this._DofatSarfDatefrom;
+			}
+			set
+			{
+				if ((this._DofatSarfDatefrom != value))
+				{
+					this.OnDofatSarfDatefromChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfDatefrom = value;
+					this.SendPropertyChanged("DofatSarfDatefrom");
+					this.OnDofatSarfDatefromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfDateto", DbType="Date NOT NULL")]
+		public System.DateTime DofatSarfDateto
+		{
+			get
+			{
+				return this._DofatSarfDateto;
+			}
+			set
+			{
+				if ((this._DofatSarfDateto != value))
+				{
+					this.OnDofatSarfDatetoChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfDateto = value;
+					this.SendPropertyChanged("DofatSarfDateto");
+					this.OnDofatSarfDatetoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_remd", DbType="NVarChar(100)")]
+		public string remd
+		{
+			get
+			{
+				return this._remd;
+			}
+			set
+			{
+				if ((this._remd != value))
+				{
+					this.OnremdChanging(value);
+					this.SendPropertyChanging();
+					this._remd = value;
+					this.SendPropertyChanged("remd");
+					this.OnremdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dofclosed", DbType="Bit")]
+		public System.Nullable<bool> dofclosed
+		{
+			get
+			{
+				return this._dofclosed;
+			}
+			set
+			{
+				if ((this._dofclosed != value))
+				{
+					this.OndofclosedChanging(value);
+					this.SendPropertyChanging();
+					this._dofclosed = value;
+					this.SendPropertyChanged("dofclosed");
+					this.OndofclosedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resarfd", DbType="Bit")]
+		public System.Nullable<bool> resarfd
+		{
+			get
+			{
+				return this._resarfd;
+			}
+			set
+			{
+				if ((this._resarfd != value))
+				{
+					this.OnresarfdChanging(value);
+					this.SendPropertyChanging();
+					this._resarfd = value;
+					this.SendPropertyChanged("resarfd");
+					this.OnresarfdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLDofatSarf_TBLMemberSarf", Storage="_TBLMemberSarfs", ThisKey="DofatSarfId", OtherKey="DofatSarfId")]
+		public EntitySet<TBLMemberSarf> TBLMemberSarfs
+		{
+			get
+			{
+				return this._TBLMemberSarfs;
+			}
+			set
+			{
+				this._TBLMemberSarfs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBLMemberSarfs(TBLMemberSarf entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBLDofatSarf = this;
+		}
+		
+		private void detach_TBLMemberSarfs(TBLMemberSarf entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBLDofatSarf = null;
 		}
 	}
 }

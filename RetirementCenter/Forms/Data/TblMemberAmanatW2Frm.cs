@@ -30,6 +30,8 @@ namespace RetirementCenter
             _Insert = insert;
             _Update = update;
             _Delete = delete;
+            if (_row.RowState == DataRowState.Detached)
+                _row.amanattypeid = 2;
         }
         private void ActivePriv()
         {
@@ -126,7 +128,7 @@ namespace RetirementCenter
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty)
+            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty || lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty)
             {
                 msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
                 return;
@@ -154,7 +156,7 @@ namespace RetirementCenter
             _row.sarfcheek = cesarfcheek.Checked;
             if (lueamanattypeid.EditValue != null)
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
-            
+            _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
             //if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
             //{
             //    _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
@@ -171,8 +173,6 @@ namespace RetirementCenter
                 _row.accReview = true;
                 _row.useracc = Program.UserInfo.UserId;
                 _row.dateReview = serverDateTime;
-                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_byID(_row.MMashatId);
-                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter().Insert(_row.MMashatId, true, SQLProvider.ServerDateTime(), "تم تقديم طلب امانات", SQLProvider.ServerDateTime(), Program.UserInfo.UserId);
             }
 
             _row.datein = SQLProvider.ServerDateTime();
@@ -218,7 +218,13 @@ namespace RetirementCenter
             }
 
         }
-        
+        public void UpdateActive()
+        {
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            {
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_yasref_byID_ForAmanat(_row.MMashatId, Program.UserInfo.UserId);
+            }
+        }
        
     }
 }

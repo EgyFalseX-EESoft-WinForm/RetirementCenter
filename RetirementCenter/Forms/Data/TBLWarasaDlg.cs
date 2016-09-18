@@ -40,6 +40,8 @@ namespace RetirementCenter.Forms.Data
             LSMSCDWarasaType.QueryableSource = new DataSources.Linq.dsTeachersUnionViewsDataContext().CDWarasaTypes;
             LSMSCDMashHala.QueryableSource = dsLinq.CDMashHalas;
             LSMSTBLDofatSarf.QueryableSource = dsLinq.TBLDofatSarfs;
+            LSMSTBLDofatSarf2.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.resarfd == true select q;
+            LSMSCdDofaatAmanat.QueryableSource = dsLinq.CdDofaatAmanats;
             LSMSCDSyndicate.QueryableSource = dsLinq.CDSyndicates;
             LSMSCDSubCommitte.QueryableSource = dsLinq.CDSubCommittes;
             LSMSCDnationalty.QueryableSource = dsLinq.CDnationalties;
@@ -199,6 +201,7 @@ namespace RetirementCenter.Forms.Data
             }
             ceActivate.Visible = Program.UserInfo.IsAdmin;
             repositoryItemButtonEditResarfDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
+            repositoryItemButtonEditTBLWarasaMaduneaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
 
             xtraTabControlMain.SelectedTabPage = tabExtra;
             xtraTabControlMain.SelectedTabPage = tabMain;
@@ -497,6 +500,42 @@ namespace RetirementCenter.Forms.Data
                     Program.ShowMsg("الفرق ما بين تاريخ البداية و النهاية يجب ان يكون ما بين 30 و 470 يوم", true, this, true);
                     return;
                 }
+                // Set dateto to dof.DofatSarfDateto
+                System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_to = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofato) select q);
+                foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_to)
+                    row.dateto = dof.DofatSarfDateto;
+
+                System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_from = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofafrom) select q);
+                foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_from)
+                {
+                    if (row.datefrom < dof.DofatSarfDatefrom || row.datefrom > dof.DofatSarfDateto)
+                    {
+                        if (!Program.UserInfo.IsAdmin)
+                        {
+                            msgDlg.Show("خطاء في من تاريخ");
+                            return;
+                        }
+                        else
+                        {
+                            if (msgDlg.Show("خطاء في من تاريخ", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                                return;
+                        }
+                    }
+                }
+                int result = (int)SQLProvider.adpQry.TBLWarasaSarf_arshef_GetCount_Dof_ID(row.datefrom, row.dateto, row.PersonId);
+                if (result > 0)
+                {
+                    if (!Program.UserInfo.IsAdmin)
+                    {
+                        msgDlg.Show("تم صرف للعضو في الدفعات المدخله");
+                        return;
+                    }
+                    else
+                    {
+                        if (msgDlg.Show("تم صرف للعضو في الدفعات المدخله", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                            return;
+                    }
+                }
 
                 tBLReSarfWarasaTableAdapter.Update(row);
                 Program.ShowMsg("تم تعديل بيانات اعادة الصرف", false, this, true);
@@ -596,6 +635,16 @@ namespace RetirementCenter.Forms.Data
             row.userin = Program.UserInfo.UserId;
             row.datein = SQLProvider.ServerDateTime();
         }
+        private void gridViewResarf_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            DataSources.dsRetirementCenter.TBLReSarfWarasaRow row = (DataSources.dsRetirementCenter.TBLReSarfWarasaRow)((DataRowView)
+            gridViewResarf.GetRow(gridViewResarf.FocusedRowHandle)).Row;
+            if (row.IsNull("dofato"))
+                return;
+            System.Linq.IQueryable<RetirementCenter.DataSources.Linq.CdDofaatAmanat> dofs_to = (from q in dsLinq.CdDofaatAmanats where q.DofatSarfAId == Convert.ToInt32(row.dofato) select q);
+            foreach (RetirementCenter.DataSources.Linq.CdDofaatAmanat dof in dofs_to)
+                row.dateto = dof.DofatSarfDateto;
+        }
         private void repositoryItemButtonEditTBLWarasaMaduneaSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DataSources.dsRetirementCenter.TBLWarasaMaduneaRow row = (DataSources.dsRetirementCenter.TBLWarasaMaduneaRow)((DataRowView)
@@ -645,6 +694,8 @@ namespace RetirementCenter.Forms.Data
         }
 
         #endregion
+
+        
 
 
     }

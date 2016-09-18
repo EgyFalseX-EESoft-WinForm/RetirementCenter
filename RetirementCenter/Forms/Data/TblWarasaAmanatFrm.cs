@@ -150,8 +150,12 @@ namespace RetirementCenter
 
             try
             {
+                bool newRecord = false;
                 if (row.RowState == DataRowState.Detached)
+                {
                     dsRetirementCenter.TblWarasaAmanat.AddTblWarasaAmanatRow(row);
+                    newRecord = true;
+                }
                 tblWarasaAmanatBindingSource.EndEdit();
                 int effected = tblWarasaAmanatTableAdapter.Update(row);
                 if (effected == 0)
@@ -161,6 +165,8 @@ namespace RetirementCenter
                 }
                 else
                 {
+                    if (newRecord)
+                        frm.UpdateActive();
                     dsRetirementCenter.TblWarasaAmanat.AcceptChanges();
                     Program.ShowMsg("تم الحفظ", false, this, true);
                     Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);

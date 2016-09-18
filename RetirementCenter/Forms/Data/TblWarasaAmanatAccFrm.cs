@@ -117,8 +117,7 @@ namespace RetirementCenter
             //ReActive any Person with same visa as current Person
             if (row.accReview)
             {
-                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_byVisa(row.PersonId);
-                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter().InsertForVisaByPerson("تم تقديم طلب امانات", Program.UserInfo.UserId, row.PersonId);
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_yasref_byVisa_ForAmanat(row.PersonId, Program.UserInfo.UserId);
             }
             msgDlg.Show("تم حفظ التعديل", msgDlg.msgButtons.Close);
             

@@ -37,6 +37,8 @@ namespace RetirementCenter
             _Insert = insert;
             _Update = update;
             _Delete = delete;
+            if (_row.RowState == DataRowState.Detached)
+                _row.amanattypeid = 2;
         }
         private void ActivePriv()
         {
@@ -77,6 +79,7 @@ namespace RetirementCenter
                 lueDofatSarfId.EditValue = _row.DofatSarfId;
             if (!_row.IsNull("amanattypeid"))
                 lueamanattypeid.EditValue = _row.amanattypeid;
+            
         }
         
         private void FillFromWarasaBank()
@@ -102,8 +105,7 @@ namespace RetirementCenter
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             ActivePriv();
-            if (_row.RowState != DataRowState.Detached)
-            { }
+            
             LoadBinding();
 
             IsBinding = false;
@@ -111,7 +113,7 @@ namespace RetirementCenter
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty)
+            if (lueDofatSarfId.EditValue == null || lueDofatSarfId.EditValue.ToString() == string.Empty || lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty)
             {
                 msgDlg.Show("يجب اختيار الدفعه", msgDlg.msgButtons.Close);
                 return;
@@ -137,9 +139,11 @@ namespace RetirementCenter
                 _row.sefa = tbsefa.EditValue.ToString();
             _row.amantvisa = ceamantvisa.Checked;
             _row.sarfcheek = cesarfcheek.Checked;
+            _row.visa = SQLProvider.adpQry.GetWarasaVisa(_row.PersonId);
             if (lueamanattypeid.EditValue != null)
                 _row.amanattypeid = Convert.ToByte(lueamanattypeid.EditValue);
 
+            _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
             //if (lueDofatSarfId.EditValue != null && lueDofatSarfId.EditValue.ToString() != string.Empty)
             //{
             //    _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
@@ -156,8 +160,6 @@ namespace RetirementCenter
                 _row.accReview = true;
                 _row.useracc = Program.UserInfo.UserId;
                 _row.dateReview = serverDateTime;
-                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_byVisa(_row.PersonId);
-                int result2 = new DataSources.dsRetirementCenterTableAdapters.tblvisawarsaactiveTableAdapter().InsertForVisaByPerson("تم تقديم طلب امانات", Program.UserInfo.UserId, _row.PersonId);
             }
 
             _row.datein = SQLProvider.ServerDateTime();
@@ -221,7 +223,13 @@ namespace RetirementCenter
            
 
         }
-        
+        public void UpdateActive()
+        {
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            {
+                int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_yasref_byVisa_ForAmanat(_row.PersonId, Program.UserInfo.UserId);
+            }
+        }
        
     }
 }
