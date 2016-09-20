@@ -599,6 +599,14 @@ namespace RetirementCenter
                 }
                 cmd.CommandText = vQry105;
                 cmd.ExecuteNonQuery();
+                //vQry74A
+                if (CheckViewExists("vQry74A"))
+                {
+                    cmd.CommandText = DropView("vQry74A");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry74A;
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -2296,6 +2304,27 @@ FROM            dbo.TBLWarasaSarf_arshef INNER JOIN
                          dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
                          dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId
 WHERE        (dbo.TBLWarasaSarf_arshef.SarfTypeedadId = 2)
+";
+            }
+        }
+        public static string vQry74A
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry74A]
+                    AS
+                    SELECT        dbo.TBLReSarf.MMashatId, dbo.TBLReSarf.DofatSarfId, dbo.TBLReSarf.datefrom, dbo.TBLReSarf.dateto, dbo.TBLReSarf.reestktaa, dbo.TBLReSarf.datein, dbo.TBLReSarf.userin, dbo.TBLReSarf.remarks, 
+                         dbo.TBLReSarf.dofafrom, dbo.TBLReSarf.dofato, dbo.Users.RealName, dbo.TBLDofatSarf.DofatSarf, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLMashat.SyndicateId, 
+                         dbo.TBLMashat.SubCommitteId, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, TBLDofatSarf_1.DofatSarf AS DofatSarf_From, TBLDofatSarf_2.DofatSarf AS DofatSarf_To
+FROM            dbo.TBLReSarf INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLReSarf.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TBLReSarf.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
+                         dbo.Users ON dbo.TBLReSarf.userin = dbo.Users.UserID LEFT OUTER JOIN
+                         dbo.TBLDofatSarf AS TBLDofatSarf_1 ON dbo.TBLReSarf.dofafrom = TBLDofatSarf_1.DofatSarfId LEFT OUTER JOIN
+                         dbo.TBLDofatSarf AS TBLDofatSarf_2 ON dbo.TBLReSarf.dofato = TBLDofatSarf_2.DofatSarfId
 ";
             }
         }

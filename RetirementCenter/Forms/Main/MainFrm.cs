@@ -2022,6 +2022,16 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterQry74A_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry74AFrm FrmData = new Qry74AFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         private void mbRetCenterQry75_ItemClick(object sender, ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
@@ -2343,6 +2353,8 @@ namespace RetirementCenter
             SplashScreenManager.CloseForm();
         }
         #endregion
+
+        
 
         
 

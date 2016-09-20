@@ -295,6 +295,21 @@ namespace RetirementCenter
             btnUpdate.Enabled = true;
             btnDelete.Enabled = true;
         }
+        private void btnCode60Search_Click(object sender, EventArgs e)
+        {
+            if (tbCode60.EditValue == null || tbCode60.EditValue.ToString() == string.Empty)
+            {
+                return;
+            }
+            int? MMashatId = SQLProvider.adpQry.Get_MMashatId_By_Code60(Convert.ToInt32(tbCode60.EditValue));
+            if (MMashatId == null)
+            {
+                msgDlg.Show("كود 60 غير موجود");
+                return;
+            }
+            LUEEmp.EditValue = MMashatId;
+            LUEEmp_EditValueChanged(LUEEmp, EventArgs.Empty);
+        }
         private void btnNew_Click(object sender, EventArgs e)
         {
             LUESyndicateId.Enabled = true;
@@ -1115,12 +1130,12 @@ namespace RetirementCenter
                 {
                     if (!Program.UserInfo.IsAdmin)
                     {
-                        msgDlg.Show("تم صرف للوريث في الدفعات المدخله");
+                        msgDlg.Show("تم صرف للعضو في الدفعات المدخله");
                         return;
                     }
                     else
                     {
-                        if (msgDlg.Show("تم صرف للوريث في الدفعات المدخله", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                        if (msgDlg.Show("تم صرف للعضو في الدفعات المدخله", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                             return;
                     }
                 }
@@ -1300,8 +1315,6 @@ namespace RetirementCenter
             }
         }
         #endregion
-
-        
 
     }
    

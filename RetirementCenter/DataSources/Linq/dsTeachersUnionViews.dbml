@@ -1577,4 +1577,28 @@
       <Association Name="TBLDofatSarf_TBLMemberSarf" Member="TBLMemberSarfs" ThisKey="DofatSarfId" OtherKey="DofatSarfId" Type="TBLMemberSarf" />
     </Type>
   </Table>
+  <Table Name="dbo.vQry74A" Member="vQry74As">
+    <Type Name="vQry74A">
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="datefrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="dateto" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="reestktaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="remarks" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dofafrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dofato" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarf_From" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarf_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

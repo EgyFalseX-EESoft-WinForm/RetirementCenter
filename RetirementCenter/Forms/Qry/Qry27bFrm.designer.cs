@@ -84,6 +84,8 @@
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.vQry27bTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry27bTableAdapter();
             this.vQry101TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry101TableAdapter();
+            this.colDofatSarf_From = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarf_To = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry27bBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -243,7 +245,9 @@
             this.colCurrent_Yasref,
             this.colSendBank,
             this.colActivate,
-            this.colvisa});
+            this.colvisa,
+            this.colDofatSarf_From,
+            this.colDofatSarf_To});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -279,7 +283,7 @@
             this.colsarfdatefrom.FieldName = "sarfdatefrom";
             this.colsarfdatefrom.Name = "colsarfdatefrom";
             this.colsarfdatefrom.Visible = true;
-            this.colsarfdatefrom.VisibleIndex = 4;
+            this.colsarfdatefrom.VisibleIndex = 21;
             // 
             // colsarfdateto
             // 
@@ -291,7 +295,7 @@
             this.colsarfdateto.FieldName = "sarfdateto";
             this.colsarfdateto.Name = "colsarfdateto";
             this.colsarfdateto.Visible = true;
-            this.colsarfdateto.VisibleIndex = 5;
+            this.colsarfdateto.VisibleIndex = 22;
             // 
             // colmonymonth
             // 
@@ -925,6 +929,30 @@
             // 
             this.vQry101TableAdapter.ClearBeforeFill = true;
             // 
+            // colDofatSarf_From
+            // 
+            this.colDofatSarf_From.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf_From.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_From.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf_From.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_From.Caption = "من دفعة";
+            this.colDofatSarf_From.FieldName = "DofatSarf_From";
+            this.colDofatSarf_From.Name = "colDofatSarf_From";
+            this.colDofatSarf_From.Visible = true;
+            this.colDofatSarf_From.VisibleIndex = 4;
+            // 
+            // colDofatSarf_To
+            // 
+            this.colDofatSarf_To.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf_To.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_To.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf_To.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_To.Caption = "الي دفعة";
+            this.colDofatSarf_To.FieldName = "DofatSarf_To";
+            this.colDofatSarf_To.Name = "colDofatSarf_To";
+            this.colDofatSarf_To.Visible = true;
+            this.colDofatSarf_To.VisibleIndex = 5;
+            // 
             // Qry27bFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1023,6 +1051,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colamanatmony;
         private DevExpress.XtraGrid.Columns.GridColumn colamanatwareddate;
         private DataSources.dsQueriesTableAdapters.vQry101TableAdapter vQry101TableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_From;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_To;
 
     }
 }

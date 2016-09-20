@@ -34,6 +34,8 @@
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnSearch60 = new DevExpress.XtraEditors.SimpleButton();
+            this.tbCode60 = new DevExpress.XtraEditors.TextEdit();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.vQry28bBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -91,18 +93,19 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.vQry28bTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry28bTableAdapter();
             this.vQry102TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry102TableAdapter();
-            this.tbCode60 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSearch60 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colDofatSarf_From = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDofatSarf_To = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry28bBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -125,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +175,25 @@
             this.layoutControl1.Size = new System.Drawing.Size(734, 462);
             this.layoutControl1.TabIndex = 5;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnSearch60
+            // 
+            this.btnSearch60.Image = global::RetirementCenter.Properties.Resources.apply_16x16;
+            this.btnSearch60.Location = new System.Drawing.Point(284, 12);
+            this.btnSearch60.Name = "btnSearch60";
+            this.btnSearch60.Size = new System.Drawing.Size(87, 22);
+            this.btnSearch60.StyleController = this.layoutControl1;
+            this.btnSearch60.TabIndex = 8;
+            this.btnSearch60.Text = "بحث بكود 60";
+            this.btnSearch60.Click += new System.EventHandler(this.btnSearch60_Click);
+            // 
+            // tbCode60
+            // 
+            this.tbCode60.Location = new System.Drawing.Point(375, 12);
+            this.tbCode60.Name = "tbCode60";
+            this.tbCode60.Size = new System.Drawing.Size(97, 20);
+            this.tbCode60.StyleController = this.layoutControl1;
+            this.tbCode60.TabIndex = 7;
             // 
             // gridControlData
             // 
@@ -307,7 +328,9 @@
             this.colActivate,
             this.colamanatvisa,
             this.colsarfcheek,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colDofatSarf_From,
+            this.colDofatSarf_To});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -344,7 +367,7 @@
             this.colsarfdatefrom.FieldName = "sarfdatefrom";
             this.colsarfdatefrom.Name = "colsarfdatefrom";
             this.colsarfdatefrom.Visible = true;
-            this.colsarfdatefrom.VisibleIndex = 9;
+            this.colsarfdatefrom.VisibleIndex = 29;
             // 
             // colsarfdateto
             // 
@@ -356,7 +379,7 @@
             this.colsarfdateto.FieldName = "sarfdateto";
             this.colsarfdateto.Name = "colsarfdateto";
             this.colsarfdateto.Visible = true;
-            this.colsarfdateto.VisibleIndex = 10;
+            this.colsarfdateto.VisibleIndex = 30;
             // 
             // colmonymonth
             // 
@@ -566,7 +589,7 @@
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
             this.coluserin.VisibleIndex = 20;
-            this.coluserin.Width = 87;
+            this.coluserin.Width = 88;
             // 
             // repositoryItemLookUpEdituserin
             // 
@@ -606,6 +629,7 @@
             this.colresponsiblesarfId.Name = "colresponsiblesarfId";
             this.colresponsiblesarfId.Visible = true;
             this.colresponsiblesarfId.VisibleIndex = 22;
+            this.colresponsiblesarfId.Width = 78;
             // 
             // colResponsiblesarfName
             // 
@@ -618,6 +642,7 @@
             this.colResponsiblesarfName.Name = "colResponsiblesarfName";
             this.colResponsiblesarfName.Visible = true;
             this.colResponsiblesarfName.VisibleIndex = 23;
+            this.colResponsiblesarfName.Width = 85;
             // 
             // colYasref_Current
             // 
@@ -703,6 +728,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 28;
+            this.gridColumn1.Width = 105;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -1067,26 +1093,6 @@
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // vQry28bTableAdapter
-            // 
-            this.vQry28bTableAdapter.ClearBeforeFill = true;
-            // 
-            // vQry102TableAdapter
-            // 
-            this.vQry102TableAdapter.ClearBeforeFill = true;
-            // 
-            // tbCode60
-            // 
-            this.tbCode60.Location = new System.Drawing.Point(375, 12);
-            this.tbCode60.Name = "tbCode60";
-            this.tbCode60.Size = new System.Drawing.Size(97, 20);
-            this.tbCode60.StyleController = this.layoutControl1;
-            this.tbCode60.TabIndex = 7;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
@@ -1100,17 +1106,6 @@
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(33, 13);
             // 
-            // btnSearch60
-            // 
-            this.btnSearch60.Image = global::RetirementCenter.Properties.Resources.apply_16x16;
-            this.btnSearch60.Location = new System.Drawing.Point(284, 12);
-            this.btnSearch60.Name = "btnSearch60";
-            this.btnSearch60.Size = new System.Drawing.Size(87, 22);
-            this.btnSearch60.StyleController = this.layoutControl1;
-            this.btnSearch60.TabIndex = 8;
-            this.btnSearch60.Text = "بحث بكود 60";
-            this.btnSearch60.Click += new System.EventHandler(this.btnSearch60_Click);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnSearch60;
@@ -1122,6 +1117,42 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // vQry28bTableAdapter
+            // 
+            this.vQry28bTableAdapter.ClearBeforeFill = true;
+            // 
+            // vQry102TableAdapter
+            // 
+            this.vQry102TableAdapter.ClearBeforeFill = true;
+            // 
+            // colDofatSarf_From
+            // 
+            this.colDofatSarf_From.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf_From.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_From.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf_From.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_From.Caption = "من دفعة";
+            this.colDofatSarf_From.FieldName = "DofatSarf_From";
+            this.colDofatSarf_From.Name = "colDofatSarf_From";
+            this.colDofatSarf_From.Visible = true;
+            this.colDofatSarf_From.VisibleIndex = 9;
+            // 
+            // colDofatSarf_To
+            // 
+            this.colDofatSarf_To.AppearanceCell.Options.UseTextOptions = true;
+            this.colDofatSarf_To.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_To.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDofatSarf_To.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDofatSarf_To.Caption = "الي دفعة";
+            this.colDofatSarf_To.FieldName = "DofatSarf_To";
+            this.colDofatSarf_To.Name = "colDofatSarf_To";
+            this.colDofatSarf_To.Visible = true;
+            this.colDofatSarf_To.VisibleIndex = 10;
             // 
             // Qry28bFrm
             // 
@@ -1138,6 +1169,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry28bBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
@@ -1160,7 +1192,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
@@ -1238,6 +1269,8 @@
         private DevExpress.XtraEditors.TextEdit tbCode60;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_From;
+        private DevExpress.XtraGrid.Columns.GridColumn colDofatSarf_To;
 
     }
 }

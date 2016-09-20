@@ -757,6 +757,12 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry74AFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry74AFrm.designer.cs">
+      <DependentUpon>Qry74AFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry105Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2047,6 +2053,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry74AFrm.resx">
+      <DependentUpon>Qry74AFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry105Frm.resx">
       <DependentUpon>Qry105Frm.cs</DependentUpon>
