@@ -93,7 +93,7 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = (DataSources.dsRetirementCenter.TblWarasaAmanatRow)GV.GetFocusedDataRow();
-            if (!row.IsaccReviewNull() && row.accReview == true)
+            if (!row.IsaccReviewNull() && row.accReview == true && Program.UserInfo.IsAdmin == false)
             {
                 msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
                 return;
@@ -113,7 +113,7 @@ namespace RetirementCenter
                 return;
             try
             {
-                if (!row.IsaccReviewNull() && row.accReview)
+                if (!row.IsaccReviewNull() && row.accReview && Program.UserInfo.IsAdmin == false)
                 {
                     Program.ShowMsg("لا يمكن حذف عنصر تم مراجعتة", true, this);
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);

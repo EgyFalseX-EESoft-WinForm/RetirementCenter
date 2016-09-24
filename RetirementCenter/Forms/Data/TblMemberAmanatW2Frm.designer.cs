@@ -46,6 +46,10 @@
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lueamanattypeid = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colamanattype = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueDofatSarfId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSDofatSarfId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -55,6 +59,7 @@
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.tbamanatrem = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -70,11 +75,6 @@
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
-            this.lueamanattypeid = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.colamanattype = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -85,6 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueamanattypeid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDofatSarfId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -97,9 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueamanattypeid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -317,6 +317,46 @@
             this.colSubCommitte.Visible = true;
             this.colSubCommitte.VisibleIndex = 3;
             // 
+            // lueamanattypeid
+            // 
+            this.lueamanattypeid.EditValue = "";
+            this.lueamanattypeid.Location = new System.Drawing.Point(53, 420);
+            this.lueamanattypeid.Name = "lueamanattypeid";
+            this.lueamanattypeid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lueamanattypeid.Properties.Appearance.Options.UseFont = true;
+            this.lueamanattypeid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueamanattypeid.Properties.DataSource = this.LSMScd_amanattype;
+            this.lueamanattypeid.Properties.DisplayMember = "amanattype";
+            this.lueamanattypeid.Properties.NullText = "";
+            this.lueamanattypeid.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueamanattypeid.Properties.ValueMember = "amanattypeid";
+            this.lueamanattypeid.Properties.View = this.gridView3;
+            this.lueamanattypeid.Size = new System.Drawing.Size(233, 26);
+            this.lueamanattypeid.TabIndex = 9;
+            // 
+            // LSMScd_amanattype
+            // 
+            this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
+            this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colamanattype});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colamanattype
+            // 
+            this.colamanattype.Caption = "الاسم";
+            this.colamanattype.FieldName = "amanattype";
+            this.colamanattype.Name = "colamanattype";
+            this.colamanattype.Visible = true;
+            this.colamanattype.VisibleIndex = 0;
+            // 
             // lueDofatSarfId
             // 
             this.lueDofatSarfId.EditValue = "";
@@ -327,18 +367,18 @@
             this.lueDofatSarfId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDofatSarfId.Properties.DataSource = this.LSMSDofatSarfId;
-            this.lueDofatSarfId.Properties.DisplayMember = "DofatSarf";
+            this.lueDofatSarfId.Properties.DisplayMember = "DofatSarfA";
             this.lueDofatSarfId.Properties.NullText = "";
             this.lueDofatSarfId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDofatSarfId.Properties.ValueMember = "DofatSarfId";
+            this.lueDofatSarfId.Properties.ValueMember = "DofatSarfAId";
             this.lueDofatSarfId.Properties.View = this.gridView2;
             this.lueDofatSarfId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfId.TabIndex = 8;
             // 
             // LSMSDofatSarfId
             // 
-            this.LSMSDofatSarfId.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDofatSarfId.KeyExpression = "[DofatSarfId]";
+            this.LSMSDofatSarfId.ElementType = typeof(RetirementCenter.DataSources.Linq.CdDofaatAmanat);
+            this.LSMSDofatSarfId.KeyExpression = "[DofatSarfAId]";
             // 
             // gridView2
             // 
@@ -356,7 +396,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "الاسم";
-            this.gridColumn2.FieldName = "DofatSarf";
+            this.gridColumn2.FieldName = "DofatSarfA";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
@@ -410,6 +450,15 @@
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
             this.colSyndicate.VisibleIndex = 0;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl9.Location = new System.Drawing.Point(385, 423);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(75, 19);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "نوع الامانات";
             // 
             // labelControl8
             // 
@@ -561,55 +610,6 @@
             // 
             this.cdDofaatAmanatTableAdapter.ClearBeforeFill = true;
             // 
-            // lueamanattypeid
-            // 
-            this.lueamanattypeid.EditValue = "";
-            this.lueamanattypeid.Location = new System.Drawing.Point(53, 420);
-            this.lueamanattypeid.Name = "lueamanattypeid";
-            this.lueamanattypeid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lueamanattypeid.Properties.Appearance.Options.UseFont = true;
-            this.lueamanattypeid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueamanattypeid.Properties.DataSource = this.LSMScd_amanattype;
-            this.lueamanattypeid.Properties.DisplayMember = "amanattype";
-            this.lueamanattypeid.Properties.NullText = "";
-            this.lueamanattypeid.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueamanattypeid.Properties.ValueMember = "amanattypeid";
-            this.lueamanattypeid.Properties.View = this.gridView3;
-            this.lueamanattypeid.Size = new System.Drawing.Size(233, 26);
-            this.lueamanattypeid.TabIndex = 9;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colamanattype});
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl9.Location = new System.Drawing.Point(385, 423);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(75, 19);
-            this.labelControl9.TabIndex = 0;
-            this.labelControl9.Text = "نوع الامانات";
-            // 
-            // LSMScd_amanattype
-            // 
-            this.LSMScd_amanattype.ElementType = typeof(RetirementCenter.DataSources.Linq.cd_amanattype);
-            this.LSMScd_amanattype.KeyExpression = "[amanattypeid]";
-            // 
-            // colamanattype
-            // 
-            this.colamanattype.Caption = "الاسم";
-            this.colamanattype.FieldName = "amanattype";
-            this.colamanattype.Name = "colamanattype";
-            this.colamanattype.Visible = true;
-            this.colamanattype.VisibleIndex = 0;
-            // 
             // TblMemberAmanatW2Frm
             // 
             this.AcceptButton = this.btnSave;
@@ -637,6 +637,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueMMashatId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLMashat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueamanattypeid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDofatSarfId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -649,9 +652,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbmostahek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbamanatmony.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueamanattypeid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMScd_amanattype)).EndInit();
             this.ResumeLayout(false);
 
         }

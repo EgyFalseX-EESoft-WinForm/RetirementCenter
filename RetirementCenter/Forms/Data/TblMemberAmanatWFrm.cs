@@ -105,7 +105,7 @@ namespace RetirementCenter
         private void FormWFrm_Load(object sender, EventArgs e)
         {
             IsBinding = true;
-            LSMSDofatSarfId.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
+            LSMSDofatSarfId.QueryableSource = from q in dsLinq.CdDofaatAmanats where q.Closed == false select q;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
             ActivePriv();
@@ -119,6 +119,7 @@ namespace RetirementCenter
             IsBinding = false;
             //lueMMashatId.EditValueChanged += lueMMashatId_EditValueChanged;
             //lueDofatSarfAId.EditValueChanged += lueDofatSarfAId_EditValueChanged;
+            //RetirementCenter.DataSources.Linq.vTBLMashat01_V1 aaa;
         }
         
         private void btnSave_Click(object sender, EventArgs e)
@@ -186,6 +187,21 @@ namespace RetirementCenter
                 //RetirementCenter.DataSources.Linq.vTBLMashat01_V1
                 RetirementCenter.DataSources.Linq.vTBLMashat01_V1 row = (RetirementCenter.DataSources.Linq.vTBLMashat01_V1)lueMMashatId.GetSelectedDataRow();
                 tbmostahek.EditValue = row.MMashatName;
+                
+                var qry = from q in dsLinq.TBLMashats where q.MMashatId == row.MMashatId select q;
+                foreach (DataSources.Linq.TBLMashat item in qry)
+                {
+                    if (item.MashHalaId == (byte)Program.CDMashHala.Warasa)
+                    {
+                        cesarfcheek.Checked = true;
+                        cesarfcheek.Properties.ReadOnly = true;
+                    }
+                    else
+                    {
+                        cesarfcheek.Checked = false;
+                        cesarfcheek.Properties.ReadOnly = false;
+                    }
+                }
             }
             if (ceamantvisa.Checked && lueDofatSarfAId.EditValue != null && lueMMashatId.EditValue != null && lueDofatSarfAId.EditValue.ToString() != string.Empty && lueMMashatId.EditValue.ToString() != string.Empty)
             {
@@ -214,7 +230,10 @@ namespace RetirementCenter
         }
         public void UpdateActive()
         {
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            DataSources.dsRetirementCenter.TBLMashatDataTable tbl = new DataSources.dsRetirementCenter.TBLMashatDataTable();
+            DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
+            adp.FillByMMashatId(tbl, _row.MMashatId);
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7 && tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_yasref_byID_ForAmanat(_row.MMashatId, Program.UserInfo.UserId);
             }

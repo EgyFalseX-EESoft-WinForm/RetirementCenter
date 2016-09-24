@@ -199,18 +199,18 @@
             this.lueDofatSarfId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDofatSarfId.Properties.DataSource = this.LSMSDofatSarfId;
-            this.lueDofatSarfId.Properties.DisplayMember = "DofatSarf";
+            this.lueDofatSarfId.Properties.DisplayMember = "DofatSarfA";
             this.lueDofatSarfId.Properties.NullText = "";
             this.lueDofatSarfId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDofatSarfId.Properties.ValueMember = "DofatSarfId";
+            this.lueDofatSarfId.Properties.ValueMember = "DofatSarfAId";
             this.lueDofatSarfId.Properties.View = this.gridView2;
             this.lueDofatSarfId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfId.TabIndex = 8;
             // 
             // LSMSDofatSarfId
             // 
-            this.LSMSDofatSarfId.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDofatSarfId.KeyExpression = "[DofatSarfId]";
+            this.LSMSDofatSarfId.ElementType = typeof(RetirementCenter.DataSources.Linq.CdDofaatAmanat);
+            this.LSMSDofatSarfId.KeyExpression = "[DofatSarfAId]";
             // 
             // gridView2
             // 
@@ -228,7 +228,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "الاسم";
-            this.gridColumn2.FieldName = "DofatSarf";
+            this.gridColumn2.FieldName = "DofatSarfA";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;

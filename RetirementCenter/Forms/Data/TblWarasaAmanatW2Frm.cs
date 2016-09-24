@@ -100,7 +100,7 @@ namespace RetirementCenter
         {
             IsBinding = true;
             LSMSTBLWarasa.QueryableSource = from q in dsLinq.vTBLWarasa_TBLMashats where q.responsiblesarf == true select q;
-            LSMSDofatSarfId.QueryableSource = from q in dsLinq.TBLDofatSarfs where q.dofclosed == false select q;
+            LSMSDofatSarfId.QueryableSource = from q in dsLinq.CdDofaatAmanats where q.Closed == false select q;
             LSMScd_amanattype.QueryableSource = dsLinq.cd_amanattypes;
             // TODO: This line of code loads data into the 'dsRetirementCenter.CdDofaatAmanat' table. You can move, or remove it, as needed.
             this.cdDofaatAmanatTableAdapter.Fill(this.dsRetirementCenter.CdDofaatAmanat);
