@@ -525,7 +525,7 @@ namespace RetirementCenter.Forms.Data
                 int result = (int)SQLProvider.adpQry.TBLWarasaSarf_arshef_GetCount_Dof_ID(row.datefrom, row.dateto, row.PersonId);
                 if (result > 0)
                 {
-                    if (!Program.UserInfo.IsAdmin)
+                    if (!Program.UserInfo.IsAdmin && Convert.ToBoolean(SQLProvider.adpQry.RoleExists(Program.UserInfo.UserId, Program.SubAdminRole)) == false)
                     {
                         msgDlg.Show("تم صرف للعضو في الدفعات المدخله");
                         return;

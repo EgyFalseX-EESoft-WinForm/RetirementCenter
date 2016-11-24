@@ -28,6 +28,7 @@ namespace RetirementCenter
         private static DevExpress.XtraBars.Alerter.AlertControl Alert = new DevExpress.XtraBars.Alerter.AlertControl() { AutoFormDelay = 4000 };
         public static string updatePath = Application.StartupPath + @"\RetirementCenter_update.exe";
         public static string AppPath = Application.StartupPath + @"\RetirementCenter.exe";
+        public static int SubAdminRole = 200;
 
         public enum cardtype
         {
@@ -43,6 +44,11 @@ namespace RetirementCenter
         {
             Belog_el_sann = 1,
         }
+        public enum cd_amanattype
+        {
+            amanat = 6,
+            amanat2 = 7,
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -50,7 +56,7 @@ namespace RetirementCenter
         static void Main(string[] args)
         {
             PerfomeChangeExe();
-   
+            
             Alert.AlertClick += (o, e) => { Program.Logger.ShowHideLogWindow = true; };
 
             if (System.IO.File.Exists(Application.StartupPath + @"\RibbonSettings.xml"))
@@ -241,7 +247,7 @@ namespace RetirementCenter
         }
         private static bool CheckExpiration()
         {
-            DateTime periodDate = new DateTime(2017, 07, 30);
+            DateTime periodDate = new DateTime(2016, 12, 25);
             bool ReturnMe = false;
             DataSources.dsQueries ds = new DataSources.dsQueries();
             DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();

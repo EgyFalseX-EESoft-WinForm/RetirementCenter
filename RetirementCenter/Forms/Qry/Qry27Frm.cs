@@ -29,7 +29,11 @@ namespace RetirementCenter
         {
             InitializeComponent();
             btnBank.Visible = Program.UserInfo.IsAdmin;
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            if (Program.UserInfo.IsAdmin || Convert.ToBoolean(SQLProvider.adpQry.RoleExists(Program.UserInfo.UserId, Program.SubAdminRole)))
+                btnPrintExport.Visible = true;
+            else
+                btnPrintExport.Visible = false;
+            
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             panelControlMain.Visible = false;
             LSMS.QueryableSource = from q in dsLinq.vQry27s where q.MMashatId == Id select q;

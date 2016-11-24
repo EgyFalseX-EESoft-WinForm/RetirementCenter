@@ -22,7 +22,10 @@ namespace RetirementCenter
             InitializeComponent();
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             btnBank.Visible = Program.UserInfo.IsAdmin;
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            if (Program.UserInfo.IsAdmin || Convert.ToBoolean(SQLProvider.adpQry.RoleExists(Program.UserInfo.UserId, Program.SubAdminRole)))
+                btnPrintExport.Visible = true;
+            else
+                btnPrintExport.Visible = false;
             LSMS.QueryableSource = dsLinq.vQry28s;
         }
         public Qry28Frm(int Code60)
@@ -30,7 +33,7 @@ namespace RetirementCenter
             InitializeComponent();
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             btnBank.Visible = Program.UserInfo.IsAdmin;
-            btnPrintExport.Visible = Program.UserInfo.IsAdmin;
+            btnPrintExport.Visible = Program.UserInfo.IsAdmin || Convert.ToBoolean(SQLProvider.adpQry.RoleExists(Program.UserInfo.UserId, Program.SubAdminRole));
             panelControlMain.Visible = false;
             LSMS.QueryableSource = from q in dsLinq.vQry28s where q.newid == Code60 select q;
         }

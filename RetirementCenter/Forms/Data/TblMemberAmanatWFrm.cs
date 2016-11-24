@@ -31,6 +31,7 @@ namespace RetirementCenter
             _Update = update;
             _Delete = delete;
         }
+
         private void ActivePriv()
         {
         }

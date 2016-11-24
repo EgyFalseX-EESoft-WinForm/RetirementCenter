@@ -117,9 +117,6 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertCDFrook(CDFrook instance);
     partial void UpdateCDFrook(CDFrook instance);
     partial void DeleteCDFrook(CDFrook instance);
-    partial void InsertvTBLFrookWarasa(vTBLFrookWarasa instance);
-    partial void UpdatevTBLFrookWarasa(vTBLFrookWarasa instance);
-    partial void DeletevTBLFrookWarasa(vTBLFrookWarasa instance);
     partial void InsertvQry79(vQry79 instance);
     partial void UpdatevQry79(vQry79 instance);
     partial void DeletevQry79(vQry79 instance);
@@ -132,9 +129,6 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvTBLHafezSarf(vTBLHafezSarf instance);
     partial void UpdatevTBLHafezSarf(vTBLHafezSarf instance);
     partial void DeletevTBLHafezSarf(vTBLHafezSarf instance);
-    partial void InsertvTBLWarasaMadunea(vTBLWarasaMadunea instance);
-    partial void UpdatevTBLWarasaMadunea(vTBLWarasaMadunea instance);
-    partial void DeletevTBLWarasaMadunea(vTBLWarasaMadunea instance);
     partial void InsertvTblMemberMadunea(vTblMemberMadunea instance);
     partial void UpdatevTblMemberMadunea(vTblMemberMadunea instance);
     partial void DeletevTblMemberMadunea(vTblMemberMadunea instance);
@@ -207,6 +201,15 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvQry74A(vQry74A instance);
     partial void UpdatevQry74A(vQry74A instance);
     partial void DeletevQry74A(vQry74A instance);
+    partial void InsertvTBLWarasaMadunea(vTBLWarasaMadunea instance);
+    partial void UpdatevTBLWarasaMadunea(vTBLWarasaMadunea instance);
+    partial void DeletevTBLWarasaMadunea(vTBLWarasaMadunea instance);
+    partial void InsertvQry73(vQry73 instance);
+    partial void UpdatevQry73(vQry73 instance);
+    partial void DeletevQry73(vQry73 instance);
+    partial void InsertvTBLFrookWarasa(vTBLFrookWarasa instance);
+    partial void UpdatevTBLFrookWarasa(vTBLFrookWarasa instance);
+    partial void DeletevTBLFrookWarasa(vTBLFrookWarasa instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -639,14 +642,6 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vQry73> vQry73s
-		{
-			get
-			{
-				return this.GetTable<vQry73>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vtbladminremark> vtbladminremarks
 		{
 			get
@@ -751,14 +746,6 @@ namespace RetirementCenter.DataSources.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vTBLFrookWarasa> vTBLFrookWarasas
-		{
-			get
-			{
-				return this.GetTable<vTBLFrookWarasa>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vQry79> vQry79s
 		{
 			get
@@ -788,14 +775,6 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vTBLHafezSarf>();
-			}
-		}
-		
-		public System.Data.Linq.Table<vTBLWarasaMadunea> vTBLWarasaMaduneas
-		{
-			get
-			{
-				return this.GetTable<vTBLWarasaMadunea>();
 			}
 		}
 		
@@ -988,6 +967,30 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vQry74A>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLWarasaMadunea> vTBLWarasaMaduneas
+		{
+			get
+			{
+				return this.GetTable<vTBLWarasaMadunea>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vQry73> vQry73s
+		{
+			get
+			{
+				return this.GetTable<vQry73>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLFrookWarasa> vTBLFrookWarasas
+		{
+			get
+			{
+				return this.GetTable<vTBLFrookWarasa>();
 			}
 		}
 	}
@@ -12832,231 +12835,6 @@ namespace RetirementCenter.DataSources.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry73")]
-	public partial class vQry73
-	{
-		
-		private int _PersonId;
-		
-		private System.Nullable<System.DateTime> _datehala;
-		
-		private string _personName;
-		
-		private string _Syndicate;
-		
-		private string _WarasaType;
-		
-		private string _SubCommitte;
-		
-		private int _MMashatId;
-		
-		private string _MMashatName;
-		
-		private int _sarfnumber;
-		
-		private int _SyndicateId;
-		
-		private int _SubCommitteId;
-		
-		private string _halarem;
-		
-		public vQry73()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
-		public int PersonId
-		{
-			get
-			{
-				return this._PersonId;
-			}
-			set
-			{
-				if ((this._PersonId != value))
-				{
-					this._PersonId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datehala", DbType="Date")]
-		public System.Nullable<System.DateTime> datehala
-		{
-			get
-			{
-				return this._datehala;
-			}
-			set
-			{
-				if ((this._datehala != value))
-				{
-					this._datehala = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string personName
-		{
-			get
-			{
-				return this._personName;
-			}
-			set
-			{
-				if ((this._personName != value))
-				{
-					this._personName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Syndicate
-		{
-			get
-			{
-				return this._Syndicate;
-			}
-			set
-			{
-				if ((this._Syndicate != value))
-				{
-					this._Syndicate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WarasaType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string WarasaType
-		{
-			get
-			{
-				return this._WarasaType;
-			}
-			set
-			{
-				if ((this._WarasaType != value))
-				{
-					this._WarasaType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string SubCommitte
-		{
-			get
-			{
-				return this._SubCommitte;
-			}
-			set
-			{
-				if ((this._SubCommitte != value))
-				{
-					this._SubCommitte = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
-		public int MMashatId
-		{
-			get
-			{
-				return this._MMashatId;
-			}
-			set
-			{
-				if ((this._MMashatId != value))
-				{
-					this._MMashatId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
-		public string MMashatName
-		{
-			get
-			{
-				return this._MMashatName;
-			}
-			set
-			{
-				if ((this._MMashatName != value))
-				{
-					this._MMashatName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
-		public int sarfnumber
-		{
-			get
-			{
-				return this._sarfnumber;
-			}
-			set
-			{
-				if ((this._sarfnumber != value))
-				{
-					this._sarfnumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
-		public int SyndicateId
-		{
-			get
-			{
-				return this._SyndicateId;
-			}
-			set
-			{
-				if ((this._SyndicateId != value))
-				{
-					this._SyndicateId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
-		public int SubCommitteId
-		{
-			get
-			{
-				return this._SubCommitteId;
-			}
-			set
-			{
-				if ((this._SubCommitteId != value))
-				{
-					this._SubCommitteId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halarem", DbType="NVarChar(100)")]
-		public string halarem
-		{
-			get
-			{
-				return this._halarem;
-			}
-			set
-			{
-				if ((this._halarem != value))
-				{
-					this._halarem = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vtbladminremarks")]
 	public partial class vtbladminremark : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -17295,476 +17073,6 @@ namespace RetirementCenter.DataSources.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLFrookWarasa")]
-	public partial class vTBLFrookWarasa : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _frookaouto;
-		
-		private int _PersonId;
-		
-		private int _DofatSarfId;
-		
-		private byte _frookid;
-		
-		private double _frookmony;
-		
-		private string _frookreson;
-		
-		private System.Nullable<bool> _adminconfirm;
-		
-		private System.Nullable<int> _userinadmin;
-		
-		private int _userin;
-		
-		private System.DateTime _datein;
-		
-		private string _frookname;
-		
-		private string _RealName;
-		
-		private string _personName;
-		
-		private string _Syndicate;
-		
-		private string _SubCommitte;
-		
-		private string _MMashatName;
-		
-		private int _sarfnumber;
-		
-		private string _DofatSarf;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnfrookaoutoChanging(int value);
-    partial void OnfrookaoutoChanged();
-    partial void OnPersonIdChanging(int value);
-    partial void OnPersonIdChanged();
-    partial void OnDofatSarfIdChanging(int value);
-    partial void OnDofatSarfIdChanged();
-    partial void OnfrookidChanging(byte value);
-    partial void OnfrookidChanged();
-    partial void OnfrookmonyChanging(double value);
-    partial void OnfrookmonyChanged();
-    partial void OnfrookresonChanging(string value);
-    partial void OnfrookresonChanged();
-    partial void OnadminconfirmChanging(System.Nullable<bool> value);
-    partial void OnadminconfirmChanged();
-    partial void OnuserinadminChanging(System.Nullable<int> value);
-    partial void OnuserinadminChanged();
-    partial void OnuserinChanging(int value);
-    partial void OnuserinChanged();
-    partial void OndateinChanging(System.DateTime value);
-    partial void OndateinChanged();
-    partial void OnfrooknameChanging(string value);
-    partial void OnfrooknameChanged();
-    partial void OnRealNameChanging(string value);
-    partial void OnRealNameChanged();
-    partial void OnpersonNameChanging(string value);
-    partial void OnpersonNameChanged();
-    partial void OnSyndicateChanging(string value);
-    partial void OnSyndicateChanged();
-    partial void OnSubCommitteChanging(string value);
-    partial void OnSubCommitteChanged();
-    partial void OnMMashatNameChanging(string value);
-    partial void OnMMashatNameChanged();
-    partial void OnsarfnumberChanging(int value);
-    partial void OnsarfnumberChanged();
-    partial void OnDofatSarfChanging(string value);
-    partial void OnDofatSarfChanged();
-    #endregion
-		
-		public vTBLFrookWarasa()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookaouto", DbType="Int NOT NULL")]
-		public int frookaouto
-		{
-			get
-			{
-				return this._frookaouto;
-			}
-			set
-			{
-				if ((this._frookaouto != value))
-				{
-					this.OnfrookaoutoChanging(value);
-					this.SendPropertyChanging();
-					this._frookaouto = value;
-					this.SendPropertyChanged("frookaouto");
-					this.OnfrookaoutoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int PersonId
-		{
-			get
-			{
-				return this._PersonId;
-			}
-			set
-			{
-				if ((this._PersonId != value))
-				{
-					this.OnPersonIdChanging(value);
-					this.SendPropertyChanging();
-					this._PersonId = value;
-					this.SendPropertyChanged("PersonId");
-					this.OnPersonIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DofatSarfId
-		{
-			get
-			{
-				return this._DofatSarfId;
-			}
-			set
-			{
-				if ((this._DofatSarfId != value))
-				{
-					this.OnDofatSarfIdChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfId = value;
-					this.SendPropertyChanged("DofatSarfId");
-					this.OnDofatSarfIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookid", DbType="TinyInt NOT NULL")]
-		public byte frookid
-		{
-			get
-			{
-				return this._frookid;
-			}
-			set
-			{
-				if ((this._frookid != value))
-				{
-					this.OnfrookidChanging(value);
-					this.SendPropertyChanging();
-					this._frookid = value;
-					this.SendPropertyChanged("frookid");
-					this.OnfrookidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookmony", DbType="Float NOT NULL")]
-		public double frookmony
-		{
-			get
-			{
-				return this._frookmony;
-			}
-			set
-			{
-				if ((this._frookmony != value))
-				{
-					this.OnfrookmonyChanging(value);
-					this.SendPropertyChanging();
-					this._frookmony = value;
-					this.SendPropertyChanged("frookmony");
-					this.OnfrookmonyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookreson", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string frookreson
-		{
-			get
-			{
-				return this._frookreson;
-			}
-			set
-			{
-				if ((this._frookreson != value))
-				{
-					this.OnfrookresonChanging(value);
-					this.SendPropertyChanging();
-					this._frookreson = value;
-					this.SendPropertyChanged("frookreson");
-					this.OnfrookresonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adminconfirm", DbType="Bit")]
-		public System.Nullable<bool> adminconfirm
-		{
-			get
-			{
-				return this._adminconfirm;
-			}
-			set
-			{
-				if ((this._adminconfirm != value))
-				{
-					this.OnadminconfirmChanging(value);
-					this.SendPropertyChanging();
-					this._adminconfirm = value;
-					this.SendPropertyChanged("adminconfirm");
-					this.OnadminconfirmChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userinadmin", DbType="Int")]
-		public System.Nullable<int> userinadmin
-		{
-			get
-			{
-				return this._userinadmin;
-			}
-			set
-			{
-				if ((this._userinadmin != value))
-				{
-					this.OnuserinadminChanging(value);
-					this.SendPropertyChanging();
-					this._userinadmin = value;
-					this.SendPropertyChanged("userinadmin");
-					this.OnuserinadminChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
-		public int userin
-		{
-			get
-			{
-				return this._userin;
-			}
-			set
-			{
-				if ((this._userin != value))
-				{
-					this.OnuserinChanging(value);
-					this.SendPropertyChanging();
-					this._userin = value;
-					this.SendPropertyChanged("userin");
-					this.OnuserinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
-		public System.DateTime datein
-		{
-			get
-			{
-				return this._datein;
-			}
-			set
-			{
-				if ((this._datein != value))
-				{
-					this.OndateinChanging(value);
-					this.SendPropertyChanging();
-					this._datein = value;
-					this.SendPropertyChanged("datein");
-					this.OndateinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookname", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string frookname
-		{
-			get
-			{
-				return this._frookname;
-			}
-			set
-			{
-				if ((this._frookname != value))
-				{
-					this.OnfrooknameChanging(value);
-					this.SendPropertyChanging();
-					this._frookname = value;
-					this.SendPropertyChanged("frookname");
-					this.OnfrooknameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
-		public string RealName
-		{
-			get
-			{
-				return this._RealName;
-			}
-			set
-			{
-				if ((this._RealName != value))
-				{
-					this.OnRealNameChanging(value);
-					this.SendPropertyChanging();
-					this._RealName = value;
-					this.SendPropertyChanged("RealName");
-					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string personName
-		{
-			get
-			{
-				return this._personName;
-			}
-			set
-			{
-				if ((this._personName != value))
-				{
-					this.OnpersonNameChanging(value);
-					this.SendPropertyChanging();
-					this._personName = value;
-					this.SendPropertyChanged("personName");
-					this.OnpersonNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Syndicate
-		{
-			get
-			{
-				return this._Syndicate;
-			}
-			set
-			{
-				if ((this._Syndicate != value))
-				{
-					this.OnSyndicateChanging(value);
-					this.SendPropertyChanging();
-					this._Syndicate = value;
-					this.SendPropertyChanged("Syndicate");
-					this.OnSyndicateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string SubCommitte
-		{
-			get
-			{
-				return this._SubCommitte;
-			}
-			set
-			{
-				if ((this._SubCommitte != value))
-				{
-					this.OnSubCommitteChanging(value);
-					this.SendPropertyChanging();
-					this._SubCommitte = value;
-					this.SendPropertyChanged("SubCommitte");
-					this.OnSubCommitteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
-		public string MMashatName
-		{
-			get
-			{
-				return this._MMashatName;
-			}
-			set
-			{
-				if ((this._MMashatName != value))
-				{
-					this.OnMMashatNameChanging(value);
-					this.SendPropertyChanging();
-					this._MMashatName = value;
-					this.SendPropertyChanged("MMashatName");
-					this.OnMMashatNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
-		public int sarfnumber
-		{
-			get
-			{
-				return this._sarfnumber;
-			}
-			set
-			{
-				if ((this._sarfnumber != value))
-				{
-					this.OnsarfnumberChanging(value);
-					this.SendPropertyChanging();
-					this._sarfnumber = value;
-					this.SendPropertyChanged("sarfnumber");
-					this.OnsarfnumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DofatSarf
-		{
-			get
-			{
-				return this._DofatSarf;
-			}
-			set
-			{
-				if ((this._DofatSarf != value))
-				{
-					this.OnDofatSarfChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarf = value;
-					this.SendPropertyChanged("DofatSarf");
-					this.OnDofatSarfChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry79")]
 	public partial class vQry79 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -19716,428 +19024,6 @@ namespace RetirementCenter.DataSources.Linq
 					this._RealName = value;
 					this.SendPropertyChanged("RealName");
 					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLWarasaMadunea")]
-	public partial class vTBLWarasaMadunea : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaduniaAuto;
-		
-		private int _DofatSarfMId;
-		
-		private int _PersonId;
-		
-		private double _mostahk;
-		
-		private string _mremark;
-		
-		private System.DateTime _datein;
-		
-		private int _userin;
-		
-		private string _DofatSarfM;
-		
-		private string _RealName;
-		
-		private string _personName;
-		
-		private int _SyndicateId;
-		
-		private int _SubCommitteId;
-		
-		private string _Syndicate;
-		
-		private string _SubCommitte;
-		
-		private string _MMashatName;
-		
-		private int _sarfnumber;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaduniaAutoChanging(int value);
-    partial void OnMaduniaAutoChanged();
-    partial void OnDofatSarfMIdChanging(int value);
-    partial void OnDofatSarfMIdChanged();
-    partial void OnPersonIdChanging(int value);
-    partial void OnPersonIdChanged();
-    partial void OnmostahkChanging(double value);
-    partial void OnmostahkChanged();
-    partial void OnmremarkChanging(string value);
-    partial void OnmremarkChanged();
-    partial void OndateinChanging(System.DateTime value);
-    partial void OndateinChanged();
-    partial void OnuserinChanging(int value);
-    partial void OnuserinChanged();
-    partial void OnDofatSarfMChanging(string value);
-    partial void OnDofatSarfMChanged();
-    partial void OnRealNameChanging(string value);
-    partial void OnRealNameChanged();
-    partial void OnpersonNameChanging(string value);
-    partial void OnpersonNameChanged();
-    partial void OnSyndicateIdChanging(int value);
-    partial void OnSyndicateIdChanged();
-    partial void OnSubCommitteIdChanging(int value);
-    partial void OnSubCommitteIdChanged();
-    partial void OnSyndicateChanging(string value);
-    partial void OnSyndicateChanged();
-    partial void OnSubCommitteChanging(string value);
-    partial void OnSubCommitteChanged();
-    partial void OnMMashatNameChanging(string value);
-    partial void OnMMashatNameChanged();
-    partial void OnsarfnumberChanging(int value);
-    partial void OnsarfnumberChanged();
-    #endregion
-		
-		public vTBLWarasaMadunea()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaduniaAuto", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaduniaAuto
-		{
-			get
-			{
-				return this._MaduniaAuto;
-			}
-			set
-			{
-				if ((this._MaduniaAuto != value))
-				{
-					this.OnMaduniaAutoChanging(value);
-					this.SendPropertyChanging();
-					this._MaduniaAuto = value;
-					this.SendPropertyChanged("MaduniaAuto");
-					this.OnMaduniaAutoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfMId", DbType="Int NOT NULL")]
-		public int DofatSarfMId
-		{
-			get
-			{
-				return this._DofatSarfMId;
-			}
-			set
-			{
-				if ((this._DofatSarfMId != value))
-				{
-					this.OnDofatSarfMIdChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfMId = value;
-					this.SendPropertyChanged("DofatSarfMId");
-					this.OnDofatSarfMIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
-		public int PersonId
-		{
-			get
-			{
-				return this._PersonId;
-			}
-			set
-			{
-				if ((this._PersonId != value))
-				{
-					this.OnPersonIdChanging(value);
-					this.SendPropertyChanging();
-					this._PersonId = value;
-					this.SendPropertyChanged("PersonId");
-					this.OnPersonIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mostahk", DbType="Float NOT NULL")]
-		public double mostahk
-		{
-			get
-			{
-				return this._mostahk;
-			}
-			set
-			{
-				if ((this._mostahk != value))
-				{
-					this.OnmostahkChanging(value);
-					this.SendPropertyChanging();
-					this._mostahk = value;
-					this.SendPropertyChanged("mostahk");
-					this.OnmostahkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mremark", DbType="NVarChar(150)")]
-		public string mremark
-		{
-			get
-			{
-				return this._mremark;
-			}
-			set
-			{
-				if ((this._mremark != value))
-				{
-					this.OnmremarkChanging(value);
-					this.SendPropertyChanging();
-					this._mremark = value;
-					this.SendPropertyChanged("mremark");
-					this.OnmremarkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
-		public System.DateTime datein
-		{
-			get
-			{
-				return this._datein;
-			}
-			set
-			{
-				if ((this._datein != value))
-				{
-					this.OndateinChanging(value);
-					this.SendPropertyChanging();
-					this._datein = value;
-					this.SendPropertyChanged("datein");
-					this.OndateinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
-		public int userin
-		{
-			get
-			{
-				return this._userin;
-			}
-			set
-			{
-				if ((this._userin != value))
-				{
-					this.OnuserinChanging(value);
-					this.SendPropertyChanging();
-					this._userin = value;
-					this.SendPropertyChanged("userin");
-					this.OnuserinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfM", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DofatSarfM
-		{
-			get
-			{
-				return this._DofatSarfM;
-			}
-			set
-			{
-				if ((this._DofatSarfM != value))
-				{
-					this.OnDofatSarfMChanging(value);
-					this.SendPropertyChanging();
-					this._DofatSarfM = value;
-					this.SendPropertyChanged("DofatSarfM");
-					this.OnDofatSarfMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
-		public string RealName
-		{
-			get
-			{
-				return this._RealName;
-			}
-			set
-			{
-				if ((this._RealName != value))
-				{
-					this.OnRealNameChanging(value);
-					this.SendPropertyChanging();
-					this._RealName = value;
-					this.SendPropertyChanged("RealName");
-					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string personName
-		{
-			get
-			{
-				return this._personName;
-			}
-			set
-			{
-				if ((this._personName != value))
-				{
-					this.OnpersonNameChanging(value);
-					this.SendPropertyChanging();
-					this._personName = value;
-					this.SendPropertyChanged("personName");
-					this.OnpersonNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
-		public int SyndicateId
-		{
-			get
-			{
-				return this._SyndicateId;
-			}
-			set
-			{
-				if ((this._SyndicateId != value))
-				{
-					this.OnSyndicateIdChanging(value);
-					this.SendPropertyChanging();
-					this._SyndicateId = value;
-					this.SendPropertyChanged("SyndicateId");
-					this.OnSyndicateIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
-		public int SubCommitteId
-		{
-			get
-			{
-				return this._SubCommitteId;
-			}
-			set
-			{
-				if ((this._SubCommitteId != value))
-				{
-					this.OnSubCommitteIdChanging(value);
-					this.SendPropertyChanging();
-					this._SubCommitteId = value;
-					this.SendPropertyChanged("SubCommitteId");
-					this.OnSubCommitteIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Syndicate
-		{
-			get
-			{
-				return this._Syndicate;
-			}
-			set
-			{
-				if ((this._Syndicate != value))
-				{
-					this.OnSyndicateChanging(value);
-					this.SendPropertyChanging();
-					this._Syndicate = value;
-					this.SendPropertyChanged("Syndicate");
-					this.OnSyndicateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string SubCommitte
-		{
-			get
-			{
-				return this._SubCommitte;
-			}
-			set
-			{
-				if ((this._SubCommitte != value))
-				{
-					this.OnSubCommitteChanging(value);
-					this.SendPropertyChanging();
-					this._SubCommitte = value;
-					this.SendPropertyChanged("SubCommitte");
-					this.OnSubCommitteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
-		public string MMashatName
-		{
-			get
-			{
-				return this._MMashatName;
-			}
-			set
-			{
-				if ((this._MMashatName != value))
-				{
-					this.OnMMashatNameChanging(value);
-					this.SendPropertyChanging();
-					this._MMashatName = value;
-					this.SendPropertyChanged("MMashatName");
-					this.OnMMashatNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
-		public int sarfnumber
-		{
-			get
-			{
-				return this._sarfnumber;
-			}
-			set
-			{
-				if ((this._sarfnumber != value))
-				{
-					this.OnsarfnumberChanging(value);
-					this.SendPropertyChanging();
-					this._sarfnumber = value;
-					this.SendPropertyChanged("sarfnumber");
-					this.OnsarfnumberChanged();
 				}
 			}
 		}
@@ -30926,6 +29812,1296 @@ namespace RetirementCenter.DataSources.Linq
 					this._DofatSarf_To = value;
 					this.SendPropertyChanged("DofatSarf_To");
 					this.OnDofatSarf_ToChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLWarasaMadunea")]
+	public partial class vTBLWarasaMadunea : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaduniaAuto;
+		
+		private int _DofatSarfMId;
+		
+		private int _PersonId;
+		
+		private double _mostahk;
+		
+		private string _mremark;
+		
+		private System.DateTime _datein;
+		
+		private int _userin;
+		
+		private string _DofatSarfM;
+		
+		private string _RealName;
+		
+		private string _personName;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private int _MMashatId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaduniaAutoChanging(int value);
+    partial void OnMaduniaAutoChanged();
+    partial void OnDofatSarfMIdChanging(int value);
+    partial void OnDofatSarfMIdChanged();
+    partial void OnPersonIdChanging(int value);
+    partial void OnPersonIdChanged();
+    partial void OnmostahkChanging(double value);
+    partial void OnmostahkChanged();
+    partial void OnmremarkChanging(string value);
+    partial void OnmremarkChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OnDofatSarfMChanging(string value);
+    partial void OnDofatSarfMChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnpersonNameChanging(string value);
+    partial void OnpersonNameChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    #endregion
+		
+		public vTBLWarasaMadunea()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaduniaAuto", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaduniaAuto
+		{
+			get
+			{
+				return this._MaduniaAuto;
+			}
+			set
+			{
+				if ((this._MaduniaAuto != value))
+				{
+					this.OnMaduniaAutoChanging(value);
+					this.SendPropertyChanging();
+					this._MaduniaAuto = value;
+					this.SendPropertyChanged("MaduniaAuto");
+					this.OnMaduniaAutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfMId", DbType="Int NOT NULL")]
+		public int DofatSarfMId
+		{
+			get
+			{
+				return this._DofatSarfMId;
+			}
+			set
+			{
+				if ((this._DofatSarfMId != value))
+				{
+					this.OnDofatSarfMIdChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfMId = value;
+					this.SendPropertyChanged("DofatSarfMId");
+					this.OnDofatSarfMIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL")]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this.OnPersonIdChanging(value);
+					this.SendPropertyChanging();
+					this._PersonId = value;
+					this.SendPropertyChanged("PersonId");
+					this.OnPersonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mostahk", DbType="Float NOT NULL")]
+		public double mostahk
+		{
+			get
+			{
+				return this._mostahk;
+			}
+			set
+			{
+				if ((this._mostahk != value))
+				{
+					this.OnmostahkChanging(value);
+					this.SendPropertyChanging();
+					this._mostahk = value;
+					this.SendPropertyChanged("mostahk");
+					this.OnmostahkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mremark", DbType="NVarChar(150)")]
+		public string mremark
+		{
+			get
+			{
+				return this._mremark;
+			}
+			set
+			{
+				if ((this._mremark != value))
+				{
+					this.OnmremarkChanging(value);
+					this.SendPropertyChanging();
+					this._mremark = value;
+					this.SendPropertyChanged("mremark");
+					this.OnmremarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfM", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DofatSarfM
+		{
+			get
+			{
+				return this._DofatSarfM;
+			}
+			set
+			{
+				if ((this._DofatSarfM != value))
+				{
+					this.OnDofatSarfMChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfM = value;
+					this.SendPropertyChanged("DofatSarfM");
+					this.OnDofatSarfMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string personName
+		{
+			get
+			{
+				return this._personName;
+			}
+			set
+			{
+				if ((this._personName != value))
+				{
+					this.OnpersonNameChanging(value);
+					this.SendPropertyChanging();
+					this._personName = value;
+					this.SendPropertyChanged("personName");
+					this.OnpersonNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry73")]
+	public partial class vQry73 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PersonId;
+		
+		private System.Nullable<System.DateTime> _datehala;
+		
+		private string _personName;
+		
+		private string _Syndicate;
+		
+		private string _WarasaType;
+		
+		private string _SubCommitte;
+		
+		private int _MMashatId;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private int _SyndicateId;
+		
+		private int _SubCommitteId;
+		
+		private bool _yasref;
+		
+		private string _halarem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPersonIdChanging(int value);
+    partial void OnPersonIdChanged();
+    partial void OndatehalaChanging(System.Nullable<System.DateTime> value);
+    partial void OndatehalaChanged();
+    partial void OnpersonNameChanging(string value);
+    partial void OnpersonNameChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnWarasaTypeChanging(string value);
+    partial void OnWarasaTypeChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnSyndicateIdChanging(int value);
+    partial void OnSyndicateIdChanged();
+    partial void OnSubCommitteIdChanging(int value);
+    partial void OnSubCommitteIdChanged();
+    partial void OnyasrefChanging(bool value);
+    partial void OnyasrefChanged();
+    partial void OnhalaremChanging(string value);
+    partial void OnhalaremChanged();
+    #endregion
+		
+		public vQry73()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this.OnPersonIdChanging(value);
+					this.SendPropertyChanging();
+					this._PersonId = value;
+					this.SendPropertyChanged("PersonId");
+					this.OnPersonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datehala", DbType="Date")]
+		public System.Nullable<System.DateTime> datehala
+		{
+			get
+			{
+				return this._datehala;
+			}
+			set
+			{
+				if ((this._datehala != value))
+				{
+					this.OndatehalaChanging(value);
+					this.SendPropertyChanging();
+					this._datehala = value;
+					this.SendPropertyChanged("datehala");
+					this.OndatehalaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string personName
+		{
+			get
+			{
+				return this._personName;
+			}
+			set
+			{
+				if ((this._personName != value))
+				{
+					this.OnpersonNameChanging(value);
+					this.SendPropertyChanging();
+					this._personName = value;
+					this.SendPropertyChanged("personName");
+					this.OnpersonNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WarasaType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string WarasaType
+		{
+			get
+			{
+				return this._WarasaType;
+			}
+			set
+			{
+				if ((this._WarasaType != value))
+				{
+					this.OnWarasaTypeChanging(value);
+					this.SendPropertyChanging();
+					this._WarasaType = value;
+					this.SendPropertyChanged("WarasaType");
+					this.OnWarasaTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyndicateId", DbType="Int NOT NULL")]
+		public int SyndicateId
+		{
+			get
+			{
+				return this._SyndicateId;
+			}
+			set
+			{
+				if ((this._SyndicateId != value))
+				{
+					this.OnSyndicateIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyndicateId = value;
+					this.SendPropertyChanged("SyndicateId");
+					this.OnSyndicateIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitteId", DbType="Int NOT NULL")]
+		public int SubCommitteId
+		{
+			get
+			{
+				return this._SubCommitteId;
+			}
+			set
+			{
+				if ((this._SubCommitteId != value))
+				{
+					this.OnSubCommitteIdChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitteId = value;
+					this.SendPropertyChanged("SubCommitteId");
+					this.OnSubCommitteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yasref", DbType="Bit NOT NULL")]
+		public bool yasref
+		{
+			get
+			{
+				return this._yasref;
+			}
+			set
+			{
+				if ((this._yasref != value))
+				{
+					this.OnyasrefChanging(value);
+					this.SendPropertyChanging();
+					this._yasref = value;
+					this.SendPropertyChanged("yasref");
+					this.OnyasrefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halarem", DbType="NVarChar(100)")]
+		public string halarem
+		{
+			get
+			{
+				return this._halarem;
+			}
+			set
+			{
+				if ((this._halarem != value))
+				{
+					this.OnhalaremChanging(value);
+					this.SendPropertyChanging();
+					this._halarem = value;
+					this.SendPropertyChanged("halarem");
+					this.OnhalaremChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLFrookWarasa")]
+	public partial class vTBLFrookWarasa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _frookaouto;
+		
+		private int _PersonId;
+		
+		private int _DofatSarfId;
+		
+		private byte _frookid;
+		
+		private double _frookmony;
+		
+		private string _frookreson;
+		
+		private System.Nullable<bool> _adminconfirm;
+		
+		private System.Nullable<int> _userinadmin;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private string _frookname;
+		
+		private string _RealName;
+		
+		private string _personName;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private string _DofatSarf;
+		
+		private int _MMashatId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnfrookaoutoChanging(int value);
+    partial void OnfrookaoutoChanged();
+    partial void OnPersonIdChanging(int value);
+    partial void OnPersonIdChanged();
+    partial void OnDofatSarfIdChanging(int value);
+    partial void OnDofatSarfIdChanged();
+    partial void OnfrookidChanging(byte value);
+    partial void OnfrookidChanged();
+    partial void OnfrookmonyChanging(double value);
+    partial void OnfrookmonyChanged();
+    partial void OnfrookresonChanging(string value);
+    partial void OnfrookresonChanged();
+    partial void OnadminconfirmChanging(System.Nullable<bool> value);
+    partial void OnadminconfirmChanged();
+    partial void OnuserinadminChanging(System.Nullable<int> value);
+    partial void OnuserinadminChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnfrooknameChanging(string value);
+    partial void OnfrooknameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnpersonNameChanging(string value);
+    partial void OnpersonNameChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnDofatSarfChanging(string value);
+    partial void OnDofatSarfChanged();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    #endregion
+		
+		public vTBLFrookWarasa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookaouto", DbType="Int NOT NULL")]
+		public int frookaouto
+		{
+			get
+			{
+				return this._frookaouto;
+			}
+			set
+			{
+				if ((this._frookaouto != value))
+				{
+					this.OnfrookaoutoChanging(value);
+					this.SendPropertyChanging();
+					this._frookaouto = value;
+					this.SendPropertyChanged("frookaouto");
+					this.OnfrookaoutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this.OnPersonIdChanging(value);
+					this.SendPropertyChanging();
+					this._PersonId = value;
+					this.SendPropertyChanged("PersonId");
+					this.OnPersonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarfId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DofatSarfId
+		{
+			get
+			{
+				return this._DofatSarfId;
+			}
+			set
+			{
+				if ((this._DofatSarfId != value))
+				{
+					this.OnDofatSarfIdChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarfId = value;
+					this.SendPropertyChanged("DofatSarfId");
+					this.OnDofatSarfIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookid", DbType="TinyInt NOT NULL")]
+		public byte frookid
+		{
+			get
+			{
+				return this._frookid;
+			}
+			set
+			{
+				if ((this._frookid != value))
+				{
+					this.OnfrookidChanging(value);
+					this.SendPropertyChanging();
+					this._frookid = value;
+					this.SendPropertyChanged("frookid");
+					this.OnfrookidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookmony", DbType="Float NOT NULL")]
+		public double frookmony
+		{
+			get
+			{
+				return this._frookmony;
+			}
+			set
+			{
+				if ((this._frookmony != value))
+				{
+					this.OnfrookmonyChanging(value);
+					this.SendPropertyChanging();
+					this._frookmony = value;
+					this.SendPropertyChanged("frookmony");
+					this.OnfrookmonyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookreson", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string frookreson
+		{
+			get
+			{
+				return this._frookreson;
+			}
+			set
+			{
+				if ((this._frookreson != value))
+				{
+					this.OnfrookresonChanging(value);
+					this.SendPropertyChanging();
+					this._frookreson = value;
+					this.SendPropertyChanged("frookreson");
+					this.OnfrookresonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adminconfirm", DbType="Bit")]
+		public System.Nullable<bool> adminconfirm
+		{
+			get
+			{
+				return this._adminconfirm;
+			}
+			set
+			{
+				if ((this._adminconfirm != value))
+				{
+					this.OnadminconfirmChanging(value);
+					this.SendPropertyChanging();
+					this._adminconfirm = value;
+					this.SendPropertyChanged("adminconfirm");
+					this.OnadminconfirmChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userinadmin", DbType="Int")]
+		public System.Nullable<int> userinadmin
+		{
+			get
+			{
+				return this._userinadmin;
+			}
+			set
+			{
+				if ((this._userinadmin != value))
+				{
+					this.OnuserinadminChanging(value);
+					this.SendPropertyChanging();
+					this._userinadmin = value;
+					this.SendPropertyChanged("userinadmin");
+					this.OnuserinadminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frookname", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string frookname
+		{
+			get
+			{
+				return this._frookname;
+			}
+			set
+			{
+				if ((this._frookname != value))
+				{
+					this.OnfrooknameChanging(value);
+					this.SendPropertyChanging();
+					this._frookname = value;
+					this.SendPropertyChanged("frookname");
+					this.OnfrooknameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_personName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string personName
+		{
+			get
+			{
+				return this._personName;
+			}
+			set
+			{
+				if ((this._personName != value))
+				{
+					this.OnpersonNameChanging(value);
+					this.SendPropertyChanging();
+					this._personName = value;
+					this.SendPropertyChanged("personName");
+					this.OnpersonNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DofatSarf", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DofatSarf
+		{
+			get
+			{
+				return this._DofatSarf;
+			}
+			set
+			{
+				if ((this._DofatSarf != value))
+				{
+					this.OnDofatSarfChanging(value);
+					this.SendPropertyChanging();
+					this._DofatSarf = value;
+					this.SendPropertyChanged("DofatSarf");
+					this.OnDofatSarfChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL")]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
 				}
 			}
 		}

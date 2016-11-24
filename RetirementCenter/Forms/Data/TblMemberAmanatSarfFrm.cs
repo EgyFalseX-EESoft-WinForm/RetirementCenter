@@ -131,27 +131,23 @@ namespace RetirementCenter
             cmd.Parameters.AddRange(new[] { paramMMashatId, paramDofatSarfId, paramSarfTypeedadId, paramsarfdatefrom, paramsarfdateto, parammonymonth, paramrsmmonth, parameshtrakmonth, paramestktaa
                 , paramsarf, paramuserin, paramEdafat, paramSyndicateId, paramSubCommitteId, paramSendBank, paramamanatvisa, paramamanatAutoId, paramsarfcheek});
 
-            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLMemberSarf_arshef WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId AND (SarfTypeedadId = 6 OR SarfTypeedadId = 7)", con);
-            SqlParameter paramCheckMMashatId = new SqlParameter("@MMashatId", SqlDbType.Int);
-            SqlParameter paramCheckDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
-            cmdCheck.Parameters.AddRange(new[] { paramCheckMMashatId, paramCheckDofatSarfId });
+            //SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM TBLMemberSarf_arshef WHERE MMashatId = @MMashatId AND DofatSarfId = @DofatSarfId AND (SarfTypeedadId = 6 OR SarfTypeedadId = 7)", con);
+            //SqlParameter paramCheckMMashatId = new SqlParameter("@MMashatId", SqlDbType.Int);
+            //SqlParameter paramCheckDofatSarfId = new SqlParameter("@DofatSarfId", SqlDbType.Int);
+            //cmdCheck.Parameters.AddRange(new[] { paramCheckMMashatId, paramCheckDofatSarfId });
 
             DataSources.dsRetirementCenter.ForInsertTBLMemberSarf_arshefDataTable tbl = adp.GetData(Program.UserInfo.UserId);
             int effected = 0;
             con.Open();
             foreach (DataSources.dsRetirementCenter.ForInsertTBLMemberSarf_arshefRow item in tbl)
             {
-                paramCheckMMashatId.Value = item.MMashatId;
-                paramCheckDofatSarfId.Value = item.DofatSarfId;
-                if ((int)cmdCheck.ExecuteScalar() != 0)
-                    continue;
+                //paramCheckMMashatId.Value = item.MMashatId;
+                //paramCheckDofatSarfId.Value = item.DofatSarfId;
+                //if ((int)cmdCheck.ExecuteScalar() != 0)
+                //    continue;
                 paramMMashatId.Value = item.MMashatId;
                 paramDofatSarfId.Value = item.DofatSarfId;
-
-                if (item.amanattypeid == 1)
-                    paramSarfTypeedadId.Value = 6;
-                else
-                    paramSarfTypeedadId.Value = 7;
+                paramSarfTypeedadId.Value = item.amanattypeid;
 
                 paramsarfdatefrom.Value = item.DofatSarfDatefrom;
                 paramsarfdateto.Value = item.DofatSarfDateto;

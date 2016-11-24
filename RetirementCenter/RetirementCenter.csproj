@@ -757,6 +757,30 @@
     <Compile Include="Forms\Data\TblMemberAmanatWFrm.designer.cs">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\AntiAdminLogincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\AntiAdminLogincs.Designer.cs">
+      <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry111Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry111Frm.designer.cs">
+      <DependentUpon>Qry111Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry109Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry109Frm.designer.cs">
+      <DependentUpon>Qry109Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry108Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry108Frm.designer.cs">
+      <DependentUpon>Qry108Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry107Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2065,6 +2089,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblMemberAmanatWFrm.resx">
       <DependentUpon>TblMemberAmanatWFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\AntiAdminLogincs.resx">
+      <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry111Frm.resx">
+      <DependentUpon>Qry111Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry109Frm.resx">
+      <DependentUpon>Qry109Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry108Frm.resx">
+      <DependentUpon>Qry108Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry107Frm.resx">
       <DependentUpon>Qry107Frm.cs</DependentUpon>

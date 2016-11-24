@@ -57,6 +57,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLFrookWarasaTableAdapter();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -118,7 +119,8 @@
             this.colMMashatName,
             this.colsarfnumber,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.colMMashatId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
@@ -179,7 +181,7 @@
             this.coladminconfirm.FieldName = "adminconfirm";
             this.coladminconfirm.Name = "coladminconfirm";
             this.coladminconfirm.Visible = true;
-            this.coladminconfirm.VisibleIndex = 12;
+            this.coladminconfirm.VisibleIndex = 13;
             // 
             // coldatein
             // 
@@ -192,7 +194,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 14;
+            this.coldatein.VisibleIndex = 15;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -242,7 +244,7 @@
             this.colRealName.FieldName = "RealName";
             this.colRealName.Name = "colRealName";
             this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 13;
+            this.colRealName.VisibleIndex = 14;
             // 
             // colpersonName
             // 
@@ -290,7 +292,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 10;
+            this.colMMashatName.VisibleIndex = 11;
             // 
             // colsarfnumber
             // 
@@ -302,7 +304,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 11;
+            this.colsarfnumber.VisibleIndex = 12;
             // 
             // gridColumn1
             // 
@@ -423,6 +425,18 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود الاب";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 10;
+            // 
             // TBLFrookWarasaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,5 +497,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
     }
 }

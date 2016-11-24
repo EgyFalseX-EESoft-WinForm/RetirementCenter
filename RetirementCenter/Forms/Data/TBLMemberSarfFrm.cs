@@ -308,6 +308,7 @@ namespace RetirementCenter
                 lblValue.Text = pbc.EditValue.ToString();
                 Application.DoEvents();
             }
+            adpMadunea.UpdateTBLMemberSarf(dofaa.DofatSarfId);
             //new DataSources.dsRetirementCenterTableAdapters.DofatSarfActivityTableAdapter().CloseUnCloseDofat(true, SQLProvider.ServerDateTime(), Program.UserInfo.UserId, Convert.ToInt32(LUESyndicateId.EditValue), dofaa.DofatSarfId, (byte)Misc.Types.CDMashHala.A3da2);
             pbc.EditValue = 0; pcProgress.Visible = false; lblValue.Text = "0"; gcCommands.Enabled = true;
             LoadTblMemberSarf();

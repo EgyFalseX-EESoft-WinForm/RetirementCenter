@@ -135,7 +135,7 @@ namespace RetirementCenter
         {
             DataSources.dsRetirementCenter.TblWarasaAmanatRow row = dsRetirementCenter.TblWarasaAmanat.NewTblWarasaAmanatRow();
             row.estktaa = 0; row.sefa = "العضو";
-            row.amanattypeid = 1;
+            row.amanattypeid = (int)Program.cd_amanattype.amanat;
             Update(row, false);
         }
         private void Update(DataSources.dsRetirementCenter.TblWarasaAmanatRow row, bool DetailsTabFocus)

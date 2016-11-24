@@ -41,11 +41,13 @@
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -171,7 +173,9 @@
             this.colSyndicate,
             this.colSubCommitte,
             this.colMMashatName,
-            this.colsarfnumber});
+            this.colsarfnumber,
+            this.colPersonId,
+            this.colMMashatId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -195,7 +199,7 @@
             this.colmostahk.FieldName = "mostahk";
             this.colmostahk.Name = "colmostahk";
             this.colmostahk.Visible = true;
-            this.colmostahk.VisibleIndex = 2;
+            this.colmostahk.VisibleIndex = 5;
             // 
             // colmremark
             // 
@@ -207,7 +211,7 @@
             this.colmremark.FieldName = "mremark";
             this.colmremark.Name = "colmremark";
             this.colmremark.Visible = true;
-            this.colmremark.VisibleIndex = 9;
+            this.colmremark.VisibleIndex = 11;
             // 
             // coldatein
             // 
@@ -219,7 +223,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 3;
+            this.coldatein.VisibleIndex = 6;
             // 
             // colDofatSarfM
             // 
@@ -231,7 +235,7 @@
             this.colDofatSarfM.FieldName = "DofatSarfM";
             this.colDofatSarfM.Name = "colDofatSarfM";
             this.colDofatSarfM.Visible = true;
-            this.colDofatSarfM.VisibleIndex = 0;
+            this.colDofatSarfM.VisibleIndex = 2;
             // 
             // colRealName
             // 
@@ -243,7 +247,7 @@
             this.colRealName.FieldName = "RealName";
             this.colRealName.Name = "colRealName";
             this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 4;
+            this.colRealName.VisibleIndex = 7;
             // 
             // colpersonName
             // 
@@ -267,7 +271,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 5;
+            this.colSyndicate.VisibleIndex = 8;
             // 
             // colSubCommitte
             // 
@@ -279,7 +283,7 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 6;
+            this.colSubCommitte.VisibleIndex = 9;
             // 
             // colMMashatName
             // 
@@ -291,7 +295,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 7;
+            this.colMMashatName.VisibleIndex = 4;
             // 
             // colsarfnumber
             // 
@@ -303,7 +307,19 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 8;
+            this.colsarfnumber.VisibleIndex = 10;
+            // 
+            // colPersonId
+            // 
+            this.colPersonId.AppearanceCell.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPersonId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPersonId.Caption = "كود الوريث";
+            this.colPersonId.FieldName = "PersonId";
+            this.colPersonId.Name = "colPersonId";
+            this.colPersonId.Visible = true;
+            this.colPersonId.VisibleIndex = 0;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -356,6 +372,18 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود الاب";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 3;
+            // 
             // Qry85Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +428,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
 
     }
 }

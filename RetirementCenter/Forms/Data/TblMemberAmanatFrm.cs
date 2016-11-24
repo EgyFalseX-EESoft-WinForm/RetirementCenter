@@ -134,7 +134,7 @@ namespace RetirementCenter
         private void btnNew_Click(object sender, EventArgs e)
         {
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = dsRetirementCenter.TblMemberAmanat.NewTblMemberAmanatRow();
-            row.amanattypeid = 1;
+            row.amanattypeid = (int)Program.cd_amanattype.amanat;
             row.estktaa = 0; row.sefa = "العضو";
             Update(row, false);
         }

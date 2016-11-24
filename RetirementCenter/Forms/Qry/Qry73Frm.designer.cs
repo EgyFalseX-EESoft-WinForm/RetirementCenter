@@ -41,13 +41,14 @@
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhalarem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.colSubCommitteId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSyndicateId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -175,7 +176,8 @@
             this.colsarfnumber,
             this.colhalarem,
             this.colSubCommitteId,
-            this.colSyndicateId});
+            this.colSyndicateId,
+            this.colyasref});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -309,6 +311,30 @@
             this.colhalarem.Visible = true;
             this.colhalarem.VisibleIndex = 9;
             // 
+            // colSubCommitteId
+            // 
+            this.colSubCommitteId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitteId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitteId.Caption = "كود اللجنة";
+            this.colSubCommitteId.FieldName = "SubCommitteId";
+            this.colSubCommitteId.Name = "colSubCommitteId";
+            this.colSubCommitteId.Visible = true;
+            this.colSubCommitteId.VisibleIndex = 10;
+            // 
+            // colSyndicateId
+            // 
+            this.colSyndicateId.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicateId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicateId.Caption = "كود الفرعية";
+            this.colSyndicateId.FieldName = "SyndicateId";
+            this.colSyndicateId.Name = "colSyndicateId";
+            this.colSyndicateId.Visible = true;
+            this.colSyndicateId.VisibleIndex = 11;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -360,29 +386,17 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // colSubCommitteId
+            // colyasref
             // 
-            this.colSubCommitteId.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitteId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitteId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitteId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitteId.Caption = "كود اللجنة";
-            this.colSubCommitteId.FieldName = "SubCommitteId";
-            this.colSubCommitteId.Name = "colSubCommitteId";
-            this.colSubCommitteId.Visible = true;
-            this.colSubCommitteId.VisibleIndex = 10;
-            // 
-            // colSyndicateId
-            // 
-            this.colSyndicateId.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicateId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicateId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSyndicateId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicateId.Caption = "كود الفرعية";
-            this.colSyndicateId.FieldName = "SyndicateId";
-            this.colSyndicateId.Name = "colSyndicateId";
-            this.colSyndicateId.Visible = true;
-            this.colSyndicateId.VisibleIndex = 11;
+            this.colyasref.AppearanceCell.Options.UseTextOptions = true;
+            this.colyasref.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colyasref.AppearanceHeader.Options.UseTextOptions = true;
+            this.colyasref.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colyasref.Caption = "يصرف";
+            this.colyasref.FieldName = "yasref";
+            this.colyasref.Name = "colyasref";
+            this.colyasref.Visible = true;
+            this.colyasref.VisibleIndex = 12;
             // 
             // Qry73Frm
             // 
@@ -430,6 +444,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colhalarem;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitteId;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicateId;
+        private DevExpress.XtraGrid.Columns.GridColumn colyasref;
 
     }
 }

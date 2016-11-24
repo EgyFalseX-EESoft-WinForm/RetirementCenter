@@ -1501,24 +1501,22 @@ FROM            dbo.TBLDeathMembers INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry73]
                     AS
-                    WITH CTE1 AS 
-                    (SELECT        dbo.TBLNoSarfWarsa.PersonId, MAX(dbo.TBLNoSarfWarsa.datehala) AS datehala, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, 
-                    dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber
-                    , TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId
-                    FROM dbo.TBLNoSarfWarsa INNER JOIN
-                    dbo.TBLWarasa ON dbo.TBLNoSarfWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
-                    dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
-                    dbo.CDWarasaType ON dbo.TBLWarasa.WarasaTypeId = dbo.CDWarasaType.WarasaTypeId INNER JOIN
-                    dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
-                    dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId
-                    WHERE        (dbo.TBLNoSarfWarsa.yasref = 0) AND (dbo.TBLWarasa.yasref = 0)
-                    GROUP BY dbo.TBLNoSarfWarsa.PersonId, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, 
-                    dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId
-                    )
-                    SELECT PersonId, datehala, personName, Syndicate, WarasaType, SubCommitte, MMashatId, MMashatName, sarfnumber
-                    , SyndicateId, SubCommitteId
-                    ,(SELECT TOP (1) halarem FROM dbo.TBLNoSarfWarsa AS TBL WHERE (PersonId = CTE1_1.PersonId) AND (yasref = 0) AND (datehala = CTE1_1.datehala)) AS halarem
-                    FROM CTE1 AS CTE1_1";
+                    WITH CTE1 AS (SELECT        dbo.TBLNoSarfWarsa.PersonId, MAX(dbo.TBLNoSarfWarsa.datehala) AS datehala, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, 
+dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLWarasa.SyndicateId, dbo.TBLWarasa.SubCommitteId
+, TBLWarasa.yasref
+FROM            dbo.TBLNoSarfWarsa INNER JOIN
+dbo.TBLWarasa ON dbo.TBLNoSarfWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+dbo.CDWarasaType ON dbo.TBLWarasa.WarasaTypeId = dbo.CDWarasaType.WarasaTypeId INNER JOIN
+dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId
+WHERE        (dbo.TBLNoSarfWarsa.yasref = 0) AND (dbo.TBLWarasa.yasref = 0)
+GROUP BY dbo.TBLNoSarfWarsa.PersonId, dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDWarasaType.WarasaType, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatId, 
+dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLWarasa.SyndicateId, dbo.TBLWarasa.SubCommitteId, TBLWarasa.yasref
+)
+SELECT        PersonId, datehala, personName, Syndicate, WarasaType, SubCommitte, MMashatId, MMashatName, sarfnumber, SyndicateId, SubCommitteId, yasref,
+(SELECT TOP (1) halarem FROM dbo.TBLNoSarfWarsa AS TBL WHERE (PersonId = CTE1_1.PersonId) AND (yasref = 0) AND (datehala = CTE1_1.datehala)) AS halarem
+FROM CTE1 AS CTE1_1";
             }
         }
         public static string vtbladminremarks
@@ -1786,7 +1784,7 @@ GROUP BY BankExportedDataWarsa.hafza, TBLWarasa.SyndicateId";
                     AS
                     SELECT        dbo.TBLFrookWarasa.frookaouto, dbo.TBLFrookWarasa.PersonId, dbo.TBLFrookWarasa.DofatSarfId, dbo.TBLFrookWarasa.frookid, dbo.TBLFrookWarasa.frookmony, dbo.TBLFrookWarasa.frookreson, 
                          dbo.TBLFrookWarasa.adminconfirm, dbo.TBLFrookWarasa.userinadmin, dbo.TBLFrookWarasa.userin, dbo.TBLFrookWarasa.datein, dbo.CDFrook.frookname, dbo.Users.RealName, dbo.TBLWarasa.personName, 
-                         dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDDofatSarfFrook.DofatSarf
+                         dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDDofatSarfFrook.DofatSarf, dbo.TBLWarasa.MMashatId
 FROM            dbo.TBLFrookWarasa INNER JOIN
                          dbo.TBLWarasa ON dbo.TBLFrookWarasa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
@@ -1858,16 +1856,16 @@ FROM            TblMemberMadunea INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLWarasaMadunea]
                     AS
-                    SELECT        TBLWarasaMadunea.MaduniaAuto, TBLWarasaMadunea.DofatSarfMId, TBLWarasaMadunea.PersonId, TBLWarasaMadunea.mostahk, TBLWarasaMadunea.mremark, TBLWarasaMadunea.datein, 
-                         TBLWarasaMadunea.userin, TBLDofatSarfMadunea.DofatSarfM, Users.RealName, TBLWarasa.personName, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, CDSyndicate.Syndicate, 
-                         CDSubCommitte.SubCommitte, TBLMashat.MMashatName, TBLMashat.sarfnumber
-FROM            TBLWarasaMadunea INNER JOIN
-                         TBLWarasa ON TBLWarasaMadunea.PersonId = TBLWarasa.PersonId INNER JOIN
-                         TBLDofatSarfMadunea ON TBLWarasaMadunea.DofatSarfMId = TBLDofatSarfMadunea.DofatSarfMId INNER JOIN
-                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         Users ON TBLWarasaMadunea.userin = Users.UserID INNER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId";
+                    SELECT        dbo.TBLWarasaMadunea.MaduniaAuto, dbo.TBLWarasaMadunea.DofatSarfMId, dbo.TBLWarasaMadunea.PersonId, dbo.TBLWarasaMadunea.mostahk, dbo.TBLWarasaMadunea.mremark, 
+                         dbo.TBLWarasaMadunea.datein, dbo.TBLWarasaMadunea.userin, dbo.TBLDofatSarfMadunea.DofatSarfM, dbo.Users.RealName, dbo.TBLWarasa.personName, dbo.TBLWarasa.SyndicateId, 
+                         dbo.TBLWarasa.SubCommitteId, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLWarasa.MMashatId
+FROM            dbo.TBLWarasaMadunea INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLWarasaMadunea.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.TBLDofatSarfMadunea ON dbo.TBLWarasaMadunea.DofatSarfMId = dbo.TBLDofatSarfMadunea.DofatSarfMId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.Users ON dbo.TBLWarasaMadunea.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId";
             }
         }
         public static string vTBLMemberSarf_arshef

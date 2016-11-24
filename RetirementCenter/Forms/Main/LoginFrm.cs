@@ -93,7 +93,17 @@ namespace RetirementCenter
             {
                 Program.UserInfo.UserRoles.Add(item.RoleId);
                 if (item.RoleId == 1)
-                    Program.UserInfo.IsAdmin = true;
+                {
+                    if (new RetirementCenter.Forms.Main.AntiAdminLogincs().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        Program.UserInfo.IsAdmin = true;
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                    
+                }
             }
             Program.UserInfo.Syndicates = new List<int>();
             DataSources.dsRetirementCenterTableAdapters.RoleSyndicateTableAdapter adpRoleSyn = new DataSources.dsRetirementCenterTableAdapters.RoleSyndicateTableAdapter();

@@ -31,7 +31,7 @@ namespace RetirementCenter
             _Update = update;
             _Delete = delete;
             if (_row.RowState == DataRowState.Detached)
-                _row.amanattypeid = 2;
+                _row.amanattypeid = (int)Program.cd_amanattype.amanat2;
         }
         private void ActivePriv()
         {

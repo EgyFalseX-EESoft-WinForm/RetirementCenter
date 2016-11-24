@@ -299,7 +299,7 @@ namespace RetirementCenter
                         if (ex.Number == 2627) MessageBox.Show(string.Format(@"رقم {0} موجود مسبقا", record.MMashatId)); else MessageBox.Show(ex.Message);
                     }
                 }
-
+                adpMadunea.UpdateTBLMemberSarf(dofaa2.DofatSarfId);
                 pbc.EditValue = (int)pbc.EditValue + 1;
                 lblValue.Text = pbc.EditValue.ToString();
                 Application.DoEvents();

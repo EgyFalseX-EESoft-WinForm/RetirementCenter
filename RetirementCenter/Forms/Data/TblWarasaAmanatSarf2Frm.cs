@@ -29,6 +29,10 @@ namespace RetirementCenter
             SQLProvider.SetAllCommandTimeouts(warasaExceptionDofaatCreatorTableAdapter, 0);
             SQLProvider.SetAllCommandTimeouts(warasaDofaatCreatorTableAdapter, 0);
             SQLProvider.SetAllCommandTimeouts(warasaExtraDofaatCreatorTableAdapter, 0);
+            SQLProvider.SetAllCommandTimeouts(adpArc, 0);
+            SQLProvider.SetAllCommandTimeouts(adpSarf, 0);
+            SQLProvider.SetAllCommandTimeouts(tBLWarasaSarfTableAdapter, 0);
+            SQLProvider.SetAllCommandTimeouts(tblMashatTableAdapter, 0);
 
         }
         private void ActivePriv()
@@ -406,7 +410,7 @@ namespace RetirementCenter
                 pbc.Properties.Maximum = dsQueries.WarasaDofaatCreator.Count + dsQueries.WarasaExtraDofaatCreator.Count;
                 lblMax.Text = pbc.Properties.Maximum.ToString(); pbc.EditValue = 0; lblValue.Text = "0";
                 DateTime serverdatetime = SQLProvider.ServerDateTime();
-
+                int debug_steps = 0;
                 //Add Exception
                 foreach (DataSources.dsQueries.WarasaExceptionDofaatCreatorRow row0 in dsQueries.WarasaExceptionDofaatCreator.Rows)
                 {
@@ -435,6 +439,9 @@ namespace RetirementCenter
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.astsnaa_3;
                     if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(record.SarfTypeedadId, record.PersonId, record.DofatSarfId) == null)
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
+                    //debug_steps++; Console.WriteLine(debug_steps);
+                    //if (debug_steps == 332)
+                    //{ string x = ""; }
                 }
                 //Add Extra
                 foreach (DataSources.dsQueries.WarasaExtraDofaatCreatorRow row1 in dsQueries.WarasaExtraDofaatCreator.Rows)
@@ -474,7 +481,9 @@ namespace RetirementCenter
                     //}
 
                     dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
-
+                    //debug_steps++; Console.WriteLine(debug_steps);
+                    //if (debug_steps == 332)
+                    //{ string x = ""; }
                     //Add Resarf
                     adpSarf.FillByPersonId_DofatSarfId(dsRetirementCenter.TBLReSarfWarasa, row1.PersonId, dofaa2.DofatSarfId);
                     foreach (DataSources.dsRetirementCenter.TBLReSarfWarasaRow ResarfRow in dsRetirementCenter.TBLReSarfWarasa)
@@ -509,6 +518,9 @@ namespace RetirementCenter
                         //}
                         if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(Resarfrecord.SarfTypeedadId, Resarfrecord.PersonId, Resarfrecord.DofatSarfId) == null)
                             dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
+                        //debug_steps++; Console.WriteLine(debug_steps);
+                        //if (debug_steps == 332)
+                        //{ string x = ""; }
                     }
 
                     pbc.EditValue = (int)pbc.EditValue + 1;
@@ -558,6 +570,9 @@ namespace RetirementCenter
                     record.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_1;
                     if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(record.SarfTypeedadId, record.PersonId, record.DofatSarfId) == null)
                         dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(record);
+                    //debug_steps++; Console.WriteLine(debug_steps);
+                    //if (debug_steps == 333)
+                    //{ string x = ""; }
                     
                     //Add Resarf
                     adpSarf.FillByPersonId_DofatSarfId_Arc(dsRetirementCenter.TBLReSarfWarasa, row2.PersonId, dofaa2.DofatSarfId);
@@ -587,6 +602,9 @@ namespace RetirementCenter
                         Resarfrecord.SarfTypeedadId = (int)Misc.Types.SarfTypeedadId.Unknown_2;
                         if (dsRetirementCenter.TBLWarasaSarf.FindBySarfTypeedadIdPersonIdDofatSarfId(Resarfrecord.SarfTypeedadId, Resarfrecord.PersonId, Resarfrecord.DofatSarfId) == null)
                             dsRetirementCenter.TBLWarasaSarf.AddTBLWarasaSarfRow(Resarfrecord);
+                        //debug_steps++; Console.WriteLine(debug_steps);
+                        //if (debug_steps == 332)
+                        //{ string x = ""; }
                     }
 
                     pbc.EditValue = (int)pbc.EditValue + 1;
