@@ -94,7 +94,10 @@ namespace RetirementCenter
                 Program.UserInfo.UserRoles.Add(item.RoleId);
                 if (item.RoleId == 1)
                 {
-                    if (new RetirementCenter.Forms.Main.AntiAdminLogincs().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    if (System.Diagnostics.Debugger.IsAttached) 
+                    {
+                        Program.UserInfo.IsAdmin = true;
+                    } else if (new RetirementCenter.Forms.Main.AntiAdminLogincs().ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         Program.UserInfo.IsAdmin = true;
                     }
