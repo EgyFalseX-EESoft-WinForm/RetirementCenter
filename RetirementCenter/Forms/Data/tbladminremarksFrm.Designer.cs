@@ -33,6 +33,7 @@
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmremark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coladminremark = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,6 +45,9 @@
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,13 +64,11 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tbladminremarksTableAdapter();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -85,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -122,6 +123,7 @@
             // gridViewData
             // 
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMMashatId,
             this.gridColumn1,
             this.colmremark,
             this.coldatein,
@@ -150,7 +152,7 @@
             this.gridColumn1.FieldName = "MMashatName";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 136;
             // 
             // colmremark
@@ -164,8 +166,15 @@
             this.colmremark.FieldName = "mremark";
             this.colmremark.Name = "colmremark";
             this.colmremark.Visible = true;
-            this.colmremark.VisibleIndex = 4;
+            this.colmremark.VisibleIndex = 5;
             this.colmremark.Width = 77;
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
             // coldatein
             // 
@@ -177,7 +186,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 5;
+            this.coldatein.VisibleIndex = 6;
             // 
             // coluserin
             // 
@@ -189,7 +198,7 @@
             this.coluserin.FieldName = "RealName";
             this.coluserin.Name = "coluserin";
             this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 6;
+            this.coluserin.VisibleIndex = 7;
             // 
             // coladminremark
             // 
@@ -202,7 +211,7 @@
             this.coladminremark.FieldName = "adminremark";
             this.coladminremark.Name = "coladminremark";
             this.coladminremark.Visible = true;
-            this.coladminremark.VisibleIndex = 7;
+            this.coladminremark.VisibleIndex = 8;
             this.coladminremark.Width = 78;
             // 
             // coladmindatein
@@ -216,7 +225,7 @@
             this.coladmindatein.FieldName = "admindatein";
             this.coladmindatein.Name = "coladmindatein";
             this.coladmindatein.Visible = true;
-            this.coladmindatein.VisibleIndex = 8;
+            this.coladmindatein.VisibleIndex = 9;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -243,7 +252,7 @@
             this.colfinished.FieldName = "finished";
             this.colfinished.Name = "colfinished";
             this.colfinished.Visible = true;
-            this.colfinished.VisibleIndex = 9;
+            this.colfinished.VisibleIndex = 10;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -260,7 +269,7 @@
             this.gridColumn2.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 10;
+            this.gridColumn2.VisibleIndex = 11;
             // 
             // repositoryItemButtonEditTransferSave
             // 
@@ -281,7 +290,7 @@
             this.gridColumn3.ColumnEdit = this.repositoryItemButtonEditDelete;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 11;
+            this.gridColumn3.VisibleIndex = 12;
             // 
             // repositoryItemButtonEditDelete
             // 
@@ -291,6 +300,42 @@
             this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
             this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
+            // 
+            // colSyndicate
+            // 
+            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.Caption = "الفرعية";
+            this.colSyndicate.FieldName = "Syndicate";
+            this.colSyndicate.Name = "colSyndicate";
+            this.colSyndicate.Visible = true;
+            this.colSyndicate.VisibleIndex = 2;
+            // 
+            // colSubCommitte
+            // 
+            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.Caption = "اللجنة";
+            this.colSubCommitte.FieldName = "SubCommitte";
+            this.colSubCommitte.Name = "colSubCommitte";
+            this.colSubCommitte.Visible = true;
+            this.colSubCommitte.VisibleIndex = 3;
+            // 
+            // colsarfnumber
+            // 
+            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfnumber.Caption = "رقم الصرف";
+            this.colsarfnumber.FieldName = "sarfnumber";
+            this.colsarfnumber.Name = "colsarfnumber";
+            this.colsarfnumber.Visible = true;
+            this.colsarfnumber.VisibleIndex = 4;
             // 
             // repositoryItemGridLookUpEditSyndicateId
             // 
@@ -466,48 +511,17 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
-            // repositoryItemMemoExEdit1
+            // colMMashatId
             // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
-            // 
-            // colSyndicate
-            // 
-            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.Caption = "الفرعية";
-            this.colSyndicate.FieldName = "Syndicate";
-            this.colSyndicate.Name = "colSyndicate";
-            this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 1;
-            // 
-            // colSubCommitte
-            // 
-            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.Caption = "اللجنة";
-            this.colSubCommitte.FieldName = "SubCommitte";
-            this.colSubCommitte.Name = "colSubCommitte";
-            this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 2;
-            // 
-            // colsarfnumber
-            // 
-            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.Caption = "رقم الصرف";
-            this.colsarfnumber.FieldName = "sarfnumber";
-            this.colsarfnumber.Name = "colsarfnumber";
-            this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 3;
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
             // 
             // tbladminremarksFrm
             // 
@@ -522,6 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -540,7 +555,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,5 +597,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
     }
 }

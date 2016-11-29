@@ -168,7 +168,7 @@ namespace RetirementCenter
             //    }
             //}
             
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
             {
                 _row.accReview = true;
                 _row.useracc = Program.UserInfo.UserId;
@@ -238,7 +238,7 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLMashatDataTable tbl = new DataSources.dsRetirementCenter.TBLMashatDataTable();
             DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
             adp.FillByMMashatId(tbl, _row.MMashatId);
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7 && tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2)// we should it acc reviewed if this condition active
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6 && tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_yasref_byID_ForAmanat(_row.MMashatId, Program.UserInfo.UserId);
             }

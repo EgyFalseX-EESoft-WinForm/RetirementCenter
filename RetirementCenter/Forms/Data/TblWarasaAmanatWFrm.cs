@@ -150,7 +150,7 @@ namespace RetirementCenter
                 }
             }
 
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
             {
                 _row.accReview = true;
                 _row.useracc = Program.UserInfo.UserId;
@@ -223,7 +223,7 @@ namespace RetirementCenter
         }
         public void UpdateActive()
         {
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 7)// we should it acc reviewed if this condition active
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_yasref_byVisa_ForAmanat(_row.PersonId, Program.UserInfo.UserId);
             }
