@@ -37,8 +37,6 @@
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.CEUpdate = new DevExpress.XtraEditors.CheckEdit();
             this.CESelect = new DevExpress.XtraEditors.CheckEdit();
@@ -52,7 +50,7 @@
             this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
             this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -302,7 +300,9 @@
             this.mbRetCenterCDDofatSarfFrook = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLDofatSarfMadunea = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblAttach = new DevExpress.XtraBars.BarButtonItem();
-            this.imageCollection2 = new DevExpress.Utils.ImageCollection(this.components);
+            this.mbRetCenterXRep28 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterXRep29 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -329,8 +329,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
             this.popupControlContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).BeginInit();
@@ -343,8 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlUpdate
@@ -419,127 +417,6 @@
             this.someLabelControl1.Size = new System.Drawing.Size(36, 13);
             this.someLabelControl1.TabIndex = 0;
             this.someLabelControl1.Text = "No Info";
-            // 
-            // ribbonImageCollection
-            // 
-            this.ribbonImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollection.ImageStream")));
-            this.ribbonImageCollection.Images.SetKeyName(0, "Ribbon_Exit_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(1, "Ribbon_Content_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(2, "Ribbon_Info_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(3, "Connection.png");
-            this.ribbonImageCollection.Images.SetKeyName(4, "CDGov.png");
-            this.ribbonImageCollection.Images.SetKeyName(5, "CDMarkez.png");
-            this.ribbonImageCollection.Images.SetKeyName(6, "CDSyndicate.png");
-            this.ribbonImageCollection.Images.SetKeyName(7, "CDSubCommitte.png");
-            this.ribbonImageCollection.Images.SetKeyName(8, "CDBirthPlace.png");
-            this.ribbonImageCollection.Images.SetKeyName(9, "CDJop.png");
-            this.ribbonImageCollection.Images.SetKeyName(10, "CDJobDescription.png");
-            this.ribbonImageCollection.Images.SetKeyName(11, "CDGehaType.png");
-            this.ribbonImageCollection.Images.SetKeyName(12, "CDModerea.png");
-            this.ribbonImageCollection.Images.SetKeyName(13, "CDEDARET.png");
-            this.ribbonImageCollection.Images.SetKeyName(14, "CDGeha.png");
-            this.ribbonImageCollection.Images.SetKeyName(15, "CDQualification.png");
-            this.ribbonImageCollection.Images.SetKeyName(16, "CDSpecialization.png");
-            this.ribbonImageCollection.Images.SetKeyName(17, "TBLMembers.png");
-            this.ribbonImageCollection.Images.SetKeyName(18, "CDEstefaaKed.png");
-            this.ribbonImageCollection.Images.SetKeyName(19, "Qry.png");
-            this.ribbonImageCollection.Images.SetKeyName(20, "TBLHafza.png");
-            this.ribbonImageCollection.Images.SetKeyName(21, "TBLMemberCard.png");
-            this.ribbonImageCollection.Images.SetKeyName(22, "TBLPrintCard.png");
-            this.ribbonImageCollection.Images.SetKeyName(23, "TBLMandoop.png");
-            this.ribbonImageCollection.Images.SetKeyName(24, "Report.png");
-            this.ribbonImageCollection.Images.SetKeyName(25, "Receipts.png");
-            this.ribbonImageCollection.Images.SetKeyName(26, "TblMemberAttach.png");
-            this.ribbonImageCollection.Images.SetKeyName(27, "CDAttachmentType.png");
-            this.ribbonImageCollection.Images.SetKeyName(28, "ImportData.png");
-            this.ribbonImageCollection.Images.SetKeyName(29, "Users.png");
-            this.ribbonImageCollection.Images.SetKeyName(30, "Roles.png");
-            this.ribbonImageCollection.Images.SetKeyName(31, "RoleDetail.png");
-            this.ribbonImageCollection.Images.SetKeyName(32, "UserRoles.png");
-            this.ribbonImageCollection.Images.SetKeyName(33, "Options16.png");
-            this.ribbonImageCollection.Images.SetKeyName(34, "TBLAksat.png");
-            this.ribbonImageCollection.Images.SetKeyName(35, "TBLEmpWork16.png");
-            this.ribbonImageCollection.Images.SetKeyName(36, "TBLUserMistake16.png");
-            this.ribbonImageCollection.Images.SetKeyName(37, "Fixs16.png");
-            this.ribbonImageCollection.Images.SetKeyName(38, "RoleSyndicate.png");
-            this.ribbonImageCollection.Images.SetKeyName(39, "CDsarfType.png");
-            this.ribbonImageCollection.Images.SetKeyName(40, "TBLDofatSarf.png");
-            this.ribbonImageCollection.Images.SetKeyName(41, "TBLMemberSarf.png");
-            this.ribbonImageCollection.Images.SetKeyName(42, "TblMemberAmanat.png");
-            this.ribbonImageCollection.Images.SetKeyName(43, "TblWarasaAmanat.png");
-            this.ribbonImageCollection.Images.SetKeyName(44, "archive16.png");
-            this.ribbonImageCollection.Images.SetKeyName(45, "TblChekNid16.png");
-            this.ribbonImageCollection.Images.SetKeyName(46, "TBLProofDoc16.png");
-            this.ribbonImageCollection.Images.SetKeyName(47, "Bank16.png");
-            this.ribbonImageCollection.Images.SetKeyName(48, "TBLDeathMembers16.png");
-            this.ribbonImageCollection.Images.SetKeyName(49, "tbladminremarks16.png");
-            this.ribbonImageCollection.Images.SetKeyName(50, "TBLEstefa16.png");
-            this.ribbonImageCollection.Images.SetKeyName(51, "TBLremind16.png");
-            this.ribbonImageCollection.Images.SetKeyName(52, "TBLMandoop16.png");
-            this.ribbonImageCollection.Images.SetKeyName(53, "TBLHafzaTasleem16.png");
-            this.ribbonImageCollection.Images.SetKeyName(54, "Visa16.png");
-            this.ribbonImageCollection.Images.SetKeyName(55, "TblAttach16.png");
-            // 
-            // ribbonImageCollectionLarge
-            // 
-            this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
-            this.ribbonImageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollectionLarge.ImageStream")));
-            this.ribbonImageCollectionLarge.Images.SetKeyName(0, "Ribbon_Exit_32x32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(1, "Ribbon_Content_32x32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(2, "Ribbon_Info_32x32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(3, "Connection.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(4, "CDGov.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(5, "CDMarkez.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(6, "CDSyndicate.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(7, "CDSubCommitte.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(8, "CDBirthPlace.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(9, "CDJop.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(10, "CDJobDescription.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(11, "CDGehaType.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(12, "CDModerea.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(13, "CDEDARET.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(14, "CDGeha.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(15, "CDQualification.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(16, "CDSpecialization.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(17, "TBLMembers.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(18, "CDEstefaaKed.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(19, "Qry.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(20, "TBLHafza.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(21, "TBLMemberCard.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(22, "TBLPrintCard.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(23, "TBLMandoop.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(24, "Report.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(25, "Receipts.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(26, "TblMemberAttach.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(27, "CDAttachmentType.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(28, "ImportData.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(29, "Users.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(30, "Roles.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(31, "RoleDetail.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(32, "UserRoles.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(33, "Options32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(34, "TBLAksat.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(35, "TBLEmpWork32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(36, "TBLUserMistake32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(37, "Fixs32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(38, "RoleSyndicate.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(39, "CDsarfType.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(40, "TBLDofatSarf.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(41, "TBLMemberSarf.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(42, "TblMemberAmanat.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(43, "TblWarasaAmanat.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(44, "archive32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(45, "TblChekNid32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(46, "TBLProofDoc32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(47, "Bank32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(48, "TBLDeathMembers32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(49, "tbladminremarks32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(50, "TBLEstefa32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(51, "TBLremind32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(52, "TBLMandoop32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(53, "TBLHafzaTasleem32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(54, "Visa32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(55, "TblAttach32.png");
             // 
             // groupControl2
             // 
@@ -656,7 +533,7 @@
             this.ribbonControl.ApplicationButtonDropDownControl = this.appMenu;
             this.ribbonControl.ApplicationButtonText = null;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
-            this.ribbonControl.Images = this.imageCollection1;
+            this.ribbonControl.Images = this.ribbonImageCollection;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
             this.mbRetCenterExit,
@@ -907,10 +784,12 @@
             this.mbRetCenterQry107,
             this.mbRetCenterQry108,
             this.mbRetCenterQry109,
-            this.mbRetCenterQry111});
-            this.ribbonControl.LargeImages = this.imageCollection2;
+            this.mbRetCenterQry111,
+            this.mbRetCenterXRep28,
+            this.mbRetCenterXRep29});
+            this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 419;
+            this.ribbonControl.MaxItemId = 421;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -926,65 +805,65 @@
             this.ribbonControl.Size = new System.Drawing.Size(959, 142);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.mbRetCenterHelp);
             // 
-            // imageCollection1
+            // ribbonImageCollection
             // 
-            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "Ribbon_Exit_16x16.png");
-            this.imageCollection1.Images.SetKeyName(1, "Ribbon_Content_16x16.png");
-            this.imageCollection1.Images.SetKeyName(2, "Ribbon_Info_16x16.png");
-            this.imageCollection1.Images.SetKeyName(3, "Connection.png");
-            this.imageCollection1.Images.SetKeyName(4, "CDGov.png");
-            this.imageCollection1.Images.SetKeyName(5, "CDMarkez.png");
-            this.imageCollection1.Images.SetKeyName(6, "CDSyndicate.png");
-            this.imageCollection1.Images.SetKeyName(7, "CDSubCommitte.png");
-            this.imageCollection1.Images.SetKeyName(8, "CDBirthPlace.png");
-            this.imageCollection1.Images.SetKeyName(9, "CDJop.png");
-            this.imageCollection1.Images.SetKeyName(10, "CDJobDescription.png");
-            this.imageCollection1.Images.SetKeyName(11, "CDGehaType.png");
-            this.imageCollection1.Images.SetKeyName(12, "CDModerea.png");
-            this.imageCollection1.Images.SetKeyName(13, "CDEDARET.png");
-            this.imageCollection1.Images.SetKeyName(14, "CDGeha.png");
-            this.imageCollection1.Images.SetKeyName(15, "CDQualification.png");
-            this.imageCollection1.Images.SetKeyName(16, "CDSpecialization.png");
-            this.imageCollection1.Images.SetKeyName(17, "TBLMembers.png");
-            this.imageCollection1.Images.SetKeyName(18, "CDEstefaaKed.png");
-            this.imageCollection1.Images.SetKeyName(19, "Qry.png");
-            this.imageCollection1.Images.SetKeyName(20, "TBLHafza.png");
-            this.imageCollection1.Images.SetKeyName(21, "TBLMemberCard.png");
-            this.imageCollection1.Images.SetKeyName(22, "TBLPrintCard.png");
-            this.imageCollection1.Images.SetKeyName(23, "TBLMandoop.png");
-            this.imageCollection1.Images.SetKeyName(24, "Report.png");
-            this.imageCollection1.Images.SetKeyName(25, "Receipts.png");
-            this.imageCollection1.Images.SetKeyName(26, "TblMemberAttach.png");
-            this.imageCollection1.Images.SetKeyName(27, "CDAttachmentType.png");
-            this.imageCollection1.Images.SetKeyName(28, "ImportData.png");
-            this.imageCollection1.Images.SetKeyName(29, "Users.png");
-            this.imageCollection1.Images.SetKeyName(30, "Roles.png");
-            this.imageCollection1.Images.SetKeyName(31, "RoleDetail.png");
-            this.imageCollection1.Images.SetKeyName(32, "UserRoles.png");
-            this.imageCollection1.Images.SetKeyName(33, "Options16.png");
-            this.imageCollection1.Images.SetKeyName(34, "TBLAksat.png");
-            this.imageCollection1.Images.SetKeyName(35, "TBLEmpWork16.png");
-            this.imageCollection1.Images.SetKeyName(36, "TBLUserMistake16.png");
-            this.imageCollection1.Images.SetKeyName(37, "Fixs16.png");
-            this.imageCollection1.Images.SetKeyName(38, "RoleSyndicate.png");
-            this.imageCollection1.Images.SetKeyName(39, "CDsarfType.png");
-            this.imageCollection1.Images.SetKeyName(40, "TBLDofatSarf.png");
-            this.imageCollection1.Images.SetKeyName(41, "TBLMemberSarf.png");
-            this.imageCollection1.Images.SetKeyName(42, "TblMemberAmanat.png");
-            this.imageCollection1.Images.SetKeyName(43, "TblWarasaAmanat.png");
-            this.imageCollection1.Images.SetKeyName(44, "archive16.png");
-            this.imageCollection1.Images.SetKeyName(45, "TblChekNid16.png");
-            this.imageCollection1.Images.SetKeyName(46, "TBLProofDoc16.png");
-            this.imageCollection1.Images.SetKeyName(47, "Bank16.png");
-            this.imageCollection1.Images.SetKeyName(48, "TBLDeathMembers16.png");
-            this.imageCollection1.Images.SetKeyName(49, "tbladminremarks16.png");
-            this.imageCollection1.Images.SetKeyName(50, "TBLEstefa16.png");
-            this.imageCollection1.Images.SetKeyName(51, "TBLremind16.png");
-            this.imageCollection1.Images.SetKeyName(52, "TBLMandoop16.png");
-            this.imageCollection1.Images.SetKeyName(53, "TBLHafzaTasleem16.png");
-            this.imageCollection1.Images.SetKeyName(54, "Visa16.png");
-            this.imageCollection1.Images.SetKeyName(55, "TblAttach16.png");
+            this.ribbonImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollection.ImageStream")));
+            this.ribbonImageCollection.Images.SetKeyName(0, "Ribbon_Exit_16x16.png");
+            this.ribbonImageCollection.Images.SetKeyName(1, "Ribbon_Content_16x16.png");
+            this.ribbonImageCollection.Images.SetKeyName(2, "Ribbon_Info_16x16.png");
+            this.ribbonImageCollection.Images.SetKeyName(3, "Connection.png");
+            this.ribbonImageCollection.Images.SetKeyName(4, "CDGov.png");
+            this.ribbonImageCollection.Images.SetKeyName(5, "CDMarkez.png");
+            this.ribbonImageCollection.Images.SetKeyName(6, "CDSyndicate.png");
+            this.ribbonImageCollection.Images.SetKeyName(7, "CDSubCommitte.png");
+            this.ribbonImageCollection.Images.SetKeyName(8, "CDBirthPlace.png");
+            this.ribbonImageCollection.Images.SetKeyName(9, "CDJop.png");
+            this.ribbonImageCollection.Images.SetKeyName(10, "CDJobDescription.png");
+            this.ribbonImageCollection.Images.SetKeyName(11, "CDGehaType.png");
+            this.ribbonImageCollection.Images.SetKeyName(12, "CDModerea.png");
+            this.ribbonImageCollection.Images.SetKeyName(13, "CDEDARET.png");
+            this.ribbonImageCollection.Images.SetKeyName(14, "CDGeha.png");
+            this.ribbonImageCollection.Images.SetKeyName(15, "CDQualification.png");
+            this.ribbonImageCollection.Images.SetKeyName(16, "CDSpecialization.png");
+            this.ribbonImageCollection.Images.SetKeyName(17, "TBLMembers.png");
+            this.ribbonImageCollection.Images.SetKeyName(18, "CDEstefaaKed.png");
+            this.ribbonImageCollection.Images.SetKeyName(19, "Qry.png");
+            this.ribbonImageCollection.Images.SetKeyName(20, "TBLHafza.png");
+            this.ribbonImageCollection.Images.SetKeyName(21, "TBLMemberCard.png");
+            this.ribbonImageCollection.Images.SetKeyName(22, "TBLPrintCard.png");
+            this.ribbonImageCollection.Images.SetKeyName(23, "TBLMandoop.png");
+            this.ribbonImageCollection.Images.SetKeyName(24, "Report.png");
+            this.ribbonImageCollection.Images.SetKeyName(25, "Receipts.png");
+            this.ribbonImageCollection.Images.SetKeyName(26, "TblMemberAttach.png");
+            this.ribbonImageCollection.Images.SetKeyName(27, "CDAttachmentType.png");
+            this.ribbonImageCollection.Images.SetKeyName(28, "ImportData.png");
+            this.ribbonImageCollection.Images.SetKeyName(29, "Users.png");
+            this.ribbonImageCollection.Images.SetKeyName(30, "Roles.png");
+            this.ribbonImageCollection.Images.SetKeyName(31, "RoleDetail.png");
+            this.ribbonImageCollection.Images.SetKeyName(32, "UserRoles.png");
+            this.ribbonImageCollection.Images.SetKeyName(33, "Options16.png");
+            this.ribbonImageCollection.Images.SetKeyName(34, "TBLAksat.png");
+            this.ribbonImageCollection.Images.SetKeyName(35, "TBLEmpWork16.png");
+            this.ribbonImageCollection.Images.SetKeyName(36, "TBLUserMistake16.png");
+            this.ribbonImageCollection.Images.SetKeyName(37, "Fixs16.png");
+            this.ribbonImageCollection.Images.SetKeyName(38, "RoleSyndicate.png");
+            this.ribbonImageCollection.Images.SetKeyName(39, "CDsarfType.png");
+            this.ribbonImageCollection.Images.SetKeyName(40, "TBLDofatSarf.png");
+            this.ribbonImageCollection.Images.SetKeyName(41, "TBLMemberSarf.png");
+            this.ribbonImageCollection.Images.SetKeyName(42, "TblMemberAmanat.png");
+            this.ribbonImageCollection.Images.SetKeyName(43, "TblWarasaAmanat.png");
+            this.ribbonImageCollection.Images.SetKeyName(44, "archive16.png");
+            this.ribbonImageCollection.Images.SetKeyName(45, "TblChekNid16.png");
+            this.ribbonImageCollection.Images.SetKeyName(46, "TBLProofDoc16.png");
+            this.ribbonImageCollection.Images.SetKeyName(47, "Bank16.png");
+            this.ribbonImageCollection.Images.SetKeyName(48, "TBLDeathMembers16.png");
+            this.ribbonImageCollection.Images.SetKeyName(49, "tbladminremarks16.png");
+            this.ribbonImageCollection.Images.SetKeyName(50, "TBLEstefa16.png");
+            this.ribbonImageCollection.Images.SetKeyName(51, "TBLremind16.png");
+            this.ribbonImageCollection.Images.SetKeyName(52, "TBLMandoop16.png");
+            this.ribbonImageCollection.Images.SetKeyName(53, "TBLHafzaTasleem16.png");
+            this.ribbonImageCollection.Images.SetKeyName(54, "Visa16.png");
+            this.ribbonImageCollection.Images.SetKeyName(55, "TblAttach16.png");
             // 
             // mbRetCenterExit
             // 
@@ -3325,66 +3204,84 @@
             this.mbRetCenterTblAttach.LargeImageIndex = 55;
             this.mbRetCenterTblAttach.Name = "mbRetCenterTblAttach";
             // 
-            // imageCollection2
+            // mbRetCenterXRep28
             // 
-            this.imageCollection2.ImageSize = new System.Drawing.Size(32, 32);
-            this.imageCollection2.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection2.ImageStream")));
-            this.imageCollection2.Images.SetKeyName(0, "Ribbon_Exit_32x32.png");
-            this.imageCollection2.Images.SetKeyName(1, "Ribbon_Content_32x32.png");
-            this.imageCollection2.Images.SetKeyName(2, "Ribbon_Info_32x32.png");
-            this.imageCollection2.Images.SetKeyName(3, "Connection.png");
-            this.imageCollection2.Images.SetKeyName(4, "CDGov.png");
-            this.imageCollection2.Images.SetKeyName(5, "CDMarkez.png");
-            this.imageCollection2.Images.SetKeyName(6, "CDSyndicate.png");
-            this.imageCollection2.Images.SetKeyName(7, "CDSubCommitte.png");
-            this.imageCollection2.Images.SetKeyName(8, "CDBirthPlace.png");
-            this.imageCollection2.Images.SetKeyName(9, "CDJop.png");
-            this.imageCollection2.Images.SetKeyName(10, "CDJobDescription.png");
-            this.imageCollection2.Images.SetKeyName(11, "CDGehaType.png");
-            this.imageCollection2.Images.SetKeyName(12, "CDModerea.png");
-            this.imageCollection2.Images.SetKeyName(13, "CDEDARET.png");
-            this.imageCollection2.Images.SetKeyName(14, "CDGeha.png");
-            this.imageCollection2.Images.SetKeyName(15, "CDQualification.png");
-            this.imageCollection2.Images.SetKeyName(16, "CDSpecialization.png");
-            this.imageCollection2.Images.SetKeyName(17, "TBLMembers.png");
-            this.imageCollection2.Images.SetKeyName(18, "CDEstefaaKed.png");
-            this.imageCollection2.Images.SetKeyName(19, "Qry.png");
-            this.imageCollection2.Images.SetKeyName(20, "TBLHafza.png");
-            this.imageCollection2.Images.SetKeyName(21, "TBLMemberCard.png");
-            this.imageCollection2.Images.SetKeyName(22, "TBLPrintCard.png");
-            this.imageCollection2.Images.SetKeyName(23, "TBLMandoop.png");
-            this.imageCollection2.Images.SetKeyName(24, "Report.png");
-            this.imageCollection2.Images.SetKeyName(25, "Receipts.png");
-            this.imageCollection2.Images.SetKeyName(26, "TblMemberAttach.png");
-            this.imageCollection2.Images.SetKeyName(27, "CDAttachmentType.png");
-            this.imageCollection2.Images.SetKeyName(28, "ImportData.png");
-            this.imageCollection2.Images.SetKeyName(29, "Users.png");
-            this.imageCollection2.Images.SetKeyName(30, "Roles.png");
-            this.imageCollection2.Images.SetKeyName(31, "RoleDetail.png");
-            this.imageCollection2.Images.SetKeyName(32, "UserRoles.png");
-            this.imageCollection2.Images.SetKeyName(33, "Options32.png");
-            this.imageCollection2.Images.SetKeyName(34, "TBLAksat.png");
-            this.imageCollection2.Images.SetKeyName(35, "TBLEmpWork32.png");
-            this.imageCollection2.Images.SetKeyName(36, "TBLUserMistake32.png");
-            this.imageCollection2.Images.SetKeyName(37, "Fixs32.png");
-            this.imageCollection2.Images.SetKeyName(38, "RoleSyndicate.png");
-            this.imageCollection2.Images.SetKeyName(39, "CDsarfType.png");
-            this.imageCollection2.Images.SetKeyName(40, "TBLDofatSarf.png");
-            this.imageCollection2.Images.SetKeyName(41, "TBLMemberSarf.png");
-            this.imageCollection2.Images.SetKeyName(42, "TblMemberAmanat.png");
-            this.imageCollection2.Images.SetKeyName(43, "TblWarasaAmanat.png");
-            this.imageCollection2.Images.SetKeyName(44, "archive32.png");
-            this.imageCollection2.Images.SetKeyName(45, "TblChekNid32.png");
-            this.imageCollection2.Images.SetKeyName(46, "TBLProofDoc32.png");
-            this.imageCollection2.Images.SetKeyName(47, "Bank32.png");
-            this.imageCollection2.Images.SetKeyName(48, "TBLDeathMembers32.png");
-            this.imageCollection2.Images.SetKeyName(49, "tbladminremarks32.png");
-            this.imageCollection2.Images.SetKeyName(50, "TBLEstefa32.png");
-            this.imageCollection2.Images.SetKeyName(51, "TBLremind32.png");
-            this.imageCollection2.Images.SetKeyName(52, "TBLMandoop32.png");
-            this.imageCollection2.Images.SetKeyName(53, "TBLHafzaTasleem32.png");
-            this.imageCollection2.Images.SetKeyName(54, "Visa32.png");
-            this.imageCollection2.Images.SetKeyName(55, "TblAttach32.png");
+            this.mbRetCenterXRep28.Caption = "حافظة استلام اعادة الاصدار اعضاء";
+            this.mbRetCenterXRep28.Id = 419;
+            this.mbRetCenterXRep28.ImageIndex = 24;
+            this.mbRetCenterXRep28.LargeImageIndex = 24;
+            this.mbRetCenterXRep28.Name = "mbRetCenterXRep28";
+            this.mbRetCenterXRep28.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterXRep29
+            // 
+            this.mbRetCenterXRep29.Caption = "حافظة استلام اعادة الاصدار ورثة";
+            this.mbRetCenterXRep29.Id = 420;
+            this.mbRetCenterXRep29.ImageIndex = 24;
+            this.mbRetCenterXRep29.LargeImageIndex = 24;
+            this.mbRetCenterXRep29.Name = "mbRetCenterXRep29";
+            this.mbRetCenterXRep29.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // ribbonImageCollectionLarge
+            // 
+            this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
+            this.ribbonImageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollectionLarge.ImageStream")));
+            this.ribbonImageCollectionLarge.Images.SetKeyName(0, "Ribbon_Exit_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(1, "Ribbon_Content_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(2, "Ribbon_Info_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(3, "Connection.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(4, "CDGov.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(5, "CDMarkez.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(6, "CDSyndicate.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(7, "CDSubCommitte.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(8, "CDBirthPlace.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(9, "CDJop.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(10, "CDJobDescription.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(11, "CDGehaType.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(12, "CDModerea.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(13, "CDEDARET.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(14, "CDGeha.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(15, "CDQualification.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(16, "CDSpecialization.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(17, "TBLMembers.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(18, "CDEstefaaKed.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(19, "Qry.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(20, "TBLHafza.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(21, "TBLMemberCard.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(22, "TBLPrintCard.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(23, "TBLMandoop.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(24, "Report.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(25, "Receipts.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(26, "TblMemberAttach.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(27, "CDAttachmentType.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(28, "ImportData.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(29, "Users.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(30, "Roles.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(31, "RoleDetail.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(32, "UserRoles.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(33, "Options32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(34, "TBLAksat.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(35, "TBLEmpWork32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(36, "TBLUserMistake32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(37, "Fixs32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(38, "RoleSyndicate.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(39, "CDsarfType.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(40, "TBLDofatSarf.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(41, "TBLMemberSarf.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(42, "TblMemberAmanat.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(43, "TblWarasaAmanat.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(44, "archive32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(45, "TblChekNid32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(46, "TBLProofDoc32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(47, "Bank32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(48, "TBLDeathMembers32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(49, "tbladminremarks32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(50, "TBLEstefa32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(51, "TBLremind32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(52, "TBLMandoop32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(53, "TBLHafzaTasleem32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(54, "Visa32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(55, "TblAttach32.png");
             // 
             // DataribbonPage
             // 
@@ -3547,6 +3444,8 @@
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep23);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep24);
             this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep25);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep28);
+            this.ReportribbonPageGroup.ItemLinks.Add(this.mbRetCenterXRep29);
             this.ReportribbonPageGroup.Name = "ReportribbonPageGroup";
             this.ReportribbonPageGroup.Text = "التقارير";
             // 
@@ -3621,8 +3520,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
             this.popupControlContainer1.ResumeLayout(false);
             this.popupControlContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CEUpdate.Properties)).EndInit();
@@ -3636,8 +3533,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3663,10 +3560,8 @@
         private DevExpress.XtraBars.PopupControlContainer popupControlContainer2;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu appMenu;
-        private DevExpress.Utils.ImageCollection ribbonImageCollection;
-        private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
-        private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.Utils.ImageCollection ribbonImageCollection;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterExit;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterHelp;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterAbout;
@@ -3916,7 +3811,9 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterCDDofatSarfFrook;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLDofatSarfMadunea;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblAttach;
-        private DevExpress.Utils.ImageCollection imageCollection2;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep28;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep29;
+        private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;

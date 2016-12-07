@@ -1631,6 +1631,18 @@
     <Compile Include="Forms\Main\SplashFrm.designer.cs">
       <DependentUpon>SplashFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep29.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep29.designer.cs">
+      <DependentUpon>XRep29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep28.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep28.designer.cs">
+      <DependentUpon>XRep28.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep16A.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2471,6 +2483,12 @@
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XRep\XRep29.resx">
+      <DependentUpon>XRep29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep28.resx">
+      <DependentUpon>XRep28.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep16A.resx">
       <DependentUpon>XRep16A.cs</DependentUpon>
     </EmbeddedResource>

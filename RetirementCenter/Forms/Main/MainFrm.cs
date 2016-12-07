@@ -1250,6 +1250,26 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterXRep28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep28 FrmRep = new XRep28();
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterXRep29_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                XRep29 FrmRep = new XRep29();
+                Misc.Misc.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
        
         private void mbRetCenterQry01_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -2404,9 +2424,6 @@ namespace RetirementCenter
         }
 
         #endregion
-
-
-        
 
         
 
