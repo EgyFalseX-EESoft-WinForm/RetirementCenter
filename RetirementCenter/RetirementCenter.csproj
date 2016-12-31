@@ -763,6 +763,12 @@
     <Compile Include="Forms\Main\AntiAdminLogincs.Designer.cs">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry112Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry112Frm.designer.cs">
+      <DependentUpon>Qry112Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry111Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2104,6 +2110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\AntiAdminLogincs.resx">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry112Frm.resx">
+      <DependentUpon>Qry112Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry111Frm.resx">
       <DependentUpon>Qry111Frm.cs</DependentUpon>
