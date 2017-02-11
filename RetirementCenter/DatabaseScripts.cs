@@ -1526,14 +1526,15 @@ FROM CTE1 AS CTE1_1";
                 return @"
                 CREATE VIEW [dbo].[vtbladminremarks]
                     AS
-                    SELECT        tbladminremarks.remarkid, tbladminremarks.MMashatId, tbladminremarks.mremark, tbladminremarks.datein, tbladminremarks.userin, tbladminremarks.adminremark, tbladminremarks.admindatein, 
-                         tbladminremarks.finished, Users.RealName, TBLMashat.MMashatName, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, TBLMashat.sarfnumber, CDSubCommitte.SubCommitte, 
-                         CDSyndicate.Syndicate
-                FROM            tbladminremarks INNER JOIN
-                         TBLMashat ON tbladminremarks.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
-                         Users ON tbladminremarks.userin = Users.UserID";
+                    SELECT        dbo.tbladminremarks.remarkid, dbo.tbladminremarks.MMashatId, dbo.tbladminremarks.mremark, dbo.tbladminremarks.datein, dbo.tbladminremarks.userin, dbo.tbladminremarks.adminremark, 
+                         dbo.tbladminremarks.admindatein, dbo.tbladminremarks.finished, dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, 
+                         dbo.TBLMashat.sarfnumber, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.CDMashHala.MashHala
+FROM            dbo.tbladminremarks INNER JOIN
+                         dbo.TBLMashat ON dbo.tbladminremarks.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.Users ON dbo.tbladminremarks.userin = dbo.Users.UserID INNER JOIN
+                         dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId";
             }
         }
         public static string vQry74

@@ -736,25 +736,6 @@
       <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vtbladminremarks" Member="vtbladminremarks">
-    <Type Name="vtbladminremark">
-      <Column Name="remarkid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="mremark" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="adminremark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="admindatein" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="finished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vQry74" Member="vQry74s">
     <Type Name="vQry74">
       <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1602,6 +1583,26 @@
       <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtbladminremarks" Member="vtbladminremarks">
+    <Type Name="vtbladminremark">
+      <Column Name="remarkid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mremark" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adminremark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="admindatein" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="finished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

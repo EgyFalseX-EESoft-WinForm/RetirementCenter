@@ -31,6 +31,7 @@
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMSDATA = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmremark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
@@ -64,7 +65,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tbladminremarksTableAdapter();
-            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMashHala1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -135,12 +136,25 @@
             this.gridColumn3,
             this.colSyndicate,
             this.colSubCommitte,
-            this.colsarfnumber});
+            this.colsarfnumber,
+            this.colMashHala1});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowDetailButtons = false;
+            // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
@@ -511,17 +525,17 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
-            // colMMashatId
+            // colMashHala1
             // 
-            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "كود";
-            this.colMMashatId.FieldName = "MMashatId";
-            this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 0;
+            this.colMashHala1.AppearanceCell.Options.UseTextOptions = true;
+            this.colMashHala1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMashHala1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala1.Caption = "اعضاء/ورثة";
+            this.colMashHala1.FieldName = "MashHala";
+            this.colMashHala1.Name = "colMashHala1";
+            this.colMashHala1.Visible = true;
+            this.colMashHala1.VisibleIndex = 13;
             // 
             // tbladminremarksFrm
             // 
@@ -598,5 +612,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMashHala1;
     }
 }

@@ -157,7 +157,7 @@ namespace RetirementCenter
             {
                 _row.DofatSarfId = Convert.ToInt32(lueDofatSarfId.EditValue);
                 var result = SQLProvider.adpQry.ExistsTblMemberAmanat1(_row.MMashatId, _row.DofatSarfId);
-                if (result != null && (int)result != _row.AutoId)
+                if (result != null && (int)result != _row.AutoId && _row.RowState == DataRowState.Detached)
                 {
                     msgDlg.Show("موجود مسبقا", msgDlg.msgButtons.Close);
                     return;
