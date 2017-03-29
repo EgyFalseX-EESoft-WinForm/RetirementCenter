@@ -26,8 +26,8 @@ namespace RetirementCenter.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FalseX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True" +
-            ";User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID" +
+            "=sa;Password=123456")]
         public string RetirementCenterConnectionString {
             get {
                 return ((string)(this["RetirementCenterConnectionString"]));
@@ -63,6 +63,17 @@ namespace RetirementCenter.Properties {
         public string bamanatConnectionString {
             get {
                 return ((string)(this["bamanatConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EGYCSTEST.COM\\MSSQLSERVER2014;Initial Catalog=ETSMOBILE;User ID=ETSMO" +
+            "BILE_Admin;Password=AdmPass@123")]
+        public string ETSMOBILEConnectionString {
+            get {
+                return ((string)(this["ETSMOBILEConnectionString"]));
             }
         }
     }

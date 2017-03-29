@@ -935,10 +935,14 @@ namespace RetirementCenter
                 else
                     tblEdafatWarsaTableAdapter.Delete(TBLWarasa[0].PersonId);
                 AutoOpen = dlg.ceAutoOpen.Checked;
+                //add code60 for any new warasa
+                SQLProvider.adpQry.AwarasaNewId_InsertNewCodes();
                 return true;
             }
             else
             {
+                //add code60 for any new warasa
+                SQLProvider.adpQry.AwarasaNewId_InsertNewCodes();
                 AutoOpen = false;
                 return false;
 

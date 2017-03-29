@@ -303,6 +303,8 @@
             this.mbRetCenterTblAttach = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep28 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep29 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterSyncETSMobileFrm = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry113 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -788,10 +790,12 @@
             this.mbRetCenterQry111,
             this.mbRetCenterXRep28,
             this.mbRetCenterXRep29,
-            this.mbRetCenterQry112});
+            this.mbRetCenterQry112,
+            this.mbRetCenterSyncETSMobileFrm,
+            this.mbRetCenterQry113});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 422;
+            this.ribbonControl.MaxItemId = 424;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -3233,6 +3237,22 @@
             this.mbRetCenterXRep29.Name = "mbRetCenterXRep29";
             this.mbRetCenterXRep29.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // mbRetCenterSyncETSMobileFrm
+            // 
+            this.mbRetCenterSyncETSMobileFrm.Caption = "تصدير الموبيل";
+            this.mbRetCenterSyncETSMobileFrm.Id = 422;
+            this.mbRetCenterSyncETSMobileFrm.ImageIndex = 28;
+            this.mbRetCenterSyncETSMobileFrm.LargeImageIndex = 28;
+            this.mbRetCenterSyncETSMobileFrm.Name = "mbRetCenterSyncETSMobileFrm";
+            // 
+            // mbRetCenterQry113
+            // 
+            this.mbRetCenterQry113.Caption = "امانات اعضاء مكررة";
+            this.mbRetCenterQry113.Id = 423;
+            this.mbRetCenterQry113.ImageIndex = 19;
+            this.mbRetCenterQry113.LargeImageIndex = 19;
+            this.mbRetCenterQry113.Name = "mbRetCenterQry113";
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -3331,6 +3351,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterImportFromAccessFrm);
             this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterImportFrombamanat);
+            this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterSyncETSMobileFrm);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "استيراد البيانات";
             // 
@@ -3404,6 +3425,7 @@
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry80);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry93);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry94);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry113);
             this.QryribbonPageGroup.Name = "QryribbonPageGroup";
             this.QryribbonPageGroup.Text = "الاستعلامات";
             // 
@@ -3825,6 +3847,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblAttach;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep28;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep29;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterSyncETSMobileFrm;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry113;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

@@ -237,6 +237,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsdatam.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\dsEtsMobile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEtsMobile.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\dsQueries.cs">
       <DependentUpon>dsQueries.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -762,6 +767,18 @@
     </Compile>
     <Compile Include="Forms\Main\AntiAdminLogincs.Designer.cs">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\SyncETSMobileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\SyncETSMobileFrm.Designer.cs">
+      <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry113Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry113Frm.designer.cs">
+      <DependentUpon>Qry113Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry112Frm.cs">
       <SubType>Form</SubType>
@@ -1858,6 +1875,17 @@
     <None Include="DataSources\dsbamanat.xss">
       <DependentUpon>dsbamanat.xsd</DependentUpon>
     </None>
+    <None Include="DataSources\dsEtsMobile.xsc">
+      <DependentUpon>dsEtsMobile.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dsEtsMobile.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEtsMobile.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSources\dsEtsMobile.xss">
+      <DependentUpon>dsEtsMobile.xsd</DependentUpon>
+    </None>
     <None Include="Resources\save_16x16.png" />
     <None Include="Resources\cancel_16x16.png" />
     <None Include="Resources\add_16x16.png" />
@@ -2110,6 +2138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\AntiAdminLogincs.resx">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\SyncETSMobileFrm.resx">
+      <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry113Frm.resx">
+      <DependentUpon>Qry113Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry112Frm.resx">
       <DependentUpon>Qry112Frm.cs</DependentUpon>

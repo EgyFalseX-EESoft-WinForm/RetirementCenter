@@ -1433,15 +1433,16 @@ FROM            TBLMemberSarf INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry59]
                     AS
-                                    SELECT        CAST(TBLBeanWarsa.PersonId AS VARCHAR) + CAST(TBLBeanWarsa.DofatSarfId AS VARCHAR) AS autoId, TBLBeanWarsa.PersonId, TBLBeanWarsa.DofatSarfId, TBLBeanWarsa.Beandate, 
-                         TBLBeanWarsa.deleted, TBLBeanWarsa.remarks, TBLBeanWarsa.dateremember, TBLBeanWarsa.userin, TBLBeanWarsa.datein, TBLDofatSarf.DofatSarf, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, 
-                         TBLMashat.MMashatName, TBLMashat.sarfnumber, TBLWarasa.personNID, TBLWarasa.personName
-                FROM            TBLBeanWarsa INNER JOIN
-                         TBLWarasa ON TBLBeanWarsa.PersonId = TBLWarasa.PersonId INNER JOIN
-                         TBLDofatSarf ON TBLBeanWarsa.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
-                         TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId INNER JOIN
-                         CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
-                         CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId
+                                    SELECT        CAST(dbo.TBLBeanWarsa.PersonId AS VARCHAR) + CAST(dbo.TBLBeanWarsa.DofatSarfId AS VARCHAR) AS autoId, dbo.TBLBeanWarsa.PersonId, dbo.TBLBeanWarsa.DofatSarfId, dbo.TBLBeanWarsa.Beandate, 
+                         dbo.TBLBeanWarsa.deleted, dbo.TBLBeanWarsa.remarks, dbo.TBLBeanWarsa.dateremember, dbo.TBLBeanWarsa.userin, dbo.TBLBeanWarsa.datein, dbo.TBLDofatSarf.DofatSarf, dbo.CDSyndicate.Syndicate, 
+                         dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLWarasa.personNID, dbo.TBLWarasa.personName, dbo.TBLWarasa.code60, 
+                         dbo.TBLMashat.MMashatId
+FROM            dbo.TBLBeanWarsa INNER JOIN
+                         dbo.TBLWarasa ON dbo.TBLBeanWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
+                         dbo.TBLDofatSarf ON dbo.TBLBeanWarsa.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLWarasa.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLWarasa.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLWarasa.SubCommitteId = dbo.CDSubCommitte.SubCommitteId
 ";
             }
         }

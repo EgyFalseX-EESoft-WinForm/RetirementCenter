@@ -15,6 +15,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using RetirementCenter.Forms.Data;
 using DevExpress.XtraSplashScreen;
+using RetirementCenter.Forms.Main;
 
 namespace RetirementCenter
 {
@@ -486,6 +487,16 @@ namespace RetirementCenter
             this.Invoke(new MethodInvoker(() =>
             {
                 ImportFrombamanatFrm FrmData = new ImportFrombamanatFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["ImportData.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterSyncETSMobileFrm_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                SyncETSMobileFrm FrmData = new SyncETSMobileFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["ImportData.png"], 32, false) };
                 FrmData.Show();
             }));
             SplashScreenManager.CloseForm();
@@ -2432,11 +2443,22 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterQry113_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry113Frm FrmData = new Qry113Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
 
         
 
         
+       
 
     }
 

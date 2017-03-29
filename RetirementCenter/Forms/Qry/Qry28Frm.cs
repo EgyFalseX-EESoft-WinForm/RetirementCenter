@@ -70,6 +70,8 @@ namespace RetirementCenter
             }
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
+            //Fix issues in visa & Active columns
+            SQLProvider.adpQry.Fix_visa_Active_BeforeA3dadWarasa();
             int effected = 0;
             int codestart = 0;
             int codeend = 999999999;
