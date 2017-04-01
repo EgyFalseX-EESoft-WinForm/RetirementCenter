@@ -69,8 +69,7 @@ namespace RetirementCenter.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EGYCSTEST.COM\\MSSQLSERVER2014;Initial Catalog=ETSMOBILE;User ID=ETSMO" +
-            "BILE_Admin;Password=AdmPass@123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ETSMOBILE;User ID=sa;Password=123456")]
         public string ETSMOBILEConnectionString {
             get {
                 return ((string)(this["ETSMOBILEConnectionString"]));

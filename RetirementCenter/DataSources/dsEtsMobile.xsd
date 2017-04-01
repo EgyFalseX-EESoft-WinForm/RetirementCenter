@@ -561,6 +561,46 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdatetblmemberbankTableAdapter" GeneratorDataComponentClassName="UpdatetblmemberbankTableAdapter" Name="Updatetblmemberbank" UserDataComponentName="UpdatetblmemberbankTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ETSMOBILEConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblmemberbank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AutoId, amanatwareddate, amanatmony
+FROM            tblmemberbank
+WHERE        (amanatwareddate IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="amanatwareddate" DataSetColumn="amanatwareddate" />
+              <Mapping SourceColumn="amanatmony" DataSetColumn="amanatmony" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdatetblWarasabankTableAdapter" GeneratorDataComponentClassName="UpdatetblWarasabankTableAdapter" Name="UpdatetblWarasabank" UserDataComponentName="UpdatetblWarasabankTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ETSMOBILEConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblWarasabank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AutoId, amanatwareddate, amanatmony
+FROM            tblWarasabank
+WHERE        (amanatwareddate IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="amanatwareddate" DataSetColumn="amanatwareddate" />
+              <Mapping SourceColumn="amanatmony" DataSetColumn="amanatmony" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="ETSMOBILEConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="TBLMashat_MaxId" MethodsParameterType="CLR" Modifier="Public" Name="TBLMashat_MaxId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="TBLMashat_MaxId">
@@ -764,6 +804,24 @@ FROM            TBLDofatSarf</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Updatetblmemberbank" msprop:Generator_TableClassName="UpdatetblmemberbankDataTable" msprop:Generator_TableVarName="tableUpdatetblmemberbank" msprop:Generator_TablePropName="Updatetblmemberbank" msprop:Generator_RowDeletingName="UpdatetblmemberbankRowDeleting" msprop:Generator_RowChangingName="UpdatetblmemberbankRowChanging" msprop:Generator_RowEvHandlerName="UpdatetblmemberbankRowChangeEventHandler" msprop:Generator_RowDeletedName="UpdatetblmemberbankRowDeleted" msprop:Generator_UserTableName="Updatetblmemberbank" msprop:Generator_RowChangedName="UpdatetblmemberbankRowChanged" msprop:Generator_RowEvArgName="UpdatetblmemberbankRowChangeEvent" msprop:Generator_RowClassName="UpdatetblmemberbankRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:long" />
+              <xs:element name="amanatwareddate" msprop:Generator_ColumnVarNameInTable="columnamanatwareddate" msprop:Generator_ColumnPropNameInRow="amanatwareddate" msprop:Generator_ColumnPropNameInTable="amanatwareddateColumn" msprop:Generator_UserColumnName="amanatwareddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="amanatmony" msprop:Generator_ColumnVarNameInTable="columnamanatmony" msprop:Generator_ColumnPropNameInRow="amanatmony" msprop:Generator_ColumnPropNameInTable="amanatmonyColumn" msprop:Generator_UserColumnName="amanatmony" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UpdatetblWarasabank" msprop:Generator_TableClassName="UpdatetblWarasabankDataTable" msprop:Generator_TableVarName="tableUpdatetblWarasabank" msprop:Generator_TablePropName="UpdatetblWarasabank" msprop:Generator_RowDeletingName="UpdatetblWarasabankRowDeleting" msprop:Generator_RowChangingName="UpdatetblWarasabankRowChanging" msprop:Generator_RowEvHandlerName="UpdatetblWarasabankRowChangeEventHandler" msprop:Generator_RowDeletedName="UpdatetblWarasabankRowDeleted" msprop:Generator_UserTableName="UpdatetblWarasabank" msprop:Generator_RowChangedName="UpdatetblWarasabankRowChanged" msprop:Generator_RowEvArgName="UpdatetblWarasabankRowChangeEvent" msprop:Generator_RowClassName="UpdatetblWarasabankRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:long" />
+              <xs:element name="amanatwareddate" msprop:Generator_ColumnVarNameInTable="columnamanatwareddate" msprop:Generator_ColumnPropNameInRow="amanatwareddate" msprop:Generator_ColumnPropNameInTable="amanatwareddateColumn" msprop:Generator_UserColumnName="amanatwareddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="amanatmony" msprop:Generator_ColumnVarNameInTable="columnamanatmony" msprop:Generator_ColumnPropNameInRow="amanatmony" msprop:Generator_ColumnPropNameInTable="amanatmonyColumn" msprop:Generator_UserColumnName="amanatmony" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -792,6 +850,14 @@ FROM            TBLDofatSarf</CommandText>
     </xs:unique>
     <xs:unique name="tblWarasabank_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:tblWarasabank" />
+      <xs:field xpath="mstns:AutoId" />
+    </xs:unique>
+    <xs:unique name="Updatetblmemberbank_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Updatetblmemberbank" />
+      <xs:field xpath="mstns:AutoId" />
+    </xs:unique>
+    <xs:unique name="UpdatetblWarasabank_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UpdatetblWarasabank" />
       <xs:field xpath="mstns:AutoId" />
     </xs:unique>
   </xs:element>
