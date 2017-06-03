@@ -16,6 +16,7 @@ namespace RetirementCenter.Forms.Main
         public SyncETSMobileFrm()
         {
             InitializeComponent();
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace RetirementCenter.Forms.Main
 
                     //Get MaxIds
                     DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
                     SetStatus = "Get missing recored in CDSyndicate";
                     int maxIdCDSyndicate = adpQry.CDSyndicate_MaxId() ?? 0;
                     ProgressValue += 1;
@@ -121,7 +123,7 @@ namespace RetirementCenter.Forms.Main
             connectionLocal.Open();
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default["RetirementCenterConnectionString"].ToString());
-            SqlCommand cmd = new SqlCommand("", con);
+            SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
             SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
@@ -186,7 +188,7 @@ namespace RetirementCenter.Forms.Main
             connectionLocal.Open();
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default["RetirementCenterConnectionString"].ToString());
-            SqlCommand cmd = new SqlCommand("", con);
+            SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
             SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
@@ -246,7 +248,9 @@ namespace RetirementCenter.Forms.Main
         }
         private static void InserttblWarasabank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, long maxIdtblWarasabank)
         {
-            new DataSources.dsQueriesTableAdapters.tblWarasabank_ForMobTableAdapter().Fill(dsQry.tblWarasabank_ForMob, maxIdtblWarasabank);
+            DataSources.dsQueriesTableAdapters.tblWarasabank_ForMobTableAdapter adp = new DataSources.dsQueriesTableAdapters.tblWarasabank_ForMobTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
+            adp.Fill(dsQry.tblWarasabank_ForMob, maxIdtblWarasabank);
             foreach (var item in dsQry.tblWarasabank_ForMob)
             {
                 DataSources.dsEtsMobile.tblWarasabankRow row = dsMob.tblWarasabank.NewtblWarasabankRow();
@@ -292,7 +296,10 @@ namespace RetirementCenter.Forms.Main
         }
         private static void Inserttblmemberbank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, long maxIdtblmemberbank)
         {
-            new DataSources.dsQueriesTableAdapters.tblmemberbank_ForMobTableAdapter().Fill(dsQry.tblmemberbank_ForMob, maxIdtblmemberbank);
+            DataSources.dsQueriesTableAdapters.tblmemberbank_ForMobTableAdapter adp = new DataSources.dsQueriesTableAdapters.tblmemberbank_ForMobTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
+            adp.Fill(dsQry.tblmemberbank_ForMob, maxIdtblmemberbank);
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
             foreach (var item in dsQry.tblmemberbank_ForMob)
             {
                 DataSources.dsEtsMobile.tblmemberbankRow row = dsMob.tblmemberbank.NewtblmemberbankRow();
@@ -323,7 +330,9 @@ namespace RetirementCenter.Forms.Main
         }
         private static void InsertTBLWarasa(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdTBLWarasa)
         {
-            new DataSources.dsQueriesTableAdapters.TBLWarasa_ForMobTableAdapter().Fill(dsQry.TBLWarasa_ForMob, maxIdTBLWarasa);
+            DataSources.dsQueriesTableAdapters.TBLWarasa_ForMobTableAdapter adp = new DataSources.dsQueriesTableAdapters.TBLWarasa_ForMobTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
+            adp.Fill(dsQry.TBLWarasa_ForMob, maxIdTBLWarasa);
             foreach (var item in dsQry.TBLWarasa_ForMob)
                 dsMob.TBLWarasa.AddTBLWarasaRow(item.PersonId, item.MMashatId, item.WarasaTypeId, item.personName, item.yasref, item.SyndicateId, item.SubCommitteId, item.responsiblesarf, item.responsiblesarfId, item.Iscode60Null() ? 0 : item.code60);
             bulkCopy.ColumnMappings.Clear();
@@ -343,7 +352,9 @@ namespace RetirementCenter.Forms.Main
         }
         private static void InsertTBLMashat(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdTBLMashat)
         {
-            new DataSources.dsQueriesTableAdapters.TBLMashat_ForMobTableAdapter().Fill(dsQry.TBLMashat_ForMob, maxIdTBLMashat);
+            DataSources.dsQueriesTableAdapters.TBLMashat_ForMobTableAdapter adp = new DataSources.dsQueriesTableAdapters.TBLMashat_ForMobTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
+            adp.Fill(dsQry.TBLMashat_ForMob, maxIdTBLMashat);
             foreach (var item in dsQry.TBLMashat_ForMob)
             {
                 DataSources.dsEtsMobile.TBLMashatRow row = dsMob.TBLMashat.NewTBLMashatRow();
@@ -374,10 +385,14 @@ namespace RetirementCenter.Forms.Main
         }
         private static void InsertTBLDofatSarf(DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdTBLDofatSarf)
         {
-            new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter().FillBy_ForMob(dsQry.TBLDofatSarf, maxIdTBLDofatSarf);
+            DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter adp = new DataSources.dsQueriesTableAdapters.TBLDofatSarfTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adp, 0);
+            adp.FillBy_ForMob(dsQry.TBLDofatSarf, maxIdTBLDofatSarf);
             foreach (var item in dsQry.TBLDofatSarf)
                 dsMob.TBLDofatSarf.AddTBLDofatSarfRow(item.DofatSarfId, item.DofatSarf, item.DofatSarfDatefrom, item.DofatSarfDateto, item.IsremdNull() ? string.Empty : item.remd, false);
-            new DataSources.dsEtsMobileTableAdapters.TBLDofatSarfTableAdapter().Update(dsMob.TBLDofatSarf);
+            DataSources.dsEtsMobileTableAdapters.TBLDofatSarfTableAdapter adpUpdate = new DataSources.dsEtsMobileTableAdapters.TBLDofatSarfTableAdapter();
+            SQLProvider.SetAllCommandTimeouts(adpUpdate, 0);
+            adpUpdate.Update(dsMob.TBLDofatSarf);
         }
         private static void InsertCDSubCommitte(DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdCDSubCommitte)
         {
