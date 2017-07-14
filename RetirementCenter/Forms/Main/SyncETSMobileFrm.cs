@@ -192,7 +192,7 @@ namespace RetirementCenter.Forms.Main
             SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
-            new DataSources.dsEtsMobileTableAdapters.UpdatetblmemberbankTableAdapter().Fill(dsMob.Updatetblmemberbank);
+            new DataSources.dsEtsMobileTableAdapters.UpdatetblWarasabankTableAdapter().Fill(dsMob.UpdatetblWarasabank);
             string BulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
             cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblWarasabank WHERE 1 = 0;", BulkTableName);
             cmd.ExecuteNonQuery();
@@ -201,8 +201,8 @@ namespace RetirementCenter.Forms.Main
             bulkCopyLocal.ColumnMappings.Add("amanatmony", "amanatmony");
             bulkCopyLocal.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
             bulkCopyLocal.DestinationTableName = BulkTableName;
-            bulkCopyLocal.BatchSize = dsMob.Updatetblmemberbank.Count;
-            bulkCopyLocal.WriteToServer(dsMob.Updatetblmemberbank);
+            bulkCopyLocal.BatchSize = dsMob.UpdatetblWarasabank.Count;
+            bulkCopyLocal.WriteToServer(dsMob.UpdatetblWarasabank);
             cmd.CommandText = string.Format(@"merge into {0} as Target 
                     using tblWarasabank as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
@@ -211,7 +211,7 @@ namespace RetirementCenter.Forms.Main
             cmd.ExecuteNonQuery();
             cmd.CommandText = string.Format("SELECT AutoId, amanatwareddate, amanatmony FROM {0} WHERE amanatwareddate IS NOT NULL", BulkTableName);
             dr = cmd.ExecuteReader();
-            dsMob.Updatetblmemberbank.Clear();
+            dsMob.UpdatetblWarasabank.Clear();
             while (dr.Read())
             {
                 DataSources.dsEtsMobile.UpdatetblWarasabankRow row = dsMob.UpdatetblWarasabank.NewUpdatetblWarasabankRow();
@@ -221,6 +221,7 @@ namespace RetirementCenter.Forms.Main
                 dsMob.UpdatetblWarasabank.AddUpdatetblWarasabankRow(row);
             }
             dr.Close();
+            
             cmd.CommandText = string.Format(@"DROP TABLE {0}", BulkTableName);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -234,8 +235,8 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("amanatmony", "amanatmony");
             bulkCopy.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
             bulkCopy.DestinationTableName = BulkTableName;
-            bulkCopy.BatchSize = dsMob.Updatetblmemberbank.Count;
-            bulkCopy.WriteToServer(dsMob.Updatetblmemberbank);
+            bulkCopy.BatchSize = dsMob.UpdatetblWarasabank.Count;
+            bulkCopy.WriteToServer(dsMob.UpdatetblWarasabank);
             cmd.CommandText = string.Format(@"merge into tblWarasabank as Target 
                     using {0} as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
