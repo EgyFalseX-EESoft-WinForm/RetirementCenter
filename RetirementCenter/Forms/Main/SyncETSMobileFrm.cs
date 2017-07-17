@@ -68,11 +68,11 @@ namespace RetirementCenter.Forms.Main
 
                     //Update tblmemberbank
                     SetStatus = "update old data in tblmemberbank";
-                    Updatetblmemberbank(bulkCopy, dsMob);
+                    Updatetblmemberbank(bulkCopy, dsQry);
                     ProgressValue += 1;
                     //Update tblWarasabank
                     SetStatus = "update old data in tblWarasabank";
-                    UpdatetblWarasabank(bulkCopy, dsMob);
+                    UpdatetblWarasabank(bulkCopy, dsQry);
                     ProgressValue += 1;
                     //CDSyndicate
                     SetStatus = "prepare data in CDSyndicate";
@@ -116,7 +116,7 @@ namespace RetirementCenter.Forms.Main
             
         }
 
-        private static void Updatetblmemberbank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob)
+        private static void Updatetblmemberbank(SqlBulkCopy bulkCopy, DataSources.dsQueries ds)
         {
             SqlConnection webConnection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
             SqlBulkCopy bulkCopyWeb = new SqlBulkCopy(webConnection) { BulkCopyTimeout = 0 };
@@ -127,7 +127,7 @@ namespace RetirementCenter.Forms.Main
             //SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
-            new DataSources.dsEtsMobileTableAdapters.UpdatetblmemberbankTableAdapter().Fill(dsMob.Updatetblmemberbank);
+            new DataSources.dsQueriesTableAdapters.UpdatetblmemberbankTableAdapter().Fill(ds.Updatetblmemberbank);
             string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
             cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblmemberbank WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
@@ -136,19 +136,19 @@ namespace RetirementCenter.Forms.Main
             bulkCopyWeb.ColumnMappings.Add("amanatmony", "amanatmony");
             bulkCopyWeb.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
             bulkCopyWeb.DestinationTableName = bulkTableName;
-            bulkCopyWeb.BatchSize = dsMob.Updatetblmemberbank.Count;
-            bulkCopyWeb.WriteToServer(dsMob.Updatetblmemberbank);
-            cmd.CommandText = string.Format(@"merge into {0} as Target 
-                    using tblmemberbank as Source on Target.AutoId = Source.AutoId when matched then 
+            bulkCopyWeb.BatchSize = ds.Updatetblmemberbank.Count;
+            bulkCopyWeb.WriteToServer(ds.Updatetblmemberbank);
+            cmd.CommandText = string.Format(@"merge into tblmemberbank as Target 
+                    using {0} as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
                     Target.amanatwareddate = Source.amanatwareddate,
                     Target.amanatmony = Source.amanatmony;", bulkTableName);
-            cmd.ExecuteNonQuery();
+            int result = cmd.ExecuteNonQuery();
             cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
             cmd.ExecuteNonQuery();
             con.Close(); con.Dispose(); cmd.Dispose();
         }
-        private static void UpdatetblWarasabank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob)
+        private static void UpdatetblWarasabank(SqlBulkCopy bulkCopy, DataSources.dsQueries ds)
         {
             SqlConnection connectionWeb = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
             SqlBulkCopy bulkCopyWeb = new SqlBulkCopy(connectionWeb) { BulkCopyTimeout = 0 };
@@ -159,7 +159,7 @@ namespace RetirementCenter.Forms.Main
             //SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
-            new DataSources.dsEtsMobileTableAdapters.UpdatetblWarasabankTableAdapter().Fill(dsMob.UpdatetblWarasabank);
+            new DataSources.dsQueriesTableAdapters.UpdatetblWarasabankTableAdapter().Fill(ds.UpdatetblWarasabank);
             string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
             cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblWarasabank WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
@@ -168,10 +168,10 @@ namespace RetirementCenter.Forms.Main
             bulkCopyWeb.ColumnMappings.Add("amanatmony", "amanatmony");
             bulkCopyWeb.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
             bulkCopyWeb.DestinationTableName = bulkTableName;
-            bulkCopyWeb.BatchSize = dsMob.UpdatetblWarasabank.Count;
-            bulkCopyWeb.WriteToServer(dsMob.UpdatetblWarasabank);
-            cmd.CommandText = string.Format(@"merge into {0} as Target 
-                    using tblWarasabank as Source on Target.AutoId = Source.AutoId when matched then 
+            bulkCopyWeb.BatchSize = ds.UpdatetblWarasabank.Count;
+            bulkCopyWeb.WriteToServer(ds.UpdatetblWarasabank);
+            cmd.CommandText = string.Format(@"merge into tblWarasabank as Target 
+                    using {0} as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
                     Target.amanatwareddate = Source.amanatwareddate,
                     Target.amanatmony = Source.amanatmony;", bulkTableName);
