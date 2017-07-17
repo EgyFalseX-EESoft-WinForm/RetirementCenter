@@ -118,132 +118,65 @@ namespace RetirementCenter.Forms.Main
 
         private static void Updatetblmemberbank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob)
         {
-            SqlConnection connectionLocal = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-            SqlBulkCopy bulkCopyLocal = new SqlBulkCopy(connectionLocal) { BulkCopyTimeout = 0 };
-            connectionLocal.Open();
+            SqlConnection webConnection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+            SqlBulkCopy bulkCopyWeb = new SqlBulkCopy(webConnection) { BulkCopyTimeout = 0 };
+            webConnection.Open();
 
-            SqlConnection con = new SqlConnection(Properties.Settings.Default["RetirementCenterConnectionString"].ToString());
+            SqlConnection con = new SqlConnection(Properties.Settings.Default["ETSMOBILEConnectionString"].ToString());
             SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
-            SqlDataReader dr = null;
+            //SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
             new DataSources.dsEtsMobileTableAdapters.UpdatetblmemberbankTableAdapter().Fill(dsMob.Updatetblmemberbank);
-            string BulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
-            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblmemberbank WHERE 1 = 0;", BulkTableName);
+            string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblmemberbank WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
-            bulkCopyLocal.ColumnMappings.Clear();
-            bulkCopyLocal.ColumnMappings.Add("AutoId", "AutoId");
-            bulkCopyLocal.ColumnMappings.Add("amanatmony", "amanatmony");
-            bulkCopyLocal.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
-            bulkCopyLocal.DestinationTableName = BulkTableName;
-            bulkCopyLocal.BatchSize = dsMob.Updatetblmemberbank.Count;
-            bulkCopyLocal.WriteToServer(dsMob.Updatetblmemberbank);
+            bulkCopyWeb.ColumnMappings.Clear();
+            bulkCopyWeb.ColumnMappings.Add("AutoId", "AutoId");
+            bulkCopyWeb.ColumnMappings.Add("amanatmony", "amanatmony");
+            bulkCopyWeb.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
+            bulkCopyWeb.DestinationTableName = bulkTableName;
+            bulkCopyWeb.BatchSize = dsMob.Updatetblmemberbank.Count;
+            bulkCopyWeb.WriteToServer(dsMob.Updatetblmemberbank);
             cmd.CommandText = string.Format(@"merge into {0} as Target 
                     using tblmemberbank as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
                     Target.amanatwareddate = Source.amanatwareddate,
-                    Target.amanatmony = Source.amanatmony;", BulkTableName);
+                    Target.amanatmony = Source.amanatmony;", bulkTableName);
             cmd.ExecuteNonQuery();
-            cmd.CommandText = string.Format("SELECT AutoId, amanatwareddate, amanatmony FROM {0} WHERE amanatwareddate IS NOT NULL", BulkTableName);
-            dr = cmd.ExecuteReader();
-            dsMob.Updatetblmemberbank.Clear();
-            while (dr.Read())
-            {
-                DataSources.dsEtsMobile.UpdatetblmemberbankRow row = dsMob.Updatetblmemberbank.NewUpdatetblmemberbankRow();
-                row.AutoId = dr.GetInt64(0);
-                row.amanatwareddate = dr.GetDateTime(1);
-                row.amanatmony = dr.GetDouble(2);
-                dsMob.Updatetblmemberbank.AddUpdatetblmemberbankRow(row);
-            }
-            dr.Close();
-            cmd.CommandText = string.Format(@"DROP TABLE {0}", BulkTableName);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            con.ConnectionString = Properties.Settings.Default["ETSMOBILEConnectionString"].ToString();
-            con.Open();
-
-            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblmemberbank WHERE 1 = 0;", BulkTableName);
-            cmd.ExecuteNonQuery();
-            bulkCopy.ColumnMappings.Clear();
-            bulkCopy.ColumnMappings.Add("AutoId", "AutoId");
-            bulkCopy.ColumnMappings.Add("amanatmony", "amanatmony");
-            bulkCopy.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
-            bulkCopy.DestinationTableName = BulkTableName;
-            bulkCopy.BatchSize = dsMob.Updatetblmemberbank.Count;
-            bulkCopy.WriteToServer(dsMob.Updatetblmemberbank);
-            cmd.CommandText = string.Format(@"merge into tblmemberbank as Target 
-                    using {0} as Source on Target.AutoId = Source.AutoId when matched then 
-                    update set 
-                    Target.amanatwareddate = Source.amanatwareddate,
-                    Target.amanatmony = Source.amanatmony;", BulkTableName);
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = string.Format(@"DROP TABLE {0}", BulkTableName);
+            cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
             cmd.ExecuteNonQuery();
             con.Close(); con.Dispose(); cmd.Dispose();
         }
         private static void UpdatetblWarasabank(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob)
         {
-            SqlConnection connectionLocal = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
-            SqlBulkCopy bulkCopyLocal = new SqlBulkCopy(connectionLocal) { BulkCopyTimeout = 0 };
-            connectionLocal.Open();
+            SqlConnection connectionWeb = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+            SqlBulkCopy bulkCopyWeb = new SqlBulkCopy(connectionWeb) { BulkCopyTimeout = 0 };
+            connectionWeb.Open();
 
-            SqlConnection con = new SqlConnection(Properties.Settings.Default["RetirementCenterConnectionString"].ToString());
+            SqlConnection con = new SqlConnection(Properties.Settings.Default["ETSMOBILEConnectionString"].ToString());
             SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
-            SqlDataReader dr = null;
+            //SqlDataReader dr = null;
             con.Open();
             //get data than need and update from Mob
             new DataSources.dsEtsMobileTableAdapters.UpdatetblWarasabankTableAdapter().Fill(dsMob.UpdatetblWarasabank);
-            string BulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
-            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblWarasabank WHERE 1 = 0;", BulkTableName);
+            string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblWarasabank WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
-            bulkCopyLocal.ColumnMappings.Clear();
-            bulkCopyLocal.ColumnMappings.Add("AutoId", "AutoId");
-            bulkCopyLocal.ColumnMappings.Add("amanatmony", "amanatmony");
-            bulkCopyLocal.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
-            bulkCopyLocal.DestinationTableName = BulkTableName;
-            bulkCopyLocal.BatchSize = dsMob.UpdatetblWarasabank.Count;
-            bulkCopyLocal.WriteToServer(dsMob.UpdatetblWarasabank);
+            bulkCopyWeb.ColumnMappings.Clear();
+            bulkCopyWeb.ColumnMappings.Add("AutoId", "AutoId");
+            bulkCopyWeb.ColumnMappings.Add("amanatmony", "amanatmony");
+            bulkCopyWeb.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
+            bulkCopyWeb.DestinationTableName = bulkTableName;
+            bulkCopyWeb.BatchSize = dsMob.UpdatetblWarasabank.Count;
+            bulkCopyWeb.WriteToServer(dsMob.UpdatetblWarasabank);
             cmd.CommandText = string.Format(@"merge into {0} as Target 
                     using tblWarasabank as Source on Target.AutoId = Source.AutoId when matched then 
                     update set 
                     Target.amanatwareddate = Source.amanatwareddate,
-                    Target.amanatmony = Source.amanatmony;", BulkTableName);
+                    Target.amanatmony = Source.amanatmony;", bulkTableName);
             cmd.ExecuteNonQuery();
-            cmd.CommandText = string.Format("SELECT AutoId, amanatwareddate, amanatmony FROM {0} WHERE amanatwareddate IS NOT NULL", BulkTableName);
-            dr = cmd.ExecuteReader();
-            dsMob.UpdatetblWarasabank.Clear();
-            while (dr.Read())
-            {
-                DataSources.dsEtsMobile.UpdatetblWarasabankRow row = dsMob.UpdatetblWarasabank.NewUpdatetblWarasabankRow();
-                row.AutoId = dr.GetInt64(0);
-                row.amanatwareddate = dr.GetDateTime(1);
-                row.amanatmony = dr.GetDouble(2);
-                dsMob.UpdatetblWarasabank.AddUpdatetblWarasabankRow(row);
-            }
-            dr.Close();
-            
-            cmd.CommandText = string.Format(@"DROP TABLE {0}", BulkTableName);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            con.ConnectionString = Properties.Settings.Default["ETSMOBILEConnectionString"].ToString();
-            con.Open();
-
-            cmd.CommandText = string.Format(@"SELECT AutoId, amanatwareddate, amanatmony INTO {0} FROM tblWarasabank WHERE 1 = 0;", BulkTableName);
-            cmd.ExecuteNonQuery();
-            bulkCopy.ColumnMappings.Clear();
-            bulkCopy.ColumnMappings.Add("AutoId", "AutoId");
-            bulkCopy.ColumnMappings.Add("amanatmony", "amanatmony");
-            bulkCopy.ColumnMappings.Add("amanatwareddate", "amanatwareddate");
-            bulkCopy.DestinationTableName = BulkTableName;
-            bulkCopy.BatchSize = dsMob.UpdatetblWarasabank.Count;
-            bulkCopy.WriteToServer(dsMob.UpdatetblWarasabank);
-            cmd.CommandText = string.Format(@"merge into tblWarasabank as Target 
-                    using {0} as Source on Target.AutoId = Source.AutoId when matched then 
-                    update set 
-                    Target.amanatwareddate = Source.amanatwareddate,
-                    Target.amanatmony = Source.amanatmony;", BulkTableName);
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = string.Format(@"DROP TABLE {0}", BulkTableName);
+            cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
             cmd.ExecuteNonQuery();
             con.Close(); con.Dispose(); cmd.Dispose();
         }

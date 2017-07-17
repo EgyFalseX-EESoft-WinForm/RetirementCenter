@@ -8148,7 +8148,7 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.ETSMOBILEConnectionString;
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8158,7 +8158,7 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        AutoId, amanatwareddate, amanatmony\r\nFROM            tblmemberbank\r" +
-                "\nWHERE        (amanatwareddate IS NULL)";
+                "\nWHERE        (amanatwareddate IS NOT NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8318,7 +8318,7 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.ETSMOBILEConnectionString;
+            this._connection.ConnectionString = global::RetirementCenter.Properties.Settings.Default.RetirementCenterConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8328,7 +8328,7 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        AutoId, amanatwareddate, amanatmony\r\nFROM            tblWarasabank\r" +
-                "\nWHERE        (amanatwareddate IS NULL)";
+                "\nWHERE        (amanatwareddate IS NOT NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

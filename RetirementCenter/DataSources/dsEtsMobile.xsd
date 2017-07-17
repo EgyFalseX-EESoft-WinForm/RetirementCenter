@@ -2,9 +2,10 @@
 <xs:schema id="dsEtsMobile" targetNamespace="http://tempuri.org/dsEtsMobile.xsd" xmlns:mstns="http://tempuri.org/dsEtsMobile.xsd" xmlns="http://tempuri.org/dsEtsMobile.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ETSMOBILEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ETSMOBILEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RetirementCenter.Properties.Settings.GlobalReference.Default.ETSMOBILEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RetirementCenterConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RetirementCenterConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RetirementCenter.Properties.Settings.GlobalReference.Default.RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CDSubCommitteTableAdapter" GeneratorDataComponentClassName="CDSubCommitteTableAdapter" Name="CDSubCommitte" UserDataComponentName="CDSubCommitteTableAdapter">
@@ -563,12 +564,12 @@ SELECT MMashatId, DofatSarfId, PersonId, visanumber, SyndicateId, SubCommitteId,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdatetblmemberbankTableAdapter" GeneratorDataComponentClassName="UpdatetblmemberbankTableAdapter" Name="Updatetblmemberbank" UserDataComponentName="UpdatetblmemberbankTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ETSMOBILEConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblmemberbank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblmemberbank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        AutoId, amanatwareddate, amanatmony
 FROM            tblmemberbank
-WHERE        (amanatwareddate IS NULL)</CommandText>
+WHERE        (amanatwareddate IS NOT NULL)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -583,12 +584,12 @@ WHERE        (amanatwareddate IS NULL)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdatetblWarasabankTableAdapter" GeneratorDataComponentClassName="UpdatetblWarasabankTableAdapter" Name="UpdatetblWarasabank" UserDataComponentName="UpdatetblWarasabankTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ETSMOBILEConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblWarasabank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.tblWarasabank" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        AutoId, amanatwareddate, amanatmony
 FROM            tblWarasabank
-WHERE        (amanatwareddate IS NULL)</CommandText>
+WHERE        (amanatwareddate IS NOT NULL)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
