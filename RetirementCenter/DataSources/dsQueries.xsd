@@ -4417,11 +4417,11 @@ WHERE TBLWarasa.visa &lt;&gt; TBLWarasa_1.visa
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TBLMashat_ForMobTableAdapter" GeneratorDataComponentClassName="TBLMashat_ForMobTableAdapter" Name="TBLMashat_ForMob" UserDataComponentName="TBLMashat_ForMobTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="ETSMOBILE.dbo.TBLMashat" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TBLMashat.MMashatId, TBLMashat.MMashatName, TBLMashat.SyndicateId, TBLMashat.SubCommitteId, TBLMashat.sarfnumber, TBLMashat.MashHalaId, BankExportedData.hafza, 
-                         BankExportedData.hafzadate
+                         BankExportedData.hafzadate, BankExportedData.Activate, BankExportedData.ActivateDate
 FROM            TBLMashat LEFT OUTER JOIN
                          BankExportedData ON TBLMashat.MMashatId = BankExportedData.MMashatId
 WHERE        (TBLMashat.MMashatId &gt; @MMashatId)</CommandText>
@@ -4441,17 +4441,34 @@ WHERE        (TBLMashat.MMashatId &gt; @MMashatId)</CommandText>
               <Mapping SourceColumn="MashHalaId" DataSetColumn="MashHalaId" />
               <Mapping SourceColumn="hafza" DataSetColumn="hafza" />
               <Mapping SourceColumn="hafzadate" DataSetColumn="hafzadate" />
+              <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
+              <Mapping SourceColumn="ActivateDate" DataSetColumn="ActivateDate" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySomeFields" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySomeFields" GeneratorSourceName="FillBySomeFields" GetMethodModifier="Public" GetMethodName="GetDataBySomeFields" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySomeFields" UserSourceName="FillBySomeFields">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLMashat.MMashatId, BankExportedData.hafza, 
+                         BankExportedData.hafzadate, BankExportedData.Activate, BankExportedData.ActivateDate
+FROM            TBLMashat LEFT OUTER JOIN
+                         BankExportedData ON TBLMashat.MMashatId = BankExportedData.MMashatId
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TBLWarasa_ForMobTableAdapter" GeneratorDataComponentClassName="TBLWarasa_ForMobTableAdapter" Name="TBLWarasa_ForMob" UserDataComponentName="TBLWarasa_ForMobTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.TBLWarasa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60
-FROM            TBLWarasa
-WHERE        (PersonId &gt; @PersonId)</CommandText>
+                    <CommandText>SELECT        TBLWarasa.PersonId, TBLWarasa.MMashatId, TBLWarasa.WarasaTypeId, TBLWarasa.personName, TBLWarasa.yasref, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.responsiblesarf, 
+                         TBLWarasa.responsiblesarfId, TBLWarasa.code60, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate
+FROM            TBLWarasa LEFT OUTER JOIN
+                         BankExportedDataWarsa ON TBLWarasa.PersonId = BankExportedDataWarsa.PersonId
+WHERE        (TBLWarasa.PersonId &gt; @PersonId)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="PersonId" ColumnName="PersonId" DataSourceName="RetirementCenter.dbo.TBLWarasa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PersonId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PersonId" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -4470,8 +4487,24 @@ WHERE        (PersonId &gt; @PersonId)</CommandText>
               <Mapping SourceColumn="responsiblesarf" DataSetColumn="responsiblesarf" />
               <Mapping SourceColumn="responsiblesarfId" DataSetColumn="responsiblesarfId" />
               <Mapping SourceColumn="code60" DataSetColumn="code60" />
+              <Mapping SourceColumn="hafza" DataSetColumn="hafza" />
+              <Mapping SourceColumn="hafzadate" DataSetColumn="hafzadate" />
+              <Mapping SourceColumn="Activate" DataSetColumn="Activate" />
+              <Mapping SourceColumn="ActivateDate" DataSetColumn="ActivateDate" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySomeFields" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySomeFields" GeneratorSourceName="FillBySomeFields" GetMethodModifier="Public" GetMethodName="GetDataBySomeFields" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySomeFields" UserSourceName="FillBySomeFields">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLWarasa.PersonId, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate
+FROM            TBLWarasa LEFT OUTER JOIN
+                         BankExportedDataWarsa ON TBLWarasa.PersonId = BankExportedDataWarsa.PersonId
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblmemberbank_ForMobTableAdapter" GeneratorDataComponentClassName="tblmemberbank_ForMobTableAdapter" Name="tblmemberbank_ForMob" UserDataComponentName="tblmemberbank_ForMobTableAdapter">
             <MainSource>
@@ -9897,19 +9930,21 @@ WHERE     (TBLWarasa.visa IS NULL)</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
-              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName">
+              <xs:element name="MMashatName" msprop:Generator_ColumnVarNameInTable="columnMMashatName" msprop:Generator_ColumnPropNameInRow="MMashatName" msprop:Generator_ColumnPropNameInTable="MMashatNameColumn" msprop:Generator_UserColumnName="MMashatName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
-              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" />
-              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" />
+              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" minOccurs="0" />
+              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" minOccurs="0" />
+              <xs:element name="sarfnumber" msprop:Generator_ColumnVarNameInTable="columnsarfnumber" msprop:Generator_ColumnPropNameInRow="sarfnumber" msprop:Generator_ColumnPropNameInTable="sarfnumberColumn" msprop:Generator_UserColumnName="sarfnumber" type="xs:int" minOccurs="0" />
               <xs:element name="MashHalaId" msprop:Generator_ColumnVarNameInTable="columnMashHalaId" msprop:Generator_ColumnPropNameInRow="MashHalaId" msprop:Generator_ColumnPropNameInTable="MashHalaIdColumn" msprop:Generator_UserColumnName="MashHalaId" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="hafza" msprop:Generator_ColumnVarNameInTable="columnhafza" msprop:Generator_ColumnPropNameInRow="hafza" msprop:Generator_ColumnPropNameInTable="hafzaColumn" msprop:Generator_UserColumnName="hafza" type="xs:int" minOccurs="0" />
               <xs:element name="hafzadate" msprop:Generator_ColumnVarNameInTable="columnhafzadate" msprop:Generator_ColumnPropNameInRow="hafzadate" msprop:Generator_ColumnPropNameInTable="hafzadateColumn" msprop:Generator_UserColumnName="hafzadate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Activate" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ActivateDate" msprop:Generator_ColumnVarNameInTable="columnActivateDate" msprop:Generator_ColumnPropNameInRow="ActivateDate" msprop:Generator_ColumnPropNameInTable="ActivateDateColumn" msprop:Generator_UserColumnName="ActivateDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -9917,21 +9952,25 @@ WHERE     (TBLWarasa.visa IS NULL)</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonId" msprop:Generator_ColumnVarNameInTable="columnPersonId" msprop:Generator_ColumnPropNameInRow="PersonId" msprop:Generator_ColumnPropNameInTable="PersonIdColumn" msprop:Generator_UserColumnName="PersonId" type="xs:int" />
-              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" />
-              <xs:element name="WarasaTypeId" msprop:Generator_ColumnVarNameInTable="columnWarasaTypeId" msprop:Generator_ColumnPropNameInRow="WarasaTypeId" msprop:Generator_ColumnPropNameInTable="WarasaTypeIdColumn" msprop:Generator_UserColumnName="WarasaTypeId" type="xs:unsignedByte" />
-              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName">
+              <xs:element name="MMashatId" msprop:Generator_ColumnVarNameInTable="columnMMashatId" msprop:Generator_ColumnPropNameInRow="MMashatId" msprop:Generator_ColumnPropNameInTable="MMashatIdColumn" msprop:Generator_UserColumnName="MMashatId" type="xs:int" minOccurs="0" />
+              <xs:element name="WarasaTypeId" msprop:Generator_ColumnVarNameInTable="columnWarasaTypeId" msprop:Generator_ColumnPropNameInRow="WarasaTypeId" msprop:Generator_ColumnPropNameInTable="WarasaTypeIdColumn" msprop:Generator_UserColumnName="WarasaTypeId" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="personName" msprop:Generator_ColumnVarNameInTable="columnpersonName" msprop:Generator_ColumnPropNameInRow="personName" msprop:Generator_ColumnPropNameInTable="personNameColumn" msprop:Generator_UserColumnName="personName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="yasref" msprop:Generator_ColumnVarNameInTable="columnyasref" msprop:Generator_ColumnPropNameInRow="yasref" msprop:Generator_ColumnPropNameInTable="yasrefColumn" msprop:Generator_UserColumnName="yasref" type="xs:boolean" />
-              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" />
-              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" />
-              <xs:element name="responsiblesarf" msprop:Generator_ColumnVarNameInTable="columnresponsiblesarf" msprop:Generator_ColumnPropNameInRow="responsiblesarf" msprop:Generator_ColumnPropNameInTable="responsiblesarfColumn" msprop:Generator_UserColumnName="responsiblesarf" type="xs:boolean" />
-              <xs:element name="responsiblesarfId" msprop:Generator_ColumnVarNameInTable="columnresponsiblesarfId" msprop:Generator_ColumnPropNameInRow="responsiblesarfId" msprop:Generator_ColumnPropNameInTable="responsiblesarfIdColumn" msprop:Generator_UserColumnName="responsiblesarfId" type="xs:int" />
+              <xs:element name="yasref" msprop:Generator_ColumnVarNameInTable="columnyasref" msprop:Generator_ColumnPropNameInRow="yasref" msprop:Generator_ColumnPropNameInTable="yasrefColumn" msprop:Generator_UserColumnName="yasref" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SyndicateId" msprop:Generator_ColumnVarNameInTable="columnSyndicateId" msprop:Generator_ColumnPropNameInRow="SyndicateId" msprop:Generator_ColumnPropNameInTable="SyndicateIdColumn" msprop:Generator_UserColumnName="SyndicateId" type="xs:int" minOccurs="0" />
+              <xs:element name="SubCommitteId" msprop:Generator_ColumnVarNameInTable="columnSubCommitteId" msprop:Generator_ColumnPropNameInRow="SubCommitteId" msprop:Generator_ColumnPropNameInTable="SubCommitteIdColumn" msprop:Generator_UserColumnName="SubCommitteId" type="xs:int" minOccurs="0" />
+              <xs:element name="responsiblesarf" msprop:Generator_ColumnVarNameInTable="columnresponsiblesarf" msprop:Generator_ColumnPropNameInRow="responsiblesarf" msprop:Generator_ColumnPropNameInTable="responsiblesarfColumn" msprop:Generator_UserColumnName="responsiblesarf" type="xs:boolean" minOccurs="0" />
+              <xs:element name="responsiblesarfId" msprop:Generator_ColumnVarNameInTable="columnresponsiblesarfId" msprop:Generator_ColumnPropNameInRow="responsiblesarfId" msprop:Generator_ColumnPropNameInTable="responsiblesarfIdColumn" msprop:Generator_UserColumnName="responsiblesarfId" type="xs:int" minOccurs="0" />
               <xs:element name="code60" msprop:Generator_ColumnVarNameInTable="columncode60" msprop:Generator_ColumnPropNameInRow="code60" msprop:Generator_ColumnPropNameInTable="code60Column" msprop:Generator_UserColumnName="code60" type="xs:int" minOccurs="0" />
+              <xs:element name="hafza" msprop:Generator_ColumnVarNameInTable="columnhafza" msprop:Generator_ColumnPropNameInRow="hafza" msprop:Generator_ColumnPropNameInTable="hafzaColumn" msprop:Generator_UserColumnName="hafza" type="xs:int" minOccurs="0" />
+              <xs:element name="hafzadate" msprop:Generator_ColumnVarNameInTable="columnhafzadate" msprop:Generator_ColumnPropNameInRow="hafzadate" msprop:Generator_ColumnPropNameInTable="hafzadateColumn" msprop:Generator_UserColumnName="hafzadate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Activate" msprop:Generator_ColumnVarNameInTable="columnActivate" msprop:Generator_ColumnPropNameInRow="Activate" msprop:Generator_ColumnPropNameInTable="ActivateColumn" msprop:Generator_UserColumnName="Activate" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ActivateDate" msprop:Generator_ColumnVarNameInTable="columnActivateDate" msprop:Generator_ColumnPropNameInRow="ActivateDate" msprop:Generator_ColumnPropNameInTable="ActivateDateColumn" msprop:Generator_UserColumnName="ActivateDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

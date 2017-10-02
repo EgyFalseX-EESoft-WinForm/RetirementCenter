@@ -42,6 +42,10 @@ namespace RetirementCenter.DataSources {
         
         private UpdatetblWarasabankDataTable tableUpdatetblWarasabank;
         
+        private global::System.Data.DataRelation relationFK_TBLMashat_CDSubCommitte;
+        
+        private global::System.Data.DataRelation relationFK_TBLMashat_CDSyndicate;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -386,6 +390,8 @@ namespace RetirementCenter.DataSources {
                     this.tableUpdatetblWarasabank.InitVars();
                 }
             }
+            this.relationFK_TBLMashat_CDSubCommitte = this.Relations["FK_TBLMashat_CDSubCommitte"];
+            this.relationFK_TBLMashat_CDSyndicate = this.Relations["FK_TBLMashat_CDSyndicate"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +420,14 @@ namespace RetirementCenter.DataSources {
             base.Tables.Add(this.tableUpdatetblmemberbank);
             this.tableUpdatetblWarasabank = new UpdatetblWarasabankDataTable();
             base.Tables.Add(this.tableUpdatetblWarasabank);
+            this.relationFK_TBLMashat_CDSubCommitte = new global::System.Data.DataRelation("FK_TBLMashat_CDSubCommitte", new global::System.Data.DataColumn[] {
+                        this.tableCDSubCommitte.SubCommitteIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTBLMashat.SubCommitteIdColumn}, false);
+            this.Relations.Add(this.relationFK_TBLMashat_CDSubCommitte);
+            this.relationFK_TBLMashat_CDSyndicate = new global::System.Data.DataRelation("FK_TBLMashat_CDSyndicate", new global::System.Data.DataColumn[] {
+                        this.tableCDSyndicate.SyndicateIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTBLMashat.SyndicateIdColumn}, false);
+            this.Relations.Add(this.relationFK_TBLMashat_CDSyndicate);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1499,6 +1513,10 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnhafzadate;
             
+            private global::System.Data.DataColumn columnActivate;
+            
+            private global::System.Data.DataColumn columnActivateDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBLMashatDataTable() {
@@ -1598,6 +1616,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivateColumn {
+                get {
+                    return this.columnActivate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivateDateColumn {
+                get {
+                    return this.columnActivateDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1633,17 +1667,25 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBLMashatRow AddTBLMashatRow(int MMashatId, string MMashatName, int SyndicateId, int SubCommitteId, byte MashHalaId, int sarfnumber, int hafzano, System.DateTime hafzadate) {
+            public TBLMashatRow AddTBLMashatRow(int MMashatId, string MMashatName, CDSyndicateRow parentCDSyndicateRowByFK_TBLMashat_CDSyndicate, CDSubCommitteRow parentCDSubCommitteRowByFK_TBLMashat_CDSubCommitte, byte MashHalaId, int sarfnumber, int hafzano, System.DateTime hafzadate, bool Activate, System.DateTime ActivateDate) {
                 TBLMashatRow rowTBLMashatRow = ((TBLMashatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MMashatId,
                         MMashatName,
-                        SyndicateId,
-                        SubCommitteId,
+                        null,
+                        null,
                         MashHalaId,
                         sarfnumber,
                         hafzano,
-                        hafzadate};
+                        hafzadate,
+                        Activate,
+                        ActivateDate};
+                if ((parentCDSyndicateRowByFK_TBLMashat_CDSyndicate != null)) {
+                    columnValuesArray[2] = parentCDSyndicateRowByFK_TBLMashat_CDSyndicate[0];
+                }
+                if ((parentCDSubCommitteRowByFK_TBLMashat_CDSubCommitte != null)) {
+                    columnValuesArray[3] = parentCDSubCommitteRowByFK_TBLMashat_CDSubCommitte[0];
+                }
                 rowTBLMashatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBLMashatRow);
                 return rowTBLMashatRow;
@@ -1681,6 +1723,8 @@ namespace RetirementCenter.DataSources {
                 this.columnsarfnumber = base.Columns["sarfnumber"];
                 this.columnhafzano = base.Columns["hafzano"];
                 this.columnhafzadate = base.Columns["hafzadate"];
+                this.columnActivate = base.Columns["Activate"];
+                this.columnActivateDate = base.Columns["ActivateDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1702,6 +1746,10 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnhafzano);
                 this.columnhafzadate = new global::System.Data.DataColumn("hafzadate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhafzadate);
+                this.columnActivate = new global::System.Data.DataColumn("Activate", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate);
+                this.columnActivateDate = new global::System.Data.DataColumn("ActivateDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivateDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMMashatId}, true));
                 this.columnMMashatId.AllowDBNull = false;
@@ -2209,6 +2257,14 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columncode60;
             
+            private global::System.Data.DataColumn columnActivate;
+            
+            private global::System.Data.DataColumn columnActivateDate;
+            
+            private global::System.Data.DataColumn columnhafza;
+            
+            private global::System.Data.DataColumn columnhafzadate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBLWarasaDataTable() {
@@ -2324,6 +2380,38 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivateColumn {
+                get {
+                    return this.columnActivate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivateDateColumn {
+                get {
+                    return this.columnActivateDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hafzaColumn {
+                get {
+                    return this.columnhafza;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hafzadateColumn {
+                get {
+                    return this.columnhafzadate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2359,7 +2447,7 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBLWarasaRow AddTBLWarasaRow(int PersonId, int MMashatId, byte WarasaTypeId, string personName, bool yasref, int SyndicateId, int SubCommitteId, bool responsiblesarf, int responsiblesarfId, int code60) {
+            public TBLWarasaRow AddTBLWarasaRow(int PersonId, int MMashatId, byte WarasaTypeId, string personName, bool yasref, int SyndicateId, int SubCommitteId, bool responsiblesarf, int responsiblesarfId, int code60, bool Activate, System.DateTime ActivateDate, int hafza, System.DateTime hafzadate) {
                 TBLWarasaRow rowTBLWarasaRow = ((TBLWarasaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PersonId,
@@ -2371,7 +2459,11 @@ namespace RetirementCenter.DataSources {
                         SubCommitteId,
                         responsiblesarf,
                         responsiblesarfId,
-                        code60};
+                        code60,
+                        Activate,
+                        ActivateDate,
+                        hafza,
+                        hafzadate};
                 rowTBLWarasaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBLWarasaRow);
                 return rowTBLWarasaRow;
@@ -2411,6 +2503,10 @@ namespace RetirementCenter.DataSources {
                 this.columnresponsiblesarf = base.Columns["responsiblesarf"];
                 this.columnresponsiblesarfId = base.Columns["responsiblesarfId"];
                 this.columncode60 = base.Columns["code60"];
+                this.columnActivate = base.Columns["Activate"];
+                this.columnActivateDate = base.Columns["ActivateDate"];
+                this.columnhafza = base.Columns["hafza"];
+                this.columnhafzadate = base.Columns["hafzadate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2436,6 +2532,14 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnresponsiblesarfId);
                 this.columncode60 = new global::System.Data.DataColumn("code60", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode60);
+                this.columnActivate = new global::System.Data.DataColumn("Activate", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivate);
+                this.columnActivateDate = new global::System.Data.DataColumn("ActivateDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivateDate);
+                this.columnhafza = new global::System.Data.DataColumn("hafza", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhafza);
+                this.columnhafzadate = new global::System.Data.DataColumn("hafzadate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhafzadate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPersonId}, true));
                 this.columnPersonId.AllowDBNull = false;
@@ -3700,6 +3804,17 @@ namespace RetirementCenter.DataSources {
             public void SetLongNull() {
                 this[this.tableCDSubCommitte.LongColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLMashatRow[] GetTBLMashatRows() {
+                if ((this.Table.ChildRelations["FK_TBLMashat_CDSubCommitte"] == null)) {
+                    return new TBLMashatRow[0];
+                }
+                else {
+                    return ((TBLMashatRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TBLMashat_CDSubCommitte"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3735,6 +3850,17 @@ namespace RetirementCenter.DataSources {
                 }
                 set {
                     this[this.tableCDSyndicate.SyndicateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBLMashatRow[] GetTBLMashatRows() {
+                if ((this.Table.ChildRelations["FK_TBLMashat_CDSyndicate"] == null)) {
+                    return new TBLMashatRow[0];
+                }
+                else {
+                    return ((TBLMashatRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TBLMashat_CDSyndicate"])));
                 }
             }
         }
@@ -3973,6 +4099,60 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Activate {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTBLMashat.ActivateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate\' in table \'TBLMashat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLMashat.ActivateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ActivateDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTBLMashat.ActivateDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActivateDate\' in table \'TBLMashat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLMashat.ActivateDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CDSubCommitteRow CDSubCommitteRow {
+                get {
+                    return ((CDSubCommitteRow)(this.GetParentRow(this.Table.ParentRelations["FK_TBLMashat_CDSubCommitte"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TBLMashat_CDSubCommitte"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CDSyndicateRow CDSyndicateRow {
+                get {
+                    return ((CDSyndicateRow)(this.GetParentRow(this.Table.ParentRelations["FK_TBLMashat_CDSyndicate"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TBLMashat_CDSyndicate"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMashHalaIdNull() {
                 return this.IsNull(this.tableTBLMashat.MashHalaIdColumn);
             }
@@ -4005,6 +4185,30 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SethafzadateNull() {
                 this[this.tableTBLMashat.hafzadateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivateNull() {
+                return this.IsNull(this.tableTBLMashat.ActivateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivateNull() {
+                this[this.tableTBLMashat.ActivateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivateDateNull() {
+                return this.IsNull(this.tableTBLMashat.ActivateDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivateDateNull() {
+                this[this.tableTBLMashat.ActivateDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4282,6 +4486,70 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Activate {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTBLWarasa.ActivateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activate\' in table \'TBLWarasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLWarasa.ActivateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ActivateDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTBLWarasa.ActivateDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActivateDate\' in table \'TBLWarasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLWarasa.ActivateDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hafza {
+                get {
+                    try {
+                        return ((int)(this[this.tableTBLWarasa.hafzaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hafza\' in table \'TBLWarasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLWarasa.hafzaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime hafzadate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTBLWarasa.hafzadateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hafzadate\' in table \'TBLWarasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLWarasa.hafzadateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscode60Null() {
                 return this.IsNull(this.tableTBLWarasa.code60Column);
             }
@@ -4290,6 +4558,54 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcode60Null() {
                 this[this.tableTBLWarasa.code60Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivateNull() {
+                return this.IsNull(this.tableTBLWarasa.ActivateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivateNull() {
+                this[this.tableTBLWarasa.ActivateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActivateDateNull() {
+                return this.IsNull(this.tableTBLWarasa.ActivateDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActivateDateNull() {
+                this[this.tableTBLWarasa.ActivateDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IshafzaNull() {
+                return this.IsNull(this.tableTBLWarasa.hafzaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SethafzaNull() {
+                this[this.tableTBLWarasa.hafzaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IshafzadateNull() {
+                return this.IsNull(this.tableTBLWarasa.hafzadateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SethafzadateNull() {
+                this[this.tableTBLWarasa.hafzadateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6240,10 +6556,12 @@ SELECT DofatSarfId, DofatSarf, DofatSarfDatefrom, DofatSarfDateto, remd, dofclos
             tableMapping.ColumnMappings.Add("sarfnumber", "sarfnumber");
             tableMapping.ColumnMappings.Add("hafzano", "hafzano");
             tableMapping.ColumnMappings.Add("hafzadate", "hafzadate");
+            tableMapping.ColumnMappings.Add("Activate", "Activate");
+            tableMapping.ColumnMappings.Add("ActivateDate", "ActivateDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TBLMashat] WHERE (([MMashatId] = @Original_MMashatId) AND ([MMashatName] = @Original_MMashatName) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ((@IsNull_MashHalaId = 1 AND [MashHalaId] IS NULL) OR ([MashHalaId] = @Original_MashHalaId)) AND ([sarfnumber] = @Original_sarfnumber) AND ((@IsNull_hafzano = 1 AND [hafzano] IS NULL) OR ([hafzano] = @Original_hafzano)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TBLMashat] WHERE (([MMashatId] = @Original_MMashatId) AND ([MMashatName] = @Original_MMashatName) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ((@IsNull_MashHalaId = 1 AND [MashHalaId] IS NULL) OR ([MashHalaId] = @Original_MashHalaId)) AND ([sarfnumber] = @Original_sarfnumber) AND ((@IsNull_hafzano = 1 AND [hafzano] IS NULL) OR ([hafzano] = @Original_hafzano)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)) AND ((@IsNull_Activate = 1 AND [Activate] IS NULL) OR ([Activate] = @Original_Activate)) AND ((@IsNull_ActivateDate = 1 AND [ActivateDate] IS NULL) OR ([ActivateDate] = @Original_ActivateDate)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6256,10 +6574,14 @@ SELECT DofatSarfId, DofatSarf, DofatSarfDatefrom, DofatSarfDateto, remd, dofclos
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzano", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzano", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafzadate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Activate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ActivateDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TBLMashat] ([MMashatId], [MMashatName], [SyndicateId], [SubCommitteId], [MashHalaId], [sarfnumber], [hafzano], [hafzadate]) VALUES (@MMashatId, @MMashatName, @SyndicateId, @SubCommitteId, @MashHalaId, @sarfnumber, @hafzano, @hafzadate);
-SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate FROM TBLMashat WHERE (MMashatId = @MMashatId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLMashat] ([MMashatId], [MMashatName], [SyndicateId], [SubCommitteId], [MashHalaId], [sarfnumber], [hafzano], [hafzadate], [Activate], [ActivateDate]) VALUES (@MMashatId, @MMashatName, @SyndicateId, @SubCommitteId, @MashHalaId, @sarfnumber, @hafzano, @hafzadate, @Activate, @ActivateDate);
+SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate, Activate, ActivateDate FROM TBLMashat WHERE (MMashatId = @MMashatId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6269,10 +6591,12 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sarfnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sarfnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzano", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TBLMashat] SET [MMashatId] = @MMashatId, [MMashatName] = @MMashatName, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [MashHalaId] = @MashHalaId, [sarfnumber] = @sarfnumber, [hafzano] = @hafzano, [hafzadate] = @hafzadate WHERE (([MMashatId] = @Original_MMashatId) AND ([MMashatName] = @Original_MMashatName) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ((@IsNull_MashHalaId = 1 AND [MashHalaId] IS NULL) OR ([MashHalaId] = @Original_MashHalaId)) AND ([sarfnumber] = @Original_sarfnumber) AND ((@IsNull_hafzano = 1 AND [hafzano] IS NULL) OR ([hafzano] = @Original_hafzano)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)));
-SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate FROM TBLMashat WHERE (MMashatId = @MMashatId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLMashat] SET [MMashatId] = @MMashatId, [MMashatName] = @MMashatName, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [MashHalaId] = @MashHalaId, [sarfnumber] = @sarfnumber, [hafzano] = @hafzano, [hafzadate] = @hafzadate, [Activate] = @Activate, [ActivateDate] = @ActivateDate WHERE (([MMashatId] = @Original_MMashatId) AND ([MMashatName] = @Original_MMashatName) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ((@IsNull_MashHalaId = 1 AND [MashHalaId] IS NULL) OR ([MashHalaId] = @Original_MashHalaId)) AND ([sarfnumber] = @Original_sarfnumber) AND ((@IsNull_hafzano = 1 AND [hafzano] IS NULL) OR ([hafzano] = @Original_hafzano)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)) AND ((@IsNull_Activate = 1 AND [Activate] IS NULL) OR ([Activate] = @Original_Activate)) AND ((@IsNull_ActivateDate = 1 AND [ActivateDate] IS NULL) OR ([ActivateDate] = @Original_ActivateDate)));
+SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate, Activate, ActivateDate FROM TBLMashat WHERE (MMashatId = @MMashatId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6282,6 +6606,8 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sarfnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sarfnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzano", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SyndicateId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SyndicateId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6293,6 +6619,10 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzano", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzano", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafzadate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Activate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ActivateDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6308,8 +6638,8 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber" +
-                ", hafzano, hafzadate FROM dbo.TBLMashat";
+            this._commandCollection[0].CommandText = "SELECT        MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sar" +
+                "fnumber, hafzano, hafzadate, Activate, ActivateDate\r\nFROM            TBLMashat";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6370,7 +6700,7 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_MMashatId, string Original_MMashatName, int Original_SyndicateId, int Original_SubCommitteId, global::System.Nullable<byte> Original_MashHalaId, int Original_sarfnumber, global::System.Nullable<int> Original_hafzano, global::System.Nullable<global::System.DateTime> Original_hafzadate) {
+        public virtual int Delete(int Original_MMashatId, string Original_MMashatName, int Original_SyndicateId, int Original_SubCommitteId, global::System.Nullable<byte> Original_MashHalaId, int Original_sarfnumber, global::System.Nullable<int> Original_hafzano, global::System.Nullable<global::System.DateTime> Original_hafzadate, global::System.Nullable<bool> Original_Activate, global::System.Nullable<global::System.DateTime> Original_ActivateDate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_MMashatId));
             if ((Original_MMashatName == null)) {
                 throw new global::System.ArgumentNullException("Original_MMashatName");
@@ -6405,6 +6735,22 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_Activate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Activate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ActivateDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_ActivateDate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6425,7 +6771,7 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int MMashatId, string MMashatName, int SyndicateId, int SubCommitteId, global::System.Nullable<byte> MashHalaId, int sarfnumber, global::System.Nullable<int> hafzano, global::System.Nullable<global::System.DateTime> hafzadate) {
+        public virtual int Insert(int MMashatId, string MMashatName, int SyndicateId, int SubCommitteId, global::System.Nullable<byte> MashHalaId, int sarfnumber, global::System.Nullable<int> hafzano, global::System.Nullable<global::System.DateTime> hafzadate, global::System.Nullable<bool> Activate, global::System.Nullable<global::System.DateTime> ActivateDate) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(MMashatId));
             if ((MMashatName == null)) {
                 throw new global::System.ArgumentNullException("MMashatName");
@@ -6453,6 +6799,18 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Activate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(Activate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((ActivateDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6483,6 +6841,8 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
                     int sarfnumber, 
                     global::System.Nullable<int> hafzano, 
                     global::System.Nullable<global::System.DateTime> hafzadate, 
+                    global::System.Nullable<bool> Activate, 
+                    global::System.Nullable<global::System.DateTime> ActivateDate, 
                     int Original_MMashatId, 
                     string Original_MMashatName, 
                     int Original_SyndicateId, 
@@ -6490,7 +6850,9 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
                     global::System.Nullable<byte> Original_MashHalaId, 
                     int Original_sarfnumber, 
                     global::System.Nullable<int> Original_hafzano, 
-                    global::System.Nullable<global::System.DateTime> Original_hafzadate) {
+                    global::System.Nullable<global::System.DateTime> Original_hafzadate, 
+                    global::System.Nullable<bool> Original_Activate, 
+                    global::System.Nullable<global::System.DateTime> Original_ActivateDate) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(MMashatId));
             if ((MMashatName == null)) {
                 throw new global::System.ArgumentNullException("MMashatName");
@@ -6519,39 +6881,67 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_MMashatId));
+            if ((Activate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Activate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((ActivateDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_MMashatId));
             if ((Original_MMashatName == null)) {
                 throw new global::System.ArgumentNullException("Original_MMashatName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_MMashatName));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_MMashatName));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_SyndicateId));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_SubCommitteId));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_SyndicateId));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_SubCommitteId));
             if ((Original_MashHalaId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((byte)(Original_MashHalaId.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((byte)(Original_MashHalaId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_sarfnumber));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_sarfnumber));
             if ((Original_hafzano.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_hafzano.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_hafzadate.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_hafzadate.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_hafzano.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_hafzadate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_hafzadate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Activate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_Activate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ActivateDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_ActivateDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6573,8 +6963,27 @@ SELECT MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumbe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MMashatName, int SyndicateId, int SubCommitteId, global::System.Nullable<byte> MashHalaId, int sarfnumber, global::System.Nullable<int> hafzano, global::System.Nullable<global::System.DateTime> hafzadate, int Original_MMashatId, string Original_MMashatName, int Original_SyndicateId, int Original_SubCommitteId, global::System.Nullable<byte> Original_MashHalaId, int Original_sarfnumber, global::System.Nullable<int> Original_hafzano, global::System.Nullable<global::System.DateTime> Original_hafzadate) {
-            return this.Update(Original_MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate, Original_MMashatId, Original_MMashatName, Original_SyndicateId, Original_SubCommitteId, Original_MashHalaId, Original_sarfnumber, Original_hafzano, Original_hafzadate);
+        public virtual int Update(
+                    string MMashatName, 
+                    int SyndicateId, 
+                    int SubCommitteId, 
+                    global::System.Nullable<byte> MashHalaId, 
+                    int sarfnumber, 
+                    global::System.Nullable<int> hafzano, 
+                    global::System.Nullable<global::System.DateTime> hafzadate, 
+                    global::System.Nullable<bool> Activate, 
+                    global::System.Nullable<global::System.DateTime> ActivateDate, 
+                    int Original_MMashatId, 
+                    string Original_MMashatName, 
+                    int Original_SyndicateId, 
+                    int Original_SubCommitteId, 
+                    global::System.Nullable<byte> Original_MashHalaId, 
+                    int Original_sarfnumber, 
+                    global::System.Nullable<int> Original_hafzano, 
+                    global::System.Nullable<global::System.DateTime> Original_hafzadate, 
+                    global::System.Nullable<bool> Original_Activate, 
+                    global::System.Nullable<global::System.DateTime> Original_ActivateDate) {
+            return this.Update(Original_MMashatId, MMashatName, SyndicateId, SubCommitteId, MashHalaId, sarfnumber, hafzano, hafzadate, Activate, ActivateDate, Original_MMashatId, Original_MMashatName, Original_SyndicateId, Original_SubCommitteId, Original_MashHalaId, Original_sarfnumber, Original_hafzano, Original_hafzadate, Original_Activate, Original_ActivateDate);
         }
     }
     
@@ -7131,10 +7540,14 @@ SELECT MMashatId, DofatSarfId, summony, sendbankdate, amanatmony, amanatwareddat
             tableMapping.ColumnMappings.Add("responsiblesarf", "responsiblesarf");
             tableMapping.ColumnMappings.Add("responsiblesarfId", "responsiblesarfId");
             tableMapping.ColumnMappings.Add("code60", "code60");
+            tableMapping.ColumnMappings.Add("Activate", "Activate");
+            tableMapping.ColumnMappings.Add("ActivateDate", "ActivateDate");
+            tableMapping.ColumnMappings.Add("hafza", "hafza");
+            tableMapping.ColumnMappings.Add("hafzadate", "hafzadate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TBLWarasa] WHERE (([PersonId] = @Original_PersonId) AND ([MMashatId] = @Original_MMashatId) AND ([WarasaTypeId] = @Original_WarasaTypeId) AND ([personName] = @Original_personName) AND ([yasref] = @Original_yasref) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ([responsiblesarf] = @Original_responsiblesarf) AND ([responsiblesarfId] = @Original_responsiblesarfId) AND ((@IsNull_code60 = 1 AND [code60] IS NULL) OR ([code60] = @Original_code60)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TBLWarasa] WHERE (([PersonId] = @Original_PersonId) AND ([MMashatId] = @Original_MMashatId) AND ([WarasaTypeId] = @Original_WarasaTypeId) AND ([personName] = @Original_personName) AND ([yasref] = @Original_yasref) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ([responsiblesarf] = @Original_responsiblesarf) AND ([responsiblesarfId] = @Original_responsiblesarfId) AND ((@IsNull_code60 = 1 AND [code60] IS NULL) OR ([code60] = @Original_code60)) AND ((@IsNull_Activate = 1 AND [Activate] IS NULL) OR ([Activate] = @Original_Activate)) AND ((@IsNull_ActivateDate = 1 AND [ActivateDate] IS NULL) OR ([ActivateDate] = @Original_ActivateDate)) AND ((@IsNull_hafza = 1 AND [hafza] IS NULL) OR ([hafza] = @Original_hafza)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7147,10 +7560,18 @@ SELECT MMashatId, DofatSarfId, summony, sendbankdate, amanatmony, amanatwareddat
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_responsiblesarfId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Activate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ActivateDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafzadate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TBLWarasa] ([PersonId], [MMashatId], [WarasaTypeId], [personName], [yasref], [SyndicateId], [SubCommitteId], [responsiblesarf], [responsiblesarfId], [code60]) VALUES (@PersonId, @MMashatId, @WarasaTypeId, @personName, @yasref, @SyndicateId, @SubCommitteId, @responsiblesarf, @responsiblesarfId, @code60);
-SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60 FROM TBLWarasa WHERE (PersonId = @PersonId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TBLWarasa] ([PersonId], [MMashatId], [WarasaTypeId], [personName], [yasref], [SyndicateId], [SubCommitteId], [responsiblesarf], [responsiblesarfId], [code60], [Activate], [ActivateDate], [hafza], [hafzadate]) VALUES (@PersonId, @MMashatId, @WarasaTypeId, @personName, @yasref, @SyndicateId, @SubCommitteId, @responsiblesarf, @responsiblesarfId, @code60, @Activate, @ActivateDate, @hafza, @hafzadate);
+SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60, Activate, ActivateDate, hafza, hafzadate FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7162,10 +7583,14 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsiblesarf", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsiblesarfId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TBLWarasa] SET [PersonId] = @PersonId, [MMashatId] = @MMashatId, [WarasaTypeId] = @WarasaTypeId, [personName] = @personName, [yasref] = @yasref, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [responsiblesarf] = @responsiblesarf, [responsiblesarfId] = @responsiblesarfId, [code60] = @code60 WHERE (([PersonId] = @Original_PersonId) AND ([MMashatId] = @Original_MMashatId) AND ([WarasaTypeId] = @Original_WarasaTypeId) AND ([personName] = @Original_personName) AND ([yasref] = @Original_yasref) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ([responsiblesarf] = @Original_responsiblesarf) AND ([responsiblesarfId] = @Original_responsiblesarfId) AND ((@IsNull_code60 = 1 AND [code60] IS NULL) OR ([code60] = @Original_code60)));
-SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60 FROM TBLWarasa WHERE (PersonId = @PersonId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TBLWarasa] SET [PersonId] = @PersonId, [MMashatId] = @MMashatId, [WarasaTypeId] = @WarasaTypeId, [personName] = @personName, [yasref] = @yasref, [SyndicateId] = @SyndicateId, [SubCommitteId] = @SubCommitteId, [responsiblesarf] = @responsiblesarf, [responsiblesarfId] = @responsiblesarfId, [code60] = @code60, [Activate] = @Activate, [ActivateDate] = @ActivateDate, [hafza] = @hafza, [hafzadate] = @hafzadate WHERE (([PersonId] = @Original_PersonId) AND ([MMashatId] = @Original_MMashatId) AND ([WarasaTypeId] = @Original_WarasaTypeId) AND ([personName] = @Original_personName) AND ([yasref] = @Original_yasref) AND ([SyndicateId] = @Original_SyndicateId) AND ([SubCommitteId] = @Original_SubCommitteId) AND ([responsiblesarf] = @Original_responsiblesarf) AND ([responsiblesarfId] = @Original_responsiblesarfId) AND ((@IsNull_code60 = 1 AND [code60] IS NULL) OR ([code60] = @Original_code60)) AND ((@IsNull_Activate = 1 AND [Activate] IS NULL) OR ([Activate] = @Original_Activate)) AND ((@IsNull_ActivateDate = 1 AND [ActivateDate] IS NULL) OR ([ActivateDate] = @Original_ActivateDate)) AND ((@IsNull_hafza = 1 AND [hafza] IS NULL) OR ([hafza] = @Original_hafza)) AND ((@IsNull_hafzadate = 1 AND [hafzadate] IS NULL) OR ([hafzadate] = @Original_hafzadate)));
+SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60, Activate, ActivateDate, hafza, hafzadate FROM TBLWarasa WHERE (PersonId = @PersonId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7177,6 +7602,10 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsiblesarf", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsiblesarfId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarfId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PersonId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PersonId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MMashatId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MMashatId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WarasaTypeId", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WarasaTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7188,6 +7617,14 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_responsiblesarfId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsiblesarfId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_code60", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code60", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Activate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ActivateDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivateDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivateDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hafzadate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hafzadate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hafzadate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7203,8 +7640,9 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCom" +
-                "mitteId, responsiblesarf, responsiblesarfId, code60 FROM dbo.TBLWarasa";
+            this._commandCollection[0].CommandText = "SELECT        PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId," +
+                " SubCommitteId, responsiblesarf, responsiblesarfId, code60, Activate, ActivateDa" +
+                "te, hafza, hafzadate\r\nFROM            TBLWarasa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7265,7 +7703,7 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PersonId, int Original_MMashatId, byte Original_WarasaTypeId, string Original_personName, bool Original_yasref, int Original_SyndicateId, int Original_SubCommitteId, bool Original_responsiblesarf, int Original_responsiblesarfId, global::System.Nullable<int> Original_code60) {
+        public virtual int Delete(int Original_PersonId, int Original_MMashatId, byte Original_WarasaTypeId, string Original_personName, bool Original_yasref, int Original_SyndicateId, int Original_SubCommitteId, bool Original_responsiblesarf, int Original_responsiblesarfId, global::System.Nullable<int> Original_code60, global::System.Nullable<bool> Original_Activate, global::System.Nullable<global::System.DateTime> Original_ActivateDate, global::System.Nullable<int> Original_hafza, global::System.Nullable<global::System.DateTime> Original_hafzadate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PersonId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_MMashatId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((byte)(Original_WarasaTypeId));
@@ -7288,6 +7726,38 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_Activate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Activate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ActivateDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_ActivateDate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_hafza.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_hafza.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_hafzadate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_hafzadate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7308,7 +7778,7 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int PersonId, int MMashatId, byte WarasaTypeId, string personName, bool yasref, int SyndicateId, int SubCommitteId, bool responsiblesarf, int responsiblesarfId, global::System.Nullable<int> code60) {
+        public virtual int Insert(int PersonId, int MMashatId, byte WarasaTypeId, string personName, bool yasref, int SyndicateId, int SubCommitteId, bool responsiblesarf, int responsiblesarfId, global::System.Nullable<int> code60, global::System.Nullable<bool> Activate, global::System.Nullable<global::System.DateTime> ActivateDate, global::System.Nullable<int> hafza, global::System.Nullable<global::System.DateTime> hafzadate) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PersonId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MMashatId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((byte)(WarasaTypeId));
@@ -7328,6 +7798,30 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Activate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(Activate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((ActivateDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((hafza.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(hafza.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((hafzadate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((System.DateTime)(hafzadate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7360,6 +7854,10 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
                     bool responsiblesarf, 
                     int responsiblesarfId, 
                     global::System.Nullable<int> code60, 
+                    global::System.Nullable<bool> Activate, 
+                    global::System.Nullable<global::System.DateTime> ActivateDate, 
+                    global::System.Nullable<int> hafza, 
+                    global::System.Nullable<global::System.DateTime> hafzadate, 
                     int Original_PersonId, 
                     int Original_MMashatId, 
                     byte Original_WarasaTypeId, 
@@ -7369,7 +7867,11 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
                     int Original_SubCommitteId, 
                     bool Original_responsiblesarf, 
                     int Original_responsiblesarfId, 
-                    global::System.Nullable<int> Original_code60) {
+                    global::System.Nullable<int> Original_code60, 
+                    global::System.Nullable<bool> Original_Activate, 
+                    global::System.Nullable<global::System.DateTime> Original_ActivateDate, 
+                    global::System.Nullable<int> Original_hafza, 
+                    global::System.Nullable<global::System.DateTime> Original_hafzadate) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PersonId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MMashatId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((byte)(WarasaTypeId));
@@ -7390,27 +7892,83 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_PersonId));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_MMashatId));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((byte)(Original_WarasaTypeId));
+            if ((Activate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Activate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((ActivateDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(ActivateDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((hafza.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(hafza.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((hafzadate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(hafzadate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_PersonId));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_MMashatId));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((byte)(Original_WarasaTypeId));
             if ((Original_personName == null)) {
                 throw new global::System.ArgumentNullException("Original_personName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_personName));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_personName));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_yasref));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_SyndicateId));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_SubCommitteId));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_responsiblesarf));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_responsiblesarfId));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_yasref));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_SyndicateId));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_SubCommitteId));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Original_responsiblesarf));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_responsiblesarfId));
             if ((Original_code60.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_code60.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_code60.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Activate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_Activate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ActivateDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_ActivateDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_hafza.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_hafza.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_hafzadate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_hafzadate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7442,6 +8000,10 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
                     bool responsiblesarf, 
                     int responsiblesarfId, 
                     global::System.Nullable<int> code60, 
+                    global::System.Nullable<bool> Activate, 
+                    global::System.Nullable<global::System.DateTime> ActivateDate, 
+                    global::System.Nullable<int> hafza, 
+                    global::System.Nullable<global::System.DateTime> hafzadate, 
                     int Original_PersonId, 
                     int Original_MMashatId, 
                     byte Original_WarasaTypeId, 
@@ -7451,8 +8013,12 @@ SELECT PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCo
                     int Original_SubCommitteId, 
                     bool Original_responsiblesarf, 
                     int Original_responsiblesarfId, 
-                    global::System.Nullable<int> Original_code60) {
-            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60, Original_PersonId, Original_MMashatId, Original_WarasaTypeId, Original_personName, Original_yasref, Original_SyndicateId, Original_SubCommitteId, Original_responsiblesarf, Original_responsiblesarfId, Original_code60);
+                    global::System.Nullable<int> Original_code60, 
+                    global::System.Nullable<bool> Original_Activate, 
+                    global::System.Nullable<global::System.DateTime> Original_ActivateDate, 
+                    global::System.Nullable<int> Original_hafza, 
+                    global::System.Nullable<global::System.DateTime> Original_hafzadate) {
+            return this.Update(Original_PersonId, MMashatId, WarasaTypeId, personName, yasref, SyndicateId, SubCommitteId, responsiblesarf, responsiblesarfId, code60, Activate, ActivateDate, hafza, hafzadate, Original_PersonId, Original_MMashatId, Original_WarasaTypeId, Original_personName, Original_yasref, Original_SyndicateId, Original_SubCommitteId, Original_responsiblesarf, Original_responsiblesarfId, Original_code60, Original_Activate, Original_ActivateDate, Original_hafza, Original_hafzadate);
         }
     }
     

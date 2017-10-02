@@ -16,7 +16,6 @@ namespace RetirementCenter.Forms.Main
         public SyncETSMobileFrm()
         {
             InitializeComponent();
-            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -24,6 +23,8 @@ namespace RetirementCenter.Forms.Main
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { lcgIndi.Enabled = false; }));
+                
                 ProgressValue = 0;
                 ProgressMax = 16;
                 try
@@ -112,6 +113,7 @@ namespace RetirementCenter.Forms.Main
                     SetStatus = ex.Message;
                 }
                 btnUpdateEnable = true;
+                this.Invoke(new MethodInvoker(() => { lcgIndi.Enabled = true; }));
             });
             
         }
@@ -268,7 +270,28 @@ namespace RetirementCenter.Forms.Main
             SQLProvider.SetAllCommandTimeouts(adp, 0);
             adp.Fill(dsQry.TBLWarasa_ForMob, maxIdTBLWarasa);
             foreach (var item in dsQry.TBLWarasa_ForMob)
-                dsMob.TBLWarasa.AddTBLWarasaRow(item.PersonId, item.MMashatId, item.WarasaTypeId, item.personName, item.yasref, item.SyndicateId, item.SubCommitteId, item.responsiblesarf, item.responsiblesarfId, item.Iscode60Null() ? 0 : item.code60);
+            {
+                DataSources.dsEtsMobile.TBLWarasaRow row = dsMob.TBLWarasa.NewTBLWarasaRow();
+                row.PersonId = item.PersonId;
+                row.MMashatId = item.MMashatId;
+                row.WarasaTypeId = item.WarasaTypeId;
+                row.personName = item.personName;
+                row.yasref = item.yasref;
+                row.SyndicateId = item.SyndicateId;
+                row.SubCommitteId = item.SubCommitteId;
+                row.responsiblesarf = item.responsiblesarf;
+                row.responsiblesarfId = item.responsiblesarfId;
+                row.code60 = item.Iscode60Null() ? 0 : item.code60;
+                row.Activate = item.IsActivateNull() ? false : item.Activate;
+                if (!item.IsActivateDateNull())
+                    row.ActivateDate = item.ActivateDate;
+                if (!item.IshafzaNull())
+                    row.hafza = item.hafza;
+                if (!item.IshafzadateNull())
+                    row.hafzadate = item.hafzadate;
+                dsMob.TBLWarasa.AddTBLWarasaRow(row);
+
+            }
             bulkCopy.ColumnMappings.Clear();
             bulkCopy.ColumnMappings.Add("PersonId", "PersonId");
             bulkCopy.ColumnMappings.Add("MMashatId", "MMashatId");
@@ -280,9 +303,45 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("responsiblesarf", "responsiblesarf");
             bulkCopy.ColumnMappings.Add("responsiblesarfId", "responsiblesarfId");
             bulkCopy.ColumnMappings.Add("code60", "code60");
+            bulkCopy.ColumnMappings.Add("Activate", "Activate");
+            bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
+            bulkCopy.ColumnMappings.Add("hafza", "hafza");
+            bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
             bulkCopy.DestinationTableName = "TBLWarasa";
             bulkCopy.BatchSize = dsMob.TBLWarasa.Count;
             bulkCopy.WriteToServer(dsMob.TBLWarasa);
+            dsMob.TBLWarasa.Clear();
+
+            adp.FillBySomeFields(dsQry.TBLWarasa_ForMob);
+            string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            SqlConnection con = new SqlConnection(Properties.Settings.Default["ETSMOBILEConnectionString"].ToString());
+            SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
+            con.Open();
+            cmd.CommandText = string.Format(@"SELECT PersonId, Activate, ActivateDate, hafza, hafzadate INTO {0} FROM TBLWarasa WHERE 1 = 0;", bulkTableName);
+            cmd.ExecuteNonQuery();
+
+            bulkCopy.ColumnMappings.Clear();
+            bulkCopy.ColumnMappings.Add("PersonId", "PersonId");
+            bulkCopy.ColumnMappings.Add("Activate", "Activate");
+            bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
+            bulkCopy.ColumnMappings.Add("hafza", "hafza");
+            bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.DestinationTableName = bulkTableName;
+            bulkCopy.BatchSize = dsQry.TBLWarasa_ForMob.Count;
+            bulkCopy.WriteToServer(dsQry.TBLWarasa_ForMob);
+            cmd.CommandText = string.Format(@"merge into TBLWarasa as Target 
+                    using {0} as Source on Target.PersonId = Source.PersonId when matched then 
+                    update set 
+                    Target.Activate = Source.Activate,
+                    Target.ActivateDate = Source.ActivateDate,
+                    Target.hafza = Source.hafza,
+                    Target.hafzadate = Source.hafzadate
+                    ;", bulkTableName);
+            int result = cmd.ExecuteNonQuery();
+            cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
+            cmd.ExecuteNonQuery();
+            con.Close(); con.Dispose(); cmd.Dispose();
+
         }
         private static void InsertTBLMashat(SqlBulkCopy bulkCopy, DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdTBLMashat)
         {
@@ -302,6 +361,10 @@ namespace RetirementCenter.Forms.Main
                     row.hafzano = item.hafza;
                 if (!row.IshafzadateNull())
                     row.hafzadate = item.hafzadate;
+                if (!row.IsActivateNull())
+                    row.Activate = item.Activate;
+                if (!row.IsActivateDateNull())
+                    row.ActivateDate = item.ActivateDate;
                 dsMob.TBLMashat.AddTBLMashatRow(row);
             }
             bulkCopy.ColumnMappings.Clear();
@@ -313,9 +376,44 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("sarfnumber", "sarfnumber");
             bulkCopy.ColumnMappings.Add("hafzano", "hafzano");
             bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.ColumnMappings.Add("Activate", "Activate");
+            bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
             bulkCopy.DestinationTableName = "TBLMashat";
             bulkCopy.BatchSize = dsMob.TBLMashat.Count;
             bulkCopy.WriteToServer(dsMob.TBLMashat);
+
+
+            
+            adp.FillBySomeFields(dsQry.TBLMashat_ForMob);
+            string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+            SqlConnection con = new SqlConnection(Properties.Settings.Default["ETSMOBILEConnectionString"].ToString());
+            SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
+            //SqlBulkCopy bulkCopy2 = new SqlBulkCopy(con) { BulkCopyTimeout = 0 };
+            con.Open();
+            cmd.CommandText = string.Format(@"SELECT MMashatId, Activate, ActivateDate, hafzano as hafza, hafzadate INTO {0} FROM TBLMashat WHERE 1 = 0;", bulkTableName);
+            cmd.ExecuteNonQuery();
+
+            bulkCopy.ColumnMappings.Clear();
+            bulkCopy.ColumnMappings.Add("MMashatId", "MMashatId");
+            bulkCopy.ColumnMappings.Add("Activate", "Activate");
+            bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
+            bulkCopy.ColumnMappings.Add("hafza", "hafza");
+            bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.DestinationTableName = bulkTableName;
+            bulkCopy.BatchSize = dsQry.TBLMashat_ForMob.Count;
+            bulkCopy.WriteToServer(dsQry.TBLMashat_ForMob);
+            cmd.CommandText = string.Format(@"merge into TBLMashat as Target 
+                    using {0} as Source on Target.MMashatId = Source.MMashatId when matched then 
+                    update set 
+                    Target.Activate = Source.Activate,
+                    Target.ActivateDate = Source.ActivateDate,
+                    Target.hafzano = Source.hafza,
+                    Target.hafzadate = Source.hafzadate
+                    ;", bulkTableName);
+            int result = cmd.ExecuteNonQuery();
+            cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
+            cmd.ExecuteNonQuery();
+            con.Close(); con.Dispose(); cmd.Dispose();
         }
         private static void InsertTBLDofatSarf(DataSources.dsEtsMobile dsMob, DataSources.dsQueries dsQry, int maxIdTBLDofatSarf)
         {
@@ -389,6 +487,279 @@ namespace RetirementCenter.Forms.Main
                     lblStatus.Text = value;
                 }));
             }
+        }
+
+        private void btnInsertTBLMashat_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+                    SetStatus = "Get missing recored in TBLMashat";
+                    int maxIdTBLMashat = adpQry.TBLMashat_MaxId() ?? 0;
+                    //TBLMashat
+                    SetStatus = "prepare data in TBLMashat";
+                    InsertTBLMashat(bulkCopy, dsMob, dsQry, maxIdTBLMashat);
+                    
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+        private void btnInsertTBLWarasa_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+
+                    SetStatus = "Get missing recored in TBLWarasa";
+                    int maxIdTBLWarasa = adpQry.TBLWarasa_MaxId() ?? 0;
+                    //TBLWarasa
+                    SetStatus = "prepare data in TBLWarasa";
+                    InsertTBLWarasa(bulkCopy, dsMob, dsQry, maxIdTBLWarasa);
+
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+        private void btnInserttblWarasabank_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+
+                    SetStatus = "Get missing recored in tblWarasabank";
+                    long maxIdtblWarasabank = adpQry.tblWarasabank_MaxId() ?? 0;
+                    //tblWarasabank
+                    SetStatus = "prepare data in tblWarasabank";
+                    InserttblWarasabank(bulkCopy, dsMob, dsQry, maxIdtblWarasabank);
+
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+        private void btnInserttblmemberbank_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+
+                    SetStatus = "Get missing recored in tblmemberbank";
+                    long maxIdtblmemberbank = adpQry.tblmemberbank_MaxId() ?? 0;
+                    //tblmemberbank
+                    SetStatus = "prepare data in tblmemberbank";
+                    Inserttblmemberbank(bulkCopy, dsMob, dsQry, maxIdtblmemberbank);
+
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+        private void btnUpdatetblmemberbank_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+
+                    //Update tblmemberbank
+                    SetStatus = "update old data in tblmemberbank";
+                    Updatetblmemberbank(bulkCopy, dsQry);
+
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+        private void btnUpdatetblWarasabank_Click(object sender, EventArgs e)
+        {
+            btnUpdateEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    //Get MaxIds
+                    DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter();
+                    SQLProvider.SetAllCommandTimeouts(adpQry, 0);
+
+                    //Update tblWarasabank
+                    SetStatus = "update old data in tblWarasabank";
+                    UpdatetblWarasabank(bulkCopy, dsQry);
+
+                    connection.Close();
+
+                    SetStatus = "...";
+
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+
+                btnUpdateEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
         }
 
     }
