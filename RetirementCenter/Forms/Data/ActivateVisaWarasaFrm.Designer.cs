@@ -58,6 +58,7 @@
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWData)).BeginInit();
@@ -126,7 +127,8 @@
             this.colhafzadate,
             this.colActivate,
             this.colActivateDate,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.colcode60});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -172,7 +174,7 @@
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.OptionsColumn.ReadOnly = true;
             this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 2;
+            this.colMMashatId.VisibleIndex = 3;
             // 
             // colMMashatName
             // 
@@ -185,7 +187,7 @@
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.OptionsColumn.ReadOnly = true;
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 3;
+            this.colMMashatName.VisibleIndex = 4;
             // 
             // colMMashatNId
             // 
@@ -198,7 +200,7 @@
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.OptionsColumn.ReadOnly = true;
             this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 4;
+            this.colMMashatNId.VisibleIndex = 5;
             // 
             // colsarfnumber
             // 
@@ -211,7 +213,7 @@
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.OptionsColumn.ReadOnly = true;
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 5;
+            this.colsarfnumber.VisibleIndex = 6;
             // 
             // colhafza
             // 
@@ -224,7 +226,7 @@
             this.colhafza.Name = "colhafza";
             this.colhafza.OptionsColumn.ReadOnly = true;
             this.colhafza.Visible = true;
-            this.colhafza.VisibleIndex = 6;
+            this.colhafza.VisibleIndex = 7;
             // 
             // colhafzadate
             // 
@@ -238,7 +240,7 @@
             this.colhafzadate.Name = "colhafzadate";
             this.colhafzadate.OptionsColumn.ReadOnly = true;
             this.colhafzadate.Visible = true;
-            this.colhafzadate.VisibleIndex = 7;
+            this.colhafzadate.VisibleIndex = 8;
             // 
             // repositoryItemDateEditDMY
             // 
@@ -265,7 +267,7 @@
             this.colActivate.FieldName = "Activate";
             this.colActivate.Name = "colActivate";
             this.colActivate.Visible = true;
-            this.colActivate.VisibleIndex = 8;
+            this.colActivate.VisibleIndex = 9;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -283,7 +285,7 @@
             this.colActivateDate.FieldName = "ActivateDate";
             this.colActivateDate.Name = "colActivateDate";
             this.colActivateDate.Visible = true;
-            this.colActivateDate.VisibleIndex = 9;
+            this.colActivateDate.VisibleIndex = 10;
             // 
             // gridColumn4
             // 
@@ -295,7 +297,7 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 10;
+            this.gridColumn4.VisibleIndex = 11;
             this.gridColumn4.Width = 70;
             // 
             // repositoryItemButtonEditTransferSave
@@ -427,6 +429,18 @@
             this.btnNew.Text = "جديد";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // colcode60
+            // 
+            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
+            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.Caption = "كود 60";
+            this.colcode60.FieldName = "code60";
+            this.colcode60.Name = "colcode60";
+            this.colcode60.Visible = true;
+            this.colcode60.VisibleIndex = 2;
+            // 
             // ActivateVisaWarasaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,5 +503,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode60;
     }
 }

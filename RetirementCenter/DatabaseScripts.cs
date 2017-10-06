@@ -1415,14 +1415,15 @@ FROM            TBLMemberSarf INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry58]
                     AS
-                                    SELECT        BankExportedDataWarsa.Id, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, TBLWarasa.personName, 
-                         TBLWarasa.personNID, TBLMashat.sarfnumber, CDSubCommitte.SubCommitte, CDSyndicate.Syndicate, BankExportedDataWarsa.Activate, BankExportedDataWarsa.ActivateDate
-                FROM            CDSubCommitte INNER JOIN
-                         CDSyndicate INNER JOIN
-                         TBLWarasa INNER JOIN
-                         BankExportedDataWarsa ON TBLWarasa.PersonId = BankExportedDataWarsa.PersonId ON CDSyndicate.SyndicateId = TBLWarasa.SyndicateId ON 
-                         CDSubCommitte.SubCommitteId = TBLWarasa.SubCommitteId INNER JOIN
-                         TBLMashat ON BankExportedDataWarsa.MMashatId = TBLMashat.MMashatId
+                                    SELECT        dbo.BankExportedDataWarsa.Id, dbo.BankExportedDataWarsa.ExportDate, dbo.BankExportedDataWarsa.PersonId, dbo.BankExportedDataWarsa.hafza, dbo.BankExportedDataWarsa.hafzadate, dbo.TBLWarasa.personName, 
+                         dbo.TBLWarasa.personNID, dbo.TBLMashat.sarfnumber, dbo.CDSubCommitte.SubCommitte, dbo.CDSyndicate.Syndicate, dbo.BankExportedDataWarsa.Activate, dbo.BankExportedDataWarsa.ActivateDate, 
+                         dbo.TBLWarasa.code60
+FROM            dbo.CDSubCommitte INNER JOIN
+                         dbo.CDSyndicate INNER JOIN
+                         dbo.TBLWarasa INNER JOIN
+                         dbo.BankExportedDataWarsa ON dbo.TBLWarasa.PersonId = dbo.BankExportedDataWarsa.PersonId ON dbo.CDSyndicate.SyndicateId = dbo.TBLWarasa.SyndicateId ON 
+                         dbo.CDSubCommitte.SubCommitteId = dbo.TBLWarasa.SubCommitteId INNER JOIN
+                         dbo.TBLMashat ON dbo.BankExportedDataWarsa.MMashatId = dbo.TBLMashat.MMashatId
 ";
             }
         }

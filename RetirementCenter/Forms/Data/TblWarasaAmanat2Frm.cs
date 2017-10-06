@@ -98,6 +98,11 @@ namespace RetirementCenter
                 msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
                 return;
             }
+            if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime())
+            {
+                msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
+                return;
+            }
             Update(row, false);
             
         }

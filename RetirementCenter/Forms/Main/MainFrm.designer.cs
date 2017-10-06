@@ -292,6 +292,7 @@ namespace RetirementCenter
             this.mbRetCenterXRep28 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep29 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterSyncETSMobileFrm = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry113 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -319,7 +320,6 @@ namespace RetirementCenter
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PBBackground = new System.Windows.Forms.PictureBox();
-            this.mbRetCenterQry113 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
@@ -3367,6 +3367,15 @@ namespace RetirementCenter
             this.mbRetCenterSyncETSMobileFrm.Name = "mbRetCenterSyncETSMobileFrm";
             this.mbRetCenterSyncETSMobileFrm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterSyncETSMobileFrm_ItemClick);
             // 
+            // mbRetCenterQry113
+            // 
+            this.mbRetCenterQry113.Caption = "«„«‰«  «⁄÷«¡ „ﬂ——…";
+            this.mbRetCenterQry113.Id = 423;
+            this.mbRetCenterQry113.ImageIndex = 19;
+            this.mbRetCenterQry113.LargeImageIndex = 19;
+            this.mbRetCenterQry113.Name = "mbRetCenterQry113";
+            this.mbRetCenterQry113.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry113_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -3703,15 +3712,6 @@ namespace RetirementCenter
             this.PBBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBBackground.TabIndex = 5;
             this.PBBackground.TabStop = false;
-            // 
-            // mbRetCenterQry113
-            // 
-            this.mbRetCenterQry113.Caption = "«„«‰«  «⁄÷«¡ „ﬂ——…";
-            this.mbRetCenterQry113.Id = 423;
-            this.mbRetCenterQry113.ImageIndex = 19;
-            this.mbRetCenterQry113.LargeImageIndex = 19;
-            this.mbRetCenterQry113.Name = "mbRetCenterQry113";
-            this.mbRetCenterQry113.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry113_ItemClick);
             // 
             // MainFrm
             // 
