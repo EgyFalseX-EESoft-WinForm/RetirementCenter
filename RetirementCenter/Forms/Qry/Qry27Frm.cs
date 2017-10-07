@@ -22,7 +22,6 @@ namespace RetirementCenter
             InitializeComponent();
             btnBank.Visible = Program.UserInfo.IsAdmin;
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
-            LSMS.QueryableSource = dsLinq.vQry27s;
             if (Program.UserInfo.IsAdmin || Convert.ToBoolean(SQLProvider.adpQry.RoleExists(Program.UserInfo.UserId, Program.SubAdminRole)))
                 btnPrintExport.Visible = true;
             else
@@ -65,6 +64,10 @@ namespace RetirementCenter
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
         }
+        private void LueFilter_EditValueChanged(object sender, EventArgs e)
+        {
+            LSMS.QueryableSource = from q in dsLinq.vQry27s where q.DofatSarfId == Convert.ToInt32(LueFilter.EditValue) select q;
+        }
         private void btnBank_Click(object sender, EventArgs e)
         {
             if (lueDof.EditValue == null)
@@ -97,6 +100,8 @@ namespace RetirementCenter
             Program.ShowMsg("تم الاضافة للبنك" + Environment.NewLine + effected, false, this, true);
         }
         #endregion
+
+        
 
         
 

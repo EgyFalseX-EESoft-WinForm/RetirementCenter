@@ -26,7 +26,7 @@ namespace RetirementCenter
                 btnPrintExport.Visible = true;
             else
                 btnPrintExport.Visible = false;
-            LSMS.QueryableSource = dsLinq.vQry28s;
+            
         }
         public Qry28Frm(int Code60)
         {
@@ -60,6 +60,10 @@ namespace RetirementCenter
 
             // Open the Preview window.
             gridControlData.ShowRibbonPrintPreview();
+        }
+        private void LueFilter_EditValueChanged(object sender, EventArgs e)
+        {
+            LSMS.QueryableSource = from q in dsLinq.vQry28s where q.DofatSarfId == Convert.ToInt32(LueFilter.EditValue) select q;
         }
         private void btnBank_Click(object sender, EventArgs e)
         {
@@ -95,8 +99,6 @@ namespace RetirementCenter
             Program.ShowMsg("تم الاضافة للبنك" + Environment.NewLine + effected, false, this, true);
         }
         #endregion
-
-        
 
     }
 }

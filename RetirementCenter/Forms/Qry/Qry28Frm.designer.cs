@@ -75,8 +75,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
+            this.LueFilter = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSDof = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.lueDof = new DevExpress.XtraEditors.LookUpEdit();
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
@@ -93,8 +94,9 @@
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
             this.SuspendLayout();
@@ -656,6 +658,7 @@
             this.panelControlMain.Controls.Add(this.labelControl2);
             this.panelControlMain.Controls.Add(this.btnPrintExport);
             this.panelControlMain.Controls.Add(this.labelControl1);
+            this.panelControlMain.Controls.Add(this.LueFilter);
             this.panelControlMain.Controls.Add(this.lueDof);
             this.panelControlMain.Controls.Add(this.lueSynd);
             this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Top;
@@ -741,6 +744,29 @@
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "الدفعة";
             // 
+            // LueFilter
+            // 
+            this.LueFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LueFilter.Location = new System.Drawing.Point(588, 41);
+            this.LueFilter.Name = "LueFilter";
+            this.LueFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LueFilter.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.LueFilter.Properties.DataSource = this.LSMSDof;
+            this.LueFilter.Properties.DisplayMember = "DofatSarf";
+            this.LueFilter.Properties.NullText = "";
+            this.LueFilter.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.LueFilter.Properties.ValueMember = "DofatSarfId";
+            this.LueFilter.Size = new System.Drawing.Size(134, 20);
+            this.LueFilter.TabIndex = 4;
+            this.LueFilter.EditValueChanged += new System.EventHandler(this.LueFilter_EditValueChanged);
+            // 
+            // LSMSDof
+            // 
+            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
+            this.LSMSDof.KeyExpression = "[DofatSarfId]";
+            // 
             // lueDof
             // 
             this.lueDof.Location = new System.Drawing.Point(100, 15);
@@ -756,11 +782,6 @@
             this.lueDof.Properties.ValueMember = "DofatSarfId";
             this.lueDof.Size = new System.Drawing.Size(125, 20);
             this.lueDof.TabIndex = 4;
-            // 
-            // LSMSDof
-            // 
-            this.LSMSDof.ElementType = typeof(RetirementCenter.DataSources.Linq.TBLDofatSarf);
-            this.LSMSDof.KeyExpression = "[DofatSarfId]";
             // 
             // lueSynd
             // 
@@ -812,8 +833,9 @@
             this.panelControlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeEnd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCodeStart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueFilter.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDof)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
             this.ResumeLayout(false);
@@ -873,6 +895,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colamanatvisa;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
         private DevExpress.XtraGrid.Columns.GridColumn colSendBankDate;
+        private DevExpress.XtraEditors.LookUpEdit LueFilter;
 
     }
 }
