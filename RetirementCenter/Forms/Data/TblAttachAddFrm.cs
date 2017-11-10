@@ -25,7 +25,7 @@ namespace RetirementCenter.Forms.Data
             try
             {
                 DataPath = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().AppOptions_GetTblAttachPath();
-                if (DataPath == string.Empty)
+                if (string.IsNullOrEmpty(DataPath))
                 {
                     msgDlg.Show("لا يوجد مسار محدد لمرفقات");
                     Close();

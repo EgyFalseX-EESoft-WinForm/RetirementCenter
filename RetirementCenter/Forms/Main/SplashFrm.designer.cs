@@ -59,7 +59,7 @@
             this.LblCopyright.AutoSize = true;
             this.LblCopyright.Font = new System.Drawing.Font("Tahoma", 8F);
             this.LblCopyright.ForeColor = System.Drawing.Color.Black;
-            this.LblCopyright.Location = new System.Drawing.Point(12, 228);
+            this.LblCopyright.Location = new System.Drawing.Point(12, 235);
             this.LblCopyright.Name = "LblCopyright";
             this.LblCopyright.Size = new System.Drawing.Size(54, 13);
             this.LblCopyright.TabIndex = 3;

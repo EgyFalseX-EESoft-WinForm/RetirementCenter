@@ -55,6 +55,8 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamanatAutoId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSyndicate1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,8 +74,12 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colsarfcheek = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colamanatAutoId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ceShowAll = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtSearchCode = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnCodeSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -95,6 +101,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceShowAll.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -447,6 +458,30 @@
             this.colMMashatName.Visible = true;
             this.colMMashatName.VisibleIndex = 17;
             // 
+            // colsarfcheek
+            // 
+            this.colsarfcheek.AppearanceCell.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsarfcheek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsarfcheek.Caption = "شيك";
+            this.colsarfcheek.FieldName = "sarfcheek";
+            this.colsarfcheek.Name = "colsarfcheek";
+            this.colsarfcheek.Visible = true;
+            this.colsarfcheek.VisibleIndex = 14;
+            // 
+            // colamanatAutoId
+            // 
+            this.colamanatAutoId.AppearanceCell.Options.UseTextOptions = true;
+            this.colamanatAutoId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatAutoId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colamanatAutoId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colamanatAutoId.Caption = "تلقائي";
+            this.colamanatAutoId.FieldName = "amanatAutoId";
+            this.colamanatAutoId.Name = "colamanatAutoId";
+            this.colamanatAutoId.Visible = true;
+            this.colamanatAutoId.VisibleIndex = 0;
+            // 
             // repositoryItemGridLookUpEditSyndicateId
             // 
             this.repositoryItemGridLookUpEditSyndicateId.AutoHeight = false;
@@ -560,6 +595,9 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnCodeSearch);
+            this.layoutControl1.Controls.Add(this.txtSearchCode);
+            this.layoutControl1.Controls.Add(this.ceShowAll);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.gridControlData);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -575,9 +613,9 @@
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = global::RetirementCenter.Properties.Resources.add_16x16;
-            this.btnAdd.Location = new System.Drawing.Point(767, 12);
+            this.btnAdd.Location = new System.Drawing.Point(799, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(113, 22);
+            this.btnAdd.Size = new System.Drawing.Size(81, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "اضافة جديد";
@@ -591,7 +629,10 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem3,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(892, 361);
@@ -614,9 +655,9 @@
             // 
             this.layoutControlItem3.Control = this.btnAdd;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(755, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(787, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(117, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(85, 26);
             this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;
@@ -626,35 +667,74 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(291, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(755, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(496, 26);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // colsarfcheek
+            // ceShowAll
             // 
-            this.colsarfcheek.AppearanceCell.Options.UseTextOptions = true;
-            this.colsarfcheek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfcheek.AppearanceHeader.Options.UseTextOptions = true;
-            this.colsarfcheek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfcheek.Caption = "شيك";
-            this.colsarfcheek.FieldName = "sarfcheek";
-            this.colsarfcheek.Name = "colsarfcheek";
-            this.colsarfcheek.Visible = true;
-            this.colsarfcheek.VisibleIndex = 14;
+            this.ceShowAll.Location = new System.Drawing.Point(12, 12);
+            this.ceShowAll.Name = "ceShowAll";
+            this.ceShowAll.Properties.Caption = "اظهار الكل";
+            this.ceShowAll.Size = new System.Drawing.Size(74, 19);
+            this.ceShowAll.StyleController = this.layoutControl1;
+            this.ceShowAll.TabIndex = 4;
+            this.ceShowAll.CheckedChanged += new System.EventHandler(this.ceShowAll_CheckedChanged);
             // 
-            // colamanatAutoId
+            // layoutControlItem2
             // 
-            this.colamanatAutoId.AppearanceCell.Options.UseTextOptions = true;
-            this.colamanatAutoId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanatAutoId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colamanatAutoId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colamanatAutoId.Caption = "تلقائي";
-            this.colamanatAutoId.FieldName = "amanatAutoId";
-            this.colamanatAutoId.Name = "colamanatAutoId";
-            this.colamanatAutoId.Visible = true;
-            this.colamanatAutoId.VisibleIndex = 0;
+            this.layoutControlItem2.Control = this.ceShowAll;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(78, 26);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // txtSearchCode
+            // 
+            this.txtSearchCode.Location = new System.Drawing.Point(90, 12);
+            this.txtSearchCode.Name = "txtSearchCode";
+            this.txtSearchCode.Size = new System.Drawing.Size(128, 20);
+            this.txtSearchCode.StyleController = this.layoutControl1;
+            this.txtSearchCode.TabIndex = 5;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtSearchCode;
+            this.layoutControlItem4.CustomizationFormText = "كود";
+            this.layoutControlItem4.Location = new System.Drawing.Point(78, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(150, 26);
+            this.layoutControlItem4.Text = "كود";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(15, 13);
+            // 
+            // btnCodeSearch
+            // 
+            this.btnCodeSearch.Location = new System.Drawing.Point(240, 12);
+            this.btnCodeSearch.Name = "btnCodeSearch";
+            this.btnCodeSearch.Size = new System.Drawing.Size(59, 22);
+            this.btnCodeSearch.StyleController = this.layoutControl1;
+            this.btnCodeSearch.TabIndex = 6;
+            this.btnCodeSearch.Text = "بحث بالكود";
+            this.btnCodeSearch.Click += new System.EventHandler(this.btnCodeSearch_Click);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnCodeSearch;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(228, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(63, 26);
+            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextToControlDistance = 0;
+            this.layoutControlItem5.TextVisible = false;
             // 
             // TBLWarasaSarf_arshefFrm
             // 
@@ -687,6 +767,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceShowAll.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,5 +824,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
         private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
         private DevExpress.XtraGrid.Columns.GridColumn colamanatAutoId;
+        private DevExpress.XtraEditors.SimpleButton btnCodeSearch;
+        private DevExpress.XtraEditors.TextEdit txtSearchCode;
+        private DevExpress.XtraEditors.CheckEdit ceShowAll;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

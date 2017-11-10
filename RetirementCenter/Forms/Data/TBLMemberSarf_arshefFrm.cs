@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Linq;
+using DevExpress.XtraSplashScreen;
 
 namespace RetirementCenter.Forms.Data
 {
@@ -18,11 +20,15 @@ namespace RetirementCenter.Forms.Data
         public TBLMemberSarf_arshefFrm()
         {
             InitializeComponent();
-            LoadData();
         }
-        private void LoadData()
+        private void LoadData(int? code = null)
         {
-            LSMSDATA.QueryableSource = dsLinq.vTBLMemberSarf_arshefs;
+            this.Invoke(new MethodInvoker(() => {
+            if (code == null)
+                 LSMSDATA.QueryableSource = dsLinq.vTBLMemberSarf_arshefs;
+            else
+                 LSMSDATA.QueryableSource = from q in dsLinq.vTBLMemberSarf_arshefs where q.MMashatId == (int)code select q;
+            }));
         }
         private void RefreshData()
         {
@@ -31,6 +37,35 @@ namespace RetirementCenter.Forms.Data
         }
         private void DofatSarfActivityFrm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void ceShowAll_CheckedChanged(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                if (ceShowAll.Checked)
+                    LoadData();
+                SplashScreenManager.CloseForm();
+            });
+        }
+        private void btnCodeSearch_Click(object sender, EventArgs e)
+        {
+            if (FXFW.SqlDB.IsNullOrEmpty(txtSearchCode.EditValue))
+            {
+                MessageBox.Show("من فضلك ادخل كود العضو");
+                return;
+            }
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                int code;
+                if (int.TryParse(txtSearchCode.EditValue.ToString(), out code))
+                    LoadData(code);
+                else
+                    MessageBox.Show("من فضلك ادخل كود صحيح");
+                SplashScreenManager.CloseForm();
+            });
         }
         private void repositoryItemButtonEditTransferSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

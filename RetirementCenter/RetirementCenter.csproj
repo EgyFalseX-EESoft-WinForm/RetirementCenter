@@ -1893,6 +1893,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\apply_16x16.png" />
+    <None Include="Resources\logo-EGYCS9.png" />
+    <None Include="Resources\Logo_EGYCS.png" />
     <Content Include="web.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

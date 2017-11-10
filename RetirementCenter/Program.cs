@@ -74,7 +74,7 @@ namespace RetirementCenter
             {
                 LoadAppSetting();
                 FXFW.SqlDB.LoadSQLReports();
-                Logger = new FXFW.Logger(FXFW.Logger.LanguageInfo.Arabic, Application.ProductName, Properties.Resources.EESoft, false);
+                Logger = new FXFW.Logger(FXFW.Logger.LanguageInfo.Arabic, Application.ProductName, Properties.Resources.Logo_EGYCS, false);
                 
                 try
                 {
@@ -205,7 +205,7 @@ namespace RetirementCenter
             if (!FXFW.SqlDB.IsNullOrEmpty(row["CompanyLogo"]))
                 ms = new System.IO.MemoryStream((byte[])row["CompanyLogo"]);
             else
-                Properties.Resources.EESoft.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                Properties.Resources.Logo_EGYCS.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             CompanyLogo = Image.FromStream(ms);
 
             if (imgPath.Remove(0, imgPath.Length - 1) != @"\")

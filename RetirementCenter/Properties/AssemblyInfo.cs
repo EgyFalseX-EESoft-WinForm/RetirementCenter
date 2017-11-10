@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RetirementCenter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("E-E-Soft")]
+[assembly: AssemblyCompany("ايجكس للحاسابات ونظم الإدارة - EGYCS")]
 [assembly: AssemblyProduct("RetirementCenter")]
-[assembly: AssemblyCopyright("Copyright © E-E-Soft 2012")]
+[assembly: AssemblyCopyright("Copyright © ايجكس للحاسابات ونظم الإدارة - EGYCS 2012")]
 [assembly: AssemblyTrademark("[Egy]FalseX")]
 [assembly: AssemblyCulture("")]
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -26,5 +26,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.583")] 
-[assembly: AssemblyFileVersion("1.0.0.583")]
+[assembly: AssemblyVersion("1.0.0.589")] 
+[assembly: AssemblyFileVersion("1.0.0.589")]

@@ -14,7 +14,7 @@ namespace RetirementCenter
 {
     public partial class Qry28Frm : DevExpress.XtraEditors.XtraForm
     {
-        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
+        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext() { CommandTimeout = 0, ObjectTrackingEnabled = false };
         DataSources.dsRetirementCenterTableAdapters.TBLWarasaSarf_arshefTableAdapter adpSarfArc = new DataSources.dsRetirementCenterTableAdapters.TBLWarasaSarf_arshefTableAdapter();
         #region -   Functions   -
         public Qry28Frm()

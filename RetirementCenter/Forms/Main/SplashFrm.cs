@@ -65,7 +65,7 @@ namespace RetirementCenter
         }
         private void CloseTmr_tick(object sender, EventArgs e)
         {
-            if (countdown != 5)
+            if (countdown != 2)
                 countdown++;
             else
                 Close();

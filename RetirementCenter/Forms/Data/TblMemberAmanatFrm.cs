@@ -170,7 +170,7 @@ namespace RetirementCenter
                 }
                 else
                 {
-                    if (newRecord)
+                    if (newRecord && !row.sarfcheek)
                         frm.UpdateActive();
                     dsRetirementCenter.TblMemberAmanat.AcceptChanges();
                     Program.ShowMsg("تم الحفظ", false, this, true);

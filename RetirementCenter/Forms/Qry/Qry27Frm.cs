@@ -14,7 +14,7 @@ namespace RetirementCenter
 {
     public partial class Qry27Frm : DevExpress.XtraEditors.XtraForm
     {
-        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
+        DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext() { CommandTimeout = 0, ObjectTrackingEnabled = false };
         DataSources.dsRetirementCenterTableAdapters.TBLMemberSarf_arshefTableAdapter adpSarfArc = new DataSources.dsRetirementCenterTableAdapters.TBLMemberSarf_arshefTableAdapter();
         #region -   Functions   -
         public Qry27Frm()
@@ -38,6 +38,7 @@ namespace RetirementCenter
             
             SQLProvider.SetAllCommandTimeouts(adpSarfArc, 0);
             panelControlMain.Visible = false;
+            
             LSMS.QueryableSource = from q in dsLinq.vQry27s where q.MMashatId == Id select q;
         }
         #endregion

@@ -143,16 +143,6 @@ namespace RetirementCenter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EESoft {
-            get {
-                object obj = ResourceManager.GetObject("EESoft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap error {
             get {
                 object obj = ResourceManager.GetObject("error", resourceCulture);
@@ -176,6 +166,16 @@ namespace RetirementCenter.Properties {
         internal static System.Drawing.Bitmap Login_Back {
             get {
                 object obj = ResourceManager.GetObject("Login_Back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_EGYCS {
+            get {
+                object obj = ResourceManager.GetObject("Logo_EGYCS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
