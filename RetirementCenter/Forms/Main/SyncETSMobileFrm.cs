@@ -794,7 +794,7 @@ namespace RetirementCenter.Forms.Main
                 {
                     SetStatus = ex.Message;
                 }
-                btnUpdateOptionDefaultDofatSarfIdEnable = false;
+                btnUpdateOptionDefaultDofatSarfIdEnable = true;
                 this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
             });
         }

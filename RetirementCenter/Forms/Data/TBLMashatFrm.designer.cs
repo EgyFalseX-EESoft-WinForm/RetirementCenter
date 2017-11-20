@@ -330,6 +330,23 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
+            this.xtraTabPageVerify = new DevExpress.XtraTab.XtraTabPage();
+            this.layoutControlVerify = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.ceVerifyMember = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ceVerifyWarasa = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lueVerifyWarasaUser = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lueVerifyMemberUser = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblVerifyMemberDate = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblVerifyWarasaDate = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
@@ -500,6 +517,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
+            this.xtraTabPageVerify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlVerify)).BeginInit();
+            this.layoutControlVerify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceVerifyMember.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceVerifyWarasa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueVerifyWarasaUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueVerifyMemberUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -1005,7 +1038,8 @@
             this.xtraTabPageReSarf,
             this.xtraTabPageEditResponsable,
             this.xtraTabPagetblmembervisaactive,
-            this.xtraTabPageTblMemberMadunea});
+            this.xtraTabPageTblMemberMadunea,
+            this.xtraTabPageVerify});
             this.xtraTabControlMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
             // xtraTabPageMain
@@ -3920,6 +3954,218 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
+            // xtraTabPageVerify
+            // 
+            this.xtraTabPageVerify.Controls.Add(this.layoutControlVerify);
+            this.xtraTabPageVerify.Name = "xtraTabPageVerify";
+            this.xtraTabPageVerify.Size = new System.Drawing.Size(1135, 294);
+            this.xtraTabPageVerify.Text = "مراجعة";
+            // 
+            // layoutControlVerify
+            // 
+            this.layoutControlVerify.Controls.Add(this.lblVerifyWarasaDate);
+            this.layoutControlVerify.Controls.Add(this.lblVerifyMemberDate);
+            this.layoutControlVerify.Controls.Add(this.lueVerifyMemberUser);
+            this.layoutControlVerify.Controls.Add(this.lueVerifyWarasaUser);
+            this.layoutControlVerify.Controls.Add(this.ceVerifyWarasa);
+            this.layoutControlVerify.Controls.Add(this.ceVerifyMember);
+            this.layoutControlVerify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControlVerify.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlVerify.Name = "layoutControlVerify";
+            this.layoutControlVerify.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(785, 636, 308, 350);
+            this.layoutControlVerify.OptionsView.IsReadOnly = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlVerify.OptionsView.UseDefaultDragAndDropRendering = false;
+            this.layoutControlVerify.Root = this.layoutControlGroup1;
+            this.layoutControlVerify.Size = new System.Drawing.Size(1135, 294);
+            this.layoutControlVerify.TabIndex = 0;
+            this.layoutControlVerify.Text = "Verify";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "Root";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup2,
+            this.layoutControlGroup3});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1135, 294);
+            this.layoutControlGroup1.Text = "Root";
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // ceVerifyMember
+            // 
+            this.ceVerifyMember.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_member", true));
+            this.ceVerifyMember.Location = new System.Drawing.Point(24, 43);
+            this.ceVerifyMember.Name = "ceVerifyMember";
+            this.ceVerifyMember.Properties.Caption = "مراجعة اعضاء";
+            this.ceVerifyMember.Properties.ReadOnly = true;
+            this.ceVerifyMember.Size = new System.Drawing.Size(1087, 19);
+            this.ceVerifyMember.StyleController = this.layoutControlVerify;
+            this.ceVerifyMember.TabIndex = 4;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.ceVerifyMember;
+            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1091, 23);
+            this.layoutControlItem1.Text = "layoutControlItem1";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // ceVerifyWarasa
+            // 
+            this.ceVerifyWarasa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_warasa", true));
+            this.ceVerifyWarasa.Location = new System.Drawing.Point(24, 150);
+            this.ceVerifyWarasa.Name = "ceVerifyWarasa";
+            this.ceVerifyWarasa.Properties.Caption = "مراجعة الورثة";
+            this.ceVerifyWarasa.Properties.ReadOnly = true;
+            this.ceVerifyWarasa.Size = new System.Drawing.Size(1087, 19);
+            this.ceVerifyWarasa.StyleController = this.layoutControlVerify;
+            this.ceVerifyWarasa.TabIndex = 5;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.ceVerifyWarasa;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1091, 23);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // lueVerifyWarasaUser
+            // 
+            this.lueVerifyWarasaUser.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_warasa_userin", true));
+            this.lueVerifyWarasaUser.Location = new System.Drawing.Point(24, 173);
+            this.lueVerifyWarasaUser.Name = "lueVerifyWarasaUser";
+            this.lueVerifyWarasaUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueVerifyWarasaUser.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueVerifyWarasaUser.Properties.DataSource = this.usersBindingSource;
+            this.lueVerifyWarasaUser.Properties.DisplayMember = "RealName";
+            this.lueVerifyWarasaUser.Properties.NullText = "";
+            this.lueVerifyWarasaUser.Properties.ReadOnly = true;
+            this.lueVerifyWarasaUser.Properties.ValueMember = "UserID";
+            this.lueVerifyWarasaUser.Size = new System.Drawing.Size(1041, 20);
+            this.lueVerifyWarasaUser.StyleController = this.layoutControlVerify;
+            this.lueVerifyWarasaUser.TabIndex = 6;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.lueVerifyWarasaUser;
+            this.layoutControlItem3.CustomizationFormText = "مستخدم";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 23);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1091, 24);
+            this.layoutControlItem3.Text = "مستخدم";
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(42, 13);
+            // 
+            // lueVerifyMemberUser
+            // 
+            this.lueVerifyMemberUser.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_member_userin", true));
+            this.lueVerifyMemberUser.Location = new System.Drawing.Point(24, 66);
+            this.lueVerifyMemberUser.Name = "lueVerifyMemberUser";
+            this.lueVerifyMemberUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueVerifyMemberUser.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueVerifyMemberUser.Properties.DataSource = this.usersBindingSource;
+            this.lueVerifyMemberUser.Properties.DisplayMember = "RealName";
+            this.lueVerifyMemberUser.Properties.NullText = "";
+            this.lueVerifyMemberUser.Properties.ReadOnly = true;
+            this.lueVerifyMemberUser.Properties.ValueMember = "UserID";
+            this.lueVerifyMemberUser.Size = new System.Drawing.Size(1041, 20);
+            this.lueVerifyMemberUser.StyleController = this.layoutControlVerify;
+            this.lueVerifyMemberUser.TabIndex = 7;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.lueVerifyMemberUser;
+            this.layoutControlItem4.CustomizationFormText = "مستخدم";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 23);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1091, 24);
+            this.layoutControlItem4.Text = "مستخدم";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(42, 13);
+            // 
+            // lblVerifyMemberDate
+            // 
+            this.lblVerifyMemberDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsRetirementCenter, "TBLMashat.verify_member_datein", true));
+            this.lblVerifyMemberDate.Location = new System.Drawing.Point(24, 90);
+            this.lblVerifyMemberDate.Name = "lblVerifyMemberDate";
+            this.lblVerifyMemberDate.Size = new System.Drawing.Size(12, 13);
+            this.lblVerifyMemberDate.StyleController = this.layoutControlVerify;
+            this.lblVerifyMemberDate.TabIndex = 8;
+            this.lblVerifyMemberDate.Text = "...";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.lblVerifyMemberDate;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 47);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(1091, 17);
+            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextToControlDistance = 0;
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // lblVerifyWarasaDate
+            // 
+            this.lblVerifyWarasaDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsRetirementCenter, "TBLMashat.verify_warasa_datein", true));
+            this.lblVerifyWarasaDate.Location = new System.Drawing.Point(24, 197);
+            this.lblVerifyWarasaDate.Name = "lblVerifyWarasaDate";
+            this.lblVerifyWarasaDate.Size = new System.Drawing.Size(12, 13);
+            this.lblVerifyWarasaDate.StyleController = this.layoutControlVerify;
+            this.lblVerifyWarasaDate.TabIndex = 9;
+            this.lblVerifyWarasaDate.Text = "...";
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.lblVerifyWarasaDate;
+            this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 47);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1091, 77);
+            this.layoutControlItem6.Text = "layoutControlItem6";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextToControlDistance = 0;
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.CustomizationFormText = "الاعضاء";
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem5,
+            this.layoutControlItem4});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1115, 107);
+            this.layoutControlGroup2.Text = "الاعضاء";
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.CustomizationFormText = "الورثة";
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem6,
+            this.layoutControlItem3});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 107);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1115, 167);
+            this.layoutControlGroup3.Text = "الورثة";
+            // 
             // TBLMashatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4109,6 +4355,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
+            this.xtraTabPageVerify.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlVerify)).EndInit();
+            this.layoutControlVerify.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceVerifyMember.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceVerifyWarasa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueVerifyWarasaUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueVerifyMemberUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4400,5 +4662,22 @@
         private DevExpress.XtraEditors.SimpleButton btnCode60Search;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.TextEdit tbCode60;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageVerify;
+        private DevExpress.XtraLayout.LayoutControl layoutControlVerify;
+        private DevExpress.XtraEditors.LabelControl lblVerifyWarasaDate;
+        private DevExpress.XtraEditors.LabelControl lblVerifyMemberDate;
+        private DevExpress.XtraEditors.LookUpEdit lueVerifyMemberUser;
+        private DevExpress.XtraEditors.LookUpEdit lueVerifyWarasaUser;
+        private DevExpress.XtraEditors.CheckEdit ceVerifyWarasa;
+        private DevExpress.XtraEditors.CheckEdit ceVerifyMember;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

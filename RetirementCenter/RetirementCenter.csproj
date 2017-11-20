@@ -330,6 +330,12 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\VerifyMemberFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\VerifyMemberFrm.Designer.cs">
+      <DependentUpon>VerifyMemberFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\TblAttachEditFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1918,6 +1924,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\VerifyMemberFrm.resx">
+      <DependentUpon>VerifyMemberFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TblAttachEditFrm.resx">
       <DependentUpon>TblAttachEditFrm.cs</DependentUpon>
