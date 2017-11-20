@@ -5489,6 +5489,25 @@ WHERE     (TBLWarasa.visa IS NULL)</CommandText>
               </DbCommand>
             </InsertCommand>
           </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ForMob_MaxTblMemberAmanat" MethodsParameterType="CLR" Modifier="Public" Name="ForMob_MaxTblMemberAmanat" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy66" UserSourceName="ForMob_MaxTblMemberAmanat">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        MAX(Source) AS Source
+FROM            TblMemberAmanat</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.CdDofaatAmanat" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetOpenCdDofaatAmanat" MethodsParameterType="CLR" Modifier="Public" Name="GetOpenCdDofaatAmanat" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy67" UserSourceName="GetOpenCdDofaatAmanat">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        TOP (1) DofatSarfAId
+FROM            CdDofaatAmanat
+WHERE        (Closed = 0)</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>

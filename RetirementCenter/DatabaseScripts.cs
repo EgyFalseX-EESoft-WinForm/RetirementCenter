@@ -17,596 +17,596 @@ namespace RetirementCenter
             try
             {
                 con.Open();
-                //vTBLMashat
-                if (CheckViewExists("vTBLMashat"))
-                {
-                    cmd.CommandText = DropView("vTBLMashat");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLMashat;
-                cmd.ExecuteNonQuery();
-                //vTBLEdafat
-                if (CheckViewExists("vTBLEdafat"))
-                {
-                    cmd.CommandText = DropView("vTBLEdafat");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLEdafat;
-                cmd.ExecuteNonQuery();
-                //vTBLEdafatWarasa
-                if (CheckViewExists("vTBLEdafatWarasa"))
-                {
-                    cmd.CommandText = DropView("vTBLEdafatWarasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLEdafatWarasa;
-                cmd.ExecuteNonQuery();
+                ////vTBLMashat
+                //if (CheckViewExists("vTBLMashat"))
+                //{
+                //    cmd.CommandText = DropView("vTBLMashat");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLMashat;
+                //cmd.ExecuteNonQuery();
+                ////vTBLEdafat
+                //if (CheckViewExists("vTBLEdafat"))
+                //{
+                //    cmd.CommandText = DropView("vTBLEdafat");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLEdafat;
+                //cmd.ExecuteNonQuery();
+                ////vTBLEdafatWarasa
+                //if (CheckViewExists("vTBLEdafatWarasa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLEdafatWarasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLEdafatWarasa;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry01"))
-                {
-                    cmd.CommandText = DropView("vQry01");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry01;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry01"))
+                //{
+                //    cmd.CommandText = DropView("vQry01");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry01;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry02"))
-                {
-                    cmd.CommandText = DropView("vQry02");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry02;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry02"))
+                //{
+                //    cmd.CommandText = DropView("vQry02");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry02;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry02a"))
-                {
-                    cmd.CommandText = DropView("vQry02a");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry02a;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry02a"))
+                //{
+                //    cmd.CommandText = DropView("vQry02a");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry02a;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vTBLWarasa"))
-                {
-                    cmd.CommandText = DropView("vTBLWarasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLWarasa;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLWarasa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLWarasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLWarasa;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vTBLWarasa_TBLMashat"))
-                {
-                    cmd.CommandText = DropView("vTBLWarasa_TBLMashat");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLWarasa_TBLMashat;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLWarasa_TBLMashat"))
+                //{
+                //    cmd.CommandText = DropView("vTBLWarasa_TBLMashat");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLWarasa_TBLMashat;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry06"))
-                {
-                    cmd.CommandText = DropView("vQry06");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry06;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry06"))
+                //{
+                //    cmd.CommandText = DropView("vQry06");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry06;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry07"))
-                {
-                    cmd.CommandText = DropView("vQry07");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry07;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry07"))
+                //{
+                //    cmd.CommandText = DropView("vQry07");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry07;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry08"))
-                {
-                    cmd.CommandText = DropView("vQry08");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry08;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry08"))
+                //{
+                //    cmd.CommandText = DropView("vQry08");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry08;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry10"))
-                {
-                    cmd.CommandText = DropView("vQry10");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry10;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry10"))
+                //{
+                //    cmd.CommandText = DropView("vQry10");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry10;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry11"))
-                {
-                    cmd.CommandText = DropView("vQry11");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry11;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry11"))
+                //{
+                //    cmd.CommandText = DropView("vQry11");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry11;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry12"))
-                {
-                    cmd.CommandText = DropView("vQry12");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry12;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry12"))
+                //{
+                //    cmd.CommandText = DropView("vQry12");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry12;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry13"))
-                {
-                    cmd.CommandText = DropView("vQry13");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry13;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry13"))
+                //{
+                //    cmd.CommandText = DropView("vQry13");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry13;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry14"))
-                {
-                    cmd.CommandText = DropView("vQry14");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry14;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry14"))
+                //{
+                //    cmd.CommandText = DropView("vQry14");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry14;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry15"))
-                {
-                    cmd.CommandText = DropView("vQry15");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry15;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry15"))
+                //{
+                //    cmd.CommandText = DropView("vQry15");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry15;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry19"))
-                {
-                    cmd.CommandText = DropView("vQry19");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry19;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry19"))
+                //{
+                //    cmd.CommandText = DropView("vQry19");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry19;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry20"))
-                {
-                    cmd.CommandText = DropView("vQry20");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry20;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry20"))
+                //{
+                //    cmd.CommandText = DropView("vQry20");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry20;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vTBLMashat01_V1"))
-                {
-                    cmd.CommandText = DropView("vTBLMashat01_V1");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLMashat01_V1;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLMashat01_V1"))
+                //{
+                //    cmd.CommandText = DropView("vTBLMashat01_V1");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLMashat01_V1;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vTBLMashat01_V2"))
-                {
-                    cmd.CommandText = DropView("vTBLMashat01_V2");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLMashat01_V2;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLMashat01_V2"))
+                //{
+                //    cmd.CommandText = DropView("vTBLMashat01_V2");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLMashat01_V2;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry22"))
-                {
-                    cmd.CommandText = DropView("vQry22");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry22;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry22"))
+                //{
+                //    cmd.CommandText = DropView("vQry22");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry22;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry23"))
-                {
-                    cmd.CommandText = DropView("vQry23");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry23;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry23"))
+                //{
+                //    cmd.CommandText = DropView("vQry23");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry23;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry25"))
-                {
-                    cmd.CommandText = DropView("vQry25");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry25;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry25"))
+                //{
+                //    cmd.CommandText = DropView("vQry25");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry25;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry26"))
-                {
-                    cmd.CommandText = DropView("vQry26");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry26;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry26"))
+                //{
+                //    cmd.CommandText = DropView("vQry26");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry26;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry27"))
-                {
-                    cmd.CommandText = DropView("vQry27");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry27;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry27"))
+                //{
+                //    cmd.CommandText = DropView("vQry27");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry27;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry28"))
-                {
-                    cmd.CommandText = DropView("vQry28");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry28;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry28"))
+                //{
+                //    cmd.CommandText = DropView("vQry28");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry28;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry31"))
-                {
-                    cmd.CommandText = DropView("vQry31");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry31;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry31"))
+                //{
+                //    cmd.CommandText = DropView("vQry31");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry31;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry32"))
-                {
-                    cmd.CommandText = DropView("vQry32");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry32;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry32"))
+                //{
+                //    cmd.CommandText = DropView("vQry32");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry32;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry33"))
-                {
-                    cmd.CommandText = DropView("vQry33");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry33;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry33"))
+                //{
+                //    cmd.CommandText = DropView("vQry33");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry33;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry35"))
-                {
-                    cmd.CommandText = DropView("vQry35");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry35;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry35"))
+                //{
+                //    cmd.CommandText = DropView("vQry35");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry35;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry42"))
-                {
-                    cmd.CommandText = DropView("vQry42");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry42;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry42"))
+                //{
+                //    cmd.CommandText = DropView("vQry42");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry42;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry43"))
-                {
-                    cmd.CommandText = DropView("vQry43");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry43;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry43"))
+                //{
+                //    cmd.CommandText = DropView("vQry43");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry43;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry57"))
-                {
-                    cmd.CommandText = DropView("vQry57");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry57;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry57"))
+                //{
+                //    cmd.CommandText = DropView("vQry57");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry57;
+                //cmd.ExecuteNonQuery();
 
-                if (CheckViewExists("vQry58"))
-                {
-                    cmd.CommandText = DropView("vQry58");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry58;
-                cmd.ExecuteNonQuery();
-                //vQry59
-                if (CheckViewExists("vQry59"))
-                {
-                    cmd.CommandText = DropView("vQry59");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry59;
-                cmd.ExecuteNonQuery();
-                //TBLProofDoc
-                cmd.CommandText = TBLProofDoc;
-                cmd.ExecuteNonQuery();
-                //BankExportedData
-                cmd.CommandText = BankExportedData;
-                cmd.ExecuteNonQuery();
-                //vTBLDeathMembers
-                if (CheckViewExists("vTBLDeathMembers"))
-                {
-                    cmd.CommandText = DropView("vTBLDeathMembers");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLDeathMembers;
-                cmd.ExecuteNonQuery();
-                //vQry71
-                if (CheckViewExists("vQry71"))
-                {
-                    cmd.CommandText = DropView("vQry71");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry71;
-                cmd.ExecuteNonQuery();
-                //vQry73
-                if (CheckViewExists("vQry73"))
-                {
-                    cmd.CommandText = DropView("vQry73");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry73;
-                cmd.ExecuteNonQuery();
-                //vtbladminremarks
-                if (CheckViewExists("vtbladminremarks"))
-                {
-                    cmd.CommandText = DropView("vtbladminremarks");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vtbladminremarks;
-                cmd.ExecuteNonQuery();
-                //vQry74
-                if (CheckViewExists("vQry74"))
-                {
-                    cmd.CommandText = DropView("vQry74");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry74;
-                cmd.ExecuteNonQuery();
-                //vQry75
-                if (CheckViewExists("vQry75"))
-                {
-                    cmd.CommandText = DropView("vQry75");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry75;
-                cmd.ExecuteNonQuery();
-                //vQry76
-                if (CheckViewExists("vQry76"))
-                {
-                    cmd.CommandText = DropView("vQry76");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry76;
-                cmd.ExecuteNonQuery();
-                //vQry77
-                if (CheckViewExists("vQry77"))
-                {
-                    cmd.CommandText = DropView("vQry77");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry77;
-                cmd.ExecuteNonQuery();
-                //vTBLEstefa
-                if (CheckViewExists("vTBLEstefa"))
-                {
-                    cmd.CommandText = DropView("vTBLEstefa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLEstefa;
-                cmd.ExecuteNonQuery();
-                //vQry78
-                if (CheckViewExists("vQry78"))
-                {
-                    cmd.CommandText = DropView("vQry78");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry78;
-                cmd.ExecuteNonQuery();
-                //vTBLReprintMember
-                if (CheckViewExists("vTBLReprintMember"))
-                {
-                    cmd.CommandText = DropView("vTBLReprintMember");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLReprintMember;
-                cmd.ExecuteNonQuery();
-                //vQry79
-                if (CheckViewExists("vQry79"))
-                {
-                    cmd.CommandText = DropView("vQry79");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry79;
-                cmd.ExecuteNonQuery();
-                //vTBLReprintWarasa01
-                if (CheckViewExists("vTBLReprintWarasa01"))
-                {
-                    cmd.CommandText = DropView("vTBLReprintWarasa01");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLReprintWarasa01;
-                cmd.ExecuteNonQuery();
-                //vTBLReprintWarasa
-                if (CheckViewExists("vTBLReprintWarasa"))
-                {
-                    cmd.CommandText = DropView("vTBLReprintWarasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLReprintWarasa;
-                cmd.ExecuteNonQuery();
-                //vQry80
-                if (CheckViewExists("vQry80"))
-                {
-                    cmd.CommandText = DropView("vQry80");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry80;
-                cmd.ExecuteNonQuery();
-                //vTBLHafzaTasleem
-                if (CheckViewExists("vTBLHafzaTasleem"))
-                {
-                    cmd.CommandText = DropView("vTBLHafzaTasleem");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLHafzaTasleem;
-                cmd.ExecuteNonQuery();
-                //vQry81
-                if (CheckViewExists("vQry81"))
-                {
-                    cmd.CommandText = DropView("vQry81");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry81;
-                cmd.ExecuteNonQuery();
-                //vTBLFrookWarasa
-                if (CheckViewExists("vTBLFrookWarasa"))
-                {
-                    cmd.CommandText = DropView("vTBLFrookWarasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLFrookWarasa;
-                cmd.ExecuteNonQuery();
-                //vQry84
-                if (CheckViewExists("vQry84"))
-                {
-                    cmd.CommandText = DropView("vQry84");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry84;
-                cmd.ExecuteNonQuery();
-                //vTBLHafezSarf
-                if (CheckViewExists("vTBLHafezSarf"))
-                {
-                    cmd.CommandText = DropView("vTBLHafezSarf");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLHafezSarf;
-                cmd.ExecuteNonQuery();
-                //vTblMemberMadunea
-                if (CheckViewExists("vTblMemberMadunea"))
-                {
-                    cmd.CommandText = DropView("vTblMemberMadunea");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTblMemberMadunea;
-                cmd.ExecuteNonQuery();
-                //vTBLWarasaMadunea
-                if (CheckViewExists("vTBLWarasaMadunea"))
-                {
-                    cmd.CommandText = DropView("vTBLWarasaMadunea");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLWarasaMadunea;
-                cmd.ExecuteNonQuery();
-                //vTBLMemberSarf_arshef
-                if (CheckViewExists("vTBLMemberSarf_arshef"))
-                {
-                    cmd.CommandText = DropView("vTBLMemberSarf_arshef");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLMemberSarf_arshef;
-                cmd.ExecuteNonQuery();
-                //vTBLWarasaSarf_arshef
-                if (CheckViewExists("vTBLWarasaSarf_arshef"))
-                {
-                    cmd.CommandText = DropView("vTBLWarasaSarf_arshef");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLWarasaSarf_arshef;
-                cmd.ExecuteNonQuery();
-                //vtblWarasabank
-                if (CheckViewExists("vtblWarasabank"))
-                {
-                    cmd.CommandText = DropView("vtblWarasabank");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vtblWarasabank;
-                cmd.ExecuteNonQuery();
-                //vtblWarasabank2
-                if (CheckViewExists("vtblWarasabank2"))
-                {
-                    cmd.CommandText = DropView("vtblWarasabank2");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vtblWarasabank2;
-                cmd.ExecuteNonQuery();
-                //vTBLWarasaSarf_arshef2
-                if (CheckViewExists("vTBLWarasaSarf_arshef2"))
-                {
-                    cmd.CommandText = DropView("vTBLWarasaSarf_arshef2");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLWarasaSarf_arshef2;
-                cmd.ExecuteNonQuery();
-                //vQry91
-                if (CheckViewExists("vQry91"))
-                {
-                    cmd.CommandText = DropView("vQry91");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry91;
-                cmd.ExecuteNonQuery();
-                //vQry92
-                if (CheckViewExists("vQry92"))
-                {
-                    cmd.CommandText = DropView("vQry92");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry92;
-                cmd.ExecuteNonQuery();
-                //vBankExportedData_Activate
-                if (CheckViewExists("vBankExportedData_Activate"))
-                {
-                    cmd.CommandText = DropView("vBankExportedData_Activate");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vBankExportedData_Activate;
-                cmd.ExecuteNonQuery();
-                //vBankExportedDataWarsa_Activate
-                if (CheckViewExists("vBankExportedDataWarsa_Activate"))
-                {
-                    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vBankExportedDataWarsa_Activate;
-                cmd.ExecuteNonQuery();
-                //vTblMemberAmanat
-                if (CheckViewExists("vTblMemberAmanat"))
-                {
-                    cmd.CommandText = DropView("vTblMemberAmanat");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTblMemberAmanat;
-                cmd.ExecuteNonQuery();
-                //vTblWarasaAmanat
-                if (CheckViewExists("vTblWarasaAmanat"))
-                {
-                    cmd.CommandText = DropView("vTblWarasaAmanat");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTblWarasaAmanat;
-                cmd.ExecuteNonQuery();
-                //vTblAttach
-                if (CheckViewExists("vTblAttach"))
-                {
-                    cmd.CommandText = DropView("vTblAttach");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTblAttach;
-                cmd.ExecuteNonQuery();
-                //vQry103
-                if (CheckViewExists("vQry103"))
-                {
-                    cmd.CommandText = DropView("vQry103");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry103;
-                cmd.ExecuteNonQuery();
-                //vQry105
-                if (CheckViewExists("vQry105"))
-                {
-                    cmd.CommandText = DropView("vQry105");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry105;
-                cmd.ExecuteNonQuery();
-                //vQry74A
-                if (CheckViewExists("vQry74A"))
-                {
-                    cmd.CommandText = DropView("vQry74A");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry74A;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vQry58"))
+                //{
+                //    cmd.CommandText = DropView("vQry58");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry58;
+                //cmd.ExecuteNonQuery();
+                ////vQry59
+                //if (CheckViewExists("vQry59"))
+                //{
+                //    cmd.CommandText = DropView("vQry59");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry59;
+                //cmd.ExecuteNonQuery();
+                ////TBLProofDoc
+                //cmd.CommandText = TBLProofDoc;
+                //cmd.ExecuteNonQuery();
+                ////BankExportedData
+                //cmd.CommandText = BankExportedData;
+                //cmd.ExecuteNonQuery();
+                ////vTBLDeathMembers
+                //if (CheckViewExists("vTBLDeathMembers"))
+                //{
+                //    cmd.CommandText = DropView("vTBLDeathMembers");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLDeathMembers;
+                //cmd.ExecuteNonQuery();
+                ////vQry71
+                //if (CheckViewExists("vQry71"))
+                //{
+                //    cmd.CommandText = DropView("vQry71");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry71;
+                //cmd.ExecuteNonQuery();
+                ////vQry73
+                //if (CheckViewExists("vQry73"))
+                //{
+                //    cmd.CommandText = DropView("vQry73");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry73;
+                //cmd.ExecuteNonQuery();
+                ////vtbladminremarks
+                //if (CheckViewExists("vtbladminremarks"))
+                //{
+                //    cmd.CommandText = DropView("vtbladminremarks");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vtbladminremarks;
+                //cmd.ExecuteNonQuery();
+                ////vQry74
+                //if (CheckViewExists("vQry74"))
+                //{
+                //    cmd.CommandText = DropView("vQry74");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry74;
+                //cmd.ExecuteNonQuery();
+                ////vQry75
+                //if (CheckViewExists("vQry75"))
+                //{
+                //    cmd.CommandText = DropView("vQry75");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry75;
+                //cmd.ExecuteNonQuery();
+                ////vQry76
+                //if (CheckViewExists("vQry76"))
+                //{
+                //    cmd.CommandText = DropView("vQry76");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry76;
+                //cmd.ExecuteNonQuery();
+                ////vQry77
+                //if (CheckViewExists("vQry77"))
+                //{
+                //    cmd.CommandText = DropView("vQry77");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry77;
+                //cmd.ExecuteNonQuery();
+                ////vTBLEstefa
+                //if (CheckViewExists("vTBLEstefa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLEstefa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLEstefa;
+                //cmd.ExecuteNonQuery();
+                ////vQry78
+                //if (CheckViewExists("vQry78"))
+                //{
+                //    cmd.CommandText = DropView("vQry78");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry78;
+                //cmd.ExecuteNonQuery();
+                ////vTBLReprintMember
+                //if (CheckViewExists("vTBLReprintMember"))
+                //{
+                //    cmd.CommandText = DropView("vTBLReprintMember");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLReprintMember;
+                //cmd.ExecuteNonQuery();
+                ////vQry79
+                //if (CheckViewExists("vQry79"))
+                //{
+                //    cmd.CommandText = DropView("vQry79");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry79;
+                //cmd.ExecuteNonQuery();
+                ////vTBLReprintWarasa01
+                //if (CheckViewExists("vTBLReprintWarasa01"))
+                //{
+                //    cmd.CommandText = DropView("vTBLReprintWarasa01");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLReprintWarasa01;
+                //cmd.ExecuteNonQuery();
+                ////vTBLReprintWarasa
+                //if (CheckViewExists("vTBLReprintWarasa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLReprintWarasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLReprintWarasa;
+                //cmd.ExecuteNonQuery();
+                ////vQry80
+                //if (CheckViewExists("vQry80"))
+                //{
+                //    cmd.CommandText = DropView("vQry80");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry80;
+                //cmd.ExecuteNonQuery();
+                ////vTBLHafzaTasleem
+                //if (CheckViewExists("vTBLHafzaTasleem"))
+                //{
+                //    cmd.CommandText = DropView("vTBLHafzaTasleem");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLHafzaTasleem;
+                //cmd.ExecuteNonQuery();
+                ////vQry81
+                //if (CheckViewExists("vQry81"))
+                //{
+                //    cmd.CommandText = DropView("vQry81");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry81;
+                //cmd.ExecuteNonQuery();
+                ////vTBLFrookWarasa
+                //if (CheckViewExists("vTBLFrookWarasa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLFrookWarasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLFrookWarasa;
+                //cmd.ExecuteNonQuery();
+                ////vQry84
+                //if (CheckViewExists("vQry84"))
+                //{
+                //    cmd.CommandText = DropView("vQry84");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry84;
+                //cmd.ExecuteNonQuery();
+                ////vTBLHafezSarf
+                //if (CheckViewExists("vTBLHafezSarf"))
+                //{
+                //    cmd.CommandText = DropView("vTBLHafezSarf");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLHafezSarf;
+                //cmd.ExecuteNonQuery();
+                ////vTblMemberMadunea
+                //if (CheckViewExists("vTblMemberMadunea"))
+                //{
+                //    cmd.CommandText = DropView("vTblMemberMadunea");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTblMemberMadunea;
+                //cmd.ExecuteNonQuery();
+                ////vTBLWarasaMadunea
+                //if (CheckViewExists("vTBLWarasaMadunea"))
+                //{
+                //    cmd.CommandText = DropView("vTBLWarasaMadunea");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLWarasaMadunea;
+                //cmd.ExecuteNonQuery();
+                ////vTBLMemberSarf_arshef
+                //if (CheckViewExists("vTBLMemberSarf_arshef"))
+                //{
+                //    cmd.CommandText = DropView("vTBLMemberSarf_arshef");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLMemberSarf_arshef;
+                //cmd.ExecuteNonQuery();
+                ////vTBLWarasaSarf_arshef
+                //if (CheckViewExists("vTBLWarasaSarf_arshef"))
+                //{
+                //    cmd.CommandText = DropView("vTBLWarasaSarf_arshef");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLWarasaSarf_arshef;
+                //cmd.ExecuteNonQuery();
+                ////vtblWarasabank
+                //if (CheckViewExists("vtblWarasabank"))
+                //{
+                //    cmd.CommandText = DropView("vtblWarasabank");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vtblWarasabank;
+                //cmd.ExecuteNonQuery();
+                ////vtblWarasabank2
+                //if (CheckViewExists("vtblWarasabank2"))
+                //{
+                //    cmd.CommandText = DropView("vtblWarasabank2");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vtblWarasabank2;
+                //cmd.ExecuteNonQuery();
+                ////vTBLWarasaSarf_arshef2
+                //if (CheckViewExists("vTBLWarasaSarf_arshef2"))
+                //{
+                //    cmd.CommandText = DropView("vTBLWarasaSarf_arshef2");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLWarasaSarf_arshef2;
+                //cmd.ExecuteNonQuery();
+                ////vQry91
+                //if (CheckViewExists("vQry91"))
+                //{
+                //    cmd.CommandText = DropView("vQry91");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry91;
+                //cmd.ExecuteNonQuery();
+                ////vQry92
+                //if (CheckViewExists("vQry92"))
+                //{
+                //    cmd.CommandText = DropView("vQry92");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry92;
+                //cmd.ExecuteNonQuery();
+                ////vBankExportedData_Activate
+                //if (CheckViewExists("vBankExportedData_Activate"))
+                //{
+                //    cmd.CommandText = DropView("vBankExportedData_Activate");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vBankExportedData_Activate;
+                //cmd.ExecuteNonQuery();
+                ////vBankExportedDataWarsa_Activate
+                //if (CheckViewExists("vBankExportedDataWarsa_Activate"))
+                //{
+                //    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vBankExportedDataWarsa_Activate;
+                //cmd.ExecuteNonQuery();
+                ////vTblMemberAmanat
+                //if (CheckViewExists("vTblMemberAmanat"))
+                //{
+                //    cmd.CommandText = DropView("vTblMemberAmanat");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTblMemberAmanat;
+                //cmd.ExecuteNonQuery();
+                ////vTblWarasaAmanat
+                //if (CheckViewExists("vTblWarasaAmanat"))
+                //{
+                //    cmd.CommandText = DropView("vTblWarasaAmanat");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTblWarasaAmanat;
+                //cmd.ExecuteNonQuery();
+                ////vTblAttach
+                //if (CheckViewExists("vTblAttach"))
+                //{
+                //    cmd.CommandText = DropView("vTblAttach");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTblAttach;
+                //cmd.ExecuteNonQuery();
+                ////vQry103
+                //if (CheckViewExists("vQry103"))
+                //{
+                //    cmd.CommandText = DropView("vQry103");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry103;
+                //cmd.ExecuteNonQuery();
+                ////vQry105
+                //if (CheckViewExists("vQry105"))
+                //{
+                //    cmd.CommandText = DropView("vQry105");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry105;
+                //cmd.ExecuteNonQuery();
+                ////vQry74A
+                //if (CheckViewExists("vQry74A"))
+                //{
+                //    cmd.CommandText = DropView("vQry74A");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry74A;
+                //cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -622,30 +622,30 @@ namespace RetirementCenter
             try
             {
                 con.Open();
-                //fn_SplitPram
-                if (CheckSPExists("fn_SplitPram"))
-                {
-                    cmd.CommandText = DropFunction("fn_SplitPram");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = fn_SplitPram;
-                cmd.ExecuteNonQuery();
-                //sp_001
-                if (CheckSPExists("sp_001"))
-                {
-                    cmd.CommandText = DropProcedure("sp_001");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = sp_001;
-                cmd.ExecuteNonQuery();
-                //sp_002
-                if (CheckSPExists("sp_002"))
-                {
-                    cmd.CommandText = DropProcedure("sp_002");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = sp_002;
-                cmd.ExecuteNonQuery();
+                ////fn_SplitPram
+                //if (CheckSPExists("fn_SplitPram"))
+                //{
+                //    cmd.CommandText = DropFunction("fn_SplitPram");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = fn_SplitPram;
+                //cmd.ExecuteNonQuery();
+                ////sp_001
+                //if (CheckSPExists("sp_001"))
+                //{
+                //    cmd.CommandText = DropProcedure("sp_001");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = sp_001;
+                //cmd.ExecuteNonQuery();
+                ////sp_002
+                //if (CheckSPExists("sp_002"))
+                //{
+                //    cmd.CommandText = DropProcedure("sp_002");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = sp_002;
+                //cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {

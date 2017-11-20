@@ -18,6 +18,7 @@ namespace RetirementCenter.Forms.Main
             InitializeComponent();
         }
 
+        #region Export
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
@@ -478,6 +479,16 @@ namespace RetirementCenter.Forms.Main
                 }));
             }
         }
+        public bool btnUpdateOptionDefaultDofatSarfIdEnable
+        {
+            set
+            {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    btnUpdateOptionDefaultDofatSarfId.Enabled = value;
+                }));
+            }
+        }
         public string SetStatus
         {
             set
@@ -761,6 +772,129 @@ namespace RetirementCenter.Forms.Main
                 this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
             });
         }
+        private void btnUpdateOptionDefaultDofatSarfId_Click(object sender, EventArgs e)
+        {
+            btnUpdateOptionDefaultDofatSarfIdEnable = false;
+            lcgIndi.Enabled = false; mpbc.Enabled = !mpbc.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
 
+                    SetStatus = "Update Option 'DefaultDofatSarfId'";
+                    int OptionDefaultDofatSarfId = Convert.ToInt32(new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().GetOpenCdDofaatAmanat());
+                    new DataSources.dsEtsMobileTableAdapters.QueriesTableAdapter().Update_Option_DefaultDofatSarfId(OptionDefaultDofatSarfId.ToString(), "DefaultDofatSarfId");
+                    SetStatus = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatus = ex.Message;
+                }
+                btnUpdateOptionDefaultDofatSarfIdEnable = false;
+                this.Invoke(new MethodInvoker(() => { mpbc.Enabled = !mpbc.Enabled; lcgIndi.Enabled = true; }));
+            });
+        }
+
+        #endregion
+
+        #region Import
+        public bool btnImportAmanatA3da2Enable
+        {
+            set
+            {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    btnImportAmanatA3da2.Enabled = value;
+                }));
+            }
+        }
+        public string SetStatusImport
+        {
+            set
+            {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    lblStatusImport.Text = value;
+                }));
+            }
+        }
+        private void btnImportAmanatA3da2_Click(object sender, EventArgs e)
+        {
+            btnImportAmanatA3da2Enable = false;
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    object temp = SQLProvider.adpQry.ForMob_MaxTblMemberAmanat();
+                    int maxId = 0;
+                    if (temp != null)
+                        maxId = Convert.ToInt32(temp);
+
+                    SetStatusImport = "Get missing recored in TblMemberAmanat";
+                    DataSources.dsEtsMobileTableAdapters.TblMemberAmanatTableAdapter adpAmanatMob = new DataSources.dsEtsMobileTableAdapters.TblMemberAmanatTableAdapter();
+                    adpAmanatMob.Fill(dsMob.TblMemberAmanat, maxId);
+                    SetStatusImport = "Import into TblMemberAmanat";
+                    bulkCopy.ColumnMappings.Clear();
+                    bulkCopy.ColumnMappings.Add("MMashatId", "MMashatId");
+                    bulkCopy.ColumnMappings.Add("DofatSarfAId", "DofatSarfAId");
+                    bulkCopy.ColumnMappings.Add("amanattypeid", "amanattypeid");
+                    bulkCopy.ColumnMappings.Add("amanatmony", "amanatmony");
+                    bulkCopy.ColumnMappings.Add("amanatrem", "amanatrem");
+                    bulkCopy.ColumnMappings.Add("userin", "userin");
+                    bulkCopy.ColumnMappings.Add("datein", "datein");
+                    bulkCopy.ColumnMappings.Add("estktaa", "estktaa");
+                    bulkCopy.ColumnMappings.Add("mostahek", "mostahek");
+                    bulkCopy.ColumnMappings.Add("DofatSarfId", "DofatSarfId");
+                    bulkCopy.ColumnMappings.Add("sefa", "sefa");
+                    bulkCopy.ColumnMappings.Add("accReview", "accReview");
+                    bulkCopy.ColumnMappings.Add("dateReview", "dateReview");
+                    bulkCopy.ColumnMappings.Add("useracc", "useracc");
+                    bulkCopy.ColumnMappings.Add("amantvisa", "amantvisa");
+                    bulkCopy.ColumnMappings.Add("sarfcheek", "sarfcheek");
+                    bulkCopy.ColumnMappings.Add("cheekno", "cheekno");
+                    bulkCopy.ColumnMappings.Add("tasleemdate", "tasleemdate");
+                    bulkCopy.ColumnMappings.Add("mostlemsheek", "mostlemsheek");
+                    bulkCopy.ColumnMappings.Add("userincheek", "userincheek");
+                    bulkCopy.ColumnMappings.Add("datincheek", "datincheek");
+                    bulkCopy.ColumnMappings.Add("Source", "Source");
+                    bulkCopy.ColumnMappings.Add("MobileUser", "MobileUser");
+                    bulkCopy.DestinationTableName = "TblMemberAmanat";
+                    bulkCopy.BatchSize = dsMob.TblMemberAmanat.Count;
+                    bulkCopy.WriteToServer(dsMob.TblMemberAmanat);
+
+                    connection.Close();
+
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                btnImportAmanatA3da2Enable = true;
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
+        
+        #endregion
+
+        
     }
 }
