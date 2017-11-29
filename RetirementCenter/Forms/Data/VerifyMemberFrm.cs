@@ -28,7 +28,7 @@ namespace RetirementCenter.Forms.Data
         }
         private void ReloadData()
         {
-            this.tBLMashatTableAdapter.FillByUnverifed(this.dsRetirementCenter.TBLMashat);
+            this.tBLMashatTableAdapter.FillByUnverifiedMember(this.dsRetirementCenter.TBLMashat);
             gridViewData.RefreshData();
         }
         private void DofatSarfActivityFrm_Load(object sender, EventArgs e)
@@ -40,17 +40,13 @@ namespace RetirementCenter.Forms.Data
             DataSources.dsRetirementCenter.TBLMashatRow row = (DataSources.dsRetirementCenter.TBLMashatRow)((DataRowView)gridViewData.GetRow(gridViewData.FocusedRowHandle)).Row;
             try
             {
-                if (row["verify_member", DataRowVersion.Current] != row["verify_member", DataRowVersion.Original])
+                row.EndEdit();
+                if (row["verify_member", DataRowVersion.Default] != row["verify_member", DataRowVersion.Original])
                 {
                     row.verify_member_datein = SQLProvider.ServerDateTime();
                     row.verify_member_userin = Program.UserInfo.UserId;
                 }
-                if (row["verify_warasa", DataRowVersion.Current] != row["verify_warasa", DataRowVersion.Original])
-                {
-                    row.verify_warasa_datein = SQLProvider.ServerDateTime();
-                    row.verify_warasa_userin = Program.UserInfo.UserId;
-                }
-                tBLMashatTableAdapter.Update(row);
+                int result = tBLMashatTableAdapter.Update(row);
                 Program.ShowMsg("تم التعديل", false, this, true);
                 Program.Logger.LogThis("تم التعديل", Text, FXFW.Logger.OpType.success, null, null, this);
                 ReloadData();

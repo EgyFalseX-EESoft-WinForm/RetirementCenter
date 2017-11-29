@@ -839,6 +839,14 @@ namespace RetirementCenter.Forms.Main
                     SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
                     connection.Open();
 
+                    // Create an empty table for sqlbulk insert
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
+                    con.Open();
+                    string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+                    cmd.CommandText = string.Format(@"SELECT * INTO {0} FROM TblMemberAmanat WHERE 1 = 0;", bulkTableName);
+                    cmd.ExecuteNonQuery();
+
                     //Datasets
                     DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
                     DataSources.dsQueries dsQry = new DataSources.dsQueries();
@@ -876,11 +884,21 @@ namespace RetirementCenter.Forms.Main
                     bulkCopy.ColumnMappings.Add("datincheek", "datincheek");
                     bulkCopy.ColumnMappings.Add("Source", "Source");
                     bulkCopy.ColumnMappings.Add("MobileUser", "MobileUser");
-                    bulkCopy.DestinationTableName = "TblMemberAmanat";
+                    bulkCopy.DestinationTableName = bulkTableName;
                     bulkCopy.BatchSize = dsMob.TblMemberAmanat.Count;
                     bulkCopy.WriteToServer(dsMob.TblMemberAmanat);
-
                     connection.Close();
+
+                    // Update TblMemberAmanat with inserted data from temp table
+                    cmd.CommandText = string.Format(@"merge into TblMemberAmanat as Target 
+                    using {0} as Source on Target.MMashatId = Source.MMashatId AND Target.DofatSarfAId = Source.DofatSarfAId AND Target.amanattypeid = Source.amanattypeid 
+                    WHEN NOT Matched THEN 
+                    INSERT(MMashatId, DofatSarfAId, amanattypeid, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Source, MobileUser) 
+                    VALUES(Source.MMashatId, Source.DofatSarfAId, Source.amanattypeid, Source.amanatmony, Source.amanatrem, Source.userin, Source.datein, Source.estktaa, Source.mostahek, Source.DofatSarfId, Source.sefa, Source.accReview, Source.dateReview, Source.useracc, Source.amantvisa, Source.sarfcheek, Source.cheekno, Source.tasleemdate, Source.mostlemsheek, Source.userincheek, Source.datincheek, Source.Source, Source.MobileUser) 
+                    ;", bulkTableName);
+                    int result = cmd.ExecuteNonQuery();
+                    cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
+                    cmd.ExecuteNonQuery();
 
                     SetStatusImport = "...";
                 }

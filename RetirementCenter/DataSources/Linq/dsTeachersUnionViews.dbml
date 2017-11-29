@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RetirementCenter" Class="dsTeachersUnionViewsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=FalseX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=FALSEX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CDSyndicate" Member="CDSyndicates">
     <Type Name="CDSyndicate">
       <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1603,6 +1603,25 @@
       <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry114" Member="vQry114s">
+    <Type Name="vQry114">
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="yasref" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="verify_member" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="verify_warasa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="verify_member_userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="verify_member_datein" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="verify_warasa_userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="verify_warasa_datein" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RealName_Member" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RealName_Warasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

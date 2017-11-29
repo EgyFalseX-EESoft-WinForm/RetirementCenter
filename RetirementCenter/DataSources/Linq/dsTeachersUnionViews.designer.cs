@@ -210,6 +210,9 @@ namespace RetirementCenter.DataSources.Linq
     partial void Insertvtbladminremark(vtbladminremark instance);
     partial void Updatevtbladminremark(vtbladminremark instance);
     partial void Deletevtbladminremark(vtbladminremark instance);
+    partial void InsertvQry114(vQry114 instance);
+    partial void UpdatevQry114(vQry114 instance);
+    partial void DeletevQry114(vQry114 instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -991,6 +994,14 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vtbladminremark>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vQry114> vQry114s
+		{
+			get
+			{
+				return this.GetTable<vQry114>();
 			}
 		}
 	}
@@ -31126,6 +31137,404 @@ namespace RetirementCenter.DataSources.Linq
 					this._MashHala = value;
 					this.SendPropertyChanged("MashHala");
 					this.OnMashHalaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vQry114")]
+	public partial class vQry114 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MMashatId;
+		
+		private string _MMashatName;
+		
+		private int _sarfnumber;
+		
+		private bool _yasref;
+		
+		private string _MashHala;
+		
+		private string _Syndicate;
+		
+		private string _SubCommitte;
+		
+		private System.Nullable<bool> _verify_member;
+		
+		private System.Nullable<bool> _verify_warasa;
+		
+		private System.Nullable<int> _verify_member_userin;
+		
+		private System.Nullable<System.DateTime> _verify_member_datein;
+		
+		private System.Nullable<int> _verify_warasa_userin;
+		
+		private System.Nullable<System.DateTime> _verify_warasa_datein;
+		
+		private string _RealName_Member;
+		
+		private string _RealName_Warasa;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMMashatIdChanging(int value);
+    partial void OnMMashatIdChanged();
+    partial void OnMMashatNameChanging(string value);
+    partial void OnMMashatNameChanged();
+    partial void OnsarfnumberChanging(int value);
+    partial void OnsarfnumberChanged();
+    partial void OnyasrefChanging(bool value);
+    partial void OnyasrefChanged();
+    partial void OnMashHalaChanging(string value);
+    partial void OnMashHalaChanged();
+    partial void OnSyndicateChanging(string value);
+    partial void OnSyndicateChanged();
+    partial void OnSubCommitteChanging(string value);
+    partial void OnSubCommitteChanged();
+    partial void Onverify_memberChanging(System.Nullable<bool> value);
+    partial void Onverify_memberChanged();
+    partial void Onverify_warasaChanging(System.Nullable<bool> value);
+    partial void Onverify_warasaChanged();
+    partial void Onverify_member_userinChanging(System.Nullable<int> value);
+    partial void Onverify_member_userinChanged();
+    partial void Onverify_member_dateinChanging(System.Nullable<System.DateTime> value);
+    partial void Onverify_member_dateinChanged();
+    partial void Onverify_warasa_userinChanging(System.Nullable<int> value);
+    partial void Onverify_warasa_userinChanged();
+    partial void Onverify_warasa_dateinChanging(System.Nullable<System.DateTime> value);
+    partial void Onverify_warasa_dateinChanged();
+    partial void OnRealName_MemberChanging(string value);
+    partial void OnRealName_MemberChanged();
+    partial void OnRealName_WarasaChanging(string value);
+    partial void OnRealName_WarasaChanged();
+    #endregion
+		
+		public vQry114()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatName", DbType="NVarChar(75) NOT NULL", CanBeNull=false)]
+		public string MMashatName
+		{
+			get
+			{
+				return this._MMashatName;
+			}
+			set
+			{
+				if ((this._MMashatName != value))
+				{
+					this.OnMMashatNameChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatName = value;
+					this.SendPropertyChanged("MMashatName");
+					this.OnMMashatNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sarfnumber", DbType="Int NOT NULL")]
+		public int sarfnumber
+		{
+			get
+			{
+				return this._sarfnumber;
+			}
+			set
+			{
+				if ((this._sarfnumber != value))
+				{
+					this.OnsarfnumberChanging(value);
+					this.SendPropertyChanging();
+					this._sarfnumber = value;
+					this.SendPropertyChanged("sarfnumber");
+					this.OnsarfnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yasref", DbType="Bit NOT NULL")]
+		public bool yasref
+		{
+			get
+			{
+				return this._yasref;
+			}
+			set
+			{
+				if ((this._yasref != value))
+				{
+					this.OnyasrefChanging(value);
+					this.SendPropertyChanging();
+					this._yasref = value;
+					this.SendPropertyChanged("yasref");
+					this.OnyasrefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MashHala", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MashHala
+		{
+			get
+			{
+				return this._MashHala;
+			}
+			set
+			{
+				if ((this._MashHala != value))
+				{
+					this.OnMashHalaChanging(value);
+					this.SendPropertyChanging();
+					this._MashHala = value;
+					this.SendPropertyChanged("MashHala");
+					this.OnMashHalaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Syndicate", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Syndicate
+		{
+			get
+			{
+				return this._Syndicate;
+			}
+			set
+			{
+				if ((this._Syndicate != value))
+				{
+					this.OnSyndicateChanging(value);
+					this.SendPropertyChanging();
+					this._Syndicate = value;
+					this.SendPropertyChanged("Syndicate");
+					this.OnSyndicateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCommitte", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SubCommitte
+		{
+			get
+			{
+				return this._SubCommitte;
+			}
+			set
+			{
+				if ((this._SubCommitte != value))
+				{
+					this.OnSubCommitteChanging(value);
+					this.SendPropertyChanging();
+					this._SubCommitte = value;
+					this.SendPropertyChanged("SubCommitte");
+					this.OnSubCommitteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_member", DbType="Bit")]
+		public System.Nullable<bool> verify_member
+		{
+			get
+			{
+				return this._verify_member;
+			}
+			set
+			{
+				if ((this._verify_member != value))
+				{
+					this.Onverify_memberChanging(value);
+					this.SendPropertyChanging();
+					this._verify_member = value;
+					this.SendPropertyChanged("verify_member");
+					this.Onverify_memberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_warasa", DbType="Bit")]
+		public System.Nullable<bool> verify_warasa
+		{
+			get
+			{
+				return this._verify_warasa;
+			}
+			set
+			{
+				if ((this._verify_warasa != value))
+				{
+					this.Onverify_warasaChanging(value);
+					this.SendPropertyChanging();
+					this._verify_warasa = value;
+					this.SendPropertyChanged("verify_warasa");
+					this.Onverify_warasaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_member_userin", DbType="Int")]
+		public System.Nullable<int> verify_member_userin
+		{
+			get
+			{
+				return this._verify_member_userin;
+			}
+			set
+			{
+				if ((this._verify_member_userin != value))
+				{
+					this.Onverify_member_userinChanging(value);
+					this.SendPropertyChanging();
+					this._verify_member_userin = value;
+					this.SendPropertyChanged("verify_member_userin");
+					this.Onverify_member_userinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_member_datein", DbType="DateTime")]
+		public System.Nullable<System.DateTime> verify_member_datein
+		{
+			get
+			{
+				return this._verify_member_datein;
+			}
+			set
+			{
+				if ((this._verify_member_datein != value))
+				{
+					this.Onverify_member_dateinChanging(value);
+					this.SendPropertyChanging();
+					this._verify_member_datein = value;
+					this.SendPropertyChanged("verify_member_datein");
+					this.Onverify_member_dateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_warasa_userin", DbType="Int")]
+		public System.Nullable<int> verify_warasa_userin
+		{
+			get
+			{
+				return this._verify_warasa_userin;
+			}
+			set
+			{
+				if ((this._verify_warasa_userin != value))
+				{
+					this.Onverify_warasa_userinChanging(value);
+					this.SendPropertyChanging();
+					this._verify_warasa_userin = value;
+					this.SendPropertyChanged("verify_warasa_userin");
+					this.Onverify_warasa_userinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_verify_warasa_datein", DbType="DateTime")]
+		public System.Nullable<System.DateTime> verify_warasa_datein
+		{
+			get
+			{
+				return this._verify_warasa_datein;
+			}
+			set
+			{
+				if ((this._verify_warasa_datein != value))
+				{
+					this.Onverify_warasa_dateinChanging(value);
+					this.SendPropertyChanging();
+					this._verify_warasa_datein = value;
+					this.SendPropertyChanged("verify_warasa_datein");
+					this.Onverify_warasa_dateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName_Member", DbType="NVarChar(50)")]
+		public string RealName_Member
+		{
+			get
+			{
+				return this._RealName_Member;
+			}
+			set
+			{
+				if ((this._RealName_Member != value))
+				{
+					this.OnRealName_MemberChanging(value);
+					this.SendPropertyChanging();
+					this._RealName_Member = value;
+					this.SendPropertyChanged("RealName_Member");
+					this.OnRealName_MemberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName_Warasa", DbType="NVarChar(50)")]
+		public string RealName_Warasa
+		{
+			get
+			{
+				return this._RealName_Warasa;
+			}
+			set
+			{
+				if ((this._RealName_Warasa != value))
+				{
+					this.OnRealName_WarasaChanging(value);
+					this.SendPropertyChanging();
+					this._RealName_Warasa = value;
+					this.SendPropertyChanged("RealName_Warasa");
+					this.OnRealName_WarasaChanged();
 				}
 			}
 		}

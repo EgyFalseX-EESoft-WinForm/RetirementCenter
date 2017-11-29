@@ -330,6 +330,12 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\VerifyWarasaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\VerifyWarasaFrm.Designer.cs">
+      <DependentUpon>VerifyWarasaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\VerifyMemberFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -779,6 +785,12 @@
     </Compile>
     <Compile Include="Forms\Main\SyncETSMobileFrm.Designer.cs">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry114Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry114Frm.designer.cs">
+      <DependentUpon>Qry114Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Qry\Qry113Frm.cs">
       <SubType>Form</SubType>
@@ -1925,6 +1937,9 @@
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\VerifyWarasaFrm.resx">
+      <DependentUpon>VerifyWarasaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\VerifyMemberFrm.resx">
       <DependentUpon>VerifyMemberFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2152,6 +2167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\SyncETSMobileFrm.resx">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry114Frm.resx">
+      <DependentUpon>Qry114Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry113Frm.resx">
       <DependentUpon>Qry113Frm.cs</DependentUpon>

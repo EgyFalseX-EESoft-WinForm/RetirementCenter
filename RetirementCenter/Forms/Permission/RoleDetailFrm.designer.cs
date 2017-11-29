@@ -81,6 +81,7 @@
             this.mbRetCenterRemoveTBLWarasaNID = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLWarasaFastEdit2 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterVerifyMember = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterVerifyWarasa = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterJobs = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterCDJobtitle = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterCDAttachmentType = new DevExpress.XtraBars.BarButtonItem();
@@ -176,6 +177,7 @@
             this.mbRetCenterQry62 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38d = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38e = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry114 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblChekNid = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry42 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry43 = new DevExpress.XtraBars.BarButtonItem();
@@ -794,10 +796,12 @@
             this.mbRetCenterQry112,
             this.mbRetCenterSyncETSMobileFrm,
             this.mbRetCenterQry113,
-            this.mbRetCenterVerifyMember});
+            this.mbRetCenterVerifyMember,
+            this.mbRetCenterVerifyWarasa,
+            this.mbRetCenterQry114});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 425;
+            this.ribbonControl.MaxItemId = 427;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1111,7 +1115,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterRemoveTBLMashatNID),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterRemoveTBLWarasaNID),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaFastEdit2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyMember)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyMember),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyWarasa)});
             this.mbRetCenterDataMember.Name = "mbRetCenterDataMember";
             // 
             // mbRetCenterTBLMashat
@@ -1166,11 +1171,19 @@
             // 
             // mbRetCenterVerifyMember
             // 
-            this.mbRetCenterVerifyMember.Caption = "مراجعة بيانات الادخال";
+            this.mbRetCenterVerifyMember.Caption = "مراجعة بيانات الادخال - اعضاء";
             this.mbRetCenterVerifyMember.Id = 424;
             this.mbRetCenterVerifyMember.ImageIndex = 30;
             this.mbRetCenterVerifyMember.LargeImageIndex = 30;
             this.mbRetCenterVerifyMember.Name = "mbRetCenterVerifyMember";
+            // 
+            // mbRetCenterVerifyWarasa
+            // 
+            this.mbRetCenterVerifyWarasa.Caption = "مراجعة بيانات الادخال - ورثة";
+            this.mbRetCenterVerifyWarasa.Id = 425;
+            this.mbRetCenterVerifyWarasa.ImageIndex = 30;
+            this.mbRetCenterVerifyWarasa.LargeImageIndex = 30;
+            this.mbRetCenterVerifyWarasa.Name = "mbRetCenterVerifyWarasa";
             // 
             // mbRetCenterJobs
             // 
@@ -1932,7 +1945,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry66),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry62),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38d),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38e)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry38e),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry114)});
             this.mbRetCenterQryPart2.Name = "mbRetCenterQryPart2";
             this.mbRetCenterQryPart2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -2070,6 +2084,14 @@
             this.mbRetCenterQry38e.LargeImageIndex = 19;
             this.mbRetCenterQry38e.Name = "mbRetCenterQry38e";
             this.mbRetCenterQry38e.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry114
+            // 
+            this.mbRetCenterQry114.Caption = "مراجعة الاعضاء و الورثة";
+            this.mbRetCenterQry114.Id = 426;
+            this.mbRetCenterQry114.ImageIndex = 19;
+            this.mbRetCenterQry114.LargeImageIndex = 19;
+            this.mbRetCenterQry114.Name = "mbRetCenterQry114";
             // 
             // mbRetCenterTblChekNid
             // 
@@ -3636,6 +3658,7 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterRemoveTBLWarasaNID;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaFastEdit2;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyMember;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyWarasa;
         private DevExpress.XtraBars.BarSubItem mbRetCenterJobs;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterCDJobtitle;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterCDAttachmentType;
@@ -3731,6 +3754,7 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry62;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38d;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry38e;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry114;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTblChekNid;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry42;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry43;

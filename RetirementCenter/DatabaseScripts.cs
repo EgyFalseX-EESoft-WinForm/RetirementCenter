@@ -608,6 +608,14 @@ namespace RetirementCenter
                 //cmd.CommandText = vQry74A;
                 //cmd.ExecuteNonQuery();
 
+                //vQry114
+                if (CheckViewExists("vQry114"))
+                {
+                    cmd.CommandText = DropView("vQry114");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry114;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -2329,5 +2337,25 @@ FROM            dbo.TBLReSarf INNER JOIN
 ";
             }
         }
+        public static string vQry114
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vQry114]
+                    AS
+                    SELECT        dbo.TBLMashat.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLMashat.yasref, dbo.CDMashHala.MashHala, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
+                         dbo.TBLMashat.verify_member, dbo.TBLMashat.verify_warasa, dbo.TBLMashat.verify_member_userin, dbo.TBLMashat.verify_member_datein, dbo.TBLMashat.verify_warasa_userin, dbo.TBLMashat.verify_warasa_datein, 
+                         Users_Member.RealName AS RealName_Member, Users_Warasa.RealName AS RealName_Warasa
+FROM            dbo.TBLMashat INNER JOIN
+                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
+                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
+                         dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId LEFT OUTER JOIN
+                         dbo.Users AS Users_Member ON dbo.TBLMashat.verify_member_userin = Users_Member.UserID LEFT OUTER JOIN
+                         dbo.Users AS Users_Warasa ON dbo.TBLMashat.verify_warasa_userin = Users_Warasa.UserID
+                ";
+            }
+        }
+
     }
 }

@@ -49,14 +49,13 @@
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditUser = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colverify_member = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.colverify_warasa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditTransferSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tBLMashatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
-            this.repositoryItemLookUpEditUser = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -69,10 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDMashHala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUser)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -126,7 +125,6 @@
             this.coldatein,
             this.gridColumn1,
             this.colverify_member,
-            this.colverify_warasa,
             this.gridColumn4});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
@@ -325,6 +323,24 @@
             this.gridColumn1.VisibleIndex = 8;
             this.gridColumn1.Width = 88;
             // 
+            // repositoryItemLookUpEditUser
+            // 
+            this.repositoryItemLookUpEditUser.AutoHeight = false;
+            this.repositoryItemLookUpEditUser.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditUser.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditUser.DataSource = this.LSMSUser;
+            this.repositoryItemLookUpEditUser.DisplayMember = "RealName";
+            this.repositoryItemLookUpEditUser.Name = "repositoryItemLookUpEditUser";
+            this.repositoryItemLookUpEditUser.NullText = "";
+            this.repositoryItemLookUpEditUser.ValueMember = "UserID";
+            // 
+            // LSMSUser
+            // 
+            this.LSMSUser.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
+            this.LSMSUser.KeyExpression = "[UserID]";
+            // 
             // colverify_member
             // 
             this.colverify_member.AppearanceCell.Options.UseTextOptions = true;
@@ -344,20 +360,6 @@
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
-            // colverify_warasa
-            // 
-            this.colverify_warasa.AppearanceCell.Options.UseTextOptions = true;
-            this.colverify_warasa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colverify_warasa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colverify_warasa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colverify_warasa.Caption = "مراجعة الورثة";
-            this.colverify_warasa.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colverify_warasa.FieldName = "verify_warasa";
-            this.colverify_warasa.Name = "colverify_warasa";
-            this.colverify_warasa.Visible = true;
-            this.colverify_warasa.VisibleIndex = 10;
-            this.colverify_warasa.Width = 80;
-            // 
             // gridColumn4
             // 
             this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
@@ -368,7 +370,7 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemButtonEditTransferSave;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 11;
+            this.gridColumn4.VisibleIndex = 10;
             this.gridColumn4.Width = 70;
             // 
             // repositoryItemButtonEditTransferSave
@@ -380,27 +382,9 @@
             this.repositoryItemButtonEditTransferSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditTransferSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditTransferSave_ButtonClick);
             // 
-            // LSMSUser
-            // 
-            this.LSMSUser.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
-            this.LSMSUser.KeyExpression = "[UserID]";
-            // 
             // tBLMashatTableAdapter
             // 
             this.tBLMashatTableAdapter.ClearBeforeFill = true;
-            // 
-            // repositoryItemLookUpEditUser
-            // 
-            this.repositoryItemLookUpEditUser.AutoHeight = false;
-            this.repositoryItemLookUpEditUser.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditUser.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditUser.DataSource = this.LSMSUser;
-            this.repositoryItemLookUpEditUser.DisplayMember = "RealName";
-            this.repositoryItemLookUpEditUser.Name = "repositoryItemLookUpEditUser";
-            this.repositoryItemLookUpEditUser.NullText = "";
-            this.repositoryItemLookUpEditUser.ValueMember = "UserID";
             // 
             // VerifyMemberFrm
             // 
@@ -424,10 +408,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDMashHala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +437,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldatein;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn colverify_member;
-        private DevExpress.XtraGrid.Columns.GridColumn colverify_warasa;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCDMashHala;
         private DevExpress.XtraGrid.Columns.GridColumn colMashHalaId;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditMashHalaId;
