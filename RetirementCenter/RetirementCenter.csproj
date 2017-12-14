@@ -780,6 +780,12 @@
     <Compile Include="Forms\Main\AntiAdminLogincs.Designer.cs">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\ImportBankDataFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\ImportBankDataFrm.Designer.cs">
+      <DependentUpon>ImportBankDataFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main\SyncETSMobileFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2164,6 +2170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\AntiAdminLogincs.resx">
       <DependentUpon>AntiAdminLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\ImportBankDataFrm.resx">
+      <DependentUpon>ImportBankDataFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\SyncETSMobileFrm.resx">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>

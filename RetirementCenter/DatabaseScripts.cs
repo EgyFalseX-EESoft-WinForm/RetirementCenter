@@ -654,6 +654,24 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = sp_002;
                 //cmd.ExecuteNonQuery();
+
+                //sp_sd_Member
+                if (CheckSPExists("sp_sd_Member"))
+                {
+                    cmd.CommandText = DropProcedure("sp_sd_Member");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = sp_sd_Member;
+                cmd.ExecuteNonQuery();
+
+                //sp_sd_Warasa
+                if (CheckSPExists("sp_sd_Warasa"))
+                {
+                    cmd.CommandText = DropProcedure("sp_sd_Warasa");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = sp_sd_Warasa;
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -2354,6 +2372,138 @@ FROM            dbo.TBLMashat INNER JOIN
                          dbo.Users AS Users_Member ON dbo.TBLMashat.verify_member_userin = Users_Member.UserID LEFT OUTER JOIN
                          dbo.Users AS Users_Warasa ON dbo.TBLMashat.verify_warasa_userin = Users_Warasa.UserID
                 ";
+            }
+        }
+
+        public static string sp_sd_Member
+        {
+            get
+            {
+                return @"
+CREATE PROCEDURE [dbo].[sp_sd_Member]
+AS
+BEGIN
+SET NOCOUNT ON;
+IF OBJECT_ID(N'aahafza1', N'U') IS NOT NULL
+	BEGIN
+		DROP TABLE aahafza1
+	END
+
+
+	DECLARE @hafza INT
+	SET @hafza = (SELECT MAX(hafza) + 1 FROM BankExportedData)
+
+	--1- Update BankExportedData
+	UPDATE BankExportedData
+	SET visa = sd.PAN, visawarddate = GETDATE(), hafza = @hafza, hafzadate = GETDATE(), trteep = sd.num
+	FROM BankExportedData INNER JOIN sd ON BankExportedData.MMashatId = sd.Customer_ID
+	WHERE     BankExportedData.visa IS NULL
+
+	--2- Insert aahafza1
+	SELECT     BankExportedData.MMashatId, TBLMashat.MMashatNId, TBLMashat.MMashatName, BankExportedData.visa, CDSubCommitte.SubCommitte, CDSyndicate.Syndicate, BankExportedData.hafza, 
+                      BankExportedData.hafzadate, TBLMashat.sarfnumber, CDSyndicate.SyndicateId, BankExportedData.trteep, BankExportedData.transferfrom, BankExportedData.transferdate, 
+                      BankExportedData.transferto, BankExportedData.ExportDate
+	INTO            aahafza1
+	FROM         BankExportedData INNER JOIN
+						  TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId LEFT OUTER JOIN
+						  CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
+						  CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
+	WHERE     BankExportedData.hafza =@hafza
+
+	--3- Update TBLMashat
+	UPDATE TBLMashat
+	SET visa = BankExportedData.visa
+	FROM BankExportedData INNER JOIN TBLMashat ON BankExportedData.MMashatId = TBLMashat.MMashatId
+	WHERE  (TBLMashat.visa IS NULL) AND (NOT (BankExportedData.visa IS NULL))
+END";
+            }
+        }
+
+        public static string sp_sd_Warasa
+        {
+            get
+            {
+                return @"
+CREATE PROCEDURE [dbo].[sp_sd_Warasa]
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE @hafza INT
+	SET @hafza = (SELECT MAX(hafza) + 1 FROM BankExportedDataWarsa)
+
+	--1- Update BankExportedDataWarsa
+	UPDATE BankExportedDataWarsa
+	SET visa = sd.PAN, visawarddate = GETDATE(), hafza = @hafza, hafzadate = GETDATE(), trteep = sd.num, NameOnCard = sd.Name
+	FROM BankExportedDataWarsa INNER JOIN AwarasaNewId ON 
+	BankExportedDataWarsa.PersonId = AwarasaNewId.personid INNER JOIN sd ON AwarasaNewId.newid = sd.Customer_ID
+	WHERE BankExportedDataWarsa.visa IS NULL
+
+	--2- Insert aahafza
+	IF OBJECT_ID(N'aahafza', N'U') IS NOT NULL
+	BEGIN
+		DROP TABLE aahafza
+	END
+
+	SELECT TBLWarasa.personNID, TBLMashat.MMashatName, TBLMashat.sarfnumber, CDWarasaType.WarasaTypeId, CDWarasaType.WarasaType, TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, 
+                      BankExportedDataWarsa.MMashatId, TBLWarasa.personName, BankExportedDataWarsa.ExportDate, BankExportedDataWarsa.PersonId, BankExportedDataWarsa.visa, 
+                      BankExportedDataWarsa.visawarddate, BankExportedDataWarsa.hafza, BankExportedDataWarsa.hafzadate, BankExportedDataWarsa.trteep, BankExportedDataWarsa.NameOnCard, 
+                      CDSubCommitte.SubCommitte, CDSyndicate.Syndicate, TBLMashat.yasref AS yasreffather, TBLWarasa.yasref AS yasrefson, TBLWarasa.responsiblesarfId, sd.Customer_ID
+	INTO aahafza
+	FROM TBLWarasa INNER JOIN
+						  BankExportedDataWarsa ON TBLWarasa.PersonId = BankExportedDataWarsa.PersonId INNER JOIN
+						  sd ON BankExportedDataWarsa.visa = sd.PAN LEFT OUTER JOIN
+						  CDSubCommitte ON TBLWarasa.SubCommitteId = CDSubCommitte.SubCommitteId LEFT OUTER JOIN
+						  CDSyndicate ON TBLWarasa.SyndicateId = CDSyndicate.SyndicateId LEFT OUTER JOIN
+						  CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId LEFT OUTER JOIN
+						  TBLMashat ON TBLWarasa.MMashatId = TBLMashat.MMashatId
+	WHERE     BankExportedDataWarsa.hafza = @hafza
+
+	--3- Update TBLWarasa
+	UPDATE TBLWarasa
+	SET visa = visa_not_null_in_bank_warasa.visa
+	FROM visa_not_null_in_bank_warasa INNER JOIN TBLWarasa ON visa_not_null_in_bank_warasa.PersonId = TBLWarasa.PersonId
+	WHERE TBLWarasa.visa IS NULL
+	
+	--4- Update TBLWarasa
+	UPDATE    TBLWarasa
+	SET              visa = in_aahafza_and_not_responsablsarf.visa
+	FROM         TBLWarasa INNER JOIN
+							in_aahafza_and_not_responsablsarf ON TBLWarasa.MMashatId = in_aahafza_and_not_responsablsarf.MMashatId
+	WHERE     TBLWarasa.responsiblesarf = 1 AND TBLWarasa.visa IS NULL
+
+	--5- Update TBLWarasa
+	UPDATE    TBLWarasa
+	SET visa = [مسئولين_في _فيزا_حافظة].card
+	FROM [مسئولين_في _فيزا_حافظة] INNER JOIN TBLWarasa ON [مسئولين_في _فيزا_حافظة].PersonId = TBLWarasa.responsiblesarfId
+	WHERE TBLWarasa.visa IS NULL
+
+	--6- Insert ason
+	IF OBJECT_ID(N'ason', N'U') IS NOT NULL
+	BEGIN
+		DROP TABLE ason
+	END
+	SELECT TBLWarasa.PersonId, TBLWarasa.MMashatId, CDWarasaType.WarasaTypeId, CDWarasaType.WarasaType, TBLWarasa.personName, TBLWarasa.personNID, TBLWarasa.yasref, 
+                      TBLWarasa.SyndicateId, TBLWarasa.SubCommitteId, TBLWarasa.visa, [مسئولين_في _فيزا_حافظة].PersonId AS resp
+	INTO ason
+	FROM TBLWarasa INNER JOIN [مسئولين_في _فيزا_حافظة] ON TBLWarasa.visa = [مسئولين_في _فيزا_حافظة].card 
+	LEFT OUTER JOIN CDWarasaType ON TBLWarasa.WarasaTypeId = CDWarasaType.WarasaTypeId
+	WHERE (NOT (TBLWarasa.visa IS NULL)) AND (TBLWarasa.yasref = 1)
+
+	--7- Update AwarasaNewId
+	UPDATE AwarasaNewId
+	SET visa = BankExportedDataWarsa.visa
+	FROM AwarasaNewId INNER JOIN BankExportedDataWarsa ON AwarasaNewId.personid = BankExportedDataWarsa.PersonId
+	WHERE  AwarasaNewId.visa IS NULL
+
+	--8- Update TBLWarasa
+	UPDATE TBLWarasa
+	SET code60 = sd.Customer_ID
+	FROM AwarasaNewId INNER JOIN sd ON AwarasaNewId.visa = sd.PAN INNER JOIN TBLWarasa ON sd.PAN = TBLWarasa.visa
+
+	--9 Clear sd
+	DELETE FROM sd
+
+END";
             }
         }
 

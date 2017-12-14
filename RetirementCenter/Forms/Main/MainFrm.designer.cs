@@ -165,6 +165,7 @@ namespace RetirementCenter
             this.mbRetCenterQry62 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38d = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry38e = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry114 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTblChekNid = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry42 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry43 = new DevExpress.XtraBars.BarButtonItem();
@@ -322,7 +323,7 @@ namespace RetirementCenter
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PBBackground = new System.Windows.Forms.PictureBox();
-            this.mbRetCenterQry114 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterImportBankData = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
@@ -605,10 +606,11 @@ namespace RetirementCenter
             this.mbRetCenterQry113,
             this.mbRetCenterVerifyMember,
             this.mbRetCenterVerifyWarasa,
-            this.mbRetCenterQry114});
+            this.mbRetCenterQry114,
+            this.mbRetCenterImportBankData});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 427;
+            this.ribbonControl.MaxItemId = 428;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -2089,6 +2091,15 @@ namespace RetirementCenter
             this.mbRetCenterQry38e.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.mbRetCenterQry38e.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry38e_ItemClick);
             // 
+            // mbRetCenterQry114
+            // 
+            this.mbRetCenterQry114.Caption = "„—«Ã⁄… «·«⁄÷«¡ Ê «·Ê—À…";
+            this.mbRetCenterQry114.Id = 426;
+            this.mbRetCenterQry114.ImageIndex = 19;
+            this.mbRetCenterQry114.LargeImageIndex = 19;
+            this.mbRetCenterQry114.Name = "mbRetCenterQry114";
+            this.mbRetCenterQry114.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry114_ItemClick);
+            // 
             // mbRetCenterTblChekNid
             // 
             this.mbRetCenterTblChekNid.Caption = "«—ﬁ«„ ﬁÊ„ÌÂ ﬁ«»·Â ·· ﬂ—«—";
@@ -3502,6 +3513,7 @@ namespace RetirementCenter
             this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterImportFromAccessFrm);
             this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterImportFrombamanat);
             this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterSyncETSMobileFrm);
+            this.ribbonPageGroup2.ItemLinks.Add(this.mbRetCenterImportBankData);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "«” Ì—«œ «·»Ì«‰« ";
             // 
@@ -3740,14 +3752,14 @@ namespace RetirementCenter
             this.PBBackground.TabIndex = 5;
             this.PBBackground.TabStop = false;
             // 
-            // mbRetCenterQry114
+            // mbRetCenterImportBankData
             // 
-            this.mbRetCenterQry114.Caption = "„—«Ã⁄… «·«⁄÷«¡ Ê «·Ê—À…";
-            this.mbRetCenterQry114.Id = 426;
-            this.mbRetCenterQry114.ImageIndex = 19;
-            this.mbRetCenterQry114.LargeImageIndex = 19;
-            this.mbRetCenterQry114.Name = "mbRetCenterQry114";
-            this.mbRetCenterQry114.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterQry114_ItemClick);
+            this.mbRetCenterImportBankData.Caption = "Import Bank Data";
+            this.mbRetCenterImportBankData.Id = 427;
+            this.mbRetCenterImportBankData.ImageIndex = 28;
+            this.mbRetCenterImportBankData.LargeImageIndex = 28;
+            this.mbRetCenterImportBankData.Name = "mbRetCenterImportBankData";
+            this.mbRetCenterImportBankData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbRetCenterImportBankData_ItemClick);
             // 
             // MainFrm
             // 
@@ -4080,5 +4092,6 @@ namespace RetirementCenter
         private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyMember;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyWarasa;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry114;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterImportBankData;
     }
 }
