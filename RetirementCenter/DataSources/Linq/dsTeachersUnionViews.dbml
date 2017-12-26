@@ -1622,6 +1622,7 @@
       <Column Name="verify_warasa_datein" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="RealName_Member" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="RealName_Warasa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

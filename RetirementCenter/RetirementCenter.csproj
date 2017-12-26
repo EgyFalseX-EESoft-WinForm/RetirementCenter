@@ -792,6 +792,24 @@
     <Compile Include="Forms\Main\SyncETSMobileFrm.Designer.cs">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry117Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry117Frm.designer.cs">
+      <DependentUpon>Qry117Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry116Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry116Frm.designer.cs">
+      <DependentUpon>Qry116Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry115Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry115Frm.designer.cs">
+      <DependentUpon>Qry115Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry114Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2176,6 +2194,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\SyncETSMobileFrm.resx">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry117Frm.resx">
+      <DependentUpon>Qry117Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry116Frm.resx">
+      <DependentUpon>Qry116Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry115Frm.resx">
+      <DependentUpon>Qry115Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry114Frm.resx">
       <DependentUpon>Qry114Frm.cs</DependentUpon>

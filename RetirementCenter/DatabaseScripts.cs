@@ -655,23 +655,23 @@ namespace RetirementCenter
                 //cmd.CommandText = sp_002;
                 //cmd.ExecuteNonQuery();
 
-                //sp_sd_Member
-                if (CheckSPExists("sp_sd_Member"))
-                {
-                    cmd.CommandText = DropProcedure("sp_sd_Member");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = sp_sd_Member;
-                cmd.ExecuteNonQuery();
+                ////sp_sd_Member
+                //if (CheckSPExists("sp_sd_Member"))
+                //{
+                //    cmd.CommandText = DropProcedure("sp_sd_Member");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = sp_sd_Member;
+                //cmd.ExecuteNonQuery();
 
-                //sp_sd_Warasa
-                if (CheckSPExists("sp_sd_Warasa"))
-                {
-                    cmd.CommandText = DropProcedure("sp_sd_Warasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = sp_sd_Warasa;
-                cmd.ExecuteNonQuery();
+                ////sp_sd_Warasa
+                //if (CheckSPExists("sp_sd_Warasa"))
+                //{
+                //    cmd.CommandText = DropProcedure("sp_sd_Warasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = sp_sd_Warasa;
+                //cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -2364,7 +2364,7 @@ FROM            dbo.TBLReSarf INNER JOIN
                     AS
                     SELECT        dbo.TBLMashat.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.TBLMashat.yasref, dbo.CDMashHala.MashHala, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, 
                          dbo.TBLMashat.verify_member, dbo.TBLMashat.verify_warasa, dbo.TBLMashat.verify_member_userin, dbo.TBLMashat.verify_member_datein, dbo.TBLMashat.verify_warasa_userin, dbo.TBLMashat.verify_warasa_datein, 
-                         Users_Member.RealName AS RealName_Member, Users_Warasa.RealName AS RealName_Warasa
+                         Users_Member.RealName AS RealName_Member, Users_Warasa.RealName AS RealName_Warasa, dbo.TBLMashat.datein
 FROM            dbo.TBLMashat INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN

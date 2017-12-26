@@ -31198,6 +31198,8 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _RealName_Warasa;
 		
+		private System.DateTime _datein;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -31232,6 +31234,8 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnRealName_MemberChanged();
     partial void OnRealName_WarasaChanging(string value);
     partial void OnRealName_WarasaChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
     #endregion
 		
 		public vQry114()
@@ -31535,6 +31539,26 @@ namespace RetirementCenter.DataSources.Linq
 					this._RealName_Warasa = value;
 					this.SendPropertyChanged("RealName_Warasa");
 					this.OnRealName_WarasaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
 				}
 			}
 		}

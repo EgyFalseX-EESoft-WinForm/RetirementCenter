@@ -50,6 +50,7 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
+            this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -181,7 +182,8 @@
             this.colverify_member_datein,
             this.colverify_warasa_datein,
             this.colRealName_Member,
-            this.colRealName_Warasa});
+            this.colRealName_Warasa,
+            this.coldatein});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -405,6 +407,18 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
+            // coldatein
+            // 
+            this.coldatein.AppearanceCell.Options.UseTextOptions = true;
+            this.coldatein.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldatein.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatein.Caption = "تاريخ الادخال";
+            this.coldatein.FieldName = "datein";
+            this.coldatein.Name = "coldatein";
+            this.coldatein.Visible = true;
+            this.coldatein.VisibleIndex = 13;
+            // 
             // Qry114Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +469,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colverify_warasa_datein;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName_Member;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName_Warasa;
+        private DevExpress.XtraGrid.Columns.GridColumn coldatein;
 
     }
 }
