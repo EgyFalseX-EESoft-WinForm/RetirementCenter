@@ -213,6 +213,9 @@ namespace RetirementCenter.DataSources.Linq
     partial void InsertvQry114(vQry114 instance);
     partial void UpdatevQry114(vQry114 instance);
     partial void DeletevQry114(vQry114 instance);
+    partial void InsertvTBLProofDoc(vTBLProofDoc instance);
+    partial void UpdatevTBLProofDoc(vTBLProofDoc instance);
+    partial void DeletevTBLProofDoc(vTBLProofDoc instance);
     #endregion
 		
 		public dsTeachersUnionViewsDataContext() : 
@@ -1002,6 +1005,14 @@ namespace RetirementCenter.DataSources.Linq
 			get
 			{
 				return this.GetTable<vQry114>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLProofDoc> vTBLProofDocs
+		{
+			get
+			{
+				return this.GetTable<vTBLProofDoc>();
 			}
 		}
 	}
@@ -31559,6 +31570,212 @@ namespace RetirementCenter.DataSources.Linq
 					this._datein = value;
 					this.SendPropertyChanged("datein");
 					this.OndateinChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLProofDoc")]
+	public partial class vTBLProofDoc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProofDocId;
+		
+		private System.Nullable<int> _MMashatId;
+		
+		private System.Nullable<System.DateTime> _DocDate;
+		
+		private System.Nullable<int> _userin;
+		
+		private System.Nullable<System.DateTime> _datein;
+		
+		private string _memo;
+		
+		private string _MashHala;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProofDocIdChanging(int value);
+    partial void OnProofDocIdChanged();
+    partial void OnMMashatIdChanging(System.Nullable<int> value);
+    partial void OnMMashatIdChanged();
+    partial void OnDocDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDocDateChanged();
+    partial void OnuserinChanging(System.Nullable<int> value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.Nullable<System.DateTime> value);
+    partial void OndateinChanged();
+    partial void OnmemoChanging(string value);
+    partial void OnmemoChanged();
+    partial void OnMashHalaChanging(string value);
+    partial void OnMashHalaChanged();
+    #endregion
+		
+		public vTBLProofDoc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProofDocId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ProofDocId
+		{
+			get
+			{
+				return this._ProofDocId;
+			}
+			set
+			{
+				if ((this._ProofDocId != value))
+				{
+					this.OnProofDocIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProofDocId = value;
+					this.SendPropertyChanged("ProofDocId");
+					this.OnProofDocIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MMashatId", DbType="Int")]
+		public System.Nullable<int> MMashatId
+		{
+			get
+			{
+				return this._MMashatId;
+			}
+			set
+			{
+				if ((this._MMashatId != value))
+				{
+					this.OnMMashatIdChanging(value);
+					this.SendPropertyChanging();
+					this._MMashatId = value;
+					this.SendPropertyChanged("MMashatId");
+					this.OnMMashatIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocDate", DbType="Date")]
+		public System.Nullable<System.DateTime> DocDate
+		{
+			get
+			{
+				return this._DocDate;
+			}
+			set
+			{
+				if ((this._DocDate != value))
+				{
+					this.OnDocDateChanging(value);
+					this.SendPropertyChanging();
+					this._DocDate = value;
+					this.SendPropertyChanged("DocDate");
+					this.OnDocDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int")]
+		public System.Nullable<int> userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_memo", DbType="NVarChar(255)")]
+		public string memo
+		{
+			get
+			{
+				return this._memo;
+			}
+			set
+			{
+				if ((this._memo != value))
+				{
+					this.OnmemoChanging(value);
+					this.SendPropertyChanging();
+					this._memo = value;
+					this.SendPropertyChanged("memo");
+					this.OnmemoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MashHala", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MashHala
+		{
+			get
+			{
+				return this._MashHala;
+			}
+			set
+			{
+				if ((this._MashHala != value))
+				{
+					this.OnMashHalaChanging(value);
+					this.SendPropertyChanging();
+					this._MashHala = value;
+					this.SendPropertyChanged("MashHala");
+					this.OnMashHalaChanged();
 				}
 			}
 		}

@@ -1625,4 +1625,15 @@
       <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.vTBLProofDoc" Member="vTBLProofDocs">
+    <Type Name="vTBLProofDoc">
+      <Column Name="ProofDocId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="memo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MashHala" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

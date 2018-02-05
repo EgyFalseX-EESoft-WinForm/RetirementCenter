@@ -65,7 +65,7 @@ namespace RetirementCenter
 
             XPCSTBLMashat.Session.ConnectionString = Properties.Settings.Default.RetirementCenterConnectionString;
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
-            LSMSData.QueryableSource = dsLinq.TBLProofDocs;
+            LSMSData.QueryableSource = dsLinq.vTBLProofDocs;
 
             
         }
@@ -90,7 +90,7 @@ namespace RetirementCenter
         private void repositoryItemButtonEditSave_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             GridView GV = (GridView)gridControlData.MainView;
-            RetirementCenter.DataSources.Linq.TBLProofDoc row = (RetirementCenter.DataSources.Linq.TBLProofDoc)GV.GetRow(GV.FocusedRowHandle);
+            RetirementCenter.DataSources.Linq.vTBLProofDoc row = (RetirementCenter.DataSources.Linq.vTBLProofDoc)GV.GetRow(GV.FocusedRowHandle);
             
             Update(tblProofDocTableAdapter.GetDataByProofDocId(row.ProofDocId)[0]);
             
@@ -98,7 +98,7 @@ namespace RetirementCenter
         private void repositoryItemButtonEditDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             GridView GV = (GridView)gridControlData.MainView;
-            RetirementCenter.DataSources.Linq.TBLProofDoc row = (RetirementCenter.DataSources.Linq.TBLProofDoc)GV.GetRow(GV.FocusedRowHandle);
+            RetirementCenter.DataSources.Linq.vTBLProofDoc row = (RetirementCenter.DataSources.Linq.vTBLProofDoc)GV.GetRow(GV.FocusedRowHandle);
             //if (row.RowState == DataRowState.Detached)
             //    return;
             if (MessageBox.Show("هل انت متأكد؟", "تحزير ...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)

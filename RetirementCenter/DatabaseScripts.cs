@@ -609,12 +609,21 @@ namespace RetirementCenter
                 //cmd.ExecuteNonQuery();
 
                 //vQry114
-                if (CheckViewExists("vQry114"))
+                //if (CheckViewExists("vQry114"))
+                //{
+                //    cmd.CommandText = DropView("vQry114");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry114;
+                //cmd.ExecuteNonQuery();
+
+                //vTBLProofDoc
+                if (CheckViewExists("vTBLProofDoc"))
                 {
-                    cmd.CommandText = DropView("vQry114");
+                    cmd.CommandText = DropView("vTBLProofDoc");
                     cmd.ExecuteNonQuery();
                 }
-                cmd.CommandText = vQry114;
+                cmd.CommandText = vTBLProofDoc;
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
@@ -2371,6 +2380,20 @@ FROM            dbo.TBLMashat INNER JOIN
                          dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId LEFT OUTER JOIN
                          dbo.Users AS Users_Member ON dbo.TBLMashat.verify_member_userin = Users_Member.UserID LEFT OUTER JOIN
                          dbo.Users AS Users_Warasa ON dbo.TBLMashat.verify_warasa_userin = Users_Warasa.UserID
+                ";
+            }
+        }
+        public static string vTBLProofDoc
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLProofDoc]
+                    AS
+                    SELECT        dbo.TBLProofDoc.ProofDocId, dbo.TBLProofDoc.MMashatId, dbo.TBLProofDoc.DocDate, dbo.TBLProofDoc.userin, dbo.TBLProofDoc.datein, dbo.TBLProofDoc.memo, dbo.CDMashHala.MashHala
+FROM            dbo.TBLProofDoc INNER JOIN
+                         dbo.TBLMashat ON dbo.TBLProofDoc.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
+                         dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId
                 ";
             }
         }
