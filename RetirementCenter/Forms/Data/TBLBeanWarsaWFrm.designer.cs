@@ -47,6 +47,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lueDofatSarfAId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLDofatSarf = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -56,17 +57,19 @@
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLMashat = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLBeanWarsaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLBeanWarsaTableAdapter();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -188,7 +191,8 @@
             this.coldateremember,
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.colcode60});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
@@ -204,7 +208,7 @@
             this.colPersonId.FieldName = "personName";
             this.colPersonId.Name = "colPersonId";
             this.colPersonId.Visible = true;
-            this.colPersonId.VisibleIndex = 0;
+            this.colPersonId.VisibleIndex = 1;
             // 
             // colBeandate
             // 
@@ -216,7 +220,7 @@
             this.colBeandate.FieldName = "Beandate";
             this.colBeandate.Name = "colBeandate";
             this.colBeandate.Visible = true;
-            this.colBeandate.VisibleIndex = 1;
+            this.colBeandate.VisibleIndex = 2;
             // 
             // coldeleted
             // 
@@ -228,7 +232,7 @@
             this.coldeleted.FieldName = "deleted";
             this.coldeleted.Name = "coldeleted";
             this.coldeleted.Visible = true;
-            this.coldeleted.VisibleIndex = 2;
+            this.coldeleted.VisibleIndex = 3;
             // 
             // colremarks
             // 
@@ -240,7 +244,7 @@
             this.colremarks.FieldName = "remarks";
             this.colremarks.Name = "colremarks";
             this.colremarks.Visible = true;
-            this.colremarks.VisibleIndex = 3;
+            this.colremarks.VisibleIndex = 4;
             // 
             // coldateremember
             // 
@@ -252,7 +256,7 @@
             this.coldateremember.FieldName = "dateremember";
             this.coldateremember.Name = "coldateremember";
             this.coldateremember.Visible = true;
-            this.coldateremember.VisibleIndex = 4;
+            this.coldateremember.VisibleIndex = 5;
             // 
             // gridColumn1
             // 
@@ -264,7 +268,7 @@
             this.gridColumn1.FieldName = "WarasaType";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.VisibleIndex = 7;
             // 
             // gridColumn2
             // 
@@ -277,12 +281,24 @@
             this.gridColumn2.FieldName = "responsiblesarf";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.VisibleIndex = 6;
             // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "الرقم القومي";
+            this.gridColumn3.FieldName = "personNID";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 8;
             // 
             // groupControl1
             // 
@@ -380,15 +396,29 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMMashatId,
             this.colMMashatName,
             this.colsarfnumber,
             this.colSyndicate,
-            this.colSubCommitte});
+            this.colSubCommitte,
+            this.colMashHala});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
             // 
             // colMMashatName
             // 
@@ -400,7 +430,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 0;
+            this.colMMashatName.VisibleIndex = 1;
             // 
             // colsarfnumber
             // 
@@ -412,7 +442,7 @@
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
             this.colsarfnumber.Visible = true;
-            this.colsarfnumber.VisibleIndex = 1;
+            this.colsarfnumber.VisibleIndex = 2;
             // 
             // colSyndicate
             // 
@@ -424,7 +454,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 2;
+            this.colSyndicate.VisibleIndex = 3;
             // 
             // colSubCommitte
             // 
@@ -436,7 +466,19 @@
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 3;
+            this.colSubCommitte.VisibleIndex = 4;
+            // 
+            // colMashHala
+            // 
+            this.colMashHala.AppearanceCell.Options.UseTextOptions = true;
+            this.colMashHala.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMashHala.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala.Caption = "النوع";
+            this.colMashHala.FieldName = "MashHala";
+            this.colMashHala.Name = "colMashHala";
+            this.colMashHala.Visible = true;
+            this.colMashHala.VisibleIndex = 5;
             // 
             // labelControl2
             // 
@@ -496,17 +538,17 @@
             // 
             this.tBLBeanWarsaTableAdapter.ClearBeforeFill = true;
             // 
-            // gridColumn3
+            // colcode60
             // 
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "الرقم القومي";
-            this.gridColumn3.FieldName = "personNID";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 7;
+            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
+            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.Caption = "كود 60";
+            this.colcode60.FieldName = "code60";
+            this.colcode60.Name = "colcode60";
+            this.colcode60.Visible = true;
+            this.colcode60.VisibleIndex = 0;
             // 
             // TBLBeanWarsaWFrm
             // 
@@ -592,5 +634,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMashHala;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode60;
     }
 }

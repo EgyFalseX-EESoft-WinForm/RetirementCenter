@@ -65,7 +65,7 @@ namespace RetirementCenter
                 DateTime ServerDate = SQLProvider.ServerDateTime();
                 foreach (DataSources.dsQueries.GetPersonIdByMMashatIdRow Person in dsQry.GetPersonIdByMMashatId)
                 {
-                    DataSources.dsRetirementCenter.TBLBeanWarsaRow row = dsRetirementCenter.TBLBeanWarsa.AddTBLBeanWarsaRow(Person.PersonId, Convert.ToInt32(lueDofatSarfAId.EditValue), ServerDate, false, string.Empty, ServerDate, Program.UserInfo.UserId, ServerDate);
+                    DataSources.dsRetirementCenter.TBLBeanWarsaRow row = dsRetirementCenter.TBLBeanWarsa.AddTBLBeanWarsaRow(Person.PersonId, Convert.ToInt32(lueDofatSarfAId.EditValue), ServerDate, false, string.Empty, ServerDate, Program.UserInfo.UserId, ServerDate, Person.code60);
                     row["personName"] = Person.personName;
                     row["responsiblesarf"] = Person.responsiblesarf;
                     row["WarasaType"] = Person.WarasaType;
