@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -36,7 +35,7 @@
             this.xtpGeneral = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.tBLBeanWarsaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBLBeanWarsaBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPersonId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +47,9 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.tbCode60 = new DevExpress.XtraEditors.TextEdit();
             this.lueDofatSarfAId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSTBLDofatSarf = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -63,13 +64,13 @@
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.colMonthName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tBLBeanWarsaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLBeanWarsaTableAdapter();
-            this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
@@ -300,12 +302,26 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 8;
             // 
+            // colcode60
+            // 
+            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
+            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
+            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colcode60.Caption = "كود 60";
+            this.colcode60.FieldName = "code60";
+            this.colcode60.Name = "colcode60";
+            this.colcode60.Visible = true;
+            this.colcode60.VisibleIndex = 0;
+            // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
             this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.groupControl1.Controls.Add(this.tbCode60);
             this.groupControl1.Controls.Add(this.lueDofatSarfAId);
             this.groupControl1.Controls.Add(this.lueMMashatId);
+            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -314,6 +330,14 @@
             this.groupControl1.Size = new System.Drawing.Size(866, 94);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "بيانات العضو و الدفعة";
+            // 
+            // tbCode60
+            // 
+            this.tbCode60.Location = new System.Drawing.Point(120, 67);
+            this.tbCode60.Name = "tbCode60";
+            this.tbCode60.Size = new System.Drawing.Size(101, 20);
+            this.tbCode60.TabIndex = 2;
+            this.tbCode60.EditValueChanged += new System.EventHandler(this.lueMMashatId_EditValueChanged);
             // 
             // lueDofatSarfAId
             // 
@@ -480,6 +504,15 @@
             this.colMashHala.Visible = true;
             this.colMashHala.VisibleIndex = 5;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(227, 65);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(45, 19);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "كود 60";
+            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -538,18 +571,6 @@
             // 
             this.tBLBeanWarsaTableAdapter.ClearBeforeFill = true;
             // 
-            // colcode60
-            // 
-            this.colcode60.AppearanceCell.Options.UseTextOptions = true;
-            this.colcode60.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colcode60.AppearanceHeader.Options.UseTextOptions = true;
-            this.colcode60.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colcode60.Caption = "كود 60";
-            this.colcode60.FieldName = "code60";
-            this.colcode60.Name = "colcode60";
-            this.colcode60.Visible = true;
-            this.colcode60.VisibleIndex = 0;
-            // 
             // TBLBeanWarsaWFrm
             // 
             this.AcceptButton = this.btnSave;
@@ -581,6 +602,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDofatSarfAId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
@@ -637,5 +659,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
         private DevExpress.XtraGrid.Columns.GridColumn colMashHala;
         private DevExpress.XtraGrid.Columns.GridColumn colcode60;
+        private DevExpress.XtraEditors.TextEdit tbCode60;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

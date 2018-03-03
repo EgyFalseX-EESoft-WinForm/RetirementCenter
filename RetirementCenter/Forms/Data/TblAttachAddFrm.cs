@@ -60,12 +60,7 @@ namespace RetirementCenter.Forms.Data
             try
             {
                 System.IO.File.Copy(beattachpath.EditValue.ToString(), DataPath + filename + ".jpg");
-                adp.Insert(
-                    Convert.ToInt32(lueAttachmentTypeId.EditValue)
-                    ,Convert.ToInt32(lueMMashatId.EditValue)
-                    , filename + ".jpg"
-                    ,ServerDatetime
-                    , Program.UserInfo.UserId);
+                adp.Insert(Convert.ToInt32(lueAttachmentTypeId.EditValue), Convert.ToInt32(lueMMashatId.EditValue), filename + ".jpg", ServerDatetime, Program.UserInfo.UserId, ServerDatetime, Program.UserInfo.UserId);
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
                 DialogResult = System.Windows.Forms.DialogResult.OK;

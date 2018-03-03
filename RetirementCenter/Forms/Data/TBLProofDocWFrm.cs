@@ -55,7 +55,7 @@ namespace RetirementCenter
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 this.Invoke(new MethodInvoker(() => {
-                    LSMSMMashatId.QueryableSource = dsLinq.vTBLMashats;
+                    LSMSMMashatId.QueryableSource = from q in dsLinq.vTBLMashats where q.MashHalaId == (int)Program.CDMashHala.Asda2 select q;
                 }));
                 
             });

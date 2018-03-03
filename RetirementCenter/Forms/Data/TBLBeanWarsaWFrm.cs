@@ -45,22 +45,29 @@ namespace RetirementCenter
         }
         private void lueDofatSarfAId_EditValueChanged(object sender, EventArgs e)
         {
-            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
+            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || (FXFW.SqlDB.IsNullOrEmpty(lueMMashatId.EditValue) && FXFW.SqlDB.IsNullOrEmpty(tbCode60.EditValue)))
                 return;
             LoadDetailsGrid();
         }
         private void lueMMashatId_EditValueChanged(object sender, EventArgs e)
         {
-            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || lueMMashatId.EditValue == null || lueMMashatId.EditValue.ToString() == string.Empty)
+            if (lueDofatSarfAId.EditValue == null || lueDofatSarfAId.EditValue.ToString() == string.Empty || (FXFW.SqlDB.IsNullOrEmpty(lueMMashatId.EditValue) && FXFW.SqlDB.IsNullOrEmpty(tbCode60.EditValue)))
                 return;
             LoadDetailsGrid();
         }
         private void LoadDetailsGrid()
         {
-            tBLBeanWarsaTableAdapter.FillByDofaa_MMashatId(dsRetirementCenter.TBLBeanWarsa, Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            if (!FXFW.SqlDB.IsNullOrEmpty(lueMMashatId.EditValue))
+                tBLBeanWarsaTableAdapter.FillByDofaa_MMashatId(dsRetirementCenter.TBLBeanWarsa, Convert.ToInt32(lueMMashatId.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            else
+                tBLBeanWarsaTableAdapter.FillByDofaa_Code60(dsRetirementCenter.TBLBeanWarsa, Convert.ToInt32(tbCode60.EditValue), Convert.ToInt32(lueDofatSarfAId.EditValue));
+            
             if (dsRetirementCenter.TBLBeanWarsa.Count == 0)
             {
-                adpGetPersonId.Fill(dsQry.GetPersonIdByMMashatId, Convert.ToInt32(lueMMashatId.EditValue));
+                if (!FXFW.SqlDB.IsNullOrEmpty(lueMMashatId.EditValue))
+                    adpGetPersonId.Fill(dsQry.GetPersonIdByMMashatId, Convert.ToInt32(lueMMashatId.EditValue));
+                else
+                    adpGetPersonId.FillByCode60(dsQry.GetPersonIdByMMashatId, Convert.ToInt32(tbCode60.EditValue));
                 
                 DateTime ServerDate = SQLProvider.ServerDateTime();
                 foreach (DataSources.dsQueries.GetPersonIdByMMashatIdRow Person in dsQry.GetPersonIdByMMashatId)
@@ -76,10 +83,16 @@ namespace RetirementCenter
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lueDofatSarfAId.EditValue == null || lueMMashatId.EditValue == null)
+            if (FXFW.SqlDB.IsNullOrEmpty(lueDofatSarfAId.EditValue) || (FXFW.SqlDB.IsNullOrEmpty(lueMMashatId.EditValue) && FXFW.SqlDB.IsNullOrEmpty(tbCode60.EditValue)))
                 return;
             //Get Information About Warasa
-            DataSources.dsRetirementCenter.TBLWarasaDataTable tbl = adpWarasa.GetDataByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
+
+            DataSources.dsRetirementCenter.TBLWarasaDataTable tbl = null;
+            if (!FXFW.SqlDB.IsNullOrEmpty(tbCode60.EditValue))
+                tbl = adpWarasa.GetDataByCode60(Convert.ToInt32(tbCode60.EditValue));
+            else
+                tbl = adpWarasa.GetDataByMMashatId(Convert.ToInt32(lueMMashatId.EditValue));
+            
             DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable NoSarfTbl = new DataSources.dsRetirementCenter.TBLNoSarfWarsaDataTable();
 
             DateTime ServerDate = SQLProvider.ServerDateTime();

@@ -92,7 +92,7 @@ namespace RetirementCenter
             GridView GV = (GridView)gridControlData.MainView;
             RetirementCenter.DataSources.Linq.vTBLProofDoc row = (RetirementCenter.DataSources.Linq.vTBLProofDoc)GV.GetRow(GV.FocusedRowHandle);
             
-            Update(tblProofDocTableAdapter.GetDataByProofDocId(row.ProofDocId)[0]);
+            Update(tblProofDocTableAdapter.GetDataByProofDocId(row.ProofDocId)[0], false);
             
         }
         private void repositoryItemButtonEditDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -121,9 +121,9 @@ namespace RetirementCenter
         {
             DataSources.dsRetirementCenter.TBLProofDocRow row = dsRetirementCenter.TBLProofDoc.NewTBLProofDocRow();
             row.ProofDocId = -1; //row.datein = SQLProvider.ServerDateTime(); row.userin = Program.UserInfo.UserId; 
-            Update(row);
+            Update(row, true);
         }
-        private void Update(DataSources.dsRetirementCenter.TBLProofDocRow row)
+        private void Update(DataSources.dsRetirementCenter.TBLProofDocRow row, bool reOpen)
         {
             TBLProofDocWFrm frm = new TBLProofDocWFrm(row, _Insert, _Update, _Delete);
 
@@ -144,6 +144,8 @@ namespace RetirementCenter
                 LSMSData.Reload();
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+                if (reOpen)
+                    btnNew_Click(btnNew, EventArgs.Empty);
             }
             catch (Exception ex)
             {

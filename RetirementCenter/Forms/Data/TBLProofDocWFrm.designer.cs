@@ -59,6 +59,7 @@
             this.tblProofDocTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLProofDocTableAdapter();
             this.tblMashatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -193,6 +194,7 @@
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMMashatId,
             this.colMMashatName,
             this.colsarfnumber1,
             this.colSubCommitte1,
@@ -213,7 +215,7 @@
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 1;
+            this.colMMashatName.VisibleIndex = 2;
             // 
             // colsarfnumber1
             // 
@@ -221,7 +223,7 @@
             this.colsarfnumber1.FieldName = "sarfnumber";
             this.colsarfnumber1.Name = "colsarfnumber1";
             this.colsarfnumber1.Visible = true;
-            this.colsarfnumber1.VisibleIndex = 0;
+            this.colsarfnumber1.VisibleIndex = 1;
             // 
             // colSubCommitte1
             // 
@@ -229,7 +231,7 @@
             this.colSubCommitte1.FieldName = "SubCommitte";
             this.colSubCommitte1.Name = "colSubCommitte1";
             this.colSubCommitte1.Visible = true;
-            this.colSubCommitte1.VisibleIndex = 4;
+            this.colSubCommitte1.VisibleIndex = 5;
             // 
             // colSyndicate
             // 
@@ -237,7 +239,7 @@
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 3;
+            this.colSyndicate.VisibleIndex = 4;
             // 
             // colyasref
             // 
@@ -245,7 +247,7 @@
             this.colyasref.FieldName = "yasref";
             this.colyasref.Name = "colyasref";
             this.colyasref.Visible = true;
-            this.colyasref.VisibleIndex = 5;
+            this.colyasref.VisibleIndex = 6;
             // 
             // colMashHala
             // 
@@ -253,7 +255,7 @@
             this.colMashHala.FieldName = "MashHala";
             this.colMashHala.Name = "colMashHala";
             this.colMashHala.Visible = true;
-            this.colMashHala.VisibleIndex = 2;
+            this.colMashHala.VisibleIndex = 3;
             // 
             // tbmemo
             // 
@@ -343,6 +345,18 @@
             // 
             this.tblMashatTableAdapter.ClearBeforeFill = true;
             // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
+            // 
             // TBLProofDocWFrm
             // 
             this.AcceptButton = this.btnSave;
@@ -410,5 +424,6 @@
         private DataSources.dsRetirementCenterTableAdapters.TBLProofDocTableAdapter tblProofDocTableAdapter;
         private DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter tblMashatTableAdapter;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderMain;
+        private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
     }
 }

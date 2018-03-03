@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMSData = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditMMashatId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.XPCSTBLMashat = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.sessionTBLMashat = new DevExpress.Xpo.Session(this.components);
+            this.XPCSTBLMashat = new DevExpress.Xpo.XPServerCollectionSource();
+            this.sessionTBLMashat = new DevExpress.Xpo.Session();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,7 +51,7 @@
             this.repositoryItemDateEditdatein = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +59,7 @@
             this.repositoryItemButtonEditSave = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumnDelete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colMashHala1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEDARET = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEDARET1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEdaraMandopName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,8 +70,7 @@
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
             this.tblProofDocTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLProofDocTableAdapter();
-            this.tblProofDocbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colMashHala1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tblProofDocbindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -149,6 +148,8 @@
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowDetailButtons = false;
+            this.gridViewData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldatein, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridViewData.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridViewData_InvalidRowException);
             // 
             // colMMashatId1
@@ -465,6 +466,18 @@
             this.repositoryItemButtonEditDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDel_ButtonClick);
             // 
+            // colMashHala1
+            // 
+            this.colMashHala1.AppearanceCell.Options.UseTextOptions = true;
+            this.colMashHala1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMashHala1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMashHala1.Caption = "النوع";
+            this.colMashHala1.FieldName = "MashHala";
+            this.colMashHala1.Name = "colMashHala1";
+            this.colMashHala1.Visible = true;
+            this.colMashHala1.VisibleIndex = 1;
+            // 
             // colEDARET
             // 
             this.colEDARET.AppearanceCell.Options.UseTextOptions = true;
@@ -570,18 +583,6 @@
             // 
             this.tblProofDocbindingSource.DataMember = "TBLProofDoc";
             this.tblProofDocbindingSource.DataSource = this.dsRetirementCenter;
-            // 
-            // colMashHala1
-            // 
-            this.colMashHala1.AppearanceCell.Options.UseTextOptions = true;
-            this.colMashHala1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMashHala1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMashHala1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMashHala1.Caption = "النوع";
-            this.colMashHala1.FieldName = "MashHala";
-            this.colMashHala1.Name = "colMashHala1";
-            this.colMashHala1.Visible = true;
-            this.colMashHala1.VisibleIndex = 1;
             // 
             // TBLProofDocFrm
             // 

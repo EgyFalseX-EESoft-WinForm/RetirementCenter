@@ -53,6 +53,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblAttachTableAdapter();
+            this.colModifyRealName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmodifydate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -109,6 +111,8 @@
             this.colsarfnumber,
             this.colSyndicate,
             this.colSubCommitte,
+            this.colModifyRealName,
+            this.colmodifydate,
             this.gridColumn1,
             this.gridColumn2});
             this.gridViewData.GridControl = this.gridControlData;
@@ -365,6 +369,31 @@
             // 
             this.adp.ClearBeforeFill = true;
             // 
+            // colModifyRealName
+            // 
+            this.colModifyRealName.AppearanceCell.Options.UseTextOptions = true;
+            this.colModifyRealName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colModifyRealName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colModifyRealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colModifyRealName.Caption = "مسئول التعديل";
+            this.colModifyRealName.FieldName = "ModifyRealName";
+            this.colModifyRealName.Name = "colModifyRealName";
+            this.colModifyRealName.Visible = true;
+            this.colModifyRealName.VisibleIndex = 11;
+            this.colModifyRealName.Width = 89;
+            // 
+            // colmodifydate
+            // 
+            this.colmodifydate.AppearanceCell.Options.UseTextOptions = true;
+            this.colmodifydate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmodifydate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colmodifydate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmodifydate.Caption = "تاريخ التعديل";
+            this.colmodifydate.FieldName = "modifydate";
+            this.colmodifydate.Name = "colmodifydate";
+            this.colmodifydate.Visible = true;
+            this.colmodifydate.VisibleIndex = 12;
+            // 
             // TblAttachFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,5 +450,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DataSources.dsRetirementCenterTableAdapters.TblAttachTableAdapter adp;
+        private DevExpress.XtraGrid.Columns.GridColumn colModifyRealName;
+        private DevExpress.XtraGrid.Columns.GridColumn colmodifydate;
     }
 }

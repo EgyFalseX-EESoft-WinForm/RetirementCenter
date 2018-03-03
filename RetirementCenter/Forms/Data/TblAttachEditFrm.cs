@@ -80,13 +80,7 @@ namespace RetirementCenter.Forms.Data
             
             try
             {
-                adp.Update(
-                    filename
-                    , ServerDatetime
-                    ,Program.UserInfo.UserId
-                    ,_row.AttachmentTypeId
-                    ,_row.MMashatId
-                    );
+                adp.Update(_row.AttachmentTypeId, _row.MMashatId, _row.attachpath, _row.attachdate, _row.userin, ServerDatetime, Program.UserInfo.UserId, _row.AttachmentTypeId, _row.MMashatId);
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
                 DialogResult = System.Windows.Forms.DialogResult.OK;

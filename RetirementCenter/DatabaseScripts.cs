@@ -575,14 +575,14 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = vTblWarasaAmanat;
                 //cmd.ExecuteNonQuery();
-                ////vTblAttach
-                //if (CheckViewExists("vTblAttach"))
-                //{
-                //    cmd.CommandText = DropView("vTblAttach");
-                //    cmd.ExecuteNonQuery();
-                //}
-                //cmd.CommandText = vTblAttach;
-                //cmd.ExecuteNonQuery();
+                //vTblAttach
+                if (CheckViewExists("vTblAttach"))
+                {
+                    cmd.CommandText = DropView("vTblAttach");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTblAttach;
+                cmd.ExecuteNonQuery();
                 ////vQry103
                 //if (CheckViewExists("vQry103"))
                 //{
@@ -2166,15 +2166,16 @@ FROM            dbo.Users RIGHT OUTER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTblAttach]
                     AS
-                    SELECT        dbo.TblAttach.attachid, dbo.TblAttach.AttachmentTypeId, dbo.TblAttach.MMashatId, dbo.TblAttach.attachpath, dbo.TblAttach.attachdate, dbo.TblAttach.userin, dbo.CDAttachmentType.AttachmentName, 
-                         dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, 
-                         dbo.CDSubCommitte.SubCommitte
+                    SELECT        dbo.TblAttach.attachid, dbo.TblAttach.AttachmentTypeId, dbo.TblAttach.MMashatId, dbo.TblAttach.attachpath, dbo.TblAttach.attachdate, dbo.TblAttach.userin, dbo.CDAttachmentType.AttachmentName, dbo.Users.RealName, 
+                         dbo.TBLMashat.MMashatName, dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TblAttach.modifydate, 
+                         dbo.TblAttach.modifyuser, Users_1.RealName AS ModifyRealName
 FROM            dbo.TblAttach INNER JOIN
                          dbo.CDAttachmentType ON dbo.TblAttach.AttachmentTypeId = dbo.CDAttachmentType.AttachmentTypeId INNER JOIN
                          dbo.TBLMashat ON dbo.TblAttach.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
                          dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
                          dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
-                         dbo.Users ON dbo.TblAttach.userin = dbo.Users.UserID";
+                         dbo.Users ON dbo.TblAttach.userin = dbo.Users.UserID LEFT OUTER JOIN
+                         dbo.Users AS Users_1 ON dbo.TblAttach.modifyuser = Users_1.UserID";
             }
         }
         public static string fn_SplitPram
