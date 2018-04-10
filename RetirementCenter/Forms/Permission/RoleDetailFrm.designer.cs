@@ -108,6 +108,8 @@
             this.mbRetCenterTBLFrookWarasaAdmin = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLMemberSarf_arshef = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLWarasaSarf_arshef = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep02a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterXRep03a = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterSarfyaA3da2 = new DevExpress.XtraBars.BarSubItem();
@@ -207,6 +209,8 @@
             this.mbRetCenterQry107 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry115 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry116 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry115A = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry116A = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry50 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterTBLBeanWarsa = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterBank = new DevExpress.XtraBars.BarSubItem();
@@ -806,10 +810,14 @@
             this.mbRetCenterImportBankData,
             this.mbRetCenterQry115,
             this.mbRetCenterQry116,
-            this.mbRetCenterQry117});
+            this.mbRetCenterQry117,
+            this.mbRetCenterQry115A,
+            this.mbRetCenterQry116A,
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly,
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 431;
+            this.ribbonControl.MaxItemId = 435;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1379,7 +1387,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasa),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLFrookWarasaAdmin),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLMemberSarf_arshef),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf_arshef)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf_arshef),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLMemberSarf_arshefAddOnly),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaSarf_arshefAddOnly)});
             this.mbRetCenterPrepareDofaa.Name = "mbRetCenterPrepareDofaa";
             // 
             // mbRetCenterTBLWarasaSarf
@@ -1424,6 +1434,22 @@
             this.mbRetCenterTBLWarasaSarf_arshef.ImageIndex = 41;
             this.mbRetCenterTBLWarasaSarf_arshef.LargeImageIndex = 41;
             this.mbRetCenterTBLWarasaSarf_arshef.Name = "mbRetCenterTBLWarasaSarf_arshef";
+            // 
+            // mbRetCenterTBLMemberSarf_arshefAddOnly
+            // 
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly.Caption = "ادخال صرفية لم ترسل للبنك - اعضاء";
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly.Id = 433;
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly.ImageIndex = 41;
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly.LargeImageIndex = 41;
+            this.mbRetCenterTBLMemberSarf_arshefAddOnly.Name = "mbRetCenterTBLMemberSarf_arshefAddOnly";
+            // 
+            // mbRetCenterTBLWarasaSarf_arshefAddOnly
+            // 
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly.Caption = "ادخال صرفية لم ترسل للبنك - ورثة";
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly.Id = 434;
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly.ImageIndex = 41;
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly.LargeImageIndex = 41;
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly.Name = "mbRetCenterTBLWarasaSarf_arshefAddOnly";
             // 
             // mbRetCenterXRep02a
             // 
@@ -2182,7 +2208,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry106),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry107),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry115),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry116)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry116),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry115A),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry116A)});
             this.mbRetCenterBankQry.Name = "mbRetCenterBankQry";
             this.mbRetCenterBankQry.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -2379,6 +2407,22 @@
             this.mbRetCenterQry116.ImageIndex = 19;
             this.mbRetCenterQry116.LargeImageIndex = 19;
             this.mbRetCenterQry116.Name = "mbRetCenterQry116";
+            // 
+            // mbRetCenterQry115A
+            // 
+            this.mbRetCenterQry115A.Caption = "أرشيف صرف الاعضاء - احصاء تفصيلي";
+            this.mbRetCenterQry115A.Id = 431;
+            this.mbRetCenterQry115A.ImageIndex = 19;
+            this.mbRetCenterQry115A.LargeImageIndex = 19;
+            this.mbRetCenterQry115A.Name = "mbRetCenterQry115A";
+            // 
+            // mbRetCenterQry116A
+            // 
+            this.mbRetCenterQry116A.Caption = "أرشيف صرف الورثة - احصاء تفصيلي";
+            this.mbRetCenterQry116A.Id = 432;
+            this.mbRetCenterQry116A.ImageIndex = 19;
+            this.mbRetCenterQry116A.LargeImageIndex = 19;
+            this.mbRetCenterQry116A.Name = "mbRetCenterQry116A";
             // 
             // mbRetCenterQry50
             // 
@@ -3729,6 +3773,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLFrookWarasaAdmin;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMemberSarf_arshef;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaSarf_arshef;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLMemberSarf_arshefAddOnly;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaSarf_arshefAddOnly;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep02a;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterXRep03a;
         private DevExpress.XtraBars.BarSubItem mbRetCenterSarfyaA3da2;
@@ -3828,6 +3874,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry107;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry115;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry116;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry115A;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry116A;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry50;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLBeanWarsa;
         private DevExpress.XtraBars.BarSubItem mbRetCenterBank;

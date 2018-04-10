@@ -41,11 +41,16 @@ namespace RetirementCenter.Forms.Data
             }
             //int count = (int)adpQry.CountOfWarasaToStopYasrefByBean(Convert.ToInt32(lueSyn.EditValue), Convert.ToInt32(lueSub.EditValue), Convert.ToInt32(lueDof.EditValue));
             //lblCount.Text = count.ToString();
-            vQry65TableAdapter.Fill(dsQueries.vQry65, Convert.ToInt32(lueSyn.EditValue), Convert.ToInt32(lueSub.EditValue), Convert.ToInt32(lueDof.EditValue));
+
+            int? sub = null;
+            if (lueSub.EditValue != null)
+                sub = Convert.ToInt32(lueSub.EditValue);
+
+            vQry65TableAdapter.Fill(dsQueries.vQry65, Convert.ToInt32(lueSyn.EditValue), sub, Convert.ToInt32(lueDof.EditValue));
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (lueSyn.EditValue == null || lueDof.EditValue == null)
+            if (lueDof.EditValue == null)
             {
                 msgDlg.Show("من فضلك اختر فرعية و دفعة", msgDlg.msgButtons.Close);
                 return;
@@ -54,8 +59,13 @@ namespace RetirementCenter.Forms.Data
                 return;
             try
             {
-                int count2 = adpQry.InsertIntoTBLNoSarfWarsaByBean(Program.UserInfo.UserId, Convert.ToInt32(lueSyn.EditValue), Convert.ToInt32(lueSub.EditValue), Convert.ToInt32(lueDof.EditValue));
+                int? sub = null;
+                if (lueSub.EditValue != null)
+                    sub = Convert.ToInt32(lueSub.EditValue);
+
+                int count2 = adpQry.InsertIntoTBLNoSarfWarsaByBean(Program.UserInfo.UserId, Convert.ToInt32(lueSyn.EditValue), sub, Convert.ToInt32(lueDof.EditValue));
                 int count = adpQry.UpdateYasrefByBean(Convert.ToInt32(lueSyn.EditValue), Convert.ToInt32(lueSub.EditValue), Convert.ToInt32(lueDof.EditValue));
+                int count3 = adpQry.UpdateYasrefByBean2(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSyn.EditValue), sub);
 //                SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
 //                SqlCommand cmd = new SqlCommand(string.Format(@"WITH CTE1 AS
 //                (
@@ -74,8 +84,8 @@ namespace RetirementCenter.Forms.Data
 //                con.Open();
 //                int count2 = cmd.ExecuteNonQuery();
 //                con.Close(); con.Dispose(); cmd.Dispose(); con = null; cmd = null;
-                
-                msgDlg.Show("تم ايقاف " + count.ToString() + Environment.NewLine + "تم اضافة " + count2.ToString() + " بيان للايقاف", msgDlg.msgButtons.Close);
+
+                msgDlg.Show("تم ايقاف " + count.ToString() + Environment.NewLine + "تم اضافة " + count2.ToString() + " بيان للايقاف" + Environment.NewLine + count3.ToString() + " تم حذفة ", msgDlg.msgButtons.Close);
             }
             catch (Exception ex)
             {

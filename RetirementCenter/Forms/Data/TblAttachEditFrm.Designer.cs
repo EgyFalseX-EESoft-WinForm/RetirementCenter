@@ -96,6 +96,7 @@
             // 
             this.peFileViewer.Location = new System.Drawing.Point(12, 84);
             this.peFileViewer.Name = "peFileViewer";
+            this.peFileViewer.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.peFileViewer.Size = new System.Drawing.Size(510, 191);
             this.peFileViewer.StyleController = this.layoutControlMain;
             this.peFileViewer.TabIndex = 12;

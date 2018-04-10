@@ -38,12 +38,17 @@ namespace RetirementCenter.Forms.Data
             else
                 cesarfcheek.EditValue = row.sarfcheek;
         }
-        public TBLWarasaSarf_arshefEditFrm()
+        public TBLWarasaSarf_arshefEditFrm(bool OpenAlone = false)
         {
             InitializeComponent();
             LSMSPersonId.QueryableSource = dsLinq.vTBLWarasa_TBLMashats;
             LSMSDofatSarfId.QueryableSource = dsLinq.TBLDofatSarfs;
             LSMSSarfTypeedadId.QueryableSource = dsLinq.CDSarfTypeedads;
+            if (OpenAlone)
+            {
+                lueSarfTypeedadId.EditValue = 4;
+                lueSarfTypeedadId.Enabled = false;
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

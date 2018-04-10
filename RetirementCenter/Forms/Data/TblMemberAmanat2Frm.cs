@@ -98,7 +98,7 @@ namespace RetirementCenter
                 msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
                 return;
             }
-            if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime())
+            if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime() && Program.UserInfo.IsAdmin == false)
             {
                 msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                 return;
@@ -122,6 +122,11 @@ namespace RetirementCenter
                 {
                     Program.ShowMsg("لا يمكن حذف عنصر تم مراجعتة", true, this);
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
+                    return;
+                }
+                if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime() && Program.UserInfo.IsAdmin == false)
+                {
+                    msgDlg.Show("الحذف متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                     return;
                 }
                 tblMemberAmanatTableAdapter.Delete(row.MMashatId, row.DofatSarfAId, row.amanattypeid);
