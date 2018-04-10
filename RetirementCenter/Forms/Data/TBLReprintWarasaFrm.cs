@@ -53,7 +53,7 @@ namespace RetirementCenter.Forms.Data
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
             RetirementCenter.DataSources.Linq.vTBLReprintWarasa row = (RetirementCenter.DataSources.Linq.vTBLReprintWarasa)gridViewData.GetRow(gridViewData.FocusedRowHandle);
-            adp.Delete(row.reprintid);
+            adp.Delete(row.visa, row.reprintdate);
             Program.ShowMsg("تم الحذف", false, this, true);
             Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
             RefreshData();

@@ -60,18 +60,20 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnUpdateBackDate = new DevExpress.XtraEditors.SimpleButton();
+            this.deTo = new DevExpress.XtraEditors.DateEdit();
+            this.deFrom = new DevExpress.XtraEditors.DateEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReprintMemberTableAdapter();
-            this.deFrom = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.deTo = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnUpdateBackDate = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.adp = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLReprintMemberTableAdapter();
+            this.colNew_Syndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNew_SubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -89,16 +91,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
@@ -150,7 +152,9 @@
             this.colreprintremark,
             this.colsendbankdate,
             this.colwaredbankdate,
-            this.colvisa});
+            this.colvisa,
+            this.colNew_Syndicate,
+            this.colNew_SubCommitte});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
@@ -484,6 +488,42 @@
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnUpdateBackDate
+            // 
+            this.btnUpdateBackDate.Location = new System.Drawing.Point(12, 12);
+            this.btnUpdateBackDate.Name = "btnUpdateBackDate";
+            this.btnUpdateBackDate.Size = new System.Drawing.Size(214, 22);
+            this.btnUpdateBackDate.StyleController = this.layoutControl1;
+            this.btnUpdateBackDate.TabIndex = 7;
+            this.btnUpdateBackDate.Text = "تحديث الارسال للبنك";
+            this.btnUpdateBackDate.Click += new System.EventHandler(this.btnUpdateBackDate_Click);
+            // 
+            // deTo
+            // 
+            this.deTo.EditValue = null;
+            this.deTo.Location = new System.Drawing.Point(250, 12);
+            this.deTo.Name = "deTo";
+            this.deTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deTo.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deTo.Size = new System.Drawing.Size(311, 20);
+            this.deTo.StyleController = this.layoutControl1;
+            this.deTo.TabIndex = 6;
+            // 
+            // deFrom
+            // 
+            this.deFrom.EditValue = null;
+            this.deFrom.Location = new System.Drawing.Point(585, 12);
+            this.deFrom.Name = "deFrom";
+            this.deFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deFrom.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deFrom.Size = new System.Drawing.Size(295, 20);
+            this.deFrom.StyleController = this.layoutControl1;
+            this.deFrom.TabIndex = 5;
+            // 
             // groupControl1
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -546,23 +586,6 @@
             this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
-            // adp
-            // 
-            this.adp.ClearBeforeFill = true;
-            // 
-            // deFrom
-            // 
-            this.deFrom.EditValue = null;
-            this.deFrom.Location = new System.Drawing.Point(585, 12);
-            this.deFrom.Name = "deFrom";
-            this.deFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFrom.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deFrom.Size = new System.Drawing.Size(295, 20);
-            this.deFrom.StyleController = this.layoutControl1;
-            this.deFrom.TabIndex = 5;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.deFrom;
@@ -573,19 +596,6 @@
             this.layoutControlItem3.Text = "من";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(17, 13);
             // 
-            // deTo
-            // 
-            this.deTo.EditValue = null;
-            this.deTo.Location = new System.Drawing.Point(250, 12);
-            this.deTo.Name = "deTo";
-            this.deTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTo.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deTo.Size = new System.Drawing.Size(311, 20);
-            this.deTo.StyleController = this.layoutControl1;
-            this.deTo.TabIndex = 6;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.deTo;
@@ -595,16 +605,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(335, 26);
             this.layoutControlItem4.Text = "الي";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(17, 13);
-            // 
-            // btnUpdateBackDate
-            // 
-            this.btnUpdateBackDate.Location = new System.Drawing.Point(12, 12);
-            this.btnUpdateBackDate.Name = "btnUpdateBackDate";
-            this.btnUpdateBackDate.Size = new System.Drawing.Size(214, 22);
-            this.btnUpdateBackDate.StyleController = this.layoutControl1;
-            this.btnUpdateBackDate.TabIndex = 7;
-            this.btnUpdateBackDate.Text = "تحديث الارسال للبنك";
-            this.btnUpdateBackDate.Click += new System.EventHandler(this.btnUpdateBackDate_Click);
             // 
             // layoutControlItem5
             // 
@@ -617,6 +617,34 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
+            // 
+            // adp
+            // 
+            this.adp.ClearBeforeFill = true;
+            // 
+            // colNew_Syndicate
+            // 
+            this.colNew_Syndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colNew_Syndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_Syndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNew_Syndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_Syndicate.Caption = "الفرعية المعدلة";
+            this.colNew_Syndicate.FieldName = "New_Syndicate";
+            this.colNew_Syndicate.Name = "colNew_Syndicate";
+            this.colNew_Syndicate.Visible = true;
+            this.colNew_Syndicate.VisibleIndex = 14;
+            // 
+            // colNew_SubCommitte
+            // 
+            this.colNew_SubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colNew_SubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_SubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNew_SubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_SubCommitte.Caption = "اللجنة المعدلة";
+            this.colNew_SubCommitte.FieldName = "New_SubCommitte";
+            this.colNew_SubCommitte.Name = "colNew_SubCommitte";
+            this.colNew_SubCommitte.Visible = true;
+            this.colNew_SubCommitte.VisibleIndex = 15;
             // 
             // TBLReprintMemberFrm
             // 
@@ -645,16 +673,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
@@ -707,5 +735,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn colNew_Syndicate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNew_SubCommitte;
     }
 }

@@ -798,28 +798,6 @@
       <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vTBLReprintMember" Member="vTBLReprintMembers">
-    <Type Name="vTBLReprintMember">
-      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
-      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.CDreprintreson" Member="CDreprintresons">
     <Type Name="CDreprintreson">
       <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -874,24 +852,6 @@
       <Column Name="personid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vTBLReprintWarasa" Member="vTBLReprintWarasas">
-    <Type Name="vTBLReprintWarasa">
-      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
-      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vTBLHafzaTasleem" Member="vTBLHafzaTasleems">
     <Type Name="vTBLHafzaTasleem">
       <Column Name="tasleemid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -923,51 +883,6 @@
     <Type Name="CDFrook">
       <Column Name="frookid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="frookname" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vQry79" Member="vQry79s">
-    <Type Name="vQry79">
-      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
-      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="datetasleem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vQry80" Member="vQry80s">
-    <Type Name="vQry80">
-      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
-      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="PersonId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="datetasleem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vTBLDeathMembers" Member="vTBLDeathMembers">
@@ -1637,6 +1552,107 @@
       <Column Name="modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="modifyuser" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ModifyRealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLReprintMember" Member="vTBLReprintMembers">
+    <Type Name="vTBLReprintMember">
+      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="New_SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="New_Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry79" Member="vQry79s">
+    <Type Name="vQry79">
+      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="datetasleem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="New_SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="New_SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry80" Member="vQry80s">
+    <Type Name="vQry80">
+      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="datetasleem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="New_SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="New_SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLReprintWarasa" Member="vTBLReprintWarasas">
+    <Type Name="vTBLReprintWarasa">
+      <Column Name="reprintid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reprintresonid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="reprintdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="reprintremark" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="sendbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="waredbankdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="reprintreson" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="New_SyndicateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="New_Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="New_SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

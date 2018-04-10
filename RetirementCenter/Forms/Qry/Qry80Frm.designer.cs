@@ -42,13 +42,15 @@
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreprintreson = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmostlem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldatetasleem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
-            this.colmostlem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldatetasleem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNew_Syndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNew_SubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -177,7 +179,9 @@
             this.colRealName,
             this.colreprintreson,
             this.colmostlem,
-            this.coldatetasleem});
+            this.coldatetasleem,
+            this.colNew_Syndicate,
+            this.colNew_SubCommitte});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -323,6 +327,30 @@
             this.colreprintreson.Visible = true;
             this.colreprintreson.VisibleIndex = 3;
             // 
+            // colmostlem
+            // 
+            this.colmostlem.AppearanceCell.Options.UseTextOptions = true;
+            this.colmostlem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmostlem.AppearanceHeader.Options.UseTextOptions = true;
+            this.colmostlem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colmostlem.Caption = "المستلم";
+            this.colmostlem.FieldName = "mostlem";
+            this.colmostlem.Name = "colmostlem";
+            this.colmostlem.Visible = true;
+            this.colmostlem.VisibleIndex = 11;
+            // 
+            // coldatetasleem
+            // 
+            this.coldatetasleem.AppearanceCell.Options.UseTextOptions = true;
+            this.coldatetasleem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatetasleem.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldatetasleem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coldatetasleem.Caption = "تاريخ الاستلام";
+            this.coldatetasleem.FieldName = "datetasleem";
+            this.coldatetasleem.Name = "coldatetasleem";
+            this.coldatetasleem.Visible = true;
+            this.coldatetasleem.VisibleIndex = 12;
+            // 
             // repositoryItemDateEditDMY
             // 
             this.repositoryItemDateEditDMY.AutoHeight = false;
@@ -374,29 +402,29 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
-            // colmostlem
+            // colNew_Syndicate
             // 
-            this.colmostlem.AppearanceCell.Options.UseTextOptions = true;
-            this.colmostlem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmostlem.AppearanceHeader.Options.UseTextOptions = true;
-            this.colmostlem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colmostlem.Caption = "المستلم";
-            this.colmostlem.FieldName = "mostlem";
-            this.colmostlem.Name = "colmostlem";
-            this.colmostlem.Visible = true;
-            this.colmostlem.VisibleIndex = 11;
+            this.colNew_Syndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colNew_Syndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_Syndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNew_Syndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_Syndicate.Caption = "الفرعية المعدلة";
+            this.colNew_Syndicate.FieldName = "New_Syndicate";
+            this.colNew_Syndicate.Name = "colNew_Syndicate";
+            this.colNew_Syndicate.Visible = true;
+            this.colNew_Syndicate.VisibleIndex = 13;
             // 
-            // coldatetasleem
+            // colNew_SubCommitte
             // 
-            this.coldatetasleem.AppearanceCell.Options.UseTextOptions = true;
-            this.coldatetasleem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatetasleem.AppearanceHeader.Options.UseTextOptions = true;
-            this.coldatetasleem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coldatetasleem.Caption = "تاريخ الاستلام";
-            this.coldatetasleem.FieldName = "datetasleem";
-            this.coldatetasleem.Name = "coldatetasleem";
-            this.coldatetasleem.Visible = true;
-            this.coldatetasleem.VisibleIndex = 12;
+            this.colNew_SubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colNew_SubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_SubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNew_SubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNew_SubCommitte.Caption = "اللجنة المعدلة";
+            this.colNew_SubCommitte.FieldName = "New_SubCommitte";
+            this.colNew_SubCommitte.Name = "colNew_SubCommitte";
+            this.colNew_SubCommitte.Visible = true;
+            this.colNew_SubCommitte.VisibleIndex = 14;
             // 
             // Qry80Frm
             // 
@@ -445,6 +473,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colreprintreson;
         private DevExpress.XtraGrid.Columns.GridColumn colmostlem;
         private DevExpress.XtraGrid.Columns.GridColumn coldatetasleem;
+        private DevExpress.XtraGrid.Columns.GridColumn colNew_Syndicate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNew_SubCommitte;
 
     }
 }

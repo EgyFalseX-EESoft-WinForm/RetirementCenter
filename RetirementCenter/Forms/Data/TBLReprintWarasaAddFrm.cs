@@ -34,6 +34,12 @@ namespace RetirementCenter.Forms.Data
                 DateTime? waredbankdate = null;
                 if (dewaredbankdate.EditValue != null)
                     waredbankdate = (DateTime)dewaredbankdate.EditValue;
+                int? syn = null;
+                if (!FXFW.SqlDB.IsNullOrEmpty(lueNew_SyndicateId.EditValue))
+                    syn = Convert.ToInt32(lueNew_SyndicateId.EditValue);
+                int? sub = null;
+                if (!FXFW.SqlDB.IsNullOrEmpty(lueNew_SubCommitteId.EditValue))
+                    sub = Convert.ToInt32(lueNew_SubCommitteId.EditValue);
 
                 adp.Insert(
                     Convert.ToByte(luereprintresonid.EditValue)
@@ -43,7 +49,7 @@ namespace RetirementCenter.Forms.Data
                     , sendbankdate
                     , waredbankdate
                     , Program.UserInfo.UserId
-                    ,SQLProvider.ServerDateTime());
+                    ,SQLProvider.ServerDateTime(), syn, sub);
                 Program.ShowMsg("تم الحفظ", false, this, true);
                 Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
                 DialogResult = System.Windows.Forms.DialogResult.OK;

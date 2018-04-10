@@ -40,8 +40,10 @@
             this.lueMMashatId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSDATA = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,8 +57,12 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colvisa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lueNew_SyndicateId = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lueNew_SubCommitteId = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LSMSSub = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMain)).BeginInit();
             this.layoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dewaredbankdate.Properties.VistaTimeProperties)).BeginInit();
@@ -80,10 +86,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueNew_SyndicateId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueNew_SubCommitteId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSub)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlMain
             // 
+            this.layoutControlMain.Controls.Add(this.lueNew_SubCommitteId);
+            this.layoutControlMain.Controls.Add(this.lueNew_SyndicateId);
             this.layoutControlMain.Controls.Add(this.dewaredbankdate);
             this.layoutControlMain.Controls.Add(this.desendbankdate);
             this.layoutControlMain.Controls.Add(this.luereprintresonid);
@@ -104,7 +118,7 @@
             // dewaredbankdate
             // 
             this.dewaredbankdate.EditValue = null;
-            this.dewaredbankdate.Location = new System.Drawing.Point(12, 245);
+            this.dewaredbankdate.Location = new System.Drawing.Point(12, 197);
             this.dewaredbankdate.Name = "dewaredbankdate";
             this.dewaredbankdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -115,14 +129,14 @@
             this.dewaredbankdate.Properties.Mask.EditMask = "d/M/yyyy";
             this.dewaredbankdate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dewaredbankdate.Size = new System.Drawing.Size(353, 20);
+            this.dewaredbankdate.Size = new System.Drawing.Size(341, 20);
             this.dewaredbankdate.StyleController = this.layoutControlMain;
             this.dewaredbankdate.TabIndex = 7;
             // 
             // desendbankdate
             // 
             this.desendbankdate.EditValue = null;
-            this.desendbankdate.Location = new System.Drawing.Point(12, 221);
+            this.desendbankdate.Location = new System.Drawing.Point(12, 173);
             this.desendbankdate.Name = "desendbankdate";
             this.desendbankdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -133,7 +147,7 @@
             this.desendbankdate.Properties.Mask.EditMask = "d/M/yyyy";
             this.desendbankdate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.desendbankdate.Size = new System.Drawing.Size(353, 20);
+            this.desendbankdate.Size = new System.Drawing.Size(341, 20);
             this.desendbankdate.StyleController = this.layoutControlMain;
             this.desendbankdate.TabIndex = 6;
             // 
@@ -150,7 +164,7 @@
             this.luereprintresonid.Properties.NullText = "";
             this.luereprintresonid.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luereprintresonid.Properties.ValueMember = "reprintresonid";
-            this.luereprintresonid.Size = new System.Drawing.Size(353, 20);
+            this.luereprintresonid.Size = new System.Drawing.Size(341, 20);
             this.luereprintresonid.StyleController = this.layoutControlMain;
             this.luereprintresonid.TabIndex = 5;
             // 
@@ -173,7 +187,7 @@
             this.dereprintdate.Properties.Mask.EditMask = "d/M/yyyy";
             this.dereprintdate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dereprintdate.Size = new System.Drawing.Size(353, 20);
+            this.dereprintdate.Size = new System.Drawing.Size(341, 20);
             this.dereprintdate.StyleController = this.layoutControlMain;
             this.dereprintdate.TabIndex = 4;
             // 
@@ -203,7 +217,7 @@
             // 
             this.tbreprintremark.Location = new System.Drawing.Point(12, 84);
             this.tbreprintremark.Name = "tbreprintremark";
-            this.tbreprintremark.Size = new System.Drawing.Size(353, 133);
+            this.tbreprintremark.Size = new System.Drawing.Size(341, 85);
             this.tbreprintremark.StyleController = this.layoutControlMain;
             this.tbreprintremark.TabIndex = 1;
             // 
@@ -222,7 +236,7 @@
             this.lueMMashatId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueMMashatId.Properties.ValueMember = "MMashatId";
             this.lueMMashatId.Properties.View = this.gridLookUpEdit1View;
-            this.lueMMashatId.Size = new System.Drawing.Size(353, 20);
+            this.lueMMashatId.Size = new System.Drawing.Size(341, 20);
             this.lueMMashatId.StyleController = this.layoutControlMain;
             this.lueMMashatId.TabIndex = 0;
             // 
@@ -249,6 +263,18 @@
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "كود";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 0;
+            // 
             // colMMashatName
             // 
             this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
@@ -272,6 +298,18 @@
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
             this.colSyndicate.VisibleIndex = 2;
+            // 
+            // colvisa
+            // 
+            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
+            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colvisa.Caption = "فيزا";
+            this.colvisa.FieldName = "visa";
+            this.colvisa.Name = "colvisa";
+            this.colvisa.Visible = true;
+            this.colvisa.VisibleIndex = 3;
             // 
             // colsarfnumber
             // 
@@ -334,7 +372,9 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(439, 303);
@@ -350,7 +390,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem1.Text = "العضو";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem2
             // 
@@ -360,10 +400,10 @@
             this.layoutControlItem2.CustomizationFormText = "الطلب     ";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(419, 137);
+            this.layoutControlItem2.Size = new System.Drawing.Size(419, 89);
             this.layoutControlItem2.Text = "ملاحظات";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem3
             // 
@@ -398,7 +438,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem5.Text = "التاريخ";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem6
             // 
@@ -409,53 +449,95 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem6.Text = "السبب";
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.desendbankdate;
             this.layoutControlItem7.CustomizationFormText = "تاريخ الارسال";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 209);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 161);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem7.Text = "تاريخ الارسال";
             this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.dewaredbankdate;
             this.layoutControlItem8.CustomizationFormText = "تاريخ الورود";
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 233);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 185);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(419, 24);
             this.layoutControlItem8.Text = "تاريخ الورود";
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Right;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(71, 13);
             // 
-            // colvisa
+            // lueNew_SyndicateId
             // 
-            this.colvisa.AppearanceCell.Options.UseTextOptions = true;
-            this.colvisa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.AppearanceHeader.Options.UseTextOptions = true;
-            this.colvisa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colvisa.Caption = "فيزا";
-            this.colvisa.FieldName = "visa";
-            this.colvisa.Name = "colvisa";
-            this.colvisa.Visible = true;
-            this.colvisa.VisibleIndex = 3;
+            this.lueNew_SyndicateId.Location = new System.Drawing.Point(12, 221);
+            this.lueNew_SyndicateId.Name = "lueNew_SyndicateId";
+            this.lueNew_SyndicateId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueNew_SyndicateId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueNew_SyndicateId.Properties.DataSource = this.LSMSSyn;
+            this.lueNew_SyndicateId.Properties.DisplayMember = "Syndicate";
+            this.lueNew_SyndicateId.Properties.NullText = "";
+            this.lueNew_SyndicateId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueNew_SyndicateId.Properties.ValueMember = "SyndicateId";
+            this.lueNew_SyndicateId.Size = new System.Drawing.Size(341, 20);
+            this.lueNew_SyndicateId.StyleController = this.layoutControlMain;
+            this.lueNew_SyndicateId.TabIndex = 8;
             // 
-            // colMMashatId
+            // layoutControlItem9
             // 
-            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "كود";
-            this.colMMashatId.FieldName = "MMashatId";
-            this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 0;
+            this.layoutControlItem9.Control = this.lueNew_SyndicateId;
+            this.layoutControlItem9.CustomizationFormText = "الفرعية المعدلة";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 209);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem9.Text = "الفرعية المعدلة";
+            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(71, 13);
+            // 
+            // lueNew_SubCommitteId
+            // 
+            this.lueNew_SubCommitteId.Location = new System.Drawing.Point(12, 245);
+            this.lueNew_SubCommitteId.Name = "lueNew_SubCommitteId";
+            this.lueNew_SubCommitteId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueNew_SubCommitteId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SubCommitte", "الاسم", 76, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueNew_SubCommitteId.Properties.DataSource = this.LSMSSub;
+            this.lueNew_SubCommitteId.Properties.DisplayMember = "SubCommitte";
+            this.lueNew_SubCommitteId.Properties.NullText = "";
+            this.lueNew_SubCommitteId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueNew_SubCommitteId.Properties.ValueMember = "SubCommitteId";
+            this.lueNew_SubCommitteId.Size = new System.Drawing.Size(341, 20);
+            this.lueNew_SubCommitteId.StyleController = this.layoutControlMain;
+            this.lueNew_SubCommitteId.TabIndex = 9;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.lueNew_SubCommitteId;
+            this.layoutControlItem10.CustomizationFormText = "اللجنة المعدلة";
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 233);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(419, 24);
+            this.layoutControlItem10.Text = "اللجنة المعدلة";
+            this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(71, 13);
+            // 
+            // LSMSSyn
+            // 
+            this.LSMSSyn.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSyndicate);
+            this.LSMSSyn.KeyExpression = "[SyndicateId]";
+            // 
+            // LSMSSub
+            // 
+            this.LSMSSub.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSubCommitte);
+            this.LSMSSub.KeyExpression = "[SubCommitteId]";
             // 
             // TBLReprintMemberAddFrm
             // 
@@ -489,6 +571,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueNew_SyndicateId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueNew_SubCommitteId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSub)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +612,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
         private DevExpress.XtraGrid.Columns.GridColumn colvisa;
+        private DevExpress.XtraEditors.LookUpEdit lueNew_SubCommitteId;
+        private DevExpress.XtraEditors.LookUpEdit lueNew_SyndicateId;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSSyn;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSSub;
     }
 }

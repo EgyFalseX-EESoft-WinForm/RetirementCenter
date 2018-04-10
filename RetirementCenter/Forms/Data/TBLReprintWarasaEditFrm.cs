@@ -19,6 +19,8 @@ namespace RetirementCenter.Forms.Data
         {
             InitializeComponent();
             LSMSCDreprintreson.QueryableSource = dsLinq.CDreprintresons;
+            LSMSSyn.QueryableSource = dsLinq.CDSyndicates;
+            LSMSSub.QueryableSource = dsLinq.CDSubCommittes;
             LSMSDATA.QueryableSource = dsLinq.vTBLReprintWarasa01s;
             _reprintid = reprintid;
 
@@ -32,6 +34,11 @@ namespace RetirementCenter.Forms.Data
                 desendbankdate.EditValue = row.sendbankdate;
             if (!row.IswaredbankdateNull())
                 dewaredbankdate.EditValue = row.waredbankdate;
+            if (!row.IsNew_SyndicateIdNull())
+                lueNew_SyndicateId.EditValue = row.New_SyndicateId;
+            if (!row.IsNew_SubCommitteIdNull())
+                lueNew_SubCommitteId.EditValue = row.New_SubCommitteId;
+
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -47,15 +54,24 @@ namespace RetirementCenter.Forms.Data
                 DateTime? waredbankdate = null;
                 if (dewaredbankdate.EditValue != null)
                     waredbankdate = (DateTime)dewaredbankdate.EditValue;
+                int? syn = null;
+                if (!FXFW.SqlDB.IsNullOrEmpty(lueNew_SyndicateId.EditValue))
+                    syn = Convert.ToInt32(lueNew_SyndicateId.EditValue);
+                int? sub = null;
+                if (!FXFW.SqlDB.IsNullOrEmpty(lueNew_SubCommitteId.EditValue))
+                    sub = Convert.ToInt32(lueNew_SubCommitteId.EditValue);
 
                 adp.Update(
                      Convert.ToByte(luereprintresonid.EditValue)
+                     , luevisa.EditValue.ToString()
+                     , Convert.ToDateTime(dereprintdate.EditValue)
                     , tbreprintremark.EditValue == null ? string.Empty : tbreprintremark.EditValue.ToString()
                     , sendbankdate
                     , waredbankdate
                     , Program.UserInfo.UserId
                     , SQLProvider.ServerDateTime()
-                    , _reprintid, string.Empty, DateTime.Now);
+                    ,syn, sub
+                    , luevisa.EditValue.ToString(), Convert.ToDateTime(dereprintdate.EditValue));
                     
                     
                 Program.ShowMsg("تم الحفظ", false, this, true);
