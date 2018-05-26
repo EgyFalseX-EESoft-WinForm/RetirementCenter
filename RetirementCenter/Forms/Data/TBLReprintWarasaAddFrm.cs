@@ -19,6 +19,8 @@ namespace RetirementCenter.Forms.Data
             InitializeComponent();
             LSMSCDreprintreson.QueryableSource = dsLinq.CDreprintresons;
             LSMSDATA.QueryableSource = dsLinq.vTBLReprintWarasa01s;
+            LSMSSub.QueryableSource = dsLinq.CDSubCommittes;
+            LSMSSyn.QueryableSource = dsLinq.CDSyndicates;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

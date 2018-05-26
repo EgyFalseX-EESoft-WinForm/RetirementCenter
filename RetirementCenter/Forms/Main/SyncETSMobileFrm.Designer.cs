@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControlExport = new DevExpress.XtraLayout.LayoutControl();
+            this.btnUpdateOptionDefaultDofatSarfId = new DevExpress.XtraEditors.SimpleButton();
             this.mpbc = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.btnInsertTBLMashat = new DevExpress.XtraEditors.SimpleButton();
             this.btnInsertTBLWarasa = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +51,7 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tbPass = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -71,8 +73,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnUpdateOptionDefaultDofatSarfId = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlExport)).BeginInit();
             this.layoutControlExport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mpbc.Properties)).BeginInit();
@@ -88,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -110,7 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlExport
@@ -134,6 +134,16 @@
             this.layoutControlExport.Size = new System.Drawing.Size(683, 226);
             this.layoutControlExport.TabIndex = 0;
             this.layoutControlExport.Text = "layoutControl1";
+            // 
+            // btnUpdateOptionDefaultDofatSarfId
+            // 
+            this.btnUpdateOptionDefaultDofatSarfId.Location = new System.Drawing.Point(24, 164);
+            this.btnUpdateOptionDefaultDofatSarfId.Name = "btnUpdateOptionDefaultDofatSarfId";
+            this.btnUpdateOptionDefaultDofatSarfId.Size = new System.Drawing.Size(317, 22);
+            this.btnUpdateOptionDefaultDofatSarfId.StyleController = this.layoutControlExport;
+            this.btnUpdateOptionDefaultDofatSarfId.TabIndex = 17;
+            this.btnUpdateOptionDefaultDofatSarfId.Text = "Update DefaultDofatSarfId [Option]";
+            this.btnUpdateOptionDefaultDofatSarfId.Click += new System.EventHandler(this.btnUpdateOptionDefaultDofatSarfId_Click);
             // 
             // mpbc
             // 
@@ -373,6 +383,18 @@
             this.layoutControlItem12.TextToControlDistance = 0;
             this.layoutControlItem12.TextVisible = false;
             // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.btnUpdateOptionDefaultDofatSarfId;
+            this.layoutControlItem18.CustomizationFormText = "layoutControlItem18";
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(321, 26);
+            this.layoutControlItem18.Text = "layoutControlItem18";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem18.TextToControlDistance = 0;
+            this.layoutControlItem18.TextVisible = false;
+            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.mpbc;
@@ -387,7 +409,7 @@
             // 
             // tbPass
             // 
-            this.tbPass.EditValue = "AdmPass@123";
+            this.tbPass.EditValue = "Admin@1983";
             this.tbPass.Location = new System.Drawing.Point(422, 36);
             this.tbPass.Name = "tbPass";
             this.tbPass.Properties.PasswordChar = '*';
@@ -432,7 +454,7 @@
             // 
             this.xtraTabPageImport.Controls.Add(this.layoutControlImport);
             this.xtraTabPageImport.Name = "xtraTabPageImport";
-            this.xtraTabPageImport.Size = new System.Drawing.Size(683, 216);
+            this.xtraTabPageImport.Size = new System.Drawing.Size(683, 226);
             this.xtraTabPageImport.Text = "Import";
             // 
             // layoutControlImport
@@ -446,7 +468,7 @@
             this.layoutControlImport.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1026, 190, 250, 350);
             this.layoutControlImport.OptionsView.UseDefaultDragAndDropRendering = false;
             this.layoutControlImport.Root = this.layoutControlGroup3;
-            this.layoutControlImport.Size = new System.Drawing.Size(683, 216);
+            this.layoutControlImport.Size = new System.Drawing.Size(683, 226);
             this.layoutControlImport.TabIndex = 0;
             this.layoutControlImport.Text = "layoutControl1";
             // 
@@ -490,7 +512,7 @@
             this.layoutControlItem17});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(683, 216);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(683, 226);
             this.layoutControlGroup3.Text = "layoutControlGroup3";
             this.layoutControlGroup3.TextVisible = false;
             // 
@@ -524,7 +546,7 @@
             this.layoutControlItem17.CustomizationFormText = "layoutControlItem17";
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(663, 170);
+            this.layoutControlItem17.Size = new System.Drawing.Size(663, 180);
             this.layoutControlItem17.Text = "layoutControlItem17";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextToControlDistance = 0;
@@ -532,7 +554,7 @@
             // 
             // tbServer
             // 
-            this.tbServer.EditValue = "EGYCSTEST.COM\\MSSQLSERVER2014";
+            this.tbServer.EditValue = "EGYCSTEST.COM";
             this.tbServer.Location = new System.Drawing.Point(76, 12);
             this.tbServer.Name = "tbServer";
             this.tbServer.Size = new System.Drawing.Size(625, 20);
@@ -606,28 +628,6 @@
             this.layoutControlItem16.TextToControlDistance = 0;
             this.layoutControlItem16.TextVisible = false;
             // 
-            // btnUpdateOptionDefaultDofatSarfId
-            // 
-            this.btnUpdateOptionDefaultDofatSarfId.Location = new System.Drawing.Point(24, 164);
-            this.btnUpdateOptionDefaultDofatSarfId.Name = "btnUpdateOptionDefaultDofatSarfId";
-            this.btnUpdateOptionDefaultDofatSarfId.Size = new System.Drawing.Size(317, 22);
-            this.btnUpdateOptionDefaultDofatSarfId.StyleController = this.layoutControlExport;
-            this.btnUpdateOptionDefaultDofatSarfId.TabIndex = 17;
-            this.btnUpdateOptionDefaultDofatSarfId.Text = "Update DefaultDofatSarfId [Option]";
-            this.btnUpdateOptionDefaultDofatSarfId.Click += new System.EventHandler(this.btnUpdateOptionDefaultDofatSarfId_Click);
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.btnUpdateOptionDefaultDofatSarfId;
-            this.layoutControlItem18.CustomizationFormText = "layoutControlItem18";
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 78);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(321, 26);
-            this.layoutControlItem18.Text = "layoutControlItem18";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem18.TextToControlDistance = 0;
-            this.layoutControlItem18.TextVisible = false;
-            // 
             // SyncETSMobileFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +651,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -673,7 +674,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
         }
