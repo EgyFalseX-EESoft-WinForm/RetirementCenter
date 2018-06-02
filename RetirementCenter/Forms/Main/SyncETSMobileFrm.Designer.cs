@@ -73,6 +73,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnImportActiveMemberVisa = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlExport)).BeginInit();
             this.layoutControlExport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mpbc.Properties)).BeginInit();
@@ -111,6 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlExport
@@ -460,6 +463,7 @@
             // layoutControlImport
             // 
             this.layoutControlImport.Controls.Add(this.lblStatusImport);
+            this.layoutControlImport.Controls.Add(this.btnImportActiveMemberVisa);
             this.layoutControlImport.Controls.Add(this.btnImportAmanatA3da2);
             this.layoutControlImport.Controls.Add(this.mpbcImportMemberAmanat);
             this.layoutControlImport.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -474,7 +478,7 @@
             // 
             // lblStatusImport
             // 
-            this.lblStatusImport.Location = new System.Drawing.Point(12, 38);
+            this.lblStatusImport.Location = new System.Drawing.Point(12, 64);
             this.lblStatusImport.Name = "lblStatusImport";
             this.lblStatusImport.Size = new System.Drawing.Size(20, 13);
             this.lblStatusImport.StyleController = this.layoutControlImport;
@@ -509,7 +513,8 @@
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem15,
             this.layoutControlItem14,
-            this.layoutControlItem17});
+            this.layoutControlItem17,
+            this.layoutControlItem19});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(683, 226);
@@ -544,9 +549,9 @@
             // 
             this.layoutControlItem17.Control = this.lblStatusImport;
             this.layoutControlItem17.CustomizationFormText = "layoutControlItem17";
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(663, 180);
+            this.layoutControlItem17.Size = new System.Drawing.Size(663, 154);
             this.layoutControlItem17.Text = "layoutControlItem17";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextToControlDistance = 0;
@@ -628,6 +633,28 @@
             this.layoutControlItem16.TextToControlDistance = 0;
             this.layoutControlItem16.TextVisible = false;
             // 
+            // btnImportActiveMemberVisa
+            // 
+            this.btnImportActiveMemberVisa.Location = new System.Drawing.Point(12, 38);
+            this.btnImportActiveMemberVisa.Name = "btnImportActiveMemberVisa";
+            this.btnImportActiveMemberVisa.Size = new System.Drawing.Size(659, 22);
+            this.btnImportActiveMemberVisa.StyleController = this.layoutControlImport;
+            this.btnImportActiveMemberVisa.TabIndex = 4;
+            this.btnImportActiveMemberVisa.Text = "Import Member Amanat";
+            this.btnImportActiveMemberVisa.Click += new System.EventHandler(this.btnImportActiveMemberVisa_Click);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.btnImportActiveMemberVisa;
+            this.layoutControlItem19.CustomizationFormText = "layoutControlItem19";
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(663, 26);
+            this.layoutControlItem19.Text = "layoutControlItem19";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextToControlDistance = 0;
+            this.layoutControlItem19.TextVisible = false;
+            // 
             // SyncETSMobileFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,6 +701,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -725,5 +753,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraEditors.SimpleButton btnUpdateOptionDefaultDofatSarfId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraEditors.SimpleButton btnImportActiveMemberVisa;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
     }
 }

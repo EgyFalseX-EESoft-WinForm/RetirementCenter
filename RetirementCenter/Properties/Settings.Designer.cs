@@ -69,8 +69,8 @@ namespace RetirementCenter.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FALSEX-PC;Initial Catalog=ETSMOBILE;Persist Security Info=True;User I" +
-            "D=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=166.62.39.203;Initial Catalog=ETSMOBILE;Persist Security Info=True;Us" +
+            "er ID=sa;Password=Falsex!983")]
         public string ETSMOBILEConnectionString {
             get {
                 return ((string)(this["ETSMOBILEConnectionString"]));

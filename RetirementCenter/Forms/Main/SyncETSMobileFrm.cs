@@ -910,8 +910,33 @@ namespace RetirementCenter.Forms.Main
                 mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
             });
         }
+        private void btnImportActiveMemberVisa_Click(object sender, EventArgs e)
+        {
+             //btnImportActiveMemberVisa = false;
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+                    
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            });
+        }
         
         #endregion
+
+        
 
         
     }
