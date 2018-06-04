@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,6 +53,9 @@
             this.colMMashatName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnewid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnActive = new DevExpress.XtraEditors.SimpleButton();
             this.tbHafza = new DevExpress.XtraEditors.TextEdit();
@@ -68,16 +70,16 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.coluserin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdituserin = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.colActivateMobileUser = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbHafza.Properties)).BeginInit();
@@ -93,8 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -143,7 +143,8 @@
             this.colMMashatName1,
             this.colsarfnumber,
             this.colnewid,
-            this.coluserin});
+            this.coluserin,
+            this.colActivateMobileUser});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.NewItemRowText = "اضغط لاضافة جديد";
@@ -380,6 +381,40 @@
             this.colnewid.Visible = true;
             this.colnewid.VisibleIndex = 7;
             // 
+            // coluserin
+            // 
+            this.coluserin.AppearanceCell.Options.UseTextOptions = true;
+            this.coluserin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin.AppearanceHeader.Options.UseTextOptions = true;
+            this.coluserin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.coluserin.Caption = "مسئول الادخال";
+            this.coluserin.ColumnEdit = this.repositoryItemLookUpEdituserin;
+            this.coluserin.FieldName = "userin";
+            this.coluserin.Name = "coluserin";
+            this.coluserin.OptionsColumn.ReadOnly = true;
+            this.coluserin.Visible = true;
+            this.coluserin.VisibleIndex = 14;
+            this.coluserin.Width = 102;
+            // 
+            // repositoryItemLookUpEdituserin
+            // 
+            this.repositoryItemLookUpEdituserin.AutoHeight = false;
+            this.repositoryItemLookUpEdituserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdituserin.DataSource = this.LSMSUser;
+            this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
+            this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
+            this.repositoryItemLookUpEdituserin.NullText = "";
+            this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
+            // 
+            // LSMSUser
+            // 
+            this.LSMSUser.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
+            this.LSMSUser.KeyExpression = "[UserID]";
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnActive);
@@ -413,9 +448,9 @@
             this.tbHafza.Size = new System.Drawing.Size(241, 20);
             this.tbHafza.StyleController = this.layoutControl1;
             this.tbHafza.TabIndex = 6;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxvp.SetValidationRule(this.tbHafza, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxvp.SetValidationRule(this.tbHafza, conditionValidationRule1);
             // 
             // lueSub
             // 
@@ -433,9 +468,9 @@
             this.lueSub.Size = new System.Drawing.Size(241, 20);
             this.lueSub.StyleController = this.layoutControl1;
             this.lueSub.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxvp.SetValidationRule(this.lueSub, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxvp.SetValidationRule(this.lueSub, conditionValidationRule2);
             // 
             // LSMSSub
             // 
@@ -458,9 +493,9 @@
             this.lueSyn.Size = new System.Drawing.Size(241, 20);
             this.lueSyn.StyleController = this.layoutControl1;
             this.lueSyn.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxvp.SetValidationRule(this.lueSyn, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxvp.SetValidationRule(this.lueSyn, conditionValidationRule3);
             this.lueSyn.EditValueChanged += new System.EventHandler(this.lueSyn_EditValueChanged);
             // 
             // LSMSSn
@@ -559,39 +594,17 @@
             this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
             // 
-            // LSMSUser
+            // colActivateMobileUser
             // 
-            this.LSMSUser.ElementType = typeof(RetirementCenter.DataSources.Linq.User);
-            this.LSMSUser.KeyExpression = "[UserID]";
-            // 
-            // coluserin
-            // 
-            this.coluserin.AppearanceCell.Options.UseTextOptions = true;
-            this.coluserin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coluserin.AppearanceHeader.Options.UseTextOptions = true;
-            this.coluserin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coluserin.Caption = "مسئول الادخال";
-            this.coluserin.ColumnEdit = this.repositoryItemLookUpEdituserin;
-            this.coluserin.FieldName = "userin";
-            this.coluserin.Name = "coluserin";
-            this.coluserin.OptionsColumn.ReadOnly = true;
-            this.coluserin.Visible = true;
-            this.coluserin.VisibleIndex = 14;
-            this.coluserin.Width = 102;
-            // 
-            // repositoryItemLookUpEdituserin
-            // 
-            this.repositoryItemLookUpEdituserin.AutoHeight = false;
-            this.repositoryItemLookUpEdituserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEdituserin.DataSource = this.LSMSUser;
-            this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
-            this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
-            this.repositoryItemLookUpEdituserin.NullText = "";
-            this.repositoryItemLookUpEdituserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEdituserin.ValueMember = "UserID";
+            this.colActivateMobileUser.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivateMobileUser.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateMobileUser.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivateMobileUser.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateMobileUser.Caption = "مستخدم التفعيل للموبيل";
+            this.colActivateMobileUser.FieldName = "ActivateMobileUser";
+            this.colActivateMobileUser.Name = "colActivateMobileUser";
+            this.colActivateMobileUser.Visible = true;
+            this.colActivateMobileUser.VisibleIndex = 15;
             // 
             // BankExportedDataWarsaActivateFrm
             // 
@@ -610,6 +623,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbHafza.Properties)).EndInit();
@@ -625,8 +640,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxvp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,5 +686,6 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
         private DevExpress.XtraGrid.Columns.GridColumn coluserin;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdituserin;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivateMobileUser;
     }
 }

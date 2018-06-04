@@ -167,6 +167,11 @@ namespace RetirementCenter
             //        return;
             //    }
             //}
+            if (Convert.ToInt32(lueDofatSarfId.EditValue) == 7 && Convert.ToInt32(adpQ.TblMemberAmanatCheckFor7(_row.MMashatId, _row.DofatSarfAId)) > 0)
+            {
+                msgDlg.Show("يجب التسجل في امانات 1 وليس 2", msgDlg.msgButtons.Close);
+                return;
+            }
             
             if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
             {

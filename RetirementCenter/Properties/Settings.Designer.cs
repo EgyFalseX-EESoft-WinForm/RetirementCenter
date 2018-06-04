@@ -27,7 +27,7 @@ namespace RetirementCenter.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FALSEX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True" +
-            ";User ID=sa;Password=123456")]
+            ";User ID=sa;Password=2491983")]
         public string RetirementCenterConnectionString {
             get {
                 return ((string)(this["RetirementCenterConnectionString"]));

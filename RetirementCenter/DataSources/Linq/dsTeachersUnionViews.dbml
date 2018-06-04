@@ -1075,56 +1075,6 @@
       <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vBankExportedDataWarsa_Activate" Member="vBankExportedDataWarsa_Activates">
-    <Type Name="vBankExportedDataWarsa_Activate">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ExportDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="visawarddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="hafza" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hafzadate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="trteep" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="transferfrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="transferdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="transferto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ActivateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vBankExportedData_Activate" Member="vBankExportedData_Activates">
-    <Type Name="vBankExportedData_Activate">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ExportDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="visawarddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="hafza" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hafzadate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="trteep" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="transferfrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="transferdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="transferto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ActivateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
-      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MMashatNId" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.cd_amanattype" Member="cd_amanattypes">
     <Type Name="cd_amanattype">
       <Column Name="amanattypeid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1653,6 +1603,58 @@
       <Column Name="New_SubCommitteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="New_Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="New_SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vBankExportedData_Activate" Member="vBankExportedData_Activates">
+    <Type Name="vBankExportedData_Activate">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExportDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visawarddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="hafza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hafzadate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="trteep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferfrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="transferto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActivateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatNId" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="ActivateMobileUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vBankExportedDataWarsa_Activate" Member="vBankExportedDataWarsa_Activates">
+    <Type Name="vBankExportedDataWarsa_Activate">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExportDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="visawarddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="hafza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hafzadate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="trteep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferfrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="transferto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActivateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="personName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="newid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActivateMobileUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

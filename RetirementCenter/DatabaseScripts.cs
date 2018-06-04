@@ -392,21 +392,21 @@ namespace RetirementCenter
                 //cmd.CommandText = vQry78;
                 //cmd.ExecuteNonQuery();
                 //vTBLReprintMember
-                if (CheckViewExists("vTBLReprintMember"))
-                {
-                    cmd.CommandText = DropView("vTBLReprintMember");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLReprintMember;
-                cmd.ExecuteNonQuery();
-                //vQry79
-                if (CheckViewExists("vQry79"))
-                {
-                    cmd.CommandText = DropView("vQry79");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry79;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLReprintMember"))
+                //{
+                //    cmd.CommandText = DropView("vTBLReprintMember");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLReprintMember;
+                //cmd.ExecuteNonQuery();
+                ////vQry79
+                //if (CheckViewExists("vQry79"))
+                //{
+                //    cmd.CommandText = DropView("vQry79");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry79;
+                //cmd.ExecuteNonQuery();
                 ////vTBLReprintWarasa01
                 //if (CheckViewExists("vTBLReprintWarasa01"))
                 //{
@@ -416,21 +416,21 @@ namespace RetirementCenter
                 //cmd.CommandText = vTBLReprintWarasa01;
                 //cmd.ExecuteNonQuery();
                 //vTBLReprintWarasa
-                if (CheckViewExists("vTBLReprintWarasa"))
-                {
-                    cmd.CommandText = DropView("vTBLReprintWarasa");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLReprintWarasa;
-                cmd.ExecuteNonQuery();
-                //vQry80
-                if (CheckViewExists("vQry80"))
-                {
-                    cmd.CommandText = DropView("vQry80");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vQry80;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vTBLReprintWarasa"))
+                //{
+                //    cmd.CommandText = DropView("vTBLReprintWarasa");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLReprintWarasa;
+                //cmd.ExecuteNonQuery();
+                ////vQry80
+                //if (CheckViewExists("vQry80"))
+                //{
+                //    cmd.CommandText = DropView("vQry80");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vQry80;
+                //cmd.ExecuteNonQuery();
                 ////vTBLHafzaTasleem
                 //if (CheckViewExists("vTBLHafzaTasleem"))
                 //{
@@ -543,22 +543,22 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = vQry92;
                 //cmd.ExecuteNonQuery();
-                ////vBankExportedData_Activate
-                //if (CheckViewExists("vBankExportedData_Activate"))
-                //{
-                //    cmd.CommandText = DropView("vBankExportedData_Activate");
-                //    cmd.ExecuteNonQuery();
-                //}
-                //cmd.CommandText = vBankExportedData_Activate;
-                //cmd.ExecuteNonQuery();
-                ////vBankExportedDataWarsa_Activate
-                //if (CheckViewExists("vBankExportedDataWarsa_Activate"))
-                //{
-                //    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
-                //    cmd.ExecuteNonQuery();
-                //}
-                //cmd.CommandText = vBankExportedDataWarsa_Activate;
-                //cmd.ExecuteNonQuery();
+                //vBankExportedData_Activate
+                if (CheckViewExists("vBankExportedData_Activate"))
+                {
+                    cmd.CommandText = DropView("vBankExportedData_Activate");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vBankExportedData_Activate;
+                cmd.ExecuteNonQuery();
+                //vBankExportedDataWarsa_Activate
+                if (CheckViewExists("vBankExportedDataWarsa_Activate"))
+                {
+                    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vBankExportedDataWarsa_Activate;
+                cmd.ExecuteNonQuery();
                 ////vTblMemberAmanat
                 //if (CheckViewExists("vTblMemberAmanat"))
                 //{
@@ -2096,10 +2096,10 @@ HAVING        (dbo.vTBLWarasaSarf_arshef.SarfTypeedadId = 6)";
                 return @"
                 CREATE VIEW [dbo].[vBankExportedData_Activate]
                     AS
-                    SELECT        dbo.BankExportedData.Id, dbo.BankExportedData.MMashatId, dbo.BankExportedData.ExportDate, dbo.BankExportedData.userin, dbo.BankExportedData.visa, dbo.BankExportedData.visawarddate, 
-                         dbo.BankExportedData.hafza, dbo.BankExportedData.hafzadate, dbo.BankExportedData.trteep, dbo.BankExportedData.transferfrom, dbo.BankExportedData.transferdate, dbo.BankExportedData.transferto, 
-                         dbo.BankExportedData.Activate, dbo.BankExportedData.ActivateDate, dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, 
-                         dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatNId
+                    SELECT        dbo.BankExportedData.Id, dbo.BankExportedData.MMashatId, dbo.BankExportedData.ExportDate, dbo.BankExportedData.userin, dbo.BankExportedData.visa, dbo.BankExportedData.visawarddate, dbo.BankExportedData.hafza,
+                          dbo.BankExportedData.hafzadate, dbo.BankExportedData.trteep, dbo.BankExportedData.transferfrom, dbo.BankExportedData.transferdate, dbo.BankExportedData.transferto, dbo.BankExportedData.Activate, 
+                         dbo.BankExportedData.ActivateDate, dbo.Users.RealName, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.MMashatNId, 
+                         dbo.BankExportedData.ActivateMobileUser
 FROM            dbo.BankExportedData INNER JOIN
                          dbo.TBLMashat ON dbo.BankExportedData.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
                          dbo.Users ON dbo.BankExportedData.userin = dbo.Users.UserID INNER JOIN
@@ -2116,9 +2116,9 @@ FROM            dbo.BankExportedData INNER JOIN
                     AS
                     SELECT        dbo.BankExportedDataWarsa.Id, dbo.BankExportedDataWarsa.PersonId, dbo.BankExportedDataWarsa.ExportDate, dbo.BankExportedDataWarsa.userin, dbo.BankExportedDataWarsa.visa, 
                          dbo.BankExportedDataWarsa.visawarddate, dbo.BankExportedDataWarsa.hafza, dbo.BankExportedDataWarsa.hafzadate, dbo.BankExportedDataWarsa.trteep, dbo.BankExportedDataWarsa.transferfrom, 
-                         dbo.BankExportedDataWarsa.transferdate, dbo.BankExportedDataWarsa.transferto, dbo.BankExportedDataWarsa.Activate, dbo.BankExportedDataWarsa.ActivateDate, dbo.Users.RealName, 
-                         dbo.TBLWarasa.personName, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.AwarasaNewId.newid, dbo.TBLWarasa.MMashatId, dbo.TBLMashat.MMashatName, 
-                         dbo.TBLMashat.sarfnumber
+                         dbo.BankExportedDataWarsa.transferdate, dbo.BankExportedDataWarsa.transferto, dbo.BankExportedDataWarsa.Activate, dbo.BankExportedDataWarsa.ActivateDate, dbo.Users.RealName, dbo.TBLWarasa.personName, 
+                         dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.AwarasaNewId.newid, dbo.TBLWarasa.MMashatId, dbo.TBLMashat.MMashatName, dbo.TBLMashat.sarfnumber, 
+                         dbo.BankExportedDataWarsa.ActivateMobileUser
 FROM            dbo.BankExportedDataWarsa INNER JOIN
                          dbo.TBLWarasa ON dbo.BankExportedDataWarsa.PersonId = dbo.TBLWarasa.PersonId INNER JOIN
                          dbo.Users ON dbo.BankExportedDataWarsa.userin = dbo.Users.UserID INNER JOIN

@@ -912,29 +912,78 @@ namespace RetirementCenter.Forms.Main
         }
         private void btnImportActiveMemberVisa_Click(object sender, EventArgs e)
         {
-             //btnImportActiveMemberVisa = false;
             mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
                 try
                 {
+                    SetStatusImport = "Importing .......";
                     // Set connection string
                     System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
                     sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
                     Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
-                    
-
-
+                    DataSources.dsEtsMobileTableAdapters.ActiveVisaMemberTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.ActiveVisaMemberTableAdapter();
+                    DataSources.dsEtsMobile.ActiveVisaMemberDataTable visaTbl = adpMob.GetData();
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlCommand cmd = new SqlCommand("UPDATE BankExportedData SET Activate = 1, ActivateDate = @ActivateDate, ActivateMobileUser = 3000 WHERE MMashatId = @MMashatId AND Activate = 0", con) { CommandTimeout = 0 };
+                    SqlParameter IdParam = new SqlParameter("@MMashatId", SqlDbType.Int);
+                    SqlParameter activeParam = new SqlParameter("@ActivateDate", SqlDbType.Date);
+                    cmd.Parameters.Add(IdParam); cmd.Parameters.Add(activeParam);
+                    con.Open();
+                    foreach (DataSources.dsEtsMobile.ActiveVisaMemberRow visa in visaTbl)
+                    {
+                        IdParam.Value = visa.MMashatId;
+                        activeParam.Value = visa.ActivateFromMobileDate;
+                        cmd.ExecuteNonQuery();
+                    }
+                    SetStatusImport = "...";
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    SetStatusImport = ex.Message;
                 }
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
+        private void btnImportActiveWarasaVisa_Click(object sender, EventArgs e)
+        {
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    SetStatusImport = "Importing .......";
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+                    DataSources.dsEtsMobileTableAdapters.ActiveVisaWarasaTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.ActiveVisaWarasaTableAdapter();
+                    DataSources.dsEtsMobile.ActiveVisaWarasaDataTable visaTbl = adpMob.GetData();
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlCommand cmd = new SqlCommand("UPDATE BankExportedDataWarsa SET Activate = 1, ActivateDate = @ActivateDate, ActivateMobileUser = 3000 WHERE PersonId = @PersonId AND Activate = 0", con) { CommandTimeout = 0 };
+                    SqlParameter IdParam = new SqlParameter("@PersonId", SqlDbType.Int);
+                    SqlParameter activeParam = new SqlParameter("@ActivateDate", SqlDbType.Date);
+                    cmd.Parameters.Add(IdParam); cmd.Parameters.Add(activeParam);
+                    con.Open();
+                    foreach (DataSources.dsEtsMobile.ActiveVisaWarasaRow visa in visaTbl)
+                    {
+                        IdParam.Value = visa.PersonId;
+                        activeParam.Value = visa.ActivateFromMobileDate;
+                        cmd.ExecuteNonQuery();
+                    }
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
             });
         }
         
         #endregion
+
+       
 
         
 
