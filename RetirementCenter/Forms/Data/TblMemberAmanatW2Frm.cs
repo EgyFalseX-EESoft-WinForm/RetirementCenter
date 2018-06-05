@@ -173,7 +173,7 @@ namespace RetirementCenter
                 return;
             }
             
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
+            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6 && _row.IsMobileUserNull())// we should it acc reviewed if this condition active
             {
                 _row.accReview = true;
                 _row.useracc = Program.UserInfo.UserId;

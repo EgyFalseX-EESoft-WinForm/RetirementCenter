@@ -891,7 +891,7 @@ namespace RetirementCenter.Forms.Main
 
                     // Update TblMemberAmanat with inserted data from temp table
                     cmd.CommandText = string.Format(@"merge into TblMemberAmanat as Target 
-                    using {0} as Source on Target.MMashatId = Source.MMashatId AND Target.DofatSarfAId = Source.DofatSarfAId AND Target.amanattypeid = Source.amanattypeid 
+                    using {0} as Source on Target.MMashatId = Source.MMashatId AND Target.DofatSarfAId = Source.DofatSarfAId AND (Target.amanattypeid = 6 OR Target.amanattypeid = 7)
                     WHEN NOT Matched THEN 
                     INSERT(MMashatId, DofatSarfAId, amanattypeid, amanatmony, amanatrem, userin, datein, estktaa, mostahek, DofatSarfId, sefa, accReview, dateReview, useracc, amantvisa, sarfcheek, cheekno, tasleemdate, mostlemsheek, userincheek, datincheek, Source, MobileUser) 
                     VALUES(Source.MMashatId, Source.DofatSarfAId, Source.amanattypeid, Source.amanatmony, Source.amanatrem, Source.userin, Source.datein, Source.estktaa, Source.mostahek, Source.DofatSarfId, Source.sefa, Source.accReview, Source.dateReview, Source.useracc, Source.amantvisa, Source.sarfcheek, Source.cheekno, Source.tasleemdate, Source.mostlemsheek, Source.userincheek, Source.datincheek, Source.Source, Source.MobileUser) 

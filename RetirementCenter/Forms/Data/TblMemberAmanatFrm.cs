@@ -193,7 +193,29 @@ namespace RetirementCenter
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, ex, null, this);
             }
         }
+        private void repositoryItemButtonEditAccReview_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+            GridView GV = (GridView)gridControlData.MainView;
+            DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
+            if (!row.IsaccReviewNull() && row.accReview)
+            {
+                msgDlg.Show("تم معاينة الحسابات مسبقا", msgDlg.msgButtons.Close);
+                return;
+            }
+            if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+            row.accReview = true;
+            row.dateReview = SQLProvider.ServerDateTime();
+            row.useracc = Program.UserInfo.UserId;
+            tblMemberAmanatBindingSource.EndEdit();
+            tblMemberAmanatTableAdapter.Update(row);
+            Program.ShowMsg("تم الحفظ", false, this, true);
+            Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
+        }
         #endregion
+
+       
 
     }
 }
