@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
             this.tblMemberAmanatBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -75,6 +75,7 @@
             this.repositoryItemLookUpEditamanattypeid = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMScd_amanattype = new DevExpress.Data.Linq.LinqServerModeSource();
             this.coldateReview = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMobileUser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditAccReview = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemCalcEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -95,7 +96,6 @@
             this.tblMemberAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter();
             this.cdDofaatAmanatTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.CdDofaatAmanatTableAdapter();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
-            this.colMobileUser = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMemberAmanatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -689,6 +689,19 @@
             this.coldateReview.VisibleIndex = 13;
             this.coldateReview.Width = 116;
             // 
+            // colMobileUser
+            // 
+            this.colMobileUser.AppearanceCell.Options.UseTextOptions = true;
+            this.colMobileUser.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMobileUser.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMobileUser.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMobileUser.Caption = "امانات الموبيل";
+            this.colMobileUser.FieldName = "MobileUser";
+            this.colMobileUser.Name = "colMobileUser";
+            this.colMobileUser.Visible = true;
+            this.colMobileUser.VisibleIndex = 19;
+            this.colMobileUser.Width = 83;
+            // 
             // gridColumn3
             // 
             this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
@@ -705,7 +718,7 @@
             // 
             this.repositoryItemButtonEditAccReview.AutoHeight = false;
             this.repositoryItemButtonEditAccReview.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::RetirementCenter.Properties.Resources.save_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditAccReview.Name = "repositoryItemButtonEditAccReview";
             this.repositoryItemButtonEditAccReview.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditAccReview.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditAccReview_ButtonClick);
@@ -740,7 +753,7 @@
             // 
             this.repositoryItemGridLookUpEditSyndicateId.AutoHeight = false;
             this.repositoryItemGridLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemGridLookUpEditSyndicateId.DisplayMember = "Syndicate";
             this.repositoryItemGridLookUpEditSyndicateId.Name = "repositoryItemGridLookUpEditSyndicateId";
             this.repositoryItemGridLookUpEditSyndicateId.NullText = "";
@@ -890,19 +903,6 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // colMobileUser
-            // 
-            this.colMobileUser.AppearanceCell.Options.UseTextOptions = true;
-            this.colMobileUser.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMobileUser.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMobileUser.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMobileUser.Caption = "امانات الموبيل";
-            this.colMobileUser.FieldName = "MobileUser";
-            this.colMobileUser.Name = "colMobileUser";
-            this.colMobileUser.Visible = true;
-            this.colMobileUser.VisibleIndex = 19;
-            this.colMobileUser.Width = 83;
             // 
             // TblMemberAmanatFrm
             // 

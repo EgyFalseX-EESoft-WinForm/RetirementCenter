@@ -103,6 +103,11 @@ namespace RetirementCenter
                 msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                 return;
             }
+            if (!row.IsMobileUserNull())
+            {
+                msgDlg.Show("التعديل ليس متاح لامانات الموبيل", msgDlg.msgButtons.Close);
+                return;
+            }
             Update(row, false);
             
         }

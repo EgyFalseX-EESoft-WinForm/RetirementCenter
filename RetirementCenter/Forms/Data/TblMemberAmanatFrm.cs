@@ -209,6 +209,10 @@ namespace RetirementCenter
             row.dateReview = SQLProvider.ServerDateTime();
             row.useracc = Program.UserInfo.UserId;
             tblMemberAmanatBindingSource.EndEdit();
+
+            TblMemberAmanatWFrm frm = new TblMemberAmanatWFrm(row, _Insert, _Update, _Delete);
+            if (!row.sarfcheek)
+                frm.UpdateActive();
             tblMemberAmanatTableAdapter.Update(row);
             Program.ShowMsg("تم الحفظ", false, this, true);
             Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
