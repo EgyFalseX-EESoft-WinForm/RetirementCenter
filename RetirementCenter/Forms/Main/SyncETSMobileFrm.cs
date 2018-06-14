@@ -362,6 +362,8 @@ namespace RetirementCenter.Forms.Main
                     row.hafzano = item.hafza;
                 if (!row.IshafzadateNull())
                     row.hafzadate = item.hafzadate;
+                if (!row.IstrteepNull())
+                    row.trteep = item.trteep;
                 if (!row.IsActivateNull())
                     row.Activate = item.Activate;
                 if (!row.IsActivateDateNull())
@@ -377,12 +379,12 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("sarfnumber", "sarfnumber");
             bulkCopy.ColumnMappings.Add("hafzano", "hafzano");
             bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.ColumnMappings.Add("trteep", "trteep");
             bulkCopy.ColumnMappings.Add("Activate", "Activate");
             bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
             bulkCopy.DestinationTableName = "TBLMashat";
             bulkCopy.BatchSize = dsMob.TBLMashat.Count;
             bulkCopy.WriteToServer(dsMob.TBLMashat);
-
 
             
             adp.FillBySomeFields(dsQry.TBLMashat_ForMob);
@@ -391,7 +393,7 @@ namespace RetirementCenter.Forms.Main
             SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
             //SqlBulkCopy bulkCopy2 = new SqlBulkCopy(con) { BulkCopyTimeout = 0 };
             con.Open();
-            cmd.CommandText = string.Format(@"SELECT MMashatId, Activate, ActivateDate, hafzano as hafza, hafzadate INTO {0} FROM TBLMashat WHERE 1 = 0;", bulkTableName);
+            cmd.CommandText = string.Format(@"SELECT MMashatId, Activate, ActivateDate, hafzano as hafza, hafzadate, trteep INTO {0} FROM TBLMashat WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
 
             bulkCopy.ColumnMappings.Clear();
@@ -400,6 +402,7 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
             bulkCopy.ColumnMappings.Add("hafza", "hafza");
             bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.ColumnMappings.Add("trteep", "trteep");
             bulkCopy.DestinationTableName = bulkTableName;
             bulkCopy.BatchSize = dsQry.TBLMashat_ForMob.Count;
             bulkCopy.WriteToServer(dsQry.TBLMashat_ForMob);
@@ -409,7 +412,8 @@ namespace RetirementCenter.Forms.Main
                     Target.Activate = Source.Activate,
                     Target.ActivateDate = Source.ActivateDate,
                     Target.hafzano = Source.hafza,
-                    Target.hafzadate = Source.hafzadate
+                    Target.hafzadate = Source.hafzadate,
+                    Target.trteep = Source.trteep
                     ;", bulkTableName);
             int result = cmd.ExecuteNonQuery();
             cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);

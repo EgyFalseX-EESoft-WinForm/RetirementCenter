@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -44,13 +43,13 @@
             this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
             this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -159,6 +158,7 @@
             this.mbRetCenterStatis = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterQry31 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry32 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry118 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry33 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQryPart1 = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterQry55 = new DevExpress.XtraBars.BarButtonItem();
@@ -316,7 +316,7 @@
             this.mbRetCenterQry113 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterImportBankData = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry117 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -814,10 +814,11 @@
             this.mbRetCenterQry115A,
             this.mbRetCenterQry116A,
             this.mbRetCenterTBLMemberSarf_arshefAddOnly,
-            this.mbRetCenterTBLWarasaSarf_arshefAddOnly});
+            this.mbRetCenterTBLWarasaSarf_arshefAddOnly,
+            this.mbRetCenterQry118});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 435;
+            this.ribbonControl.MaxItemId = 436;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1896,7 +1897,8 @@
             this.mbRetCenterStatis.LargeImageIndex = 19;
             this.mbRetCenterStatis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry31),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry32)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry32),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry118)});
             this.mbRetCenterStatis.Name = "mbRetCenterStatis";
             this.mbRetCenterStatis.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
@@ -1917,6 +1919,14 @@
             this.mbRetCenterQry32.LargeImageIndex = 19;
             this.mbRetCenterQry32.Name = "mbRetCenterQry32";
             this.mbRetCenterQry32.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry118
+            // 
+            this.mbRetCenterQry118.Caption = "عدد المرفقات بالمستخدم";
+            this.mbRetCenterQry118.Id = 435;
+            this.mbRetCenterQry118.ImageIndex = 19;
+            this.mbRetCenterQry118.LargeImageIndex = 19;
+            this.mbRetCenterQry118.Name = "mbRetCenterQry118";
             // 
             // mbRetCenterQry33
             // 
@@ -3824,6 +3834,7 @@
         private DevExpress.XtraBars.BarSubItem mbRetCenterStatis;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry31;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry32;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry118;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry33;
         private DevExpress.XtraBars.BarSubItem mbRetCenterQryPart1;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry55;

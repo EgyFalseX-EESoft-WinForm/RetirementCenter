@@ -792,6 +792,12 @@
     <Compile Include="Forms\Main\SyncETSMobileFrm.Designer.cs">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Qry\Qry118Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Qry\Qry118Frm.designer.cs">
+      <DependentUpon>Qry118Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Qry\Qry116AFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2206,6 +2212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\SyncETSMobileFrm.resx">
       <DependentUpon>SyncETSMobileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Qry\Qry118Frm.resx">
+      <DependentUpon>Qry118Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Qry\Qry116AFrm.resx">
       <DependentUpon>Qry116AFrm.cs</DependentUpon>
