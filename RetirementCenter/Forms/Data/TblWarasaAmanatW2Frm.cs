@@ -225,7 +225,7 @@ namespace RetirementCenter
         }
         public void UpdateActive()
         {
-            if (ceamantvisa.Checked && Convert.ToInt32(lueDofatSarfAId.EditValue) > 6)// we should it acc reviewed if this condition active
+            if (_row.amantvisa && Convert.ToInt32(_row.DofatSarfAId) > 6)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_yasref_byVisa_ForAmanat(_row.PersonId, Program.UserInfo.UserId);
             }
