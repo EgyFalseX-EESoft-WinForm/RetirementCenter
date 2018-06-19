@@ -129,7 +129,7 @@ namespace RetirementCenter
                     Program.Logger.LogThis("لا يمكن حذف عنصر تم مراجعتة", Text, FXFW.Logger.OpType.warning, null, null, this);
                     return;
                 }
-                if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime() && Program.UserInfo.IsAdmin == false)
+                if (!row.IsdateinNull() && row.datein.Date != SQLProvider.ServerDateTime().Date && Program.UserInfo.IsAdmin == false)
                 {
                     msgDlg.Show("الحذف متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                     return;
