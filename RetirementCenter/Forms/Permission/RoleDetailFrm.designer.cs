@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailFrm));
             this.groupControlUpdate = new DevExpress.XtraEditors.GroupControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -43,13 +44,13 @@
             this.CEInsert = new DevExpress.XtraEditors.CheckEdit();
             this.groupControlSelect = new DevExpress.XtraEditors.GroupControl();
             this.LUEItems = new DevExpress.XtraEditors.LookUpEdit();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.roleDetialTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RoleDetialTableAdapter();
             this.rolesTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.RolesTableAdapter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.mbRetCenterExit = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterHelp = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -316,7 +317,8 @@
             this.mbRetCenterQry113 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterImportBankData = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry117 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.mbRetCenterphone_answer = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -815,10 +817,11 @@
             this.mbRetCenterQry116A,
             this.mbRetCenterTBLMemberSarf_arshefAddOnly,
             this.mbRetCenterTBLWarasaSarf_arshefAddOnly,
-            this.mbRetCenterQry118});
+            this.mbRetCenterQry118,
+            this.mbRetCenterphone_answer});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 436;
+            this.ribbonControl.MaxItemId = 437;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -3382,6 +3385,14 @@
             this.mbRetCenterQry117.LargeImageIndex = 19;
             this.mbRetCenterQry117.Name = "mbRetCenterQry117";
             // 
+            // mbRetCenterphone_answer
+            // 
+            this.mbRetCenterphone_answer.Caption = "سجل المكالمات";
+            this.mbRetCenterphone_answer.Id = 436;
+            this.mbRetCenterphone_answer.ImageIndex = 51;
+            this.mbRetCenterphone_answer.LargeImageIndex = 51;
+            this.mbRetCenterphone_answer.Name = "mbRetCenterphone_answer";
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -3473,6 +3484,7 @@
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTBLHafezSarf);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterVisa);
             this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterTblAttach);
+            this.DataribbonPageGroup.ItemLinks.Add(this.mbRetCenterphone_answer);
             this.DataribbonPageGroup.Name = "DataribbonPageGroup";
             this.DataribbonPageGroup.Text = "قائمة ادخال البيانات";
             // 
@@ -3992,6 +4004,7 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry113;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterImportBankData;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry117;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterphone_answer;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;

@@ -318,7 +318,7 @@ namespace RetirementCenter.Forms.Main
             SqlConnection con = new SqlConnection(Properties.Settings.Default["ETSMOBILEConnectionString"].ToString());
             SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
             con.Open();
-            cmd.CommandText = string.Format(@"SELECT PersonId, Activate, ActivateDate, hafza, hafzadate INTO {0} FROM TBLWarasa WHERE 1 = 0;", bulkTableName);
+            cmd.CommandText = string.Format(@"SELECT PersonId, Activate, ActivateDate, hafza, hafzadate, code60, SyndicateId, SubCommitteId INTO {0} FROM TBLWarasa WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
 
             bulkCopy.ColumnMappings.Clear();
@@ -327,6 +327,9 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("ActivateDate", "ActivateDate");
             bulkCopy.ColumnMappings.Add("hafza", "hafza");
             bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
+            bulkCopy.ColumnMappings.Add("code60", "code60");
+            bulkCopy.ColumnMappings.Add("SyndicateId", "SyndicateId");
+            bulkCopy.ColumnMappings.Add("SubCommitteId", "SubCommitteId");
             bulkCopy.DestinationTableName = bulkTableName;
             bulkCopy.BatchSize = dsQry.TBLWarasa_ForMob.Count;
             bulkCopy.WriteToServer(dsQry.TBLWarasa_ForMob);
@@ -336,7 +339,10 @@ namespace RetirementCenter.Forms.Main
                     Target.Activate = Source.Activate,
                     Target.ActivateDate = Source.ActivateDate,
                     Target.hafza = Source.hafza,
-                    Target.hafzadate = Source.hafzadate
+                    Target.hafzadate = Source.hafzadate,
+                    Target.code60 = Source.code60,
+                    Target.SyndicateId = Source.SyndicateId,
+                    Target.SubCommitteId = Source.SubCommitteId
                     ;", bulkTableName);
             int result = cmd.ExecuteNonQuery();
             cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
@@ -393,7 +399,7 @@ namespace RetirementCenter.Forms.Main
             SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
             //SqlBulkCopy bulkCopy2 = new SqlBulkCopy(con) { BulkCopyTimeout = 0 };
             con.Open();
-            cmd.CommandText = string.Format(@"SELECT MMashatId, Activate, ActivateDate, hafzano as hafza, hafzadate, trteep INTO {0} FROM TBLMashat WHERE 1 = 0;", bulkTableName);
+            cmd.CommandText = string.Format(@"SELECT MMashatId, Activate, ActivateDate, hafzano as hafza, hafzadate, trteep, SyndicateId, SubCommitteId INTO {0} FROM TBLMashat WHERE 1 = 0;", bulkTableName);
             cmd.ExecuteNonQuery();
 
             bulkCopy.ColumnMappings.Clear();
@@ -403,6 +409,8 @@ namespace RetirementCenter.Forms.Main
             bulkCopy.ColumnMappings.Add("hafza", "hafza");
             bulkCopy.ColumnMappings.Add("hafzadate", "hafzadate");
             bulkCopy.ColumnMappings.Add("trteep", "trteep");
+            bulkCopy.ColumnMappings.Add("SyndicateId", "SyndicateId");
+            bulkCopy.ColumnMappings.Add("SubCommitteId", "SubCommitteId");
             bulkCopy.DestinationTableName = bulkTableName;
             bulkCopy.BatchSize = dsQry.TBLMashat_ForMob.Count;
             bulkCopy.WriteToServer(dsQry.TBLMashat_ForMob);
@@ -413,7 +421,9 @@ namespace RetirementCenter.Forms.Main
                     Target.ActivateDate = Source.ActivateDate,
                     Target.hafzano = Source.hafza,
                     Target.hafzadate = Source.hafzadate,
-                    Target.trteep = Source.trteep
+                    Target.trteep = Source.trteep,
+                    Target.SyndicateId = Source.SyndicateId,
+                    Target.SubCommitteId = Source.SubCommitteId
                     ;", bulkTableName);
             int result = cmd.ExecuteNonQuery();
             cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
@@ -984,13 +994,109 @@ namespace RetirementCenter.Forms.Main
                 mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
             });
         }
-        
+        private void btnImportStopMemberVisa_Click(object sender, EventArgs e)
+        {
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    SetStatusImport = "Importing .......";
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+                    DataSources.dsEtsMobileTableAdapters.StopVisaMemberTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.StopVisaMemberTableAdapter();
+                    DataSources.dsEtsMobile.StopVisaMemberDataTable visaTbl = adpMob.GetData();
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+
+                    SqlCommand cmdCheck = new SqlCommand("SELECT ISNULL((SELECT Activate FROM TBLMashat WHERE MMashatId = @MMashatId), 'FALSE')", con) { CommandTimeout = 0 };
+                    SqlParameter chekcIdParam = new SqlParameter("@MMashatId", SqlDbType.Int);
+                    cmdCheck.Parameters.Add(chekcIdParam);
+                    
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE TBLMashat SET Activate = 0 WHERE MMashatId = @MMashatId", con) { CommandTimeout = 0 };
+                    SqlParameter IdParam = new SqlParameter("@MMashatId", SqlDbType.Int);
+                    cmdUpdate.Parameters.Add(IdParam);
+
+                    SqlCommand cmdInsert = new SqlCommand(@"INSERT INTO tblmembervisaactive (MMashatId,activee,datehala,halarem,datein,userin) VALUES
+                    (@MMashatId,0,GETDATE(),'تم الايقاف عن طريق الموبيل', GETDATE(), 3000)", con) { CommandTimeout = 0 };
+                    SqlParameter InsertIdParam = new SqlParameter("@MMashatId", SqlDbType.Int);
+                    cmdInsert.Parameters.Add(InsertIdParam);
+
+                    con.Open();
+                    foreach (DataSources.dsEtsMobile.StopVisaMemberRow member in visaTbl)
+                    {
+                        chekcIdParam.Value = member.MMashatId;
+                        IdParam.Value = member.MMashatId;
+                        InsertIdParam.Value = member.MMashatId;
+                        member.imported = true;
+                        if ((bool)cmdCheck.ExecuteScalar() == false)
+                            continue;
+                        if (cmdUpdate.ExecuteNonQuery() > 0)
+                            cmdInsert.ExecuteNonQuery();
+                    }
+                    adpMob.Update(visaTbl);
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
+        private void btnImportStopWarasaVisa_Click(object sender, EventArgs e)
+        {
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    SetStatusImport = "Importing .......";
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+                    DataSources.dsEtsMobileTableAdapters.StopVisaWarasaTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.StopVisaWarasaTableAdapter();
+                    DataSources.dsEtsMobile.StopVisaWarasaDataTable visaTbl = adpMob.GetData();
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+
+                    SqlCommand cmdCheck = new SqlCommand("SELECT ISNULL((SELECT TOP 1 Activate FROM TBLWarasa WHERE code60 = @code60 AND responsiblesarf = 1), 'FALSE')", con) { CommandTimeout = 0 };
+                    SqlParameter chekcIdParam = new SqlParameter("@code60", SqlDbType.Int);
+                    cmdCheck.Parameters.Add(chekcIdParam);
+
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE TBLWarasa SET Activate = 0 WHERE code60 = @code60 AND responsiblesarf = 1", con) { CommandTimeout = 0 };
+                    SqlParameter IdParam = new SqlParameter("@code60", SqlDbType.Int);
+                    cmdUpdate.Parameters.Add(IdParam);
+
+                    SqlCommand cmdInsert = new SqlCommand(@"INSERT INTO tblvisawarsaactive (PersonId,activee,datehala,halarem,datein,userin) VALUES
+                    ((SELECT TOP 1 PersonId FROM TBLWarasa WHERE code60 = @code60 AND responsiblesarf = 1),0,GETDATE(),'تم الايقاف عن طريق الموبيل', GETDATE(), 3000)", con) { CommandTimeout = 0 };
+                    SqlParameter InsertIdParam = new SqlParameter("@code60", SqlDbType.Int);
+                    cmdInsert.Parameters.Add(InsertIdParam);
+
+                    con.Open();
+                    foreach (DataSources.dsEtsMobile.StopVisaWarasaRow warasa in visaTbl)
+                    {
+                        chekcIdParam.Value = warasa.code60;
+                        IdParam.Value = warasa.code60;
+                        InsertIdParam.Value = warasa.code60;
+                        warasa.imported = true;
+                        if ((bool)cmdCheck.ExecuteScalar() == false)
+                            continue;
+                        if (cmdUpdate.ExecuteNonQuery() > 0)
+                            cmdInsert.ExecuteNonQuery();
+                    }
+                    adpMob.Update(visaTbl);
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
         #endregion
 
-       
-
-        
-
-        
     }
 }

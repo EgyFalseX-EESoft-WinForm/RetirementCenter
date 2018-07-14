@@ -536,8 +536,24 @@ namespace RetirementCenter.Forms.Data
                             return;
                     }
                 }
-
-                tBLReSarfWarasaTableAdapter.Update(row);
+                //ask if you wanna add all childs at once
+                if (row.RowState == DataRowState.Added)
+                {
+                    if (msgDlg.Show("هل ترغب بأضافة كل الورثة المفعليين؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        string remarks = string.Empty;
+                        if (!row.IsremarksNull())
+                            remarks = row.remarks;
+                        tBLReSarfWarasaTableAdapter.Update(row);
+                        int inserted = tBLReSarfWarasaTableAdapter.InsertMulti(row.DofatSarfId, row.datefrom, row.dateto, row.reestktaa, row.datein, row.userin, remarks, row.dofafrom, row.dofato, _TBLWarasa[0].MMashatId);
+                        Program.ShowMsg("تم اضافة " + inserted + " اخرين", false, this, true);
+                    }
+                    else
+                        tBLReSarfWarasaTableAdapter.Update(row);
+                }
+                else
+                    tBLReSarfWarasaTableAdapter.Update(row);
+                
                 Program.ShowMsg("تم تعديل بيانات اعادة الصرف", false, this, true);
                 Program.Logger.LogThis("تم اضافة بيانات اعادة الصرف", Text, FXFW.Logger.OpType.success, null, null, this);
             }
@@ -694,9 +710,6 @@ namespace RetirementCenter.Forms.Data
         }
 
         #endregion
-
-        
-
 
     }
 }

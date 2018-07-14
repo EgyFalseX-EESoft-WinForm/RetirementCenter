@@ -330,6 +330,18 @@
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Data\PhoneAnswerAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\PhoneAnswerAddFrm.Designer.cs">
+      <DependentUpon>PhoneAnswerAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\PhoneAnswerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\PhoneAnswerFrm.Designer.cs">
+      <DependentUpon>PhoneAnswerFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Data\VerifyWarasaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1978,6 +1990,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\PhoneAnswerAddFrm.resx">
+      <DependentUpon>PhoneAnswerAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\PhoneAnswerFrm.resx">
+      <DependentUpon>PhoneAnswerFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\VerifyWarasaFrm.resx">
       <DependentUpon>VerifyWarasaFrm.cs</DependentUpon>
