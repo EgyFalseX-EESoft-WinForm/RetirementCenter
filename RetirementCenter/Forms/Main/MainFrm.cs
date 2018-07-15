@@ -2583,11 +2583,47 @@ namespace RetirementCenter
             }));
             SplashScreenManager.CloseForm();
         }
+        private void mbRetCenterQry119_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry119Frm FrmData = new Qry119Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterQry120_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry120Frm FrmData = new Qry120Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterQry121_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry121Frm FrmData = new Qry121Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void mbRetCenterQry122_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+                Qry122Frm FrmData = new Qry122Frm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Qry.png"], 32, false) };
+                FrmData.Show();
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
-
-        
-
-        
 
     }
 

@@ -4833,6 +4833,122 @@ GROUP BY Users.UserName, TblAttach.attachdate</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry119TableAdapter" GeneratorDataComponentClassName="vQry119TableAdapter" Name="vQry119" UserDataComponentName="vQry119TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Users.RealName
+, CAST(TblMemberAmanat.datein AS DATE) AS datein
+, Year(TblMemberAmanat.datein) AS [Year]
+, Month(TblMemberAmanat.datein) AS [Month]
+, Day(TblMemberAmanat.datein) AS [Day]
+, COUNT(*) AS NumOf
+FROM            TblMemberAmanat INNER JOIN
+                         Users ON TblMemberAmanat.userin = Users.UserID
+GROUP BY Users.RealName, CAST(TblMemberAmanat.datein AS DATE), Year(TblMemberAmanat.datein),Month(TblMemberAmanat.datein),Day(TblMemberAmanat.datein)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="Year" DataSetColumn="Year" />
+              <Mapping SourceColumn="Month" DataSetColumn="Month" />
+              <Mapping SourceColumn="Day" DataSetColumn="Day" />
+              <Mapping SourceColumn="NumOf" DataSetColumn="NumOf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry120TableAdapter" GeneratorDataComponentClassName="vQry120TableAdapter" Name="vQry120" UserDataComponentName="vQry120TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Users.RealName
+, CAST(TblWarasaAmanat.datein AS DATE) AS datein
+, Year(TblWarasaAmanat.datein) AS [Year]
+, Month(TblWarasaAmanat.datein) AS [Month]
+, Day(TblWarasaAmanat.datein) AS [Day]
+, COUNT(*) AS NumOf
+FROM            TblWarasaAmanat INNER JOIN
+                         Users ON TblWarasaAmanat.userin = Users.UserID
+GROUP BY Users.RealName, CAST(TblWarasaAmanat.datein AS DATE), Year(TblWarasaAmanat.datein),Month(TblWarasaAmanat.datein),Day(TblWarasaAmanat.datein)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="Year" DataSetColumn="Year" />
+              <Mapping SourceColumn="Month" DataSetColumn="Month" />
+              <Mapping SourceColumn="Day" DataSetColumn="Day" />
+              <Mapping SourceColumn="NumOf" DataSetColumn="NumOf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry121TableAdapter" GeneratorDataComponentClassName="vQry121TableAdapter" Name="vQry121" UserDataComponentName="vQry121TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Users.RealName
+, CAST(TBLReSarf.datein AS DATE) AS datein
+, Year(TBLReSarf.datein) AS [Year]
+, Month(TBLReSarf.datein) AS [Month]
+, Day(TBLReSarf.datein) AS [Day]
+, COUNT(*) AS NumOf
+FROM            TBLReSarf INNER JOIN
+                         Users ON TBLReSarf.userin = Users.UserID
+GROUP BY Users.RealName, CAST(TBLReSarf.datein AS DATE), Year(TBLReSarf.datein),Month(TBLReSarf.datein),Day(TBLReSarf.datein)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="Year" DataSetColumn="Year" />
+              <Mapping SourceColumn="Month" DataSetColumn="Month" />
+              <Mapping SourceColumn="Day" DataSetColumn="Day" />
+              <Mapping SourceColumn="NumOf" DataSetColumn="NumOf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry122TableAdapter" GeneratorDataComponentClassName="vQry122TableAdapter" Name="vQry122" UserDataComponentName="vQry122TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectName="RetirementCenter.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Users.RealName
+, CAST(TBLReSarfWarasa.datein AS DATE) AS datein
+, Year(TBLReSarfWarasa.datein) AS [Year]
+, Month(TBLReSarfWarasa.datein) AS [Month]
+, Day(TBLReSarfWarasa.datein) AS [Day]
+, COUNT(*) AS NumOf
+FROM            TBLReSarfWarasa INNER JOIN
+                         Users ON TBLReSarfWarasa.userin = Users.UserID
+GROUP BY Users.RealName, CAST(TBLReSarfWarasa.datein AS DATE), Year(TBLReSarfWarasa.datein),Month(TBLReSarfWarasa.datein),Day(TBLReSarfWarasa.datein)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="Year" DataSetColumn="Year" />
+              <Mapping SourceColumn="Month" DataSetColumn="Month" />
+              <Mapping SourceColumn="Day" DataSetColumn="Day" />
+              <Mapping SourceColumn="NumOf" DataSetColumn="NumOf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MemberNewId" MethodsParameterType="CLR" Modifier="Public" Name="MemberNewId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MemberNewId">
@@ -10442,6 +10558,78 @@ WHERE        (MMashatId = @MMashatId) AND (DofatSarfAId = @DofatSarfAId) AND (am
                 </xs:simpleType>
               </xs:element>
               <xs:element name="attachdate" msprop:Generator_ColumnVarNameInTable="columnattachdate" msprop:Generator_ColumnPropNameInRow="attachdate" msprop:Generator_ColumnPropNameInTable="attachdateColumn" msprop:Generator_UserColumnName="attachdate" type="xs:dateTime" />
+              <xs:element name="NumOf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumOf" msprop:Generator_ColumnPropNameInRow="NumOf" msprop:Generator_ColumnPropNameInTable="NumOfColumn" msprop:Generator_UserColumnName="NumOf" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry119" msprop:Generator_TableClassName="vQry119DataTable" msprop:Generator_TableVarName="tablevQry119" msprop:Generator_RowChangedName="vQry119RowChanged" msprop:Generator_TablePropName="vQry119" msprop:Generator_RowDeletingName="vQry119RowDeleting" msprop:Generator_RowChangingName="vQry119RowChanging" msprop:Generator_RowEvHandlerName="vQry119RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry119RowDeleted" msprop:Generator_RowClassName="vQry119Row" msprop:Generator_UserTableName="vQry119" msprop:Generator_RowEvArgName="vQry119RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datein" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_UserColumnName="Day" type="xs:int" minOccurs="0" />
+              <xs:element name="NumOf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumOf" msprop:Generator_ColumnPropNameInRow="NumOf" msprop:Generator_ColumnPropNameInTable="NumOfColumn" msprop:Generator_UserColumnName="NumOf" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry120" msprop:Generator_TableClassName="vQry120DataTable" msprop:Generator_TableVarName="tablevQry120" msprop:Generator_RowChangedName="vQry120RowChanged" msprop:Generator_TablePropName="vQry120" msprop:Generator_RowDeletingName="vQry120RowDeleting" msprop:Generator_RowChangingName="vQry120RowChanging" msprop:Generator_RowEvHandlerName="vQry120RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry120RowDeleted" msprop:Generator_RowClassName="vQry120Row" msprop:Generator_UserTableName="vQry120" msprop:Generator_RowEvArgName="vQry120RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datein" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_UserColumnName="Day" type="xs:int" minOccurs="0" />
+              <xs:element name="NumOf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumOf" msprop:Generator_ColumnPropNameInRow="NumOf" msprop:Generator_ColumnPropNameInTable="NumOfColumn" msprop:Generator_UserColumnName="NumOf" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry121" msprop:Generator_TableClassName="vQry121DataTable" msprop:Generator_TableVarName="tablevQry121" msprop:Generator_TablePropName="vQry121" msprop:Generator_RowDeletingName="vQry121RowDeleting" msprop:Generator_RowChangingName="vQry121RowChanging" msprop:Generator_RowEvHandlerName="vQry121RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry121RowDeleted" msprop:Generator_UserTableName="vQry121" msprop:Generator_RowChangedName="vQry121RowChanged" msprop:Generator_RowEvArgName="vQry121RowChangeEvent" msprop:Generator_RowClassName="vQry121Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datein" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_UserColumnName="Day" type="xs:int" minOccurs="0" />
+              <xs:element name="NumOf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumOf" msprop:Generator_ColumnPropNameInRow="NumOf" msprop:Generator_ColumnPropNameInTable="NumOfColumn" msprop:Generator_UserColumnName="NumOf" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vQry122" msprop:Generator_TableClassName="vQry122DataTable" msprop:Generator_TableVarName="tablevQry122" msprop:Generator_TablePropName="vQry122" msprop:Generator_RowDeletingName="vQry122RowDeleting" msprop:Generator_RowChangingName="vQry122RowChanging" msprop:Generator_RowEvHandlerName="vQry122RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry122RowDeleted" msprop:Generator_UserTableName="vQry122" msprop:Generator_RowChangedName="vQry122RowChanged" msprop:Generator_RowEvArgName="vQry122RowChangeEvent" msprop:Generator_RowClassName="vQry122Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datein" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_UserColumnName="Day" type="xs:int" minOccurs="0" />
               <xs:element name="NumOf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumOf" msprop:Generator_ColumnPropNameInRow="NumOf" msprop:Generator_ColumnPropNameInTable="NumOfColumn" msprop:Generator_UserColumnName="NumOf" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

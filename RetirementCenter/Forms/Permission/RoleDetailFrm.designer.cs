@@ -318,6 +318,11 @@
             this.mbRetCenterImportBankData = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterQry117 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterphone_answer = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQryMenuUserActivities = new DevExpress.XtraBars.BarSubItem();
+            this.mbRetCenterQry119 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry120 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry121 = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterQry122 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.DataribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.DataribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -818,10 +823,15 @@
             this.mbRetCenterTBLMemberSarf_arshefAddOnly,
             this.mbRetCenterTBLWarasaSarf_arshefAddOnly,
             this.mbRetCenterQry118,
-            this.mbRetCenterphone_answer});
+            this.mbRetCenterphone_answer,
+            this.mbRetCenterQryMenuUserActivities,
+            this.mbRetCenterQry119,
+            this.mbRetCenterQry120,
+            this.mbRetCenterQry121,
+            this.mbRetCenterQry122});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 437;
+            this.ribbonControl.MaxItemId = 442;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -3393,6 +3403,52 @@
             this.mbRetCenterphone_answer.LargeImageIndex = 51;
             this.mbRetCenterphone_answer.Name = "mbRetCenterphone_answer";
             // 
+            // mbRetCenterQryMenuUserActivities
+            // 
+            this.mbRetCenterQryMenuUserActivities.Caption = "فعاليات المستخدمين";
+            this.mbRetCenterQryMenuUserActivities.Id = 437;
+            this.mbRetCenterQryMenuUserActivities.ImageIndex = 19;
+            this.mbRetCenterQryMenuUserActivities.LargeImageIndex = 19;
+            this.mbRetCenterQryMenuUserActivities.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry119),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry120),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry121),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterQry122)});
+            this.mbRetCenterQryMenuUserActivities.Name = "mbRetCenterQryMenuUserActivities";
+            this.mbRetCenterQryMenuUserActivities.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // mbRetCenterQry119
+            // 
+            this.mbRetCenterQry119.Caption = "عدد امانات الاعضاء بالمستخدم";
+            this.mbRetCenterQry119.Id = 438;
+            this.mbRetCenterQry119.ImageIndex = 19;
+            this.mbRetCenterQry119.LargeImageIndex = 19;
+            this.mbRetCenterQry119.Name = "mbRetCenterQry119";
+            // 
+            // mbRetCenterQry120
+            // 
+            this.mbRetCenterQry120.Caption = "عدد امانات الورثة بالمستخدم";
+            this.mbRetCenterQry120.Id = 439;
+            this.mbRetCenterQry120.ImageIndex = 19;
+            this.mbRetCenterQry120.LargeImageIndex = 19;
+            this.mbRetCenterQry120.Name = "mbRetCenterQry120";
+            // 
+            // mbRetCenterQry121
+            // 
+            this.mbRetCenterQry121.Caption = "عدد اعادة صرف الاعضاء بالمستخدم";
+            this.mbRetCenterQry121.Id = 440;
+            this.mbRetCenterQry121.ImageIndex = 19;
+            this.mbRetCenterQry121.LargeImageIndex = 19;
+            this.mbRetCenterQry121.Name = "mbRetCenterQry121";
+            // 
+            // mbRetCenterQry122
+            // 
+            this.mbRetCenterQry122.Caption = "عدد اعادة صرف الورثة بالمستخدم";
+            this.mbRetCenterQry122.Id = 441;
+            this.mbRetCenterQry122.ImageIndex = 19;
+            this.mbRetCenterQry122.LargeImageIndex = 19;
+            this.mbRetCenterQry122.Name = "mbRetCenterQry122";
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -3544,6 +3600,7 @@
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry21);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQryPart3);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterBankQry);
+            this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQryMenuUserActivities);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterُErrorQry);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry03);
             this.QryribbonPageGroup.ItemLinks.Add(this.mbRetCenterQry03A);
@@ -4005,6 +4062,11 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterImportBankData;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterQry117;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterphone_answer;
+        private DevExpress.XtraBars.BarSubItem mbRetCenterQryMenuUserActivities;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry119;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry120;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry121;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterQry122;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPage DataribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup DataribbonPageGroup;
