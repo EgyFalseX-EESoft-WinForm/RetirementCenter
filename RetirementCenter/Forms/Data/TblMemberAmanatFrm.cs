@@ -93,12 +93,12 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            if (!row.IsaccReviewNull() && row.accReview == true)//&& Program.UserInfo.IsAdmin == false
+            if (!row.IsaccReviewNull() && row.accReview == true && Program.UserInfo.IsAdmin == false)//&& Program.UserInfo.IsAdmin == false
             {
                 msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
                 return;
             }
-            if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime() && Program.UserInfo.IsAdmin == false)
+            if (!row.IsdateinNull() && row.datein.Date != SQLProvider.ServerDateTime().Date && Program.UserInfo.IsAdmin == false)
             {
                 msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                 return;
@@ -195,7 +195,6 @@ namespace RetirementCenter
         }
         private void repositoryItemButtonEditAccReview_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
             if (!row.IsaccReviewNull() && row.accReview)
@@ -217,7 +216,22 @@ namespace RetirementCenter
             Program.ShowMsg("تم الحفظ", false, this, true);
             Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
         }
+        private void repositoryItemButtonEditChangetoAmanat7_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (Program.UserInfo.IsAdmin == false)
+            {
+                msgDlg.Show("التعديل للادمن فقط");
+                return;
+            }
+            GridView GV = (GridView)gridControlData.MainView;
+            DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
+            row.amanattypeid = (byte)Program.cd_amanattype.amanat2;
+            tblMemberAmanatBindingSource.EndEdit();
+            tblMemberAmanatTableAdapter.Update(row);
+        }
         #endregion
+
+       
 
        
 

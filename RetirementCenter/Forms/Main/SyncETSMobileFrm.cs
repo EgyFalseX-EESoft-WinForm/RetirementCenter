@@ -913,7 +913,17 @@ namespace RetirementCenter.Forms.Main
                     int result = cmd.ExecuteNonQuery();
                     cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
                     cmd.ExecuteNonQuery();
-
+                    // Activate Account Review
+                    DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter adpAmanat = new DataSources.dsRetirementCenterTableAdapters.TblMemberAmanatTableAdapter();
+                    DataSources.dsRetirementCenter.TblMemberAmanatDataTable tblAmanat = new DataSources.dsRetirementCenter.TblMemberAmanatDataTable();
+                    adpAmanat.FillByToAutoAccReview(tblAmanat);
+                    TblMemberAmanatWFrm accReviewFrm = new TblMemberAmanatWFrm();
+                    foreach (DataSources.dsRetirementCenter.TblMemberAmanatRow item in tblAmanat)
+                    {
+                        accReviewFrm._row = item;
+                        accReviewFrm.UpdateActive();
+                    }
+                    accReviewFrm.Dispose(); tblAmanat.Dispose();
                     SetStatusImport = "...";
                 }
                 catch (Exception ex)

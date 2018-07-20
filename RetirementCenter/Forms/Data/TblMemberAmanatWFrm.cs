@@ -13,7 +13,7 @@ namespace RetirementCenter
 {
     public partial class TblMemberAmanatWFrm : DevExpress.XtraEditors.XtraForm
     {
-        DataSources.dsRetirementCenter.TblMemberAmanatRow _row;
+        public DataSources.dsRetirementCenter.TblMemberAmanatRow _row;
         DataSources.Linq.dsTeachersUnionViewsDataContext dsLinq = new DataSources.Linq.dsTeachersUnionViewsDataContext();
         DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter adpBank = new DataSources.dsRetirementCenterTableAdapters.tblmemberbankTableAdapter();
         DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();

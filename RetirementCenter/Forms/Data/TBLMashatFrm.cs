@@ -324,8 +324,9 @@ namespace RetirementCenter
             row.MMashatId = -1; row.MMashatName = string.Empty; row.SarfExpetion = false;
             row.SyndicateId = -1; row.SubCommitteId = -1; tbfilenumber.EditValue = 0; tbfilenumberwrasa.EditValue = 0 ; row.sarfnumber = 0;
             //row.SyndicateId = Convert.ToInt32(LUESyndicateId.Properties.GetDataSourceValue("SyndicateId", 0));
-            row.datein = SQLProvider.ServerDateTime(); row.userin = Program.UserInfo.UserId; row.usercreate = Program.UserInfo.UserId; row.yasref = true;
-            row.mcompletesarf = true; row.melrasm = 0; row.meshtrakat = 0; row.mestktaat = 0; row.mmony = 0;
+            row.datein = SQLProvider.ServerDateTime(); row.userin = Program.UserInfo.UserId;
+            row.usercreate = Program.UserInfo.UserId; row.datecreate = SQLProvider.ServerDateTime();
+            row.yasref = true; row.mcompletesarf = true; row.melrasm = 0; row.meshtrakat = 0; row.mestktaat = 0; row.mmony = 0;
             row.MashHalaId = (int)Program.CDMashHala.Asda2;
             dsRetirementCenter.TBLMashat.AddTBLMashatRow(row);
 
@@ -817,6 +818,7 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLWarasaRow row = dsRetirementCenter.TBLWarasa.NewTBLWarasaRow();
             row.PersonId = -1; row.MMashatId = Convert.ToInt32(LUEEmp.EditValue); row.personName = string.Empty;
             row.yasref = true; row.userin = Program.UserInfo.UserId; row.datein = SQLProvider.ServerDateTime(); row.ImportDateIn = SQLProvider.ServerDateTime();
+            row.usercreate = Program.UserInfo.UserId; row.datecreate = SQLProvider.ServerDateTime();
             row.responsiblesarf = false; row.wcompletesarf = true; row.wmony = 0; row.westktaat = 0; row.welrasm = 0; row.nationaltyId = 1;
             
             if (WSyn_Default != 0)

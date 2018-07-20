@@ -98,7 +98,7 @@ namespace RetirementCenter
                 msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
                 return;
             }
-            if (!row.IsdateinNull() && row.datein != SQLProvider.ServerDateTime() && Program.UserInfo.IsAdmin == false)
+            if (!row.IsdateinNull() && row.datein.Date != SQLProvider.ServerDateTime().Date && Program.UserInfo.IsAdmin == false)
             {
                 msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
                 return;
