@@ -171,6 +171,7 @@ namespace RetirementCenter
             repositoryItemButtonEditWarasaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
             repositoryItemButtonEditResarfDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
             repositoryItemButtonEditTblMemberMaduneaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
+            repositoryItemButtonEditCombin.Buttons[0].Visible = Program.UserInfo.IsAdmin;
         }
         private bool DeathBefore2013(bool NewMem)
         {
@@ -1320,6 +1321,13 @@ namespace RetirementCenter
                 Program.ShowMsg(FXFW.SqlDB.CheckExp(ex), true, this, true);
                 Program.Logger.LogThis(null, Text, FXFW.Logger.OpType.fail, null, ex, this);
             }
+        }
+        private void repositoryItemButtonEditCombin_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
+            TBLMashatCombinWarasaDlg dlg = new TBLMashatCombinWarasaDlg(MMashatId);
+            if(dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                ReloadWarasa();
         }
         #endregion
 

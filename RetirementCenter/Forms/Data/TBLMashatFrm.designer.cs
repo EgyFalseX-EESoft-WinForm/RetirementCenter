@@ -351,6 +351,8 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditCombin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
@@ -540,6 +542,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -2509,7 +2512,8 @@
             this.repositoryItemGridLookUpEditWarasaSubCommitteId,
             this.repositoryItemButtonEditWarasaRemark,
             this.repositoryItemGridLookUpEditresponsiblesarfId,
-            this.repositoryItemButtonEditWarasaEstefa});
+            this.repositoryItemButtonEditWarasaEstefa,
+            this.repositoryItemButtonEditCombin});
             this.gridControlTBLWarasa.Size = new System.Drawing.Size(1128, 245);
             this.gridControlTBLWarasa.TabIndex = 1;
             this.gridControlTBLWarasa.UseEmbeddedNavigator = true;
@@ -2544,7 +2548,8 @@
             this.colvisa,
             this.colActivate,
             this.gridColumn17,
-            this.colcode60});
+            this.colcode60,
+            this.gridColumn19});
             this.gridViewTBLWarasa.GridControl = this.gridControlTBLWarasa;
             this.gridViewTBLWarasa.Name = "gridViewTBLWarasa";
             this.gridViewTBLWarasa.NewItemRowText = "اضغط لاضافة جديد";
@@ -4232,6 +4237,27 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
+            // gridColumn19
+            // 
+            this.gridColumn19.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn19.Caption = "دمج";
+            this.gridColumn19.ColumnEdit = this.repositoryItemButtonEditCombin;
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 21;
+            // 
+            // repositoryItemButtonEditCombin
+            // 
+            this.repositoryItemButtonEditCombin.AutoHeight = false;
+            this.repositoryItemButtonEditCombin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditCombin.Name = "repositoryItemButtonEditCombin";
+            this.repositoryItemButtonEditCombin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditCombin.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditCombin_ButtonClick);
+            // 
             // TBLMashatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4440,6 +4466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4752,5 +4779,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.TextEdit tbfilenumberwrasa;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditCombin;
     }
 }
