@@ -826,6 +826,26 @@ namespace RetirementCenter.Forms.Main
                 }));
             }
         }
+        public bool btnImportRePrintMemberEnable
+        {
+            set
+            {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    btnImportRePrintMember.Enabled = value;
+                }));
+            }
+        }
+        public bool btnImportRePrintWarasaEnable
+        {
+            set
+            {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    btnImportRePrintWarasa.Enabled = value;
+                }));
+            }
+        }
         public string SetStatusImport
         {
             set
@@ -1075,7 +1095,7 @@ namespace RetirementCenter.Forms.Main
                     SqlParameter chekcIdParam = new SqlParameter("@code60", SqlDbType.Int);
                     cmdCheck.Parameters.Add(chekcIdParam);
 
-                    SqlCommand cmdUpdate = new SqlCommand("UPDATE TBLWarasa SET Activate = 0 WHERE code60 = @code60 AND responsiblesarf = 1", con) { CommandTimeout = 0 };
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE TBLWarasa SET Activate = 0 WHERE code60 = @code60", con) { CommandTimeout = 0 };
                     SqlParameter IdParam = new SqlParameter("@code60", SqlDbType.Int);
                     cmdUpdate.Parameters.Add(IdParam);
 
@@ -1106,7 +1126,152 @@ namespace RetirementCenter.Forms.Main
                 mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
             });
         }
-        #endregion
+        private void btnImportRePrintMember_Click(object sender, EventArgs e)
+        {
+            btnImportRePrintMemberEnable = false;
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
 
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    // Create an empty table for sqlbulk insert
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
+                    con.Open();
+                    string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+                    cmd.CommandText = string.Format(@"SELECT reprintresonid,reprintdate,MMashatId,userin,datein,Source,MobileUser INTO {0} FROM TBLReprintMember WHERE 1 = 0;", bulkTableName);
+                    cmd.ExecuteNonQuery();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    object temp = SQLProvider.adpQry.ForMob_MaxTBLReprintMember();
+                    int maxId = 0;
+                    if (temp != null)
+                        maxId = Convert.ToInt32(temp);
+
+                    SetStatusImport = "Get missing recored in TBLReprintMember";
+                    DataSources.dsEtsMobileTableAdapters.TBLReprintMemberTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.TBLReprintMemberTableAdapter();
+                    adpMob.Fill(dsMob.TBLReprintMember, maxId);
+                    SetStatusImport = "Import into TBLReprintMember";
+                    bulkCopy.ColumnMappings.Clear();
+                    bulkCopy.ColumnMappings.Add("reprintresonid", "reprintresonid");
+                    bulkCopy.ColumnMappings.Add("reprintdate", "reprintdate");
+                    bulkCopy.ColumnMappings.Add("MMashatId", "MMashatId");
+                    bulkCopy.ColumnMappings.Add("userin", "userin");
+                    bulkCopy.ColumnMappings.Add("datein", "datein");
+                    bulkCopy.ColumnMappings.Add("Source", "Source");
+                    bulkCopy.ColumnMappings.Add("MobileUser", "MobileUser");
+                    bulkCopy.DestinationTableName = bulkTableName;
+                    bulkCopy.BatchSize = dsMob.TBLReprintMember.Count;
+                    bulkCopy.WriteToServer(dsMob.TBLReprintMember);
+                    connection.Close();
+
+                    // Update TBLReprintMember with inserted data from temp table
+                    cmd.CommandText = string.Format(@"merge into TBLReprintMember as Target 
+                    using {0} as Source on Target.MMashatId = Source.MMashatId AND Target.reprintdate BETWEEN DATEADD(DAY, -45, Source.reprintdate) AND Source.reprintdate
+                    WHEN NOT Matched THEN 
+                    INSERT(reprintresonid,reprintdate,MMashatId,userin,datein,Source,MobileUser) 
+                    VALUES(Source.reprintresonid, Source.reprintdate, Source.MMashatId, Source.userin, Source.datein, Source.Source, Source.MobileUser) 
+                    ;", bulkTableName);
+                    int result = cmd.ExecuteNonQuery();
+                    cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
+                    cmd.ExecuteNonQuery();
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                btnImportRePrintMemberEnable = true;
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
+        private void btnImportRePrintWarasa_Click(object sender, EventArgs e)
+        {
+            btnImportRePrintWarasaEnable = false;
+            mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled;
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    // Set connection string
+                    System.Data.SqlClient.SqlConnectionStringBuilder sql = new System.Data.SqlClient.SqlConnectionStringBuilder(Properties.Settings.Default.ETSMOBILEConnectionString);
+                    sql.DataSource = tbServer.Text; sql.UserID = tbUser.Text; sql.Password = tbPass.Text;
+                    Properties.Settings.Default["ETSMOBILEConnectionString"] = sql.ConnectionString;
+
+                    SqlConnection connection = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlBulkCopy bulkCopy = new SqlBulkCopy(connection) { BulkCopyTimeout = 0 };
+                    connection.Open();
+
+                    // Create an empty table for sqlbulk insert
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.RetirementCenterConnectionString);
+                    SqlCommand cmd = new SqlCommand("", con) { CommandTimeout = 0 };
+                    con.Open();
+                    string bulkTableName = string.Format("tmp{0}{1}{2}{3}{4}{5}{6}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+                    cmd.CommandText = string.Format(@"SELECT reprintresonid,reprintdate,visa, '                    ' AS code60,userin,datein,Source,MobileUser INTO {0} FROM TBLReprintWarasa WHERE 1 = 0;", bulkTableName);
+                    cmd.ExecuteNonQuery();
+
+                    //Datasets
+                    DataSources.dsEtsMobile dsMob = new DataSources.dsEtsMobile();
+                    DataSources.dsQueries dsQry = new DataSources.dsQueries();
+
+                    object temp = SQLProvider.adpQry.ForMob_MaxTBLReprintWarasa();
+                    int maxId = 0;
+                    if (temp != null)
+                        maxId = Convert.ToInt32(temp);
+
+                    SetStatusImport = "Get missing recored in TBLReprintWarasa";
+                    DataSources.dsEtsMobileTableAdapters.TBLReprintWarasaTableAdapter adpMob = new DataSources.dsEtsMobileTableAdapters.TBLReprintWarasaTableAdapter();
+                    adpMob.Fill(dsMob.TBLReprintWarasa, maxId);
+                    SetStatusImport = "Import into TBLReprintWarasa";
+                    bulkCopy.ColumnMappings.Clear();
+                    bulkCopy.ColumnMappings.Add("reprintresonid", "reprintresonid");
+                    bulkCopy.ColumnMappings.Add("reprintdate", "reprintdate");
+                    bulkCopy.ColumnMappings.Add("code60", "visa");
+                    bulkCopy.ColumnMappings.Add("code60", "code60");
+                    bulkCopy.ColumnMappings.Add("userin", "userin");
+                    bulkCopy.ColumnMappings.Add("datein", "datein");
+                    bulkCopy.ColumnMappings.Add("Source", "Source");
+                    bulkCopy.ColumnMappings.Add("MobileUser", "MobileUser");
+                    bulkCopy.DestinationTableName = bulkTableName;
+                    bulkCopy.BatchSize = dsMob.TBLReprintWarasa.Count;
+                    bulkCopy.WriteToServer(dsMob.TBLReprintWarasa);
+                    connection.Close();
+                    // Update visa by code60
+                    cmd.CommandText = string.Format(@"UPDATE {0} SET visa = TBLWarasa.visa FROM {0} INNER JOIN TBLWarasa ON {0}.code60 = TBLWarasa.code60", bulkTableName);
+                    cmd.ExecuteNonQuery();
+                    // Update TBLReprintWarasa with inserted data from temp table
+                    cmd.CommandText = string.Format(@"merge into TBLReprintWarasa as Target 
+                    using {0} as Source on Target.visa = Source.visa AND Target.reprintdate BETWEEN DATEADD(DAY, -45, Source.reprintdate) AND Source.reprintdate
+                    WHEN NOT Matched THEN 
+                    INSERT(reprintresonid,reprintdate,visa,userin,datein,Source,MobileUser) 
+                    VALUES(Source.reprintresonid, Source.reprintdate, Source.visa, Source.userin, Source.datein, Source.Source, Source.MobileUser) 
+                    ;", bulkTableName);
+                    int result = cmd.ExecuteNonQuery();
+                    cmd.CommandText = string.Format(@"DROP TABLE {0}", bulkTableName);
+                    cmd.ExecuteNonQuery();
+                    SetStatusImport = "...";
+                }
+                catch (Exception ex)
+                {
+                    SetStatusImport = ex.Message;
+                }
+                btnImportRePrintMemberEnable = true;
+                mpbcImportMemberAmanat.Invoke(new MethodInvoker(() => { mpbcImportMemberAmanat.Enabled = !mpbcImportMemberAmanat.Enabled; }));
+            });
+        }
+        #endregion
+        
     }
 }

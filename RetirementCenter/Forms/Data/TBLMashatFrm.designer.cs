@@ -238,6 +238,8 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditWarasaEstefa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditCombin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.xtraTabPageChangeToWarasa = new DevExpress.XtraTab.XtraTabPage();
             this.LUEChangeHala = new DevExpress.XtraEditors.LookUpEdit();
@@ -351,8 +353,6 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditCombin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
@@ -477,6 +477,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEstefa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.xtraTabPageChangeToWarasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEChangeHala.Properties)).BeginInit();
@@ -542,7 +543,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -711,6 +711,7 @@
             this.colMMashatId.Caption = "كود";
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 0;
             // 
@@ -759,6 +760,7 @@
             this.colsarfnumber.Caption = "رقم الصرف";
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
+            this.colsarfnumber.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colsarfnumber.Visible = true;
             this.colsarfnumber.VisibleIndex = 4;
             // 
@@ -795,6 +797,7 @@
             this.colMMashatNId.Caption = "الرقم القومي";
             this.colMMashatNId.FieldName = "MMashatNId";
             this.colMMashatNId.Name = "colMMashatNId";
+            this.colMMashatNId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
             this.colMMashatNId.Visible = true;
             this.colMMashatNId.VisibleIndex = 7;
             // 
@@ -3083,6 +3086,27 @@
             this.colcode60.Visible = true;
             this.colcode60.VisibleIndex = 3;
             // 
+            // gridColumn19
+            // 
+            this.gridColumn19.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn19.Caption = "دمج";
+            this.gridColumn19.ColumnEdit = this.repositoryItemButtonEditCombin;
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 21;
+            // 
+            // repositoryItemButtonEditCombin
+            // 
+            this.repositoryItemButtonEditCombin.AutoHeight = false;
+            this.repositoryItemButtonEditCombin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditCombin.Name = "repositoryItemButtonEditCombin";
+            this.repositoryItemButtonEditCombin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditCombin.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditCombin_ButtonClick);
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -4237,27 +4261,6 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
-            // gridColumn19
-            // 
-            this.gridColumn19.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn19.Caption = "دمج";
-            this.gridColumn19.ColumnEdit = this.repositoryItemButtonEditCombin;
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 21;
-            // 
-            // repositoryItemButtonEditCombin
-            // 
-            this.repositoryItemButtonEditCombin.AutoHeight = false;
-            this.repositoryItemButtonEditCombin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEditCombin.Name = "repositoryItemButtonEditCombin";
-            this.repositoryItemButtonEditCombin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditCombin.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditCombin_ButtonClick);
-            // 
             // TBLMashatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4399,6 +4402,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLWarasa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEstefa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.xtraTabPageChangeToWarasa.ResumeLayout(false);
             this.xtraTabPageChangeToWarasa.PerformLayout();
@@ -4466,7 +4470,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1324,8 +1324,11 @@ namespace RetirementCenter
         }
         private void repositoryItemButtonEditCombin_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            int MMashatId = Convert.ToInt32(LUEEmp.EditValue);
-            TBLMashatCombinWarasaDlg dlg = new TBLMashatCombinWarasaDlg(MMashatId);
+            DataSources.dsRetirementCenter.TBLWarasaRow row = (DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)
+               gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row;
+
+            TBLMashatCombinWarasaDlg dlg = new TBLMashatCombinWarasaDlg(row);
+
             if(dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 ReloadWarasa();
         }

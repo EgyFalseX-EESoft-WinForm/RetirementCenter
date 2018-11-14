@@ -237,6 +237,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsdatam.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\dsEtsMobile.cs">
+      <DependentUpon>dsEtsMobile.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSources\dsEtsMobile.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -329,6 +333,18 @@
     </Compile>
     <Compile Include="Forms\Data\BankExportedDataWarsaActivateFrm.Designer.cs">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TransferToMemberFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TransferToMemberFrm.Designer.cs">
+      <DependentUpon>TransferToMemberFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Data\TransferResponsibleFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Data\TransferResponsibleFrm.Designer.cs">
+      <DependentUpon>TransferResponsibleFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Data\TBLMashatCombinWarasaDlg.cs">
       <SubType>Form</SubType>
@@ -2032,6 +2048,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\BankExportedDataWarsaActivateFrm.resx">
       <DependentUpon>BankExportedDataWarsaActivateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TransferToMemberFrm.resx">
+      <DependentUpon>TransferToMemberFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Data\TransferResponsibleFrm.resx">
+      <DependentUpon>TransferResponsibleFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\TBLMashatCombinWarasaDlg.resx">
       <DependentUpon>TBLMashatCombinWarasaDlg.cs</DependentUpon>

@@ -82,6 +82,8 @@
             this.mbRetCenterTBLWarasaFastEdit2 = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterVerifyMember = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterVerifyWarasa = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTransferResponsible = new DevExpress.XtraBars.BarButtonItem();
+            this.mbRetCenterTransferToMember = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterJobs = new DevExpress.XtraBars.BarSubItem();
             this.mbRetCenterCDJobtitle = new DevExpress.XtraBars.BarButtonItem();
             this.mbRetCenterCDAttachmentType = new DevExpress.XtraBars.BarButtonItem();
@@ -832,10 +834,12 @@
             this.mbRetCenterQry121,
             this.mbRetCenterQry122,
             this.mbRetCenterQry123,
-            this.mbRetCenterQry124});
+            this.mbRetCenterQry124,
+            this.mbRetCenterTransferResponsible,
+            this.mbRetCenterTransferToMember});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(2, 21);
-            this.ribbonControl.MaxItemId = 444;
+            this.ribbonControl.MaxItemId = 446;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.mbRetCenterAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1150,7 +1154,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterRemoveTBLWarasaNID),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTBLWarasaFastEdit2),
             new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyMember),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyWarasa)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterVerifyWarasa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTransferResponsible),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbRetCenterTransferToMember)});
             this.mbRetCenterDataMember.Name = "mbRetCenterDataMember";
             // 
             // mbRetCenterTBLMashat
@@ -1218,6 +1224,22 @@
             this.mbRetCenterVerifyWarasa.ImageIndex = 30;
             this.mbRetCenterVerifyWarasa.LargeImageIndex = 30;
             this.mbRetCenterVerifyWarasa.Name = "mbRetCenterVerifyWarasa";
+            // 
+            // mbRetCenterTransferResponsible
+            // 
+            this.mbRetCenterTransferResponsible.Caption = "تحويل لمسئول";
+            this.mbRetCenterTransferResponsible.Id = 444;
+            this.mbRetCenterTransferResponsible.ImageIndex = 17;
+            this.mbRetCenterTransferResponsible.LargeImageIndex = 17;
+            this.mbRetCenterTransferResponsible.Name = "mbRetCenterTransferResponsible";
+            // 
+            // mbRetCenterTransferToMember
+            // 
+            this.mbRetCenterTransferToMember.Caption = "ورثة لاعضاء";
+            this.mbRetCenterTransferToMember.Id = 445;
+            this.mbRetCenterTransferToMember.ImageIndex = 17;
+            this.mbRetCenterTransferToMember.LargeImageIndex = 17;
+            this.mbRetCenterTransferToMember.Name = "mbRetCenterTransferToMember";
             // 
             // mbRetCenterJobs
             // 
@@ -3848,6 +3870,8 @@
         private DevExpress.XtraBars.BarButtonItem mbRetCenterTBLWarasaFastEdit2;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyMember;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterVerifyWarasa;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTransferResponsible;
+        private DevExpress.XtraBars.BarButtonItem mbRetCenterTransferToMember;
         private DevExpress.XtraBars.BarSubItem mbRetCenterJobs;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterCDJobtitle;
         private DevExpress.XtraBars.BarButtonItem mbRetCenterCDAttachmentType;

@@ -11,14 +11,14 @@ namespace RetirementCenter.Forms.Data
 {
     public partial class TBLMashatCombinWarasaDlg : DevExpress.XtraEditors.XtraForm
     {
-        int _id;
+        DataSources.dsRetirementCenter.TBLWarasaRow _row;
 
 
-        public TBLMashatCombinWarasaDlg(int id)
+        public TBLMashatCombinWarasaDlg(DataSources.dsRetirementCenter.TBLWarasaRow row)
         {
             InitializeComponent();
-            _id = id;
-            getPersonIdByMMashatIdTableAdapter.FillByRespons(dsQueries.GetPersonIdByMMashatId, id);
+            _row = row;
+            getPersonIdByMMashatIdTableAdapter.FillByRespons(dsQueries.GetPersonIdByMMashatId, row.MMashatId);
 
         }
         private void TBLMashatCombinWarasaDlg_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace RetirementCenter.Forms.Data
             // code goes here
             int perdonId = Convert.ToInt32(lueRespons.EditValue);
             DataSources.dsQueries.GetPersonIdByMMashatIdRow row = (DataSources.dsQueries.GetPersonIdByMMashatIdRow)((System.Data.DataRowView)lueRespons.GetSelectedDataRow()).Row;
-            SQLProvider.adpQry.UpdateTblWarasaCombine(row.PersonId, row.visa, row.Activate, row.ActivateDate, row.code60, _id);
+            int result = SQLProvider.adpQry.UpdateTblWarasaCombine(row.PersonId, row.visa, row.Activate, row.ActivateDate, row.code60, _row.PersonId);
             Program.ShowMsg("تم تعديل البيانات ", false, this, true);
             Program.Logger.LogThis("تم تعديل البيانات", Text, FXFW.Logger.OpType.success, null, null, this);
             
