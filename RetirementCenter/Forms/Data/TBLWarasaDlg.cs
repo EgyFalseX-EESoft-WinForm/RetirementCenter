@@ -359,6 +359,7 @@ namespace RetirementCenter.Forms.Data
             }
             if (ceresponsiblesarf.Checked)
                 ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).responsiblesarfId = ((DataSources.dsRetirementCenter.TBLWarasaRow)_TBLWarasa.Rows[0]).PersonId;
+            
 
             if (tbpersonNID.EditValue != null && tbpersonNID.EditValue.ToString() != string.Empty)
             {
@@ -397,7 +398,7 @@ namespace RetirementCenter.Forms.Data
                     return;
                 }
             }
-            if (!_TBLWarasa[0].responsiblesarf && _TBLWarasa[0].responsiblesarfId != _TBLWarasa[0].PersonId && !_TBLWarasa[0].IsvisaNull())
+            if (!_TBLWarasa[0].responsiblesarf && !_TBLWarasa[0].IsresponsiblesarfIdNull() && _TBLWarasa[0].responsiblesarfId != _TBLWarasa[0].PersonId && !_TBLWarasa[0].IsvisaNull())
             {
                 DataTable visaTbl = FXFW.SqlDB.LoadDataTable("SELECT visa FROM TBLWarasa WHERE PersonId = " + _TBLWarasa[0].responsiblesarfId);
                 if (visaTbl.Rows[0][0].ToString() != _TBLWarasa[0].visa)

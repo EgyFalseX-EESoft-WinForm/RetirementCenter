@@ -212,7 +212,8 @@ namespace RetirementCenter
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
         {
-            e.SetAttachedProperty("auto", null); e.SetAttachedProperty("SyndicateId", null); e.SetAttachedProperty("SubCommitteId", null); WSyn_Default = 0; WSub_Default = 0;
+            //e.SetAttachedProperty("auto", null); e.SetAttachedProperty("SyndicateId", null); e.SetAttachedProperty("SubCommitteId", null); 
+            WSyn_Default = 0; WSub_Default = 0;
             
             if (LUEEmp.EditValue == null)
             {
@@ -813,6 +814,11 @@ namespace RetirementCenter
         }
         private void btnAddTBLWarasa_Click(object sender, EventArgs e)
         {
+            if (FXFW.SqlDB.IsNullOrEmpty(LUEEmp.EditValue))
+                return;
+            DataSources.Linq.vTBLMashat Member = (DataSources.Linq.vTBLMashat)LUEEmp.GetSelectedDataRow();
+            
+
             dsRetirementCenter.TBLWarasa.Clear(); dsRetirementCenter.TBLNoSarfWarsa.Clear(); dsRetirementCenter.tblvisawarsaactive.Clear();
             dsRetirementCenter.TBLEdafatWarsa.Clear();
 
@@ -831,14 +837,10 @@ namespace RetirementCenter
             //tblEdafatWarsaTableAdapter.FillByPersonId(dsRetirementCenter.TBLEdafatWarsa, -100);
             try
             {
-                bool autoOpen = false; int? SyndicateId = null; int? SubCommitteId = null;
-                if (e.GetAttachedProperty("auto") != null)
-                    autoOpen = true;
-                if (e.GetAttachedProperty("SyndicateId") != null)
-                    SyndicateId = (int)e.GetAttachedProperty("SyndicateId");
-                if (e.GetAttachedProperty("SubCommitteId") != null)
-                    SubCommitteId = (int)e.GetAttachedProperty("SubCommitteId");
-                //if (e.GetAttachedProperty("yasref") != null)
+                bool autoOpen = true; int? SyndicateId = null; int? SubCommitteId = null;
+                SyndicateId = Member.SyndicateId;
+                SubCommitteId = Member.SubCommitteId;
+                
                 if (UpdateTBLWarsa(dsRetirementCenter.TBLWarasa, dsRetirementCenter.TBLNoSarfWarsa, dsRetirementCenter.tblvisawarsaactive, dsRetirementCenter.TBLEdafatWarsa,
                     ref autoOpen, SyndicateId, SubCommitteId))
                 {
@@ -849,10 +851,10 @@ namespace RetirementCenter
                 if (autoOpen)
                 {
                     EventArgs arg = new EventArgs();
-                    arg.SetAttachedProperty("auto", "true");
-                    arg.SetAttachedProperty("SyndicateId", row.SyndicateId);
-                    arg.SetAttachedProperty("SubCommitteId", row.SubCommitteId);
-                    arg.SetAttachedProperty("yasref", row.yasref);
+                    //arg.SetAttachedProperty("auto", "true");
+                    //arg.SetAttachedProperty("SyndicateId", row.SyndicateId);
+                    //arg.SetAttachedProperty("SubCommitteId", row.SubCommitteId);
+                    //arg.SetAttachedProperty("yasref", row.yasref);
                     btnAddTBLWarasa_Click(btnAddTBLWarasa, arg);
                 }
                 ReloadWarasa();
@@ -906,7 +908,7 @@ namespace RetirementCenter
                 if (SubCommitteId != null)
                     dsRetirementCenter.TBLWarasa[0].SubCommitteId = Convert.ToInt32(SubCommitteId);
             }
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
                 if (dlg.DataChangedByUser)
                 {
@@ -954,8 +956,8 @@ namespace RetirementCenter
         }
         private void repositoryItemButtonEditWarasaEstefa_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            RetirementCenter.Forms.Data.dlg.NoteDlg dlg = new RetirementCenter.Forms.Data.dlg.NoteDlg();
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            Forms.Data.dlg.NoteDlg dlg = new Forms.Data.dlg.NoteDlg();
+            if (dlg.ShowDialog() == DialogResult.Cancel)
                 return;
             DataSources.dsRetirementCenter.TBLWarasaRow row = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)
              gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row);

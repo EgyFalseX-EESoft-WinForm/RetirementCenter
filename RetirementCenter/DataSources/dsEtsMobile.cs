@@ -1,7 +1,9 @@
-﻿namespace RetirementCenter.DataSources {
-    
-    
-    public partial class dsEtsMobile {
+﻿namespace RetirementCenter.DataSources
+{
+
+
+    public partial class dsEtsMobile
+    {
     }
 }
 

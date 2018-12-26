@@ -1,6 +1,8 @@
-﻿namespace RetirementCenter.DataSources {
-    
-    
-    public partial class dsReports {
+﻿namespace RetirementCenter.DataSources
+{
+
+
+    public partial class dsReports
+    {
     }
 }
