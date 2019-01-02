@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 
@@ -69,6 +70,8 @@ namespace RetirementCenter
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
+            WindowsFormsSettings.AllowAutoFilterConditionChange = DefaultBoolean.False;
+            WindowsFormsSettings.ColumnAutoFilterMode = ColumnAutoFilterMode.Text;
 
             if (FXFW.SqlDB.LoadSqlDBPath("RetirementCenter") /*&& Authentication()*/)
             {

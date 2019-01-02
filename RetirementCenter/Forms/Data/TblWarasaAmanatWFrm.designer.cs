@@ -105,6 +105,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(419, 90);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 19);
@@ -114,6 +115,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(412, 284);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(50, 19);
@@ -132,8 +134,8 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Image = global::RetirementCenter.Properties.Resources.Delete;
-            this.btnClose.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnClose.ImageOptions.Image = global::RetirementCenter.Properties.Resources.Delete;
+            this.btnClose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnClose.Location = new System.Drawing.Point(7, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 30);
@@ -143,8 +145,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Image = global::RetirementCenter.Properties.Resources.Save;
-            this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnSave.ImageOptions.Image = global::RetirementCenter.Properties.Resources.Save;
+            this.btnSave.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnSave.Location = new System.Drawing.Point(312, 485);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 30);
@@ -184,7 +186,7 @@
             this.xtpGeneral.Controls.Add(this.tbmostahek);
             this.xtpGeneral.Controls.Add(this.tbestktaa);
             this.xtpGeneral.Controls.Add(this.tbamanatmony);
-            this.xtpGeneral.Image = global::RetirementCenter.Properties.Resources.Edit;
+            this.xtpGeneral.ImageOptions.Image = global::RetirementCenter.Properties.Resources.Edit;
             this.xtpGeneral.Name = "xtpGeneral";
             this.xtpGeneral.Size = new System.Drawing.Size(519, 518);
             this.xtpGeneral.Text = "بيانات أساسيه";
@@ -201,9 +203,9 @@
             this.lueDofatSarfId.Properties.DataSource = this.LSMSDofatSarfId;
             this.lueDofatSarfId.Properties.DisplayMember = "DofatSarfA";
             this.lueDofatSarfId.Properties.NullText = "";
+            this.lueDofatSarfId.Properties.PopupView = this.gridView2;
             this.lueDofatSarfId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDofatSarfId.Properties.ValueMember = "DofatSarfAId";
-            this.lueDofatSarfId.Properties.View = this.gridView2;
             this.lueDofatSarfId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfId.TabIndex = 8;
             // 
@@ -236,6 +238,7 @@
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(353, 385);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(107, 19);
@@ -252,7 +255,7 @@
             this.cesarfcheek.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cesarfcheek.Properties.Caption = "تصرف بشيك";
             this.cesarfcheek.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cesarfcheek.Size = new System.Drawing.Size(115, 24);
+            this.cesarfcheek.Size = new System.Drawing.Size(115, 23);
             this.cesarfcheek.TabIndex = 9;
             this.cesarfcheek.CheckedChanged += new System.EventHandler(this.ceamantvisa_CheckedChanged);
             // 
@@ -266,7 +269,7 @@
             this.ceamantvisa.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ceamantvisa.Properties.Caption = "امانات فيزا";
             this.ceamantvisa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ceamantvisa.Size = new System.Drawing.Size(101, 24);
+            this.ceamantvisa.Size = new System.Drawing.Size(101, 23);
             this.ceamantvisa.TabIndex = 0;
             this.ceamantvisa.CheckedChanged += new System.EventHandler(this.ceamantvisa_CheckedChanged);
             // 
@@ -277,15 +280,16 @@
             this.luePersonId.Name = "luePersonId";
             this.luePersonId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.luePersonId.Properties.Appearance.Options.UseFont = true;
+            this.luePersonId.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.luePersonId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luePersonId.Properties.DataSource = this.LSMSTBLWarasa;
             this.luePersonId.Properties.DisplayMember = "personName";
             this.luePersonId.Properties.NullText = "";
+            this.luePersonId.Properties.PopupView = this.gridView1;
             this.luePersonId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luePersonId.Properties.ValueMember = "PersonId";
-            this.luePersonId.Properties.View = this.gridView1;
-            this.luePersonId.Size = new System.Drawing.Size(233, 26);
+            this.luePersonId.Size = new System.Drawing.Size(233, 24);
             this.luePersonId.TabIndex = 2;
             this.luePersonId.EditValueChanged += new System.EventHandler(this.luePersonId_EditValueChanged);
             // 
@@ -402,9 +406,9 @@
             this.lueDofatSarfAId.Properties.DataSource = this.cdDofaatAmanatBindingSource;
             this.lueDofatSarfAId.Properties.DisplayMember = "DofatSarfA";
             this.lueDofatSarfAId.Properties.NullText = "";
+            this.lueDofatSarfAId.Properties.PopupView = this.gridLookUpEdit1View;
             this.lueDofatSarfAId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDofatSarfAId.Properties.ValueMember = "DofatSarfAId";
-            this.lueDofatSarfAId.Properties.View = this.gridLookUpEdit1View;
             this.lueDofatSarfAId.Size = new System.Drawing.Size(233, 26);
             this.lueDofatSarfAId.TabIndex = 1;
             this.lueDofatSarfAId.EditValueChanged += new System.EventHandler(this.lueDofatSarfAId_EditValueChanged);
@@ -450,6 +454,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(418, 54);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(42, 19);
@@ -459,6 +464,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(422, 247);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(38, 19);
@@ -468,6 +474,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(393, 208);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(67, 19);
@@ -477,6 +484,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(390, 169);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(70, 19);
@@ -486,6 +494,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(420, 128);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 19);
@@ -543,6 +552,7 @@
             // 
             // sessionvtblWarasabank2
             // 
+            this.sessionvtblWarasabank2.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.sessionvtblWarasabank2.TrackPropertiesModifications = false;
             // 
             // LSMSvtblWarasabank2

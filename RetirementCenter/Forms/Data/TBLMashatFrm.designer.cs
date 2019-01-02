@@ -43,7 +43,11 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule13 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule14 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule15 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControlMain = new DevExpress.XtraEditors.GroupControl();
             this.btnCode60Search = new DevExpress.XtraEditors.SimpleButton();
@@ -54,7 +58,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.LUEEmp = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSDATA = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,6 +67,7 @@
             this.colMashHala = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyasref = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditSyndicateId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.tbMMashatName = new DevExpress.XtraEditors.TextEdit();
             this.dsRetirementCenter = new RetirementCenter.DataSources.dsRetirementCenter();
@@ -358,8 +362,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMMashatName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCommands)).BeginInit();
@@ -380,12 +384,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luesarfTypeId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceActivate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSarfExpetion.Properties)).BeginInit();
@@ -407,11 +411,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLNoSarfDetels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTBLNoSarfDetels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -430,7 +434,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).BeginInit();
             this.xtraTabPageSyndicateTransfer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSyndicateTransfer)).BeginInit();
@@ -445,7 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditTransferrem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             this.xtraTabPageWarasa.SuspendLayout();
@@ -458,7 +462,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDWarasaType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasaSyndicateId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
@@ -468,7 +472,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaDel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasauserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaSarf)).BeginInit();
@@ -489,11 +493,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditResarff2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfDel)).BeginInit();
@@ -603,7 +607,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Enabled = false;
-            this.btnDelete.Image = global::RetirementCenter.Properties.Resources.DeleteObject;
+            this.btnDelete.ImageOptions.Image = global::RetirementCenter.Properties.Resources.DeleteObject;
             this.btnDelete.Location = new System.Drawing.Point(354, 35);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
@@ -638,6 +642,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(678, 31);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl1.Name = "labelControl1";
@@ -657,11 +662,11 @@
             this.LUEEmp.Properties.DataSource = this.LSMSDATA;
             this.LUEEmp.Properties.DisplayMember = "MMashatName";
             this.LUEEmp.Properties.NullText = "";
+            this.LUEEmp.Properties.PopupView = this.gridLookUpEdit1View;
             this.LUEEmp.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditSyndicateId});
             this.LUEEmp.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LUEEmp.Properties.ValueMember = "MMashatId";
-            this.LUEEmp.Properties.View = this.gridLookUpEdit1View;
             this.LUEEmp.Size = new System.Drawing.Size(231, 20);
             this.LUEEmp.TabIndex = 0;
             this.LUEEmp.EditValueChanged += new System.EventHandler(this.LUEEmp_EditValueChanged);
@@ -670,19 +675,6 @@
             // 
             this.LSMSDATA.ElementType = typeof(RetirementCenter.DataSources.Linq.vTBLMashat);
             this.LSMSDATA.KeyExpression = "MMashatId";
-            // 
-            // repositoryItemLookUpEditSyndicateId
-            // 
-            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
-            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الفرعية", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
-            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
-            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
-            this.repositoryItemLookUpEditSyndicateId.NullText = "";
-            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
             // 
             // gridLookUpEdit1View
             // 
@@ -711,7 +703,10 @@
             this.colMMashatId.Caption = "كود";
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
+            this.colMMashatId.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.True;
+            this.colMMashatId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.colMMashatId.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.colMMashatId.OptionsFilter.PopupExcelFilterTextFilters = DevExpress.XtraGrid.Columns.ExcelFilterTextFilters.TextFilters;
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 0;
             // 
@@ -724,6 +719,7 @@
             this.colMMashatName.Caption = "الاسم";
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colMMashatName.Visible = true;
             this.colMMashatName.VisibleIndex = 1;
             // 
@@ -736,6 +732,7 @@
             this.colSyndicate.Caption = "الفرعية";
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
+            this.colSyndicate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colSyndicate.Visible = true;
             this.colSyndicate.VisibleIndex = 2;
             // 
@@ -748,6 +745,7 @@
             this.colSubCommitte.Caption = "اللجنة";
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
+            this.colSubCommitte.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colSubCommitte.Visible = true;
             this.colSubCommitte.VisibleIndex = 3;
             // 
@@ -760,7 +758,7 @@
             this.colsarfnumber.Caption = "رقم الصرف";
             this.colsarfnumber.FieldName = "sarfnumber";
             this.colsarfnumber.Name = "colsarfnumber";
-            this.colsarfnumber.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
+            this.colsarfnumber.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colsarfnumber.Visible = true;
             this.colsarfnumber.VisibleIndex = 4;
             // 
@@ -773,6 +771,7 @@
             this.colMashHala.Caption = "نوع البيان";
             this.colMashHala.FieldName = "MashHala";
             this.colMashHala.Name = "colMashHala";
+            this.colMashHala.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colMashHala.Visible = true;
             this.colMashHala.VisibleIndex = 5;
             // 
@@ -797,15 +796,30 @@
             this.colMMashatNId.Caption = "الرقم القومي";
             this.colMMashatNId.FieldName = "MMashatNId";
             this.colMMashatNId.Name = "colMMashatNId";
-            this.colMMashatNId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Equals;
+            this.colMMashatNId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colMMashatNId.Visible = true;
             this.colMMashatNId.VisibleIndex = 7;
+            // 
+            // repositoryItemLookUpEditSyndicateId
+            // 
+            this.repositoryItemLookUpEditSyndicateId.AutoHeight = false;
+            this.repositoryItemLookUpEditSyndicateId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditSyndicateId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الفرعية", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.repositoryItemLookUpEditSyndicateId.DisplayMember = "Syndicate";
+            this.repositoryItemLookUpEditSyndicateId.Name = "repositoryItemLookUpEditSyndicateId";
+            this.repositoryItemLookUpEditSyndicateId.NullText = "";
+            this.repositoryItemLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditSyndicateId.ValueMember = "SyndicateId";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(817, 5);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl2.Name = "labelControl2";
@@ -899,6 +913,8 @@
             this.labelControl21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl21.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Appearance.Options.UseForeColor = true;
             this.labelControl21.Location = new System.Drawing.Point(488, 40);
             this.labelControl21.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl21.Name = "labelControl21";
@@ -911,6 +927,8 @@
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseForeColor = true;
             this.labelControl11.Location = new System.Drawing.Point(771, 40);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl11.Name = "labelControl11";
@@ -931,7 +949,7 @@
             this.LUESubCommitteId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LUESubCommitteId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SubCommitte", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SubCommitte", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.LUESubCommitteId.Properties.DataSource = this.LSMSCDSubCommitte;
             this.LUESubCommitteId.Properties.DisplayMember = "SubCommitte";
             this.LUESubCommitteId.Properties.NullText = "";
@@ -963,7 +981,7 @@
             this.LUESyndicateId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LUESyndicateId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.LUESyndicateId.Properties.DataSource = this.LSMSCDSyndicate;
             this.LUESyndicateId.Properties.DisplayMember = "Syndicate";
             this.LUESyndicateId.Properties.NullText = "";
@@ -987,6 +1005,7 @@
             // 
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(801, 75);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl9.Name = "labelControl9";
@@ -1007,7 +1026,7 @@
             this.LUEMashHalaId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LUEMashHalaId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.LUEMashHalaId.Properties.DataSource = this.LSMSCDMashHala;
             this.LUEMashHalaId.Properties.DisplayMember = "MashHala";
             this.LUEMashHalaId.Properties.NullText = "";
@@ -1036,7 +1055,6 @@
             this.xtraTabControlMain.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControlMain.Location = new System.Drawing.Point(1, 120);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
-            this.xtraTabControlMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageMain;
             this.xtraTabControlMain.Size = new System.Drawing.Size(1141, 356);
             this.xtraTabControlMain.TabIndex = 1;
@@ -1096,7 +1114,6 @@
             this.xtraTabPageMain.Controls.Add(this.tbfilenumber);
             this.xtraTabPageMain.Controls.Add(this.textEdit1);
             this.xtraTabPageMain.Controls.Add(this.tbsarfnumber);
-            this.xtraTabPageMain.Font = new System.Drawing.Font("Tahoma", 10F);
             this.xtraTabPageMain.Name = "xtraTabPageMain";
             this.xtraTabPageMain.Size = new System.Drawing.Size(1135, 328);
             this.xtraTabPageMain.Text = "بيانات اساسية";
@@ -1112,7 +1129,7 @@
             this.ceEnableEdafat.Properties.AutoWidth = true;
             this.ceEnableEdafat.Properties.Caption = "اضغط لتفعيل الاضافات";
             this.ceEnableEdafat.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceEnableEdafat.Size = new System.Drawing.Size(125, 19);
+            this.ceEnableEdafat.Size = new System.Drawing.Size(124, 19);
             this.ceEnableEdafat.TabIndex = 19;
             this.ceEnableEdafat.CheckedChanged += new System.EventHandler(this.ceEnableEdafat_CheckedChanged);
             // 
@@ -1144,7 +1161,7 @@
             this.lueDofatSarfId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDofatSarfId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueDofatSarfId.Properties.DataSource = this.LSMSTBLDofatSarf;
             this.lueDofatSarfId.Properties.DisplayMember = "DofatSarf";
             this.lueDofatSarfId.Properties.NullText = "";
@@ -1175,7 +1192,7 @@
             this.luesarfTypeId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luesarfTypeId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.luesarfTypeId.Properties.DataSource = this.LSMSCDMashHala;
             this.luesarfTypeId.Properties.DisplayMember = "MashHala";
             this.luesarfTypeId.Properties.NullText = "";
@@ -1213,6 +1230,8 @@
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
             this.labelControl10.Location = new System.Drawing.Point(188, 37);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl10.Name = "labelControl10";
@@ -1225,6 +1244,8 @@
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseForeColor = true;
             this.labelControl12.Location = new System.Drawing.Point(197, 73);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl12.Name = "labelControl12";
@@ -1237,6 +1258,8 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Location = new System.Drawing.Point(196, 109);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl8.Name = "labelControl8";
@@ -1256,7 +1279,7 @@
             this.dedatefilewarasa.Properties.Appearance.Options.UseFont = true;
             this.dedatefilewarasa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dedatefilewarasa.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dedatefilewarasa.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dedatefilewarasa.Size = new System.Drawing.Size(162, 22);
             this.dedatefilewarasa.TabIndex = 14;
@@ -1273,7 +1296,7 @@
             this.defiledate.Properties.Appearance.Options.UseFont = true;
             this.defiledate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.defiledate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.defiledate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.defiledate.Size = new System.Drawing.Size(162, 22);
             this.defiledate.TabIndex = 10;
@@ -1299,7 +1322,7 @@
             this.deWorkeEndDate.Properties.Appearance.Options.UseFont = true;
             this.deWorkeEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deWorkeEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deWorkeEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.deWorkeEndDate.Size = new System.Drawing.Size(162, 22);
             this.deWorkeEndDate.TabIndex = 8;
@@ -1320,7 +1343,7 @@
             this.ceActivate.Properties.AutoWidth = true;
             this.ceActivate.Properties.Caption = "تفعيل الفيزا";
             this.ceActivate.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceActivate.Size = new System.Drawing.Size(100, 24);
+            this.ceActivate.Size = new System.Drawing.Size(99, 23);
             this.ceActivate.TabIndex = 17;
             this.ceActivate.CheckedChanged += new System.EventHandler(this.ceActivate_CheckedChanged);
             // 
@@ -1336,7 +1359,7 @@
             this.ceSarfExpetion.Properties.AutoWidth = true;
             this.ceSarfExpetion.Properties.Caption = "اسـتـثـنـاء";
             this.ceSarfExpetion.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceSarfExpetion.Size = new System.Drawing.Size(88, 24);
+            this.ceSarfExpetion.Size = new System.Drawing.Size(87, 23);
             this.ceSarfExpetion.TabIndex = 15;
             // 
             // ceyasref
@@ -1351,7 +1374,7 @@
             this.ceyasref.Properties.AutoWidth = true;
             this.ceyasref.Properties.Caption = "يصرف ";
             this.ceyasref.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ceyasref.Size = new System.Drawing.Size(65, 24);
+            this.ceyasref.Size = new System.Drawing.Size(64, 23);
             this.ceyasref.TabIndex = 6;
             this.ceyasref.CheckedChanged += new System.EventHandler(this.ceyasref_CheckedChanged);
             // 
@@ -1360,6 +1383,8 @@
             this.labelControl28.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl28.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl28.Appearance.Options.UseFont = true;
+            this.labelControl28.Appearance.Options.UseForeColor = true;
             this.labelControl28.Location = new System.Drawing.Point(452, 284);
             this.labelControl28.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl28.Name = "labelControl28";
@@ -1372,6 +1397,8 @@
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
             this.labelControl7.Location = new System.Drawing.Point(450, 183);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl7.Name = "labelControl7";
@@ -1384,6 +1411,8 @@
             this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
             this.labelControl13.Location = new System.Drawing.Point(779, 110);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl13.Name = "labelControl13";
@@ -1396,6 +1425,8 @@
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
             this.labelControl5.Location = new System.Drawing.Point(464, 146);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl5.Name = "labelControl5";
@@ -1408,6 +1439,8 @@
             this.labelControl22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl22.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl22.Appearance.Options.UseFont = true;
+            this.labelControl22.Appearance.Options.UseForeColor = true;
             this.labelControl22.Location = new System.Drawing.Point(222, 73);
             this.labelControl22.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl22.Name = "labelControl22";
@@ -1420,6 +1453,8 @@
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(801, 146);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl4.Name = "labelControl4";
@@ -1432,6 +1467,8 @@
             this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Location = new System.Drawing.Point(816, 250);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl15.Name = "labelControl15";
@@ -1444,6 +1481,8 @@
             this.labelControl27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl27.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl27.Appearance.Options.UseFont = true;
+            this.labelControl27.Appearance.Options.UseForeColor = true;
             this.labelControl27.Location = new System.Drawing.Point(766, 286);
             this.labelControl27.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl27.Name = "labelControl27";
@@ -1456,6 +1495,8 @@
             this.labelControl23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl23.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Appearance.Options.UseForeColor = true;
             this.labelControl23.Location = new System.Drawing.Point(473, 219);
             this.labelControl23.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl23.Name = "labelControl23";
@@ -1468,6 +1509,8 @@
             this.labelControl14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseForeColor = true;
             this.labelControl14.Location = new System.Drawing.Point(819, 219);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl14.Name = "labelControl14";
@@ -1480,6 +1523,8 @@
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(506, 75);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl3.Name = "labelControl3";
@@ -1501,7 +1546,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.lueEndworkId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EndworkReson", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EndworkReson", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueEndworkId.Properties.DataSource = this.cDEndworkBindingSource;
             this.lueEndworkId.Properties.DisplayMember = "EndworkReson";
             this.lueEndworkId.Properties.NullText = "";
@@ -1529,6 +1574,7 @@
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(749, 183);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl6.Name = "labelControl6";
@@ -1757,14 +1803,14 @@
             this.repositoryItemDateEdit1.AutoHeight = false;
             this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit1.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit1.EditFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit1.Mask.EditMask = "dd/MM/yyyy";
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // gridColumn2
             // 
@@ -1824,14 +1870,14 @@
             this.repositoryItemDateEdit3.AutoHeight = false;
             this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit3.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit3.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit3.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit3.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
-            this.repositoryItemDateEdit3.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // coluserin1
             // 
@@ -1855,7 +1901,7 @@
             this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdit1.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdit1.DisplayMember = "RealName";
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
@@ -2099,14 +2145,14 @@
             this.repositoryItemDateEdit2.AutoHeight = false;
             this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit2.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit2.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit2.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
-            this.repositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // coluserin
             // 
@@ -2130,7 +2176,7 @@
             this.repositoryItemLookUpEditeRemarkuserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditeRemarkuserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEditeRemarkuserin.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEditeRemarkuserin.DisplayMember = "RealName";
             this.repositoryItemLookUpEditeRemarkuserin.Name = "repositoryItemLookUpEditeRemarkuserin";
@@ -2219,9 +2265,9 @@
             this.repositoryItemGridLookUpEditSyndicateId.DisplayMember = "Syndicate";
             this.repositoryItemGridLookUpEditSyndicateId.Name = "repositoryItemGridLookUpEditSyndicateId";
             this.repositoryItemGridLookUpEditSyndicateId.NullText = "";
+            this.repositoryItemGridLookUpEditSyndicateId.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.repositoryItemGridLookUpEditSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditSyndicateId.ValueMember = "SyndicateId";
-            this.repositoryItemGridLookUpEditSyndicateId.View = this.repositoryItemGridLookUpEdit1View;
             // 
             // LSMSCDSyndicateTransfer
             // 
@@ -2272,9 +2318,9 @@
             this.repositoryItemGridLookUpEditSubCommitteId.DisplayMember = "SubCommitte";
             this.repositoryItemGridLookUpEditSubCommitteId.Name = "repositoryItemGridLookUpEditSubCommitteId";
             this.repositoryItemGridLookUpEditSubCommitteId.NullText = "";
+            this.repositoryItemGridLookUpEditSubCommitteId.PopupView = this.gridView1;
             this.repositoryItemGridLookUpEditSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditSubCommitteId.ValueMember = "SubCommitteId";
-            this.repositoryItemGridLookUpEditSubCommitteId.View = this.gridView1;
             this.repositoryItemGridLookUpEditSubCommitteId.Enter += new System.EventHandler(this.repositoryItemGridLookUpEditSubCommitteId_Enter);
             // 
             // LSMSCDSubCommitteTransfer
@@ -2390,7 +2436,7 @@
             this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit2.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdit2.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdit2.DisplayMember = "RealName";
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
@@ -2419,14 +2465,14 @@
             this.repositoryItemDateEdit4.AutoHeight = false;
             this.repositoryItemDateEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit4.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit4.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit4.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit4.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit4.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit4.Name = "repositoryItemDateEdit4";
-            this.repositoryItemDateEdit4.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // gridColumn4
             // 
@@ -2477,8 +2523,8 @@
             // btnAddTBLWarasa
             // 
             this.btnAddTBLWarasa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddTBLWarasa.Image = global::RetirementCenter.Properties.Resources.Add;
-            this.btnAddTBLWarasa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnAddTBLWarasa.ImageOptions.Image = global::RetirementCenter.Properties.Resources.Add;
+            this.btnAddTBLWarasa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnAddTBLWarasa.Location = new System.Drawing.Point(1021, 5);
             this.btnAddTBLWarasa.Name = "btnAddTBLWarasa";
             this.btnAddTBLWarasa.Size = new System.Drawing.Size(102, 28);
@@ -2607,9 +2653,9 @@
             this.repositoryItemGridLookUpEditWarasaWarasaTypeId.DisplayMember = "WarasaType";
             this.repositoryItemGridLookUpEditWarasaWarasaTypeId.Name = "repositoryItemGridLookUpEditWarasaWarasaTypeId";
             this.repositoryItemGridLookUpEditWarasaWarasaTypeId.NullText = "";
+            this.repositoryItemGridLookUpEditWarasaWarasaTypeId.PopupView = this.gridView2;
             this.repositoryItemGridLookUpEditWarasaWarasaTypeId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditWarasaWarasaTypeId.ValueMember = "WarasaTypeId";
-            this.repositoryItemGridLookUpEditWarasaWarasaTypeId.View = this.gridView2;
             // 
             // LSMSCDWarasaType
             // 
@@ -2653,14 +2699,14 @@
             this.repositoryItemDateEditWarasaDMY.AutoHeight = false;
             this.repositoryItemDateEditWarasaDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditWarasaDMY.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEditWarasaDMY.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditWarasaDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditWarasaDMY.EditFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditWarasaDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditWarasaDMY.Mask.EditMask = "dd/MM/yyyy";
             this.repositoryItemDateEditWarasaDMY.Name = "repositoryItemDateEditWarasaDMY";
-            this.repositoryItemDateEditWarasaDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // colyasref2
             // 
@@ -2705,9 +2751,9 @@
             this.repositoryItemGridLookUpEditWarasaSyndicateId.DisplayMember = "Syndicate";
             this.repositoryItemGridLookUpEditWarasaSyndicateId.Name = "repositoryItemGridLookUpEditWarasaSyndicateId";
             this.repositoryItemGridLookUpEditWarasaSyndicateId.NullText = "";
+            this.repositoryItemGridLookUpEditWarasaSyndicateId.PopupView = this.gridView4;
             this.repositoryItemGridLookUpEditWarasaSyndicateId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditWarasaSyndicateId.ValueMember = "SyndicateId";
-            this.repositoryItemGridLookUpEditWarasaSyndicateId.View = this.gridView4;
             // 
             // gridView4
             // 
@@ -2753,9 +2799,9 @@
             this.repositoryItemGridLookUpEditWarasaSubCommitteId.DisplayMember = "SubCommitte";
             this.repositoryItemGridLookUpEditWarasaSubCommitteId.Name = "repositoryItemGridLookUpEditWarasaSubCommitteId";
             this.repositoryItemGridLookUpEditWarasaSubCommitteId.NullText = "";
+            this.repositoryItemGridLookUpEditWarasaSubCommitteId.PopupView = this.gridView5;
             this.repositoryItemGridLookUpEditWarasaSubCommitteId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditWarasaSubCommitteId.ValueMember = "SubCommitteId";
-            this.repositoryItemGridLookUpEditWarasaSubCommitteId.View = this.gridView5;
             // 
             // gridView5
             // 
@@ -2794,7 +2840,7 @@
             // 
             this.repositoryItemButtonEditWarasaQuickSave.AutoHeight = false;
             this.repositoryItemButtonEditWarasaQuickSave.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, false, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, false, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEditWarasaQuickSave.Name = "repositoryItemButtonEditWarasaQuickSave";
             this.repositoryItemButtonEditWarasaQuickSave.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditWarasaQuickSave.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditWarasaQuickSave_ButtonClick);
@@ -2863,14 +2909,14 @@
             this.repositoryItemDateEdit5.AutoHeight = false;
             this.repositoryItemDateEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit5.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit5.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit5.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit5.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit5.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit5.Name = "repositoryItemDateEdit5";
-            this.repositoryItemDateEdit5.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // colRealName
             // 
@@ -2896,9 +2942,9 @@
             this.repositoryItemGridLookUpEditWarasauserin.DisplayMember = "RealName";
             this.repositoryItemGridLookUpEditWarasauserin.Name = "repositoryItemGridLookUpEditWarasauserin";
             this.repositoryItemGridLookUpEditWarasauserin.NullText = "";
+            this.repositoryItemGridLookUpEditWarasauserin.PopupView = this.gridView3;
             this.repositoryItemGridLookUpEditWarasauserin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditWarasauserin.ValueMember = "UserID";
-            this.repositoryItemGridLookUpEditWarasauserin.View = this.gridView3;
             // 
             // gridView3
             // 
@@ -2998,9 +3044,9 @@
             this.repositoryItemGridLookUpEditresponsiblesarfId.DisplayMember = "personName";
             this.repositoryItemGridLookUpEditresponsiblesarfId.Name = "repositoryItemGridLookUpEditresponsiblesarfId";
             this.repositoryItemGridLookUpEditresponsiblesarfId.NullText = "";
+            this.repositoryItemGridLookUpEditresponsiblesarfId.PopupView = this.gridView6;
             this.repositoryItemGridLookUpEditresponsiblesarfId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditresponsiblesarfId.ValueMember = "PersonId";
-            this.repositoryItemGridLookUpEditresponsiblesarfId.View = this.gridView6;
             // 
             // LSMSTBLWarasa
             // 
@@ -3136,7 +3182,7 @@
             this.LUEChangeHala.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LUEChangeHala.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MashHala", "الاسم", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.LUEChangeHala.Properties.DataSource = this.LSMSCDMashHala;
             this.LUEChangeHala.Properties.DisplayMember = "MashHala";
             this.LUEChangeHala.Properties.NullText = "";
@@ -3169,6 +3215,7 @@
             // 
             this.labelControl16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Location = new System.Drawing.Point(521, 83);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl16.Name = "labelControl16";
@@ -3263,9 +3310,9 @@
             this.repositoryItemGridLookUpEditDofatSarfId.DisplayMember = "DofatSarf";
             this.repositoryItemGridLookUpEditDofatSarfId.Name = "repositoryItemGridLookUpEditDofatSarfId";
             this.repositoryItemGridLookUpEditDofatSarfId.NullText = "";
+            this.repositoryItemGridLookUpEditDofatSarfId.PopupView = this.gridView7;
             this.repositoryItemGridLookUpEditDofatSarfId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditDofatSarfId.ValueMember = "DofatSarfId";
-            this.repositoryItemGridLookUpEditDofatSarfId.View = this.gridView7;
             // 
             // LSMSTBLDofatSarf2
             // 
@@ -3312,6 +3359,8 @@
             this.repositoryItemDateEditResarfDMY.AutoHeight = false;
             this.repositoryItemDateEditResarfDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditResarfDMY.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEditResarfDMY.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditResarfDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditResarfDMY.EditFormat.FormatString = "dd/MM/yyyy";
@@ -3319,8 +3368,6 @@
             this.repositoryItemDateEditResarfDMY.Mask.EditMask = "dd/MM/yyyy";
             this.repositoryItemDateEditResarfDMY.MinValue = new System.DateTime(2000, 1, 1, 22, 21, 0, 0);
             this.repositoryItemDateEditResarfDMY.Name = "repositoryItemDateEditResarfDMY";
-            this.repositoryItemDateEditResarfDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // coldateto
             // 
@@ -3402,14 +3449,14 @@
             this.repositoryItemDateEdit6.AutoHeight = false;
             this.repositoryItemDateEdit6.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit6.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEdit6.DisplayFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit6.EditFormat.FormatString = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit6.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEdit6.Mask.EditMask = "dd/MM/yyyy - hh:mm:ss";
             this.repositoryItemDateEdit6.Name = "repositoryItemDateEdit6";
-            this.repositoryItemDateEdit6.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // gridColumn15
             // 
@@ -3433,7 +3480,7 @@
             this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit3.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdit3.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdit3.DisplayMember = "RealName";
             this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
@@ -3503,7 +3550,7 @@
             this.repositoryItemLookUpEditCdDofaatAmanat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditCdDofaatAmanat.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfA", "الاسم", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfA", "الاسم", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEditCdDofaatAmanat.DataSource = this.LSMSCdDofaatAmanat;
             this.repositoryItemLookUpEditCdDofaatAmanat.DisplayMember = "DofatSarfA";
             this.repositoryItemLookUpEditCdDofaatAmanat.Name = "repositoryItemLookUpEditCdDofaatAmanat";
@@ -3582,9 +3629,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueNewResponsableEditResponsable.Properties.DisplayMember = "personName";
             this.lueNewResponsableEditResponsable.Properties.NullText = "";
+            this.lueNewResponsableEditResponsable.Properties.PopupView = this.gridView9;
             this.lueNewResponsableEditResponsable.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueNewResponsableEditResponsable.Properties.ValueMember = "PersonId";
-            this.lueNewResponsableEditResponsable.Properties.View = this.gridView9;
             this.lueNewResponsableEditResponsable.Size = new System.Drawing.Size(233, 20);
             this.lueNewResponsableEditResponsable.TabIndex = 0;
             // 
@@ -3615,9 +3662,9 @@
             this.lueVisaEditResponsable.Properties.DataSource = this.warasaVisaBindingSource;
             this.lueVisaEditResponsable.Properties.DisplayMember = "visa";
             this.lueVisaEditResponsable.Properties.NullText = "";
+            this.lueVisaEditResponsable.Properties.PopupView = this.gridView8;
             this.lueVisaEditResponsable.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueVisaEditResponsable.Properties.ValueMember = "visa";
-            this.lueVisaEditResponsable.Properties.View = this.gridView8;
             this.lueVisaEditResponsable.Size = new System.Drawing.Size(233, 20);
             this.lueVisaEditResponsable.TabIndex = 0;
             this.lueVisaEditResponsable.EditValueChanged += new System.EventHandler(this.lueVisaEditResponsable_EditValueChanged);
@@ -3758,7 +3805,7 @@
             this.repositoryItemLookUpEditvisaactive.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditvisaactive.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEditvisaactive.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEditvisaactive.DisplayMember = "RealName";
             this.repositoryItemLookUpEditvisaactive.Name = "repositoryItemLookUpEditvisaactive";
@@ -3835,7 +3882,7 @@
             this.repositoryItemLookUpEditTblMemberMaduneaDof.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditTblMemberMaduneaDof.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfM", "الاسم", 71, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarfM", "الاسم", 71, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEditTblMemberMaduneaDof.DataSource = this.tBLDofatSarfMaduneaBindingSource;
             this.repositoryItemLookUpEditTblMemberMaduneaDof.DisplayMember = "DofatSarfM";
             this.repositoryItemLookUpEditTblMemberMaduneaDof.Name = "repositoryItemLookUpEditTblMemberMaduneaDof";
@@ -3941,7 +3988,7 @@
             this.repositoryItemLookUpEditmaduneauser.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditmaduneauser.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEditmaduneauser.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEditmaduneauser.DisplayMember = "RealName";
             this.repositoryItemLookUpEditmaduneauser.Name = "repositoryItemLookUpEditmaduneauser";
@@ -3969,6 +4016,7 @@
             this.layoutControlVerify.Name = "layoutControlVerify";
             this.layoutControlVerify.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(785, 636, 308, 350);
             this.layoutControlVerify.OptionsView.IsReadOnly = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlVerify.OptionsView.RightToLeftMirroringApplied = true;
             this.layoutControlVerify.OptionsView.UseDefaultDragAndDropRendering = false;
             this.layoutControlVerify.Root = this.layoutControlGroup1;
             this.layoutControlVerify.Size = new System.Drawing.Size(1135, 328);
@@ -3978,7 +4026,7 @@
             // lblVerifyWarasaDate
             // 
             this.lblVerifyWarasaDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsRetirementCenter, "TBLMashat.verify_warasa_datein", true));
-            this.lblVerifyWarasaDate.Location = new System.Drawing.Point(24, 197);
+            this.lblVerifyWarasaDate.Location = new System.Drawing.Point(24, 195);
             this.lblVerifyWarasaDate.Name = "lblVerifyWarasaDate";
             this.lblVerifyWarasaDate.Size = new System.Drawing.Size(12, 13);
             this.lblVerifyWarasaDate.StyleController = this.layoutControlVerify;
@@ -3988,7 +4036,7 @@
             // lblVerifyMemberDate
             // 
             this.lblVerifyMemberDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsRetirementCenter, "TBLMashat.verify_member_datein", true));
-            this.lblVerifyMemberDate.Location = new System.Drawing.Point(24, 90);
+            this.lblVerifyMemberDate.Location = new System.Drawing.Point(24, 89);
             this.lblVerifyMemberDate.Name = "lblVerifyMemberDate";
             this.lblVerifyMemberDate.Size = new System.Drawing.Size(12, 13);
             this.lblVerifyMemberDate.StyleController = this.layoutControlVerify;
@@ -3998,12 +4046,12 @@
             // lueVerifyMemberUser
             // 
             this.lueVerifyMemberUser.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_member_userin", true));
-            this.lueVerifyMemberUser.Location = new System.Drawing.Point(24, 66);
+            this.lueVerifyMemberUser.Location = new System.Drawing.Point(69, 65);
             this.lueVerifyMemberUser.Name = "lueVerifyMemberUser";
             this.lueVerifyMemberUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueVerifyMemberUser.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueVerifyMemberUser.Properties.DataSource = this.usersBindingSource;
             this.lueVerifyMemberUser.Properties.DisplayMember = "RealName";
             this.lueVerifyMemberUser.Properties.NullText = "";
@@ -4016,12 +4064,12 @@
             // lueVerifyWarasaUser
             // 
             this.lueVerifyWarasaUser.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_warasa_userin", true));
-            this.lueVerifyWarasaUser.Location = new System.Drawing.Point(24, 173);
+            this.lueVerifyWarasaUser.Location = new System.Drawing.Point(69, 171);
             this.lueVerifyWarasaUser.Name = "lueVerifyWarasaUser";
             this.lueVerifyWarasaUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueVerifyWarasaUser.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueVerifyWarasaUser.Properties.DataSource = this.usersBindingSource;
             this.lueVerifyWarasaUser.Properties.DisplayMember = "RealName";
             this.lueVerifyWarasaUser.Properties.NullText = "";
@@ -4034,7 +4082,7 @@
             // ceVerifyWarasa
             // 
             this.ceVerifyWarasa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_warasa", true));
-            this.ceVerifyWarasa.Location = new System.Drawing.Point(24, 150);
+            this.ceVerifyWarasa.Location = new System.Drawing.Point(24, 148);
             this.ceVerifyWarasa.Name = "ceVerifyWarasa";
             this.ceVerifyWarasa.Properties.Caption = "مراجعة الورثة";
             this.ceVerifyWarasa.Properties.ReadOnly = true;
@@ -4045,7 +4093,7 @@
             // ceVerifyMember
             // 
             this.ceVerifyMember.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.verify_member", true));
-            this.ceVerifyMember.Location = new System.Drawing.Point(24, 43);
+            this.ceVerifyMember.Location = new System.Drawing.Point(24, 42);
             this.ceVerifyMember.Name = "ceVerifyMember";
             this.ceVerifyMember.Properties.Caption = "مراجعة اعضاء";
             this.ceVerifyMember.Properties.ReadOnly = true;
@@ -4061,10 +4109,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2,
             this.layoutControlGroup3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1135, 328);
-            this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -4076,7 +4122,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1115, 107);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1115, 106);
             this.layoutControlGroup2.Text = "الاعضاء";
             // 
             // layoutControlItem1
@@ -4086,9 +4132,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(1091, 23);
-            this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -4098,9 +4142,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(1091, 17);
-            this.layoutControlItem5.Text = "layoutControlItem5";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem4
@@ -4111,7 +4153,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(1091, 24);
             this.layoutControlItem4.Text = "مستخدم";
-            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(42, 13);
             // 
             // layoutControlGroup3
@@ -4121,9 +4163,9 @@
             this.layoutControlItem2,
             this.layoutControlItem6,
             this.layoutControlItem3});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 107);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 106);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1115, 201);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1115, 202);
             this.layoutControlGroup3.Text = "الورثة";
             // 
             // layoutControlItem2
@@ -4133,9 +4175,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(1091, 23);
-            this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem6
@@ -4144,10 +4184,8 @@
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1091, 111);
-            this.layoutControlItem6.Text = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1091, 113);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem3
@@ -4158,7 +4196,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(1091, 24);
             this.layoutControlItem3.Text = "مستخدم";
-            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Right;
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(42, 13);
             // 
             // LSMSCDsarfType
@@ -4280,8 +4318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEEmp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDATA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditSyndicateId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMMashatName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCommands)).EndInit();
@@ -4304,12 +4342,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luesarfTypeId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbestktaa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dedatefilewarasa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.defiledate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceActivate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSarfExpetion.Properties)).EndInit();
@@ -4330,11 +4368,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTBLNoSarfDetels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLNoSarfDetels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTBLNoSarfDetels)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
@@ -4354,7 +4392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRemarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditeRemarkuserin)).EndInit();
             this.xtraTabPageSyndicateTransfer.ResumeLayout(false);
@@ -4369,7 +4407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditTransferrem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditTransferSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();
@@ -4382,7 +4420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasaWarasaTypeId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCDWarasaType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditWarasaDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasaSyndicateId)).EndInit();
@@ -4392,7 +4430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaQuickSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaDel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditWarasauserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -4414,11 +4452,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDofatSarfId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTBLDofatSarf2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditResarfDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditResarff2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditResarfSave)).EndInit();

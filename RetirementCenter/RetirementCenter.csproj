@@ -2734,7 +2734,6 @@
     <EmbeddedResource Include="Forms\Main\msgDlg.resx">
       <DependentUpon>msgDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="XRep\XRep29.resx">
       <DependentUpon>XRep29.cs</DependentUpon>
     </EmbeddedResource>

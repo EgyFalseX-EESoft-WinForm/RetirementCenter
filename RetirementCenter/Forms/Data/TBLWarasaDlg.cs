@@ -82,13 +82,13 @@ namespace RetirementCenter.Forms.Data
             depersonbirth.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personbirth", true));
             tbpersonmobile.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personmobile", true));
             tbpersonAddres.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "personAddres", true));
-            ceyasref.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "yasref", true));
+            ceyasref.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "yasref", true)); ceyasref.Checked = _TBLWarasa[0].IsyasrefNull() == null ? false : _TBLWarasa[0].yasref;
             LUESyndicateId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "SyndicateId", true));
             LUESubCommitteId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "SubCommitteId", true));
-            ceresponsiblesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarf", true));
+            ceresponsiblesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarf", true)); ceresponsiblesarf.Checked = _TBLWarasa[0].IsresponsiblesarfNull() ? false : _TBLWarasa[0].responsiblesarf;
             LUEresponsiblesarfId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "responsiblesarfId", true));
             tbvisa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "visa", true));
-            ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", true));
+            ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", true)); ceActivate.Checked = _TBLWarasa[0].IsActivateNull() ? false : _TBLWarasa[0].Activate;
             luesarfresonid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "sarfresonid", true));
             tbCode60.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "code60", true));
 
