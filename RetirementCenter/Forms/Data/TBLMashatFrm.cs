@@ -825,7 +825,7 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLWarasaRow row = dsRetirementCenter.TBLWarasa.NewTBLWarasaRow();
             row.PersonId = -1; row.MMashatId = Convert.ToInt32(LUEEmp.EditValue); row.personName = string.Empty; row.Activate = true;
             row.yasref = true; row.userin = Program.UserInfo.UserId; row.datein = SQLProvider.ServerDateTime(); row.ImportDateIn = SQLProvider.ServerDateTime();
-            row.usercreate = Program.UserInfo.UserId; row.datecreate = SQLProvider.ServerDateTime();
+            row.usercreate = Program.UserInfo.UserId; row.datecreate = SQLProvider.ServerDateTime(); 
             row.responsiblesarf = false; row.wcompletesarf = true; row.wmony = 0; row.westktaat = 0; row.welrasm = 0; row.nationaltyId = 1;
             
             if (WSyn_Default != 0)

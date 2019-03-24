@@ -31,6 +31,22 @@ namespace RetirementCenter.Forms.Data
             // code goes here
             int perdonId = Convert.ToInt32(lueRespons.EditValue);
             DataSources.dsQueries.GetPersonIdByMMashatIdRow row = (DataSources.dsQueries.GetPersonIdByMMashatIdRow)((System.Data.DataRowView)lueRespons.GetSelectedDataRow()).Row;
+            if (row.IsvisaNull())
+            {
+                Program.ShowMsg("لا توجد فيزا", true, this, true);
+                return;
+            }
+            if (row.IsActivateNull() || row.IsActivateDateNull())
+            {
+                Program.ShowMsg("الفيزا غير مفعله", true, this, true);
+                return;
+            }
+            if (row.Iscode60Null())
+            {
+                Program.ShowMsg("لا يوجد كود 60", true, this, true);
+                return;
+            }
+
             int result = SQLProvider.adpQry.UpdateTblWarasaCombine(row.PersonId, row.visa, row.Activate, row.ActivateDate, row.code60, _row.PersonId);
             Program.ShowMsg("تم تعديل البيانات ", false, this, true);
             Program.Logger.LogThis("تم تعديل البيانات", Text, FXFW.Logger.OpType.success, null, null, this);
