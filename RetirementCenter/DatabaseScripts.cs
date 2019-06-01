@@ -463,14 +463,14 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = vQry84;
                 //cmd.ExecuteNonQuery();
-                //vTBLHafezSarf
-                if (CheckViewExists("vTBLHafezSarf"))
-                {
-                    cmd.CommandText = DropView("vTBLHafezSarf");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vTBLHafezSarf;
-                cmd.ExecuteNonQuery();
+                ////vTBLHafezSarf
+                //if (CheckViewExists("vTBLHafezSarf"))
+                //{
+                //    cmd.CommandText = DropView("vTBLHafezSarf");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vTBLHafezSarf;
+                //cmd.ExecuteNonQuery();
                 ////vTblMemberMadunea
                 //if (CheckViewExists("vTblMemberMadunea"))
                 //{

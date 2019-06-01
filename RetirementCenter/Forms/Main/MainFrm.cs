@@ -1296,7 +1296,7 @@ namespace RetirementCenter
             SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
             this.Invoke(new MethodInvoker(() =>
             {
-                XRep21 FrmRep = new XRep21();
+                XRep21D FrmRep = new XRep21D();
                 Misc.Misc.ShowPrintPreview(FrmRep, true);
             }));
             SplashScreenManager.CloseForm();

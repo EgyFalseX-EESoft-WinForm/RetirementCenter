@@ -33,6 +33,10 @@ namespace RetirementCenter.Forms.Data
         }
         private void lue_EditValueChanged(object sender, EventArgs e)
         {
+            if (lueSyndicateId.EditValue != null)
+            {
+                cDSubCommitteTableAdapter.FillBySyndicateId(dsQueries.CDSubCommitte, Convert.ToInt32(lueSyndicateId.EditValue));
+            }
             if (lueDofatSarfId.EditValue == null || lueSyndicateId.EditValue == null)
                 return;
             tbcountmembers.EditValue = SQLProvider.adpQry.Get_TBLHafezSarf_countmembers(Convert.ToInt32(lueSyndicateId.EditValue), Convert.ToInt32(lueSub.EditValue), Convert.ToInt32(lueDofatSarfId.EditValue));
