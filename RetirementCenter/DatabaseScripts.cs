@@ -463,14 +463,14 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = vQry84;
                 //cmd.ExecuteNonQuery();
-                ////vTBLHafezSarf
-                //if (CheckViewExists("vTBLHafezSarf"))
-                //{
-                //    cmd.CommandText = DropView("vTBLHafezSarf");
-                //    cmd.ExecuteNonQuery();
-                //}
-                //cmd.CommandText = vTBLHafezSarf;
-                //cmd.ExecuteNonQuery();
+                //vTBLHafezSarf
+                if (CheckViewExists("vTBLHafezSarf"))
+                {
+                    cmd.CommandText = DropView("vTBLHafezSarf");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLHafezSarf;
+                cmd.ExecuteNonQuery();
                 ////vTblMemberMadunea
                 //if (CheckViewExists("vTblMemberMadunea"))
                 //{
@@ -1879,13 +1879,14 @@ FROM            dbo.TBLDeathMembers INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vTBLHafezSarf]
                     AS
-                    SELECT        dbo.TBLHafezSarf.HafezAuto, dbo.TBLHafezSarf.SyndicateId, dbo.TBLHafezSarf.DofatSarfId, dbo.TBLHafezSarf.countmembers, dbo.TBLHafezSarf.countwarasa, dbo.TBLHafezSarf.hafezmembers, 
-                         dbo.TBLHafezSarf.hafezwarasa, dbo.TBLHafezSarf.maden, dbo.TBLHafezSarf.daen, dbo.TBLHafezSarf.remarks, dbo.TBLHafezSarf.datein, dbo.TBLHafezSarf.userin, dbo.TBLDofatSarf.DofatSarf, 
-                         dbo.CDSyndicate.Syndicate, dbo.Users.RealName
-FROM            dbo.TBLHafezSarf INNER JOIN
-                         dbo.CDSyndicate ON dbo.TBLHafezSarf.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
-                         dbo.TBLDofatSarf ON dbo.TBLHafezSarf.DofatSarfId = dbo.TBLDofatSarf.DofatSarfId INNER JOIN
-                         dbo.Users ON dbo.TBLHafezSarf.userin = dbo.Users.UserID";
+                    SELECT        TBLHafezSarf.HafezAuto, TBLHafezSarf.SyndicateId, TBLHafezSarf.SubCommitteId, TBLHafezSarf.DofatSarfId, TBLHafezSarf.countmembers, TBLHafezSarf.countwarasa, TBLHafezSarf.hafezmembers, 
+                         TBLHafezSarf.hafezwarasa, TBLHafezSarf.hafezSubCommitte, TBLHafezSarf.hafezSyndicate, TBLHafezSarf.hafezets, TBLHafezSarf.hafeztec, TBLHafezSarf.maden, TBLHafezSarf.daen, TBLHafezSarf.remarks, 
+                         TBLHafezSarf.datein, TBLHafezSarf.userin, TBLDofatSarf.DofatSarf, CDSyndicate.Syndicate, Users.RealName, CDSubCommitte.SubCommitte
+FROM            TBLHafezSarf INNER JOIN
+                         CDSyndicate ON TBLHafezSarf.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         TBLDofatSarf ON TBLHafezSarf.DofatSarfId = TBLDofatSarf.DofatSarfId INNER JOIN
+                         Users ON TBLHafezSarf.userin = Users.UserID INNER JOIN
+                         CDSubCommitte ON TBLHafezSarf.SubCommitteId = CDSubCommitte.SubCommitteId";
             }
         }
         public static string vTblMemberMadunea

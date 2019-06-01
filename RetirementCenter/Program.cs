@@ -250,7 +250,7 @@ namespace RetirementCenter
         }
         private static bool CheckExpiration()
         {
-            DateTime periodDate = new DateTime(2019, 03, 31);
+            DateTime periodDate = new DateTime(2019, 06, 30);
             bool ReturnMe = false;
             DataSources.dsQueries ds = new DataSources.dsQueries();
             DataSources.dsQueriesTableAdapters.QueriesTableAdapter adpQry = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter();

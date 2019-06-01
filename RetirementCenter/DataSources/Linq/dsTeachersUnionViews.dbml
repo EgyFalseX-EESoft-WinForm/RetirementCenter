@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RetirementCenter" Class="dsTeachersUnionViewsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=FALSEX-PC;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=RetirementCenter;Persist Security Info=True;User ID=sa" SettingsObjectName="RetirementCenter.Properties.Settings" SettingsPropertyName="RetirementCenterConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CDSyndicate" Member="CDSyndicates">
     <Type Name="CDSyndicate">
       <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -913,25 +913,6 @@
       <Column Name="RealNamecc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vTBLHafezSarf" Member="vTBLHafezSarfs">
-    <Type Name="vTBLHafezSarf">
-      <Column Name="HafezAuto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="countmembers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="countwarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="hafezmembers" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="hafezwarasa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="maden" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="daen" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="remarks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.vTblMemberMadunea" Member="vTblMemberMaduneas">
     <Type Name="vTblMemberMadunea">
       <Column Name="MaduniaAuto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1655,6 +1636,31 @@
       <Column Name="MMashatName" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
       <Column Name="sarfnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ActivateMobileUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLHafezSarf" Member="vTBLHafezSarfs">
+    <Type Name="vTBLHafezSarf">
+      <Column Name="HafezAuto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SyndicateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCommitteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarfId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countmembers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="countwarasa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hafezmembers" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafezwarasa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafezSubCommitte" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafezSyndicate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafezets" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafeztec" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="maden" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="daen" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="remarks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DofatSarf" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Syndicate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubCommitte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

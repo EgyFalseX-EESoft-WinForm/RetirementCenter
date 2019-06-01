@@ -64,7 +64,7 @@ namespace RetirementCenter.Forms.Data
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
             RetirementCenter.DataSources.Linq.vTBLHafezSarf row = (RetirementCenter.DataSources.Linq.vTBLHafezSarf)gridViewData.GetRow(gridViewData.FocusedRowHandle);
-            adp.Delete(row.SyndicateId, row.DofatSarfId);
+            adp.Delete(row.SyndicateId, row.SubCommitteId, row.DofatSarfId);
             Program.ShowMsg("تم الحذف", false, this, true);
             Program.Logger.LogThis("تم الحفظ", Text, FXFW.Logger.OpType.success, null, null, this);
             RefreshData();
