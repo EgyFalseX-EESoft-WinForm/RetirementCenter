@@ -39294,7 +39294,7 @@ GROUP BY TBLReprintWarasa.visa, TBLReprintWarasa.mostlem, TBLReprintWarasa.datet
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TBLHafezSarf.DofatSarfId, TBLHafezSarf.SubCommitteId, TBLHafezSarf.countmembers, TBLHafezSarf.countwarasa, TBLHafezSarf.hafezmembers, TBLHafezSarf.hafezwarasa, TBLHafezSarf.hafezSubCommitte, 
                          TBLHafezSarf.hafezSyndicate, TBLHafezSarf.hafezets, TBLHafezSarf.hafeztec, 
-                         TBLHafezSarf.hafezmembers + TBLHafezSarf.hafezwarasa + TBLHafezSarf.hafezSubCommitte + TBLHafezSarf.hafezSyndicate + TBLHafezSarf.hafezets + TBLHafezSarf.hafeztec AS Total, TBLHafezSarf.maden, 
+                         TBLHafezSarf.hafezSubCommitte + TBLHafezSarf.hafezSyndicate + TBLHafezSarf.hafezets + TBLHafezSarf.hafeztec AS Total, TBLHafezSarf.maden, 
                          TBLHafezSarf.daen, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLDofatSarf.DofatSarf
 FROM            TBLHafezSarf INNER JOIN
                          CDSyndicate ON TBLHafezSarf.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
