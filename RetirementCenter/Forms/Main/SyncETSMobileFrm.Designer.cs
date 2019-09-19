@@ -62,6 +62,8 @@
             this.lblStatusImport = new DevExpress.XtraEditors.LabelControl();
             this.btnImportActiveWarasaVisa = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportStopWarasaVisa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportRePrintWarasa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportRePrintMember = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportStopMemberVisa = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportActiveMemberVisa = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportAmanatA3da2 = new DevExpress.XtraEditors.SimpleButton();
@@ -74,6 +76,8 @@
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tbServer = new DevExpress.XtraEditors.TextEdit();
             this.tbUser = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -81,10 +85,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnImportRePrintMember = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnImportRePrintWarasa = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlExport)).BeginInit();
             this.layoutControlExport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mpbc.Properties)).BeginInit();
@@ -120,6 +120,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
@@ -127,8 +129,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlExport
@@ -155,9 +155,9 @@
             // 
             // btnUpdateOptionDefaultDofatSarfId
             // 
-            this.btnUpdateOptionDefaultDofatSarfId.Location = new System.Drawing.Point(24, 164);
+            this.btnUpdateOptionDefaultDofatSarfId.Location = new System.Drawing.Point(24, 163);
             this.btnUpdateOptionDefaultDofatSarfId.Name = "btnUpdateOptionDefaultDofatSarfId";
-            this.btnUpdateOptionDefaultDofatSarfId.Size = new System.Drawing.Size(317, 22);
+            this.btnUpdateOptionDefaultDofatSarfId.Size = new System.Drawing.Size(308, 22);
             this.btnUpdateOptionDefaultDofatSarfId.StyleController = this.layoutControlExport;
             this.btnUpdateOptionDefaultDofatSarfId.TabIndex = 17;
             this.btnUpdateOptionDefaultDofatSarfId.Text = "Update DefaultDofatSarfId [Option]";
@@ -167,17 +167,17 @@
             // 
             this.mpbc.EditValue = 0;
             this.mpbc.Enabled = false;
-            this.mpbc.Location = new System.Drawing.Point(12, 202);
+            this.mpbc.Location = new System.Drawing.Point(12, 201);
             this.mpbc.Name = "mpbc";
-            this.mpbc.Size = new System.Drawing.Size(659, 12);
+            this.mpbc.Size = new System.Drawing.Size(642, 14);
             this.mpbc.StyleController = this.layoutControlExport;
             this.mpbc.TabIndex = 16;
             // 
             // btnInsertTBLMashat
             // 
-            this.btnInsertTBLMashat.Location = new System.Drawing.Point(24, 86);
+            this.btnInsertTBLMashat.Location = new System.Drawing.Point(24, 85);
             this.btnInsertTBLMashat.Name = "btnInsertTBLMashat";
-            this.btnInsertTBLMashat.Size = new System.Drawing.Size(315, 22);
+            this.btnInsertTBLMashat.Size = new System.Drawing.Size(307, 22);
             this.btnInsertTBLMashat.StyleController = this.layoutControlExport;
             this.btnInsertTBLMashat.TabIndex = 15;
             this.btnInsertTBLMashat.Text = "Insert TBLMashat";
@@ -185,9 +185,9 @@
             // 
             // btnInsertTBLWarasa
             // 
-            this.btnInsertTBLWarasa.Location = new System.Drawing.Point(343, 86);
+            this.btnInsertTBLWarasa.Location = new System.Drawing.Point(335, 85);
             this.btnInsertTBLWarasa.Name = "btnInsertTBLWarasa";
-            this.btnInsertTBLWarasa.Size = new System.Drawing.Size(316, 22);
+            this.btnInsertTBLWarasa.Size = new System.Drawing.Size(307, 22);
             this.btnInsertTBLWarasa.StyleController = this.layoutControlExport;
             this.btnInsertTBLWarasa.TabIndex = 14;
             this.btnInsertTBLWarasa.Text = "Insert TBLWarasa";
@@ -195,9 +195,9 @@
             // 
             // btnInserttblmemberbank
             // 
-            this.btnInserttblmemberbank.Location = new System.Drawing.Point(343, 112);
+            this.btnInserttblmemberbank.Location = new System.Drawing.Point(335, 111);
             this.btnInserttblmemberbank.Name = "btnInserttblmemberbank";
-            this.btnInserttblmemberbank.Size = new System.Drawing.Size(316, 22);
+            this.btnInserttblmemberbank.Size = new System.Drawing.Size(307, 22);
             this.btnInserttblmemberbank.StyleController = this.layoutControlExport;
             this.btnInserttblmemberbank.TabIndex = 13;
             this.btnInserttblmemberbank.Text = "Insert tblmemberbank";
@@ -205,9 +205,9 @@
             // 
             // btnInserttblWarasabank
             // 
-            this.btnInserttblWarasabank.Location = new System.Drawing.Point(24, 112);
+            this.btnInserttblWarasabank.Location = new System.Drawing.Point(24, 111);
             this.btnInserttblWarasabank.Name = "btnInserttblWarasabank";
-            this.btnInserttblWarasabank.Size = new System.Drawing.Size(315, 22);
+            this.btnInserttblWarasabank.Size = new System.Drawing.Size(307, 22);
             this.btnInserttblWarasabank.StyleController = this.layoutControlExport;
             this.btnInserttblWarasabank.TabIndex = 12;
             this.btnInserttblWarasabank.Text = "Insert tblWarasabank";
@@ -215,9 +215,9 @@
             // 
             // btnUpdatetblWarasabank
             // 
-            this.btnUpdatetblWarasabank.Location = new System.Drawing.Point(345, 138);
+            this.btnUpdatetblWarasabank.Location = new System.Drawing.Point(336, 137);
             this.btnUpdatetblWarasabank.Name = "btnUpdatetblWarasabank";
-            this.btnUpdatetblWarasabank.Size = new System.Drawing.Size(314, 22);
+            this.btnUpdatetblWarasabank.Size = new System.Drawing.Size(306, 22);
             this.btnUpdatetblWarasabank.StyleController = this.layoutControlExport;
             this.btnUpdatetblWarasabank.TabIndex = 11;
             this.btnUpdatetblWarasabank.Text = "Update tblWarasabank";
@@ -225,9 +225,9 @@
             // 
             // btnUpdatetblmemberbank
             // 
-            this.btnUpdatetblmemberbank.Location = new System.Drawing.Point(24, 138);
+            this.btnUpdatetblmemberbank.Location = new System.Drawing.Point(24, 137);
             this.btnUpdatetblmemberbank.Name = "btnUpdatetblmemberbank";
-            this.btnUpdatetblmemberbank.Size = new System.Drawing.Size(317, 22);
+            this.btnUpdatetblmemberbank.Size = new System.Drawing.Size(308, 22);
             this.btnUpdatetblmemberbank.StyleController = this.layoutControlExport;
             this.btnUpdatetblmemberbank.TabIndex = 10;
             this.btnUpdatetblmemberbank.Text = "Update tblmemberbank";
@@ -244,9 +244,9 @@
             // 
             // pbcUpdate
             // 
-            this.pbcUpdate.Location = new System.Drawing.Point(93, 12);
+            this.pbcUpdate.Location = new System.Drawing.Point(91, 12);
             this.pbcUpdate.Name = "pbcUpdate";
-            this.pbcUpdate.Size = new System.Drawing.Size(578, 18);
+            this.pbcUpdate.Size = new System.Drawing.Size(563, 18);
             this.pbcUpdate.StyleController = this.layoutControlExport;
             this.pbcUpdate.TabIndex = 8;
             // 
@@ -254,7 +254,7 @@
             // 
             this.btnUpdate.Location = new System.Drawing.Point(12, 12);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(77, 22);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 22);
             this.btnUpdate.StyleController = this.layoutControlExport;
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update All";
@@ -271,10 +271,8 @@
             this.layoutControlItem6,
             this.lcgIndi,
             this.layoutControlItem13});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(683, 226);
-            this.layoutControlGroup1.Text = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(666, 227);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -283,22 +281,18 @@
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(81, 26);
-            this.layoutControlItem4.Text = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(79, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.pbcUpdate;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(81, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(79, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(582, 26);
-            this.layoutControlItem5.Text = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(567, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextToControlDistance = 0;
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
@@ -307,10 +301,8 @@
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(663, 17);
-            this.layoutControlItem6.Text = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(646, 17);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
             // 
             // lcgIndi
@@ -326,7 +318,7 @@
             this.layoutControlItem18});
             this.lcgIndi.Location = new System.Drawing.Point(0, 43);
             this.lcgIndi.Name = "lcgIndi";
-            this.lcgIndi.Size = new System.Drawing.Size(663, 147);
+            this.lcgIndi.Size = new System.Drawing.Size(646, 146);
             this.lcgIndi.Text = "Individually Update";
             // 
             // layoutControlItem7
@@ -335,22 +327,18 @@
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(321, 26);
-            this.layoutControlItem7.Text = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(312, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextToControlDistance = 0;
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnUpdatetblWarasabank;
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
-            this.layoutControlItem8.Location = new System.Drawing.Point(321, 52);
+            this.layoutControlItem8.Location = new System.Drawing.Point(312, 52);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(318, 52);
-            this.layoutControlItem8.Text = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(310, 52);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextToControlDistance = 0;
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
@@ -359,34 +347,28 @@
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(319, 26);
-            this.layoutControlItem9.Text = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(311, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextToControlDistance = 0;
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnInserttblmemberbank;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem10";
-            this.layoutControlItem10.Location = new System.Drawing.Point(319, 26);
+            this.layoutControlItem10.Location = new System.Drawing.Point(311, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(320, 26);
-            this.layoutControlItem10.Text = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(311, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextToControlDistance = 0;
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnInsertTBLWarasa;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem11";
-            this.layoutControlItem11.Location = new System.Drawing.Point(319, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(311, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(320, 26);
-            this.layoutControlItem11.Text = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(311, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextToControlDistance = 0;
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem12
@@ -395,10 +377,8 @@
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem12";
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(319, 26);
-            this.layoutControlItem12.Text = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(311, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextToControlDistance = 0;
             this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControlItem18
@@ -407,22 +387,18 @@
             this.layoutControlItem18.CustomizationFormText = "layoutControlItem18";
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(321, 26);
-            this.layoutControlItem18.Text = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(312, 26);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem18.TextToControlDistance = 0;
             this.layoutControlItem18.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.mpbc;
             this.layoutControlItem13.CustomizationFormText = "layoutControlItem13";
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 190);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 189);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(663, 16);
-            this.layoutControlItem13.Text = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(646, 18);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextToControlDistance = 0;
             this.layoutControlItem13.TextVisible = false;
             // 
             // tbPass
@@ -525,6 +501,26 @@
             this.btnImportStopWarasaVisa.Text = "Import Member Stop Visa";
             this.btnImportStopWarasaVisa.Click += new System.EventHandler(this.btnImportStopWarasaVisa_Click);
             // 
+            // btnImportRePrintWarasa
+            // 
+            this.btnImportRePrintWarasa.Location = new System.Drawing.Point(347, 90);
+            this.btnImportRePrintWarasa.Name = "btnImportRePrintWarasa";
+            this.btnImportRePrintWarasa.Size = new System.Drawing.Size(324, 22);
+            this.btnImportRePrintWarasa.StyleController = this.layoutControlImport;
+            this.btnImportRePrintWarasa.TabIndex = 4;
+            this.btnImportRePrintWarasa.Text = "Import Reprint Warasa";
+            this.btnImportRePrintWarasa.Click += new System.EventHandler(this.btnImportRePrintWarasa_Click);
+            // 
+            // btnImportRePrintMember
+            // 
+            this.btnImportRePrintMember.Location = new System.Drawing.Point(12, 90);
+            this.btnImportRePrintMember.Name = "btnImportRePrintMember";
+            this.btnImportRePrintMember.Size = new System.Drawing.Size(331, 22);
+            this.btnImportRePrintMember.StyleController = this.layoutControlImport;
+            this.btnImportRePrintMember.TabIndex = 4;
+            this.btnImportRePrintMember.Text = "Import Reprint Member";
+            this.btnImportRePrintMember.Click += new System.EventHandler(this.btnImportRePrintMember_Click);
+            // 
             // btnImportStopMemberVisa
             // 
             this.btnImportStopMemberVisa.Location = new System.Drawing.Point(12, 64);
@@ -580,10 +576,8 @@
             this.layoutControlItem22,
             this.layoutControlItem23,
             this.layoutControlItem24});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(683, 226);
-            this.layoutControlGroup3.Text = "layoutControlGroup3";
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem15
@@ -593,9 +587,7 @@
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(535, 26);
-            this.layoutControlItem15.Text = "layoutControlItem15";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextToControlDistance = 0;
             this.layoutControlItem15.TextVisible = false;
             // 
             // layoutControlItem14
@@ -605,9 +597,7 @@
             this.layoutControlItem14.Location = new System.Drawing.Point(535, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(128, 26);
-            this.layoutControlItem14.Text = "layoutControlItem14";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextToControlDistance = 0;
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem17
@@ -617,9 +607,7 @@
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 104);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(663, 102);
-            this.layoutControlItem17.Text = "layoutControlItem17";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextToControlDistance = 0;
             this.layoutControlItem17.TextVisible = false;
             // 
             // layoutControlItem19
@@ -629,9 +617,7 @@
             this.layoutControlItem19.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Size = new System.Drawing.Size(335, 26);
-            this.layoutControlItem19.Text = "layoutControlItem19";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem19.TextToControlDistance = 0;
             this.layoutControlItem19.TextVisible = false;
             // 
             // layoutControlItem20
@@ -641,9 +627,7 @@
             this.layoutControlItem20.Location = new System.Drawing.Point(335, 26);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(328, 26);
-            this.layoutControlItem20.Text = "layoutControlItem20";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem20.TextToControlDistance = 0;
             this.layoutControlItem20.TextVisible = false;
             // 
             // layoutControlItem21
@@ -653,9 +637,7 @@
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(335, 26);
-            this.layoutControlItem21.Text = "layoutControlItem21";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem21.TextToControlDistance = 0;
             this.layoutControlItem21.TextVisible = false;
             // 
             // layoutControlItem22
@@ -665,14 +647,32 @@
             this.layoutControlItem22.Location = new System.Drawing.Point(335, 52);
             this.layoutControlItem22.Name = "layoutControlItem22";
             this.layoutControlItem22.Size = new System.Drawing.Size(328, 26);
-            this.layoutControlItem22.Text = "layoutControlItem22";
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem22.TextToControlDistance = 0;
             this.layoutControlItem22.TextVisible = false;
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.btnImportRePrintMember;
+            this.layoutControlItem23.CustomizationFormText = "layoutControlItem23";
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(335, 26);
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem23.TextVisible = false;
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.btnImportRePrintWarasa;
+            this.layoutControlItem24.CustomizationFormText = "layoutControlItem24";
+            this.layoutControlItem24.Location = new System.Drawing.Point(335, 78);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(328, 26);
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem24.TextVisible = false;
             // 
             // tbServer
             // 
-            this.tbServer.EditValue = "EGYCSTEST.COM";
+            this.tbServer.EditValue = "EGYCSTEST.COM\\MSSQLSERVER2014";
             this.tbServer.Location = new System.Drawing.Point(76, 12);
             this.tbServer.Name = "tbServer";
             this.tbServer.Size = new System.Drawing.Size(625, 20);
@@ -698,10 +698,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem16});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(713, 326);
-            this.layoutControlGroup4.Text = "layoutControlGroup4";
             this.layoutControlGroup4.TextVisible = false;
             // 
             // layoutControlItem1
@@ -741,54 +739,8 @@
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(693, 258);
-            this.layoutControlItem16.Text = "layoutControlItem16";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextToControlDistance = 0;
             this.layoutControlItem16.TextVisible = false;
-            // 
-            // btnImportRePrintMember
-            // 
-            this.btnImportRePrintMember.Location = new System.Drawing.Point(12, 90);
-            this.btnImportRePrintMember.Name = "btnImportRePrintMember";
-            this.btnImportRePrintMember.Size = new System.Drawing.Size(331, 22);
-            this.btnImportRePrintMember.StyleController = this.layoutControlImport;
-            this.btnImportRePrintMember.TabIndex = 4;
-            this.btnImportRePrintMember.Text = "Import Reprint Member";
-            this.btnImportRePrintMember.Click += new System.EventHandler(this.btnImportRePrintMember_Click);
-            // 
-            // layoutControlItem23
-            // 
-            this.layoutControlItem23.Control = this.btnImportRePrintMember;
-            this.layoutControlItem23.CustomizationFormText = "layoutControlItem23";
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 78);
-            this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(335, 26);
-            this.layoutControlItem23.Text = "layoutControlItem23";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem23.TextToControlDistance = 0;
-            this.layoutControlItem23.TextVisible = false;
-            // 
-            // btnImportRePrintWarasa
-            // 
-            this.btnImportRePrintWarasa.Location = new System.Drawing.Point(347, 90);
-            this.btnImportRePrintWarasa.Name = "btnImportRePrintWarasa";
-            this.btnImportRePrintWarasa.Size = new System.Drawing.Size(324, 22);
-            this.btnImportRePrintWarasa.StyleController = this.layoutControlImport;
-            this.btnImportRePrintWarasa.TabIndex = 4;
-            this.btnImportRePrintWarasa.Text = "Import Reprint Warasa";
-            this.btnImportRePrintWarasa.Click += new System.EventHandler(this.btnImportRePrintWarasa_Click);
-            // 
-            // layoutControlItem24
-            // 
-            this.layoutControlItem24.Control = this.btnImportRePrintWarasa;
-            this.layoutControlItem24.CustomizationFormText = "layoutControlItem24";
-            this.layoutControlItem24.Location = new System.Drawing.Point(335, 78);
-            this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(328, 26);
-            this.layoutControlItem24.Text = "layoutControlItem24";
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem24.TextToControlDistance = 0;
-            this.layoutControlItem24.TextVisible = false;
             // 
             // SyncETSMobileFrm
             // 
@@ -833,6 +785,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbServer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
@@ -840,8 +794,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             this.ResumeLayout(false);
 
         }
