@@ -13,11 +13,13 @@ namespace RetirementCenter.Forms.Main
     {
         #region -   Variables   -
         DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter adpUser = new DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+        private string _username = string.Empty;
         #endregion
         #region -   Functions   -
-        public PasswordChangerFrm()
+        public PasswordChangerFrm(string UserName)
         {
             InitializeComponent();
+            _username = UserName;
         }
         #endregion
         #region - Event Handlers -
@@ -31,13 +33,13 @@ namespace RetirementCenter.Forms.Main
                 return;
             if (!dxValidationProviderMain.Validate())
                 return;
-            if (adpUser.ScalarQueryCheckPassword(tbOldPass.Text, Program.UserInfo.UserId) < 1)
-            {
-                Program.ShowMsg("كلمة المرور الحالية خاطئة", true, this, true);
-                Program.Logger.LogThis("كلمة المرور الحالية خاطئة", Text, FXFW.Logger.OpType.warning, null, null, this);
-                return;
-            }
-            adpUser.UpdateQueryPassword(tbNewPass.EditValue.ToString(), Program.UserInfo.UserId);
+            //if (Convert.ToInt32(adpUser.ScalarQueryCheckPassword(tbOldPass.Text, Program.UserInfo.UserId)) < 1)
+            //{
+            //    Program.ShowMsg("كلمة المرور الحالية خاطئة", true, this, true);
+            //    Program.Logger.LogThis("كلمة المرور الحالية خاطئة", Text, FXFW.Logger.OpType.warning, null, null, this);
+            //    return;
+            //}
+            object result = adpUser.UpdateQueryPassword(tbNewPass.EditValue.ToString(), _username);
             Program.ShowMsg("تم الحفـــظ", false, this, true);
             Program.Logger.LogThis("تم الحفـــظ", Text, FXFW.Logger.OpType.success, null, null, this);
         }

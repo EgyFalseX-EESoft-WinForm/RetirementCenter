@@ -197,7 +197,7 @@ namespace RetirementCenter
             SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
             this.Invoke(new MethodInvoker(() =>
             {
-                Forms.Main.PasswordChangerFrm FrmData = new Forms.Main.PasswordChangerFrm() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Users.png"], 32, false) };
+                Forms.Main.PasswordChangerFrm FrmData = new Forms.Main.PasswordChangerFrm(FXFW.SqlDB.UserInfo.UserName) { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(ribbonImageCollectionLarge.Images["Users.png"], 32, false) };
                 FrmData.Show();
             }));
             SplashScreenManager.CloseForm();

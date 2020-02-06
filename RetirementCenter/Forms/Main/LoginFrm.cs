@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using System.IO;
+using FXFW;
 
 namespace RetirementCenter
 {
@@ -44,7 +45,13 @@ namespace RetirementCenter
             //Close();
             //return;
             ///////////////////////////////////////////////////////////////////////////////
-            if (Program.MCL.LoadUserInfo(TxtUserName.Text.Trim(), TxtPassword.Text.Trim()))
+            if (CheckEmptyPass(TxtUserName.Text.Trim()))
+            {
+                RetirementCenter.Forms.Main.PasswordChangerFrm changepass =
+                    new RetirementCenter.Forms.Main.PasswordChangerFrm(TxtUserName.Text.Trim());
+                changepass.ShowDialog();
+            }
+            if (LoadUserInfo(TxtUserName.Text.Trim(), TxtPassword.Text.Trim()))
             {
                 SetAdminInfo();
                 SaveLoginTime();
@@ -127,6 +134,29 @@ namespace RetirementCenter
 
             fs.Flush(); fs.Close(); fs.Dispose();
 
+        }
+
+        public bool LoadUserInfo(string username, string password)
+        {
+            DataTable TblUser = SqlDB.LoadDataTable(String.Format(@"SELECT UserID, UserName, UserPass, IsActive FROM Users
+                                                              WHERE (UserName = N'{0}') AND (UserPass = HASHBYTES('SHA2_512', N'{1}')) AND (IsActive = 1)", username, password));
+            foreach (DataRow row in TblUser.Rows)
+            {
+                SqlDB.UserInfo = new SqlDB.UserInfoStruct { UserID = row["UserID"].ToString(), UserName = row["UserName"].ToString() };
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckEmptyPass(string username)
+        {
+            DataTable TblUser = SqlDB.LoadDataTable(String.Format(@"SELECT UserID, UserName, UserPass, IsActive FROM Users
+                                                              WHERE (UserName = N'{0}') AND (UserPass IS NULL) AND (IsActive = 1)", username));
+            foreach (DataRow row in TblUser.Rows)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
