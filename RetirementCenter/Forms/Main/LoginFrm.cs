@@ -99,6 +99,8 @@ namespace RetirementCenter
             foreach (DataSources.dsRetirementCenter.UserRolesRow item in adp.GetDataByUserId(Program.UserInfo.UserId).Rows)
             {
                 Program.UserInfo.UserRoles.Add(item.RoleId);
+                if (item.RoleId == 28)
+                    Program.UserInfo.IsRole28 = true;
                 if (item.RoleId == 1)
                 {
                     if (System.Diagnostics.Debugger.IsAttached) 

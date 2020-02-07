@@ -243,7 +243,7 @@ namespace RetirementCenter
             DataSources.dsRetirementCenter.TBLMashatDataTable tbl = new DataSources.dsRetirementCenter.TBLMashatDataTable();
             DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLMashatTableAdapter();
             adp.FillByMMashatId(tbl, _row.MMashatId);
-            if (_row.amantvisa && Convert.ToInt32(_row.DofatSarfAId) > 6 && tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2)// we should it acc reviewed if this condition active
+            if (_row.amantvisa && Convert.ToInt32(_row.DofatSarfAId) > 6 && tbl[0].MashHalaId == (byte)Program.CDMashHala.Asda2 && tbl[0].memberdeth == false)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_Active_yasref_byID_ForAmanat(_row.MMashatId, Program.UserInfo.UserId);
             }

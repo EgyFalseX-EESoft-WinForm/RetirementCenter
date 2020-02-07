@@ -12,6 +12,7 @@ namespace RetirementCenter.Misc
             public string UserName;
             public int UserId;
             public bool IsAdmin;
+            public bool IsRole28;
             public string RealName;
             public List<int> UserRoles;
             public List<int> Syndicates;

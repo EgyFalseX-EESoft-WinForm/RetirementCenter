@@ -207,7 +207,7 @@ namespace RetirementCenter
             lengthValidationRule.ErrorType = ErrorType.Warning;
             dxValidationProviderMain.SetValidationRule(tbMMashatNId, lengthValidationRule);
             tbvisa.Enabled = Program.UserInfo.IsAdmin;
-            ceActivate.Enabled = Program.UserInfo.IsAdmin;
+            ceActivate.Enabled = Program.UserInfo.IsAdmin || Program.UserInfo.IsRole28;
             //btnChangeResponsable.Enabled = Program.UserInfo.IsAdmin;
         }
         private void LUEEmp_EditValueChanged(object sender, EventArgs e)
@@ -282,6 +282,8 @@ namespace RetirementCenter
                 xtraTabPageChangeToWarasa.PageVisible = false;
                 xtraTabPageReSarf.PageVisible = false;
                 ceSarfExpetion.Enabled = true;
+                cedeath.Visible = false;
+                ceActivate.Visible = false;
             }
             else
             {
@@ -290,8 +292,11 @@ namespace RetirementCenter
                 xtraTabPageChangeToWarasa.PageVisible = true;
                 xtraTabPageReSarf.PageVisible = true;
                 ceSarfExpetion.Enabled = false;
+                cedeath.Visible = true;
+                ceActivate.Visible = true;
             }
             xtraTabPageTblMemberMadunea.PageVisible = true;
+
 
             btnSave.Enabled = false;
             btnUpdate.Enabled = true;
@@ -1265,6 +1270,13 @@ namespace RetirementCenter
             {
                 if (Mainrow.RowState == DataRowState.Added)
                     return;
+            }
+
+            if (dsRetirementCenter.TBLMashat[0].memberdeth)
+            {
+                ceActivate.Checked = !ceActivate.Checked;
+                Program.ShowMsg("لا يمكن التفعيل لعضو متوفي", true, this, true);
+                return;
             }
             DataSources.dsRetirementCenter.tblmembervisaactiveRow row = dsRetirementCenter.tblmembervisaactive.NewtblmembervisaactiveRow();
             row.MMashatId = dsRetirementCenter.TBLMashat[0].MMashatId; row.datehala = DateTime.Now; row.halarem = string.Empty; row.activee = ceActivate.Checked;

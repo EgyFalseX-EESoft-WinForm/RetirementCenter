@@ -93,16 +93,17 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            if (!row.IsaccReviewNull() && row.accReview == true && Program.UserInfo.IsAdmin == false)//&& Program.UserInfo.IsAdmin == false
-            {
-                msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
-                return;
-            }
-            if (!row.IsdateinNull() && (row.datein.Year != SQLProvider.ServerDateTime().Year && row.datein.Month != SQLProvider.ServerDateTime().Month && row.datein.Day != SQLProvider.ServerDateTime().Day) && Program.UserInfo.IsAdmin == false)
-            {
-                msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
-                return;
-            }
+            // Stoped in 2020-02-07
+            //if (!row.IsaccReviewNull() && row.accReview == true && Program.UserInfo.IsAdmin == false)//&& Program.UserInfo.IsAdmin == false
+            //{
+            //    msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
+            //    return;
+            //}
+            //if (!row.IsdateinNull() && (row.datein.Year != SQLProvider.ServerDateTime().Year && row.datein.Month != SQLProvider.ServerDateTime().Month && row.datein.Day != SQLProvider.ServerDateTime().Day) && Program.UserInfo.IsAdmin == false)
+            //{
+            //    msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
+            //    return;
+            //}
             Update(row, false);
             
         }
@@ -218,7 +219,7 @@ namespace RetirementCenter
         }
         private void repositoryItemButtonEditChangetoAmanat7_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (Program.UserInfo.IsAdmin == false)
+            if (Program.UserInfo.IsAdmin == false && Program.UserInfo.IsRole28 == false)
             {
                 msgDlg.Show("التعديل للادمن فقط");
                 return;

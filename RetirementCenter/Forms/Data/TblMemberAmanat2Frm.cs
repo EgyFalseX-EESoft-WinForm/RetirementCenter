@@ -93,21 +93,22 @@ namespace RetirementCenter
         {
             GridView GV = (GridView)gridControlData.MainView;
             DataSources.dsRetirementCenter.TblMemberAmanatRow row = (DataSources.dsRetirementCenter.TblMemberAmanatRow)GV.GetFocusedDataRow();
-            if (!row.IsaccReviewNull() && row.accReview == true)
-            {
-                msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
-                return;
-            }
-            if (!row.IsdateinNull() && (row.datein.Year != SQLProvider.ServerDateTime().Year && row.datein.Month != SQLProvider.ServerDateTime().Month && row.datein.Day != SQLProvider.ServerDateTime().Day) && Program.UserInfo.IsAdmin == false)
-            {
-                msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
-                return;
-            }
-            if (!row.IsMobileUserNull())
-            {
-                msgDlg.Show("التعديل ليس متاح لامانات الموبيل", msgDlg.msgButtons.Close);
-                return;
-            }
+            //Stoped in 2020-02-07
+            //if (!row.IsaccReviewNull() && row.accReview == true)
+            //{
+            //    msgDlg.Show("لا يمكن تعديل بعد معاينة الحسابات", msgDlg.msgButtons.Close);
+            //    return;
+            //}
+            //if (!row.IsdateinNull() && (row.datein.Year != SQLProvider.ServerDateTime().Year && row.datein.Month != SQLProvider.ServerDateTime().Month && row.datein.Day != SQLProvider.ServerDateTime().Day) && Program.UserInfo.IsAdmin == false)
+            //{
+            //    msgDlg.Show("التعديل متاح في يوم الادخال فقط", msgDlg.msgButtons.Close);
+            //    return;
+            //}
+            //if (!row.IsMobileUserNull())
+            //{
+            //    msgDlg.Show("التعديل ليس متاح لامانات الموبيل", msgDlg.msgButtons.Close);
+            //    return;
+            //}
             Update(row, false);
             
         }

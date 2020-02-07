@@ -78,6 +78,10 @@ namespace RetirementCenter
             int result = adp.Insert(MMashatId, false, ServerDatetime, "ايقاف للتسجيل في اعانة الوفاة", ServerDatetime, Program.UserInfo.UserId);
 
             new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_ChangeActive_byID(false, MMashatId);
+
+            DataSources.dsRetirementCenterTableAdapters.tblmemberdethnewTableAdapter adpDeath = new DataSources.dsRetirementCenterTableAdapters.tblmemberdethnewTableAdapter();
+            adpDeath.Insert(MMashatId, SQLProvider.ServerDateTime(), "متوفي طبقا للتسجيل في اعانة الوفاة", Program.UserInfo.UserId, SQLProvider.ServerDateTime());
+
             //Add recored in tblmembervisaactive
             new DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter().Insert(MMashatId, false, SQLProvider.ServerDateTime(), "تم ايقاف التفعيل تلقائي بعد التفعيل في أعانة الوفاه"
                 , SQLProvider.ServerDateTime(), Program.UserInfo.UserId);

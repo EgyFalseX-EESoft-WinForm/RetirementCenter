@@ -223,7 +223,11 @@ namespace RetirementCenter
         }
         public void UpdateActive()
         {
-            if (_row.amantvisa && Convert.ToInt32(_row.DofatSarfAId) > 6)// we should it acc reviewed if this condition active
+            DataSources.dsRetirementCenter.TBLWarasaDataTable tbl = new DataSources.dsRetirementCenter.TBLWarasaDataTable();
+            DataSources.dsRetirementCenterTableAdapters.TBLWarasaTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLWarasaTableAdapter();
+            adp.FillByPersonId(tbl, _row.PersonId);
+
+            if (_row.amantvisa && Convert.ToInt32(_row.DofatSarfAId) > 6 && tbl[0].finalystop == false)// we should it acc reviewed if this condition active
             {
                 int result1 = new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblWarasa_Active_yasref_byVisa_ForAmanat(_row.PersonId, Program.UserInfo.UserId);
             }
