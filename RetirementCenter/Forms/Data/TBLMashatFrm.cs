@@ -330,6 +330,7 @@ namespace RetirementCenter
             row.usercreate = Program.UserInfo.UserId; row.datecreate = SQLProvider.ServerDateTime();
             row.yasref = true; row.mcompletesarf = true; row.melrasm = 0; row.meshtrakat = 0; row.mestktaat = 0; row.mmony = 0;
             row.MashHalaId = (int)Program.CDMashHala.Asda2;
+            row.memberdeth = false;
             dsRetirementCenter.TBLMashat.AddTBLMashatRow(row);
 
             gridControlTBLNoSarfDetels.DataSource = null;
@@ -1336,7 +1337,58 @@ namespace RetirementCenter
             if(dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 ReloadWarasa();
         }
+        private void cedeath_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dsRetirementCenter.TBLMashat.Count == 0)
+            {
+                return;
+            }
+            
+            DataSources.dsRetirementCenter.TBLMashatRow Mainrow = dsRetirementCenter.TBLMashat[0];
+            if ((bool)Mainrow["memberdeth", DataRowVersion.Current] == cedeath.Checked)
+            {
+                return;
+            }
+
+            tblmemberwarasadeathDlg dlg = new tblmemberwarasadeathDlg();
+            if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+            {
+                cedeath.Checked = !cedeath.Checked;
+                return;
+            }
+
+            DataSources.dsRetirementCenterTableAdapters.tblmemberdethnewTableAdapter adpDeath = new DataSources.dsRetirementCenterTableAdapters.tblmemberdethnewTableAdapter();
+            adpDeath.Insert(dsRetirementCenter.TBLMashat[0].MMashatId, dlg.deDate.DateTime, dlg.tbNotes.Text,
+                Program.UserInfo.UserId, SQLProvider.ServerDateTime());
+
+            tblMashatTableAdapter.UpdateQuerymemberdeth(cedeath.Checked, dsRetirementCenter.TBLMashat[0].MMashatId);
+
+            Program.ShowMsg("تم الحفظ", false, this, true);
+
+        }
+        private void repositoryItemCheckEditfinalystop_Click(object sender, EventArgs e)
+        {
+            int PersonId = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row).PersonId;
+            bool? finalystop = ((DataSources.dsRetirementCenter.TBLWarasaRow)((DataRowView)gridViewTBLWarasa.GetRow(gridViewTBLWarasa.FocusedRowHandle)).Row).finalystop;
+
+            tblmemberwarasadeathDlg dlg = new tblmemberwarasadeathDlg();
+            if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+            {
+                return;
+            }
+
+            DataSources.dsRetirementCenterTableAdapters.tblwarsafinalystopTableAdapter adpDeath = new DataSources.dsRetirementCenterTableAdapters.tblwarsafinalystopTableAdapter();
+            adpDeath.Insert(PersonId, dlg.deDate.DateTime, dlg.tbNotes.Text, Program.UserInfo.UserId, SQLProvider.ServerDateTime());
+            
+            tBLWarasaTableAdapter.UpdateQueryfinalystop(!finalystop, PersonId);
+            
+            Program.ShowMsg("تم الحفظ", false, this, true);
+
+            ReloadWarasa();
+        }
+
         #endregion
+
 
     }
    

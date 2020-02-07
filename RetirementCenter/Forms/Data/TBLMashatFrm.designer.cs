@@ -98,6 +98,7 @@
             this.defiledate = new DevExpress.XtraEditors.DateEdit();
             this.tBLMashatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deWorkeEndDate = new DevExpress.XtraEditors.DateEdit();
+            this.cedeath = new DevExpress.XtraEditors.CheckEdit();
             this.ceActivate = new DevExpress.XtraEditors.CheckEdit();
             this.ceSarfExpetion = new DevExpress.XtraEditors.CheckEdit();
             this.ceyasref = new DevExpress.XtraEditors.CheckEdit();
@@ -357,6 +358,8 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEditfinalystop = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
@@ -391,6 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cedeath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceActivate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSarfExpetion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceyasref.Properties)).BeginInit();
@@ -547,6 +551,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -1081,6 +1086,7 @@
             this.xtraTabPageMain.Controls.Add(this.dedatefilewarasa);
             this.xtraTabPageMain.Controls.Add(this.defiledate);
             this.xtraTabPageMain.Controls.Add(this.deWorkeEndDate);
+            this.xtraTabPageMain.Controls.Add(this.cedeath);
             this.xtraTabPageMain.Controls.Add(this.ceActivate);
             this.xtraTabPageMain.Controls.Add(this.ceSarfExpetion);
             this.xtraTabPageMain.Controls.Add(this.ceyasref);
@@ -1330,6 +1336,22 @@
             conditionValidationRule9.ErrorText = "يجب ادخال تاريخ نهاية الخدمة";
             conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationProviderMain.SetValidationRule(this.deWorkeEndDate, conditionValidationRule9);
+            // 
+            // cedeath
+            // 
+            this.cedeath.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cedeath.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.memberdeth", true));
+            this.cedeath.EnterMoveNextControl = true;
+            this.cedeath.Location = new System.Drawing.Point(207, 279);
+            this.cedeath.Name = "cedeath";
+            this.cedeath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cedeath.Properties.Appearance.Options.UseFont = true;
+            this.cedeath.Properties.AutoWidth = true;
+            this.cedeath.Properties.Caption = "متوفي";
+            this.cedeath.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.cedeath.Size = new System.Drawing.Size(66, 23);
+            this.cedeath.TabIndex = 17;
+            this.cedeath.CheckedChanged += new System.EventHandler(this.cedeath_CheckedChanged);
             // 
             // ceActivate
             // 
@@ -2562,7 +2584,8 @@
             this.repositoryItemButtonEditWarasaRemark,
             this.repositoryItemGridLookUpEditresponsiblesarfId,
             this.repositoryItemButtonEditWarasaEstefa,
-            this.repositoryItemButtonEditCombin});
+            this.repositoryItemButtonEditCombin,
+            this.repositoryItemCheckEditfinalystop});
             this.gridControlTBLWarasa.Size = new System.Drawing.Size(1128, 245);
             this.gridControlTBLWarasa.TabIndex = 1;
             this.gridControlTBLWarasa.UseEmbeddedNavigator = true;
@@ -2598,7 +2621,8 @@
             this.colActivate,
             this.gridColumn17,
             this.colcode60,
-            this.gridColumn19});
+            this.gridColumn19,
+            this.gridColumn20});
             this.gridViewTBLWarasa.GridControl = this.gridControlTBLWarasa;
             this.gridViewTBLWarasa.Name = "gridViewTBLWarasa";
             this.gridViewTBLWarasa.NewItemRowText = "اضغط لاضافة جديد";
@@ -4299,6 +4323,25 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
+            // gridColumn20
+            // 
+            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn20.Caption = "متوفي";
+            this.gridColumn20.ColumnEdit = this.repositoryItemCheckEditfinalystop;
+            this.gridColumn20.FieldName = "finalystop";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 22;
+            // 
+            // repositoryItemCheckEditfinalystop
+            // 
+            this.repositoryItemCheckEditfinalystop.AutoHeight = false;
+            this.repositoryItemCheckEditfinalystop.Name = "repositoryItemCheckEditfinalystop";
+            this.repositoryItemCheckEditfinalystop.Click += new System.EventHandler(this.repositoryItemCheckEditfinalystop_Click);
+            // 
             // TBLMashatFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4349,6 +4392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tBLMashatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deWorkeEndDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cedeath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceActivate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSarfExpetion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceyasref.Properties)).EndInit();
@@ -4508,6 +4552,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4822,5 +4867,8 @@
         private DevExpress.XtraEditors.TextEdit tbfilenumberwrasa;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditCombin;
+        private DevExpress.XtraEditors.CheckEdit cedeath;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEditfinalystop;
     }
 }

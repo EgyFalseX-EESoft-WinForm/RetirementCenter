@@ -131,7 +131,9 @@ namespace RetirementCenter
                                 {
                                     int PersonId = (int)SQLProvider.adpQry.TBLWarasaNewId();
                                     tblWarasaTableAdapter.Insert(PersonId, row.MMashatId, replyW.WarasaType, name.Trim(), string.Empty, null, string.Empty,
-                                        string.Empty, true, Program.UserInfo.UserId, SQLProvider.ServerDateTime(), item.الفرعية, item.اللجنة, false, PersonId, 0, true, 0, 0, null, SQLProvider.ServerDateTime(), false, 1, null, null, Program.UserInfo.UserId, SQLProvider.ServerDateTime());
+                                        string.Empty, true, Program.UserInfo.UserId, SQLProvider.ServerDateTime(), item.الفرعية, item.اللجنة,
+                                        false, PersonId, 0, true, 0, 0, null, SQLProvider.ServerDateTime(), false, 1, null, 
+                                        null, Program.UserInfo.UserId, SQLProvider.ServerDateTime(), false);
                                     if (ceWarasaExtra.Checked)
                                     {
                                         tblEdafatWarsaTableAdapter.Insert(PersonId, DofatSarfId, (byte)Misc.Types.CDMashHala.Warasa, replyW.estktaa, 
