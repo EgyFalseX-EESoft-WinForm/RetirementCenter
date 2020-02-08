@@ -1272,7 +1272,7 @@ namespace RetirementCenter
                     return;
             }
 
-            if (dsRetirementCenter.TBLMashat[0].memberdeth)
+            if (dsRetirementCenter.TBLMashat[0].memberdeth && ceActivate.Checked)
             {
                 ceActivate.Checked = !ceActivate.Checked;
                 Program.ShowMsg("لا يمكن التفعيل لعضو متوفي", true, this, true);
