@@ -104,7 +104,7 @@ namespace RetirementCenter.Forms.Data
 
             //edit visa for admin only
             tbvisa.Visible = lblvisa .Visible = Program.UserInfo.IsAdmin;
-            ceActivate.Visible = lblActivate.Visible = Program.UserInfo.IsAdmin;
+            ceActivate.Visible = lblActivate.Visible = (Program.UserInfo.IsAdmin || Program.UserInfo.IsRole28);
             tbCode60.Visible = tbCode60.Visible = Program.UserInfo.IsAdmin;
 
             if (_TBLEdafatWarsa.Count > 0)

@@ -455,14 +455,14 @@ namespace RetirementCenter
                 //}
                 //cmd.CommandText = vTBLFrookWarasa;
                 //cmd.ExecuteNonQuery();
-                ////vQry84
-                //if (CheckViewExists("vQry84"))
-                //{
-                //    cmd.CommandText = DropView("vQry84");
-                //    cmd.ExecuteNonQuery();
-                //}
-                //cmd.CommandText = vQry84;
-                //cmd.ExecuteNonQuery();
+                //vQry84
+                if (CheckViewExists("vQry84"))
+                {
+                    cmd.CommandText = DropView("vQry84");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vQry84;
+                cmd.ExecuteNonQuery();
                 ////vTBLHafezSarf
                 //if (CheckViewExists("vTBLHafezSarf"))
                 //{
@@ -544,21 +544,21 @@ namespace RetirementCenter
                 //cmd.CommandText = vQry92;
                 //cmd.ExecuteNonQuery();
                 //vBankExportedData_Activate
-                if (CheckViewExists("vBankExportedData_Activate"))
-                {
-                    cmd.CommandText = DropView("vBankExportedData_Activate");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vBankExportedData_Activate;
-                cmd.ExecuteNonQuery();
-                //vBankExportedDataWarsa_Activate
-                if (CheckViewExists("vBankExportedDataWarsa_Activate"))
-                {
-                    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
-                    cmd.ExecuteNonQuery();
-                }
-                cmd.CommandText = vBankExportedDataWarsa_Activate;
-                cmd.ExecuteNonQuery();
+                //if (CheckViewExists("vBankExportedData_Activate"))
+                //{
+                //    cmd.CommandText = DropView("vBankExportedData_Activate");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vBankExportedData_Activate;
+                //cmd.ExecuteNonQuery();
+                ////vBankExportedDataWarsa_Activate
+                //if (CheckViewExists("vBankExportedDataWarsa_Activate"))
+                //{
+                //    cmd.CommandText = DropView("vBankExportedDataWarsa_Activate");
+                //    cmd.ExecuteNonQuery();
+                //}
+                //cmd.CommandText = vBankExportedDataWarsa_Activate;
+                //cmd.ExecuteNonQuery();
                 ////vTblMemberAmanat
                 //if (CheckViewExists("vTblMemberAmanat"))
                 //{
@@ -1859,17 +1859,17 @@ FROM            dbo.TBLFrookWarasa INNER JOIN
                 return @"
                 CREATE VIEW [dbo].[vQry84]
                     AS
-                    SELECT        dbo.TBLDeathMembers.MMashatId, dbo.TBLDeathMembers.deathdate, dbo.TBLDeathMembers.mosthhek, dbo.TBLDeathMembers.datein, dbo.TBLDeathMembers.userin, dbo.TBLMashat.MMashatName, 
-                         dbo.TBLMashat.SyndicateId, dbo.TBLMashat.SubCommitteId, dbo.TBLMashat.sarfnumber, dbo.CDSyndicate.Syndicate, dbo.CDSubCommitte.SubCommitte, dbo.TBLMashat.yasref, dbo.Users.RealName, 
-                         dbo.TBLMashat.MMashatNId, dbo.CDMashHala.MashHala, dbo.TBLDeathMembers.mosthhekNid, dbo.TBLDeathMembers.mosthhekmony, dbo.TBLDeathMembers.sefa, dbo.TBLDeathMembers.sarf, 
-                         dbo.TBLDeathMembers.sheekno, dbo.TBLDeathMembers.sheekdate, dbo.TBLDeathMembers.useracc, dbo.TBLDeathMembers.dateinacc, Users_1.RealName AS RealNamecc, 0 AS Selected
-FROM            dbo.TBLDeathMembers INNER JOIN
-                         dbo.TBLMashat ON dbo.TBLDeathMembers.MMashatId = dbo.TBLMashat.MMashatId INNER JOIN
-                         dbo.CDSyndicate ON dbo.TBLMashat.SyndicateId = dbo.CDSyndicate.SyndicateId INNER JOIN
-                         dbo.CDSubCommitte ON dbo.TBLMashat.SubCommitteId = dbo.CDSubCommitte.SubCommitteId INNER JOIN
-                         dbo.Users ON dbo.TBLDeathMembers.userin = dbo.Users.UserID INNER JOIN
-                         dbo.CDMashHala ON dbo.TBLMashat.MashHalaId = dbo.CDMashHala.MashHalaId LEFT OUTER JOIN
-                         dbo.Users AS Users_1 ON dbo.TBLDeathMembers.useracc = Users_1.UserID";
+                    SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLDeathMembers.datein, TBLDeathMembers.userin, TBLMashat.MMashatName, TBLMashat.SyndicateId, 
+                         TBLMashat.SubCommitteId, TBLMashat.sarfnumber, CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.yasref, Users.RealName, TBLMashat.MMashatNId, CDMashHala.MashHala, 
+                         TBLDeathMembers.mosthhekNid, TBLDeathMembers.mosthhekmony, TBLDeathMembers.sefa, TBLDeathMembers.sarf, TBLDeathMembers.sheekno, TBLDeathMembers.sheekdate, TBLDeathMembers.useracc, 
+                         TBLDeathMembers.dateinacc, Users_1.RealName AS RealNamecc, 0 AS Selected, TBLDeathMembers.estktaa, TBLDeathMembers.net_value
+FROM            TBLDeathMembers INNER JOIN
+                         TBLMashat ON TBLDeathMembers.MMashatId = TBLMashat.MMashatId INNER JOIN
+                         CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
+                         CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId INNER JOIN
+                         Users ON TBLDeathMembers.userin = Users.UserID INNER JOIN
+                         CDMashHala ON TBLMashat.MashHalaId = CDMashHala.MashHalaId LEFT OUTER JOIN
+                         Users AS Users_1 ON TBLDeathMembers.useracc = Users_1.UserID";
             }
         }
         public static string vTBLHafezSarf

@@ -37,7 +37,7 @@ namespace RetirementCenter.Forms.Data
                 if (drv == null)
                     continue;
                 DataSources.dsQueries.vQry84Row row = (DataSources.dsQueries.vQry84Row)((DataRowView)drv).Row;
-                if (!row.Selected)
+                if (row.IsSelectedNull() || !row.Selected)
                     continue;
                 DataSources.dsQueries.vQry84Row rowPrint = tblPrint.NewvQry84Row();
                 rowPrint.MMashatId = row.MMashatId;
@@ -59,6 +59,11 @@ namespace RetirementCenter.Forms.Data
                     rowPrint.mosthhekNid = row.mosthhekNid;
                 if (!row.IsmosthhekmonyNull())
                     rowPrint.mosthhekmony = row.mosthhekmony;
+                if (!row.IsestktaaNull())
+                    rowPrint.estktaa = row.estktaa;
+                if (!row.Isnet_valueNull())
+                    rowPrint.net_value = row.net_value;
+
                 if (!row.IssefaNull())
                     rowPrint.sefa = row.sefa;
                 if (!row.IssarfNull())

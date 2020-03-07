@@ -49,6 +49,8 @@ namespace RetirementCenter
             dedeathdate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "deathdate", true));
             tbmosthhekNid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhekNid", true));
             tbmosthhekmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhekmony", true));
+            tbestktaa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "estktaa", true));
+            tbnet_value.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "net_value", true));
             tbmosthhek.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "mosthhek", true));
             tbsefa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _row, "sefa", true));
         }
@@ -74,8 +76,17 @@ namespace RetirementCenter
             {
                 adpTBLMashat.UpdateQueryYasref(false, ServerDatetime, Program.UserInfo.UserId, MMashatId);
             }
-            DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
-            int result = adp.Insert(MMashatId, false, ServerDatetime, "ايقاف للتسجيل في اعانة الوفاة", ServerDatetime, Program.UserInfo.UserId);
+
+            try
+            {
+                DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter adp = new DataSources.dsRetirementCenterTableAdapters.TBLNoSarfDetelsTableAdapter();
+                int result = adp.Insert(MMashatId, false, ServerDatetime, "ايقاف للتسجيل في اعانة الوفاة", ServerDatetime, Program.UserInfo.UserId);
+            }
+            catch (Exception exception)
+            {
+                msgDlg.Show(exception.Message, msgDlg.msgButtons.Close);
+            }
+            
 
             new DataSources.dsQueriesTableAdapters.QueriesTableAdapter().Update_TblMashat_ChangeActive_byID(false, MMashatId);
 
@@ -95,6 +106,20 @@ namespace RetirementCenter
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
+
+        private void tbmosthhekmony_EditValueChanged(object sender, EventArgs e)
+        {
+            double mosthhekmony = 0;
+            double net_value = 0;
+            if (tbmosthhekmony.EditValue != null)
+                mosthhekmony = Convert.ToDouble(tbmosthhekmony.EditValue);
+            if (tbestktaa.EditValue != null)
+                net_value = Convert.ToDouble(tbestktaa.EditValue);
+
+            tbnet_value.EditValue = (mosthhekmony - net_value) > 0 ? (mosthhekmony - net_value) : 0.0;
+            _row.net_value = (mosthhekmony - net_value) > 0 ? (mosthhekmony - net_value) : 0.0;
+        }
+
         private void lueMMashatId_EditValueChanged(object sender, EventArgs e)
         {
             lblMemType.Text = string.Empty; ceYasref.Checked = false;

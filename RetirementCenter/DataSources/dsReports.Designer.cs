@@ -12374,6 +12374,10 @@ namespace RetirementCenter.DataSources {
             
             private global::System.Data.DataColumn columnSyndicate;
             
+            private global::System.Data.DataColumn columnestktaa;
+            
+            private global::System.Data.DataColumn columnnet_value;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Rep19_BDataTable() {
@@ -12489,6 +12493,22 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn estktaaColumn {
+                get {
+                    return this.columnestktaa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn net_valueColumn {
+                get {
+                    return this.columnnet_value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -12524,7 +12544,7 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Rep19_BRow AddRep19_BRow(int MMashatId, System.DateTime deathdate, string mosthhek, int sarfnumber, string MMashatName, System.DateTime datein, string sefa, double mosthhekmony, int SyndicateId, string Syndicate) {
+            public Rep19_BRow AddRep19_BRow(int MMashatId, System.DateTime deathdate, string mosthhek, int sarfnumber, string MMashatName, System.DateTime datein, string sefa, double mosthhekmony, int SyndicateId, string Syndicate, double estktaa, double net_value) {
                 Rep19_BRow rowRep19_BRow = ((Rep19_BRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MMashatId,
@@ -12536,7 +12556,9 @@ namespace RetirementCenter.DataSources {
                         sefa,
                         mosthhekmony,
                         SyndicateId,
-                        Syndicate};
+                        Syndicate,
+                        estktaa,
+                        net_value};
                 rowRep19_BRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRep19_BRow);
                 return rowRep19_BRow;
@@ -12576,6 +12598,8 @@ namespace RetirementCenter.DataSources {
                 this.columnmosthhekmony = base.Columns["mosthhekmony"];
                 this.columnSyndicateId = base.Columns["SyndicateId"];
                 this.columnSyndicate = base.Columns["Syndicate"];
+                this.columnestktaa = base.Columns["estktaa"];
+                this.columnnet_value = base.Columns["net_value"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12601,6 +12625,10 @@ namespace RetirementCenter.DataSources {
                 base.Columns.Add(this.columnSyndicateId);
                 this.columnSyndicate = new global::System.Data.DataColumn("Syndicate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSyndicate);
+                this.columnestktaa = new global::System.Data.DataColumn("estktaa", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestktaa);
+                this.columnnet_value = new global::System.Data.DataColumn("net_value", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnet_value);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMMashatId}, true));
                 this.columnMMashatId.AllowDBNull = false;
@@ -23858,6 +23886,38 @@ namespace RetirementCenter.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double estktaa {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep19_B.estktaaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'estktaa\' in table \'Rep19_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep19_B.estktaaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double net_value {
+                get {
+                    try {
+                        return ((double)(this[this.tableRep19_B.net_valueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'net_value\' in table \'Rep19_B\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRep19_B.net_valueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IssefaNull() {
                 return this.IsNull(this.tableRep19_B.sefaColumn);
             }
@@ -23878,6 +23938,30 @@ namespace RetirementCenter.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetmosthhekmonyNull() {
                 this[this.tableRep19_B.mosthhekmonyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsestktaaNull() {
+                return this.IsNull(this.tableRep19_B.estktaaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetestktaaNull() {
+                this[this.tableRep19_B.estktaaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnet_valueNull() {
+                return this.IsNull(this.tableRep19_B.net_valueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnet_valueNull() {
+                this[this.tableRep19_B.net_valueColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -35876,6 +35960,8 @@ WHERE        (tblWarasabank.DofatSarfId = @DofatSarfId) AND (tblWarasabank.Syndi
             tableMapping.ColumnMappings.Add("mosthhekmony", "mosthhekmony");
             tableMapping.ColumnMappings.Add("SyndicateId", "SyndicateId");
             tableMapping.ColumnMappings.Add("Syndicate", "Syndicate");
+            tableMapping.ColumnMappings.Add("estktaa", "estktaa");
+            tableMapping.ColumnMappings.Add("net_value", "net_value");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -35892,9 +35978,8 @@ WHERE        (tblWarasabank.DofatSarfId = @DofatSarfId) AND (tblWarasabank.Syndi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"
-SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
-                         TBLDeathMembers.datein, TBLDeathMembers.sefa, TBLDeathMembers.mosthhekmony, TBLMashat.SyndicateId, CDSyndicate.Syndicate
+            this._commandCollection[0].CommandText = @"SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLMashat.sarfnumber, TBLMashat.MMashatName, TBLDeathMembers.datein, TBLDeathMembers.sefa, 
+                         TBLDeathMembers.mosthhekmony, TBLMashat.SyndicateId, CDSyndicate.Syndicate, TBLDeathMembers.estktaa, TBLDeathMembers.net_value
 FROM            TBLDeathMembers INNER JOIN
                          TBLMashat ON TBLDeathMembers.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId

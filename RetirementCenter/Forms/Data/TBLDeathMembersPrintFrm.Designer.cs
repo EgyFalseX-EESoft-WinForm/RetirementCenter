@@ -47,15 +47,17 @@
             this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldatein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldeathdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsarf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsheekno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsheekdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.vQry84TableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry84TableAdapter();
-            this.colsarf = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsheekno = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsheekdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colestktaa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnet_value = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceCheckAll.Properties)).BeginInit();
@@ -89,17 +91,17 @@
             this.ceCheckAll.Location = new System.Drawing.Point(12, 12);
             this.ceCheckAll.Name = "ceCheckAll";
             this.ceCheckAll.Properties.Caption = "اختيار الكل";
-            this.ceCheckAll.Size = new System.Drawing.Size(87, 19);
+            this.ceCheckAll.Size = new System.Drawing.Size(85, 19);
             this.ceCheckAll.StyleController = this.layoutControl1;
             this.ceCheckAll.TabIndex = 6;
             this.ceCheckAll.CheckedChanged += new System.EventHandler(this.ceCheckAll_CheckedChanged);
             // 
             // btnPrint
             // 
-            this.btnPrint.Image = global::RetirementCenter.Properties.Resources.Print;
-            this.btnPrint.Location = new System.Drawing.Point(727, 12);
+            this.btnPrint.ImageOptions.Image = global::RetirementCenter.Properties.Resources.Print;
+            this.btnPrint.Location = new System.Drawing.Point(606, 12);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(154, 22);
+            this.btnPrint.Size = new System.Drawing.Size(275, 22);
             this.btnPrint.StyleController = this.layoutControl1;
             this.btnPrint.TabIndex = 5;
             this.btnPrint.Text = "طباعة";
@@ -142,7 +144,9 @@
             this.coldeathdate,
             this.colsarf,
             this.colsheekno,
-            this.colsheekdate});
+            this.colsheekdate,
+            this.colestktaa,
+            this.colnet_value});
             this.gridViewMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -269,7 +273,7 @@
             this.colRealName.FieldName = "RealName";
             this.colRealName.Name = "colRealName";
             this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 13;
+            this.colRealName.VisibleIndex = 15;
             // 
             // coldatein
             // 
@@ -281,7 +285,7 @@
             this.coldatein.FieldName = "datein";
             this.coldatein.Name = "coldatein";
             this.coldatein.Visible = true;
-            this.coldatein.VisibleIndex = 12;
+            this.coldatein.VisibleIndex = 14;
             // 
             // coldeathdate
             // 
@@ -295,72 +299,6 @@
             this.coldeathdate.Visible = true;
             this.coldeathdate.VisibleIndex = 5;
             // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.emptySpaceItem1,
-            this.layoutControlItem3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(893, 443);
-            this.layoutControlGroup1.Text = "Root";
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gridControlMain;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(873, 397);
-            this.layoutControlItem1.Text = "layoutControlItem1";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.btnPrint;
-            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(715, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(158, 26);
-            this.layoutControlItem2.Text = "layoutControlItem2";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(75, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(514, 26);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.ceCheckAll;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(91, 26);
-            this.layoutControlItem3.Text = "layoutControlItem3";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // vQry84TableAdapter
-            // 
-            this.vQry84TableAdapter.ClearBeforeFill = true;
-            // 
             // colsarf
             // 
             this.colsarf.AppearanceCell.Options.UseTextOptions = true;
@@ -371,7 +309,7 @@
             this.colsarf.FieldName = "sarf";
             this.colsarf.Name = "colsarf";
             this.colsarf.Visible = true;
-            this.colsarf.VisibleIndex = 9;
+            this.colsarf.VisibleIndex = 11;
             // 
             // colsheekno
             // 
@@ -383,7 +321,7 @@
             this.colsheekno.FieldName = "sheekno";
             this.colsheekno.Name = "colsheekno";
             this.colsheekno.Visible = true;
-            this.colsheekno.VisibleIndex = 10;
+            this.colsheekno.VisibleIndex = 12;
             // 
             // colsheekdate
             // 
@@ -395,7 +333,88 @@
             this.colsheekdate.FieldName = "sheekdate";
             this.colsheekdate.Name = "colsheekdate";
             this.colsheekdate.Visible = true;
-            this.colsheekdate.VisibleIndex = 11;
+            this.colsheekdate.VisibleIndex = 13;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.emptySpaceItem1,
+            this.layoutControlItem3});
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(893, 443);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControlMain;
+            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(873, 397);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.btnPrint;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(594, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(279, 26);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
+            this.emptySpaceItem1.Location = new System.Drawing.Point(89, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(505, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.ceCheckAll;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(89, 26);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // vQry84TableAdapter
+            // 
+            this.vQry84TableAdapter.ClearBeforeFill = true;
+            // 
+            // colestktaa
+            // 
+            this.colestktaa.AppearanceCell.Options.UseTextOptions = true;
+            this.colestktaa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colestktaa.AppearanceHeader.Options.UseTextOptions = true;
+            this.colestktaa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colestktaa.Caption = "استقطاع";
+            this.colestktaa.FieldName = "estktaa";
+            this.colestktaa.Name = "colestktaa";
+            this.colestktaa.Visible = true;
+            this.colestktaa.VisibleIndex = 9;
+            // 
+            // colnet_value
+            // 
+            this.colnet_value.AppearanceCell.Options.UseTextOptions = true;
+            this.colnet_value.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnet_value.AppearanceHeader.Options.UseTextOptions = true;
+            this.colnet_value.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colnet_value.Caption = "صافي";
+            this.colnet_value.FieldName = "net_value";
+            this.colnet_value.Name = "colnet_value";
+            this.colnet_value.Visible = true;
+            this.colnet_value.VisibleIndex = 10;
             // 
             // TBLDeathMembersPrintFrm
             // 
@@ -451,5 +470,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colsarf;
         private DevExpress.XtraGrid.Columns.GridColumn colsheekno;
         private DevExpress.XtraGrid.Columns.GridColumn colsheekdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colestktaa;
+        private DevExpress.XtraGrid.Columns.GridColumn colnet_value;
     }
 }

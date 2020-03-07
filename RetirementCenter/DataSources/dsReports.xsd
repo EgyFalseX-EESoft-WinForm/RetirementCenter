@@ -1163,9 +1163,8 @@ FROM            CDSyndicate</CommandText>
               <DbSource ConnectionRef="RetirementCenterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>
-SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLMashat.sarfnumber, TBLMashat.MMashatName, 
-                         TBLDeathMembers.datein, TBLDeathMembers.sefa, TBLDeathMembers.mosthhekmony, TBLMashat.SyndicateId, CDSyndicate.Syndicate
+                    <CommandText>SELECT        TBLDeathMembers.MMashatId, TBLDeathMembers.deathdate, TBLDeathMembers.mosthhek, TBLMashat.sarfnumber, TBLMashat.MMashatName, TBLDeathMembers.datein, TBLDeathMembers.sefa, 
+                         TBLDeathMembers.mosthhekmony, TBLMashat.SyndicateId, CDSyndicate.Syndicate, TBLDeathMembers.estktaa, TBLDeathMembers.net_value
 FROM            TBLDeathMembers INNER JOIN
                          TBLMashat ON TBLDeathMembers.MMashatId = TBLMashat.MMashatId INNER JOIN
                          CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId
@@ -1190,6 +1189,8 @@ WHERE        (TBLMashat.SyndicateId = @SyndicateId) AND (CAST(TBLDeathMembers.da
               <Mapping SourceColumn="mosthhekmony" DataSetColumn="mosthhekmony" />
               <Mapping SourceColumn="SyndicateId" DataSetColumn="SyndicateId" />
               <Mapping SourceColumn="Syndicate" DataSetColumn="Syndicate" />
+              <Mapping SourceColumn="estktaa" DataSetColumn="estktaa" />
+              <Mapping SourceColumn="net_value" DataSetColumn="net_value" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2603,6 +2604,8 @@ WHERE        (DofatSarfId = @DofatSarfId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="estktaa" msprop:Generator_ColumnVarNameInTable="columnestktaa" msprop:Generator_ColumnPropNameInRow="estktaa" msprop:Generator_ColumnPropNameInTable="estktaaColumn" msprop:Generator_UserColumnName="estktaa" type="xs:double" minOccurs="0" />
+              <xs:element name="net_value" msprop:Generator_ColumnVarNameInTable="columnnet_value" msprop:Generator_ColumnPropNameInRow="net_value" msprop:Generator_ColumnPropNameInTable="net_valueColumn" msprop:Generator_UserColumnName="net_value" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
