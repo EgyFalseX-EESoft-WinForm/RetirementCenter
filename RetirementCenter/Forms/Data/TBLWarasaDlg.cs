@@ -106,6 +106,7 @@ namespace RetirementCenter.Forms.Data
             tbvisa.Visible = lblvisa .Visible = Program.UserInfo.IsAdmin;
             lblActivate.Visible = (Program.UserInfo.IsAdmin || Program.UserInfo.IsRole28);
             ceActivate.Visible = (Program.UserInfo.IsAdmin || Program.UserInfo.IsRole28);
+            
             tbCode60.Visible = tbCode60.Visible = Program.UserInfo.IsAdmin;
 
             if (_TBLEdafatWarsa.Count > 0)
@@ -200,7 +201,7 @@ namespace RetirementCenter.Forms.Data
                 this.tBLWarasaMaduneaTableAdapter.FillByPersonId(this.dsRetirementCenter.TBLWarasaMadunea, _TBLWarasa[0].PersonId);
                 tblvisawarsaactiveTableAdapter.FillByPersonId(dsRetirementCenter.tblvisawarsaactive, _TBLWarasa[0].PersonId);
             }
-            ceActivate.Visible = Program.UserInfo.IsAdmin;
+            ceActivate.Visible = (Program.UserInfo.IsAdmin || Program.UserInfo.IsRole28);
             repositoryItemButtonEditResarfDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
             repositoryItemButtonEditTBLWarasaMaduneaDel.Buttons[0].Visible = Program.UserInfo.IsAdmin;
 
