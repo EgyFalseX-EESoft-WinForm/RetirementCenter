@@ -19,6 +19,7 @@ namespace RetirementCenter.Forms.Data
         public BankExportedDataWarsaActivateFrm()
         {
             InitializeComponent();
+            SQLProvider.SetAllCommandTimeouts(adpQry, 0);
             LoadData();
         }
         private void LoadData()
