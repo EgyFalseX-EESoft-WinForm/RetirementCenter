@@ -12061,6 +12061,10 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _visa;
 		
+		private System.Nullable<bool> _Activate;
+		
+		private System.Nullable<System.DateTime> _ActivateDate;
+		
 		public vTBLMashat()
 		{
 		}
@@ -12576,6 +12580,38 @@ namespace RetirementCenter.DataSources.Linq
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activate", DbType="Bit")]
+		public System.Nullable<bool> Activate
+		{
+			get
+			{
+				return this._Activate;
+			}
+			set
+			{
+				if ((this._Activate != value))
+				{
+					this._Activate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivateDate", DbType="Date")]
+		public System.Nullable<System.DateTime> ActivateDate
+		{
+			get
+			{
+				return this._ActivateDate;
+			}
+			set
+			{
+				if ((this._ActivateDate != value))
+				{
+					this._ActivateDate = value;
+				}
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLWarasa")]
@@ -12611,6 +12647,10 @@ namespace RetirementCenter.DataSources.Linq
 		private string _RealName;
 		
 		private string _visa;
+		
+		private System.Nullable<bool> _Activate;
+		
+		private System.Nullable<System.DateTime> _ActivateDate;
 		
 		public vTBLWarasa()
 		{
@@ -12852,6 +12892,38 @@ namespace RetirementCenter.DataSources.Linq
 				if ((this._visa != value))
 				{
 					this._visa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activate", DbType="Bit")]
+		public System.Nullable<bool> Activate
+		{
+			get
+			{
+				return this._Activate;
+			}
+			set
+			{
+				if ((this._Activate != value))
+				{
+					this._Activate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivateDate", DbType="Date")]
+		public System.Nullable<System.DateTime> ActivateDate
+		{
+			get
+			{
+				return this._ActivateDate;
+			}
+			set
+			{
+				if ((this._ActivateDate != value))
+				{
+					this._ActivateDate = value;
 				}
 			}
 		}
@@ -19745,6 +19817,10 @@ namespace RetirementCenter.DataSources.Linq
 		
 		private string _sarfreson;
 		
+		private System.Nullable<bool> _Activate;
+		
+		private System.Nullable<System.DateTime> _ActivateDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -19815,6 +19891,10 @@ namespace RetirementCenter.DataSources.Linq
     partial void OnsarfresonidChanged();
     partial void OnsarfresonChanging(string value);
     partial void OnsarfresonChanged();
+    partial void OnActivateChanging(System.Nullable<bool> value);
+    partial void OnActivateChanged();
+    partial void OnActivateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnActivateDateChanged();
     #endregion
 		
 		public vTBLWarasa_TBLMashat()
@@ -20478,6 +20558,46 @@ namespace RetirementCenter.DataSources.Linq
 					this._sarfreson = value;
 					this.SendPropertyChanged("sarfreson");
 					this.OnsarfresonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activate", DbType="Bit")]
+		public System.Nullable<bool> Activate
+		{
+			get
+			{
+				return this._Activate;
+			}
+			set
+			{
+				if ((this._Activate != value))
+				{
+					this.OnActivateChanging(value);
+					this.SendPropertyChanging();
+					this._Activate = value;
+					this.SendPropertyChanged("Activate");
+					this.OnActivateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivateDate", DbType="Date")]
+		public System.Nullable<System.DateTime> ActivateDate
+		{
+			get
+			{
+				return this._ActivateDate;
+			}
+			set
+			{
+				if ((this._ActivateDate != value))
+				{
+					this.OnActivateDateChanging(value);
+					this.SendPropertyChanging();
+					this._ActivateDate = value;
+					this.SendPropertyChanged("ActivateDate");
+					this.OnActivateDateChanged();
 				}
 			}
 		}

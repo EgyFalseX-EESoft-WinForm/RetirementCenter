@@ -56,6 +56,8 @@
             this.repositoryItemDateEditDMY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
+            this.colActivate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActivateDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
@@ -193,7 +195,9 @@
             this.colSyndicateId,
             this.colSubCommitteId,
             this.colMMashatId,
-            this.colvisa});
+            this.colvisa,
+            this.colActivate,
+            this.colActivateDate});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsCustomization.AllowRowSizing = true;
@@ -493,6 +497,30 @@
             this.btnPrintExport.Text = "طباعه و تصدير";
             this.btnPrintExport.Click += new System.EventHandler(this.btnPrintExport_Click);
             // 
+            // colActivate
+            // 
+            this.colActivate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivate.Caption = "تم التفعيل";
+            this.colActivate.FieldName = "Activate";
+            this.colActivate.Name = "colActivate";
+            this.colActivate.Visible = true;
+            this.colActivate.VisibleIndex = 19;
+            // 
+            // colActivateDate
+            // 
+            this.colActivateDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colActivateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colActivateDate.Caption = "تاريخ التفعيل";
+            this.colActivateDate.FieldName = "ActivateDate";
+            this.colActivateDate.Name = "colActivateDate";
+            this.colActivateDate.Visible = true;
+            this.colActivateDate.VisibleIndex = 20;
+            // 
             // Qry04Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +577,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitteId;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
         private DevExpress.XtraGrid.Columns.GridColumn colvisa;
-
+        private DevExpress.XtraGrid.Columns.GridColumn colActivate;
+        private DevExpress.XtraGrid.Columns.GridColumn colActivateDate;
     }
 }
