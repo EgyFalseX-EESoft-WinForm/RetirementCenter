@@ -33,40 +33,16 @@
             this.vQry38aBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBirthDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditMDY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colsarfnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -75,14 +51,28 @@
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry38aTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry38aTableAdapter();
+            this.colbranchcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcardtype = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnationality = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpreferredlanguage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcompanyid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry38aBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEditImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
@@ -200,40 +190,30 @@
             this.gridViewData.Appearance.VertLine.BackColor = System.Drawing.Color.LightGray;
             this.gridViewData.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMMashatId,
-            this.colBirthDate,
-            this.colMMashatNId,
-            this.colBDate,
-            this.colsarfnumber,
+            this.gridColumn27,
+            this.colbranchcode,
+            this.colcardtype,
+            this.colbin,
+            this.gridColumn28,
             this.colMMashatName,
+            this.gridColumn1,
+            this.gridColumn29,
+            this.gridColumn26,
+            this.gridColumn30,
+            this.gridColumn31,
             this.colSyndicate,
             this.colSubCommitte,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
             this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23,
-            this.gridColumn24,
-            this.gridColumn25,
-            this.gridColumn26});
+            this.gridColumn32,
+            this.gridColumn33,
+            this.colgender,
+            this.colBDate,
+            this.colMMashatNId,
+            this.gridColumn2,
+            this.colnationality,
+            this.colpreferredlanguage,
+            this.colcompanyid,
+            this.colMMashatId});
             this.gridViewData.GridControl = this.gridControlData;
             this.gridViewData.Name = "gridViewData";
             this.gridViewData.OptionsBehavior.ReadOnly = true;
@@ -246,8 +226,14 @@
             this.gridViewData.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewData.OptionsView.ShowAutoFilterRow = true;
             this.gridViewData.OptionsView.ShowFooter = true;
-            this.gridViewData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "institution";
+            this.gridColumn27.FieldName = "institution";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 9;
             // 
             // colMMashatId
             // 
@@ -255,22 +241,12 @@
             this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "Customer ID";
+            this.colMMashatId.Caption = "employee id";
             this.colMMashatId.FieldName = "MMashatId";
             this.colMMashatId.Name = "colMMashatId";
             this.colMMashatId.Visible = true;
             this.colMMashatId.VisibleIndex = 0;
             this.colMMashatId.Width = 79;
-            // 
-            // colBirthDate
-            // 
-            this.colBirthDate.AppearanceCell.Options.UseTextOptions = true;
-            this.colBirthDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBirthDate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colBirthDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBirthDate.Caption = "تاريخ الميلاد";
-            this.colBirthDate.FieldName = "BirthDate";
-            this.colBirthDate.Name = "colBirthDate";
             // 
             // colMMashatNId
             // 
@@ -278,11 +254,11 @@
             this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatNId.Caption = "National ID";
+            this.colMMashatNId.Caption = "national id";
             this.colMMashatNId.FieldName = "MMashatNId";
             this.colMMashatNId.Name = "colMMashatNId";
             this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 9;
+            this.colMMashatNId.VisibleIndex = 4;
             this.colMMashatNId.Width = 80;
             // 
             // colBDate
@@ -291,12 +267,13 @@
             this.colBDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colBDate.AppearanceHeader.Options.UseTextOptions = true;
             this.colBDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBDate.Caption = "Birth Date";
+            this.colBDate.Caption = "birth date";
             this.colBDate.ColumnEdit = this.repositoryItemDateEditMDY;
+            this.colBDate.FieldName = "BirthDate";
             this.colBDate.Name = "colBDate";
             this.colBDate.OptionsColumn.ReadOnly = true;
             this.colBDate.Visible = true;
-            this.colBDate.VisibleIndex = 6;
+            this.colBDate.VisibleIndex = 3;
             this.colBDate.Width = 154;
             // 
             // repositoryItemDateEditMDY
@@ -304,24 +281,14 @@
             this.repositoryItemDateEditMDY.AutoHeight = false;
             this.repositoryItemDateEditMDY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditMDY.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEditMDY.DisplayFormat.FormatString = "MM/dd/yyyy";
             this.repositoryItemDateEditMDY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditMDY.EditFormat.FormatString = "MM/dd/yyyy";
             this.repositoryItemDateEditMDY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditMDY.Mask.EditMask = "MM/dd/yyyy";
             this.repositoryItemDateEditMDY.Name = "repositoryItemDateEditMDY";
-            this.repositoryItemDateEditMDY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // colsarfnumber
-            // 
-            this.colsarfnumber.AppearanceCell.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.AppearanceHeader.Options.UseTextOptions = true;
-            this.colsarfnumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsarfnumber.Caption = "رقم الصرف";
-            this.colsarfnumber.FieldName = "sarfnumber";
-            this.colsarfnumber.Name = "colsarfnumber";
             // 
             // colMMashatName
             // 
@@ -329,7 +296,7 @@
             this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
             this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "Name";
+            this.colMMashatName.Caption = "customer full name (arabic )";
             this.colMMashatName.FieldName = "MMashatName";
             this.colMMashatName.Name = "colMMashatName";
             this.colMMashatName.Visible = true;
@@ -341,7 +308,7 @@
             this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
             this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.Caption = "Organization";
+            this.colSyndicate.Caption = "customer address 1";
             this.colSyndicate.FieldName = "Syndicate";
             this.colSyndicate.Name = "colSyndicate";
             this.colSyndicate.Visible = true;
@@ -354,210 +321,30 @@
             this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
             this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.Caption = "Department";
+            this.colSubCommitte.Caption = "customer address 2";
             this.colSubCommitte.FieldName = "SubCommitte";
             this.colSubCommitte.Name = "colSubCommitte";
             this.colSubCommitte.Visible = true;
             this.colSubCommitte.VisibleIndex = 24;
             this.colSubCommitte.Width = 76;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "السن";
-            this.gridColumn1.FieldName = "Age";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "First Name";
+            this.gridColumn2.Caption = "passport number";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Middle Name";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 79;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Last Name";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Title";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Gender";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 7;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Marital Status";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 8;
-            this.gridColumn7.Width = 85;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Social Insurance Number";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 10;
-            this.gridColumn8.Width = 137;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Home Address";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 11;
-            this.gridColumn9.Width = 88;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Building Number";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 12;
-            this.gridColumn10.Width = 95;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Street Name";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 13;
-            this.gridColumn11.Width = 79;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Area Name";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 14;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "City Police Name";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 15;
-            this.gridColumn13.Width = 98;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "Postal Code";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 16;
-            this.gridColumn14.Width = 76;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "Statement Address";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 17;
-            this.gridColumn15.Width = 111;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Land Line Number";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 18;
-            this.gridColumn16.Width = 104;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Fax";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 19;
-            // 
             // gridColumn18
             // 
-            this.gridColumn18.Caption = "Mobile";
+            this.gridColumn18.Caption = "mobile";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 20;
             // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "SMS Mobile";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 21;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "Email";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 22;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "Employee ID";
-            this.gridColumn21.FieldName = "MMashatId";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 25;
-            this.gridColumn21.Width = 79;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "Work Position";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 26;
-            this.gridColumn22.Width = 84;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "Work Address";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 27;
-            this.gridColumn23.Width = 86;
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.Caption = "Work Telephone";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 28;
-            this.gridColumn24.Width = 97;
-            // 
-            // gridColumn25
-            // 
-            this.gridColumn25.Caption = "Employment Date";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 29;
-            this.gridColumn25.Width = 103;
-            // 
             // gridColumn26
             // 
-            this.gridColumn26.Caption = "Name On Card";
+            this.gridColumn26.Caption = "name on card (arabic)";
             this.gridColumn26.FieldName = "NameOnCard";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
@@ -569,12 +356,12 @@
             this.repositoryItemDateEditDate.AutoHeight = false;
             this.repositoryItemDateEditDate.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditDate.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEditDate.DisplayFormat.FormatString = "u";
             this.repositoryItemDateEditDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditDate.Mask.EditMask = "u";
             this.repositoryItemDateEditDate.Name = "repositoryItemDateEditDate";
-            this.repositoryItemDateEditDate.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // repositoryItemPictureEditImg
             // 
@@ -597,7 +384,7 @@
             // 
             // btnSaveBackData
             // 
-            this.btnSaveBackData.Image = global::RetirementCenter.Properties.Resources.save_16x16;
+            this.btnSaveBackData.ImageOptions.Image = global::RetirementCenter.Properties.Resources.save_16x16;
             this.btnSaveBackData.Location = new System.Drawing.Point(12, 12);
             this.btnSaveBackData.Name = "btnSaveBackData";
             this.btnSaveBackData.Size = new System.Drawing.Size(134, 23);
@@ -619,6 +406,111 @@
             // 
             this.vQry38aTableAdapter.ClearBeforeFill = true;
             // 
+            // colbranchcode
+            // 
+            this.colbranchcode.Caption = "branch code";
+            this.colbranchcode.FieldName = "branch code";
+            this.colbranchcode.Name = "colbranchcode";
+            this.colbranchcode.Visible = true;
+            this.colbranchcode.VisibleIndex = 32;
+            // 
+            // colcardtype
+            // 
+            this.colcardtype.Caption = "card type";
+            this.colcardtype.FieldName = "card type";
+            this.colcardtype.Name = "colcardtype";
+            this.colcardtype.Visible = true;
+            this.colcardtype.VisibleIndex = 33;
+            // 
+            // colbin
+            // 
+            this.colbin.Caption = "bin";
+            this.colbin.FieldName = "bin";
+            this.colbin.Name = "colbin";
+            this.colbin.Visible = true;
+            this.colbin.VisibleIndex = 34;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "customer full name (english)";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 35;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "firts name (eng)";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 36;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "last name (eng )";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 37;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "customer address 1 (ENG)";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 38;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "customer address 2 (ENG)";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 39;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "mobile sms";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 40;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "email";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 41;
+            // 
+            // colgender
+            // 
+            this.colgender.Caption = "gender";
+            this.colgender.FieldName = "gender";
+            this.colgender.Name = "colgender";
+            this.colgender.Visible = true;
+            this.colgender.VisibleIndex = 42;
+            // 
+            // colnationality
+            // 
+            this.colnationality.Caption = "nationality";
+            this.colnationality.FieldName = "nationality";
+            this.colnationality.Name = "colnationality";
+            this.colnationality.Visible = true;
+            this.colnationality.VisibleIndex = 21;
+            // 
+            // colpreferredlanguage
+            // 
+            this.colpreferredlanguage.Caption = "preferred language";
+            this.colpreferredlanguage.FieldName = "preferred language";
+            this.colpreferredlanguage.Name = "colpreferredlanguage";
+            this.colpreferredlanguage.Visible = true;
+            this.colpreferredlanguage.VisibleIndex = 22;
+            // 
+            // colcompanyid
+            // 
+            this.colcompanyid.Caption = "company id";
+            this.colcompanyid.FieldName = "company id";
+            this.colcompanyid.Name = "colcompanyid";
+            this.colcompanyid.Visible = true;
+            this.colcompanyid.VisibleIndex = 23;
+            // 
             // Qry38aFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,9 +526,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vQry38aBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditMDY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEditImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -658,42 +550,31 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditMDY;
         private DataSources.dsQueries dsQueries;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatId;
-        private DevExpress.XtraGrid.Columns.GridColumn colBirthDate;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatNId;
         private DevExpress.XtraGrid.Columns.GridColumn colBDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colsarfnumber;
         private DevExpress.XtraGrid.Columns.GridColumn colMMashatName;
         private DevExpress.XtraGrid.Columns.GridColumn colSyndicate;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCommitte;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.BindingSource vQry38aBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DataSources.dsQueriesTableAdapters.vQry38aTableAdapter vQry38aTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnSaveBackData;
-
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn colbranchcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colcardtype;
+        private DevExpress.XtraGrid.Columns.GridColumn colbin;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
+        private DevExpress.XtraGrid.Columns.GridColumn colgender;
+        private DevExpress.XtraGrid.Columns.GridColumn colnationality;
+        private DevExpress.XtraGrid.Columns.GridColumn colpreferredlanguage;
+        private DevExpress.XtraGrid.Columns.GridColumn colcompanyid;
     }
 }

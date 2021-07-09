@@ -1306,7 +1306,14 @@ CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END
 CDSubCommitte.SubCommitte
 , Year(GetDate()) - CAST( CASE WHEN SUBSTRING(TBLMashat.MMashatNId, 1, 1) = '2' THEN '19' ELSE '20' END + SUBSTRING(TBLMashat.MMashatNId, 2, 2) AS INT) AS Age
 , CASE WHEN LEN(TBLMashat.MMashatName) &lt;= 24 THEN TBLMashat.MMashatName ELSE SUBSTRING(TBLMashat.MMashatName, 0, 24 - CHARINDEX(' ', REVERSE(SUBSTRING(TBLMashat.MMashatName, 0, 24)))) END AS NameOnCard
-
+, 1 AS institution
+,'051' AS [branch code]
+,'HDBT' AS [card type]
+,'50780304' AS [bin]
+,CASE WHEN (LEFT(RIGHT(TBLMashat.MMashatNId, 2), 1) % 2) = 1 THEN 'M' ELSE 'F' END AS gender
+,818 AS nationality
+,1 AS [preferred language]
+,200 AS [company id]
 FROM            TBLMashat INNER JOIN CTE1 ON TBLMashat.MMashatNId = CTE1.MMashatNId
 INNER JOIN CDSyndicate ON TBLMashat.SyndicateId = CDSyndicate.SyndicateId INNER JOIN
 CDSubCommitte ON TBLMashat.SubCommitteId = CDSubCommitte.SubCommitteId
@@ -1332,6 +1339,14 @@ ORDER BY CDSyndicate.Syndicate, CDSubCommitte.SubCommitte, TBLMashat.MMashatId</
               <Mapping SourceColumn="SubCommitte" DataSetColumn="SubCommitte" />
               <Mapping SourceColumn="Age" DataSetColumn="Age" />
               <Mapping SourceColumn="NameOnCard" DataSetColumn="NameOnCard" />
+              <Mapping SourceColumn="institution" DataSetColumn="institution" />
+              <Mapping SourceColumn="branch code" DataSetColumn="branch code" />
+              <Mapping SourceColumn="card type" DataSetColumn="card type" />
+              <Mapping SourceColumn="bin" DataSetColumn="bin" />
+              <Mapping SourceColumn="nationality" DataSetColumn="nationality" />
+              <Mapping SourceColumn="preferred language" DataSetColumn="preferred language" />
+              <Mapping SourceColumn="company id" DataSetColumn="company id" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -6859,6 +6874,38 @@ END</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="institution" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columninstitution" msprop:Generator_ColumnPropNameInRow="institution" msprop:Generator_ColumnPropNameInTable="institutionColumn" msprop:Generator_UserColumnName="institution" type="xs:int" minOccurs="0" />
+              <xs:element name="branch_x0020_code" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnbranch_code" msprop:Generator_ColumnPropNameInRow="branch_code" msprop:Generator_ColumnPropNameInTable="branch_codeColumn" msprop:Generator_UserColumnName="branch code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="card_x0020_type" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncard_type" msprop:Generator_ColumnPropNameInRow="card_type" msprop:Generator_ColumnPropNameInTable="card_typeColumn" msprop:Generator_UserColumnName="card type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnbin" msprop:Generator_ColumnPropNameInRow="bin" msprop:Generator_ColumnPropNameInTable="binColumn" msprop:Generator_UserColumnName="bin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nationality" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnationality" msprop:Generator_ColumnPropNameInRow="nationality" msprop:Generator_ColumnPropNameInTable="nationalityColumn" msprop:Generator_UserColumnName="nationality" type="xs:int" minOccurs="0" />
+              <xs:element name="preferred_x0020_language" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpreferred_language" msprop:Generator_ColumnPropNameInRow="preferred_language" msprop:Generator_ColumnPropNameInTable="preferred_languageColumn" msprop:Generator_UserColumnName="preferred language" type="xs:int" minOccurs="0" />
+              <xs:element name="company_x0020_id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncompany_id" msprop:Generator_ColumnPropNameInRow="company_id" msprop:Generator_ColumnPropNameInTable="company_idColumn" msprop:Generator_UserColumnName="company id" type="xs:int" minOccurs="0" />
+              <xs:element name="gender" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
