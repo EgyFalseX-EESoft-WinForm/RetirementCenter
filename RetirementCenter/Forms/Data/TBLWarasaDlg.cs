@@ -91,6 +91,7 @@ namespace RetirementCenter.Forms.Data
             ceActivate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "Activate", false)); //ceActivate.Checked = _TBLWarasa[0].IsActivateNull() ? false : _TBLWarasa[0].Activate;
             luesarfresonid.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "sarfresonid", true));
             tbCode60.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "code60", true));
+            tbpassport_number.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "passport_number", true));
 
             cewcompletesarf.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wcompletesarf", true));
             tbwmony.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", _TBLWarasa, "wmony", true));

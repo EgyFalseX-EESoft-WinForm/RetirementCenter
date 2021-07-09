@@ -245,6 +245,8 @@
             this.colcode60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditCombin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEditfinalystop = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.xtraTabPageChangeToWarasa = new DevExpress.XtraTab.XtraTabPage();
             this.LUEChangeHala = new DevExpress.XtraEditors.LookUpEdit();
@@ -358,8 +360,8 @@
             this.tblmembervisaactiveTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.tblmembervisaactiveTableAdapter();
             this.tblMemberMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TblMemberMaduneaTableAdapter();
             this.tBLDofatSarfMaduneaTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.TBLDofatSarfMaduneaTableAdapter();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEditfinalystop = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.tbpassport_number = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCode60.Properties)).BeginInit();
@@ -486,6 +488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEstefa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.xtraTabPageChangeToWarasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEChangeHala.Properties)).BeginInit();
@@ -551,7 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbpassport_number.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlMain
@@ -1100,6 +1103,7 @@
             this.xtraTabPageMain.Controls.Add(this.labelControl4);
             this.xtraTabPageMain.Controls.Add(this.labelControl15);
             this.xtraTabPageMain.Controls.Add(this.labelControl27);
+            this.xtraTabPageMain.Controls.Add(this.labelControl29);
             this.xtraTabPageMain.Controls.Add(this.labelControl23);
             this.xtraTabPageMain.Controls.Add(this.labelControl14);
             this.xtraTabPageMain.Controls.Add(this.labelControl3);
@@ -1117,6 +1121,7 @@
             this.xtraTabPageMain.Controls.Add(this.textEdit2);
             this.xtraTabPageMain.Controls.Add(this.tbMMashatId);
             this.xtraTabPageMain.Controls.Add(this.tbfilenumberwrasa);
+            this.xtraTabPageMain.Controls.Add(this.tbpassport_number);
             this.xtraTabPageMain.Controls.Add(this.tbfilenumber);
             this.xtraTabPageMain.Controls.Add(this.textEdit1);
             this.xtraTabPageMain.Controls.Add(this.tbsarfnumber);
@@ -1665,12 +1670,12 @@
             this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.MMashataddres", true));
             this.textEdit2.EnterMoveNextControl = true;
-            this.textEdit2.Location = new System.Drawing.Point(446, 249);
+            this.textEdit2.Location = new System.Drawing.Point(581, 249);
             this.textEdit2.Margin = new System.Windows.Forms.Padding(0);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(362, 22);
+            this.textEdit2.Size = new System.Drawing.Size(227, 22);
             this.textEdit2.TabIndex = 12;
             this.textEdit2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
@@ -3177,6 +3182,25 @@
             this.repositoryItemButtonEditCombin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditCombin.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditCombin_ButtonClick);
             // 
+            // gridColumn20
+            // 
+            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn20.Caption = "متوفي";
+            this.gridColumn20.ColumnEdit = this.repositoryItemCheckEditfinalystop;
+            this.gridColumn20.FieldName = "finalystop";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 22;
+            // 
+            // repositoryItemCheckEditfinalystop
+            // 
+            this.repositoryItemCheckEditfinalystop.AutoHeight = false;
+            this.repositoryItemCheckEditfinalystop.Name = "repositoryItemCheckEditfinalystop";
+            this.repositoryItemCheckEditfinalystop.Click += new System.EventHandler(this.repositoryItemCheckEditfinalystop_Click);
+            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
@@ -4323,24 +4347,33 @@
             // 
             this.tBLDofatSarfMaduneaTableAdapter.ClearBeforeFill = true;
             // 
-            // gridColumn20
+            // tbpassport_number
             // 
-            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn20.Caption = "متوفي";
-            this.gridColumn20.ColumnEdit = this.repositoryItemCheckEditfinalystop;
-            this.gridColumn20.FieldName = "finalystop";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 22;
+            this.tbpassport_number.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbpassport_number.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dsRetirementCenter, "TBLMashat.passport_number", true));
+            this.tbpassport_number.EnterMoveNextControl = true;
+            this.tbpassport_number.Location = new System.Drawing.Point(287, 245);
+            this.tbpassport_number.Margin = new System.Windows.Forms.Padding(0);
+            this.tbpassport_number.Name = "tbpassport_number";
+            this.tbpassport_number.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbpassport_number.Properties.Appearance.Options.UseFont = true;
+            this.tbpassport_number.Size = new System.Drawing.Size(162, 22);
+            this.tbpassport_number.TabIndex = 11;
+            this.tbpassport_number.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActiveKeyDownEvent);
             // 
-            // repositoryItemCheckEditfinalystop
+            // labelControl29
             // 
-            this.repositoryItemCheckEditfinalystop.AutoHeight = false;
-            this.repositoryItemCheckEditfinalystop.Name = "repositoryItemCheckEditfinalystop";
-            this.repositoryItemCheckEditfinalystop.Click += new System.EventHandler(this.repositoryItemCheckEditfinalystop_Click);
+            this.labelControl29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl29.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl29.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.labelControl29.Appearance.Options.UseFont = true;
+            this.labelControl29.Appearance.Options.UseForeColor = true;
+            this.labelControl29.Location = new System.Drawing.Point(513, 252);
+            this.labelControl29.Margin = new System.Windows.Forms.Padding(0);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(54, 17);
+            this.labelControl29.TabIndex = 35;
+            this.labelControl29.Text = "جواز سفر";
             // 
             // TBLMashatFrm
             // 
@@ -4485,6 +4518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditWarasaEstefa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCombin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.xtraTabPageChangeToWarasa.ResumeLayout(false);
             this.xtraTabPageChangeToWarasa.PerformLayout();
@@ -4552,7 +4586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblNoSarfDetelsTablebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderEdafat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLEdafatWarsaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditfinalystop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbpassport_number.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4870,5 +4904,7 @@
         private DevExpress.XtraEditors.CheckEdit cedeath;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEditfinalystop;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
+        private DevExpress.XtraEditors.TextEdit tbpassport_number;
     }
 }
