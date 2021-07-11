@@ -34,16 +34,30 @@
             this.dsQueries = new RetirementCenter.DataSources.dsQueries();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEditMDY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colbranchcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcardtype = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMMashatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSyndicate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCommitte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEditMDY = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colMMashatNId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnationality = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpreferredlanguage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcompanyid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMMashatId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemPictureEditImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -51,20 +65,6 @@
             this.btnSaveBackData = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintExport = new DevExpress.XtraEditors.SimpleButton();
             this.vQry38aTableAdapter = new RetirementCenter.DataSources.dsQueriesTableAdapters.vQry38aTableAdapter();
-            this.colbranchcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcardtype = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colbin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgender = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnationality = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpreferredlanguage = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcompanyid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vQry38aBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQueries)).BeginInit();
@@ -233,33 +233,149 @@
             this.gridColumn27.FieldName = "institution";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 9;
+            this.gridColumn27.VisibleIndex = 0;
             // 
-            // colMMashatId
+            // colbranchcode
             // 
-            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatId.Caption = "employee id";
-            this.colMMashatId.FieldName = "MMashatId";
-            this.colMMashatId.Name = "colMMashatId";
-            this.colMMashatId.Visible = true;
-            this.colMMashatId.VisibleIndex = 0;
-            this.colMMashatId.Width = 79;
+            this.colbranchcode.Caption = "branch code";
+            this.colbranchcode.FieldName = "branch code";
+            this.colbranchcode.Name = "colbranchcode";
+            this.colbranchcode.Visible = true;
+            this.colbranchcode.VisibleIndex = 1;
+            this.colbranchcode.Width = 79;
             // 
-            // colMMashatNId
+            // colcardtype
             // 
-            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatNId.Caption = "national id";
-            this.colMMashatNId.FieldName = "MMashatNId";
-            this.colMMashatNId.Name = "colMMashatNId";
-            this.colMMashatNId.Visible = true;
-            this.colMMashatNId.VisibleIndex = 4;
-            this.colMMashatNId.Width = 80;
+            this.colcardtype.Caption = "card type";
+            this.colcardtype.FieldName = "card type";
+            this.colcardtype.Name = "colcardtype";
+            this.colcardtype.Visible = true;
+            this.colcardtype.VisibleIndex = 2;
+            // 
+            // colbin
+            // 
+            this.colbin.Caption = "bin";
+            this.colbin.FieldName = "bin";
+            this.colbin.Name = "colbin";
+            this.colbin.Visible = true;
+            this.colbin.VisibleIndex = 3;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "customer full name (english)";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 4;
+            this.gridColumn28.Width = 154;
+            // 
+            // colMMashatName
+            // 
+            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatName.Caption = "customer full name (arabic )";
+            this.colMMashatName.FieldName = "MMashatName";
+            this.colMMashatName.Name = "colMMashatName";
+            this.colMMashatName.Visible = true;
+            this.colMMashatName.VisibleIndex = 5;
+            this.colMMashatName.Width = 153;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "firts name (eng)";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.Width = 97;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "last name (eng )";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 7;
+            this.gridColumn29.Width = 98;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "name on card (arabic)";
+            this.gridColumn26.FieldName = "NameOnCard";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 8;
+            this.gridColumn26.Width = 125;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "customer address 1 (ENG)";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 9;
+            this.gridColumn30.Width = 145;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "customer address 2 (ENG)";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 10;
+            this.gridColumn31.Width = 145;
+            // 
+            // colSyndicate
+            // 
+            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSyndicate.Caption = "customer address 1";
+            this.colSyndicate.FieldName = "Syndicate";
+            this.colSyndicate.Name = "colSyndicate";
+            this.colSyndicate.Visible = true;
+            this.colSyndicate.VisibleIndex = 11;
+            this.colSyndicate.Width = 114;
+            // 
+            // colSubCommitte
+            // 
+            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSubCommitte.Caption = "customer address 2";
+            this.colSubCommitte.FieldName = "SubCommitte";
+            this.colSubCommitte.Name = "colSubCommitte";
+            this.colSubCommitte.Visible = true;
+            this.colSubCommitte.VisibleIndex = 12;
+            this.colSubCommitte.Width = 114;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "mobile";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 13;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "mobile sms";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 14;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "email";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 15;
+            // 
+            // colgender
+            // 
+            this.colgender.Caption = "gender";
+            this.colgender.FieldName = "gender";
+            this.colgender.Name = "colgender";
+            this.colgender.Visible = true;
+            this.colgender.VisibleIndex = 16;
             // 
             // colBDate
             // 
@@ -273,7 +389,7 @@
             this.colBDate.Name = "colBDate";
             this.colBDate.OptionsColumn.ReadOnly = true;
             this.colBDate.Visible = true;
-            this.colBDate.VisibleIndex = 3;
+            this.colBDate.VisibleIndex = 17;
             this.colBDate.Width = 154;
             // 
             // repositoryItemDateEditMDY
@@ -290,66 +406,65 @@
             this.repositoryItemDateEditMDY.Mask.EditMask = "MM/dd/yyyy";
             this.repositoryItemDateEditMDY.Name = "repositoryItemDateEditMDY";
             // 
-            // colMMashatName
+            // colMMashatNId
             // 
-            this.colMMashatName.AppearanceCell.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colMMashatName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMMashatName.Caption = "customer full name (arabic )";
-            this.colMMashatName.FieldName = "MMashatName";
-            this.colMMashatName.Name = "colMMashatName";
-            this.colMMashatName.Visible = true;
-            this.colMMashatName.VisibleIndex = 4;
-            // 
-            // colSyndicate
-            // 
-            this.colSyndicate.AppearanceCell.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSyndicate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSyndicate.Caption = "customer address 1";
-            this.colSyndicate.FieldName = "Syndicate";
-            this.colSyndicate.Name = "colSyndicate";
-            this.colSyndicate.Visible = true;
-            this.colSyndicate.VisibleIndex = 23;
-            this.colSyndicate.Width = 80;
-            // 
-            // colSubCommitte
-            // 
-            this.colSubCommitte.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubCommitte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSubCommitte.Caption = "customer address 2";
-            this.colSubCommitte.FieldName = "SubCommitte";
-            this.colSubCommitte.Name = "colSubCommitte";
-            this.colSubCommitte.Visible = true;
-            this.colSubCommitte.VisibleIndex = 24;
-            this.colSubCommitte.Width = 76;
+            this.colMMashatNId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatNId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatNId.Caption = "national id";
+            this.colMMashatNId.FieldName = "MMashatNId";
+            this.colMMashatNId.Name = "colMMashatNId";
+            this.colMMashatNId.Visible = true;
+            this.colMMashatNId.VisibleIndex = 18;
+            this.colMMashatNId.Width = 80;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "passport number";
+            this.gridColumn2.FieldName = "passport_number";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 19;
+            this.gridColumn2.Width = 101;
             // 
-            // gridColumn18
+            // colnationality
             // 
-            this.gridColumn18.Caption = "mobile";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 20;
+            this.colnationality.Caption = "nationality";
+            this.colnationality.FieldName = "nationality";
+            this.colnationality.Name = "colnationality";
+            this.colnationality.Visible = true;
+            this.colnationality.VisibleIndex = 20;
             // 
-            // gridColumn26
+            // colpreferredlanguage
             // 
-            this.gridColumn26.Caption = "name on card (arabic)";
-            this.gridColumn26.FieldName = "NameOnCard";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 30;
-            this.gridColumn26.Width = 89;
+            this.colpreferredlanguage.Caption = "preferred language";
+            this.colpreferredlanguage.FieldName = "preferred language";
+            this.colpreferredlanguage.Name = "colpreferredlanguage";
+            this.colpreferredlanguage.Visible = true;
+            this.colpreferredlanguage.VisibleIndex = 21;
+            this.colpreferredlanguage.Width = 113;
+            // 
+            // colcompanyid
+            // 
+            this.colcompanyid.Caption = "company id";
+            this.colcompanyid.FieldName = "company id";
+            this.colcompanyid.Name = "colcompanyid";
+            this.colcompanyid.Visible = true;
+            this.colcompanyid.VisibleIndex = 22;
+            // 
+            // colMMashatId
+            // 
+            this.colMMashatId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMMashatId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMMashatId.Caption = "employee id";
+            this.colMMashatId.FieldName = "MMashatId";
+            this.colMMashatId.Name = "colMMashatId";
+            this.colMMashatId.Visible = true;
+            this.colMMashatId.VisibleIndex = 23;
+            this.colMMashatId.Width = 79;
             // 
             // repositoryItemDateEditDate
             // 
@@ -405,111 +520,6 @@
             // vQry38aTableAdapter
             // 
             this.vQry38aTableAdapter.ClearBeforeFill = true;
-            // 
-            // colbranchcode
-            // 
-            this.colbranchcode.Caption = "branch code";
-            this.colbranchcode.FieldName = "branch code";
-            this.colbranchcode.Name = "colbranchcode";
-            this.colbranchcode.Visible = true;
-            this.colbranchcode.VisibleIndex = 32;
-            // 
-            // colcardtype
-            // 
-            this.colcardtype.Caption = "card type";
-            this.colcardtype.FieldName = "card type";
-            this.colcardtype.Name = "colcardtype";
-            this.colcardtype.Visible = true;
-            this.colcardtype.VisibleIndex = 33;
-            // 
-            // colbin
-            // 
-            this.colbin.Caption = "bin";
-            this.colbin.FieldName = "bin";
-            this.colbin.Name = "colbin";
-            this.colbin.Visible = true;
-            this.colbin.VisibleIndex = 34;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "customer full name (english)";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 35;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "firts name (eng)";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 36;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.Caption = "last name (eng )";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 37;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "customer address 1 (ENG)";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 38;
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.Caption = "customer address 2 (ENG)";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 39;
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.Caption = "mobile sms";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 40;
-            // 
-            // gridColumn33
-            // 
-            this.gridColumn33.Caption = "email";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 41;
-            // 
-            // colgender
-            // 
-            this.colgender.Caption = "gender";
-            this.colgender.FieldName = "gender";
-            this.colgender.Name = "colgender";
-            this.colgender.Visible = true;
-            this.colgender.VisibleIndex = 42;
-            // 
-            // colnationality
-            // 
-            this.colnationality.Caption = "nationality";
-            this.colnationality.FieldName = "nationality";
-            this.colnationality.Name = "colnationality";
-            this.colnationality.Visible = true;
-            this.colnationality.VisibleIndex = 21;
-            // 
-            // colpreferredlanguage
-            // 
-            this.colpreferredlanguage.Caption = "preferred language";
-            this.colpreferredlanguage.FieldName = "preferred language";
-            this.colpreferredlanguage.Name = "colpreferredlanguage";
-            this.colpreferredlanguage.Visible = true;
-            this.colpreferredlanguage.VisibleIndex = 22;
-            // 
-            // colcompanyid
-            // 
-            this.colcompanyid.Caption = "company id";
-            this.colcompanyid.FieldName = "company id";
-            this.colcompanyid.Name = "colcompanyid";
-            this.colcompanyid.Visible = true;
-            this.colcompanyid.VisibleIndex = 23;
             // 
             // Qry38aFrm
             // 
