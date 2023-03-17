@@ -43,7 +43,7 @@ namespace RetirementCenter
         {
             LSMSDof.QueryableSource = from q in dsLinq.TBLDofatSarfs select q;
             LSMSSyn.QueryableSource = from q in dsLinq.CDSyndicates select q;
-
+            LSMSSarfTypeedad.QueryableSource = from q in dsLinq.CDSarfTypeedads select q;
             // TODO: This line of code loads data into the 'dsRetirementCenter.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dsRetirementCenter.Users);
             
@@ -67,9 +67,9 @@ namespace RetirementCenter
         }
         private void btnBank_Click(object sender, EventArgs e)
         {
-            if (lueDof.EditValue == null)
+            if (lueDof.EditValue == null || LUESarfTypeedad.EditValue == null)
             {
-                msgDlg.Show("يجب اختيار الدفعة ", msgDlg.msgButtons.Close);
+                msgDlg.Show("يجب اختيار الدفعة والنوع", msgDlg.msgButtons.Close);
                 return;
             }
             if (msgDlg.Show("هل انت متأكد؟", msgDlg.msgButtons.YesNo) == System.Windows.Forms.DialogResult.No)
@@ -86,9 +86,9 @@ namespace RetirementCenter
             try
             {
                 if (lueSynd.EditValue == null)
-                    effected = adpSarfArc.InsertByDof(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend);
+                    effected = adpSarfArc.InsertByDof_SrfTyp(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), codestart, codeend, LUESarfTypeedad.EditValue.ToString());
                 else
-                    effected = adpSarfArc.InsertByDof_Syn(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend);
+                    effected = adpSarfArc.InsertByDof_Syn_SrfTyp(Program.UserInfo.UserId, Convert.ToInt32(lueDof.EditValue), Convert.ToInt32(lueSynd.EditValue), codestart, codeend, LUESarfTypeedad.EditValue.ToString());
 
             }
             catch (System.Data.SqlClient.SqlException ex)

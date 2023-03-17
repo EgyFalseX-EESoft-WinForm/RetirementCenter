@@ -81,11 +81,14 @@
             this.lueSynd = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSSyn = new DevExpress.Data.Linq.LinqServerModeSource();
             this.usersTableAdapter = new RetirementCenter.DataSources.dsRetirementCenterTableAdapters.UsersTableAdapter();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.LSMSSarfTypeedad = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LUESarfTypeedad = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetirementCenter)).BeginInit();
@@ -99,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSarfTypeedad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUESarfTypeedad.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlData
@@ -472,14 +477,14 @@
             this.repositoryItemDateEditDMY.AutoHeight = false;
             this.repositoryItemDateEditDMY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditDMY.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDateEditDMY.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditDMY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditDMY.EditFormat.FormatString = "dd/MM/yyyy";
             this.repositoryItemDateEditDMY.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditDMY.Mask.EditMask = "dd/MM/yyyy";
             this.repositoryItemDateEditDMY.Name = "repositoryItemDateEditDMY";
-            this.repositoryItemDateEditDMY.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // coluserin
             // 
@@ -501,8 +506,8 @@
             this.repositoryItemLookUpEdituserin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdituserin.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserID", "User ID", 59, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserID", "User ID", 59, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemLookUpEdituserin.DataSource = this.usersBindingSource;
             this.repositoryItemLookUpEdituserin.DisplayMember = "RealName";
             this.repositoryItemLookUpEdituserin.Name = "repositoryItemLookUpEdituserin";
@@ -650,6 +655,7 @@
             // 
             // panelControlMain
             // 
+            this.panelControlMain.Controls.Add(this.LUESarfTypeedad);
             this.panelControlMain.Controls.Add(this.labelControl4);
             this.panelControlMain.Controls.Add(this.labelControl3);
             this.panelControlMain.Controls.Add(this.tbCodeEnd);
@@ -657,6 +663,7 @@
             this.panelControlMain.Controls.Add(this.btnBank);
             this.panelControlMain.Controls.Add(this.labelControl2);
             this.panelControlMain.Controls.Add(this.btnPrintExport);
+            this.panelControlMain.Controls.Add(this.labelControl5);
             this.panelControlMain.Controls.Add(this.labelControl1);
             this.panelControlMain.Controls.Add(this.LueFilter);
             this.panelControlMain.Controls.Add(this.lueDof);
@@ -669,15 +676,15 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(232, 94);
+            this.labelControl4.Location = new System.Drawing.Point(177, 70);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(35, 13);
+            this.labelControl4.Size = new System.Drawing.Size(17, 13);
             this.labelControl4.TabIndex = 11;
-            this.labelControl4.Text = "الي كود";
+            this.labelControl4.Text = "الي";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(232, 70);
+            this.labelControl3.Location = new System.Drawing.Point(285, 70);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(32, 13);
             this.labelControl3.TabIndex = 12;
@@ -685,7 +692,7 @@
             // 
             // tbCodeEnd
             // 
-            this.tbCodeEnd.Location = new System.Drawing.Point(100, 91);
+            this.tbCodeEnd.Location = new System.Drawing.Point(93, 67);
             this.tbCodeEnd.Name = "tbCodeEnd";
             this.tbCodeEnd.Properties.DisplayFormat.FormatString = "n0";
             this.tbCodeEnd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -693,12 +700,12 @@
             this.tbCodeEnd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.tbCodeEnd.Properties.Mask.EditMask = "n0";
             this.tbCodeEnd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeEnd.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeEnd.Size = new System.Drawing.Size(78, 20);
             this.tbCodeEnd.TabIndex = 7;
             // 
             // tbCodeStart
             // 
-            this.tbCodeStart.Location = new System.Drawing.Point(100, 67);
+            this.tbCodeStart.Location = new System.Drawing.Point(200, 67);
             this.tbCodeStart.Name = "tbCodeStart";
             this.tbCodeStart.Properties.DisplayFormat.FormatString = "n0";
             this.tbCodeStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -706,7 +713,7 @@
             this.tbCodeStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.tbCodeStart.Properties.Mask.EditMask = "n0";
             this.tbCodeStart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tbCodeStart.Size = new System.Drawing.Size(125, 20);
+            this.tbCodeStart.Size = new System.Drawing.Size(78, 20);
             this.tbCodeStart.TabIndex = 6;
             // 
             // btnBank
@@ -720,7 +727,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(232, 44);
+            this.labelControl2.Location = new System.Drawing.Point(283, 44);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 7;
@@ -738,7 +745,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(237, 18);
+            this.labelControl1.Location = new System.Drawing.Point(288, 18);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(29, 13);
             this.labelControl1.TabIndex = 8;
@@ -752,7 +759,7 @@
             this.LueFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LueFilter.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.LueFilter.Properties.DataSource = this.LSMSDof;
             this.LueFilter.Properties.DisplayMember = "DofatSarf";
             this.LueFilter.Properties.NullText = "";
@@ -769,34 +776,34 @@
             // 
             // lueDof
             // 
-            this.lueDof.Location = new System.Drawing.Point(100, 15);
+            this.lueDof.Location = new System.Drawing.Point(93, 15);
             this.lueDof.Name = "lueDof";
             this.lueDof.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDof.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DofatSarf", "الاسم", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueDof.Properties.DataSource = this.LSMSDof;
             this.lueDof.Properties.DisplayMember = "DofatSarf";
             this.lueDof.Properties.NullText = "";
             this.lueDof.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDof.Properties.ValueMember = "DofatSarfId";
-            this.lueDof.Size = new System.Drawing.Size(125, 20);
+            this.lueDof.Size = new System.Drawing.Size(189, 20);
             this.lueDof.TabIndex = 4;
             // 
             // lueSynd
             // 
-            this.lueSynd.Location = new System.Drawing.Point(100, 41);
+            this.lueSynd.Location = new System.Drawing.Point(93, 41);
             this.lueSynd.Name = "lueSynd";
             this.lueSynd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueSynd.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Syndicate", "الاسم", 57, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueSynd.Properties.DataSource = this.LSMSSyn;
             this.lueSynd.Properties.DisplayMember = "Syndicate";
             this.lueSynd.Properties.NullText = "";
             this.lueSynd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueSynd.Properties.ValueMember = "SyndicateId";
-            this.lueSynd.Size = new System.Drawing.Size(125, 20);
+            this.lueSynd.Size = new System.Drawing.Size(189, 20);
             this.lueSynd.TabIndex = 5;
             // 
             // LSMSSyn
@@ -807,6 +814,34 @@
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(295, 94);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(22, 13);
+            this.labelControl5.TabIndex = 8;
+            this.labelControl5.Text = "النوع";
+            // 
+            // LSMSSarfTypeedad
+            // 
+            this.LSMSSarfTypeedad.ElementType = typeof(RetirementCenter.DataSources.Linq.CDSarfTypeedad);
+            this.LSMSSarfTypeedad.KeyExpression = "[SarfTypeedadId]";
+            // 
+            // LUESarfTypeedad
+            // 
+            this.LUESarfTypeedad.Location = new System.Drawing.Point(93, 91);
+            this.LUESarfTypeedad.Name = "LUESarfTypeedad";
+            this.LUESarfTypeedad.Properties.AllowMultiSelect = true;
+            this.LUESarfTypeedad.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LUESarfTypeedad.Properties.DataSource = this.LSMSSarfTypeedad;
+            this.LUESarfTypeedad.Properties.DisplayMember = "SarfTypeedad";
+            this.LUESarfTypeedad.Properties.DropDownRows = 10;
+            this.LUESarfTypeedad.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.LUESarfTypeedad.Properties.ValueMember = "SarfTypeedadId";
+            this.LUESarfTypeedad.Size = new System.Drawing.Size(185, 20);
+            this.LUESarfTypeedad.TabIndex = 13;
             // 
             // Qry28Frm
             // 
@@ -822,7 +857,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDMY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdituserin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
@@ -838,6 +873,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDof.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSynd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSyn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSarfTypeedad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUESarfTypeedad.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -896,6 +933,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colsarfcheek;
         private DevExpress.XtraGrid.Columns.GridColumn colSendBankDate;
         private DevExpress.XtraEditors.LookUpEdit LueFilter;
-
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSSarfTypeedad;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit LUESarfTypeedad;
     }
 }
